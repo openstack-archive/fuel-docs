@@ -1,6 +1,5 @@
 FUEL™ for OpenStack Documentation
 ===
----
 
 This repository contains the FUEL™ for OpenStack user and administrator guides.
 
