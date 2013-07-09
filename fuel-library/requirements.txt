@@ -1,0 +1,2 @@
+sphinxcontrib-blockdiag
+rst2pdf
