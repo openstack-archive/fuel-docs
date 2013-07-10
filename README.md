@@ -1,17 +1,18 @@
 FUEL™ for OpenStack Documentation
 ===
 
-This repository contains the FUEL™ for OpenStack user and administrator guides.
+This repository contains the FUEL™ for OpenStack user and administrator guides. For more details, see the [FUEL™ for OpenStack portal](http://fuel.mirantis.com "FUEL™ for OpenStack portal").
 
-For more details, see the [FUEL™ for OpenStack portal](http://fuel.mirantis.com 
-"FUEL™ for OpenStack portal").
+Contributing
+============
+We welcome all people who are interested in helping our Documentation team to improve our documentation. There are no formal membership requirements, so feel free to hop in. The best way to contibute is to fork our repository, do your changes and send us a Pull Request. You are invited to contribute any type of contribution like new ideas, testing, and even deployment scripts.
 
+We also have an IRC channel at ``#openstack-fuel`` on ``irc.freenode.net`` where you can ask questions and give feedback. 
 
 Prerequisites
 =============
 
-[Sphinx Documentation Generator](http://sphinx-doc.org/ "Sphinx Documentation 
-Generator") must be installed to build the documentation.
+[Sphinx Documentation Generator](http://sphinx-doc.org/ "Sphinx Documentation Generator") must be installed to build the documentation. Please note that easy_install is a component of Python's Setup Tools package, which is commonly an optional install on most distributions.
 
 To get started, you need to install Sphinx and necessary extensions:
 
@@ -22,21 +23,18 @@ To get started, you need to install Sphinx and necessary extensions:
       sudo easy_install -U sphinxcontrib-seqdiag
       sudo easy_install -U sphinxcontrib-nwdiag
 
-Plus you will need to install [PlantUML](http://plantuml.sourceforge.net/ 
-"PlantUML") and [ImageMagick](http://www.imagemagick.org/ "ImageMagick").
+Plus you will need to install [PlantUML](http://plantuml.sourceforge.net/ "PlantUML") and [ImageMagick](http://www.imagemagick.org/ "ImageMagick").
 
-To edit SVG images we use [Inkscape](http://inkscape.org/ "Inkscape") but you 
-can use any other tool you want.
+To edit SVG images we use [Inkscape](http://inkscape.org/ "Inkscape") but you may use any other SVG-capable tool you like. We're not picky.
     
 Building
 ========
 
-To build a guide in HTML format, go to its directory and then run the ``make`` 
-command in that directory. For example:
+To build a guide in HTML format, go to its directory and then run the ``make`` command in that directory, like so:
 
     make html
 
-To generate the PDF file you shall do:
+To generate the PDF file run this:
 
     make pdf
 
@@ -44,15 +42,3 @@ You will find generated HTML documentation at:
 
 	_build/html
 
-
-Contributing
-============
-We are welcome all people interested in helping our team to improve our 
-documentation, and there are no formal membership requirements. The best way to 
-contibute is to fork our repository, do your changes and send us Pull Request.
-
-There is also an IRC at ``#openstack-fuel`` on ``irc.freenode.net`` where you 
-can ask your questions and give your feedback.
-
-We welcome all types of contributions, from new ideas to documentation
-to testing to deployment scripts.
