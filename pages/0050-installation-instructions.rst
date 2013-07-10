@@ -15,4 +15,3 @@ Create a multi-node OpenStack cluster using Fuel
 .. include:: /pages/installation-instructions/0060-understand-the-manifest.rst
 .. include:: /pages/installation-instructions/0070-orchestration.rst
 .. include:: /pages/installation-instructions/0080-testing-openstack.rst
-
