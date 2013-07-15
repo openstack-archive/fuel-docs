@@ -29,6 +29,7 @@ on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
 if on_rtd:
   extensions = ['sphinx.ext.autodoc']
+  display_github = False
 else:
   extensions = ['sphinx.ext.autodoc','rst2pdf.pdfbuilder']
 
