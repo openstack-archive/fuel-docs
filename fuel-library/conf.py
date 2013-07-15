@@ -29,6 +29,7 @@ on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
 if on_rtd:
   extensions = ['sphinx.ext.autodoc']
+  display_github = False
 else:
   extensions = ['sphinx.ext.autodoc','rst2pdf.pdfbuilder']
 
@@ -155,7 +156,7 @@ html_use_index = True
 html_split_index = False
 
 # If true, links to the reST sources are added to the pages.
-html_show_sourcelink = False
+html_show_sourcelink = True
 
 # If true, "Created using Sphinx" is shown in the HTML footer. Default is True.
 html_show_sphinx = False
