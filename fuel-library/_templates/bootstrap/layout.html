@@ -19,11 +19,11 @@
               {% include "relations.html" %}
             {% endblock %}
             <li><a href="#">sidebarsourcelink</a></li>
-            {% block sidebarsourcelink %}
+            {  % block sidebarsourcelink %}
     	<li class="dropdown">sidebarsourcelink
               {   % include "sourcelink.html" %}
 			</li>
-            {% endblock %}
+            {  % endblock %}
           </ul>
           {% block sidebarsearch %}
             {% include "searchbox.html" %}
