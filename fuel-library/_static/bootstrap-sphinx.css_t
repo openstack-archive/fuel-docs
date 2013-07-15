@@ -38,17 +38,20 @@ body {
     min-width: 740px;
 }
 
+div.section {
+    padding-top: 40px;
+}
 
 div.container {
-border-top-left-radius: 6px;
-border-top-right-radius: 6px;
-border-bottom-left-radius: 6px;
-border-bottom-right-radius: 6px;
-background: white;
-border-top: 1px solid #ddd;
-border-bottom: 1px solid #ddd;
-padding: 0 10px 0 10px;
-list-style: none;
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
+	border-bottom-left-radius: 6px;
+	border-bottom-right-radius: 6px;
+	background: white;
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	padding: 0 10px 0 10px;
+	list-style: none;
 }
 
 div.mira_header {
@@ -273,39 +276,39 @@ list-style-image: url(img/bull_white_sm.png);
 
 h1 {
     font-family: 'PT Sans Narrow', 'Arial Narrow', 'arial', sans-serif;
-    margin: 0;
-    padding: 0.7em 0 0.3em 0;
-    font-size: 28px;
+    _margin: 0;
+    _padding: 0.7em 0 0.3em 0;
+    _font-size: 28px;
     color: black;
-	font-weight: bold;
+	_font-weight: bold;
 	text-rendering: auto;
 }
 
 h2 {
-    margin: 1.3em 0 0.2em 0;
-    font-size: 25px;
-    padding: 0;
+    _margin: 1.3em 0 0.2em 0;
+    _font-size: 25px;
+    _padding: 0;
 	color:#ba2414;
-	font-weight: bold;	
+	_font-weight: bold;	
 	text-rendering: auto;
 }
 
 h3 {
     font-family: 'PT Sans Narrow', 'Arial Narrow', 'arial', sans-serif;
-    margin: 2em 0 0 0;
-    font-size: 22px;
+    _margin: 2em 0 0 0;
+    _font-size: 22px;
 	color: black;
-	font-weight: normal;
+	_font-weight: normal;
 	text-transform: uppercase;	
 	text-rendering: auto;
 }
 
 h4 {
     font-family: 'PT Sans', 'arial', sans-serif;
-    margin: 1.5em 0 0.3em 0;
-    font-size: 19px;
+    _margin: 1.5em 0 0.3em 0;
+    _font-size: 19px;
 	color: #38424b;
-	font-weight: normal;		
+	_font-weight: normal;		
 	text-transform: uppercase;		
 	text-rendering: auto;
 }
