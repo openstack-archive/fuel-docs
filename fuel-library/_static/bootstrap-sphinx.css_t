@@ -5,10 +5,11 @@
 * Sphinx stylesheet -- Twitter Bootstrap theme.
 */
 
+/*
 body {
   padding-top: 52px;
 }
-
+*/
 .navbar .brand {
   color: #FFF;
   text-shadow: #777 2px 2px 3px;
@@ -22,3 +23,482 @@ body {
 }
   {%- endif %}
 {%- endblock %}
+
+
+body {
+  padding-top: 52px;
+    font-family: 'PT Sans', arial, sans-serif;
+    line-height: 150%;
+	font-size: 16px;
+    background: #f5f5f5 url(img/fuel_tile.jpg);
+    color: #41454d;
+    border: none 1px solid #ececec;
+
+    margin: 0;
+    min-width: 740px;
+}
+
+
+div.container {
+border-top-left-radius: 6px;
+border-top-right-radius: 6px;
+border-bottom-left-radius: 6px;
+border-bottom-right-radius: 6px;
+background: white;
+border-top: 1px solid #ddd;
+border-bottom: 1px solid #ddd;
+padding: 0 10px 0 10px;
+list-style: none;
+}
+
+div.mira_header {
+margin: 0 96px;
+height: 60px;
+margin-top: 10px;
+}
+
+a#fuel_logo {
+display: block;
+width: 277px;
+height: 50px;
+background: url(img/FUEL_small.png);
+}
+
+div.mcontainer {margin: 0 80px;     min-width: 960px;}
+div.footer_container {}
+div.header_container {}
+
+div.document {
+    background-color: white;
+    text-align: left;
+    background-repeat: repeat-x;
+}
+
+div.bodywrapper {
+    margin: 0 240px 0 0;
+    border-right: 1px dotted #f0f0f1;
+}
+
+div.body {
+    margin: 0;
+    padding: 0.5em 20px 20px 20px;
+}
+
+div.related {
+    font-size: 1em;
+
+	
+}
+
+div.related ul {
+    background: white;
+	color: #c5cfd8;
+    height: 2em;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+div.rel_top ul {
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
+}
+
+div.rel_bottom ul {
+	border-bottom-left-radius: 6px;
+	border-bottom-right-radius: 6px;
+}
+
+div.related ul li {
+    margin: 0;
+    padding: 0;
+    height: 2em;
+    float: left;
+}
+
+div.related ul li.right {
+    float: right;
+    margin-right: 5px;
+}
+
+div.related ul li a {
+    margin: 0;
+    padding: 0 5px 0 5px;
+    line-height: 1.75em;
+    color: #D32F1A;
+	text-shadow: 1px 1px 0 #fff;
+}
+
+div.related ul li a:hover {
+    color: #f00;
+}
+
+div.sphinxsidebarwrapper {
+    padding: 0;
+}
+
+div.sphinxsidebar {
+	background:#fbfbfc;
+    margin: 0;
+    padding: 15px;
+    width: 210px;
+    float: right;
+    font-size: 1em;
+    text-align: left;
+}
+
+div.sphinxsidebar h3, div.sphinxsidebar h4 {
+    margin: 1.5em 0 0 0;
+    padding: 0.1em 0 0.1em 0;
+
+}
+
+p.topless {
+margin-top: 0.2em;
+}
+
+div.sphinxsidebar h3 a {
+	color: black !important;
+}
+
+div.sphinxsidebar ul li {
+margin-top: 3px;
+margin-bottom: 3px;
+}
+
+div.sphinxsidebar ul li a {
+font-size: 14px;
+}
+
+div.sphinxsidebar ul {
+    margin-top: 7px;
+    padding: 0;
+    line-height: 130%;
+
+}
+
+div.sphinxsidebar ul ul {
+	margin-top: 12px;
+    margin-left: 20px;
+	list-style-image: url(img/bull_white.png);
+}
+
+div.sphinxsidebar ul ul ul {
+	margin-top: 3px;
+	list-style-image: url(img/bull_white_sm.png);
+}
+
+div.sphinxsidebar ul ul ul ul {
+	margin-top: 3px;
+	list-style-image: url(img/bull_white_smlst.png);
+	margin-left: 15px;
+}
+
+
+
+div.sphinxsidebar ul ul ul li {
+line-height: 13px;
+}
+
+div.sphinxsidebar ul ul ul li a {
+font-size: 12px;
+color:#ce4736;
+}
+
+div.sphinxsidebar ul ul ul ul li {
+	margin-top: 4px;
+}
+
+div.sphinxsidebar ul ul ul ul li a {
+font-size: 12px;
+color:#bb6c62;
+}
+
+div.footer {
+	width: 660px;
+	margin: 0 auto;
+	height: 35px;
+    color: #686a72;
+    padding: 15px 8px 10px 0;
+    clear: both;
+    font-size: 15px;
+    text-align: right;
+	text-shadow: 1px 1px 0 #fff;
+    background: url(img/mirantis_small.png) no-repeat center left;
+}
+
+div.footer a {
+    color: #e07e71;
+    text-decoration: none;
+}
+
+div.footer a:hover {
+    color: #b25f54;
+    text-decoration: none;
+}
+
+/* -- body styles ----------------------------------------------------------- */
+
+p {    
+    font-family: 'PT Sans', arial, sans-serif;
+	font-size: 16px;
+    margin: 0.8em 0 0.5em 0;
+}
+
+a {
+    color: #D32F1A;
+    text-decoration: none;
+	text-shadow: 1px 1px 0 #fff;	
+}
+
+a:hover {
+    color: #f00;
+}
+
+div.body a {
+    text-decoration: underline;
+}
+
+ul {
+list-style-image: url(img/bull_red.png);
+}
+
+ul ul {
+list-style-image: url(img/bull_white.png);
+}
+
+ul ul ul {
+list-style-image: url(img/bull_white_sm.png);
+}
+
+
+h1 {
+    font-family: 'PT Sans Narrow', 'Arial Narrow', 'arial', sans-serif;
+    margin: 0;
+    padding: 0.7em 0 0.3em 0;
+    font-size: 28px;
+    color: black;
+	font-weight: bold;
+	text-rendering: auto;
+}
+
+h2 {
+    margin: 1.3em 0 0.2em 0;
+    font-size: 25px;
+    padding: 0;
+	color:#ba2414;
+	font-weight: bold;	
+	text-rendering: auto;
+}
+
+h3 {
+    font-family: 'PT Sans Narrow', 'Arial Narrow', 'arial', sans-serif;
+    margin: 2em 0 0 0;
+    font-size: 22px;
+	color: black;
+	font-weight: normal;
+	text-transform: uppercase;	
+	text-rendering: auto;
+}
+
+h4 {
+    font-family: 'PT Sans', 'arial', sans-serif;
+    margin: 1.5em 0 0.3em 0;
+    font-size: 19px;
+	color: #38424b;
+	font-weight: normal;		
+	text-transform: uppercase;		
+	text-rendering: auto;
+}
+
+div.body h1 a, div.body h2 a, div.body h3 a, div.body h4 a, div.body h5 a, div.body h6 a {
+    text-decoration: none;
+	text-rendering: auto;
+}
+
+div.body h1 a, div.body h3 a {
+    color:black !important;
+}
+
+div.body h2 a {
+    color:#ba2414 !important;
+}
+
+div.body h4 a {
+    color:#38424b !important;
+}
+
+
+
+h1 a.anchor, h2 a.anchor, h3 a.anchor, h4 a.anchor, h5 a.anchor, h6 a.anchor {
+    display: none;
+    margin: 0 0 0 0.3em;
+    padding: 0 0.2em 0 0.2em;
+    color: #aaa!important;
+}
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor,
+h5:hover a.anchor, h6:hover a.anchor {
+    display: inline;
+}
+
+h1 a.anchor:hover, h2 a.anchor:hover, h3 a.anchor:hover, h4 a.anchor:hover,
+h5 a.anchor:hover, h6 a.anchor:hover {
+    color: #777;
+    background-color: #eee;
+}
+
+a.headerlink {
+    color: #c60f0f!important;
+    font-size: 1em;
+    margin-left: 6px;
+    padding: 0 4px 0 4px;
+    text-decoration: none!important;
+}
+
+a.headerlink:hover {
+    background-color: #ccc;
+    color: white!important;
+}
+
+cite, code, tt {
+    font-family: 'Consolas', 'Deja Vu Sans Mono',
+                 'Bitstream Vera Sans Mono', monospace;
+    font-size: 0.95em;
+    letter-spacing: 0.01em;
+}
+
+tt {
+    background-color: #f2f2f2;
+    border-bottom: 1px solid #ddd;
+    color: #333;
+}
+
+tt.descname, tt.descclassname, tt.xref {
+    border: 0;
+}
+
+hr {
+    border: 1px solid #abc;
+    margin: 2em;
+}
+
+a tt {
+    border: 0;
+    color: #CA7900;
+}
+
+a tt:hover {
+    color: #2491CF;
+}
+
+pre {
+    font-family: 'Consolas', 'Deja Vu Sans Mono',
+                 'Bitstream Vera Sans Mono', monospace;
+    font-size: 0.95em;
+    letter-spacing: 0.015em;
+    line-height: 120%;
+    padding: 0.5em;
+	background: #F5F7FA;
+	border: 1px solid #ECEFF3;
+	border-radius: 3px;
+
+}
+
+pre a {
+    color: inherit;
+    text-decoration: underline;
+}
+
+td.linenos pre {
+    padding: 0.5em 0;
+}
+
+div.quotebar {
+    background-color: #f8f8f8;
+    max-width: 250px;
+    float: right;
+    padding: 2px 7px;
+    border: 1px solid #ccc;
+}
+
+div.topic {
+margin-top: 15px;
+padding: 15px;
+border-radius: 6px;
+background: #fbfbfc;
+text-shadow: 1px 1px 0 white;
+-moz-box-shadow: inset 2px 2px 7px #D3D8DD;
+-webkit-box-shadow: inset 2px 2px 7px #D3D8DD;
+box-shadow: inset 2px 2px 7px #D3D8DD;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 0 0.5em 0 0.5em;
+}
+
+table td, table th {
+    padding: 0.2em 0.5em 0.2em 0.5em;
+}
+
+div.admonition, div.warning {
+    font-size: 0.9em;
+    margin: 1em 0 1em 0;
+    border: 1px solid #86989B;
+    background-color: #f7f7f7;
+    padding: 0;
+}
+
+div.admonition p, div.warning p {
+    margin: 0.5em 1em 0.5em 1em;
+    padding: 0;
+}
+
+div.admonition pre, div.warning pre {
+    margin: 0.4em 1em 0.4em 1em;
+}
+
+div.admonition p.admonition-title,
+div.warning p.admonition-title {
+    margin: 0;
+    padding: 0.1em 0 0.1em 0.5em;
+    color: white;
+    border-bottom: 1px solid #86989B;
+    font-weight: bold;
+    background-color: #AFC1C4;
+}
+
+div.warning {
+    border: 1px solid #940000;
+}
+
+div.warning p.admonition-title {
+    background-color: #CF0000;
+    border-bottom-color: #940000;
+}
+
+div.admonition ul, div.admonition ol,
+div.warning ul, div.warning ol {
+    margin: 0.1em 0.5em 0.5em 3em;
+    padding: 0;
+}
+
+div.versioninfo {
+    margin: 1em 0 0 0;
+    border: 1px solid #ccc;
+    background-color: #DDEAF0;
+    padding: 8px;
+    line-height: 1.3em;
+    font-size: 0.9em;
+}
+
+.viewcode-back {
+    font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva',
+                 'Verdana', sans-serif;
+}
+
+div.viewcode-block:target {
+    background-color: #f4debf;
+    border-top: 1px solid #ac9;
+    border-bottom: 1px solid #ac9;
+}

@@ -1,6 +1,6 @@
 {% extends "basic/layout.html" %}
 {% set script_files = script_files + ['_static/bootstrap.js'] %}
-{% set css_files = ['_static/bootstrap.css', '_static/bootstrap-sphinx.css'] + css_files %}
+{% set css_files = ['_static/bootstrap.css', '_static/bootstrap-sphinx.css', 'http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic', 'http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700'] + css_files %}
 
 {# Sidebar: Rework into our Boostrap nav section. #}
 {% macro navBar() %}

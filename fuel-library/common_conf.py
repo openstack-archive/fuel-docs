@@ -97,4 +97,4 @@ pdf_use_numbered_links = False
 # Background images fitting mode
 pdf_fit_background_mode = 'scale'
 
-pdf_font_path = ['C:\\Windows\\Fonts\\', '/usr/share/fonts']
+# pdf_font_path = ['C:\\Windows\\Fonts\\', '/usr/share/fonts']
