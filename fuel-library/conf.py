@@ -191,7 +191,7 @@ latex_elements = {
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'fuel.tex', u'Fuel™ for OpenStack Documentation',
+  ('index', 'fuel.tex', u'Fuel for OpenStack Documentation',
    u'Mirantis', 'manual'),
 ]
 
@@ -235,7 +235,7 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'fuel', u'Fuel™ for OpenStack Documentation',
+  ('index', 'fuel', u'Fuel for OpenStack Documentation',
    u'Mirantis', 'fuel', 'One line description of project.',
    'Miscellaneous'),
 ]
