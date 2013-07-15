@@ -18,8 +18,11 @@
             {% block sidebarrel %}
               {% include "relations.html" %}
             {% endblock %}
+            
             {% block sidebarsourcelink %}
+    	<li class="dropdown">sidebarsourcelink
               {% include "sourcelink.html" %}
+			</li>
             {% endblock %}
           </ul>
           {% block sidebarsearch %}
