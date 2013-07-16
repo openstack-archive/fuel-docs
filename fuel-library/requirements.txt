@@ -1,3 +1,5 @@
+sphinx
+cloud_sptheme
 sphinxcontrib-blockdiag
 rst2pdf
 sphinxcontrib-actdiag

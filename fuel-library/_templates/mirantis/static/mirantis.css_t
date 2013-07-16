@@ -1,0 +1,45 @@
+/*****************************************************
+ * mirantis.css_t
+ * ~~~~~~~~~~~
+ *
+ * stylesheet for "Mirantis" theme for Sphinx.
+ *
+ * :copyright: Copyright 2012 by Assurance Technologies
+ * :license: BSD
+ *
+ *****************************************************/
+
+@import url("cloud.css");
+
+div.highlight pre,
+div.highlight-python pre
+{
+    border-width: 0px 3px;
+
+    border-radius: 6px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+}
+
+div.documentwrapper
+{
+	border-top: 1px solid {{ theme_table_trim_color }};
+	border-bottom: 1px solid {{ theme_table_trim_color }};
+}
+
+div.sidebartoggle button
+{
+   border-top: 1px solid {{ theme_sidebartrimcolor }};
+} 
+
+div.body h2,
+div.body p.rubric,
+div.section.emphasized > h3, /* deprecated in favor of below: */
+div.section.emphasize-children > div.section > h3
+{
+    border-width: 1px 1px 1px 1px;
+}
+div.sphinxsidebar #searchbox input[type="text"] {
+    width: 145px;
+}
+
