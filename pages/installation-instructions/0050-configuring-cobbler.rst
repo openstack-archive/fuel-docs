@@ -3,17 +3,16 @@
 Installing the OS using Fuel
 ----------------------------
 
-The first step in creating the actual OpenStack nodes is to let Fuel's Cobbler kickstart and preseed files assist in the installation of operating systems on the target servers.
-
+The first step to creating OpenStack nodes is to let Fuel's Cobbler kickstart and preseed files assist in the installation of operating systems on the target servers.
 
 .. _Configuring-Cobbler:
 
 Configuring Cobbler with config.yaml
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Fuel uses a single file, ``config.yaml``, to both configure Cobbler and assist in the configuration of the ``site.pp`` file.  This file appears in the ``/root`` directory when the master node (fuel-pm) is provisioned and configured.
+Fuel uses the ``config.yaml`` file to configure Cobbler and assist in the configuration of the ``site.pp`` file.  This file appears in the ``/root`` directory when the master node (fuel-pm) is provisioned and configured.
 
-You'll want to configure this example for your own situation, but the example looks like this::
+You'll want to configure this example to meet your own needs, but the example looks like this::
 
   common:
     orchestrator_common:
@@ -22,7 +21,7 @@ You'll want to configure this example for your own situation, but the example lo
         deployment_engine: simplepuppet
       task_uuid: deployment_task
 
-Possible values for ``deployment_mode`` are ``singlenode_compute``, ``multinode_compute``, ``ha_compute``, ``ha_compact``, ``ha_full``, and ``ha_minimal``.  Change the ``deployment_mode`` to ``ha_compact`` to tell Fuel to use HA architecture.  Specifying the ``simplepuppet`` deployment engine means that the orchestrator will be calling Puppet on each of the nodes.
+Possible values for ``deployment_mode`` are ``singlenode_compute``, ``multinode_compute``, ``ha_compute``, ``ha_compact``, ``ha_full``, and ``ha_minimal``.  For this example, we will set the ``deployment_mode`` to ``ha_compact`` to tell Fuel to use HA architecture.  Specifying the ``simplepuppet`` deployment engine means that the orchestrator will be calling Puppet on each of the nodes.
 
 Next you'll need to set OpenStack's networking information::
 
