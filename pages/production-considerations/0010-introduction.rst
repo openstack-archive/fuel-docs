@@ -1,3 +1,3 @@
-One of the advantages of using Fuel is that it makes it easy to set up an OpenStack cluster so that you can feel your way around and get your feet wet.  You can easily set up a cluster using test, or even virtual machines, but when you're ready to do an actual deployment there are a number of things you need to consider.
+Fuel simplifies the set up of an OpenStack cluster, affording you the ability to dig in and fully understand how OpenStack works. You can deploy on test hardware or in a virtualized environment and root around all you like, but when it comes time to deploy to production there are a few things to take into consideration. 
 
-In this section, you'll find information such as how to size the hardware for your cloud and how to handle large-scale deployments.
+In this section we will talk about such things including how to size your hardware and how to handle large-scale deployments. 

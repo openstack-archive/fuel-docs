@@ -1,23 +1,18 @@
-Redeploying an environment
+Redeploying An Environment
 --------------------------
 
-Because Puppet is additive only, there is no ability to revert changes as you would in a typical application deployment.
-If a change needs to be backed out, you must explicitly add a configuration to reverse it, check this configuration in,
-and promote it to production using the pipeline. This means that if a breaking change did get deployed into production,
-typically a manual fix was applied, with the proper fix subsequently checked into version control.
+Because Puppet is additive only, there is no ability to revert changes as you would in a typical application deployment. If a change needs to be backed out, you must explicitly add a configuration to reverse it, check the configuration in, and promote it to production using the pipeline. This means that if a breaking change does get deployed into production, typically a manual fix is applied, with the proper fix subsequently checked into version control.
 
-Fuel combines the ability to isolate code changes while developing with minimizing the headaches associated
-with maintaining multiple environments serviced by one puppet server by creating environments
-
+Fuel offers the ability to isolate code changes while developing a deployment and minimizes the headaches associated with maintaining multiple configurations through a single Puppet Master by creating what are called environments.
 
 Environments
 ^^^^^^^^^^^^
 
-Puppet supports putting nodes into separate 'environments'. These environments can map cleanly to your development, QA and production life cycles, so it’s a way to hand out different code to different nodes.
+Puppet supports assigning nodes 'environments'. These environments can be mapped directly to your development, QA and production life cycles, so it’s a way to distribute code to nodes that are assigned to those environments.
 
 * On the Master/Server Node
 
-  The Puppet Master tries to find modules using its ``modulepath`` setting, which is typically something like ``/etc/puppet/modules``. You usually just set this value once in your ``/etc/puppet/puppet.conf``.  Environments expand on this idea and give you the ability to use different settings for different environments.
+  The Puppet Master tries to find modules using its ``modulepath`` setting, which by default is ``/etc/puppet/modules``. It is common practice to set this value once in your ``/etc/puppet/puppet.conf``.  Environments expand on this idea and give you the ability to use different settings for different configurations.
 
   For example, you can specify several search paths. The following example dynamically sets the ``modulepath`` so Puppet will check a per-environment folder for a module before serving it from the main set::
 
@@ -47,7 +42,7 @@ Deployment pipeline
 
   In order to deploy multiple environments that don't interfere with each other, you should specify the ``$deployment_id`` option in ``/etc/puppet/manifests/site.pp``.  It should be an even integer value in the range of 2-254.
 
-  This value is used in dynamic environment-based tag generation.  Fuel also apply that tag globally to all resources on each node.  It is also used for the keepalived daemon, which evaluates a unique ``virtual_router_id``.
+  This value is used in dynamic environment-based tag generation.  Fuel applies that tag globally to all resources on each node.  It is also used for the keepalived daemon, which evaluates a unique ``virtual_router_id``.
 
 * Clean/Revert
 
@@ -67,8 +62,7 @@ Deployment pipeline
 
 * Redeploy
 
-  Fire up the puppet agent again to apply a desired node configuration
-
+  Start the puppet agent again to apply a desired node configuration.
 
 Links
 ^^^^^
