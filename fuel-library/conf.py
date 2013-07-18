@@ -47,7 +47,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'Fuel™ for OpenStack'
+project = u'Fuel for OpenStack'
 copyright = u'2013, Mirantis'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -223,7 +223,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'fuel', u'Fuel™ for OpenStack Documentation',
+    ('index', 'fuel', u'Fuel for OpenStack Documentation',
      [u'Mirantis'], 1)
 ]
 
