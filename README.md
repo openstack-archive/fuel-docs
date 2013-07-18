@@ -1,11 +1,10 @@
 FUEL™ for OpenStack Documentation
-===
+=================================
 
 This repository contains the FUEL™ for OpenStack user and administrator guides.
 
 For more details, see the [FUEL™ for OpenStack portal](http://fuel.mirantis.com 
 "FUEL™ for OpenStack portal").
-
 
 Prerequisites
 =============
