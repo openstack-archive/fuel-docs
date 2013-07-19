@@ -16,7 +16,7 @@ As you know, OpenStack provides the following basic services:
    * **Compute**: Compute servers are the workhorses of your installation; they're the servers on which your users' virtual machines are created. `Nova-scheduler` controls the life-cycle of these VMs.
 
 
-   * **Networking**: Because an OpenStack cluster (virtually) always includes multiple servers, the ability for them to communicate with each other and with the outside world is crucial. Networking was originally handled by the `Nova-network` service, but it is slowly giving way to the newer `Quantum` networking service. Authentication and authorization for these transactions are handled by `Keystone`.
+   * **Networking**: Because an OpenStack cluster (virtually) always includes multiple servers, the ability for them to communicate with each other and with the outside world is crucial. Networking was originally handled by the `Nova-network` service, but it has given way to the newer Neutron (formerly Quantum) networking service. Authentication and authorization for these transactions are handled by `Keystone`.
 
 
    * **Storage**: OpenStack provides for two different types of storage: block storage and object storage. Block storage is traditional data storage, with small, fixed-size blocks that are mapped to locations on storage media. At its simplest level, OpenStack provides block storage using `nova-volume`, but it is common to use `Cinder`.
@@ -92,13 +92,13 @@ nodes:
 
 
 
-Multi-node (HA) deployment (Compact Quantum)
+Multi-node (HA) deployment (Compact Neutron)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Another way you can add functionality to your cluster without
 increasing hardware requirements is to install Quantum on your
 controller nodes. This architecture still provides high availability,
-but avoids the need for a separate Quantum node:
+but avoids the need for a separate Neutron node:
 
 
 

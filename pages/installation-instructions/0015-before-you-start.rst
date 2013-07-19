@@ -4,7 +4,7 @@ Before You Start
 
 Before you begin your installation, you will need to make a number of important decisions:
 
-* **OpenStack features.** Your first decision is to decide which of the optional OpenStack features you will need. For example, you must decide whether you want to install Swift, whether you want Glance to use Swift for image storage, whether you want Cinder for block storage, and whether you want nova-network or Quantum to handle your network connectivity. In our example installation we will be installing Glance with Swift support and Cinder for block storage. Also, due to the fact that it can be easily installed using orchestration, we will be using Quantum.
+* **OpenStack features.** Your first decision is to decide which of the optional OpenStack features you will need. For example, you must decide whether you want to install Swift, whether you want Glance to use Swift for image storage, whether you want Cinder for block storage, and whether you want nova-network or Neutron (formerly Quantum) to handle your network connectivity. In our example installation we will be installing Glance with Swift support and Cinder for block storage. Also, due to the fact that it can be easily installed using orchestration, we will be using Neutron.
 
 * **Deployment configuration.** Next, you need to decide whether your deployment requires high availability (HA). If you need HA for your deployment, you have a choice regarding the number of controllers you want to include. Following the recommendations in the previous section for a typical HA deployment configuration, we will use three OpenStack controllers.
 

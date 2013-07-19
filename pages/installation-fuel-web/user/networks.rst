@@ -3,7 +3,7 @@ Understanding and configuring the network
 
 .. contents:: :local:
 
-OpenStack clusters use several types of network managers: FlatDHCP, VlanManager and Quantum.
+OpenStack clusters use several types of network managers: FlatDHCP, VlanManager and Neutron (formerly Quantum).
 The current version of FuelWeb supports only the first two (FlatDHCP and VlanManager), but the FUEL library supports all three.
 For more information about how the first two network managers work, you can read these two resources:
 

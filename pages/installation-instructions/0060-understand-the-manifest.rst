@@ -113,8 +113,8 @@ Next ``site.pp`` defines DNS servers and provides netmasks::
   $internal_netmask = '255.255.255.0'
   $public_netmask = '255.255.255.0'
   ...
-  # Set this to anything other than pacemaker if you do not want Quantum HA
-  # Also, if you do not want Quantum HA, you MUST enable $quantum_network_node
+  # Set this to anything other than pacemaker if you do not want Neutron HA (formerly Quantum HA)
+  # Also, if you do not want Neutron HA, you MUST enable $quantum_network_node
   # only on the controller
   $ha_provider = 'pacemaker'
   $use_unicast_corosync = false
@@ -164,21 +164,20 @@ Finally, you can define the various usernames and passwords for OpenStack servic
 
 Now that the network is configured for the servers, let's look at the various OpenStack services.
 
-
-Enabling Quantum
+Enabling Neutron
 ^^^^^^^^^^^^^^^^
 
-In order to deploy OpenStack with Quantum you need to set up an additional node that will act as an L3 router, or run Quantum out of one of the existing nodes. ::
+In order to deploy OpenStack with Neutron you need to set up an additional node that will act as an L3 router, or run Neutron out of one of the existing nodes. ::
 
   ### NETWORK/QUANTUM ###
   # Specify network/quantum specific settings
 
-  # Should we use quantum or nova-network(deprecated).
+  # Should we use quantum or nova-network (deprecated).
   # Consult OpenStack documentation for differences between them.
   $quantum = true
   $quantum_netnode_on_cnt  = true
 
-In this case, we're using a "compact" architecture, so we want to install Quantum on the controllers::
+In this case, we're using a "compact" architecture, so we want to install Neutron on the controllers::
 
   # Specify network creation criteria:
   # Should puppet automatically create networks?
@@ -193,23 +192,23 @@ In this case, we're using a "compact" architecture, so we want to install Quantu
 OpenStack uses two ranges of IP addresses for virtual machines: fixed IPs, which are used for communication between VMs, and thus are part of the private network, and floating IPs, which are assigned to VMs for the purpose of communicating to and from the Internet. ::
 
   # These parameters are passed to the previously specified network manager , e.g. nova-manage network create.
-  # Not used in Quantum.
+  # Not used in Neutron.
   $num_networks    = 1
   $network_size    = 31
   $vlan_start      = 300
 
-These values don't actually relate to Quantum; they are used by nova-network.  IDs for the VLANs OpenStack will create for tenants run from ``vlan_start`` to (``vlan_start + num_networks - 1``), and are generated automatically. ::
+These values don't actually relate to Neutron; they are used by nova-network.  IDs for the VLANs OpenStack will create for tenants run from ``vlan_start`` to (``vlan_start + num_networks - 1``), and are generated automatically. ::
 
-  # Quantum
+  # Neutron
 
   # Segmentation type for isolating traffic between tenants
-  # Consult Openstack Quantum docs 
+  # Consult Openstack Neutron docs 
   $tenant_network_type     = 'gre'
 
   # Which IP address will be used for creating GRE tunnels.
   $quantum_gre_bind_addr = $internal_address
 
-If you are installing Quantum in non-HA mode, you will need to specify which single controller controls Quantum. :: 
+If you are installing Neutron in non-HA mode, you will need to specify which single controller controls Neutron. :: 
 
   # If $external_ipinfo option is not defined, the addresses will be allocated automatically from $floating_range:
   # the first address will be defined as an external default router,
@@ -222,7 +221,7 @@ If you are installing Quantum in non-HA mode, you will need to specify which sin
 	 'ext_bridge' => '0.0.0.0'
   }
 
-  # Quantum segmentation range.
+  # Neutron segmentation range.
   # For VLAN networks: valid VLAN VIDs can be 1 through 4094.
   # For GRE networks: Valid tunnel IDs can be any 32-bit unsigned integer.
   $segment_range = '900:999'
@@ -234,7 +233,7 @@ If you are installing Quantum in non-HA mode, you will need to specify which sin
   # Assign floating IPs to VMs on startup automatically?
   $auto_assign_floating_ip = false
 
-  # Database connection for Quantum configuration (quantum.conf)
+  # Database connection for Neutron configuration (quantum.conf)
   $quantum_sql_connection  = "mysql://${quantum_db_user}:${quantum_db_password}@${$internal_virtual_ip}/{quantum_db_dbname}"
 
   if $quantum {
@@ -245,9 +244,9 @@ If you are installing Quantum in non-HA mode, you will need to specify which sin
     $internal_int = $internal_interface
   }
 
-If the system is set up to use Quantum, the public and internal interfaces are set to use the appropriate bridges, rather than the defined interfaces.
+If the system is set up to use Neutron, the public and internal interfaces are set to use the appropriate bridges, rather than the defined interfaces.
 
-The remaining configuration is used to define classes that will be added to each Quantum node::
+The remaining configuration is used to define classes that will be added to each Neutron node::
 
   #Network configuration
   stage {'netconfig':
@@ -295,7 +294,7 @@ The remaining configuration is used to define classes that will be added to each
   }
   ### NETWORK/QUANTUM END ###
 
-All of this assumes, of course, that you're using Quantum; if you're using nova-network instead, only these values apply.
+All of this assumes, of course, that you're using Neutron; if you're using nova-network instead, only these values apply.
 
 Defining the current cluster
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^

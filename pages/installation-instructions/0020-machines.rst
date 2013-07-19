@@ -65,7 +65,7 @@ The hardware necessary for an installation depends on the choices you have made 
     * 2048+ MB of RAM
     * 1+ TB of HDD
 
-If you choose to deploy Quantum on a separate node, you will need an additional server with specifications comparable to the controller nodes.
+If you choose to deploy Neutron (formerly Quantum) on a separate node, you will need an additional server with specifications comparable to the controller nodes.
 
 Make sure your hardware is capable of PXE booting over the network from Cobbler. You'll also need each server's mac addresses.
 

@@ -48,14 +48,14 @@ Later, we'll set up a new partition for Cinder, so tell Cobbler to create it her
      pool_start: 192.168.0.110
      pool_end: 192.168.0.126
 
-Set the ``public_net_router`` to point to the real router at the public network.  The ``ext_bridge`` is the IP of the Quantum bridge. It should assigned to any available free IP on the public network that's outside the floating range.  You also have the option to simply set it to ``0.0.0.0``.  The ``pool_start`` and ``pool_end`` values represent the public addresses of your nodes, and should be within the ``floating_range``. ::
+Set the ``public_net_router`` to point to the real router at the public network.  The ``ext_bridge`` is the IP of the Neutron (formerly Quantum) bridge. It should assigned to any available free IP on the public network that's outside the floating range.  You also have the option to simply set it to ``0.0.0.0``.  The ``pool_start`` and ``pool_end`` values represent the public addresses of your nodes, and should be within the ``floating_range``. ::
 
    segment_range: 900:999
    network_manager: nova.network.manager.FlatDHCPManager
    auto_assign_floating_ip: true
    quantum_netnode_on_cnt: true   
 
-Fuel provides two choices for your network manager: FlatDHCPManager, and VlanManager.  By default, the system uses FlatDHCPManager.  Here you can see that we're also telling OpenStack to automatically assing a floating IP to an instance when it's created, and to put the Quantum services on the controllers rather than a sepearate node.You can also choose ``tenant_network_type`` for network segmentation type and  segmentation range ``segment_range``  for network (consult Quantum documentation for details). ::
+Fuel provides two choices for your network manager: FlatDHCPManager, and VlanManager.  By default, the system uses FlatDHCPManager.  Here you can see that we're also telling OpenStack to automatically assing a floating IP to an instance when it's created, and to put the Neutron services on the controllers rather than a sepearate node.You can also choose ``tenant_network_type`` for network segmentation type and  segmentation range ``segment_range``  for network (consult Neutron documentation for details). ::
 
    use_syslog: false
    syslog_server: 127.0.0.1

@@ -72,7 +72,7 @@ When running Puppet manually, the exact sequence depends on the configuration go
     * Sequentially run a deployment pass on every SwiftProxy node (``fuel-swiftproxy-01 ... fuel-swiftproxy-xx``), starting with the ``primary-swift-proxy node``. Node names are set by the ``$swift_proxies`` variable in ``site.pp``. There are 2 Swift Proxies by default.
     * Sequentially run a deployment pass on every storage node (``fuel-swift-01`` ... ``fuel-swift-xx``). 
     * Sequentially run a deployment pass on the controller nodes (``fuel-controller-01 ... fuel-controller-xx``). starting with the ``primary-controller`` node.
-    * Run a deployment pass on the Quantum node (``fuel-quantum``) to install the Quantum router.
+    * Run a deployment pass on the Neutron (formerly Quantum) node (``fuel-quantum``) to install the Neutron router.
     * Run a deployment pass on every compute node (``fuel-compute-01 ... fuel-compute-xx``) - unlike the controllers, these nodes may be deployed in parallel.
     * Run an additional deployment pass on Controller 1 only (``fuel-controller-01``) to finalize the Galera cluster configuration.
 
@@ -81,14 +81,14 @@ When running Puppet manually, the exact sequence depends on the configuration go
     * Create the necessary volumes on controller nodes as described in :ref:`create-the-XFS-partition`
     * Sequentially run a deployment pass on the controller nodes (``fuel-controller-01 ... fuel-controller-xx``), starting with the ``primary-controller node``. Errors in Swift storage such as */Stage[main]/Swift::Storage::Container/Ring_container_device[<device address>]: Could not evaluate: Device not found check device on <device address>* are expected during the deployment passes until the very final pass.
     * Run an additional deployment pass on Controller 1 only (``fuel-controller-01``) to finalize the Galera cluster configuration.
-    * Run a deployment pass on the Quantum node (``fuel-quantum``) to install the Quantum router.
+    * Run a deployment pass on the Neutron node (``fuel-quantum``) to install the Neutron router.
     * Run a deployment pass on every compute node (``fuel-compute-01 ... fuel-compute-xx``) - unlike the controllers these nodes may be deployed in parallel.
 
   **Example 3:** **OpenStack HA installation without Swift**
 
     * Sequentially run a deployment pass on the controller nodes (``fuel-controller-01 ... fuel-controller-xx``), starting with the primary controller. No errors should appear during this deployment pass.
     * Run an additional deployment pass on the primary controller only (``fuel-controller-01``) to finalize the Galera cluster configuration.
-    * Run a deployment pass on the Quantum node (``fuel-quantum``) to install the Quantum router.
+    * Run a deployment pass on the Neutron node (``fuel-quantum``) to install the Neutron router.
     * Run a deployment pass on every compute node (``fuel-compute-01 ... fuel-compute-xx``) - unlike the controllers these nodes may be deployed in parallel.
 
   **Example 4:** **The simplest OpenStack installation: Controller + Compute on the same node**

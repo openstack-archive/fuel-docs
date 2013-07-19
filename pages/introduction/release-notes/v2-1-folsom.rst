@@ -4,8 +4,8 @@ v2.1-folsom
 
 * Features
 
-  * Support deploying Quantum on controller nodes, as well as on a dedicated networking node
-  * Active/Standby HA for Quantum with Pacemaker when Quantum is deployed on controller nodes
+  * Support deploying Neutron (formerly Quantum) on controller nodes, as well as on a dedicated networking node
+  * Active/Standby HA for Neutron with Pacemaker when Neutron is deployed on controller nodes
   * Logging: an option to send OpenStack logs to local and remote locations through syslog
   * Monitoring: deployment of Nagios, health checks for infrastructure components (OpenStack API, MySQL, RabbitMQ)
   * Installation of Puppet Master & Cobbler Server node from ISO
