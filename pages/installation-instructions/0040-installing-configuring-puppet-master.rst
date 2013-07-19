@@ -1,6 +1,6 @@
-
 Installing & Configuring Fuel
 -----------------------------
+
 Having planned your test or production deployment and have determined the resources you will be using, it's time to begin putting the pieces together. To do that, you'll need to create the Puppet master and Cobbler servers, which will actually provision and configure your OpenStack nodes.
 
 Installing the Puppet Master is a one-time procedure for the entire infrastructure. Once done, Puppet Master will act as a single point of management for all of your servers, and you will never have to return to these installation steps again.

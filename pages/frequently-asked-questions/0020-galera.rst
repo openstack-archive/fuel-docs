@@ -1,4 +1,3 @@
-
 Galera cluster has no built-in restart or shutdown mechanism
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -6,28 +5,15 @@ Galera cluster has no built-in restart or shutdown mechanism
 A Galera cluster cannot be simply started or stopped. It is designed to work continuously.
 
 **Workaround:**
-
-Galera, as high availability software, does not include any built-in full cluster shutdown or restart sequence. It is supposed to be running on a 24/7/365 basis. 
-
-On the other hand, deploying, updating or restarting Galera may lead to different issues. 
-This guide is intended to help avoid some of these issues.
-
-Regular Galera cluster startup includes a combination of the procedures described below. 
-These procedures, with some differences, are performed by Fuel manifests.
+Galera, as high availability software, does not include any built-in full cluster shutdown or restart sequence. It is supposed to be running on a 24/7/365 basis. On the other hand, deploying, updating or restarting Galera may lead to different issues. This guide is intended to help avoid some of these issues. Regular Galera cluster startup includes a combination of the procedures described below. These procedures, with some differences, are performed by Fuel manifests.
  
-
 **Stopping a single Galera node**
+There is no dedicated Galera process - Galera works inside the MySQL server process. The MySQL server should be patched with Galera WSREP patch to be able to work as Galera cluster.
 
-There is no dedicated Galera process - Galera works inside the MySQL server process. The
-MySQL server should be patched with Galera WSREP patch to be able to work as Galera cluster.
-
-All Galera stop steps listed below are automatically performed by the mysql init script 
-supplied by Fuel installation manifests, so in most cases it should be enough to perform the first step only. 
-In case even init script fails in some (rare, as we hope) circumstances, repeat step 2 manually.
+All Galera stop steps listed below are automatically performed by the mysql init script supplied by Fuel installation manifests, so in most cases it should be enough to perform the first step only. In case even init script fails in some (rare, as we hope) circumstances, repeat step 2 manually.
 
 #. Run ``service mysql stop``.
      Wait 15-30 seconds to ensure all MySQL processes are shut down.
-
 
 #. Run ``ps -ef | grep mysql`` and stop ALL(!) **mysqld** and **mysqld_safe** processes.
      * Wait 20 seconds and run ``ps -ef | grep mysql`` again to see if any mysqld processes have restarted. 
@@ -37,9 +23,7 @@ In case even init script fails in some (rare, as we hope) circumstances, repeat 
 
 If there was nothing to kill and all MySQL processes stopped after the ``service mysql stop`` command, the node may be considered shut down gracefully.
   
-
 **Stop the Galera cluster**
-
 A Galera cluster is a master-master replication cluster. Therefore, it is always in the process of synchronization.
 
 The recommended way to stop the cluster involves the following steps:
@@ -69,17 +53,12 @@ Repeat these instructions for each remaining node in the cluster.
 
 Remember which node you are going to shut down last -- ideally, it should be the primary node in the synced state. This is the node you should start first when you decide to continue cluster operation.
  
-
 **Starting Galera and creating a new cluster**
+Galera writes its state to file the file ``grastate.dat``, residing in the location specified in the ``wsrep_data_home_dir`` variable.  This variable defaults to ``mysql_real_data_home``, and Fuel OpenStack deployment manifests use this default location, creating the file at ``/var/lib/mysql/grastate.dat``.
 
-Galera writes its state to file the file ``grastate.dat``, residing in the location specified in the 
-``wsrep_data_home_dir`` variable.  This variable defaults to ``mysql_real_data_home``, and Fuel OpenStack deployment manifests use this default location, creating the file at ``/var/lib/mysql/grastate.dat``.
+In the case of an unexpected cluster shutdown, this file can be useful for finding the node with the most recent commit. Simply compare the "UUID" values of ``grastat.dat`` from every node. The greater "UUID" value indicates which node has the latest commit.
 
-In the case of an unexpected cluster shutdown, this file can be useful for finding the node with the most recent commit.
-Simply compare the "UUID" values of ``grastat.dat`` from every node. The greater "UUID" value indicates which node has the latest commit.
-
-If the cluster was shut down gracefully and last shut down node is known, simply perform the steps below to start up the cluster. Alternatively, you can find the node with the most recent commit using the ``grastat.dat`` files 
-and start the cluster operation from that node.
+If the cluster was shut down gracefully and last shut down node is known, simply perform the steps below to start up the cluster. Alternatively, you can find the node with the most recent commit using the ``grastat.dat`` files and start the cluster operation from that node.
 
 #.  Ensure that all Galera nodes are shut down.
 
@@ -149,60 +128,37 @@ and start the cluster operation from that node.
     * ``wsrep_incoming_addresses`` should include the addresses of both started nodes.
  
     **Note:** 
-    State transfer is a heavy operation not only on the joining node, but also on the donor. 
-    In particular, the state donor may be not able to serve client requests, or it just plain may be slow.
+    State transfer is a heavy operation not only on the joining node, but also on the donor. In particular, the state donor may be not able to serve client requests, or it just plain may be slow.
 
 
 #.  Repeat step 4 on all remaining controllers
 
-    If all secondary controllers are started successfully and became synced and you do not plan to restart the cluster 
-    in the near future, it is strongly recommended that you change the ``wsrep`` configuration settings on the first controller.
+    If all secondary controllers are started successfully and became synced and you do not plan to restart the cluster in the near future, it is strongly recommended that you change the ``wsrep`` configuration settings on the first controller.
  
     * Open file ``/etc/mysql/conf.d/wsrep.cnf``.
     * Set ``wsrep_cluster_address=`` to the same value (node list) that is used for every secondary controller.
 
-    In case of OpenStack deployed by Fuel manifests with default settings (2 controllers), 
-    on every operating controller this parameter should finally look like 
+    In case of OpenStack deployed by Fuel manifests with default settings (2 controllers), on every operating controller this parameter should finally look like 
 
     ``wsrep_cluster_address="gcomm://fuel-controller-01:4567,fuel-controller-02:4567"`` 
 
-    This step is important for future failures or maintenance procedures.
-    If the Galera primary controller node is restarted for any reason, if it has the empty "gcomm" value 
-    (i.e. ``wsrep_cluster_address="gcomm://"``), it creates a new cluster and exits the existing cluster. 
-    The existing cluster nodes may also stop receiving requests and the synchronization process to prevent data 
-    de-synchronization issues.
-  
+    This step is important for future failures or maintenance procedures. If the Galera primary controller node is restarted for any reason, if it has the empty "gcomm" value (i.e. ``wsrep_cluster_address="gcomm://"``), it creates a new cluster and exits the existing cluster. The existing cluster nodes may also stop receiving requests and the synchronization process to prevent data de-synchronization issues.
 
 **Note:**
  
-Starting wtih mysql version 5.5.28_wsrep23.7 (Galera version 2.2), Galera cluster supports an additional start mode. 
-Instead of setting ``wsrep_cluster_address="gcomm://"``, on the first node one can set the following URL 
-for cluster address::
+Starting wtih mysql version 5.5.28_wsrep23.7 (Galera version 2.2), Galera cluster supports an additional start mode. Instead of setting ``wsrep_cluster_address="gcomm://"``, on the first node one can set the following URL for cluster address::
 
     wsrep_cluster_address="gcomm://node1,node2:port2,node3?pc.wait_prim=yes"
 
 where ``nodeX`` is the name or IP address of one of available nodes, with optional port.
 
-Therefore, every Galera node may have the same configuration file with the list of all nodes. 
-It is designed to eliminate all configuration file changes on the first node after the cluster is started.
+Therefore, every Galera node may have the same configuration file with the list of all nodes. It is designed to eliminate all configuration file changes on the first node after the cluster is started.
 
-After the nodes are started, with mysql one may set the ``pc.bootstrap=1`` flag to the node 
-which should start the new cluster and become the primary node.
-All other nodes should automatically perform initial synchronization with this new primary node. 
-This flag may be also provided for a single selected node via the ``wsrep.cnf`` configuration file as follows::
+After the nodes are started, with mysql one may set the ``pc.bootstrap=1`` flag to the node which should start the new cluster and become the primary node. All other nodes should automatically perform initial synchronization with this new primary node. This flag may be also provided for a single selected node via the ``wsrep.cnf`` configuration file as follows::
 
    wsrep_cluster_address="gcomm://node1,node2:port2,node3?pc.wait_prim=yes&pc.bootstrap=1"
 
-Unfortunately, due to a bug in the mysql init script (<https://bugs.launchpad.net/codership-mysql/+bug/1087368>), 
-the bootstrap flag is completely ignored in Galera 2.2 (wsrep_2.7). So, to start a new cluster, one should use 
-the old way with an empty ``gcomm://`` URL.
-All other nodes may have both the single node and multiple node list in the ``gcomm`` URL, 
-the bug affects only the first node - the one that starts the new cluster.
-Please note also that nodes with non-empty ``gcomm`` URL may start only if at least one of the nodes 
-listed in ``gcomm://node1,node2:port2,node3`` is already started and is available for initial synchronization.
-For every starting Galera node it is enough to have at least one working node name/address to get full 
-information about the cluster structure and to perform initial synchronization.
-Fuel deployment manifests with default settings may or may not set::
+Unfortunately, due to a bug in the mysql init script (<https://bugs.launchpad.net/codership-mysql/+bug/1087368>), the bootstrap flag is completely ignored in Galera 2.2 (wsrep_2.7). So, to start a new cluster, one should use the old way with an empty ``gcomm://`` URL. All other nodes may have both the single node and multiple node list in the ``gcomm`` URL, the bug affects only the first node - the one that starts the new cluster. Please note also that nodes with non-empty ``gcomm`` URL may start only if at least one of the nodes listed in ``gcomm://node1,node2:port2,node3`` is already started and is available for initial synchronization. For every starting Galera node it is enough to have at least one working node name/address to get full information about the cluster structure and to perform initial synchronization. Fuel deployment manifests with default settings may or may not set::
 
    wsrep_cluster_address="gcomm://"
 
@@ -215,26 +171,16 @@ on every secondary controller. Therefore, it is a good idea to check these param
 
 **Note:** 
 
-A Galera cluster is a very democratic system. As it is a master-master cluster, 
-every primary node equals to other primary nodes.
-Primary nodes with the same sync state (same ``wsrep_cluster_state_uuid`` value) form the so called quorum - 
-the majority of primary nodes with the same ``wsrep_cluster_state_uuid``.
-Normally, one of the controllers gets a new commit, increases its ``wsrep_cluster_state_uuid`` value 
-and performs synchronization with other nodes.
-If one of primary controllers fails, the Galera cluster continues serving requests as long as the quorum exists.
-Exit of the primary controller from the cluster equals a failure, because after exit this controller 
-has a new cluster ID and a ``wsrep_cluster_state_uuid`` value less than the same value on the working nodes.
-So 3 working primary controllers are the very minimal Galera cluster size. The recommended Galera cluster size is 
-6 controllers.
+A Galera cluster is a very democratic system. As it is a master-master cluster, every primary node equals to other primary nodes. Primary nodes with the same sync state (same ``wsrep_cluster_state_uuid`` value) form the so called quorum - the majority of primary nodes with the same ``wsrep_cluster_state_uuid``. Normally, one of the controllers gets a new commit, increases its ``wsrep_cluster_state_uuid`` value and performs synchronization with other nodes. If one of primary controllers fails, the Galera cluster continues serving requests as long as the quorum exists. Exit of the primary controller from the cluster equals a failure, because after exit this controller has a new cluster ID and a ``wsrep_cluster_state_uuid`` value less than the same value on the working nodes. So 3 working primary controllers are the very minimal Galera cluster size. The recommended Galera cluster size is 6 controllers.
 
-Fuel deployment manifests with default settings deploy a non-recommended Galera configuration 
-with 2 controllers only. This is suitable for testing purposes, but not for production deployments.
+Fuel deployment manifests with default settings deploy a non-recommended Galera configuration with 2 controllers only. This is suitable for testing purposes, but not for production deployments.
 
 
 **Restarting an existing cluster after failure**
 
 Continuing a Galera cluster after a power failure or other types of breakdown basically consists of two steps: 
-backing up every node and finding the node with the most recent non-damaged replica.
+  * Backing up every node
+  * Finding the node with the most recent non-damaged replica.
 
 * Helpful tip: add ``wsrep_provider_options="wsrep_on = off;"`` to the ``/etc/mysql/conf.d/wsrep.cnf`` configuration file.
 

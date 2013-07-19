@@ -1,29 +1,20 @@
-
-RabbitMQ
-^^^^^^^^
-
-**Difficulty restarting RabbitMQ after a total failure**
-
+RabbitMQ Cluster Restart Issues Following A Systemwide Failure
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Issue:** 
-In general, all RabbitMQ nodes must not be shut down simultaneously. RabbitMQ requires
-that after a full shutdown of the cluster, the first node brought up should
-be the last one to shut down, but it's not always possible to know which node that is, or even to ensure a clean shutdown.  Version 2.1 of Fuel solves this problem by managing the restart of
-available nodes, so you should not experience difficulty with this issue.
+As a rule of thumb, all RabbitMQ nodes must not be shut down simultaneously. RabbitMQ requires that after a full shutdown of the cluster, the first node brought up should be the last one to shut down, but it's not always possible to know which node that is in the event of a power outage or similar event.  Versions 2.1 and later of Fuel solve this problem by managing the restart of available nodes, so you should not experience difficulty with this issue.
 
-If, however, you are still using previous versions of Fuel, here is how Fuel 2.1 works around this problem in case you need to do it yourself.
+If you are still using previous versions of Fuel, the following describes how Fuel 2.1 works around this problem which, in turn, you can use to perform the steps manually.
 
 **Workaround:** 
 There are 2 possible scenarios, depending on the results of the shutdown:
 
-    #. The RabbitMQ master node is alive and can be started.
-    #. It's impossible to start the RabbitMQ master node due to a hardware or system failure
+	#. The RabbitMQ master node is alive and can be started.
+	#. It's impossible to start the RabbitMQ master node due to a hardware or system failure
 
-Fuel 2.1 updates the ``/etc/init.d/rabbitmq-server`` init scripts for RHEL/Centos and Ubuntu to customized versions. These scripts attempt to start RabbitMQ twice, giving the RabbitMQ master node the necessary time to start after complete power loss. 
+Fuel 2.1 updates the ``/etc/init.d/rabbitmq-server`` init scripts for RHEL/Centos and Ubuntu to customized versions. These scripts attempt to start RabbitMQ twice, giving the RabbitMQ master node the necessary time to start after complete power loss. With the scripts in place, power up all nodes, then check to see whether the RabbitMQ server started on all nodes. All nodes should start automatically.
 
-With the scripts in place, power up all nodes, then check to see whether the RabbitMQ server started on all nodes. All nodes should start automatically.
-
-On the other hand, if the RabbitMQ master node has failed, the init script performs the following actions during the rabbitmq-server start. It moves the existing Mnesia database to a backup directory, and then makes a third and last attempt to start the RabbitMQ server.  In this case, RabbitMQ starts with clean database, and the live rabbit nodes assemble a new cluster. The script uses the current RabbitMQ settings to find the current Mnesia location and creates a backup directory in the same path as Mnesia, tagged with the current date.
+On the other hand, if the RabbitMQ master node has failed, the init script performs the following actions during the rabbitmq-server start. It moves the existing Mnesia database to a backup directory, and then makes the third and final attempt to start the RabbitMQ server.  In this case, RabbitMQ starts with a clean database, and the live rabbit nodes assemble a new cluster. The script uses the current RabbitMQ settings to find the current Mnesia location and creates a backup directory in the same path as Mnesia, tagged with the current date.
 
 So with the customized init scripts included in Fuel 2.1, in most cases RabbitMQ simply starts after complete power loss and automatically assembles the cluster, but you can manage the process yourself.
 

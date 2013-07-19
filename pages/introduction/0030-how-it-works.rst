@@ -1,5 +1,6 @@
 How Fuel Works
 --------------
+
 Fuel works on a simple premise. Rather than installing each of the myriad components that make up OpenStack directly, you instead use a configuration management system like Puppet to create scripts that can provide a configurable, reproducible, sharable installation process.
 
 In practice, that means that the process of using Fuel Library looks like this:

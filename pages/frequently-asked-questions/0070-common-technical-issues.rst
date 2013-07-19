@@ -1,4 +1,3 @@
-
 .. _common-technical-issues:
 
 Common Technical Issues
@@ -12,6 +11,7 @@ Common Technical Issues
   * Workaround: ``service puppetmaster restart``
 
 2. Puppet client will never resend the certificate to Puppet Master. The certificate cannot be signed and verified.
+    
     * This is a Puppet bug.  See: http://projects.puppetlabs.com/issues/4680
     * Workaround:
         * On Puppet client::
@@ -23,7 +23,7 @@ Common Technical Issues
 
             rm -f /var/lib/puppet/ssl/ca/requests/\*.pem
 
-#. The manifests are up-to-date under ``/etc/puppet/manifests``, but Puppet master keeps serving the previous version of manifests to the clients. Manifests seem to be cached by Puppet master.
+#. The manifests are up-to-date under ``/etc/puppet/manifests``, but Puppet master keeps serving the previous version of manifests to the clients. Manifests seem to be cached by the Puppet Master.
 
     * More information: https://groups.google.com/forum/?fromgroups=#!topic/puppet-users/OpCBjV1nR2M
     * Workaround: ``service puppetmaster restart``
@@ -69,22 +69,14 @@ Common Technical Issues
 
    Be sure to list all aliases for the machine in that file.
 
-
-
-
 .. _create-the-XFS-partition:
 
 Creating the XFS partition
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In most casts, Fuel creates the XFS partition for you.  If for some reason you need to create it yourself, use this procedure:
-
-
+In most cases, Fuel creates the XFS partition for you.  If for some reason you need to create it yourself, use this procedure:
 
 #. Create the partition itself::
-
-
-
 
     fdisk /dev/sdb
     n(for new)
@@ -93,43 +85,24 @@ In most casts, Fuel creates the XFS partition for you.  If for some reason you n
     <enter> (to accept the defaults)
     w(to save changes)
 
-
-
-
 #. Initialize the XFS partition::
-
-
-
 
     mkfs.xfs -i size=1024 -f /dev/sdb1
 
-
-
-
 #. For a standard swift install, all data drives are mounted directly under /srv/node, so first create the mount point::
-
-
-
 
     mkdir -p /srv/node/sdb1
 
-
-
-
 #. Finally, add the new partition to fstab so it mounts automatically, then mount all current partitions::
-
-
-
 
     echo "/dev/sdb1 /srv/node/sdb1 xfs
     noatime,nodiratime,nobarrier,logbufs=8 0 0" >> /etc/fstab
     mount -a
 
-
 Redeploying a node from scratch
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Compute and Cinder nodes in an HA configuration and controller in any configuration cannot be redeployed without completely redeploying the cluster.  However, in a non-HA situation you can redeploy a compute or Cinder node.  Simply follow these steps:
+Compute and Cinder nodes in an HA configuration and controller in any configuration cannot be redeployed without completely redeploying the cluster.  However, in a non-HA situation you can redeploy a compute or Cinder node.  To do so, follow these steps:
 
 #. Remove the certificate for the node by executing the command ``puppet cert clean <hostname>`` on fuel-pm.
 #. Re-boot the node over the network so it can be picked up by cobbler.
