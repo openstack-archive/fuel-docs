@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Logical Setup &mdash; Fuel for OpenStack 3.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="Fuel for OpenStack 3.0 documentation" href="../../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li><a href="../../index.html">Fuel for OpenStack 3.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Logical Setup</a><ul>
+<li><a class="reference internal" href="#controller-nodes">Controller Nodes</a></li>
+<li><a class="reference internal" href="#compute-nodes">Compute Nodes</a></li>
+<li><a class="reference internal" href="#storage-nodes">Storage Nodes</a></li>
+</ul>
+</li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../_sources/pages/reference-architecture/0020-logical-setup.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="logical-setup">
+<h1>Logical Setup<a class="headerlink" href="#logical-setup" title="Permalink to this headline">¶</a></h1>
+<p>An OpenStack HA cluster involves, at a minimum, three types of nodes:
+controller nodes, compute nodes, and storage nodes.</p>
+<div class="section" id="controller-nodes">
+<h2>Controller Nodes<a class="headerlink" href="#controller-nodes" title="Permalink to this headline">¶</a></h2>
+<p>The first order of business in achieving high availability (HA) is
+redundancy, so the first step is to provide multiple controller nodes.
+You must keep in mind, however, that the database uses Galera to
+achieve HA, and Galera is a quorum-based system. That means that you must provide at least 3
+controller nodes.</p>
+<img alt="https://docs.google.com/drawings/pub?id=1aftE8Yes7CdVSZgZD1A82T_2GqL2SMImtRYU914IMyQ&amp;w=869&amp;h=855" src="https://docs.google.com/drawings/pub?id=1aftE8Yes7CdVSZgZD1A82T_2GqL2SMImtRYU914IMyQ&amp;w=869&amp;h=855" />
+<p>Every OpenStack controller runs keepalived, which manages a single
+Virtual IP (VIP) for all controller nodes, and HAProxy, which manages
+HTTP and TCP load balancing of requests going to OpenStack API
+services, RabbitMQ, and MySQL.</p>
+<p>When an end user accesses the OpenStack cloud using Horizon or makes a
+request to the REST API for services such as nova-api, glance-api,
+keystone-api, quantum-api, nova-scheduler, MySQL or RabbitMQ, the
+request goes to the live controller node currently holding the VIP,
+and the connection gets terminated by HAProxy. When the next request
+comes in, HAProxy handles it, and may send it to the original
+controller or another in the cluster, depending on load conditions.</p>
+<p>Each of the services housed on the controller nodes has its own
+mechanism for achieving HA:</p>
+<ul class="simple">
+<li>nova-api, glance-api, keystone-api, quantum-api and nova-scheduler are stateless services that do not require any special attention besides load balancing.</li>
+<li>Horizon, as a typical web application, requires sticky sessions to be enabled at the load balancer.</li>
+<li>RabbitMQ provides active/active high availability using mirrored queues.</li>
+<li>MySQL high availability is achieved through Galera active/active multi-master deployment.</li>
+</ul>
+</div>
+<div class="section" id="compute-nodes">
+<h2>Compute Nodes<a class="headerlink" href="#compute-nodes" title="Permalink to this headline">¶</a></h2>
+<p>OpenStack compute nodes are, in many ways, the foundation of your
+cluster; they are the servers on which your users will create their
+Virtual Machines (VMs) and host their applications. Compute nodes need
+to talk to controller nodes and reach out to essential services such
+as RabbitMQ and MySQL. They use the same approach that provides
+redundancy to the end-users of Horizon and REST APIs, reaching out to
+controller nodes using the VIP and going through HAProxy.</p>
+<img alt="https://docs.google.com/drawings/pub?id=16gsjc81Ptb5SL090XYAN8Kunrxfg6lScNCo3aReqdJI&amp;w=873&amp;h=801" src="https://docs.google.com/drawings/pub?id=16gsjc81Ptb5SL090XYAN8Kunrxfg6lScNCo3aReqdJI&amp;w=873&amp;h=801" />
+</div>
+<div class="section" id="storage-nodes">
+<h2>Storage Nodes<a class="headerlink" href="#storage-nodes" title="Permalink to this headline">¶</a></h2>
+<p>In this OpenStack cluster reference architecture, shared storage acts
+as a backend for Glance, so that multiple Glance instances running on
+controller nodes can store images and retrieve images from it. To
+achieve this, you are going to deploy Swift. This enables you to use
+it not only for storing VM images, but also for any other objects such
+as user files.</p>
+<img alt="https://docs.google.com/drawings/pub?id=1Xd70yy7h5Jq2oBJ12fjnPWP8eNsWilC-ES1ZVTFo0m8&amp;w=777&amp;h=778" src="https://docs.google.com/drawings/pub?id=1Xd70yy7h5Jq2oBJ12fjnPWP8eNsWilC-ES1ZVTFo0m8&amp;w=777&amp;h=778" />
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li><a href="../../index.html">Fuel for OpenStack 3.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Mirantis.
+      Last updated on 2013/07/22.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+    </div>
+  </body>
+</html>

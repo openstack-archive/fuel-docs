@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Generating the Puppet Manifest &mdash; Fuel for OpenStack 3.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="Fuel for OpenStack 3.0 documentation" href="../../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li><a href="../../index.html">Fuel for OpenStack 3.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../_sources/pages/installation-instructions/0057-prepare-for-deployment.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="generating-the-puppet-manifest">
+<h1>Generating the Puppet Manifest<a class="headerlink" href="#generating-the-puppet-manifest" title="Permalink to this headline">¶</a></h1>
+<p>Before you can deploy OpenStack, you will need to configure the site.pp file. Previous versions of Fuel required you to manually configure <tt class="docutils literal"><span class="pre">site.pp</span></tt>. Version 3.1 includes the <tt class="docutils literal"><span class="pre">openstack_system</span></tt> script, which uses the <tt class="docutils literal"><span class="pre">config.yaml</span></tt> file and reference architecture templates to create the appropriate Puppet manifest.  To create <tt class="docutils literal"><span class="pre">site.pp</span></tt>, execute this command:</p>
+<div class="highlight-python"><pre>openstack_system -c config.yaml \
+  -t /etc/puppet/modules/openstack/examples/site_openstack_ha_compact.pp \
+  -o /etc/puppet/manifests/site.pp \
+  -a astute.yaml</pre>
+</div>
+<p>The four parameters in the command above are:</p>
+<blockquote>
+<div><ul class="simple">
+<li><tt class="docutils literal"><span class="pre">-c</span></tt>:  The absolute or relative path to the <tt class="docutils literal"><span class="pre">config.yaml</span></tt> file you customized earlier.</li>
+<li><tt class="docutils literal"><span class="pre">-t</span></tt>:  The template file to serve as a basis for <tt class="docutils literal"><span class="pre">site.pp</span></tt>.  Possible templates include <tt class="docutils literal"><span class="pre">site_openstack_ha_compact.pp</span></tt>, <tt class="docutils literal"><span class="pre">site_openstack_ha_minimal.pp</span></tt>, <tt class="docutils literal"><span class="pre">site_openstack_ha_full.pp</span></tt>, <tt class="docutils literal"><span class="pre">site_openstack_single.pp</span></tt>, and <tt class="docutils literal"><span class="pre">site_openstack_simple.pp</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">-o</span></tt>:  The output file.  This should always be <tt class="docutils literal"><span class="pre">/etc/puppet/manifests/site.pp</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">-a</span></tt>:  The orchestration configuration file, to be output for use in the next step.</li>
+</ul>
+</div></blockquote>
+<p>From there you&#8217;re ready to install your OpenStack components. Before that, however, let&#8217;s look at what is actually in the new <tt class="docutils literal"><span class="pre">site.pp</span></tt> manifest, so that you can understand how to customize it if necessary.  (Similarly, if you are installing Fuel Library without the ISO, you will need to make these customizations yourself.)</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li><a href="../../index.html">Fuel for OpenStack 3.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Mirantis.
+      Last updated on 2013/07/22.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+    </div>
+  </body>
+</html>

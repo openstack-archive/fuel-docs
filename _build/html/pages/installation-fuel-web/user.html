@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>User Guide &mdash; Fuel for OpenStack 3.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="Fuel for OpenStack 3.0 documentation" href="../../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li><a href="../../index.html">Fuel for OpenStack 3.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../_sources/pages/installation-fuel-web/user.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="user-guide">
+<span id="user"></span><h1>User Guide<a class="headerlink" href="#user-guide" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="user/install.html">Installing Fuel Web</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user/install.html#instructions">Instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user/install.html#on-physical-hardware">On Physical Hardware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user/install.html#on-virtualbox">On VirtualBox</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user/install.html#automatic-mode">Automatic mode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user/install.html#manual-mode">Manual mode</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="user/install.html#changing-network-parameters">Changing network parameters</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user/install.html#changing-network-parameters-after-booting">Changing network parameters after booting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user/install.html#name-resolution-dns">Name resolution (DNS)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user/install.html#pxe-booting-settings">PXE booting settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user/install.html#when-configuration-is-done">When configuration is done</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="user/networks.html">Understanding and configuring the network</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user/networks.html#flatdhcp-manager-multi-host-scheme">FlatDHCP Manager (multi-host scheme)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user/networks.html#flatdhcp-manager-single-interface-scheme">FlatDHCP Manager (single-interface scheme)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="user/networks.html#vlan-manager">VLAN Manager</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user/networks.html#fuelweb-deployment-schema">FuelWeb deployment schema</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="user/networks.html#configuring-the-network">Configuring the network</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user/networks.html#mapping-logical-networks-to-physical-interfaces-on-servers">Mapping logical networks to physical interfaces on servers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user/networks.html#switch">Switch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user/networks.html#router">Router</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="user/network_issues.html">Network Issues</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user/network_issues.html#on-virtualbox">On VirtualBox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user/network_issues.html#timeout-in-connection-to-openstack-api-from-client-applications">Timeout in connection to OpenStack API from client applications</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li><a href="../../index.html">Fuel for OpenStack 3.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Mirantis.
+      Last updated on 2013/07/22.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+    </div>
+  </body>
+</html>

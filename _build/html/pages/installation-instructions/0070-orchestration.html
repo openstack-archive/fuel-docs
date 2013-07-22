@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Deploying OpenStack &mdash; Fuel for OpenStack 3.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="Fuel for OpenStack 3.0 documentation" href="../../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li><a href="../../index.html">Fuel for OpenStack 3.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Deploying OpenStack</a><ul>
+<li><a class="reference internal" href="#deploying-via-orchestration">Deploying via orchestration</a></li>
+<li><a class="reference internal" href="#installing-openstack-using-puppet-directly">Installing OpenStack using Puppet directly</a></li>
+<li><a class="reference internal" href="#examples-of-openstack-installation-sequences">Examples of OpenStack installation sequences</a></li>
+</ul>
+</li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../_sources/pages/installation-instructions/0070-orchestration.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="deploying-openstack">
+<h1>Deploying OpenStack<a class="headerlink" href="#deploying-openstack" title="Permalink to this headline">¶</a></h1>
+<p>You have two options for deploying OpenStack.  The best method is to use orchestration, but you can also deploy your nodes manually.</p>
+<div class="section" id="deploying-via-orchestration">
+<span id="orchestration"></span><h2>Deploying via orchestration<a class="headerlink" href="#deploying-via-orchestration" title="Permalink to this headline">¶</a></h2>
+<p>Performing a small series of manual installs many be an acceptable approach in some circumstances, but if you plan on deploying to a large number of servers then we strongly suggest that you consider orchestration. You can perform a deployment using orchestration with Fuel using the &#8220;astute&#8221; script. This script is configured using the &#8220;astute.yaml&#8221; file that was created when you ran &#8220;openstack_system&#8221; earlier in this process.</p>
+<p>To confirm that your servers are ready for orchestration, execute the following command:</p>
+<div class="highlight-python"><pre>mco ping</pre>
+</div>
+<p>You should see all three controllers, plus the compute node, in the response to the command:</p>
+<div class="highlight-python"><pre>fuel-compute-01                                    time=107.26 ms
+fuel-controller-01                                 time=120.14 ms
+fuel-controller-02                                 time=135.94 ms
+fuel-controller-03                                 time=139.33 ms</pre>
+</div>
+<p>To run the orchestrator, log in to <tt class="docutils literal"><span class="pre">fuel-pm</span></tt> and execute:</p>
+<div class="highlight-python"><pre>astute -f astute.yaml</pre>
+</div>
+<p>You will see a message on <tt class="docutils literal"><span class="pre">fuel-pm</span></tt> stating that the installation has started on fuel-controller-01.  To see what&#8217;s going on on the target node on Ubuntu-based OS, enter this command:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">tail</span> <span class="o">-</span><span class="n">f</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">log</span><span class="o">/</span><span class="n">syslog</span>
+</pre></div>
+</div>
+<p>for CentOS or RedHat use this command:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">tail</span> <span class="o">-</span><span class="n">f</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">log</span><span class="o">/</span><span class="n">messages</span>
+</pre></div>
+</div>
+<p>Note that Puppet will require several runs to install all the different roles. The first time it runs, the orchestrator will show an error. This error means that the installation isn&#8217;t complete, but will be rectified after the various rounds of installation are completed.  Also, after the first run on each server, the orchestrator doesn&#8217;t output messages on fuel-pm; when it&#8217;s finished running, it will return you to the command prompt.  In the meantime, you can see what&#8217;s going on by watching the logs on each individual machine.</p>
+</div>
+<div class="section" id="installing-openstack-using-puppet-directly">
+<h2>Installing OpenStack using Puppet directly<a class="headerlink" href="#installing-openstack-using-puppet-directly" title="Permalink to this headline">¶</a></h2>
+<p>If, for some reason, you choose not to use orchestration &#8211; one common example it when adding a single node to an existing (non-HA) cluster &#8211; you have the option to install on one or more nodes using Puppet.</p>
+<p>Start by logging in to the target server &#8211; fuel-controller-01 to start, if you&#8217;re starting from scratch &#8211; and running the Puppet agent.</p>
+<p>One optional step would be to use the script command to log all of your output so you can check for errors:</p>
+<div class="highlight-python"><pre>script agent-01.log
+puppet agent --test</pre>
+</div>
+<p>You will to see a great number of messages scroll by, and the installation will take a significant amount of time. When the process has completed, press CTRL-D to stop logging and grep for errors:</p>
+<div class="highlight-python"><pre>grep err: agent-01.log</pre>
+</div>
+<p>If you find any errors relating to other nodes you may safely ignore them for now.</p>
+<p>Now you can run the same installation procedure on fuel-controller-02 and fuel-controller-03, as well as fuel-compute-01.</p>
+<p>Note that the controllers must be installed sequentially due to the nature of assembling a MySQL cluster based on Galera. This means that one server must complete its installation before the next installation is started. However, compute nodes can be installed concurrently once the controllers are in place.</p>
+<p>In some cases, you may find errors related to resources that are not yet available when the installation takes place. To solve that problem, simply re-run the puppet agent on the affected node after running the other controllers, and again grep for error messages. When you see no errors on any of your nodes, your OpenStack cluster is ready to go.</p>
+</div>
+<div class="section" id="examples-of-openstack-installation-sequences">
+<h2>Examples of OpenStack installation sequences<a class="headerlink" href="#examples-of-openstack-installation-sequences" title="Permalink to this headline">¶</a></h2>
+<p>When running Puppet manually, the exact sequence depends on the configuration goals you&#8217;re trying to achieve.  In most cases, you&#8217;ll need to run Puppet more than once; with every pass Puppet collects and adds necessary absent information to the OpenStack configuration, stores it to PuppedDB and applies necessary changes.</p>
+<blockquote>
+<div><p><strong>Note:</strong> <em>Sequentially run</em> means you don&#8217;t start the next node deployment until previous one is finished.</p>
+<p><strong>Example 1:</strong> <strong>Full OpenStack deployment with standalone storage nodes</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li>Create necessary volumes on storage nodes as described in  <a class="reference internal" href="../frequently-asked-questions/0070-common-technical-issues.html#create-the-xfs-partition"><em>Creating the XFS partition</em></a>.</li>
+<li>Sequentially run a deployment pass on every SwiftProxy node (<tt class="docutils literal"><span class="pre">fuel-swiftproxy-01</span> <span class="pre">...</span> <span class="pre">fuel-swiftproxy-xx</span></tt>), starting with the <tt class="docutils literal"><span class="pre">primary-swift-proxy</span> <span class="pre">node</span></tt>. Node names are set by the <tt class="docutils literal"><span class="pre">$swift_proxies</span></tt> variable in <tt class="docutils literal"><span class="pre">site.pp</span></tt>. There are 2 Swift Proxies by default.</li>
+<li>Sequentially run a deployment pass on every storage node (<tt class="docutils literal"><span class="pre">fuel-swift-01</span></tt> ... <tt class="docutils literal"><span class="pre">fuel-swift-xx</span></tt>).</li>
+<li>Sequentially run a deployment pass on the controller nodes (<tt class="docutils literal"><span class="pre">fuel-controller-01</span> <span class="pre">...</span> <span class="pre">fuel-controller-xx</span></tt>). starting with the <tt class="docutils literal"><span class="pre">primary-controller</span></tt> node.</li>
+<li>Run a deployment pass on the Neutron (formerly Quantum) node (<tt class="docutils literal"><span class="pre">fuel-quantum</span></tt>) to install the Neutron router.</li>
+<li>Run a deployment pass on every compute node (<tt class="docutils literal"><span class="pre">fuel-compute-01</span> <span class="pre">...</span> <span class="pre">fuel-compute-xx</span></tt>) - unlike the controllers, these nodes may be deployed in parallel.</li>
+<li>Run an additional deployment pass on Controller 1 only (<tt class="docutils literal"><span class="pre">fuel-controller-01</span></tt>) to finalize the Galera cluster configuration.</li>
+</ul>
+</div></blockquote>
+<p><strong>Example 2:</strong> <strong>Compact OpenStack deployment with storage and swift-proxy combined with nova-controller on the same nodes</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li>Create the necessary volumes on controller nodes as described in <a class="reference internal" href="../frequently-asked-questions/0070-common-technical-issues.html#create-the-xfs-partition"><em>Creating the XFS partition</em></a></li>
+<li>Sequentially run a deployment pass on the controller nodes (<tt class="docutils literal"><span class="pre">fuel-controller-01</span> <span class="pre">...</span> <span class="pre">fuel-controller-xx</span></tt>), starting with the <tt class="docutils literal"><span class="pre">primary-controller</span> <span class="pre">node</span></tt>. Errors in Swift storage such as <em>/Stage[main]/Swift::Storage::Container/Ring_container_device[&lt;device address&gt;]: Could not evaluate: Device not found check device on &lt;device address&gt;</em> are expected during the deployment passes until the very final pass.</li>
+<li>Run an additional deployment pass on Controller 1 only (<tt class="docutils literal"><span class="pre">fuel-controller-01</span></tt>) to finalize the Galera cluster configuration.</li>
+<li>Run a deployment pass on the Neutron node (<tt class="docutils literal"><span class="pre">fuel-quantum</span></tt>) to install the Neutron router.</li>
+<li>Run a deployment pass on every compute node (<tt class="docutils literal"><span class="pre">fuel-compute-01</span> <span class="pre">...</span> <span class="pre">fuel-compute-xx</span></tt>) - unlike the controllers these nodes may be deployed in parallel.</li>
+</ul>
+</div></blockquote>
+<p><strong>Example 3:</strong> <strong>OpenStack HA installation without Swift</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li>Sequentially run a deployment pass on the controller nodes (<tt class="docutils literal"><span class="pre">fuel-controller-01</span> <span class="pre">...</span> <span class="pre">fuel-controller-xx</span></tt>), starting with the primary controller. No errors should appear during this deployment pass.</li>
+<li>Run an additional deployment pass on the primary controller only (<tt class="docutils literal"><span class="pre">fuel-controller-01</span></tt>) to finalize the Galera cluster configuration.</li>
+<li>Run a deployment pass on the Neutron node (<tt class="docutils literal"><span class="pre">fuel-quantum</span></tt>) to install the Neutron router.</li>
+<li>Run a deployment pass on every compute node (<tt class="docutils literal"><span class="pre">fuel-compute-01</span> <span class="pre">...</span> <span class="pre">fuel-compute-xx</span></tt>) - unlike the controllers these nodes may be deployed in parallel.</li>
+</ul>
+</div></blockquote>
+<p><strong>Example 4:</strong> <strong>The simplest OpenStack installation: Controller + Compute on the same node</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li>Set the <tt class="docutils literal"><span class="pre">node</span> <span class="pre">/fuel-controller-[\d+]/</span></tt> variable in <tt class="docutils literal"><span class="pre">site.pp</span></tt> to match the hostname of the node on which you are going to deploy OpenStack. Set the <tt class="docutils literal"><span class="pre">node</span> <span class="pre">/fuel-compute-[\d+]/</span></tt> variable to <strong>mismatch</strong> the node name. Run a deployment pass on this node. No errors should appear during this deployment pass.</li>
+<li>Set the <tt class="docutils literal"><span class="pre">node</span> <span class="pre">/fuel-compute-[\d+]/</span></tt> variable in <tt class="docutils literal"><span class="pre">site.pp</span></tt> to match the hostname of the node on which you are going to deploy OpenStack. Set the <tt class="docutils literal"><span class="pre">node</span> <span class="pre">/fuel-controller-[\d+]/</span></tt> variable to <strong>mismatch</strong> the node name. Run a deployment pass on this node. No errors should appear during this deployment pass.</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li><a href="../../index.html">Fuel for OpenStack 3.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Mirantis.
+      Last updated on 2013/07/22.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+    </div>
+  </body>
+</html>

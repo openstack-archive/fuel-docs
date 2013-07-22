@@ -1,0 +1,240 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Common Technical Issues &mdash; Fuel for OpenStack 3.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="Fuel for OpenStack 3.0 documentation" href="../../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li><a href="../../index.html">Fuel for OpenStack 3.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Common Technical Issues</a><ul>
+<li><a class="reference internal" href="#creating-the-xfs-partition">Creating the XFS partition</a></li>
+<li><a class="reference internal" href="#redeploying-a-node-from-scratch">Redeploying a node from scratch</a></li>
+</ul>
+</li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../_sources/pages/frequently-asked-questions/0070-common-technical-issues.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="common-technical-issues">
+<span id="id1"></span><h1>Common Technical Issues<a class="headerlink" href="#common-technical-issues" title="Permalink to this headline">¶</a></h1>
+<ol class="arabic">
+<li><p class="first">Puppet fails with</p>
+<div class="highlight-python"><pre>err: Could not retrieve catalog from remote server: Error 400 on SERVER: undefined method 'fact_merge' for nil:NilClass"</pre>
+</div>
+</li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li>This is a Puppet bug.  See: <a class="reference external" href="http://projects.puppetlabs.com/issues/3234">http://projects.puppetlabs.com/issues/3234</a></li>
+<li>Workaround: <tt class="docutils literal"><span class="pre">service</span> <span class="pre">puppetmaster</span> <span class="pre">restart</span></tt></li>
+</ul>
+</div></blockquote>
+<ol class="arabic" start="2">
+<li><p class="first">Puppet client will never resend the certificate to Puppet Master. The certificate cannot be signed and verified.</p>
+<blockquote>
+<div><ul>
+<li><p class="first">This is a Puppet bug.  See: <a class="reference external" href="http://projects.puppetlabs.com/issues/4680">http://projects.puppetlabs.com/issues/4680</a></p>
+</li>
+<li><dl class="first docutils">
+<dt>Workaround:</dt>
+<dd><ul class="first last">
+<li><p class="first">On Puppet client:</p>
+<div class="highlight-python"><pre>rm -f /etc/puppet/ssl/certificate_requests/\*.pem
+rm -f /etc/puppet/ssl/certs/\*.pem</pre>
+</div>
+</li>
+<li><p class="first">On Puppet master:</p>
+<div class="highlight-python"><pre>rm -f /var/lib/puppet/ssl/ca/requests/\*.pem</pre>
+</div>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">The manifests are up-to-date under <tt class="docutils literal"><span class="pre">/etc/puppet/manifests</span></tt>, but Puppet master keeps serving the previous version of manifests to the clients. Manifests seem to be cached by the Puppet Master.</p>
+<blockquote>
+<div><ul class="simple">
+<li>More information: <a class="reference external" href="https://groups.google.com/forum/?fromgroups=#!topic/puppet-users/OpCBjV1nR2M">https://groups.google.com/forum/?fromgroups=#!topic/puppet-users/OpCBjV1nR2M</a></li>
+<li>Workaround: <tt class="docutils literal"><span class="pre">service</span> <span class="pre">puppetmaster</span> <span class="pre">restart</span></tt></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Timeout error for fuel-controller-XX when running <tt class="docutils literal"><span class="pre">puppet-agent</span> <span class="pre">--test</span></tt> to install OpenStack when using HDD instead of SSD</p>
+<div class="highlight-python"><pre>| Sep 26 17:56:15 fuel-controller-02 puppet-agent[1493]: Could not retrieve catalog from remote server: execution expired
+| Sep 26 17:56:15 fuel-controller-02 puppet-agent[1493]: Not using cache on failed catalog
+| Sep 26 17:56:15 fuel-controller-02 puppet-agent[1493]: Could not retrieve catalog; skipping run</pre>
+</div>
+<ul>
+<li><dl class="first docutils">
+<dt>Workaround: <tt class="docutils literal"><span class="pre">vi</span> <span class="pre">/etc/puppet/puppet.conf</span></tt></dt>
+<dd><ul class="first last simple">
+<li>add: <tt class="docutils literal"><span class="pre">configtimeout</span> <span class="pre">=</span> <span class="pre">1200</span></tt></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</li>
+<li><p class="first">On running &#8220;<tt class="docutils literal"><span class="pre">puppet</span> <span class="pre">agent</span> <span class="pre">--test</span></tt>&#8221;, the error messages below occur:</p>
+<div class="highlight-python"><pre>| err: /File[/var/lib/puppet/lib]: Could not evaluate: Could not retrieve information from environment production source(s) puppet://fuel-pm.localdomain/plugins</pre>
+</div>
+<ul class="simple">
+<li>Workaround: <a class="reference external" href="http://projects.reductivelabs.com/issues/2244">http://projects.reductivelabs.com/issues/2244</a></li>
+</ul>
+<blockquote>
+<div><p>and</p>
+<div class="highlight-python"><pre>| err: Could not retrieve catalog from remote server: Error 400 on SERVER: stack level too deep
+| warning: Not using cache on failed catalog
+| err: Could not retrieve catalog; skipping run</pre>
+</div>
+<ul class="simple">
+<li>Workaround: The second problem can be solved by rebooting Puppet master.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">PuppetDB Connection Failures:</p>
+<p>Puppet fails on fuel-pm with message:</p>
+<div class="highlight-python"><pre>Could not retrieve catalog from remote server: Error 400 on SERVER: Failed to submit 'replace facts' command for fuel-pm to PuppetDB at fuel-pm:8081: Connection refused - connect(2)</pre>
+</div>
+</li>
+</ol>
+<blockquote>
+<div><p>This message is often the result of one of the following:</p>
+<ul>
+<li><p class="first">Firewall blocking the puppetdb port</p>
+</li>
+<li><p class="first">DNS issues with the hostname specified in your puppetdb.conf</p>
+</li>
+<li><p class="first">DNS issues with the ssl-host specified in your jetty.ini on the puppetdb server</p>
+</li>
+<li><p class="first">Workaround: If you are able to connect (e.g. via telnet) to port 8081 on the puppetdb machine, puppetdb is running.  To try and isolate the problem, add the following to <tt class="docutils literal"><span class="pre">/etc/puppetdb/conf.d/jetty.ini</span></tt>:</p>
+<div class="highlight-python"><pre>certificate-whitelist = /etc/puppetdb/whitelist.txt</pre>
+</div>
+</li>
+</ul>
+<blockquote>
+<div>Be sure to list all aliases for the machine in that file.</div></blockquote>
+</div></blockquote>
+<div class="section" id="creating-the-xfs-partition">
+<span id="create-the-xfs-partition"></span><h2>Creating the XFS partition<a class="headerlink" href="#creating-the-xfs-partition" title="Permalink to this headline">¶</a></h2>
+<p>In most cases, Fuel creates the XFS partition for you.  If for some reason you need to create it yourself, use this procedure:</p>
+<ol class="arabic">
+<li><p class="first">Create the partition itself:</p>
+<div class="highlight-python"><pre>fdisk /dev/sdb
+n(for new)
+p(for partition)
+&lt;enter&gt; (to accept the defaults)
+&lt;enter&gt; (to accept the defaults)
+w(to save changes)</pre>
+</div>
+</li>
+<li><p class="first">Initialize the XFS partition:</p>
+<div class="highlight-python"><pre>mkfs.xfs -i size=1024 -f /dev/sdb1</pre>
+</div>
+</li>
+<li><p class="first">For a standard swift install, all data drives are mounted directly under /srv/node, so first create the mount point:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="o">/</span><span class="n">srv</span><span class="o">/</span><span class="n">node</span><span class="o">/</span><span class="n">sdb1</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Finally, add the new partition to fstab so it mounts automatically, then mount all current partitions:</p>
+<div class="highlight-python"><pre>echo "/dev/sdb1 /srv/node/sdb1 xfs
+noatime,nodiratime,nobarrier,logbufs=8 0 0" &gt;&gt; /etc/fstab
+mount -a</pre>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="redeploying-a-node-from-scratch">
+<h2>Redeploying a node from scratch<a class="headerlink" href="#redeploying-a-node-from-scratch" title="Permalink to this headline">¶</a></h2>
+<p>Compute and Cinder nodes in an HA configuration and controller in any configuration cannot be redeployed without completely redeploying the cluster.  However, in a non-HA situation you can redeploy a compute or Cinder node.  To do so, follow these steps:</p>
+<ol class="arabic simple">
+<li>Remove the certificate for the node by executing the command <tt class="docutils literal"><span class="pre">puppet</span> <span class="pre">cert</span> <span class="pre">clean</span> <span class="pre">&lt;hostname&gt;</span></tt> on fuel-pm.</li>
+<li>Re-boot the node over the network so it can be picked up by cobbler.</li>
+<li>Run the puppet agent on the target node using <tt class="docutils literal"><span class="pre">puppet</span> <span class="pre">agent</span> <span class="pre">--test</span></tt>.</li>
+</ol>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li><a href="../../index.html">Fuel for OpenStack 3.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Mirantis.
+      Last updated on 2013/07/22.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+    </div>
+  </body>
+</html>

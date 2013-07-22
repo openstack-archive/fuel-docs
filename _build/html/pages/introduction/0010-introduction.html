@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>&lt;no title&gt; &mdash; Fuel for OpenStack 3.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="Fuel for OpenStack 3.0 documentation" href="../../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li><a href="../../index.html">Fuel for OpenStack 3.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../_sources/pages/introduction/0010-introduction.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <p>This document explains how to use Fuel to easily create and maintain an OpenStack cloud infrastructure.</p>
+<p>Fuel can be used to create virtually any OpenStack configuration. To make things easier, the installation includes several pre-defined architectures. For the sake of simplicity, this guide emphasises a single, common reference architecture; the multi-node, high-availability configuration. We begin with an explanation of this architecture, then move on to the details of creating the configuration in a test environment using VirtualBox. Finally, we give you the information you need to know to create this and other OpenStack architectures in a production environment.</p>
+<p>This document assumes that you are familiar with general Linux commands and administration concepts, as well as general networking concepts. You should have some familiarity with grid or virtualization systems such as Amazon Web Services or VMware, as well as OpenStack itself, but you don&#8217;t need to be an expert.</p>
+<p>The Fuel User&#8217;s Guide is organized as follows:</p>
+<ul class="simple">
+<li>Section 1, <a class="reference internal" href="../0020-introduction.html#introduction"><em>Introduction</em></a> (this section), gives you an overview of Fuel and gives you a general idea of how it works.</li>
+<li>Section 2, <a class="reference internal" href="../0040-reference-architecture.html#reference-archiecture"><em>Reference Architecture</em></a>, provides a general look at the components that make up OpenStack, and describes the reference architecture to be instantiated in Section 3.</li>
+<li>Section 3.1, <em class="xref std std-ref">Create a multi-node OpenStack cluster using Fuel Web</em>, takes you step-by-step through the process of creating a high-availability OpenStack cluster using Fuel Web.</li>
+<li>Section 3.2, <a class="reference internal" href="../0050-installation-instructions.html#create-cluster"><em>Create a multi-node OpenStack cluster using Fuel</em></a>, takes you step-by-step through the more advanced process of creating a high-availability OpenStack cluster using the standard Fuel tools.</li>
+<li>Section 4, <a class="reference internal" href="../0058-advanced-configuration.html#production"><em>Production Considerations</em></a>, looks at the real-world questions and problems involved in creating an OpenStack cluster for production use. We discuss issues such as network layout and hardware requirements, and provide tips and tricks for creating a cluster of up to 100 nodes.</li>
+<li>With the 3.1 release of Fuel, Fuel Web has been integrated. We encourage all users to use the Fuel Web process for installation and configuration. However, the standard Fuel installation process is still available for those of you who prefer a more detailed approach to deployment. Even with a utility as powerful as Fuel, creating an OpenStack cluster can be complex, and Section 5, <a class="reference internal" href="../0060-frequently-asked-questions.html#faq"><em>Frequently Asked Questions</em></a>, covers many of the issues that tend to arise during that process.</li>
+<li>Finally, the User&#8217;s Guide assumes that you are taking advantage of certain shortcuts, such as using a pre-built Puppet master; if you prefer not to go that route, Appendix A, <em class="xref std std-ref">Creating the Puppet master</em>, will give you details regarding the configuration of a Puppet Master.</li>
+</ul>
+<p>Lets start off by taking a look at Fuel itself. We&#8217;ll start by explaining what it is and how it works, and then move to the process of installation itself.</p>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li><a href="../../index.html">Fuel for OpenStack 3.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Mirantis.
+      Last updated on 2013/07/22.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+    </div>
+  </body>
+</html>

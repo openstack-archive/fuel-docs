@@ -1,0 +1,319 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Understanding and configuring the network &mdash; Fuel for OpenStack 3.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="Fuel for OpenStack 3.0 documentation" href="../../../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li><a href="../../../index.html">Fuel for OpenStack 3.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Understanding and configuring the network</a><ul>
+<li><a class="reference internal" href="#flatdhcp-manager-multi-host-scheme">FlatDHCP Manager (multi-host scheme)</a><ul>
+<li><a class="reference internal" href="#flatdhcp-manager-single-interface-scheme">FlatDHCP Manager (single-interface scheme)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#vlan-manager">VLAN Manager</a><ul>
+<li><a class="reference internal" href="#fuelweb-deployment-schema">FuelWeb deployment schema</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#configuring-the-network">Configuring the network</a><ul>
+<li><a class="reference internal" href="#mapping-logical-networks-to-physical-interfaces-on-servers">Mapping logical networks to physical interfaces on servers</a></li>
+<li><a class="reference internal" href="#switch">Switch</a></li>
+<li><a class="reference internal" href="#router">Router</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/pages/installation-fuel-web/user/networks.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="understanding-and-configuring-the-network">
+<h1>Understanding and configuring the network<a class="headerlink" href="#understanding-and-configuring-the-network" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#flatdhcp-manager-multi-host-scheme" id="id1">FlatDHCP Manager (multi-host scheme)</a><ul>
+<li><a class="reference internal" href="#flatdhcp-manager-single-interface-scheme" id="id2">FlatDHCP Manager (single-interface scheme)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#vlan-manager" id="id3">VLAN Manager</a><ul>
+<li><a class="reference internal" href="#fuelweb-deployment-schema" id="id4">FuelWeb deployment schema</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#configuring-the-network" id="id5">Configuring the network</a><ul>
+<li><a class="reference internal" href="#mapping-logical-networks-to-physical-interfaces-on-servers" id="id6">Mapping logical networks to physical interfaces on servers</a></li>
+<li><a class="reference internal" href="#switch" id="id7">Switch</a></li>
+<li><a class="reference internal" href="#router" id="id8">Router</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>OpenStack clusters use several types of network managers: FlatDHCP, VlanManager and Neutron (formerly Quantum).
+The current version of FuelWeb supports only the first two (FlatDHCP and VlanManager), but the FUEL library supports all three.
+For more information about how the first two network managers work, you can read these two resources:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://www.mirantis.com/blog/openstack-networking-flatmanager-and-flatdhcpmanager/">OpenStack Networking – FlatManager and FlatDHCPManager</a></li>
+<li><a class="reference external" href="http://www.mirantis.com/blog/openstack-networking-vlanmanager/">Openstack Networking for Scalability and Multi-tenancy with VlanManager</a></li>
+</ul>
+<div class="section" id="flatdhcp-manager-multi-host-scheme">
+<h2><a class="toc-backref" href="#id1">FlatDHCP Manager (multi-host scheme)</a><a class="headerlink" href="#flatdhcp-manager-multi-host-scheme" title="Permalink to this headline">¶</a></h2>
+<p>The main idea behind the flat network manager is to configure a bridge (i.e. <strong>br100</strong>) on every compute
+node and have one of the machine&#8217;s host interfaces connect to it. Once the virtual machine is launched
+its virtual interface will connect to that bridge as well.
+The same L2 segment is used for all OpenStack projects, which means that there is no L2 isolation between
+virtual hosts, even if they are owned by separate projects, and there is only one flat IP pool defined for the cluster. For this reason it is called the <em>Flat</em> manager.</p>
+<p>The simplest case here is as shown on the following diagram. Here the <strong>eth1</strong> interface is used to
+give network access to virtual machines, while <strong>eth0</strong> interface is the management network interface.</p>
+<blockquote>
+<div></div></blockquote>
+<p>FuelWeb deploys OpenStack in FlatDHCP mode with the so called <strong>multi-host</strong> feature enabled.
+Without this feature enabled, network traffic from each VM would go through the single
+gateway host, which basically becomes a single point of failure. In enabled mode, each compute node becomes a
+gateway for all the VMs running on the host, providing a balanced networking solution.
+In this case, if one of the computes goes down, the rest of the environment remains operational.</p>
+<p>The current version of FuelWeb uses VLANs, even for the FlatDHCP network manager.
+On the Linux host, it is implemented in such a way that it is not the physical network interfaces that are
+connected to the bridge, but the VLAN interface (i.e. <strong>eth0.102</strong>).</p>
+<div class="section" id="flatdhcp-manager-single-interface-scheme">
+<h3><a class="toc-backref" href="#id2">FlatDHCP Manager (single-interface scheme)</a><a class="headerlink" href="#flatdhcp-manager-single-interface-scheme" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div></div></blockquote>
+<p>Therefore all switch ports where compute nodes are connected must be configured as tagged (trunk) ports
+with required vlans allowed (enabled, tagged). Virtual machines will communicate with each other on L2 even
+if they are on different compute nodes. If the virtual machine sends IP packets to a different network,
+they will be routed on the host machine according to the routing table. The default route will point to the
+gateway specified on the networks tab in the UI as the gateway for the public network.</p>
+</div>
+</div>
+<div class="section" id="vlan-manager">
+<h2><a class="toc-backref" href="#id3">VLAN Manager</a><a class="headerlink" href="#vlan-manager" title="Permalink to this headline">¶</a></h2>
+<p>Vlan manager mode is more suitable for large scale clouds. The idea behind this mode is to separate
+groups of virtual machines, owned by different projects, on different L2 layers. In VLAN Manager this is done by
+tagging IP frames, or simply speaking, by VLANs. It allows virtual machines inside the given project
+to communicate with each other and not to see any traffic from VMs of other projects.
+Switch ports must be configured as tagged (trunk) ports to allow this scheme to work.</p>
+<div class="section" id="fuelweb-deployment-schema">
+<h3><a class="toc-backref" href="#id4">FuelWeb deployment schema</a><a class="headerlink" href="#fuelweb-deployment-schema" title="Permalink to this headline">¶</a></h3>
+<p>One of the physical interfaces on each host has to be chosen
+to carry VM-to-VM traffic (fixed network),
+and switch ports must be configured to allow tagged traffic
+to pass through. OpenStack Computes will
+untag the IP packets and send them to the appropriate VMs.
+Simplifying the configuration of VLAN Manager, there is no
+known limitation which FuelWeb could add
+in this particular networking mode.</p>
+</div>
+</div>
+<div class="section" id="configuring-the-network">
+<h2><a class="toc-backref" href="#id5">Configuring the network</a><a class="headerlink" href="#configuring-the-network" title="Permalink to this headline">¶</a></h2>
+<p>Once you choose a networking mode (FlatDHCP/Vlan),
+you must configure equipment accordingly. The
+diagram below shows an example configuration.</p>
+<img alt="../../../_images/physical_sample.png" src="../../../_images/physical_sample.png" />
+<p>FuelWeb operates with following logical networks:</p>
+<ul class="simple">
+<li><strong>FuelWeb</strong> network is used for internal FuelWeb communications only and PXE booting (untagged on the scheme);</li>
+<li><strong>Public</strong> network is used to get access from virtual machines to outside, Internet or office network (vlan 101 on the scheme);</li>
+<li><strong>Floating</strong> network is used to get access to virtual machines from outside (shared L2-interface with <strong>Public</strong> network; in this case it&#8217;s vlan 101);</li>
+<li><strong>Management</strong> network is used for internal OpenStack communications (vlan 102 on the scheme);</li>
+<li><strong>Storage</strong> network is used for storage traffic (vlan 103 on the scheme);</li>
+<li><strong>Fixed</strong> - one (for flat mode) or more (for vlan mode) virtual machines network(s) (vlan 104 on the scheme).</li>
+</ul>
+<div class="section" id="mapping-logical-networks-to-physical-interfaces-on-servers">
+<h3><a class="toc-backref" href="#id6">Mapping logical networks to physical interfaces on servers</a><a class="headerlink" href="#mapping-logical-networks-to-physical-interfaces-on-servers" title="Permalink to this headline">¶</a></h3>
+<p>FuelWeb allows you to use different physical interfaces to handle
+different types of traffic.
+When a node is added to the environment, click at the bottom line
+of the node icon.
+In the detailed information window, click the &#8220;Network Configuration&#8221;
+button to open the
+physical interfaces configuration screen.</p>
+<img alt="../../../_images/doc_network-settings-help.png" src="../../../_images/doc_network-settings-help.png" />
+<p>On this screen you can drag-and-drop logical networks to physical interfaces according
+to your network setup.</p>
+<p>All networks are presented on the screen, except <strong>fuelweb</strong>.
+It runs on the physical interface from which node was initially
+PXE booted,
+and in the current version it is not possible to map it on any
+other physical interface.
+Also, once the network is configured and OpenStack is deployed,
+you may not modify network settings, even to move a logical
+network to another physical interface or VLAN number.</p>
+</div>
+<div class="section" id="switch">
+<h3><a class="toc-backref" href="#id7">Switch</a><a class="headerlink" href="#switch" title="Permalink to this headline">¶</a></h3>
+<p>FuelWeb can configure hosts, however switch configuration is still
+manual work.
+Unfortunately the set of configuration steps, and even the
+terminology used, is different for different vendors,
+so we will try to provide vendor-agnostic information on how
+traffic should flow and leave the
+vendor-specific details to you. We will provide an example for a
+Cisco switch.</p>
+<p>First of all, you must configure access ports to allow non-tagged
+PXE booting connections
+from all slave nodes to the FuelWeb node. We refer this network
+as the &#8220;admin&#8221; network, or &#8220;fuelweb&#8221;.
+By default, the FuelWeb master node uses the <tt class="docutils literal"><span class="pre">eth0</span></tt> interface to
+serve PXE requests on this network.
+So if that&#8217;s left unchanged, you must set the switch port for
+eth0 of FuelWeb to access mode.
+We recommend that you use the eth0 interfaces of all other nodes
+for PXE booting as well.  Corresponding ports
+must also be in access mode.</p>
+<p>Taking into account that this is the network for PXE booting, you
+must not mix this
+L2 segment with any other company infrastructure. FuelWeb runs a
+DHCP server, and if there is
+another company DHCP on the same L2, both the company&#8217;s
+infrastructure and FuelWeb&#8217;s will be unable to function properly.
+You also need to configure each of the switch&#8217;s ports connected
+to nodes as an &#8220;STP Edge port&#8221; (or a &#8220;spanning-tree portfast
+trunk&#8221;, according to Cisco terminology).
+If you don&#8217;t do that, DHCP timeout issues may occur.</p>
+<p>As long as the &#8220;admin&#8221; network is configured, FuelWeb can operate.
+Other networks are required
+for OpenStack environments, and currently all of these networks
+live in VLANs over the one or multiple
+physical interfaces on a node. This means that the switch should
+pass tagged traffic, and untagging is done
+on the Linux hosts. <em>For the sake of simplicity, all the VLANs
+specified on the networks tab of the FuelWeb UI
+should be configured on switch ports, pointing to slave nodes, as
+tagged.</em> Of course, it is
+possible to specify as tagged only certain ports for a certain
+nodes. However, in the current version, all existing networks
+are automatically allocated for each node, with any role.
+And network check will also check if tagged traffic pass,
+even if some node does not require it (for example, cinder nodes
+do not need fixed network traffic).</p>
+<p>This is enough to deploy the OpenStack environment. However, from a practical
+standpoint, it&#8217;s still not really be usable because
+there is no connection to other corporate networks yet. To make
+that possible, you must configure uplink port(s).
+One of the VLANs may carry the office network. To provide access
+to the FuelWeb WebUI
+from the office network, any other free physical network
+interface on the FuelWeb master node can be used
+and configured according to the office network rules (static IP
+or DHCP). The same corporate
+network segment can be used for public and floating ranges. In
+this case, you must
+provide the corresponding VLAN ID and IP ranges in the UI. One
+public IP per node will be used to SNAT
+traffic out of the VMs network, and one or more floating
+addresses per VM instance will be used to get
+access to the VM from the corporate network, or even the global
+Internet. To have a VM visible from the
+Internet is similar to having it visible from corporate network -
+corresponding IP ranges and VLAN IDs
+must be specified for the floating and public networks. One
+current limitation of FuelWeb is that the user
+must use the same L2 segment for both public and floating networks.</p>
+<p>Example configuration for one of the ports on a Cisco switch html:</p>
+<div class="highlight-python"><pre>interface GigabitEthernet0/6               # switch port
+description s0_eth0 jv                     # description
+switchport trunk encapsulation dot1q       # enables VLANs
+switchport trunk native vlan 262           # access port, untags VLAN 262
+switchport trunk allowed vlan 100,102,104  # 100,102,104 VLANs are passed with tags
+switchport mode trunk                      # To allow more than 1 VLAN on the port
+spanning-tree portfast trunk               # STP Edge port to skip network loop checks (to prevent DHCP timeout issues)
+vlan 262,100,102,104                       # Might be needed for enabling VLANs</pre>
+</div>
+</div>
+<div class="section" id="router">
+<h3><a class="toc-backref" href="#id8">Router</a><a class="headerlink" href="#router" title="Permalink to this headline">¶</a></h3>
+<p>To make it possible for VMs to access the outside world, you must
+have an IP address set on a router in the public network.
+In the examples provided, that IP is 12.0.0.1 in VLAN 101.
+FuelWeb has a special field on the networking tab for the
+gateway address. As soon as deployment of OpenStack is started,
+the network on nodes is reconfigured
+to use this gateway IP as the default gateway.
+If floating addresses are from another other L3 network, then you
+must set the IP (or even multiple
+IPs if floating addresses are from more than one L3 network) for
+them on the router as well.
+Otherwise, floating IPs on nodes will be inaccessible.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li><a href="../../../index.html">Fuel for OpenStack 3.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Mirantis.
+      Last updated on 2013/07/22.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Before You Start &mdash; Fuel for OpenStack 3.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="Fuel for OpenStack 3.0 documentation" href="../../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li><a href="../../index.html">Fuel for OpenStack 3.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../_sources/pages/installation-instructions/0015-before-you-start.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="before-you-start">
+<h1>Before You Start<a class="headerlink" href="#before-you-start" title="Permalink to this headline">¶</a></h1>
+<p>Before you begin your installation, you will need to make a number of important decisions:</p>
+<ul>
+<li><p class="first"><strong>OpenStack features.</strong> Your first decision is to decide which of the optional OpenStack features you will need. For example, you must decide whether you want to install Swift, whether you want Glance to use Swift for image storage, whether you want Cinder for block storage, and whether you want nova-network or Neutron (formerly Quantum) to handle your network connectivity. In our example installation we will be installing Glance with Swift support and Cinder for block storage. Also, due to the fact that it can be easily installed using orchestration, we will be using Neutron.</p>
+</li>
+<li><p class="first"><strong>Deployment configuration.</strong> Next, you need to decide whether your deployment requires high availability (HA). If you need HA for your deployment, you have a choice regarding the number of controllers you want to include. Following the recommendations in the previous section for a typical HA deployment configuration, we will use three OpenStack controllers.</p>
+</li>
+<li><p class="first"><strong>Cobbler server and Puppet Master.</strong> The heart of any Fuel install is the combination of Puppet Master and Cobbler used to create your resources. Although Cobbler and Puppet Master can be installed on separate machines, it is common practice to install both on a single machine for small to medium size clouds, and that&#8217;s what we&#8217;ll be doing in this example. By default, the Fuel ISO creates a single server with both services.</p>
+</li>
+<li><p class="first"><strong>Domain name.</strong> Puppet clients generate a Certificate Signing Request (CSR), which is then signed by the Puppet Master. The signed certificate can then be used to authenticate clients during provisioning. Certificate generation requires a fully qualified hostname, so you must choose a domain name to be used in your installation. Future versions of Fuel will enable you to choose this domain name on your own; by default, Fuel 3.1 uses <tt class="docutils literal"><span class="pre">localdomain</span></tt>.</p>
+</li>
+<li><p class="first"><strong>Network addresses.</strong> OpenStack requires a minimum of three networks. If you are deploying on physical hardware, two of them &#8211; the public network and the internal, or management network &#8211; must be routable in your networking infrastructure. The third network is used by the nodes for inter-node communications. Also, if you intend for your cluster to be accessible from the Internet, you&#8217;ll want the public network to be on the proper network segment.  For simplicity in this case, this example assumes an Internet router at 192.168.0.1.  Additionally, a set of private network addresses should be selected for automatic assignment to guest VMs. (These are fixed IPs for the private network). In our case, we are allocating network addresses as follows:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Public network: 192.168.0.0/24</li>
+<li>Internal network: 10.0.0.0/24</li>
+<li>Private network: 10.0.1.0/24</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first"><strong>Network interfaces.</strong> All of those networks need to be assigned to the available NIC cards on the allocated machines. Additionally, if a fourth NIC is available, Cinder or block storage traffic can be separated and delegated to the fourth NIC. In our case, we&#8217;re assigning networks as follows:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Public network: eth1</li>
+<li>Internal network: eth0</li>
+<li>Private network: eth2</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li><a href="../../index.html">Fuel for OpenStack 3.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Mirantis.
+      Last updated on 2013/07/22.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+    </div>
+  </body>
+</html>

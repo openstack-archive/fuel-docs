@@ -1,0 +1,187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Overview &mdash; Fuel for OpenStack 3.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="Fuel for OpenStack 3.0 documentation" href="../../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li><a href="../../index.html">Fuel for OpenStack 3.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Overview</a><ul>
+<li><a class="reference internal" href="#single-node-deployment">Single node deployment</a></li>
+<li><a class="reference internal" href="#multi-node-non-ha-deployment-compact-swift">Multi-node (non-HA) deployment (compact Swift)</a></li>
+<li><a class="reference internal" href="#multi-node-non-ha-deployment-standalone-swift">Multi-node (non-HA) deployment (standalone Swift)</a></li>
+<li><a class="reference internal" href="#multi-node-ha-deployment-compact">Multi-node (HA) deployment (Compact)</a></li>
+<li><a class="reference internal" href="#multi-node-ha-deployment-compact-neutron">Multi-node (HA) deployment (Compact Neutron)</a></li>
+<li><a class="reference internal" href="#multi-node-ha-deployment-standalone">Multi-node (HA) deployment (Standalone)</a></li>
+</ul>
+</li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../_sources/pages/reference-architecture/0010-overview.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="overview">
+<h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
+<p>Before you install any hardware or software, you must know what it is
+you&#8217;re trying to achieve. This section looks at the basic components of
+an OpenStack infrastructure and organizes them into one of the more
+common reference architectures. You&#8217;ll then use that architecture as a
+basis for installing OpenStack in the next section.</p>
+<p>As you know, OpenStack provides the following basic services:</p>
+<blockquote>
+<div><ul>
+<li><p class="first"><strong>Compute</strong>: Compute servers are the workhorses of your installation; they&#8217;re the servers on which your users&#8217; virtual machines are created. <cite>Nova-scheduler</cite> controls the life-cycle of these VMs.</p>
+</li>
+<li><p class="first"><strong>Networking</strong>: Because an OpenStack cluster (virtually) always includes multiple servers, the ability for them to communicate with each other and with the outside world is crucial. Networking was originally handled by the <cite>Nova-network</cite> service, but it has given way to the newer Neutron (formerly Quantum) networking service. Authentication and authorization for these transactions are handled by <cite>Keystone</cite>.</p>
+</li>
+<li><p class="first"><strong>Storage</strong>: OpenStack provides for two different types of storage: block storage and object storage. Block storage is traditional data storage, with small, fixed-size blocks that are mapped to locations on storage media. At its simplest level, OpenStack provides block storage using <cite>nova-volume</cite>, but it is common to use <cite>Cinder</cite>.</p>
+<p>Object storage, on the other hand, consists of single variable-size objects that are described by system-level metadata, and you can access this capability using <cite>Swift</cite>.</p>
+<p>OpenStack storage is used for your users&#8217; objects, but it is also used for storing the images used to create new VMs. This capability is handled by <cite>Glance</cite>.</p>
+</li>
+</ul>
+</div></blockquote>
+<p>These services can be combined in many different ways. Out of the box,
+Fuel supports the following deployment configurations:</p>
+<div class="section" id="single-node-deployment">
+<h2>Single node deployment<a class="headerlink" href="#single-node-deployment" title="Permalink to this headline">¶</a></h2>
+<p>In a production environment, you will never have a single-node
+deployment of OpenStack, partly because it forces you to make a number
+of compromises as to the number and types of services that you can
+deploy. It is, however, extremely useful if you just want to see how
+OpenStack works from a user&#8217;s point of view. In this case, all of the
+essential services run out of a single server:</p>
+<img alt="https://docs.google.com/drawings/d/1gGNYYayPAPPHgOYi98Dmebry4hP1SOGF2APXWzbnNo8/pub?w=767&amp;h=413" src="https://docs.google.com/drawings/d/1gGNYYayPAPPHgOYi98Dmebry4hP1SOGF2APXWzbnNo8/pub?w=767&amp;h=413" />
+</div>
+<div class="section" id="multi-node-non-ha-deployment-compact-swift">
+<h2>Multi-node (non-HA) deployment (compact Swift)<a class="headerlink" href="#multi-node-non-ha-deployment-compact-swift" title="Permalink to this headline">¶</a></h2>
+<p>More commonly, your OpenStack installation will consist of multiple
+servers. Exactly how many is up to you, of course, but the main idea
+is that your controller(s) are separate from your compute servers, on
+which your users&#8217; VMs will actually run. One arrangement that will
+enable you to achieve this separation while still keeping your
+hardware investment relatively modest is to house your storage on your
+controller nodes.</p>
+</div>
+<div class="section" id="multi-node-non-ha-deployment-standalone-swift">
+<h2>Multi-node (non-HA) deployment (standalone Swift)<a class="headerlink" href="#multi-node-non-ha-deployment-standalone-swift" title="Permalink to this headline">¶</a></h2>
+<p>A more common arrangement is to provide separate servers for storage.
+This has the advantage of reducing the number of controllers you must
+provide; because Swift runs on its own servers, you can reduce the
+number of controllers from three (or five, for a full Swift implementation) to one, if desired:</p>
+<img alt="https://docs.google.com/drawings/d/1nVEtfpNLaLV4EBKJQleLxovqMVrDCRT7yFWTYUQASB0/pub?w=767&amp;h=413" src="https://docs.google.com/drawings/d/1nVEtfpNLaLV4EBKJQleLxovqMVrDCRT7yFWTYUQASB0/pub?w=767&amp;h=413" />
+</div>
+<div class="section" id="multi-node-ha-deployment-compact">
+<h2>Multi-node (HA) deployment (Compact)<a class="headerlink" href="#multi-node-ha-deployment-compact" title="Permalink to this headline">¶</a></h2>
+<p>Production environments typically require high availability, which
+involves several architectural requirements. Specifically, you will
+need at least three controllers, and
+certain components will be deployed in multiple locations to prevent
+single points of failure. That&#8217;s not to say, however, that you can&#8217;t
+reduce hardware requirements by combining your storage, network, and controller
+nodes:</p>
+<img alt="https://docs.google.com/drawings/d/1xLv4zog19j0MThVGV9gSYa4wh1Ma4MQYsBz-4vE1xvg/pub?w=767&amp;h=413" src="https://docs.google.com/drawings/d/1xLv4zog19j0MThVGV9gSYa4wh1Ma4MQYsBz-4vE1xvg/pub?w=767&amp;h=413" />
+</div>
+<div class="section" id="multi-node-ha-deployment-compact-neutron">
+<h2>Multi-node (HA) deployment (Compact Neutron)<a class="headerlink" href="#multi-node-ha-deployment-compact-neutron" title="Permalink to this headline">¶</a></h2>
+<p>Another way you can add functionality to your cluster without
+increasing hardware requirements is to install Quantum on your
+controller nodes. This architecture still provides high availability,
+but avoids the need for a separate Neutron node:</p>
+<img alt="https://docs.google.com/drawings/d/1GYNM5yTJSlZe9nB5SHnlrqyMfVRdVh02OFLwXlz-itc/pub?w=767&amp;h=413" src="https://docs.google.com/drawings/d/1GYNM5yTJSlZe9nB5SHnlrqyMfVRdVh02OFLwXlz-itc/pub?w=767&amp;h=413" />
+</div>
+<div class="section" id="multi-node-ha-deployment-standalone">
+<h2>Multi-node (HA) deployment (Standalone)<a class="headerlink" href="#multi-node-ha-deployment-standalone" title="Permalink to this headline">¶</a></h2>
+<p>For larger production deployments, its more common to provide
+dedicated hardware for storage and networking. This architecture still
+gives you the advantages of high availability, but this clean
+separation makes your cluster more maintainable by separating storage,
+networking, and controller functionality:</p>
+<img alt="https://docs.google.com/drawings/d/1rJEZi5-l9oemMmrkH5UPjitQQDVGuZQ1KS0pPWTuovY/pub?w=769&amp;h=594" src="https://docs.google.com/drawings/d/1rJEZi5-l9oemMmrkH5UPjitQQDVGuZQ1KS0pPWTuovY/pub?w=769&amp;h=594" />
+<p>Where Fuel really shines is in the creation of more complex
+architectures, so in this document you&#8217;ll learn how to use Fuel to
+easily create a multi-node HA OpenStack cluster. To reduce the amount
+of hardware you&#8217;ll need to follow the installation in section 3,
+however, the guide focuses on the Multi-node HA Compact
+architecture.</p>
+<p>Lets take a closer look at the details of this deployment configuration.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li><a href="../../index.html">Fuel for OpenStack 3.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Mirantis.
+      Last updated on 2013/07/22.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+    </div>
+  </body>
+</html>

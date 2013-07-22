@@ -1,0 +1,212 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Sequence Diagram &mdash; Fuel for OpenStack 3.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="Fuel for OpenStack 3.0 documentation" href="../../../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li><a href="../../../index.html">Fuel for OpenStack 3.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Sequence Diagram</a><ul>
+<li><a class="reference internal" href="#os-provisioning">OS Provisioning</a></li>
+<li><a class="reference internal" href="#networks-verification">Networks Verification</a></li>
+<li><a class="reference internal" href="#details-on-cluster-deployment-via-facter-extension">Details on Cluster Deployment (via Facter extension)</a></li>
+<li><a class="reference internal" href="#alternative-implementation-for-deployment-via-enc">Alternative Implementation for deployment via ENC</a></li>
+<li><a class="reference internal" href="#comparison-of-deployment-approaches">Comparison of deployment approaches</a><ul>
+<li><a class="reference internal" href="#data-from-facter">Data from Facter</a></li>
+<li><a class="reference internal" href="#data-from-enc">Data from ENC</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/pages/installation-fuel-web/develop/sequence.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="sequence-diagram">
+<h1>Sequence Diagram<a class="headerlink" href="#sequence-diagram" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="os-provisioning">
+<h2>OS Provisioning<a class="headerlink" href="#os-provisioning" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div></div></blockquote>
+</div>
+<div class="section" id="networks-verification">
+<h2>Networks Verification<a class="headerlink" href="#networks-verification" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div></div></blockquote>
+</div>
+<div class="section" id="details-on-cluster-deployment-via-facter-extension">
+<h2>Details on Cluster Deployment (via Facter extension)<a class="headerlink" href="#details-on-cluster-deployment-via-facter-extension" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div></div></blockquote>
+<p>Once deploy message is accepted by Naily, it asks Orchestrator if nodes are ready.
+Orchestrator, on its turn, uses <a class="reference external" href="http://www.devco.net/archives/2012/06/19/mcollective-direct-addressing-mode.php">MCollective direct addressing mode</a>
+to check if all required nodes are available,
+include puppet agent on them. Orchestrator responds back to Naily with this information.
+If some nodes are not ready yet, Naily waits for a few seconds and does request again. Otherwise, Naily calls deploy
+on Orchestrator, passing nodes, roles, network data and other attributes defined by user in WebUI.
+Orchestrator uses naily_fact MCollective plugin to post data to a special file /etc/naily.fact on target system.
+Data include role and all other variables needed for deployment. Then, Orchestrator calls puppetd MCollective plugin
+to start deployment. Puppet is started on nodes, and requests Puppet master for modules and manifests.
+site.pp on Master node defines one common class for every node.
+Accordingly, puppet agent starts its run. Modules contain facter extension, which runs before deployment. Extension
+reads facts from /etc/naily.fact placed by mcollective, and extends Facter data with these facts, which can be
+easily used in Puppet modules. Case structure in running class chooses appropriate class to import, based on $role
+variable, received from /etc/naily.fact. It loads and starts to execute. All variables from file are available
+like ordinary facts from Facter.
+Inspired by blog posts <a class="reference external" href="http://nuknad.com/2011/02/11/self-classifying-puppet-nodes/">self-classifying puppet nodes</a>,
+<a class="reference external" href="http://nuknad.com/2011/01/07/pulling-a-list-of-hosts-from-mcollective-for-puppet/">pulling a list of hosts from mcollective for puppet</a>,
+<a class="reference external" href="http://blog.thesilentpenguin.com/blog/2012/02/22/a-simple-puppet-function-to-retrieve-information-from-the-stored-config-db/">A Simple Puppet Function to Retrieve Information From the Stored Config DB</a>,
+<a class="reference external" href="https://github.com/jordansissel/puppet-examples/tree/master/nodeless-puppet">nodeless-puppet example</a>.
+It could be possible to use just special file and not to extend facts of Facter, just load JSON data straight
+during Puppet recipes execution, however additional research should be done.
+Last notice on how to work with the system without Nailgun and Naily: user creates a YAML file with all required
+data, and calls Orchestrator binary script. Script loads data from YAML and instantiates Orchestrator instance
+the same way as it&#8217;s instanciated from Naily. Messages come to STDOUT instead of file logger.</p>
+</div>
+<div class="section" id="alternative-implementation-for-deployment-via-enc">
+<span id="deploy-via-enc-sequence"></span><h2>Alternative Implementation for deployment via ENC<a class="headerlink" href="#alternative-implementation-for-deployment-via-enc" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div></div></blockquote>
+<p>Alternative schema of deployment is different in following:</p>
+<ul class="simple">
+<li>Naily stores all data about deployment into YAML file before the deployment, and then calls Orchestrator</li>
+<li>Orchestrator loads nodes information from YAML and calls puppet via MCollective</li>
+<li>Puppet requests data from Puppet master</li>
+<li>Puppet uses <a class="reference external" href="http://docs.puppetlabs.com/guides/external_nodes.html">ENC extension</a> to get information what
+classes should be applied on particular node. If try to explain in a few
+words what ENC is - it is Puppet Master&#8217;s extension to call external user defined script</li>
+<li>ENC script loads all required data from YAML file</li>
+<li>YAML file could be replaced by some NoSQL DB</li>
+</ul>
+</div>
+<div class="section" id="comparison-of-deployment-approaches">
+<h2>Comparison of deployment approaches<a class="headerlink" href="#comparison-of-deployment-approaches" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="data-from-facter">
+<h3>Data from Facter<a class="headerlink" href="#data-from-facter" title="Permalink to this headline">¶</a></h3>
+<p>Pros:</p>
+<ul class="simple">
+<li>Easy. Put file on node via MCollective, and we know what will be executed there. It&#8217;s easy to check what have been
+executed last time.</li>
+<li>No additional stateful components. Otherwise it could lead to data inconsistency</li>
+<li>Easy to switch into configuration without Puppet Master or even replace it to Chef Solo</li>
+<li>Requires time to place data on nodes before puppet run, and implementation in syncronious way - puppet should not
+run before the node receive it&#8217;s role.</li>
+</ul>
+<p>Cons:</p>
+<ul class="simple">
+<li>Doesn&#8217;t look like a &#8220;Puppet&#8221; way, when desired state of Cluster should be defined beforeahead and Puppet
+will converge the existing state to the desired state</li>
+</ul>
+</div>
+<div class="section" id="data-from-enc">
+<h3>Data from ENC<a class="headerlink" href="#data-from-enc" title="Permalink to this headline">¶</a></h3>
+<p>Pros:</p>
+<ul class="simple">
+<li>&#8220;Puppet&#8221; way, everything what is needed is defined in YAML file</li>
+<li>All information could be found in one place - YAML file</li>
+</ul>
+<p>Cons:</p>
+<ul class="simple">
+<li>Naily should know the data structure in YAML file to do the merge. (however it can just call Orchestrator with
+metadata, and Orchestrator will write data to YAML file)</li>
+<li>Requires additional stateful component - YAML file, what may lead to data inconsistency</li>
+<li>Puppet Master must be installed on the same node as Orchestrator (to access YAML file). Even if YAML file
+is replaced to NoSQL DB, ENC script still has to be present on Puppet Master node.</li>
+<li>With increase of deployment complexity and metadata, YAML file will increase in size. It also should contain
+information about all clusters and all nodes consequently, which could become a bottleneck for loading data
+in case of hundrends nodes and thousand requests. Separation of YAML structure in cluster-based will not help
+because there will be need to pass cluster identifier to puppet, what&#8217;s unclear how to do besides facter
+extension.</li>
+<li>More complex code for Naily(or Orchestrator) is required to do merges of existing data in YAML file and new data,
+code to prevent concurrency issues. It would be even more complex with Updates feature, when it would require
+of a sequence of actions performed in a specific order.</li>
+<li>Let&#8217;s say we have attribute { &#8216;keystone&#8217; =&gt; { &#8216;data_dir&#8217; =&gt; &#8216;/var/lib/keystone&#8217; } }, and we want to update our
+cluster to new version of OpenStack, node by node, where data_dir location is different. In case with NailyFact,
+it&#8217;s easy - just write facts on target node and run puppet on it, other nodes will not be affected (they still
+have settings for old data_dir location). In case with data from ENC it&#8217;s much more complex, because there is
+only single DB - YAML file for the whole cluster. It means it would not be possible to run puppet on old nodes
+if they should not be updated yet.</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li><a href="../../../index.html">Fuel for OpenStack 3.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Mirantis.
+      Last updated on 2013/07/22.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+    </div>
+  </body>
+</html>

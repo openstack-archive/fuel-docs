@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Release Notes &mdash; Fuel for OpenStack 3.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="Fuel for OpenStack 3.0 documentation" href="../../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li><a href="../../index.html">Fuel for OpenStack 3.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Release Notes</a><ul>
+<li><a class="reference internal" href="#v3-1-grizzly">v3.1-grizzly</a></li>
+<li><a class="reference internal" href="#v3-0-grizzly">v3.0-grizzly</a></li>
+<li><a class="reference internal" href="#v2-1-folsom">v2.1-folsom</a></li>
+<li><a class="reference internal" href="#v2-0-folsom">v2.0-folsom</a></li>
+<li><a class="reference internal" href="#v1-0-essex">v1.0-essex</a></li>
+</ul>
+</li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../_sources/pages/introduction/0070-release-notes.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="release-notes">
+<h1>Release Notes<a class="headerlink" href="#release-notes" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="v3-1-grizzly">
+<h2>v3.1-grizzly<a class="headerlink" href="#v3-1-grizzly" title="Permalink to this headline">¶</a></h2>
+<p><strong>New Features in Fuel and Fuel Web 3.1</strong></p>
+<p>PLACEHOLDER</p>
+</div>
+<div class="section" id="v3-0-grizzly">
+<h2>v3.0-grizzly<a class="headerlink" href="#v3-0-grizzly" title="Permalink to this headline">¶</a></h2>
+<p><strong>New Features in Fuel and Fuel Web 3.0</strong></p>
+<ul class="simple">
+<li>Support for OpenStack Grizzly</li>
+<li>Support for CentOS 6.4</li>
+<li>Deployment improvements<ul>
+<li>Deployment of Cinder as a standalone node</li>
+<li>Users may now choose where to store Cinder volumes</li>
+<li>User defined disk space allocation for the base OS, Cinder and Virtual Machines</li>
+<li>Ability to add new compute nodes without redeployment of the whole environment</li>
+<li>Swift installation occurs in a single pass instead of multiple passes</li>
+</ul>
+</li>
+<li>Network configuration enhancements<ul>
+<li>Support for NIC bonding</li>
+<li>Ability to map logical networks to physical interfaces</li>
+<li>Improved firewall module</li>
+</ul>
+</li>
+</ul>
+<p><strong>Support for OpenStack Grizzly</strong></p>
+<p>OpenStack Grizzly is the seventh release of the open source software for building public, private, and hybrid clouds.  Fuel now supports deploying the Grizzly version of OpenStack in a variety of configurations including High Availability (HA).  For a list of known limitations, please refer to the Known Issues section below.</p>
+<p><strong>Support for CentOS 6.4</strong></p>
+<p>CentOS 6.4 is now the base operating system for the Fuel master node, as well as the deployed slave nodes.</p>
+<p><strong>Deployment Improvements</strong></p>
+<ul>
+<li><p class="first">Deployment of Cinder as a standalone node / User choice</p>
+<p>Previously, Cinder could only be deployed onto a compute node.  Now, you may choose to deploy Cinder as a standalone node separate from a compute node.  Both options – either deployed with a compute node or standalone – are available.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="v2-1-folsom">
+<h2>v2.1-folsom<a class="headerlink" href="#v2-1-folsom" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Features<ul>
+<li>Support deploying Neutron (formerly Quantum) on controller nodes, as well as on a dedicated networking node</li>
+<li>Active/Standby HA for Neutron with Pacemaker when Neutron is deployed on controller nodes</li>
+<li>Logging: an option to send OpenStack logs to local and remote locations through syslog</li>
+<li>Monitoring: deployment of Nagios, health checks for infrastructure components (OpenStack API, MySQL, RabbitMQ)</li>
+<li>Installation of Puppet Master &amp; Cobbler Server node from ISO</li>
+<li>Deployment orchestration based on mcollective eliminates the need to run Puppet manually on each node</li>
+<li>Recommended master node setup for mid-scale deployments, tested up to 100 nodes</li>
+</ul>
+</li>
+<li>Improvements<ul>
+<li>Support for multiple environments from a single Fuel master node</li>
+<li>RabbitMQ service moved behind HAProxy to make controller failures transparent to the clients</li>
+<li>Updated RabbitMQ to 2.8.7 to improve handling on expired HA queues under Ubuntu</li>
+<li>Changed RabbitMQ init script to automatically reassemble RabbitMQ cluster after failures</li>
+<li>Configurable HTTP vs. HTTPS for Horizon</li>
+<li>Changed mirror type option to either be &#8216;default&#8217; (installation from the internet) or &#8216;custom&#8217; (installation from a local mirror containing packages)</li>
+<li>Option to allow cinder-volume deployment on controller nodes as well as compute nodes</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="v2-0-folsom">
+<h2>v2.0-folsom<a class="headerlink" href="#v2-0-folsom" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Features:<ul>
+<li>Puppet manifests for deploying OpenStack Folsom in HA mode</li>
+<li>Active/Active HA architecture for Folsom, based on RabbitMQ / MySQL Galera / HAProxy / keepalived</li>
+<li>Added support for Ubuntu 12.04 in addition to CentOS 6.3 and RHEL 6.3 (includes bare metal provisioning, Puppet manifests, and OpenStack packages)</li>
+<li>Supports deploying Folsom with Neutron (formerly Quantum)/OVS</li>
+<li>Supports deploying Folsom with Cinder</li>
+<li>Supports Puppet 2.7 and 3.0</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="v1-0-essex">
+<h2>v1.0-essex<a class="headerlink" href="#v1-0-essex" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Features:<ul>
+<li>Puppet manifests for deploying OpenStack Essex in HA mode</li>
+<li>Active/Active HA architecture for Essex, based on RabbitMQ / MySQL Galera / HAProxy / keepalived</li>
+<li>Cobbler-based bare-metal provisioning for CentOS 6.3 and RHEL 6.3</li>
+<li>Access to the mirror with OpenStack packages</li>
+<li>Configuration templates for different OpenStack cluster setups</li>
+<li>User Guide</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li><a href="../../index.html">Fuel for OpenStack 3.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Mirantis.
+      Last updated on 2013/07/22.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+    </div>
+  </body>
+</html>

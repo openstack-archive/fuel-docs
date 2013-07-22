@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Installing &amp; Configuring Fuel &mdash; Fuel for OpenStack 3.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="Fuel for OpenStack 3.0 documentation" href="../../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li><a href="../../index.html">Fuel for OpenStack 3.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Installing &amp; Configuring Fuel</a><ul>
+<li><a class="reference internal" href="#installing-fuel-from-the-iso">Installing Fuel from the ISO</a></li>
+<li><a class="reference internal" href="#configuring-fuel-pm-from-the-iso-installation">Configuring fuel-pm from the ISO installation</a></li>
+</ul>
+</li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../_sources/pages/installation-instructions/0040-installing-configuring-puppet-master.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="installing-configuring-fuel">
+<h1>Installing &amp; Configuring Fuel<a class="headerlink" href="#installing-configuring-fuel" title="Permalink to this headline">¶</a></h1>
+<p>Having planned your test or production deployment and have determined the resources you will be using, it&#8217;s time to begin putting the pieces together. To do that, you&#8217;ll need to create the Puppet master and Cobbler servers, which will actually provision and configure your OpenStack nodes.</p>
+<p>Installing the Puppet Master is a one-time procedure for the entire infrastructure. Once done, Puppet Master will act as a single point of management for all of your servers, and you will never have to return to these installation steps again.</p>
+<p>The deployment of the Puppet Master server, named fuel-pm in these instructions, varies slightly between the physical and simulation environments. In a physical infrastructure, fuel-pm must have a network presence on the same network as the physical machines in order to faciliate PXE booting. In a simulation environment fuel-pm only needs host-only virtual network connectivity.</p>
+<p>At this point, you should have either a physical or virtual machine that can be booted from the Mirantis ISO, downloaded from <a class="reference external" href="http://fuel.mirantis.com/your-downloads/">http://fuel.mirantis.com/your-downloads/</a>.</p>
+<p>This ISO can be used to create fuel-pm on a physical or virtual machine based on CentOS 6.4. If for some reason you cannot use the ISO, follow the instructions in <em class="xref std std-ref">Creating the Puppet master</em> to create your own fuel-pm, then skip ahead to <em class="xref std std-ref">Configuring fuel-pm</em>.</p>
+<div class="section" id="installing-fuel-from-the-iso">
+<h2>Installing Fuel from the ISO<a class="headerlink" href="#installing-fuel-from-the-iso" title="Permalink to this headline">¶</a></h2>
+<p>Start the new machine to install the ISO. The only real installation decision you will need to make is to specify the interface through which the installer can access the Internet. Select the eth1 interface you created earlier which should be configured for access to the public network.</p>
+</div>
+<div class="section" id="configuring-fuel-pm-from-the-iso-installation">
+<h2>Configuring fuel-pm from the ISO installation<a class="headerlink" href="#configuring-fuel-pm-from-the-iso-installation" title="Permalink to this headline">¶</a></h2>
+<p>Once fuel-pm finishes installing, you&#8217;ll be presented with a basic menu. You can use this menu to set the basic information Fuel will need to configure your installation. You can customize these steps to suit your own need, of course, but here are the steps to take for the example installation:</p>
+<ol class="arabic simple">
+<li>Your admin node must be called <tt class="docutils literal"><span class="pre">fuel-pm</span></tt>, and your domain name must be <tt class="docutils literal"><span class="pre">localdomain</span></tt>.</li>
+<li>To configure the management interface, choose 2.<ul>
+<li>The example specifies eth0 as the internal, or management interface, so select that interface.</li>
+<li>The management network in the example is using static IP addresses, so specify NO for for using DHCP.</li>
+<li>Enter the IP address of 10.0.0.100 for the Puppet Master with a netmask of 255.255.255.0.</li>
+<li>Set the gateway and DNS servers if desired.  In this example, we&#8217;ll use the router at 192.168.0.1 as the gateway.</li>
+</ul>
+</li>
+<li>To configure the external interface that VMs will use to send traffic to and from the internet, choose 3. Set the interface to eth1. By default, this interface uses DHCP, which is what the example calls for.</li>
+<li>To choose the start and end addresses to be used during PXE boot, choose 4.  In the case of this example, the start address is 10.0.0.201 and the end address is 10.0.0.254. Later, these nodes will receive IP addresses from Cobbler.</li>
+<li>Future versions of Fuel will enable you to choose a custom set of repositories.</li>
+<li>If you need to specify a proxy through which fuel-pm will access the Internet, press 6.</li>
+<li>Once you&#8217;ve finished editing, choose 9 to save your changes and exit the menu.</li>
+</ol>
+<p>Please note:  Even though defaults are shown, you must set actual values; if you simply press &#8220;enter&#8221; you will wind up with empty values.</p>
+<p>To re-enter the menu at any time, type:</p>
+<p>bootstrap_admin_node.sh</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li><a href="../../index.html">Fuel for OpenStack 3.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Mirantis.
+      Last updated on 2013/07/22.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+    </div>
+  </body>
+</html>

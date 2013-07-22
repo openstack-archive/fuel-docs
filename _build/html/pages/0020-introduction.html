@@ -1,0 +1,421 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Introduction &mdash; Fuel for OpenStack 3.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Fuel for OpenStack 3.0 documentation" href="../index.html" />
+    <link rel="next" title="Reference Architecture" href="0040-reference-architecture.html" />
+    <link rel="prev" title="Preface" href="0010-package-contents.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="0040-reference-architecture.html" title="Reference Architecture"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="0010-package-contents.html" title="Preface"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Fuel for OpenStack 3.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Introduction</a><ul>
+<li><a class="reference internal" href="#what-is-fuel">What is Fuel?</a></li>
+<li><a class="reference internal" href="#how-fuel-works">How Fuel Works</a></li>
+<li><a class="reference internal" href="#deployment-configurations-provided-by-fuel">Deployment Configurations Provided By Fuel</a></li>
+<li><a class="reference internal" href="#supported-software">Supported Software</a></li>
+<li><a class="reference internal" href="#download-fuel">Download Fuel</a></li>
+<li><a class="reference internal" href="#release-notes">Release Notes</a><ul>
+<li><a class="reference internal" href="#v3-1-grizzly">v3.1-grizzly</a></li>
+<li><a class="reference internal" href="#v3-0-grizzly">v3.0-grizzly</a></li>
+<li><a class="reference internal" href="#v2-1-folsom">v2.1-folsom</a></li>
+<li><a class="reference internal" href="#v2-0-folsom">v2.0-folsom</a></li>
+<li><a class="reference internal" href="#v1-0-essex">v1.0-essex</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="0010-package-contents.html"
+                        title="previous chapter">Preface</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="0040-reference-architecture.html"
+                        title="next chapter">Reference Architecture</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/pages/0020-introduction.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="introduction">
+<span id="id1"></span><h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#what-is-fuel" id="id2">What is Fuel?</a></li>
+<li><a class="reference internal" href="#how-fuel-works" id="id3">How Fuel Works</a></li>
+<li><a class="reference internal" href="#deployment-configurations-provided-by-fuel" id="id4">Deployment Configurations Provided By Fuel</a></li>
+<li><a class="reference internal" href="#supported-software" id="id5">Supported Software</a></li>
+<li><a class="reference internal" href="#download-fuel" id="id6">Download Fuel</a></li>
+<li><a class="reference internal" href="#release-notes" id="id7">Release Notes</a><ul>
+<li><a class="reference internal" href="#v3-1-grizzly" id="id8">v3.1-grizzly</a></li>
+<li><a class="reference internal" href="#v3-0-grizzly" id="id9">v3.0-grizzly</a></li>
+<li><a class="reference internal" href="#v2-1-folsom" id="id10">v2.1-folsom</a></li>
+<li><a class="reference internal" href="#v2-0-folsom" id="id11">v2.0-folsom</a></li>
+<li><a class="reference internal" href="#v1-0-essex" id="id12">v1.0-essex</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>This document explains how to use Fuel to easily create and maintain an OpenStack cloud infrastructure.</p>
+<p>Fuel can be used to create virtually any OpenStack configuration. To make things easier, the installation includes several pre-defined architectures. For the sake of simplicity, this guide emphasises a single, common reference architecture; the multi-node, high-availability configuration. We begin with an explanation of this architecture, then move on to the details of creating the configuration in a test environment using VirtualBox. Finally, we give you the information you need to know to create this and other OpenStack architectures in a production environment.</p>
+<p>This document assumes that you are familiar with general Linux commands and administration concepts, as well as general networking concepts. You should have some familiarity with grid or virtualization systems such as Amazon Web Services or VMware, as well as OpenStack itself, but you don&#8217;t need to be an expert.</p>
+<p>The Fuel User&#8217;s Guide is organized as follows:</p>
+<ul class="simple">
+<li>Section 1, <a class="reference internal" href="#introduction"><em>Introduction</em></a> (this section), gives you an overview of Fuel and gives you a general idea of how it works.</li>
+<li>Section 2, <a class="reference internal" href="0040-reference-architecture.html#reference-archiecture"><em>Reference Architecture</em></a>, provides a general look at the components that make up OpenStack, and describes the reference architecture to be instantiated in Section 3.</li>
+<li>Section 3.1, <em class="xref std std-ref">Create a multi-node OpenStack cluster using Fuel Web</em>, takes you step-by-step through the process of creating a high-availability OpenStack cluster using Fuel Web.</li>
+<li>Section 3.2, <a class="reference internal" href="0050-installation-instructions.html#create-cluster"><em>Create a multi-node OpenStack cluster using Fuel</em></a>, takes you step-by-step through the more advanced process of creating a high-availability OpenStack cluster using the standard Fuel tools.</li>
+<li>Section 4, <a class="reference internal" href="0058-advanced-configuration.html#production"><em>Production Considerations</em></a>, looks at the real-world questions and problems involved in creating an OpenStack cluster for production use. We discuss issues such as network layout and hardware requirements, and provide tips and tricks for creating a cluster of up to 100 nodes.</li>
+<li>With the 3.1 release of Fuel, Fuel Web has been integrated. We encourage all users to use the Fuel Web process for installation and configuration. However, the standard Fuel installation process is still available for those of you who prefer a more detailed approach to deployment. Even with a utility as powerful as Fuel, creating an OpenStack cluster can be complex, and Section 5, <a class="reference internal" href="0060-frequently-asked-questions.html#faq"><em>Frequently Asked Questions</em></a>, covers many of the issues that tend to arise during that process.</li>
+<li>Finally, the User&#8217;s Guide assumes that you are taking advantage of certain shortcuts, such as using a pre-built Puppet master; if you prefer not to go that route, Appendix A, <em class="xref std std-ref">Creating the Puppet master</em>, will give you details regarding the configuration of a Puppet Master.</li>
+</ul>
+<p>Lets start off by taking a look at Fuel itself. We&#8217;ll start by explaining what it is and how it works, and then move to the process of installation itself.</p>
+<div class="section" id="what-is-fuel">
+<h2><a class="toc-backref" href="#id2">What is Fuel?</a><a class="headerlink" href="#what-is-fuel" title="Permalink to this headline">¶</a></h2>
+<p>Fuel is a ready-to-install collection of the packages and scripts you need to create a robust, configurable, vendor-independant OpenStack cloud in your own environment.</p>
+<p>A single OpenStack cloud consists of packages from many different open source projects, each with its own requirements, installation procedures, and configuration management. Fuel brings all of these projects together into a single open source distribution, with components that have been tested and are guaranteed to work together, and all wrapped up using scripts to help you work through a single installation.</p>
+<p>Simply put, Fuel is a way for you to easily configure and install an OpenStack-based infrastructure in your own environment.</p>
+<a class="reference internal image-reference" href="../_images/FuelSimpleDiagramv.gif"><img alt="../_images/FuelSimpleDiagramv.gif" class="align-center" src="../_images/FuelSimpleDiagramv.gif" style="width: 800px;" /></a>
+</div>
+<div class="section" id="how-fuel-works">
+<h2><a class="toc-backref" href="#id3">How Fuel Works</a><a class="headerlink" href="#how-fuel-works" title="Permalink to this headline">¶</a></h2>
+<p>Fuel works on a simple premise. Rather than installing each of the myriad components that make up OpenStack directly, you instead use a configuration management system like Puppet to create scripts that can provide a configurable, reproducible, sharable installation process.</p>
+<p>In practice, that means that the process of using Fuel Library looks like this:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>First, use Fuel&#8217;s automation tools and instructions to set up a master node with Puppet Master and Cobbler. This process only needs to be completed once per installation.</li>
+<li>Next, use Fuel&#8217;s snippets, kickstart files, and preseed files for Cobbler to boot the appropriate servers from bare metal and automatically install the appropriate operating systems. These virtual or physical servers boot up already prepared to call on the Puppet Master to receive their respective OpenStack components.</li>
+<li>Finally, to complete the basic OpenStack install, use Fuel&#8217;s puppet manifests to install OpenStack on the newly created servers. These manifests are completely customizable, enabling you to start with one of the included OpenStack architectures and adapt to your own situation as necessary.</li>
+</ol>
+</div></blockquote>
+<img alt="https://docs.google.com/drawings/pub?id=15vTTG2_575M7-kOzwsYyDmQrMgCPT2joLF2Cgiyzv7Q&amp;w=678&amp;h=617" class="align-center" src="https://docs.google.com/drawings/pub?id=15vTTG2_575M7-kOzwsYyDmQrMgCPT2joLF2Cgiyzv7Q&amp;w=678&amp;h=617" />
+<p>Fuel comes with several pre-defined deployment configurations, some of which include additional options from which you can choose.</p>
+<p>As of the 3.1 release of Fuel for OpenStack, Fuel Web is included as part of the package. Fuel Web is a simplified way to deploy production-grade OpenStack clouds. Fuel Web provides a streamlined, graphical console experience using the underlying scripts from Fuel Library, including proven deployment configurations and a well-organized workflow for deploying and managing OpenStack environments.</p>
+<p>Fuel Web integrates all of the components of Fuel Library into a unified, web-based graphical user interface that walks administrators through the process of installing and configuring a fully functional OpenStack environment.</p>
+</div>
+<div class="section" id="deployment-configurations-provided-by-fuel">
+<h2><a class="toc-backref" href="#id4">Deployment Configurations Provided By Fuel</a><a class="headerlink" href="#deployment-configurations-provided-by-fuel" title="Permalink to this headline">¶</a></h2>
+<p>One of the advantages of Fuel is that it comes with a number of pre-built deployment configurations that you can use to quickly build your own OpenStack cloud infrastructure. These are well-specified configurations of OpenStack and its constituent components are tailored to one or more common cloud use cases. Fuel provides the ability to create the following cluster types without requiring extensive customization:</p>
+<p><strong>Single node</strong>: Perfect for getting a feel for how OpenStack works, the Single-node installation is the simplest way to get OpenStack up and running. The Single-node installation provides an easy way to install an entire OpenStack cluster on a single physical server system or in a virtual machine environment.</p>
+<p><strong>Multi-node (non-HA)</strong>: The Multi-node (non-HA) installation enables you to try out additional OpenStack services like Cinder, Neutron (formerly Quantum), and Swift without requiring the degree of increased hardware involved in ensuring high availability. In addition to the ability to independently specify which services to activate, you also have the following options:</p>
+<blockquote>
+<div><p><strong>Compact Swift</strong>: When you choose this option, Swift will be installed on your controllers, reducing your hardware requirements by eliminating the need for additional Swift servers.</p>
+<p><strong>Standalone Swift</strong>: This option enables you to install independant Swift nodes, so that you can separate their operation from your controller nodes.</p>
+</div></blockquote>
+<p><strong>Multi-node (HA)</strong>: When you&#8217;re ready to begin your move to production, the Multi-node (HA) configuration is a straightforward way to create an OpenStack cluster that provides high availability. With three controller nodes and the ability to individually specify services such as Cinder, Neutron, and Swift, Fuel provides the following variations of the Multi-node (HA) configuration:</p>
+<blockquote>
+<div><p><strong>Compact Swift</strong>: When you choose this option, Swift will be installed on your controllers, reducing your hardware requirements by eliminating the need for additional Swift servers while still addressing high availability requirements.</p>
+<p><strong>Standalone Swift</strong>: This option enables you to install independant Swift nodes, so that you can separate their operation from your controller nodes.</p>
+<p><strong>Compact Neutron</strong>: If you don&#8217;t need the flexibility of a separate Neutron node, Fuel provides the option to combine your Neutron node with one of your controllers.</p>
+</div></blockquote>
+<p>In addition to these configurations, Fuel is designed to be completely customizable. For assistance on deeper customization options based on the included configurations you can <a class="reference external" href="http://www.mirantis.com/contact/">contact Mirantis for further assistance</a>.</p>
+</div>
+<div class="section" id="supported-software">
+<h2><a class="toc-backref" href="#id5">Supported Software</a><a class="headerlink" href="#supported-software" title="Permalink to this headline">¶</a></h2>
+<p>Fuel has been tested and is guaranteed to work with the following software components:</p>
+<ul>
+<li><dl class="first docutils">
+<dt>Operating Systems</dt>
+<dd><ul class="first last simple">
+<li>CentOS 6.4 (x86_64 architecture only)</li>
+<li>RHEL 6.4 (x86_64 architecture only)</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Puppet (IT automation tool)</dt>
+<dd><ul class="first last simple">
+<li>2.7.19</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>MCollective</dt>
+<dd><ul class="first last simple">
+<li>2.2.4</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Cobbler (bare-metal provisioning tool)</dt>
+<dd><ul class="first last simple">
+<li>2.2.3</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>OpenStack</dt>
+<dd><ul class="first last simple">
+<li>Grizzly release 2013.1</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Hypervisor</dt>
+<dd><ul class="first last simple">
+<li>KVM</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Open vSwitch</dt>
+<dd><ul class="first last simple">
+<li>1.10.0</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>HA Proxy</dt>
+<dd><ul class="first last simple">
+<li>1.4.19</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Galera</dt>
+<dd><ul class="first last simple">
+<li>23.2.2</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>RabbitMQ</dt>
+<dd><ul class="first last simple">
+<li>2.8.7</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Pacemaker</dt>
+<dd><ul class="first last simple">
+<li>1.1.8</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Corosync</dt>
+<dd><ul class="first last simple">
+<li>1.4.3</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Keepalived</dt>
+<dd><ul class="first last simple">
+<li>1.2.4</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Nagios</dt>
+<dd><ul class="first last simple">
+<li>3.4.4</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="download-fuel">
+<h2><a class="toc-backref" href="#id6">Download Fuel</a><a class="headerlink" href="#download-fuel" title="Permalink to this headline">¶</a></h2>
+<p>The first step in installing Fuel is to download the version appropriate for your environment.</p>
+<p>Fuel is available for Essex, Folsom and Grizzly OpenStack installations, and will be available for Havana shortly after Havana&#8217;s release.</p>
+<p>To make your installation easier, we also offer a pre-built ISO for installing the master node with Puppet Master and Cobbler. You can mount this ISO on a physical machine or in VirtualBox in order to easily create your master node. (Instructions for performing this step without the ISO are given in <em class="xref std std-ref">Appendix A</em>.)</p>
+<p>The master node ISO, along with other Fuel releases, is available in the <a class="reference external" href="http://fuel.mirantis.com/your-downloads/">Downloads</a> section of the Fuel portal.</p>
+</div>
+<div class="section" id="release-notes">
+<h2><a class="toc-backref" href="#id7">Release Notes</a><a class="headerlink" href="#release-notes" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="v3-1-grizzly">
+<h3><a class="toc-backref" href="#id8">v3.1-grizzly</a><a class="headerlink" href="#v3-1-grizzly" title="Permalink to this headline">¶</a></h3>
+<p><strong>New Features in Fuel and Fuel Web 3.1</strong></p>
+<p>PLACEHOLDER</p>
+</div>
+<div class="section" id="v3-0-grizzly">
+<h3><a class="toc-backref" href="#id9">v3.0-grizzly</a><a class="headerlink" href="#v3-0-grizzly" title="Permalink to this headline">¶</a></h3>
+<p><strong>New Features in Fuel and Fuel Web 3.0</strong></p>
+<ul class="simple">
+<li>Support for OpenStack Grizzly</li>
+<li>Support for CentOS 6.4</li>
+<li>Deployment improvements<ul>
+<li>Deployment of Cinder as a standalone node</li>
+<li>Users may now choose where to store Cinder volumes</li>
+<li>User defined disk space allocation for the base OS, Cinder and Virtual Machines</li>
+<li>Ability to add new compute nodes without redeployment of the whole environment</li>
+<li>Swift installation occurs in a single pass instead of multiple passes</li>
+</ul>
+</li>
+<li>Network configuration enhancements<ul>
+<li>Support for NIC bonding</li>
+<li>Ability to map logical networks to physical interfaces</li>
+<li>Improved firewall module</li>
+</ul>
+</li>
+</ul>
+<p><strong>Support for OpenStack Grizzly</strong></p>
+<p>OpenStack Grizzly is the seventh release of the open source software for building public, private, and hybrid clouds.  Fuel now supports deploying the Grizzly version of OpenStack in a variety of configurations including High Availability (HA).  For a list of known limitations, please refer to the Known Issues section below.</p>
+<p><strong>Support for CentOS 6.4</strong></p>
+<p>CentOS 6.4 is now the base operating system for the Fuel master node, as well as the deployed slave nodes.</p>
+<p><strong>Deployment Improvements</strong></p>
+<ul>
+<li><p class="first">Deployment of Cinder as a standalone node / User choice</p>
+<p>Previously, Cinder could only be deployed onto a compute node.  Now, you may choose to deploy Cinder as a standalone node separate from a compute node.  Both options – either deployed with a compute node or standalone – are available.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="v2-1-folsom">
+<h3><a class="toc-backref" href="#id10">v2.1-folsom</a><a class="headerlink" href="#v2-1-folsom" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Features<ul>
+<li>Support deploying Neutron (formerly Quantum) on controller nodes, as well as on a dedicated networking node</li>
+<li>Active/Standby HA for Neutron with Pacemaker when Neutron is deployed on controller nodes</li>
+<li>Logging: an option to send OpenStack logs to local and remote locations through syslog</li>
+<li>Monitoring: deployment of Nagios, health checks for infrastructure components (OpenStack API, MySQL, RabbitMQ)</li>
+<li>Installation of Puppet Master &amp; Cobbler Server node from ISO</li>
+<li>Deployment orchestration based on mcollective eliminates the need to run Puppet manually on each node</li>
+<li>Recommended master node setup for mid-scale deployments, tested up to 100 nodes</li>
+</ul>
+</li>
+<li>Improvements<ul>
+<li>Support for multiple environments from a single Fuel master node</li>
+<li>RabbitMQ service moved behind HAProxy to make controller failures transparent to the clients</li>
+<li>Updated RabbitMQ to 2.8.7 to improve handling on expired HA queues under Ubuntu</li>
+<li>Changed RabbitMQ init script to automatically reassemble RabbitMQ cluster after failures</li>
+<li>Configurable HTTP vs. HTTPS for Horizon</li>
+<li>Changed mirror type option to either be &#8216;default&#8217; (installation from the internet) or &#8216;custom&#8217; (installation from a local mirror containing packages)</li>
+<li>Option to allow cinder-volume deployment on controller nodes as well as compute nodes</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="v2-0-folsom">
+<h3><a class="toc-backref" href="#id11">v2.0-folsom</a><a class="headerlink" href="#v2-0-folsom" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Features:<ul>
+<li>Puppet manifests for deploying OpenStack Folsom in HA mode</li>
+<li>Active/Active HA architecture for Folsom, based on RabbitMQ / MySQL Galera / HAProxy / keepalived</li>
+<li>Added support for Ubuntu 12.04 in addition to CentOS 6.3 and RHEL 6.3 (includes bare metal provisioning, Puppet manifests, and OpenStack packages)</li>
+<li>Supports deploying Folsom with Neutron (formerly Quantum)/OVS</li>
+<li>Supports deploying Folsom with Cinder</li>
+<li>Supports Puppet 2.7 and 3.0</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="v1-0-essex">
+<h3><a class="toc-backref" href="#id12">v1.0-essex</a><a class="headerlink" href="#v1-0-essex" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Features:<ul>
+<li>Puppet manifests for deploying OpenStack Essex in HA mode</li>
+<li>Active/Active HA architecture for Essex, based on RabbitMQ / MySQL Galera / HAProxy / keepalived</li>
+<li>Cobbler-based bare-metal provisioning for CentOS 6.3 and RHEL 6.3</li>
+<li>Access to the mirror with OpenStack packages</li>
+<li>Configuration templates for different OpenStack cluster setups</li>
+<li>User Guide</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="0040-reference-architecture.html" title="Reference Architecture"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="0010-package-contents.html" title="Preface"
+             >previous</a> |</li>
+        <li><a href="../index.html">Fuel for OpenStack 3.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Mirantis.
+      Last updated on 2013/07/22.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Network Architecture &mdash; Fuel for OpenStack 3.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="Fuel for OpenStack 3.0 documentation" href="../../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li><a href="../../index.html">Fuel for OpenStack 3.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Network Architecture</a><ul>
+<li><a class="reference internal" href="#public-network">Public Network</a></li>
+<li><a class="reference internal" href="#internal-management-network">Internal (Management) Network</a></li>
+<li><a class="reference internal" href="#private-network">Private Network</a></li>
+</ul>
+</li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../_sources/pages/reference-architecture/0040-network-setup.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="network-architecture">
+<h1>Network Architecture<a class="headerlink" href="#network-architecture" title="Permalink to this headline">¶</a></h1>
+<p>The current architecture assumes the presence of 3 NIC cards in hardware, but can be customized two or more NICs. Most servers come with at least two network interfaces. In this case, let&#8217;s consider a typical example of three NIC cards. They&#8217;re utilized as follows:</p>
+<ul class="simple">
+<li><strong>eth0</strong>: the internal management network, used for communication with Puppet &amp; Cobbler</li>
+<li><strong>eth1</strong>: the public network, and floating IPs assigned to VMs</li>
+<li><strong>eth2</strong>: the private network, for communication between OpenStack VMs, and the bridge interface (VLANs)</li>
+</ul>
+<p>In the multi-host networking mode, you can choose between the FlatDHCPManager and VlanManager network managers in OpenStack. The figure below illustrates the relevant nodes and networks.</p>
+<img alt="https://docs.google.com/drawings/pub?id=11KtrvPxqK3ilkAfKPSVN5KzBjnSPIJw-jRDc9fiYhxw&amp;w=810&amp;h=1060" src="https://docs.google.com/drawings/pub?id=11KtrvPxqK3ilkAfKPSVN5KzBjnSPIJw-jRDc9fiYhxw&amp;w=810&amp;h=1060" />
+<p>Lets take a closer look at each network and how its used within the cluster.</p>
+<div class="section" id="public-network">
+<h2>Public Network<a class="headerlink" href="#public-network" title="Permalink to this headline">¶</a></h2>
+<p>This network allows inbound connections to VMs from the outside world (allowing users to connect to VMs from the Internet). It also allows outbound connections from VMs to the outside world.</p>
+<p>For security reasons, the public network is usually isolated from the private network and internal (management) network. Typically, it&#8217;s a single C class network from your globally routed or private network range.</p>
+<p>To enable Internet access to VMs, the public network provides the address space for the floating IPs assigned to individual VM instances by the project administrator. Nova-network or Neutron (formerly Quantum) services can then configure this address on the public network interface of the Network controller node. If the cluster uses nova-network, nova- network uses iptables to create a Destination NAT from this address to the fixed IP of the corresponding VM instance through the appropriate virtual bridge interface on the Network controller node.</p>
+<p>In the other direction, the public network provides connectivity to the globally routed address space for VMs. The IP address from the public network that has been assigned to a compute node is used as the source for the Source NAT performed for traffic going from VM instances on the compute node to Internet.</p>
+<p>The public network also provides VIPs for Endpoint nodes, which are used to connect to OpenStack services APIs.</p>
+</div>
+<div class="section" id="internal-management-network">
+<h2>Internal (Management) Network<a class="headerlink" href="#internal-management-network" title="Permalink to this headline">¶</a></h2>
+<p>The internal network connects all OpenStack nodes in the cluster. All components of an OpenStack cluster communicate with each other using this network. This network must be isolated from both the private and public networks for security reasons.</p>
+<p>The internal network can also be used for serving iSCSI protocol exchanges between Compute and Storage nodes.</p>
+<p>This network usually is a single C class network from your private, non-globally routed IP address range.</p>
+</div>
+<div class="section" id="private-network">
+<h2>Private Network<a class="headerlink" href="#private-network" title="Permalink to this headline">¶</a></h2>
+<p>The private network facilitates communication between each tenant&#8217;s VMs. Private network address spaces are part of the enterprise network address space. Fixed IPs of virtual instances are directly accessible from the rest of Enterprise network.</p>
+<p>The private network can be segmented into separate isolated VLANs, which are managed by nova-network or Neutron (formerly Quantum) services.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li><a href="../../index.html">Fuel for OpenStack 3.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Mirantis.
+      Last updated on 2013/07/22.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,799 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Understanding the Puppet Manifest &mdash; Fuel for OpenStack 3.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="Fuel for OpenStack 3.0 documentation" href="../../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li><a href="../../index.html">Fuel for OpenStack 3.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Understanding the Puppet Manifest</a><ul>
+<li><a class="reference internal" href="#enabling-neutron">Enabling Neutron</a></li>
+<li><a class="reference internal" href="#defining-the-current-cluster">Defining the current cluster</a></li>
+<li><a class="reference internal" href="#enabling-cinder">Enabling Cinder</a></li>
+<li><a class="reference internal" href="#enabling-glance-and-swift">Enabling Glance and Swift</a></li>
+<li><a class="reference internal" href="#configuring-openstack-to-use-syslog">Configuring OpenStack to use syslog</a></li>
+<li><a class="reference internal" href="#setting-the-version-and-mirror-type">Setting the version and mirror type</a></li>
+<li><a class="reference internal" href="#setting-verbosity">Setting verbosity</a></li>
+<li><a class="reference internal" href="#configuring-rate-limits">Configuring Rate-Limits</a></li>
+<li><a class="reference internal" href="#enabling-horizon-https-ssl-mode">Enabling Horizon HTTPS/SSL mode</a></li>
+<li><a class="reference internal" href="#defining-the-node-configurations">Defining the node configurations</a></li>
+<li><a class="reference internal" href="#installing-nagios-monitoring-using-puppet">Installing Nagios Monitoring using Puppet</a><ul>
+<li><a class="reference internal" href="#nagios-agent">Nagios Agent</a></li>
+<li><a class="reference internal" href="#nagios-server">Nagios Server</a></li>
+<li><a class="reference internal" href="#health-checks">Health Checks</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#node-definitions">Node definitions</a></li>
+</ul>
+</li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../_sources/pages/installation-instructions/0060-understand-the-manifest.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="understanding-the-puppet-manifest">
+<h1>Understanding the Puppet Manifest<a class="headerlink" href="#understanding-the-puppet-manifest" title="Permalink to this headline">¶</a></h1>
+<p>At this point you should have functioning servers that are ready to take an OpenStack installation. If you&#8217;re using VirtualBox, save the current state of every virtual machine by taking a snapshot using <tt class="docutils literal"><span class="pre">File-&gt;Take</span> <span class="pre">Snapshot</span></tt>. Snapshots are a useful tool when you make a mistake, encounter an issue, or just want to try different configurations, all without having to start from scratch.</p>
+<p>Next, go through the <tt class="docutils literal"><span class="pre">/etc/puppet/manifests/site.pp</span></tt> file and make any necessary customizations.  If you have run <tt class="docutils literal"><span class="pre">openstack_system</span></tt>, there shouldn&#8217;t be anything to change (with one small exception) but if you are installing Fuel manually, you will need to make these changes yourself.</p>
+<p>Let&#8217;s start with the basic network customization:</p>
+<div class="highlight-python"><pre>### GENERAL CONFIG ###
+# This section sets main parameters such as hostnames and IP addresses of different nodes
+
+# This is the name of the public interface. The public network provides address space for Floating IPs, as well as public IP accessibility to the API endpoints.
+$public_interface = 'eth1'
+$public_br = 'br-ex'
+
+# This is the name of the internal interface. It will be attached to the management network, where data exchange between components of the OpenStack cluster will happen.
+$internal_interface = 'eth0'
+$internal_br = 'br-mgmt'
+
+# This is the name of the private interface. All traffic within OpenStack tenants' networks will go through this interface.
+$private_interface = 'eth2'</pre>
+</div>
+<p>In this case, we don&#8217;t need to make any changes to the interface settings, because they match what we&#8217;ve already set up.</p>
+<div class="highlight-python"><pre># Public and Internal VIPs. These virtual addresses are required by HA topology and will be managed by keepalived.
+$internal_virtual_ip = '10.0.0.10'
+
+# Change this IP to IP routable from your 'public' network,
+# e. g. Internet or your office LAN, in which your public
+# interface resides
+$public_virtual_ip = '192.168.0.10'</pre>
+</div>
+<p>Make sure the virtual IPs you see here don&#8217;t conflict with your network configuration. The IPs you use should be routeable, but not within the range of a DHCP scope.   These are the IPs through which your services will be accessed.</p>
+<p>The following section configures the servers themselves.  If you are setting up Fuel manually, make sure to add each server with the appropriate IP addresses; if you ran <tt class="docutils literal"><span class="pre">openstack_system</span></tt>, the values will be overridden by the next section, and you can ignore this array.</p>
+<div class="highlight-python"><pre>$nodes_harr = [
+  {
+    'name' =&gt; 'fuel-pm',
+    'role' =&gt; 'cobbler',
+    'internal_address' =&gt; '10.0.0.100',
+    'public_address'   =&gt; '192.168.0.100',
+    'mountpoints'=&gt; "1 1\n2 1",
+    'storage_local_net_ip' =&gt; '10.0.0.100',
+  },
+  {
+    'name' =&gt; 'fuel-controller-01',
+    'role' =&gt; 'primary-controller',
+    'internal_address' =&gt; '10.0.0.101',
+    'public_address'   =&gt; '192.168.0.101',
+    'mountpoints'=&gt; "1 1\n2 1",
+    'storage_local_net_ip' =&gt; '10.0.0.101',
+  },
+  {
+    'name' =&gt; 'fuel-controller-02',
+    'role' =&gt; 'controller',
+    'internal_address' =&gt; '10.0.0.102',
+    'public_address'   =&gt; '192.168.0.102',
+    'mountpoints'=&gt; "1 1\n2 1",
+    'storage_local_net_ip' =&gt; '10.0.0.102',
+  },
+  {
+    'name' =&gt; 'fuel-controller-03',
+    'role' =&gt; 'controller',
+    'internal_address' =&gt; '10.0.0.105',
+    'public_address'   =&gt; '192.168.0.105',
+    'mountpoints'=&gt; "1 1\n2 1",
+    'storage_local_net_ip' =&gt; '10.0.0.105',
+  },
+  {
+    'name' =&gt; 'fuel-compute-01',
+    'role' =&gt; 'compute',
+    'internal_address' =&gt; '10.0.0.106',
+    'public_address'   =&gt; '192.168.0.106',
+    'mountpoints'=&gt; "1 1\n2 1",
+    'storage_local_net_ip' =&gt; '10.0.0.106',
+  }
+]</pre>
+</div>
+<p>Because this section comes from a template, it will likely include a number of servers you&#8217;re not using; feel free to leave them or take them out.</p>
+<p>Next, the <tt class="docutils literal"><span class="pre">site.pp</span></tt> file lists all of the nodes and roles you defined in the <tt class="docutils literal"><span class="pre">config.yaml</span></tt> file:</p>
+<div class="highlight-python"><pre>$nodes = [{'public_address' =&gt; '192.168.0.101','name' =&gt; 'fuel-controller-01','role' =&gt;
+           'primary-controller','internal_address' =&gt; '10.0.0.101',
+           'storage_local_net_ip' =&gt; '10.0.0.101', 'mountpoints' =&gt; '1 2\n2 1',
+           'swift-zone' =&gt; 1 },
+          {'public_address' =&gt; '192.168.0.102','name' =&gt; 'fuel-controller-02','role' =&gt;
+           'controller','internal_address' =&gt; '10.0.0.102',
+           'storage_local_net_ip' =&gt; '10.0.0.102', 'mountpoints' =&gt; '1 2\n2 1',
+           'swift-zone' =&gt; 2},
+          {'public_address' =&gt; '192.168.0.103','name' =&gt; 'fuel-controller-03','role' =&gt;
+           'storage','internal_address' =&gt; '10.0.0.103',
+           'storage_local_net_ip' =&gt; '10.0.0.103', 'mountpoints' =&gt; '1 2\n2 1',
+           'swift-zone' =&gt; 3},
+          {'public_address' =&gt; '192.168.0.110','name' =&gt; 'fuel-compute-01','role' =&gt;
+           'compute','internal_address' =&gt; '10.0.0.110'}]</pre>
+</div>
+<p>Possible roles include ‘compute’,  ‘controller’, ‘primary-controller’, ‘storage’, ‘swift-proxy’, ‘quantum’, ‘master’, and ‘cobbler’. Check the IP addresses for each node and make sure that they match the contents of this array.</p>
+<p>The file also specifies the default gateway to be the fuel-pm machine:</p>
+<div class="highlight-python"><pre>$default_gateway = '192.168.0.1'</pre>
+</div>
+<p>Next <tt class="docutils literal"><span class="pre">site.pp</span></tt> defines DNS servers and provides netmasks:</p>
+<div class="highlight-python"><pre># Specify nameservers here.
+# You can point this to the cobbler node IP, or to specially prepared nameservers as needed.
+$dns_nameservers = ['10.0.0.100','8.8.8.8']
+
+# Specify netmasks for internal and external networks.
+$internal_netmask = '255.255.255.0'
+$public_netmask = '255.255.255.0'
+...
+# Set this to anything other than pacemaker if you do not want Neutron HA (formerly Quantum HA)
+# Also, if you do not want Neutron HA, you MUST enable $quantum_network_node
+# only on the controller
+$ha_provider = 'pacemaker'
+$use_unicast_corosync = false</pre>
+</div>
+<p>Next specify the main controller as the Nagios master.</p>
+<div class="highlight-python"><pre># Set nagios master fqdn
+$nagios_master = 'fuel-controller-01.localdomain'
+## proj_name  name of environment nagios configuration
+$proj_name            = 'test'</pre>
+</div>
+<p>Here again we have a parameter that looks ahead to things to come; OpenStack supports monitoring via Nagios.  In this section, you can choose the Nagios master server as well as setting a project name.</p>
+<div class="highlight-python"><pre>#Specify if your installation contains multiple Nova controllers. Defaults to true as it is the most common scenario.
+$multi_host              = true</pre>
+</div>
+<p>A single host cloud isn&#8217;t especially useful, but if you really want to, you can specify that here.</p>
+<p>Finally, you can define the various usernames and passwords for OpenStack services.</p>
+<div class="highlight-python"><pre># Specify different DB credentials for various services
+$mysql_root_password     = 'nova'
+$admin_email             = 'openstack@openstack.org'
+$admin_password          = 'nova'
+
+$keystone_db_password    = 'nova'
+$keystone_admin_token    = 'nova'
+
+$glance_db_password      = 'nova'
+$glance_user_password    = 'nova'
+
+$nova_db_password        = 'nova'
+$nova_user_password      = 'nova'
+
+$rabbit_password         = 'nova'
+$rabbit_user             = 'nova'
+
+$swift_user_password     = 'swift_pass'
+$swift_shared_secret     = 'changeme'
+
+$quantum_user_password   = 'quantum_pass'
+$quantum_db_password     = 'quantum_pass'
+$quantum_db_user         = 'quantum'
+$quantum_db_dbname       = 'quantum'
+
+# End DB credentials section</pre>
+</div>
+<p>Now that the network is configured for the servers, let&#8217;s look at the various OpenStack services.</p>
+<div class="section" id="enabling-neutron">
+<h2>Enabling Neutron<a class="headerlink" href="#enabling-neutron" title="Permalink to this headline">¶</a></h2>
+<p>In order to deploy OpenStack with Neutron you need to set up an additional node that will act as an L3 router, or run Neutron out of one of the existing nodes.</p>
+<div class="highlight-python"><pre>### NETWORK/QUANTUM ###
+# Specify network/quantum specific settings
+
+# Should we use quantum or nova-network (deprecated).
+# Consult OpenStack documentation for differences between them.
+$quantum = true
+$quantum_netnode_on_cnt  = true</pre>
+</div>
+<p>In this case, we&#8217;re using a &#8220;compact&#8221; architecture, so we want to install Neutron on the controllers:</p>
+<div class="highlight-python"><pre># Specify network creation criteria:
+# Should puppet automatically create networks?
+$create_networks = true
+
+# Fixed IP addresses are typically used for communication between VM instances.
+$fixed_range = '172.16.0.0/16'
+
+# Floating IP addresses are used for communication of VM instances with the outside world (e.g. Internet).
+$floating_range = '192.168.0.0/24'</pre>
+</div>
+<p>OpenStack uses two ranges of IP addresses for virtual machines: fixed IPs, which are used for communication between VMs, and thus are part of the private network, and floating IPs, which are assigned to VMs for the purpose of communicating to and from the Internet.</p>
+<div class="highlight-python"><pre># These parameters are passed to the previously specified network manager , e.g. nova-manage network create.
+# Not used in Neutron.
+$num_networks    = 1
+$network_size    = 31
+$vlan_start      = 300</pre>
+</div>
+<p>These values don&#8217;t actually relate to Neutron; they are used by nova-network.  IDs for the VLANs OpenStack will create for tenants run from <tt class="docutils literal"><span class="pre">vlan_start</span></tt> to (<tt class="docutils literal"><span class="pre">vlan_start</span> <span class="pre">+</span> <span class="pre">num_networks</span> <span class="pre">-</span> <span class="pre">1</span></tt>), and are generated automatically.</p>
+<div class="highlight-python"><pre># Neutron
+
+# Segmentation type for isolating traffic between tenants
+# Consult Openstack Neutron docs
+$tenant_network_type     = 'gre'
+
+# Which IP address will be used for creating GRE tunnels.
+$quantum_gre_bind_addr = $internal_address</pre>
+</div>
+<p>If you are installing Neutron in non-HA mode, you will need to specify which single controller controls Neutron.</p>
+<div class="highlight-python"><pre># If $external_ipinfo option is not defined, the addresses will be allocated automatically from $floating_range:
+# the first address will be defined as an external default router,
+# the second address will be attached to an uplink bridge interface,
+# the remaining addresses will be utilized for the floating IP address pool.
+$external_ipinfo = {
+   'pool_start' =&gt; '192.168.0.115',
+       'public_net_router' =&gt; '192.168.0.1',
+       'pool_end' =&gt; '192.168.0.126',
+       'ext_bridge' =&gt; '0.0.0.0'
+}
+
+# Neutron segmentation range.
+# For VLAN networks: valid VLAN VIDs can be 1 through 4094.
+# For GRE networks: Valid tunnel IDs can be any 32-bit unsigned integer.
+$segment_range = '900:999'
+
+# Set up OpenStack network manager. It is used ONLY in nova-network.
+# Consult Openstack nova-network docs for possible values.
+$network_manager = 'nova.network.manager.FlatDHCPManager'
+
+# Assign floating IPs to VMs on startup automatically?
+$auto_assign_floating_ip = false
+
+# Database connection for Neutron configuration (quantum.conf)
+$quantum_sql_connection  = "mysql://${quantum_db_user}:${quantum_db_password}@${$internal_virtual_ip}/{quantum_db_dbname}"
+
+if $quantum {
+  $public_int   = $public_br
+  $internal_int = $internal_br
+} else {
+  $public_int   = $public_interface
+  $internal_int = $internal_interface
+}</pre>
+</div>
+<p>If the system is set up to use Neutron, the public and internal interfaces are set to use the appropriate bridges, rather than the defined interfaces.</p>
+<p>The remaining configuration is used to define classes that will be added to each Neutron node:</p>
+<div class="highlight-python"><pre>#Network configuration
+stage {'netconfig':
+      before  =&gt; Stage['main'],
+}
+class {'l23network': use_ovs =&gt; $quantum, stage=&gt; 'netconfig'}
+class node_netconfig (
+  $mgmt_ipaddr,
+  $mgmt_netmask  = '255.255.255.0',
+  $public_ipaddr = undef,
+  $public_netmask= '255.255.255.0',
+  $save_default_gateway=true,
+  $quantum = $quantum,
+) {
+  if $quantum {
+    l23network::l3::create_br_iface {'mgmt':
+      interface =&gt; $internal_interface, # !!! NO $internal_int /sv !!!
+      bridge    =&gt; $internal_br,
+      ipaddr    =&gt; $mgmt_ipaddr,
+      netmask   =&gt; $mgmt_netmask,
+      dns_nameservers      =&gt; $dns_nameservers,
+      save_default_gateway =&gt; $save_default_gateway,
+    } -&gt;
+    l23network::l3::create_br_iface {'ex':
+      interface =&gt; $public_interface, # !! NO $public_int /sv !!!
+      bridge    =&gt; $public_br,
+      ipaddr    =&gt; $public_ipaddr,
+      netmask   =&gt; $public_netmask,
+      gateway   =&gt; $default_gateway,
+    }
+  } else {
+    # nova-network mode
+    l23network::l3::ifconfig {$public_int:
+      ipaddr  =&gt; $public_ipaddr,
+      netmask =&gt; $public_netmask,
+      gateway =&gt; $default_gateway,
+    }
+    l23network::l3::ifconfig {$internal_int:
+      ipaddr  =&gt; $mgmt_ipaddr,
+      netmask =&gt; $mgmt_netmask,
+      dns_nameservers      =&gt; $dns_nameservers,
+    }
+  }
+  l23network::l3::ifconfig {$private_interface: ipaddr=&gt;'none' }
+}
+### NETWORK/QUANTUM END ###</pre>
+</div>
+<p>All of this assumes, of course, that you&#8217;re using Neutron; if you&#8217;re using nova-network instead, only these values apply.</p>
+</div>
+<div class="section" id="defining-the-current-cluster">
+<h2>Defining the current cluster<a class="headerlink" href="#defining-the-current-cluster" title="Permalink to this headline">¶</a></h2>
+<p>Fuel enables you to control multiple deployments simultaneously by setting an individual deployment ID:</p>
+<div class="highlight-python"><pre># This parameter specifies the the identifier of the current cluster. This is required for environments where you have multiple deployments.
+# installation. Each cluster requires a unique integer value.
+# Valid identifier range is 0 to 254
+$deployment_id = '79'</pre>
+</div>
+</div>
+<div class="section" id="enabling-cinder">
+<h2>Enabling Cinder<a class="headerlink" href="#enabling-cinder" title="Permalink to this headline">¶</a></h2>
+<p>Our example uses Cinder, and with some very specific variations from the default. Specifically, as we said before, while the Cinder scheduler will continue to run on the controllers, the actual storage takes place on the compute nodes, specifically the <tt class="docutils literal"><span class="pre">/dev/sdb1</span></tt> partition you created earlier. Cinder will be activated on any node that contains the specified block devices &#8211; unless specified otherwise &#8211; so let&#8217;s look at what all of that means for the configuration.</p>
+<div class="highlight-python"><pre># Choose which nodes to install cinder onto
+# 'compute'            -&gt; compute nodes will run cinder
+# 'controller'         -&gt; controller nodes will run cinder
+# 'storage'            -&gt; storage nodes will run cinder
+# 'fuel-controller-XX' -&gt; specify particular host(s) by hostname
+# 'XXX.XXX.XXX.XXX'    -&gt; specify particular host(s) by IP address
+# 'all'                -&gt; compute, controller, and storage nodes will run cinder (excluding swift and proxy nodes)
+$cinder_nodes          = ['controller']</pre>
+</div>
+<p>We want Cinder to be on the controller nodes, so set this value to <tt class="docutils literal"><span class="pre">['controller']</span></tt>.</p>
+<div class="highlight-python"><pre># Set this option to true if cinder-volume has been installed to the host
+# otherwise it will install api and scheduler services
+$manage_volumes = true
+
+# Setup network interface, which Cinder uses to export iSCSI targets.
+$cinder_iscsi_bind_addr = $internal_address</pre>
+</div>
+<p>Here you have the opportunity to specify which network interface Cinder uses for its own traffic. For example, you could set up a fourth NIC at <tt class="docutils literal"><span class="pre">eth3</span></tt> and specify that rather than <tt class="docutils literal"><span class="pre">$internal_int</span></tt>.</p>
+<div class="highlight-python"><pre># Below you can add physical volumes to cinder. Please replace values with the actual names of devices.
+# This parameter defines which partitions to aggregate into cinder-volumes or nova-volumes LVM VG
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+# USE EXTREME CAUTION WITH THIS SETTING! IF THIS PARAMETER IS DEFINED,
+# IT WILL AGGREGATE THE VOLUMES INTO AN LVM VOLUME GROUP
+# AND ALL THE DATA THAT RESIDES ON THESE VOLUMES WILL BE LOST!
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+# Leave this parameter empty if you want to create [cinder|nova]-volumes VG by yourself
+$nv_physical_volume = ['/dev/sdb']
+
+#Evaluate cinder node selection
+if ($cinder) {
+  if (member($cinder_nodes,'all')) {
+     $is_cinder_node = true
+  } elsif (member($cinder_nodes,$::hostname)) {
+     $is_cinder_node = true
+  } elsif (member($cinder_nodes,$internal_address)) {
+     $is_cinder_node = true
+  } elsif ($node[0]['role'] =~ /controller/)) {
+     $is_cinder_node = member($cinder_nodes, 'controller')
+  } else {
+     $is_cinder_node = member($cinder_nodes, $node[0]['role'])
+  }
+} else {
+  $is_cinder_node = false
+}
+
+### CINDER/VOLUME END ###</pre>
+</div>
+<p>We only want to allocate the <tt class="docutils literal"><span class="pre">/dev/sdb</span></tt> volume to Cinder, so adjust <tt class="docutils literal"><span class="pre">$nv_physical_volume</span></tt> accordingly. Note, however, that this is a global value; it will apply to all servers, including the controllers &#8211; unless we specify otherwise, which we illustrate below.</p>
+<p><strong>Be careful</strong> to not add block devices to the list which contain useful data (e.g. block devices on which your OS resides), as they will be destroyed after you allocate them for Cinder. It is always a good rule of thumb to deploy OpenStack on blank storage and move content to those volumes later instead of try to retain existing data.</p>
+<p>Now lets look at Swift, the other storage-based service option.</p>
+</div>
+<div class="section" id="enabling-glance-and-swift">
+<h2>Enabling Glance and Swift<a class="headerlink" href="#enabling-glance-and-swift" title="Permalink to this headline">¶</a></h2>
+<p>There aren&#8217;t many changes that you will need to make to the default configuration in order to enable Swift to work properly in Swift Compact mode, but you will need to adjust if you want to run Swift on physical partitions</p>
+<div class="highlight-python"><pre>...
+### GLANCE and SWIFT ###
+
+# Which backend to use for glance
+# Supported backends are 'swift' and 'file'
+$glance_backend = 'swift'
+
+# Use loopback device for swift:
+# options are 'loopback' or 'false'
+# This parameter controls where swift partitions are located:
+# on physical partitions or inside loopback devices.
+$swift_loopback = loopback</pre>
+</div>
+<p>The default value is <tt class="docutils literal"><span class="pre">loopback</span></tt>, which tells Swift to use a loopback storage device, which is basically a file that acts like a drive, rather than a physical drive.  You can also set this value to <tt class="docutils literal"><span class="pre">false</span></tt>, which tells OpenStack to use a physical drive (or drives) instead.</p>
+<div class="highlight-python"><pre># Which IP address to bind swift components to: e.g., which IP swift-proxy should listen on
+$swift_local_net_ip = $internal_address
+
+# IP node of controller used during swift installation
+# and put into swift configs
+$controller_node_public = $internal_virtual_ip
+
+# Hash of proxies hostname|fqdn =&gt; ip mappings.
+# This is used by controller_ha.pp manifests for haproxy setup
+# of swift_proxy backends
+$swift_proxies = $controller_internal_addresses</pre>
+</div>
+<p>Next, you&#8217;re specifying the <tt class="docutils literal"><span class="pre">swift-master</span></tt>:</p>
+<div class="highlight-python"><pre># Set hostname of swift_master.
+# It tells on which swift proxy node to build
+# *ring.gz files. Other swift proxies/storages
+# will rsync them.
+if $node[0]['role'] == 'primary-controller' {
+  $primary_proxy = true
+} else {
+  $primary_proxy = false
+}
+if $node[0]['role'] == 'primary-controller' {
+  $primary_controller = true
+} else {
+  $primary_controller = false
+}
+$master_swift_proxy_nodes = filter_nodes($nodes,'role','primary-controller')
+$master_swift_proxy_ip = $master_swift_proxy_nodes[0]['internal_address']</pre>
+</div>
+<p>In this case, there&#8217;s no separate <tt class="docutils literal"><span class="pre">fuel-swiftproxy-01</span></tt>, so the master controller will be the primary Swift controller.</p>
+</div>
+<div class="section" id="configuring-openstack-to-use-syslog">
+<h2>Configuring OpenStack to use syslog<a class="headerlink" href="#configuring-openstack-to-use-syslog" title="Permalink to this headline">¶</a></h2>
+<p>To use the syslog server, adjust the corresponding variables in the <tt class="docutils literal"><span class="pre">if</span> <span class="pre">$use_syslog</span></tt> clause:</p>
+<div class="highlight-python"><pre>$use_syslog = true
+if $use_syslog {
+    class { "::rsyslog::client":
+        log_local =&gt; true,
+        log_auth_local =&gt; true,
+        server =&gt; '127.0.0.1',
+        port =&gt; '514'
+    }
+}</pre>
+</div>
+<p>For remote logging, use the IP or hostname of the server for the <tt class="docutils literal"><span class="pre">server</span></tt> value and set the <tt class="docutils literal"><span class="pre">port</span></tt> appropriately.  For local logging, <tt class="docutils literal"><span class="pre">set</span> <span class="pre">log_local</span></tt> and <tt class="docutils literal"><span class="pre">log_auth_local</span></tt> to <tt class="docutils literal"><span class="pre">true</span></tt>.</p>
+</div>
+<div class="section" id="setting-the-version-and-mirror-type">
+<h2>Setting the version and mirror type<a class="headerlink" href="#setting-the-version-and-mirror-type" title="Permalink to this headline">¶</a></h2>
+<p>You can customize the various versions of OpenStack&#8217;s components, though it&#8217;s typical to use the latest versions:</p>
+<div class="highlight-python"><pre>### Syslog END ###
+case $::osfamily {
+    "Debian":  {
+       $rabbitmq_version_string = '2.8.7-1'
+    }
+    "RedHat": {
+       $rabbitmq_version_string = '2.8.7-2.el6'
+    }
+}
+# OpenStack packages and customized component versions to be installed.
+# Use 'latest' to get the most recent ones or specify exact version if you need to install custom version.
+$openstack_version = {
+  'keystone'         =&gt; 'latest',
+  'glance'           =&gt; 'latest',
+  'horizon'          =&gt; 'latest',
+  'nova'             =&gt; 'latest',
+  'novncproxy'       =&gt; 'latest',
+  'cinder'           =&gt; 'latest',
+  'rabbitmq_version' =&gt; $rabbitmq_version_string,
+}</pre>
+</div>
+<p>To tell Fuel to download packages from external repos provided by Mirantis and your distribution vendors, make sure the <tt class="docutils literal"><span class="pre">$mirror_type</span></tt> variable is set to <tt class="docutils literal"><span class="pre">default</span></tt>:</p>
+<div class="highlight-python"><pre># If you want to set up a local repository, you will need to manually adjust mirantis_repos.pp,
+# though it is NOT recommended.
+$mirror_type = 'default'
+$enable_test_repo = false
+$repo_proxy = 'http://10.0.0.100:3128'</pre>
+</div>
+<p>Once again, the <tt class="docutils literal"><span class="pre">$mirror_type</span></tt> <strong>must</strong> be set to <tt class="docutils literal"><span class="pre">default</span></tt>.  If you set it correctly in <tt class="docutils literal"><span class="pre">config.yaml</span></tt> and ran <tt class="docutils literal"><span class="pre">openstack_system</span></tt> this will already be taken care of.  Otherwise, <strong>make sure</strong> to set this value manually.</p>
+<p>Future versions of Fuel will enable you to use your own internal repositories.</p>
+</div>
+<div class="section" id="setting-verbosity">
+<h2>Setting verbosity<a class="headerlink" href="#setting-verbosity" title="Permalink to this headline">¶</a></h2>
+<p>You also have the option to determine how much information OpenStack provides when performing configuration:</p>
+<div class="highlight-python"><pre># This parameter specifies the verbosity level of log messages
+# in openstack components config. Currently, it disables or enables debugging.
+$verbose = true</pre>
+</div>
+</div>
+<div class="section" id="configuring-rate-limits">
+<h2>Configuring Rate-Limits<a class="headerlink" href="#configuring-rate-limits" title="Permalink to this headline">¶</a></h2>
+<p>Openstack has predefined limits on different HTTP queries for nova-compute and cinder services. Sometimes (e.g. for big clouds or test scenarios) these limits are too strict. (See <a class="reference external" href="http://docs.openstack.org/folsom/openstack-compute/admin/content/configuring-compute-API.html">http://docs.openstack.org/folsom/openstack-compute/admin/content/configuring-compute-API.html</a>.) In this case you can change them to more appropriate values.</p>
+<p>There are two hashes describing these limits: <tt class="docutils literal"><span class="pre">$nova_rate_limits</span></tt> and <tt class="docutils literal"><span class="pre">$cinder_rate_limits</span></tt>.</p>
+<div class="highlight-python"><pre>#Rate Limits for cinder and Nova
+#Cinder and Nova can rate-limit your requests to API services.
+#These limits can be reduced for your installation or usage scenario.
+#Change the following variables if you want. They are measured in requests per minute.
+$nova_rate_limits = {
+  'POST' =&gt; 1000,
+  'POST_SERVERS' =&gt; 1000,
+  'PUT' =&gt; 1000, 'GET' =&gt; 1000,
+  'DELETE' =&gt; 1000
+}
+$cinder_rate_limits = {
+  'POST' =&gt; 1000,
+  'POST_SERVERS' =&gt; 1000,
+  'PUT' =&gt; 1000, 'GET' =&gt; 1000,
+  'DELETE' =&gt; 1000
+}
+...</pre>
+</div>
+</div>
+<div class="section" id="enabling-horizon-https-ssl-mode">
+<h2>Enabling Horizon HTTPS/SSL mode<a class="headerlink" href="#enabling-horizon-https-ssl-mode" title="Permalink to this headline">¶</a></h2>
+<p>Using the <tt class="docutils literal"><span class="pre">$horizon_use_ssl</span></tt> variable, you have the option to decide whether the OpenStack dashboard (Horizon) uses HTTP or HTTPS:</p>
+<div class="highlight-python"><pre>...
+#  'custom': require fileserver static mount point [ssl_certs] and hostname based certificate existence
+$horizon_use_ssl = false</pre>
+</div>
+<p>This variable accepts the following values:</p>
+<blockquote>
+<div><ul>
+<li><p class="first"><tt class="docutils literal"><span class="pre">false</span></tt>:  In this mode, the dashboard uses HTTP with no encryption.</p>
+</li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">default</span></tt>:  In this mode, the dashboard uses keys supplied with the standard Apache SSL module package.</p>
+</li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">exist</span></tt>:  In this case, the dashboard assumes that the domain name-based certificate, or keys, are provisioned in advance.  This can be a certificate signed by any authorized provider, such as Symantec/Verisign, Comodo, GoDaddy, and so on.  The system looks for the keys in these locations:</p>
+<dl class="docutils">
+<dt>for Debian/Ubuntu:</dt>
+<dd><ul class="first last simple">
+<li>public  <tt class="docutils literal"><span class="pre">/etc/ssl/certs/domain-name.pem</span></tt></li>
+<li>private <tt class="docutils literal"><span class="pre">/etc/ssl/private/domain-name.key</span></tt></li>
+</ul>
+</dd>
+<dt>for Centos/RedHat:</dt>
+<dd><ul class="first last simple">
+<li>public  <tt class="docutils literal"><span class="pre">/etc/pki/tls/certs/domain-name.crt</span></tt></li>
+<li>private <tt class="docutils literal"><span class="pre">/etc/pki/tls/private/domain-name.key</span></tt></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">custom</span></tt>:  This mode requires a static mount point on the fileserver for <tt class="docutils literal"><span class="pre">[ssl_certs]</span></tt> and certificate pre-existence.  To enable this mode, configure the puppet fileserver by editing <tt class="docutils literal"><span class="pre">/etc/puppet/fileserver.conf</span></tt> to add:</p>
+<div class="highlight-python"><pre>[ssl_certs]
+  path /etc/puppet/templates/ssl
+  allow *</pre>
+</div>
+<p>From there, create the appropriate directory:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">puppet</span><span class="o">/</span><span class="n">templates</span><span class="o">/</span><span class="n">ssl</span>
+</pre></div>
+</div>
+<p>Add the certificates to this directory.  (Reload the puppetmaster service for these changes to take effect.)</p>
+</li>
+</ul>
+</div></blockquote>
+<p>Now we just need to make sure that all of our nodes get the proper values.</p>
+</div>
+<div class="section" id="defining-the-node-configurations">
+<h2>Defining the node configurations<a class="headerlink" href="#defining-the-node-configurations" title="Permalink to this headline">¶</a></h2>
+<p>Now that we&#8217;ve set all of the global values, its time to make sure that the actual node definitions are correct. For example, by default all nodes will enable Cinder on <tt class="docutils literal"><span class="pre">/dev/sdb</span></tt>.  If you don&#8217;t want to enable Cinder on all controllers set <tt class="docutils literal"><span class="pre">nv_physical_volume</span></tt> to <tt class="docutils literal"><span class="pre">null</span></tt> for a specific node or nodes.</p>
+<div class="highlight-python"><pre>...
+class compact_controller (
+  $quantum_network_node = $quantum_netnode_on_cnt
+) {
+  class { 'openstack::controller_ha':
+    controller_public_addresses   =&gt; $controller_public_addresses,
+    controller_internal_addresses =&gt; $controller_internal_addresses,
+    internal_address        =&gt; $internal_address,
+    public_interface        =&gt; $public_int,
+    internal_interface      =&gt; $internal_int,
+ ...
+    use_unicast_corosync    =&gt; $use_unicast_corosync,
+    ha_provider             =&gt; $ha_provider
+  }
+  class { 'swift::keystone::auth':
+    password         =&gt; $swift_user_password,
+    public_address   =&gt; $public_virtual_ip,
+    internal_address =&gt; $internal_virtual_ip,
+    admin_address    =&gt; $internal_virtual_ip,
+  }
+}
+...</pre>
+</div>
+<p>To reduce repeated manual configuration, Fuel includes a class for the controllers. This eliminates the need to make global changes for each individual controller.  You will note that lower down in this configuration segment that this class also lets you specify the individual controllers and compute nodes:</p>
+<div class="highlight-python"><pre>...
+    node /fuel-controller-[\d+]/ {
+      include stdlib
+      class { 'operatingsystem::checksupported':
+          stage =&gt; 'setup'
+      }
+
+      class {'::node_netconfig':
+          mgmt_ipaddr    =&gt; $::internal_address,
+          mgmt_netmask   =&gt; $::internal_netmask,
+          public_ipaddr  =&gt; $::public_address,
+          public_netmask =&gt; $::public_netmask,
+          stage          =&gt; 'netconfig',
+      }
+
+      class {'nagios':
+        proj_name       =&gt; $proj_name,
+        services        =&gt; [
+          'host-alive','nova-novncproxy','keystone', 'nova-scheduler',
+          'nova-consoleauth', 'nova-cert', 'haproxy', 'nova-api', 'glance-api',
+          'glance-registry','horizon', 'rabbitmq', 'mysql', 'swift-proxy',
+          'swift-account', 'swift-container', 'swift-object',
+        ],
+        whitelist       =&gt; ['127.0.0.1', $nagios_master],
+        hostgroup       =&gt; 'controller',
+      }
+
+      class { compact_controller: }
+      $swift_zone = $node[0]['swift_zone']
+
+      class { 'openstack::swift::storage_node':
+        storage_type       =&gt; $swift_loopback,
+        swift_zone         =&gt; $swift_zone,
+        swift_local_net_ip =&gt; $internal_address,
+      }
+
+      class { 'openstack::swift::proxy':
+        swift_user_password     =&gt; $swift_user_password,
+        swift_proxies           =&gt; $swift_proxies,
+        ...
+        rabbit_ha_virtual_ip      =&gt; $internal_virtual_ip,
+      }
+    }</pre>
+</div>
+<p>Note that each controller has the swift_zone specified, so each of the three controllers can represent each of the three Swift zones.
+Similarly, site.pp defines a class for the compute nodes.</p>
+</div>
+<div class="section" id="installing-nagios-monitoring-using-puppet">
+<h2>Installing Nagios Monitoring using Puppet<a class="headerlink" href="#installing-nagios-monitoring-using-puppet" title="Permalink to this headline">¶</a></h2>
+<p>Fuel provides a way to deploy Nagios for monitoring your OpenStack cluster. Nagios is an open source distributed management and monitoring infrastructure that is commonly used in data centers to keep an eye on thousands of servers. Nagios requires the installation of a software agent on all nodes, as well as having a master server for Nagios which will collect and display all the results. The agent, the Nagios NRPE addon, allows OpenStack to execute Nagios plugins on remote Linux/Unix machines. The main reason for doing this is to monitor key resources (such as CPU load, memory usage, etc.), as well as provide more advanced metrics and performance data on local and remote machines.</p>
+<div class="section" id="nagios-agent">
+<h3>Nagios Agent<a class="headerlink" href="#nagios-agent" title="Permalink to this headline">¶</a></h3>
+<p>In order to install Nagios NRPE on a compute or controller node, a node should have the following settings:</p>
+<div class="highlight-python"><pre>class {'nagios':
+  proj_name       =&gt; 'test',
+  services        =&gt; ['nova-compute','nova-network','libvirt'],
+  whitelist       =&gt; ['127.0.0.1', $nagios_master],
+  hostgroup       =&gt; 'compute',
+}</pre>
+</div>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">proj_name</span></tt>: An environment for nagios commands and the directory (<tt class="docutils literal"><span class="pre">/etc/nagios/test/</span></tt>).</li>
+<li><tt class="docutils literal"><span class="pre">services</span></tt>: All services to be monitored by nagios.</li>
+<li><tt class="docutils literal"><span class="pre">whitelist</span></tt>: The array of IP addreses trusted by NRPE.</li>
+<li><tt class="docutils literal"><span class="pre">hostgroup</span></tt>: The group to be used in the nagios master (do not forget create the group in the nagios master).</li>
+</ul>
+</div>
+<div class="section" id="nagios-server">
+<h3>Nagios Server<a class="headerlink" href="#nagios-server" title="Permalink to this headline">¶</a></h3>
+<p>In order to install Nagios Master on any convenient node, a node should have the following applied:</p>
+<div class="highlight-python"><pre>class {'nagios::master':
+  proj_name       =&gt; 'test',
+  templatehost    =&gt; {'name' =&gt; 'default-host','check_interval' =&gt; '10'},
+  templateservice =&gt; {'name' =&gt; 'default-service' ,'check_interval'=&gt;'10'},
+  hostgroups      =&gt; ['compute','controller'],
+  contactgroups   =&gt; {'group' =&gt; 'admins', 'alias' =&gt; 'Admins'},
+  contacts        =&gt; {'user' =&gt; 'hotkey', 'alias' =&gt; 'Dennis Hoppe',
+               'email' =&gt; 'nagios@%{domain}',
+               'group' =&gt; 'admins'},
+}</pre>
+</div>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">proj_name</span></tt>: The environment for nagios commands and the directory (<tt class="docutils literal"><span class="pre">/etc/nagios/test/</span></tt>).</li>
+<li><tt class="docutils literal"><span class="pre">templatehost</span></tt>: The group of checks and intervals parameters for hosts (as a Hash).</li>
+<li><tt class="docutils literal"><span class="pre">templateservice</span></tt>: The group of checks and intervals parameters for services  (as a Hash).</li>
+<li><tt class="docutils literal"><span class="pre">hostgroups</span></tt>: All groups which on NRPE nodes (as an Array).</li>
+<li><tt class="docutils literal"><span class="pre">contactgroups</span></tt>: The group of contacts (as a Hash).</li>
+<li><tt class="docutils literal"><span class="pre">contacts</span></tt>: Contacts to receive error reports (as a Hash)</li>
+</ul>
+</div>
+<div class="section" id="health-checks">
+<h3>Health Checks<a class="headerlink" href="#health-checks" title="Permalink to this headline">¶</a></h3>
+<p>You can see the complete definition of the available services to monitor and their health checks at <tt class="docutils literal"><span class="pre">deployment/puppet/nagios/manifests/params.pp</span></tt>.</p>
+<p>Here is the list:</p>
+<div class="highlight-python"><pre>$services_list = {
+  'nova-compute' =&gt; 'check_nrpe_1arg!check_nova_compute',
+  'nova-network' =&gt; 'check_nrpe_1arg!check_nova_network',
+  'libvirt' =&gt; 'check_nrpe_1arg!check_libvirt',
+  'swift-proxy' =&gt; 'check_nrpe_1arg!check_swift_proxy',
+  'swift-account' =&gt; 'check_nrpe_1arg!check_swift_account',
+  'swift-container' =&gt; 'check_nrpe_1arg!check_swift_container',
+  'swift-object' =&gt; 'check_nrpe_1arg!check_swift_object',
+  'swift-ring' =&gt; 'check_nrpe_1arg!check_swift_ring',
+  'keystone' =&gt; 'check_http_api!5000',
+  'nova-novncproxy' =&gt; 'check_nrpe_1arg!check_nova_novncproxy',
+  'nova-scheduler' =&gt; 'check_nrpe_1arg!check_nova_scheduler',
+  'nova-consoleauth' =&gt; 'check_nrpe_1arg!check_nova_consoleauth',
+  'nova-cert' =&gt; 'check_nrpe_1arg!check_nova_cert',
+  'cinder-scheduler' =&gt; 'check_nrpe_1arg!check_cinder_scheduler',
+  'cinder-volume' =&gt; 'check_nrpe_1arg!check_cinder_volume',
+  'haproxy' =&gt; 'check_nrpe_1arg!check_haproxy',
+  'memcached' =&gt; 'check_nrpe_1arg!check_memcached',
+  'nova-api' =&gt; 'check_http_api!8774',
+  'cinder-api' =&gt; 'check_http_api!8776',
+  'glance-api' =&gt; 'check_http_api!9292',
+  'glance-registry' =&gt; 'check_nrpe_1arg!check_glance_registry',
+  'horizon' =&gt; 'check_http_api!80',
+  'rabbitmq' =&gt; 'check_rabbitmq',
+  'mysql' =&gt; 'check_galera_mysql',
+  'apt' =&gt; 'nrpe_check_apt',
+  'kernel' =&gt; 'nrpe_check_kernel',
+  'libs' =&gt; 'nrpe_check_libs',
+  'load' =&gt; 'nrpe_check_load!5.0!4.0!3.0!10.0!6.0!4.0',
+  'procs' =&gt; 'nrpe_check_procs!250!400',
+  'zombie' =&gt; 'nrpe_check_procs_zombie!5!10',
+  'swap' =&gt; 'nrpe_check_swap!20%!10%',
+  'user' =&gt; 'nrpe_check_users!5!10',
+  'host-alive' =&gt; 'check-host-alive',
+}</pre>
+</div>
+</div>
+</div>
+<div class="section" id="node-definitions">
+<h2>Node definitions<a class="headerlink" href="#node-definitions" title="Permalink to this headline">¶</a></h2>
+<p>The following is a list of the node definitions generated for a Compact HA deployment.  Other deployment configurations generate other definitions.  For example, the <tt class="docutils literal"><span class="pre">openstack/examples/site_openstack_full.pp</span></tt> template specifies the following nodes:</p>
+<ul class="simple">
+<li>fuel-controller-01</li>
+<li>fuel-controller-02</li>
+<li>fuel-controller-03</li>
+<li>fuel-compute-[d+]</li>
+<li>fuel-swift-01</li>
+<li>fuel-swift-02</li>
+<li>fuel-swift-03</li>
+<li>fuel-swiftproxy-[d+]</li>
+<li>fuel-quantum</li>
+</ul>
+<p>Using this architecture, the system includes three stand-alone swift-storage servers, and one or more swift-proxy servers.</p>
+<p>With <tt class="docutils literal"><span class="pre">site.pp</span></tt> prepared, you&#8217;re ready to perform the actual installation.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li><a href="../../index.html">Fuel for OpenStack 3.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Mirantis.
+      Last updated on 2013/07/22.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+    </div>
+  </body>
+</html>
