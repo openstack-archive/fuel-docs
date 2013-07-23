@@ -142,11 +142,11 @@ Next, create nodes on which to install OpenStack.
 
 2. Set priority for the network boot:
 
-.. image:: _static/vbox-image1.png
+.. image:: /_images/vbox-image1.png
 
 3. Configure the network adapter on each VM:
 
-.. image:: _static/vbox-image2.png
+.. image:: /_images/vbox-image2.png
 
 Changing network parameters
 ---------------------------
@@ -160,7 +160,7 @@ example, to use 192.168.1.10/24 IP address for the master node and 192.168.1.1
 as the gateway and DNS server you should change the parameters to those shown 
 in the image below:
 
-.. image:: _static/network-at-boot.png
+.. image:: /_images/network-at-boot.png
 
 When you're finished making changes, press the Enter key and wait for the 
 installation to complete.

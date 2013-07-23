@@ -4,7 +4,6 @@ Introduction
 ============
 
 .. contents:: :local:
-   :maxdepth: 2
 
 .. include:: /pages/introduction/0010-introduction.rst
 .. include:: /pages/introduction/0020-what-is-fuel.rst

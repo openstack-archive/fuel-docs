@@ -211,7 +211,8 @@ Configuring the network
 Once you choose a networking mode (FlatDHCP/VLAN), you must configure equipment 
 accordingly. The diagram below shows an example configuration.
 
-.. image:: _static/physical_sample.png
+.. image:: /_images/physical_sample.png
+    :width: 100%
 
 FuelWeb operates with following logical networks:
 
@@ -235,7 +236,8 @@ types of traffic. When a node is added to the environment, click at the bottom
 line of the node icon. In the detailed information window, click the "Network 
 Configuration" button to open the physical interfaces configuration screen.
 
-.. image:: _static/doc_network-settings-help.png
+.. image:: /_images/doc_network-settings-help.png
+    :width: 100%
 
 On this screen you can drag-and-drop logical networks to physical interfaces 
 according to your network setup. 
@@ -280,8 +282,7 @@ these networks live in VLANs over the one or multiple physical interfaces on a
 node. This means that the switch should pass tagged traffic, and untagging is done
 on the Linux hosts. 
 
-.. note:: 
-    For the sake of simplicity, all the VLANs specified on the networks tab of 
+.. note:: For the sake of simplicity, all the VLANs specified on the networks tab of 
 	the FuelWeb should be configured on switch ports, pointing to slave nodes, 
 	as tagged.
 

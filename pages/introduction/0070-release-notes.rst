@@ -1,8 +1,7 @@
 Release Notes
 -------------
 
-.. contents::
-   :depth: 1
+.. contents:: :local:
 
 .. include:: /pages/introduction/release-notes/v3-1-grizzly.rst
 .. include:: /pages/introduction/release-notes/v3-0-grizzly.rst

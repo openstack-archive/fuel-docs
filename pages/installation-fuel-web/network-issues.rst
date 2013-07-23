@@ -9,7 +9,7 @@ result of such check. By using this simple table it is easy to say which interfa
 Usually it measn that switch or multiple switches are not configured correctly and do not allow certain tagged
 traffic to pass through.
 
-.. image:: _static/net_verify_failure.png
+.. image:: /_images/net_verify_failure.png
 
 On VirtualBox
 -------------

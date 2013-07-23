@@ -3,8 +3,7 @@
 Reference Architecture
 ======================
 
-.. contents::
-   :maxdepth: 2
+.. contents:: :local:
 
 .. include:: /pages/reference-architecture/0010-overview.rst
 .. include:: /pages/reference-architecture/0015-closer-look.rst
