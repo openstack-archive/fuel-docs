@@ -4,9 +4,9 @@
 Create a multi-node OpenStack cluster using FuelWeb
 ====================================================
 
-.. toctree::
+.. contents::
     :maxdepth: 3
     
-    installation-fuel-web/install
-    installation-fuel-web/networks
-    installation-fuel-web/network-issues
+.. include:: /pages/installation-fuel-web/install.rst
+.. include:: /pages/installation-fuel-web/networks.rst
+.. include:: /pages/installation-fuel-web/network-issues.rst

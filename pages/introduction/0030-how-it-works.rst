@@ -11,8 +11,9 @@ In practice, that means that the process of using Fuel Library looks like this:
 
    #. Finally, to complete the basic OpenStack install, use Fuel's puppet manifests to install OpenStack on the newly created servers. These manifests are completely customizable, enabling you to start with one of the included OpenStack architectures and adapt to your own situation as necessary.
 
-.. image:: https://docs.google.com/drawings/pub?id=15vTTG2_575M7-kOzwsYyDmQrMgCPT2joLF2Cgiyzv7Q&w=678&h=617
+.. image:: /_images/010-how-it-works_svg.png
 	:align: center
+	:width: 100%
 
 Fuel comes with several pre-defined deployment configurations, some of which include additional options from which you can choose.
 

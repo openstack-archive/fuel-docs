@@ -1,7 +1,7 @@
 Installing Fuel Web
 ===================
 
-.. _contents:: :local:
+.. contents:: :local:
 
 Fuel Web is distributed as both an ISO and an IMG image, each of which contains 
 an installer for an admin node. The ISO image is used for CD media devices, iLO 

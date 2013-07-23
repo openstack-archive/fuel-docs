@@ -7,6 +7,6 @@ A single OpenStack cloud consists of packages from many different open source pr
 
 Simply put, Fuel is a way for you to easily configure and install an OpenStack-based infrastructure in your own environment.
 
-.. image:: /pages/introduction/FuelSimpleDiagramv.gif
-    :width: 800px
+.. image:: /_images/FuelSimpleDiagramv.png
+    :width: 100%
     :align: center
