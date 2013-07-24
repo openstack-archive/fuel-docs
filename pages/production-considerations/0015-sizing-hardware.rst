@@ -1,6 +1,8 @@
 Sizing Hardware
 ---------------
 
+.. contents:: :local:
+
 One of the first questions people ask when planning an OpenStack deployment is "what kind of hardware do I need?" There is no such thing as a one-size-fits-all answer, but there are straightforward rules to selecting appropriate hardware that will suit your needs. The Golden Rule, however, is to always accomodate for growth. With the potential for growth accounted for, you can move on to the actual hardware needs.
 
 Many factors contribute to selecting hardware for an OpenStack cluster -- `contact Mirantis <http://www.mirantis.com/contact/>`_ for information on your specific requirements -- but in general, you will want to consider the following factors:

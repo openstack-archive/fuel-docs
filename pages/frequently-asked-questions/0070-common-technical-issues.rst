@@ -72,7 +72,7 @@ Common Technical Issues
 .. _create-the-XFS-partition:
 
 Creating the XFS partition
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+--------------------------
 
 In most cases, Fuel creates the XFS partition for you.  If for some reason you need to create it yourself, use this procedure:
 
@@ -100,7 +100,7 @@ In most cases, Fuel creates the XFS partition for you.  If for some reason you n
     mount -a
 
 Redeploying a node from scratch
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-------------------------------
 
 Compute and Cinder nodes in an HA configuration and controller in any configuration cannot be redeployed without completely redeploying the cluster.  However, in a non-HA situation you can redeploy a compute or Cinder node.  To do so, follow these steps:
 

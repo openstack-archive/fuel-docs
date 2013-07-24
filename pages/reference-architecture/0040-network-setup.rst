@@ -2,6 +2,8 @@
 Network Architecture
 ^^^^^^^^^^^^^^^^^^^^
 
+.. contents:: :local:
+
 The current architecture assumes the presence of 3 NIC cards in hardware, but can be customized two or more NICs. Most servers come with at least two network interfaces. In this case, let's consider a typical example of three NIC cards. They're utilized as follows:
 
 * **eth0**: the internal management network, used for communication with Puppet & Cobbler

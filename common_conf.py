@@ -35,10 +35,10 @@ pdf_documents = [
     (master_doc, project, project, copyright),
 ]
 pdf_stylesheets = ['b4', 'kerning']
-#pdf_language = "en"
+pdf_language = "en"
 # Mode for literal blocks wider than the frame. Can be
 # overflow, shrink or truncate
-#pdf_fit_mode = "shrink"
+pdf_fit_mode = "shrink"
 
 # Section level that forces a break page.
 # For example: 1 means top-level sections start in a new page
@@ -97,4 +97,4 @@ pdf_use_numbered_links = False
 # Background images fitting mode
 pdf_fit_background_mode = 'scale'
 
-pdf_font_path = ['C:\\Windows\\Fonts\\', '/usr/share/fonts']
+# pdf_font_path = ['C:\\Windows\\Fonts\\', '/usr/share/fonts']
