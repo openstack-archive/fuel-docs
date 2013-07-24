@@ -25,7 +25,8 @@ In practice, that means that the process of using Fuel Library looks like this:
 	  necessary.
 
 .. image:: /_images/010-how-it-works_svg.png
-    :width: 100%
+    :width: 300px
+    :height: 300px
 
 Fuel comes with several pre-defined deployment configurations, some of which 
 include additional options from which you can choose.

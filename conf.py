@@ -28,11 +28,11 @@ on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
 
 # Add any Sphinx extension module names here, as strings. They can be extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
-if on_rtd:
-  extensions = ['sphinx.ext.autodoc','sphinxcontrib.plantuml']
-  display_github = False
-else:
-  extensions = ['sphinx.ext.autodoc','rst2pdf.pdfbuilder','sphinxcontrib.plantuml']
+#if on_rtd:
+#  extensions = ['sphinx.ext.autodoc','sphinxcontrib.plantuml']
+#  display_github = False
+#else:
+extensions = ['sphinx.ext.autodoc','rst2pdf.pdfbuilder','sphinxcontrib.plantuml','sphinxcontrib.fancybox']
 
 plantuml = ['java','-jar','/sbin/plantuml.jar']
   

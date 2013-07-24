@@ -27,6 +27,16 @@ div.documentwrapper
 	border-bottom: 1px solid {{ theme_table_trim_color }};
 }
 
+div.document
+{
+	max-width: 100%;
+}
+
+div.related
+{
+	max-width: 100%;
+}
+
 div.sidebartoggle button
 {
    border-top: 1px solid {{ theme_sidebartrimcolor }};
