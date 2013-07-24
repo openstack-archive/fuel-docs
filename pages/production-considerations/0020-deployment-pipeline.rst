@@ -1,6 +1,8 @@
 Redeploying An Environment
 --------------------------
 
+.. contents:: :local:
+
 Because Puppet is additive only, there is no ability to revert changes as you would in a typical application deployment. If a change needs to be backed out, you must explicitly add a configuration to reverse it, check the configuration in, and promote it to production using the pipeline. This means that if a breaking change does get deployed into production, typically a manual fix is applied, with the proper fix subsequently checked into version control.
 
 Fuel offers the ability to isolate code changes while developing a deployment and minimizes the headaches associated with maintaining multiple configurations through a single Puppet Master by creating what are called environments.

@@ -1,9 +1,9 @@
-Installing Fuel Web
-===================
+Installing FuelWeb
+------------------
 
 .. contents:: :local:
 
-Fuel Web is distributed as both an ISO and an IMG image, each of which contains 
+FuelWeb is distributed as both an ISO and an IMG image, each of which contains 
 an installer for an admin node. The ISO image is used for CD media devices, iLO 
 or similar remote access systems. The IMG file is used for USB memory drives.
 
@@ -39,7 +39,7 @@ OpenStack.
 On VirtualBox
 -------------
 
-If you are going to evaluate Fuel Web on VirtualBox, you should know that we 
+If you are going to evaluate FuelWeb on VirtualBox, you should know that we 
 provide a set of scripts that create and configure all of the required VMs for 
 you, including the admin node and slave nodes for OpenStack itself. It's a very 
 simple, single-click installation.  
@@ -49,7 +49,7 @@ simple, single-click installation.
     VirtualBox by creating the VMs yourself. See "Manual Mode" for more 
     information.
 
-The requirements for running Fuel Web on VirtualBox are:
+The requirements for running FuelWeb on VirtualBox are:
 
 * A physical machine with Linux or Mac OS.
 
@@ -74,7 +74,7 @@ When you unpack the scripts, you will see the following important files and fold
 
 * iso
 
-  * This folder needs to contain a single ISO image for Fuel Web. Once you 
+  * This folder needs to contain a single ISO image for FuelWeb. Once you 
     download ISO from the portal, copy or move it into this directory
 
 * config.sh
@@ -102,7 +102,7 @@ Manual mode
 ^^^^^^^^^^^
 
 If you cannot or would rather not run the convenience scripts, you can still run 
-Fuel Web on VirtualBox by following these steps.
+FuelWeb on VirtualBox by following these steps.
 
 Admin node deployment
 ~~~~~~~~~~~~~~~~~~~~~
@@ -126,7 +126,7 @@ First, create the admin node.
 3. Power on the VM in order to start the installation.
 
 4. Wait for the welcome message with all information needed to login into the UI 
-of Fuel Web.
+of FuelWeb.
 
 Adding slave nodes
 ~~~~~~~~~~~~~~~~~~

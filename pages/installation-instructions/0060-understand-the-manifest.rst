@@ -1,6 +1,8 @@
 Understanding the Puppet Manifest
 ---------------------------------
 
+.. contents:: :local:
+
 At this point you should have functioning servers that are ready to take an OpenStack installation. If you're using VirtualBox, save the current state of every virtual machine by taking a snapshot using ``File->Take Snapshot``. Snapshots are a useful tool when you make a mistake, encounter an issue, or just want to try different configurations, all without having to start from scratch.
 
 Next, go through the ``/etc/puppet/manifests/site.pp`` file and make any necessary customizations.  If you have run ``openstack_system``, there shouldn't be anything to change (with one small exception) but if you are installing Fuel manually, you will need to make these changes yourself.
@@ -523,10 +525,10 @@ This variable accepts the following values:
   * ``default``:  In this mode, the dashboard uses keys supplied with the standard Apache SSL module package.
   * ``exist``:  In this case, the dashboard assumes that the domain name-based certificate, or keys, are provisioned in advance.  This can be a certificate signed by any authorized provider, such as Symantec/Verisign, Comodo, GoDaddy, and so on.  The system looks for the keys in these locations:
 
-    for Debian/Ubuntu:
-      * public  ``/etc/ssl/certs/domain-name.pem``
-      * private ``/etc/ssl/private/domain-name.key``
-    for Centos/RedHat:
+..    for Debian/Ubuntu:
+..      * public  ``/etc/ssl/certs/domain-name.pem``
+..      * private ``/etc/ssl/private/domain-name.key``
+..    for Centos/RedHat:
       * public  ``/etc/pki/tls/certs/domain-name.crt``
       * private ``/etc/pki/tls/private/domain-name.key``
 

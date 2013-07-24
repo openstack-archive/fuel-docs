@@ -1,5 +1,5 @@
 RabbitMQ Cluster Restart Issues Following A Systemwide Failure
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+--------------------------------------------------------------
 
 **Issue:** 
 As a rule of thumb, all RabbitMQ nodes must not be shut down simultaneously. RabbitMQ requires that after a full shutdown of the cluster, the first node brought up should be the last one to shut down, but it's not always possible to know which node that is in the event of a power outage or similar event.  Versions 2.1 and later of Fuel solve this problem by managing the restart of available nodes, so you should not experience difficulty with this issue.

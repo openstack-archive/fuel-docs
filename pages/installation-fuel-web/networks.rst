@@ -282,7 +282,8 @@ these networks live in VLANs over the one or multiple physical interfaces on a
 node. This means that the switch should pass tagged traffic, and untagging is done
 on the Linux hosts. 
 
-.. note:: For the sake of simplicity, all the VLANs specified on the networks tab of 
+.. note:: 
+    For the sake of simplicity, all the VLANs specified on the networks tab of 
 	the FuelWeb should be configured on switch ports, pointing to slave nodes, 
 	as tagged.
 

@@ -1,5 +1,5 @@
 Galera cluster has no built-in restart or shutdown mechanism
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------------------------------------------
 
 **Issue:**
 A Galera cluster cannot be simply started or stopped. It is designed to work continuously.

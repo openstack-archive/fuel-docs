@@ -10,6 +10,7 @@ Usually it measn that switch or multiple switches are not configured correctly a
 traffic to pass through.
 
 .. image:: /_images/net_verify_failure.png
+    :width: 100%
 
 On VirtualBox
 -------------

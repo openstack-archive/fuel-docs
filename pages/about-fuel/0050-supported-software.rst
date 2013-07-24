@@ -11,7 +11,7 @@ Fuel has been tested and is guaranteed to work with the following software compo
     * 2.7.19
 
 * MCollective
-    * 2.2.4
+    * 2.3.1
 
 * Cobbler (bare-metal provisioning tool)
     * 2.2.3
@@ -21,6 +21,7 @@ Fuel has been tested and is guaranteed to work with the following software compo
 
 * Hypervisor
     * KVM
+    * QEMU
 
 * Open vSwitch
     * 1.10.0
@@ -39,9 +40,6 @@ Fuel has been tested and is guaranteed to work with the following software compo
 
 * Corosync
     * 1.4.3
-
-* Keepalived
-    * 1.2.4
 
 * Nagios
     * 3.4.4

@@ -1,6 +1,8 @@
 Large Scale Deployments
 -----------------------
 
+.. contents:: :local:
+
 When deploying large clusters -- those of 100 nodes or more -- there are two basic bottlenecks:
 
 * Certificate signing requests and Puppet Master/Cobbler capacity

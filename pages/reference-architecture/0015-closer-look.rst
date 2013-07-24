@@ -8,7 +8,6 @@ configuration looks something like this:
 
 .. image:: https://docs.google.com/drawings/d/1xLv4zog19j0MThVGV9gSYa4wh1Ma4MQYsBz-4vE1xvg/pub?w=767&h=413
 
-
 OpenStack services are interconnected by RESTful HTTP-based APIs and
 AMQP-based RPC messages. So redundancy for stateless OpenStack API
 services is implemented through the combination of Virtual IP (VIP)

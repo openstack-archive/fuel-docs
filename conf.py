@@ -46,11 +46,11 @@ source_suffix = '.rst'
 #source_encoding = 'utf-8-sig'
 
 # The master toctree document.
-master_doc = 'index'
+master_doc = 'contents'
 
 # General information about the project.
 project = u'Fuel for OpenStack'
-copyright = u'2013, Mirantis'
+copyright = u'2013, Mirantis Inc.'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -144,7 +144,7 @@ html_use_smartypants = True
 
 # Custom sidebar templates, maps document names to template names.
 html_sidebars = {
-  '**': ['globaltoc.html', 'sourcelink.html', 'searchbox.html'],
+  '**': ['globaltoc.html', 'searchbox.html', 'doc_license.html'],
 }
 
 # Additional templates that should be rendered to pages, maps page names to
@@ -198,7 +198,7 @@ latex_elements = {
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
   ('index', 'fuel.tex', u'Fuel for OpenStack Documentation',
-   u'Mirantis', 'manual'),
+   u'Mirantis Inc.', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -242,7 +242,7 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
   ('index', 'fuel', u'Fuel for OpenStack Documentation',
-   u'Mirantis', 'fuel', 'One line description of project.',
+   u'Mirantis Inc.', 'fuel', 'One line description of project.',
    'Miscellaneous'),
 ]
 

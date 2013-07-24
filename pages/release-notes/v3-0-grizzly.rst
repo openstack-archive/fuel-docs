@@ -1,7 +1,7 @@
 v3.0-grizzly
 ^^^^^^^^^^^^
 
-**New Features in Fuel and Fuel Web 3.0**
+**New Features in Fuel and FuelWeb 3.0**
 
 * Support for OpenStack Grizzly
 * Support for CentOS 6.4

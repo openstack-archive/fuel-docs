@@ -1,7 +1,6 @@
 .. index:: license
 
-===================
-Copyright & License
-===================
+Fuel License
+============
 
 .. literalinclude:: LICENSE
