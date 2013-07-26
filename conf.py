@@ -28,11 +28,11 @@ on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
 
 # Add any Sphinx extension module names here, as strings. They can be extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
-if on_rtd:
-  extensions = ['sphinx.ext.autodoc','sphinxcontrib.plantuml']
-  display_github = False
-else:
-  extensions = ['sphinx.ext.autodoc','rst2pdf.pdfbuilder','sphinxcontrib.plantuml']
+#if on_rtd:
+#  extensions = ['sphinx.ext.autodoc','sphinxcontrib.plantuml']
+#  display_github = False
+#else:
+extensions = ['sphinx.ext.autodoc','rst2pdf.pdfbuilder','sphinxcontrib.plantuml','sphinxcontrib.fancybox']
 
 plantuml = ['java','-jar','/sbin/plantuml.jar']
   
@@ -161,7 +161,7 @@ html_use_index = True
 html_split_index = False
 
 # If true, links to the reST sources are added to the pages.
-html_show_sourcelink = True
+html_show_sourcelink = False
 
 # If true, "Created using Sphinx" is shown in the HTML footer. Default is True.
 html_show_sphinx = False
@@ -178,7 +178,7 @@ html_show_copyright = True
 #html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'fueldoc'
+htmlhelp_basename = 'fuel'
 
 
 # -- Options for LaTeX output --------------------------------------------------

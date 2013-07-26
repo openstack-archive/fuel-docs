@@ -27,10 +27,24 @@ div.documentwrapper
 	border-bottom: 1px solid {{ theme_table_trim_color }};
 }
 
+div.document
+{
+	max-width: 90%;
+}
+
+div.related
+{
+	max-width: 90%;
+}
+
 div.sidebartoggle button
 {
    border-top: 1px solid {{ theme_sidebartrimcolor }};
 } 
+
+div.body h1 {
+    text-align: left;
+}
 
 div.body h2,
 div.body p.rubric,
@@ -38,8 +52,14 @@ div.section.emphasized > h3, /* deprecated in favor of below: */
 div.section.emphasize-children > div.section > h3
 {
     border-width: 1px 1px 1px 1px;
+	font-style: normal;
+	
 }
 div.sphinxsidebar #searchbox input[type="text"] {
     width: 145px;
 }
 
+div.sphinxsidebar .searchtip
+{
+    color: rgba(0,0,0,.5);
+}
