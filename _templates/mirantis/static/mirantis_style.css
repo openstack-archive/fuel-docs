@@ -27,12 +27,14 @@ div.relbar-top div.related, div.relbar-bottom div.related
 html, body {
     font-family: 'PT Sans', arial, sans-serif;
     font-size: 14px;
-    height: 100%;
     color: #41454d;
-    margin: 0;
 }
 
 body.inner {background: url(inner_body_tile.jpg) repeat-x;}
+
+table.pageheader {
+	width: 100%;
+}
 
 a {
     color: #D32F1A;
@@ -436,7 +438,7 @@ a.active {
     width: 100%;
 }
 
-#footer {
+#footer, #header {
 /*
     height: 115px;
     margin-top: -120px;
@@ -453,8 +455,8 @@ a.active {
     padding-top: 20px;
 }
 
-#footer_content {
-    width: 960px;
+#footer_content, #header_content {
+    max-width: 960px;
     margin: 4px auto auto auto;
 /*
     height: 110px;
