@@ -11,6 +11,8 @@
 
 @import url("cloud.css");
 
+@import url("mirantis_style.css");
+
 div.highlight pre,
 div.highlight-python pre
 {
@@ -26,15 +28,21 @@ div.documentwrapper
 	border-top: 1px solid {{ theme_table_trim_color }};
 	border-bottom: 1px solid {{ theme_table_trim_color }};
 }
-
+/*
 div.document
 {
-	max-width: 90%;
+	max-width: 100%;
 }
 
 div.related
 {
-	max-width: 90%;
+	max-width: 100%;
+}
+*/
+div.doc-license
+{
+	font-size: 70%;
+	line-height: 100%;
 }
 
 div.sidebartoggle button
