@@ -259,7 +259,7 @@ When configuration is done
 
 Once the admin node is installed, power on all other nodes and open the Fuel on
 the configured network.
-Slave nodes will be booted in bootstrap mode (Centos based Linux in memory) via 
+Slave nodes will be booted in bootstrap mode (CentOS based Linux in memory) via 
 PXE and you will see notifications on the user interface about discovered nodes. 
 This is the point when you can create an environment, add nodes into it, and 
 start configuration.
