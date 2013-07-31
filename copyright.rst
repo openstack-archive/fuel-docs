@@ -1,5 +1,6 @@
-.. index:: license
+.. index:: License
 
+============
 Fuel License
 ============
 

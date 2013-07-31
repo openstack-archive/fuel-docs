@@ -1,5 +1,10 @@
-Introduction to Fuel for OpenStack
-==================================
+.. index: Introduction
+
+.. _Introduction:
+
+===================================
+Introduction to Fuel™ for OpenStack
+===================================
 
 OpenStack is an extensible, versatile, and flexible cloud management platform. 
 By exposing its portfolio of cloud infrastructure services – compute, storage, 
@@ -16,7 +21,7 @@ requires a thoughtful combination of complex configuration choices. This can be
 very time consuming and requires a significant amount of studious documentation 
 to comprehend.
 
-Mirantis Fuel for OpenStack was created to eliminate exactly these problems. 
+Mirantis Fuel™ for OpenStack was created to eliminate exactly these problems. 
 This step-by-step guide takes you through this process of:
 
 * Configuring OpenStack and its supporting components into a robust cloud 
@@ -48,11 +53,11 @@ The Fuel User Guide is organized as follows:
 * :ref:`Reference Architecture <Reference-Architecture>`, provides a 
   general look at the components that make up OpenStack.
 
-* :ref:`Create a multi-node OpenStack cluster using Fuel Web <Fuel-Web-Cluster>`, 
+* :ref:`Create a multi-node OpenStack cluster using Fuel UI <Create-Cluster-UI>`,
   takes you step-by-step through the process of creating a high-availability 
   OpenStack cluster using Fuel Web. 
 
-* :ref:`Create a multi-node OpenStack cluster using Fuel <Create-Cluster>`, 
+* :ref:`Deploy an OpenStack cluster using Fuel CLI <Deploy-Cluster-CLI>`, 
   takes you step-by-step through the more advanced process of creating a 
   high-availability OpenStack cluster using the standard Fuel tools.
 
@@ -62,12 +67,13 @@ The Fuel User Guide is organized as follows:
   requirements, and provide tips and tricks for creating a cluster of up to 100 
   nodes.
 
-* With the current (3.1) release Fuel and FuelWeb has been integrated. We encourage all 
-  users to use the Fuel Web process for installation and configuration. However, 
-  the standard Fuel installation process is still available for those of you who 
+* With the current (3.1) release Fuel UI (aka FuelWeb) and Fuel CLI 
+  (aka Fuel Library) has been integrated. We encourage all users to use the Fuel 
+  UI for installation and configuration. However, 
+  the standard Fuel CLI installation process is still available for those who 
   prefer a more detailed approach to deployment. Even with a utility as powerful 
   as Fuel, creating an OpenStack cluster can be complex, and  
-  :ref:`Frequently Asked Questions <FAQ>`, covers many of the issues that tend 
+  :ref:`Frequently Asked Questions <FAQ>` covers many of the issues that tend 
   to arise during the process. 
 
 Lets start off by taking a look at Fuel itself. We'll start by explaining what 

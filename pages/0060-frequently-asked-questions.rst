@@ -1,5 +1,8 @@
+.. index: FAQ (Frequently Asked Questions) 
+
 .. _FAQ:
 
+================================
 FAQ (Frequently Asked Questions) 
 ================================
 

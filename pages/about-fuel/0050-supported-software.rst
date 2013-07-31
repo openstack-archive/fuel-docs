@@ -1,5 +1,7 @@
+.. index: Supported Software; Components
+
 Supported Software
-------------------
+==================
 
 Fuel has been tested and is guaranteed to work with the following software components:
 

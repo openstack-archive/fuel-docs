@@ -1,5 +1,6 @@
 .. _Reference-Architecture:
 
+======================
 Reference Architecture
 ======================
 

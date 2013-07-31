@@ -1,5 +1,8 @@
-.. _Production:
+.. index: Advanced Topics
 
+.. _Advanced:
+
+=============================
 Advanced Configuration Topics
 =============================
 
