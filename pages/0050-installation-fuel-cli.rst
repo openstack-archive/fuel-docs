@@ -1,4 +1,4 @@
-.. index: Deploy using CLI
+.. index:: Deploy using CLI
 
 .. _Deploy-Cluster-CLI:
 

@@ -1,8 +1,12 @@
+.. index:: What is Fuel?
+
+.. _What_is_Fuel:
+
 What is Fuel?
 =============
 
 Fuel is a ready-to-install collection of the packages and scripts you need to 
-create a robust, configurable, vendor-independant OpenStack cloud in your own 
+create a robust, configurable, vendor-independent OpenStack cloud in your own 
 environment.
 
 A single OpenStack cloud consists of packages from many different open source 

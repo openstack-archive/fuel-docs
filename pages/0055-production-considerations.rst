@@ -1,4 +1,4 @@
-.. index: Production Considerations
+.. index:: Production Considerations
 
 .. _Production:
 

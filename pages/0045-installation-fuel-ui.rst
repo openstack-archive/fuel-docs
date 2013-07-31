@@ -1,4 +1,4 @@
-.. index: Deploy using UI
+.. index:: Deploy using UI
 
 .. _Create-Cluster-UI:
 

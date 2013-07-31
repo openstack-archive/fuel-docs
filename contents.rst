@@ -1,4 +1,4 @@
-.. index: Table of Contents
+.. index:: Table of Contents
 
 .. _ToC:
 

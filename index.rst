@@ -1,4 +1,4 @@
-.. index: Introduction
+.. index:: Introduction
 
 .. _Introduction:
 

@@ -1,4 +1,4 @@
-.. index: Advanced Topics
+.. index:: Advanced Topics
 
 .. _Advanced:
 
