@@ -40,15 +40,15 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1920"
-     inkscape:window-height="1061"
+     inkscape:window-width="1366"
+     inkscape:window-height="749"
      id="namedview47"
      showgrid="true"
      showguides="false"
      inkscape:zoom="2.1957773"
      inkscape:cx="352.04791"
      inkscape:cy="137.87906"
-     inkscape:window-x="1362"
+     inkscape:window-x="-4"
      inkscape:window-y="-4"
      inkscape:window-maximized="1"
      inkscape:current-layer="g7">
@@ -205,7 +205,7 @@
          sodipodi:role="line"
          id="tspan3048"
          x="260"
-         y="206">Neutrino</tspan></text>
+         y="206">Neutron</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"

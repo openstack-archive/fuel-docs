@@ -16,8 +16,9 @@ You must keep in mind, however, that the database uses Galera to
 achieve HA, and Galera is a quorum-based system. That means that you must provide at least 3
 controller nodes.
 
-.. image:: https://docs.google.com/drawings/pub?id=1aftE8Yes7CdVSZgZD1A82T_2GqL2SMImtRYU914IMyQ&w=869&h=855
-
+.. fancybox:: /_images/030-logical-diagram-controllers_svg.png
+    :width: 400px
+    :height: 400px
 
 Every OpenStack controller runs keepalived, which manages a single
 Virtual IP (VIP) for all controller nodes, and HAProxy, which manages
@@ -55,7 +56,9 @@ as RabbitMQ and MySQL. They use the same approach that provides
 redundancy to the end-users of Horizon and REST APIs, reaching out to
 controller nodes using the VIP and going through HAProxy.
 
-.. image:: https://docs.google.com/drawings/pub?id=16gsjc81Ptb5SL090XYAN8Kunrxfg6lScNCo3aReqdJI&w=873&h=801
+.. fancybox:: /_images/040-logical-diagram-compute_svg.png
+    :width: 400px
+    :height: 350px
 
 Storage Nodes
 +++++++++++++
@@ -67,6 +70,6 @@ achieve this, you are going to deploy Swift. This enables you to use
 it not only for storing VM images, but also for any other objects such
 as user files.
 
-
-.. image:: https://docs.google.com/drawings/pub?id=1Xd70yy7h5Jq2oBJ12fjnPWP8eNsWilC-ES1ZVTFo0m8&w=777&h=778
-
+.. fancybox:: /_images/050-logical-diagram-storage_svg.png
+    :width: 400px
+    :height: 400px

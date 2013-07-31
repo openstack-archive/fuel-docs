@@ -1,3 +1,4 @@
+.. index:: Cluster Sizing
 
 Cluster Sizing
 ^^^^^^^^^^^^^^
@@ -10,18 +11,25 @@ order to build a fully redundant and highly available environment.
 The absolute minimum requirement for a highly-available OpenStack
 deployment is to allocate 4 nodes:
 
-* 3 controller nodes, combined with storage
-* 1 compute node
+- 3 controller nodes, combined with storage
 
-.. image:: https://docs.google.com/drawings/pub?id=19Dk1qD5V50-N0KX4kdG_0EhGUBP7D_kLi2dU6caL9AM&w=767&h=413
+- 1 compute node
+
+.. fancybox:: /_images/060-deployment-controllers-and-storage-combined_svg.png
+    :width: 400px
+    :height: 250px
 
 If you want to run storage separately from the controllers, you can do that as well by raising the bar to 7 nodes:
 
-* 3 controller nodes
-* 3 storage nodes
-* 1 compute node
+- 3 controller nodes
 
-.. image:: https://docs.google.com/drawings/pub?id=1xmGUrk2U-YWmtoS77xqG0tzO3A47p6cI3mMbzLKG8tY&w=769&h=594
+- 3 storage nodes
+
+- 1 compute node
+
+.. fancybox:: /_images/070-deployment-controllers-and-storage-separate_svg.png
+    :width: 400px
+    :height: 300px
 
 Of course, you are free to choose how to deploy OpenStack based on the
 amount of available hardware and on your goals (such as whether you
