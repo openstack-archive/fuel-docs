@@ -1,5 +1,3 @@
-.. index:: Introduction
-
 ==================================
 Introduction to Fuel for OpenStack
 ==================================
