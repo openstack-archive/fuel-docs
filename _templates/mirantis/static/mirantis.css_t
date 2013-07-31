@@ -28,22 +28,15 @@ div.documentwrapper
 	border-top: 1px solid {{ theme_table_trim_color }};
 	border-bottom: 1px solid {{ theme_table_trim_color }};
 }
-/*
-div.document
-{
-	max-width: 100%;
-}
 
-div.related
+div.document, div.related, div.related_hf
 {
 	max-width: 100%;
 }
-*/
 
 div.related_hf
 {
     margin: 0 auto;
-    max-width: {{ theme_max_width }};
     background: {{ theme_relbarbgcolor }};
     line-height: 1.5em;
     padding: .5em 0;
