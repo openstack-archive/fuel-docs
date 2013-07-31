@@ -6,11 +6,10 @@
 Table of Contents
 =================
 
-.. toctree:: Table of Contents
+.. toctree::
    :maxdepth: 2
 
    index
-   0010-package-contents
    0020-about-fuel
    0030-release-notes
    0040-reference-architecture

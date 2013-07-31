@@ -1,3 +1,5 @@
+:orphan:
+
 .. index:: Advanced Topics
 
 .. _Advanced:

@@ -95,7 +95,7 @@ When you unpack the scripts, you will see the following important files and fold
 
 Here is the example config file, with the values that you can adjust:
 
-.. literalinclude:: config.sh
+.. literalinclude:: /_static/config.sh
    :language: bash
    :linenos:
 
@@ -178,7 +178,7 @@ It is still possible to configure other interfaces, or add 802.1Q subinterfaces
 to the Fuel to be able to access it from office network if required.
 It is easy to do via standard network configuration scripts for CentOS. When the 
 installation is complete, you can modify 
-``/etc/sysconfig/network-scripts/ifcfg-eth* `` scripts. For example, if *eth1* 
+``/etc/sysconfig/network-scripts/ifcfg-eth\*`` scripts. For example, if *eth1* 
 interface is on the L2 network which is planned for PXE booting, and *eth2* is 
 the interface connected to office network switch, *eth0* is not in use, then 
 settings can be the following:
