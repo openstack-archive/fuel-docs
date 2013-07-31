@@ -1,5 +1,0 @@
-sphinxcontrib-blockdiag
-rst2pdf
-sphinxcontrib-actdiag
-sphinxcontrib-seqdiag
-sphinxcontrib-nwdiag
