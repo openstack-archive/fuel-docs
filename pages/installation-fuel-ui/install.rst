@@ -95,7 +95,7 @@ When you unpack the scripts, you will see the following important files and fold
 
 Here is the example config file, with the values that you can adjust:
 
-.. literalinclude:: /../virtualbox/config.sh
+.. literalinclude:: config.sh
    :language: bash
    :linenos:
 
