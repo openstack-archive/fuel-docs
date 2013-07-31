@@ -5,8 +5,8 @@ Understanding and configuring the network
 
 OpenStack clusters use several types of network managers: FlatDHCPManager, 
 VlanManager and Neutron (formerly Quantum).
-The current version of FuelWeb supports only the first two (FlatDHCP and 
-VlanManager), but the FUEL library supports all three.
+The current version of Fuel UI supports only two (FlatDHCP and 
+VlanManager), but Fuel CLI supports all three.
 For more information about how the first two network managers work, you can read 
 these two resources:
 
@@ -71,7 +71,7 @@ interface is the management network interface.
     compute2_eth0 .up. [L2 switch]
     compute3_eth0 .up. [L2 switch]
 
-FuelWeb deploys OpenStack in FlatDHCP mode with the so called **multi-host** 
+Fuel deploys OpenStack in FlatDHCP mode with the so called **multi-host** 
 feature enabled.
 Without this feature enabled, network traffic from each VM would go through the 
 single gateway host, which basically becomes a single point of failure. In 
@@ -80,7 +80,7 @@ host, providing a balanced networking solution.
 In this case, if one of the computes goes down, the rest of the environment 
 remains operational.
 
-The current version of FuelWeb uses VLANs, even for the FlatDHCP network manager.
+The current version of Fuel uses VLANs, even for the FlatDHCP network manager.
 On the Linux host, it is implemented in such a way that it is not the physical 
 network interfaces that are connected to the bridge, but the VLAN interface 
 (i.e. **eth0.102**).
@@ -195,15 +195,15 @@ scheme to work.
     compute1_eth0 -up- [L2 switch]
     compute2_eth0 -up- [L2 switch]
 
-FuelWeb deployment schema
-^^^^^^^^^^^^^^^^^^^^^^^^^
+Fuel deployment schema
+^^^^^^^^^^^^^^^^^^^^^^
 
 One of the physical interfaces on each host has to be chosen to carry VM-to-VM 
 traffic (fixed network), and switch ports must be configured to allow tagged traffic 
 to pass through. OpenStack Computes will untag the IP packets and send them to 
 the appropriate VMs.
 Simplifying the configuration of VLAN Manager, there is no known limitation 
-which FuelWeb could add in this particular networking mode.
+which Fuel could add in this particular networking mode.
 
 Configuring the network
 -----------------------
@@ -214,9 +214,9 @@ accordingly. The diagram below shows an example configuration.
 .. image:: /_images/physical_sample.png
     :width: 100%
 
-FuelWeb operates with following logical networks:
+Fuel operates with following logical networks:
 
-* **FuelWeb** network is used for internal FuelWeb communications only and PXE
+* **Fuel** network is used for internal Fuel communications only and PXE
   booting (untagged on the scheme);
 * **Public** network is used to get access from virtual machines to outside, 
   Internet or office network (vlan 101 on the scheme);
@@ -231,7 +231,7 @@ FuelWeb operates with following logical networks:
 Mapping logical networks to physical interfaces on servers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-FuelWeb allows you to use different physical interfaces to handle different 
+Fuel allows you to use different physical interfaces to handle different 
 types of traffic. When a node is added to the environment, click at the bottom 
 line of the node icon. In the detailed information window, click the "Network 
 Configuration" button to open the physical interfaces configuration screen.
@@ -242,7 +242,7 @@ Configuration" button to open the physical interfaces configuration screen.
 On this screen you can drag-and-drop logical networks to physical interfaces 
 according to your network setup. 
 
-All networks are presented on the screen, except **fuelweb**.
+All networks are presented on the screen, except **fuel**.
 It runs on the physical interface from which node was initially PXE booted,
 and in the current version it is not possible to map it on any other physical 
 interface. Also, once the network is configured and OpenStack is deployed,
@@ -252,31 +252,31 @@ physical interface or VLAN number.
 Switch
 ^^^^^^
 
-FuelWeb can configure hosts, however switch configuration is still manual work.
+Fuel can configure hosts, however switch configuration is still manual work.
 Unfortunately the set of configuration steps, and even the terminology used, is 
 different for different vendors, so we will try to provide vendor-agnostic 
 information on how traffic should flow and leave the vendor-specific details to 
 you. We will provide an example for a Cisco switch.
 
 First of all, you must configure access ports to allow non-tagged PXE booting 
-connections from all slave nodes to the FuelWeb node. We refer this network 
-as the "admin" network, or "fuelweb".
-By default, the FuelWeb master node uses the ``eth0`` interface to serve PXE 
+connections from all slave nodes to the Fuel node. We refer this network 
+as the "admin" network, or "fuel".
+By default, the Fuel master node uses the ``eth0`` interface to serve PXE 
 requests on this network.
-So if that's left unchanged, you must set the switch port for eth0 of FuelWeb to 
+So if that's left unchanged, you must set the switch port for eth0 of Fuel to 
 access mode.
 We recommend that you use the eth0 interfaces of all other nodes for PXE booting 
 as well. Corresponding ports must also be in access mode.
 
 Taking into account that this is the network for PXE booting, you must not mix 
-this L2 segment with any other company infrastructure. FuelWeb runs a DHCP 
+this L2 segment with any other company infrastructure. Fuel runs a DHCP 
 server, and if there is another company DHCP on the same L2, both the company's 
-infrastructure and FuelWeb's will be unable to function properly.
+infrastructure and Fuel's will be unable to function properly.
 You also need to configure each of the switch's ports connected to nodes as an 
 "STP Edge port" (or a "spanning-tree portfast trunk", according to Cisco 
 terminology). If you don't do that, DHCP timeout issues may occur.
 
-As long as the "admin" network is configured, FuelWeb can operate.
+As long as the "admin" network is configured, Fuel can operate.
 Other networks are required for OpenStack environments, and currently all of 
 these networks live in VLANs over the one or multiple physical interfaces on a 
 node. This means that the switch should pass tagged traffic, and untagging is done
@@ -284,7 +284,7 @@ on the Linux hosts.
 
 .. note:: 
     For the sake of simplicity, all the VLANs specified on the networks tab of 
-	the FuelWeb should be configured on switch ports, pointing to slave nodes, 
+	the Fuel should be configured on switch ports, pointing to slave nodes, 
 	as tagged.
 
 Of course, it is possible to specify as tagged only certain ports for a certain 
@@ -297,9 +297,9 @@ This is enough to deploy the OpenStack environment. However, from a practical
 standpoint, it's still not really usable because there is no connection to other 
 corporate networks yet. To make that possible, you must configure uplink port(s). 
 
-One of the VLANs may carry the office network. To provide access to the FuelWeb 
+One of the VLANs may carry the office network. To provide access to the Fuel 
 from the office network, any other free physical network interface on the 
-FuelWeb master node can be used and configured according to the office network 
+Fuel master node can be used and configured according to the office network 
 rules (static IP or DHCP). The same corporate network segment can be used for 
 public and floating ranges. In this case, you must provide the corresponding 
 VLAN ID and IP ranges in the UI. One public IP per node will be used to SNAT
@@ -308,7 +308,7 @@ instance will be used to get access to the VM from the corporate network, or
 even the global Internet. To have a VM visible from the Internet is similar to 
 having it visible from corporate network - corresponding IP ranges and VLAN IDs
 must be specified for the floating and public networks. One current limitation 
-of FuelWeb is that the user must use the same L2 segment for both public and 
+of Fuel is that the user must use the same L2 segment for both public and 
 floating networks.
 
 Example configuration for one of the ports on a Cisco switch html::
@@ -330,7 +330,7 @@ To make it possible for VMs to access the outside world, you must have an IP
 address set on a router in the public network.
 In the examples provided, that IP is 12.0.0.1 in VLAN 101.
 
-FuelWeb has a special field on the networking tab for the gateway address. As 
+Fuel has a special field on the networking tab for the gateway address. As 
 soon as deployment of OpenStack is started, the network on nodes is reconfigured
 to use this gateway IP as the default gateway.
 
