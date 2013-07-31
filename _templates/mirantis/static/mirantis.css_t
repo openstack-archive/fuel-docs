@@ -39,6 +39,18 @@ div.related
 	max-width: 100%;
 }
 */
+
+div.related_hf
+{
+    margin: 0 auto;
+    max-width: {{ theme_max_width }};
+    background: {{ theme_relbarbgcolor }};
+    line-height: 1.5em;
+    padding: .5em 0;
+    color: {{ theme_relbartextcolor }};
+}
+ 
+
 div.doc-license
 {
 	font-size: 70%;

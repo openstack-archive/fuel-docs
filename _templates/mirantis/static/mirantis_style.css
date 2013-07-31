@@ -3,6 +3,27 @@ li.toctree-l1, li.toctree-l2
 	margin-top: 4px;
 }
 
+div.relbar-bottom div.related_hf
+{
+    border-radius: 0 0 .7em .7em;
+    -moz-border-radius: 0 0 .7em .7em;
+    -webkit-border-radius: 0 0 .7em .7em;
+}
+ 
+div.relbar-top div.related_hf
+{
+    border-radius: .7em .7em 0 0;
+    -moz-border-radius: .7em .7em 0 0;
+    -webkit-border-radius: .7em .7em 0 0;
+}
+ 
+div.relbar-top div.related, div.relbar-bottom div.related
+{
+    border-radius: 0 0 0 0;
+    -moz-border-radius: 0 0 0 0;
+    -webkit-border-radius: 0 0 0 0;
+}
+
 html, body {
     font-family: 'PT Sans', arial, sans-serif;
     font-size: 14px;
