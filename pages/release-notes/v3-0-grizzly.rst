@@ -1,5 +1,9 @@
+.. index:: Release Notes; v3.0-grizzly
+
+.. _RelNotes_3.0:
+
 v3.0-grizzly
-^^^^^^^^^^^^
+============
 
 **New Features in Fuel and FuelWeb 3.0**
 

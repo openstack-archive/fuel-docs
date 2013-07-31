@@ -1,6 +1,9 @@
+.. index:: Release Notes; v2.0-folsom
+
+.. _RelNotes_2.0:
 
 v2.0-folsom
-^^^^^^^^^^^
+===========
 
 * Features:
 
