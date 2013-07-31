@@ -23,9 +23,14 @@ In practice, that means that the process of using Fuel looks like 1-2-3:
    enabling you to maintain your cluster and adapt to your own configuration as 
    necessary.
 
+.. rst-class:: centered
+
 .. fancybox:: /_images/010-how-it-works_svg.png
     :width: 300px
     :height: 300px
+    :class: align-center
+
+.. rst-class:: floater
 
 Fuel comes with several pre-defined deployment configurations, some of which 
 include additional options from which you can choose.
