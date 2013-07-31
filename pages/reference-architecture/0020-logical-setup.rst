@@ -35,10 +35,14 @@ controller or another in the cluster, depending on load conditions.
 Each of the services housed on the controller nodes has its own
 mechanism for achieving HA:
 
-* nova-api, glance-api, keystone-api, quantum-api and nova-scheduler are stateless services that do not require any special attention besides load balancing.
-* Horizon, as a typical web application, requires sticky sessions to be enabled at the load balancer.
+* nova-api, glance-api, keystone-api, quantum-api and nova-scheduler are 
+  stateless services that do not require any special attention besides load 
+  balancing.
+* Horizon, as a typical web application, requires sticky sessions to be enabled 
+  at the load balancer.
 * RabbitMQ provides active/active high availability using mirrored queues.
-* MySQL high availability is achieved through Galera active/active multi-master deployment.
+* MySQL high availability is achieved through Galera active/active multi-master 
+  deployment.
 
 Compute Nodes
 +++++++++++++

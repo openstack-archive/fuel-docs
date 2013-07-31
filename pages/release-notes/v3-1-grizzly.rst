@@ -41,7 +41,7 @@ provided OpenStack distribution onto CentOS powered nodes or installing the Red
 Hat provided OpenStack distribution onto Red Hat Enterprise Linux powered nodes.
 
 .. note:: A Red Hat subscription is required to download and deploy Red Hat 
-    Enterprise Linux OpenStack Platform.  
+    Enterprise Linux OpenStack Platform.
 	
 Mirantis OpenStack Health Check 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

@@ -55,11 +55,11 @@ The Fuel User Guide is organized as follows:
 
 * :ref:`Create a multi-node OpenStack cluster using Fuel UI <Create-Cluster-UI>`,
   takes you step-by-step through the process of creating a high-availability 
-  OpenStack cluster using Fuel Web. 
+  OpenStack cluster using Fuel Web UI. 
 
 * :ref:`Deploy an OpenStack cluster using Fuel CLI <Deploy-Cluster-CLI>`, 
   takes you step-by-step through the more advanced process of creating a 
-  high-availability OpenStack cluster using the standard Fuel tools.
+  high-availability OpenStack cluster using the command line and Puppet manifests.
 
 * :ref:`Production Considerations <Production>`, looks at the 
   real-world questions and problems involved in creating an OpenStack cluster 

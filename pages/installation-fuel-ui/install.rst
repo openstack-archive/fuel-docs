@@ -1,21 +1,23 @@
-Installing FuelWeb
-------------------
+.. index:: Installing Fuel Admin Node
+
+Installing Fuel Admin Node
+==========================
 
 .. contents:: :local:
 
-FuelWeb is distributed as both an ISO and an IMG image, each of which contains 
-an installer for an admin node. The ISO image is used for CD media devices, iLO 
-or similar remote access systems. The IMG file is used for USB memory drives.
+Fuel is distributed as both ISO and IMG image, each of them contains 
+an installer for Fuel Admin node. The ISO image is used for CD media devices, iLO 
+or similar remote access systems. The IMG file is used for USB memory sticks.
 
-Once installed, FuelWeb can be used to deploy and manage OpenStack clusters. It 
+Once installed, Fuel can be used to deploy and manage OpenStack clusters. It 
 will assign IP addresses to the nodes, perform PXE boot and initial 
 configuration, and provision of OpenStack nodes according to their roles in the 
 cluster.
 
-On Physical Hardware
---------------------
+On Bare-Metal Environment
+-------------------------
 
-To install FuelWeb on physical hardware, you need to burn the provided ISO to a 
+To install Fuel on bare-metal environment, you need to burn the provided ISO to a 
 CD/DVD, or IMG file to a USB stick, and start the installation process by 
 booting from that media, very much like any other OS.
 
@@ -23,7 +25,7 @@ Linux and Mac users can prepare an installation USB stick with the ``dd``
 command. For example, if your flash drive is ``/dev/sdb``, you can use following 
 command line::
 
-    dd if=fuelweb.img of=/dev/sdb
+    dd if=fuel.img of=/dev/sdb
 
 You can find the actual device name in the output of the ``dmesg`` command for 
 Linux or ``diskutil list`` for Mac OS.
@@ -31,7 +33,7 @@ Linux or ``diskutil list`` for Mac OS.
 On Windows, you can write the installation image with 
 `Win32 Disk Imager <http://sourceforge.net/projects/win32diskimager/>`_.
 
-After the installation is complete, you will need to allocate physical nodes for 
+After the installation is complete, you will need to allocate bare-metal nodes for 
 your OpenStack cluster, put them on the same L2 network as the admin node, and 
 PXE boot. The UI will discover them and make them available for installing 
 OpenStack.
@@ -39,19 +41,18 @@ OpenStack.
 On VirtualBox
 -------------
 
-If you are going to evaluate FuelWeb on VirtualBox, you should know that we 
+If you are going to evaluate Fuel on VirtualBox, you should know that we 
 provide a set of scripts that create and configure all of the required VMs for 
 you, including the admin node and slave nodes for OpenStack itself. It's a very 
 simple, single-click installation.  
 
-.. note:: 
-    These scripts are not supported on Windows, but you can still test on 
+.. note:: These scripts are not supported on Windows, but you can still test on 
     VirtualBox by creating the VMs yourself. See "Manual Mode" for more 
     information.
 
-The requirements for running FuelWeb on VirtualBox are:
+The requirements for running Fuel on VirtualBox are:
 
-* A physical machine with Linux or Mac OS.
+* A host machine with Linux or Mac OS.
 
   * The scripts have been tested on Mac OS 10.7.5, Mac OS 10.8.3, and Ubuntu 12.04.
 
@@ -74,7 +75,7 @@ When you unpack the scripts, you will see the following important files and fold
 
 * iso
 
-  * This folder needs to contain a single ISO image for FuelWeb. Once you 
+  * This folder needs to contain a single ISO image for Fuel. Once you 
     download ISO from the portal, copy or move it into this directory
 
 * config.sh
@@ -102,7 +103,7 @@ Manual mode
 ^^^^^^^^^^^
 
 If you cannot or would rather not run the convenience scripts, you can still run 
-FuelWeb on VirtualBox by following these steps.
+Fuel on VirtualBox by following these steps.
 
 Admin node deployment
 ~~~~~~~~~~~~~~~~~~~~~
@@ -126,7 +127,7 @@ First, create the admin node.
 3. Power on the VM in order to start the installation.
 
 4. Wait for the welcome message with all information needed to login into the UI 
-of FuelWeb.
+of Fuel.
 
 Adding slave nodes
 ~~~~~~~~~~~~~~~~~~
@@ -168,10 +169,13 @@ installation to complete.
 Changing network parameters after booting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Once IP settings are set at the boot time for FuelWeb master node, it **must not 
-be changed during the whole lifecycle of FuelWeb.**
+.. warning::
+
+    Once IP settings are set at the boot time for Fuel master node, it **must not 
+    be changed during the whole lifecycle of Fuel.**
+
 It is still possible to configure other interfaces, or add 802.1Q subinterfaces 
-to the FuelWeb to be able to access it from office network if required.
+to the Fuel to be able to access it from office network if required.
 It is easy to do via standard network configuration scripts for CentOS. When the 
 installation is complete, you can modify 
 ``/etc/sysconfig/network-scripts/ifcfg-eth* `` scripts. For example, if *eth1* 
@@ -210,18 +214,18 @@ new configuration::
 
   service network restart
 
-Now you should be able to connect to FuelWeb from the office network
+Now you should be able to connect to Fuel UI from the office network
 via `<http://172.18.0.5:8000/>`_
 
 Name resolution (DNS)
 ^^^^^^^^^^^^^^^^^^^^^
 
-During master node installation, it is assumed that there is a recursive DNS 
+During admin node installation, it is assumed that there is a recursive DNS 
 service on 10.20.0.1.
 
 If you want to make it possible for slave nodes to be able to resolve public names,
 you need to change this default value to point to an actual DNS service.
-To make the change, run the following command on FuelWeb node (replace IP to 
+To make the change, run the following command on Fuel node (replace IP to 
 your actual DNS)::
 
   echo "nameserver 172.0.0.1" > /etc/dnsmasq.upstream
@@ -229,7 +233,7 @@ your actual DNS)::
 PXE booting settings
 ^^^^^^^^^^^^^^^^^^^^
 
-By default, eth0 on FuelWeb master node serves PXE requests. If you are planning 
+By default, eth0 on Fuel admin node serves PXE requests. If you are planning 
 to use another interface, then it is required to modify dnsmasq settings (which 
 acts as DHCP server). Edit the file /etc/cobbler/dnsmasq.template, find the line 
 ``"interface=eth0"`` and replace the interface name with the one you want to use. 
@@ -242,7 +246,7 @@ During synchronization cobbler builds actual dnsmasq configuration file
 why you should not edit ``/etc/dnsmasq.conf``.
 Cobbler rewrites it each time when it is synchronized.
 
-If you try to use virtual machines to launch **FuelWeb** then you have to be sure
+If you try to use virtual machines to launch Fuel then you have to be sure
 that dnsmasq on master node is configured to support that PXE client you use on your
 virtual machines. We enabled *dhcp-no-override* option because without it enabled
 dnsmasq tries to move out PXE filename and PXE servername special fields into DHCP options.
@@ -253,7 +257,7 @@ iPXE by default.
 When configuration is done
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Once the master node is installed, power on all other nodes and open the FuelWeb on
+Once the admin node is installed, power on all other nodes and open the Fuel on
 the configured network.
 Slave nodes will be booted in bootstrap mode (Centos based Linux in memory) via 
 PXE and you will see notifications on the user interface about discovered nodes. 
