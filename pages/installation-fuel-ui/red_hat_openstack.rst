@@ -143,3 +143,15 @@ If any of these channels are missing or you need to make changes your account,
 please contact your
 `Red Hat sales representative <https://access.redhat.com/site/solutions/368643>`_ 
 to get the proper subscriptions associated with your account.
+
+Yum Error: Cannot retrieve repository metadata (repomd.xml) for repository: rhel-x86_64-server-6.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This can be caused by many problems. This could happen if your SSL certificate does not match 
+the hostname of your RHN Satellite Server or if you configured Fuel to use an IP address 
+during deployment. This is not recommended and you should use a fully qualified domain name 
+for your RHN Satellite Server.
+
+You may find solutions to your issues with repomd.xml at the 
+`Red Hat Knowledgebase <https://access.redhat.com/>`_ or contact 
+`Red Hat Support. <https://access.redhat.com/support/>`_.
