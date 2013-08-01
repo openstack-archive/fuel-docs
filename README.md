@@ -17,13 +17,20 @@ Prerequisites
 To get started, you need to install Sphinx and necessary extensions:
 
       sudo easy_install -U Sphinx
+      sudo easy_install -U cloud_sptheme
+      sudo easy_install -U sphinxcontrib-fancybox
       sudo easy_install -U rst2pdf
       sudo easy_install -U sphinxcontrib-blockdiag
       sudo easy_install -U sphinxcontrib-actdiag
       sudo easy_install -U sphinxcontrib-seqdiag
       sudo easy_install -U sphinxcontrib-nwdiag
+      sudo easy_install -U sphinxcontrib-plantuml
 
 Plus you will need to install [PlantUML](http://plantuml.sourceforge.net/ "PlantUML") and [ImageMagick](http://www.imagemagick.org/ "ImageMagick").
+
+To install PlantUML you should do:
+
+      sudo wget http://sourceforge.net/projects/plantuml/files/plantuml.jar/download /sbin/plantuml.jar
 
 To edit SVG images we use [Inkscape](http://inkscape.org/ "Inkscape") but you may use any other SVG-capable tool you like. We're not picky.
     
@@ -40,5 +47,5 @@ To generate the PDF file run this:
 
 You will find generated HTML documentation at:
 
-	_build/html
+    _build/html
 
