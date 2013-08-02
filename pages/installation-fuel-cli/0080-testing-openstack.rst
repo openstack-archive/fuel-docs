@@ -5,12 +5,13 @@ Now that you've installed OpenStack, its time to take your new OpenStack cloud
 for a drive around the block. Follow these steps:
 
 1. On the host machine, open your browser to http://192.168.0.10/  (change the 
-   IP address value to your own ``public_virtual_ip``) and login as ``nova/nova``
-   (unless you changed these credentials in ``site.pp``)
+   IP address value to your own ``public_virtual_ip``) and login as 
+   ``nova/nova`` (unless you changed these credentials in ``site.pp``)
 
 2. Click the ``Project`` tab in the left-hand column.
 
-3. Under ``Manage Compute``, choose ``Access & Security`` to set security settings:
+3. Under ``Manage Compute``, choose ``Access & Security`` to set security 
+settings:
 
 - Click ``Create Keypair`` and enter a name for the new keypair.  The 
   private key should download automatically; make sure to keep it safe.
@@ -33,20 +34,21 @@ for a drive around the block. Follow these steps:
 5. Click ``Images & Snapshots``, then ``Create Image``.
 
 - Enter a name and specify the ``Image Location`` as 
-  https://launchpad.net/cirros/trunk/0.3.0/+download/cirros-0.3.0-x86_64-disk.img, 
-  with a ``Format`` of ``QCOW2``.  Check the ``Public`` checkbox.
+  https://launchpad.net/cirros/trunk/0.3.0/+download/cirros-0.3.0-x86_64-disk.
+  img, with a ``Format`` of ``QCOW2``.  Check the ``Public`` checkbox.
 
 6. The next step is to upload an image to use for creating VMs, but an OpenStack 
-   bug prevents you from doing this in the browser. Instead, log in to any of 
-   the controllers as ``root`` and execute the following commands::
+   bug prevents you from doing this in the browser. Instead, log in to any 
+   of the controllers as ``root`` and execute the following commands::
 
-     cd ~
-     source openrc
-     glance image-create --name cirros --container-format bare --disk-format qcow2 --is-public yes --location https://launchpad.net/cirros/trunk/0.3.0/+download/cirros-0.3.0-x86_64-disk.img
+	 cd ~ source openrc glance image-create --name cirros --container-format 
+	 bare --disk-format qcow2 --is-public yes --location 
+	 https://launchpad.net/cirros/trunk/0.3.0/+download/cirros-0.3.0-x86_64-di
+	 sk.img
 
 7. Go back to the browser and refresh the page. Launch a new instance of this image
-   using the tiny flavor.  Click the ``Networking`` tab and choose the default 
-   ``net04_ext`` network, then click the Launch button.
+   using the tiny flavor.  Click the ``Networking`` tab and choose the 
+   default ``net04_ext`` network, then click the Launch button.
 
 8. On the instances page:
 
