@@ -1,29 +1,27 @@
-.. _Post-Deployment-Check:
-
 Post-deployment check
 =====================
 
+.. contents:: :local:
+
 On occasion, even a successful deployment may result in some OpenStack 
-components not working correctly. If this happens, Fuel 3.1 offers the 
-ability to perform post-deployment checks to verify operations. The goal of 
-this functionality is to provide near real-time information on the status of 
-the most commonly used components and the most recently performed actions. 
-To perform these checks you will use Sanity and Smoke checks, as described 
-below:
+components not working correctly or behaving as expected. If this happens, 
+Fuel 3.1 offers the ability to perform post-deployment checks to verify 
+operations. Part of Fuel's goal is to provide easily accessible status 
+information about the most commonly used components and the most recently 
+performed actions. To perform these checks you will use Sanity and Smoke 
+checks, as described below:
 
 	* **Sanity Checks** reveal whether the overall system is functional. If 
-	it fails, most likely you will need to restart some services to operate 
-	OpenStack.
-
-	* **Smoke Checks** give an understanding if something should be fixed 
-	relatively to specific OpenStack functions. Smoke checks reveal 
-	networking, system-requirements, functionality issues.
+	it fails, you will most likely need to restart some services to operate 
+	OpenStack. 
+	* **Smoke Checks** dive in a little deeper and reveal networking, 
+	system-requirements, functionality issues.
 
 Sanity Checks will likely be the point on which the success of your 
-deployment pivots, but it critical to pay close attention to all information 
-derived from theses tests. Another way to look at these tests is how they 
-are named Sanity Checks are intended to assist in maintaining your sanity. 
-Smoke Checks tell you where the fires are so you can put them out 
+deployment pivots, but it is critical to pay close attention to all 
+information collected from theses tests. Another way to look at these tests 
+is by their names. Sanity Checks are intended to assist in maintaining your 
+sanity. Smoke Checks tell you where the fires are so you can put them out 
 strategically instead of firehosing the entire installation.
 
 Benefits 
@@ -31,18 +29,14 @@ Benefits
 
 	* Using post-deployment checks helps you identify potential issues which 
 	may impact the health of a deployed system.  
-
-	* All post-deployment checks provide detailed description on failed 
+	* All post-deployment checks provide detailed descriptions about failed 
 	operations and tell you which component or components are not working 
 	properly.  
-
 	* Previously, performing these checks manually would have consumed a 
 	great deal of time. Now, with these checks the process will take only a 
 	few minutes. 
-
 	* Aside from verifying that everything is working correctly, the process 
 	will also determine how quickly your system works.  
-
 	* Post-deployment checks continue to be useful, for example after 
 	sizable changes are made in the system you can use the checks to 
 	determine if any new failure points have been introduced.  
@@ -50,11 +44,8 @@ Benefits
 Running post-deployment checks 
 ------------------------------
 
-Now, let`s take a closer look on what should 
-be done to execute the tests and to understand if something is wrong with 
-your system.
-
-.. image:: /_images/01_health_checktab.png
+.. image:: /_images/001-health-check-tab.png
+	:align: center
 
 As you can see in the image above, the Fuel UI now contains a “Healthcheck” 
 tab, indicated by the Heart icon.
@@ -82,7 +73,8 @@ this section.
 
 An actual test run looks like this:
 
-.. image:: /_images/02_health_checkresults.png
+.. image:: /_images/002-health-check-results.png
+	:align: center
 
 What should be done when a test failed 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
