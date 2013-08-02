@@ -54,7 +54,7 @@ Now, let`s take a closer look on what should
 be done to execute the tests and to understand if something is wrong with 
 your system.
 
-.. _IMAGE_FILE_HERE::
+.. image:: /_images/01_health_checktab.png
 
 As you can see in the image above, the Fuel UI now contains a “Healthcheck” 
 tab, indicated by the Heart icon.
@@ -82,7 +82,7 @@ this section.
 
 An actual test run looks like this:
 
-.. _IMAGE_FILE_HERE::
+.. image:: /_images/02_health_checkresults.png
 
 What should be done when a test failed 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
