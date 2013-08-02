@@ -12,7 +12,7 @@ reproducible, sharable installation process.
 
 In practice, that means that the process of using Fuel looks like 1-2-3:
 
-1. First, set up Fuel Admin Node using the ISO. This process only needs to be 
+1. First, set up Fuel Master Node using the ISO. This process only needs to be 
    completed once per installation.
 
 2. Next, discover your virtual or phisical nodes and configure your OpenStack 
@@ -24,13 +24,13 @@ In practice, that means that the process of using Fuel looks like 1-2-3:
    necessary.
 
 .. fancybox:: /_images/010-how-it-works_svg.png
-    :width: 300px
-    :height: 300px
+    :width: 400px
+    :height: 400px
 
-Fuel comes with several pre-defined deployment configurations, some of which 
-include additional options from which you can choose.
+Fuel comes with several pre-defined deployment configurations, some of them 
+include additional configuration options that allow you to adapt OpenStack 
+deployment to your environment.
 
-..
-    FuelWeb integrates all of the components of Fuel Library into a unified, 
-	web-based graphical user interface that walks administrators through the 
-	process of installing and configuring a fully functional OpenStack environment.
+Fuel UI integrates all of the deployments scripts into a unified, 
+web-based graphical user interface that walks administrators through the 
+process of installing and configuring a fully functional OpenStack environment.

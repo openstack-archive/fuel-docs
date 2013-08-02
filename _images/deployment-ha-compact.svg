@@ -26,6 +26,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -46,9 +47,9 @@
      showgrid="true"
      showguides="false"
      inkscape:snap-global="false"
-     inkscape:zoom="2.1120892"
-     inkscape:cx="402.59669"
-     inkscape:cy="204.48824"
+     inkscape:zoom="1.0560446"
+     inkscape:cx="404.5968"
+     inkscape:cy="165.88193"
      inkscape:window-x="1362"
      inkscape:window-y="-4"
      inkscape:window-maximized="1"
@@ -334,7 +335,7 @@
          id="tspan3126"
          x="636.98688"
          y="158.98689"
-         style="font-size:14px">Neutron (Hot Standby)</tspan></text>
+         style="font-size:14px">Quantum (Hot Standby)</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
@@ -368,7 +369,7 @@
          id="tspan3126-1"
          x="382.01791"
          y="158.32288"
-         style="font-size:14px">Neutron (Hot Standby)</tspan></text>
+         style="font-size:14px">Quantum (Hot Standby)</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
@@ -401,7 +402,7 @@
          sodipodi:role="line"
          id="tspan3126-2"
          x="126.0026"
-         y="158.07535">Neutron (Active)</tspan></text>
+         y="158.07535">Quantum (Active)</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"

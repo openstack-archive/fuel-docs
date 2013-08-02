@@ -1,7 +1,5 @@
-
 Logical Setup 
 ^^^^^^^^^^^^^
-
 .. contents:: :local:
 
 An OpenStack HA cluster involves, at a minimum, three types of nodes:
@@ -13,8 +11,8 @@ Controller Nodes
 The first order of business in achieving high availability (HA) is
 redundancy, so the first step is to provide multiple controller nodes.
 You must keep in mind, however, that the database uses Galera to
-achieve HA, and Galera is a quorum-based system. That means that you must provide at least 3
-controller nodes.
+achieve HA, and Galera is a quorum-based system. That means that you must provide 
+at least 3 controller nodes.
 
 .. fancybox:: /_images/030-logical-diagram-controllers_svg.png
     :width: 400px

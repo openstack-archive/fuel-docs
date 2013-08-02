@@ -1,4 +1,3 @@
-
 Network Architecture
 ^^^^^^^^^^^^^^^^^^^^
 
@@ -41,7 +40,7 @@ To enable Internet access to VMs, the public network provides the address space
 for the floating IPs assigned to individual VM instances by the project 
 administrator. Nova-network or Neutron (formerly Quantum) services can then 
 configure this address on the public network interface of the Network controller 
-node. If the cluster uses nova-network, nova- network uses iptables to create a 
+node. Clusters based on nova-network use iptables to create a 
 Destination NAT from this address to the fixed IP of the corresponding VM 
 instance through the appropriate virtual bridge interface on the Network 
 controller node.

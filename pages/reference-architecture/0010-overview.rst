@@ -1,9 +1,9 @@
 Overview 
---------
+========
 
 .. contents:: :local:
 
-Before you install any hardware or software, you must know what it is
+Before you install any hardware or software, you must know what 
 you're trying to achieve. This section looks at the basic components of
 an OpenStack infrastructure and organizes them into one of the more
 common reference architectures. You'll then use that architecture as a
@@ -13,33 +13,33 @@ As you know, OpenStack provides the following basic services:
 
 .. topic:: Compute: 
 
-  Compute servers are the workhorses of your installation; they're 
-  the servers on which your users' virtual machines are created. 
-  `nova-scheduler` controls the life-cycle of these VMs.
+    Compute servers are the workhorses of your installation; they're 
+    the servers on which your users' virtual machines are created. 
+    `nova-scheduler` controls the life-cycle of these VMs.
 
 .. topic:: Networking: 
 
-  Because an OpenStack cluster (virtually) always includes 
-  multiple servers, the ability for them to communicate with each other and with 
-  the outside world is crucial. Networking was originally handled by the 
-  `nova-network` service, but it has given way to the newer Neutron (formerly 
-  Quantum) networking service. Authentication and authorization for these 
-  transactions are handled by `keystone`.
+    Because an OpenStack cluster (virtually) always includes 
+    multiple servers, the ability for them to communicate with each other and with 
+    the outside world is crucial. Networking was originally handled by the 
+    `nova-network` service, but it has given way to the newer Neutron (formerly 
+    Quantum) networking service. Authentication and authorization for these 
+    transactions are handled by `keystone`.
 
 .. topic:: Storage: 
 
-  OpenStack provides for two different types of storage: block 
-  storage and object storage. Block storage is traditional data storage, with 
-  small, fixed-size blocks that are mapped to locations on storage media. At its 
-  simplest level, OpenStack provides block storage using `nova-volume`, but it 
-  is common to use `cinder`.
-  
-  Object storage, on the other hand, consists of single variable-size objects 
-  that are described by system-level metadata, and you can access this capability 
-  using `swift`.
+    OpenStack provides for two different types of storage: block 
+    storage and object storage. Block storage is traditional data storage, with 
+    small, fixed-size blocks that are mapped to locations on storage media. At its 
+    simplest level, OpenStack provides block storage using `nova-volume`, but it 
+    is common to use `cinder`.
 
-  OpenStack storage is used for your users' objects, but it is also used for 
-  storing the images used to create new VMs. This capability is handled by `glance`.
+    Object storage, on the other hand, consists of single variable-size objects 
+    that are described by system-level metadata, and you can access this capability 
+    using `swift`.
+
+    OpenStack storage is used for your users' objects, but it is also used for 
+    storing the images used to create new VMs. This capability is handled by `glance`.
 
 These services can be combined in many different ways. Out of the box,
 Fuel supports the following deployment configurations:
@@ -47,7 +47,7 @@ Fuel supports the following deployment configurations:
 .. index:: Deployment Configurations; Single node
 
 Single node deployment
-^^^^^^^^^^^^^^^^^^^^^^
+----------------------
 
 In a production environment, you will never have a single-node
 deployment of OpenStack, partly because it forces you to make a number
@@ -63,7 +63,7 @@ essential services run out of a single server:
 .. index:: Deployment Configurations; Compact Swift non-HA
 
 Multi-node (non-HA) deployment (compact Swift)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+----------------------------------------------
 
 More commonly, your OpenStack installation will consist of multiple
 servers. Exactly how many is up to you, of course, but the main idea
@@ -76,7 +76,7 @@ controller nodes.
 .. index:: Deployment Configurations; Standalone Swift non-HA
 
 Multi-node (non-HA) deployment (standalone Swift)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-------------------------------------------------
 
 A more common arrangement is to provide separate servers for storage.
 This has the advantage of reducing the number of controllers you must
@@ -90,7 +90,7 @@ number of controllers from three (or five, for a full Swift implementation) to o
 .. index:: Deployment Configurations; Compact Swift HA
 
 Multi-node (HA) deployment (Compact)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------------------
 
 Production environments typically require high availability, which
 involves several architectural requirements. Specifically, you will
@@ -107,7 +107,7 @@ nodes:
 .. index:: Deployment Configurations; Compact Neutron HA
 
 Multi-node (HA) deployment (Compact Neutron)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+--------------------------------------------
 
 Another way you can add functionality to your cluster without
 increasing hardware requirements is to install Quantum on your
@@ -121,7 +121,7 @@ but avoids the need for a separate Neutron node:
 .. index:: Deployment Configurations; Standalone Swift HA
 
 Multi-node (HA) deployment (Standalone)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------------------
 
 For larger production deployments, its more common to provide
 dedicated hardware for storage and networking. This architecture still

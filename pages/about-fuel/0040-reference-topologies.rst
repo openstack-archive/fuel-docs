@@ -12,10 +12,27 @@ its constituent components are tailored to one or more common cloud use cases.
 Fuel provides the ability to create the following cluster types without requiring 
 extensive customization:
 
-**Single node**: Perfect for getting a feel for how OpenStack works, the 
-Single-node installation is the simplest way to get OpenStack up and running. 
-The Single-node installation provides an easy way to install an entire OpenStack 
-cluster on a single physical server system or in a virtual machine environment. 
+.. 
+    **Single node**: Perfect for getting a feel for how OpenStack works, the 
+    Single-node installation is the simplest way to get OpenStack up and running. 
+    The Single-node installation provides an easy way to install an entire OpenStack 
+    cluster on a single physical server system or in a virtual machine environment. 
+
+..
+    **Multi-node (non-HA)**: The Multi-node (non-HA) installation enables you to try 
+    out additional OpenStack services like Cinder, Neutron (formerly Quantum), and 
+    Swift without requiring the degree of increased hardware involved in ensuring 
+    high availability. In addition to the ability to independently specify which 
+    services to activate, you also have the following options:
+
+..
+  **Compact Swift**: When you choose this option, Swift will be installed on 
+  your controllers, reducing your hardware requirements by eliminating the need 
+  for additional Swift servers.
+
+..
+  **Standalone Swift**: This option enables you to install independant Swift 
+  nodes, so that you can separate their operation from your controller nodes.
 
 **Multi-node (non-HA)**: The Multi-node (non-HA) installation enables you to try 
 out additional OpenStack services like Cinder, Neutron (formerly Quantum), and 
@@ -23,13 +40,17 @@ Swift without requiring the degree of increased hardware involved in ensuring
 high availability. In addition to the ability to independently specify which 
 services to activate, you also have the following options:
 
+..
   **Compact Swift**: When you choose this option, Swift will be installed on 
   your controllers, reducing your hardware requirements by eliminating the need 
   for additional Swift servers.
 
+..
   **Standalone Swift**: This option enables you to install independant Swift 
   nodes, so that you can separate their operation from your controller nodes.
 
+  
+  
 **Multi-node (HA)**: When you're ready to begin your move to production, the 
 Multi-node (HA) configuration is a straightforward way to create an OpenStack 
 cluster that provides high availability. With three controller nodes and the 

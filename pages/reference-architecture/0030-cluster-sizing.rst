@@ -19,7 +19,8 @@ deployment is to allocate 4 nodes:
     :width: 400px
     :height: 250px
 
-If you want to run storage separately from the controllers, you can do that as well by raising the bar to 7 nodes:
+If you want to run storage separately from the controllers, you can do that as 
+well by raising the bar to 7 nodes:
 
 - 3 controller nodes
 

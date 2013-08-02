@@ -1,0 +1,20 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<svg width="1008px" height="516px" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <title>iCloud</title>
+    <description>Created with Sketch (http://www.bohemiancoding.com/sketch)</description>
+    <defs></defs>
+    <g fill="none" id="Main Page">
+        <path id="Rectangle" d="M187,371 L187,515 L500,515 L500,371 L187,371" stroke="rgb(0,0,0)" stroke-width="1" fill="none"></path>
+        <path id="Rectangle decoration" d="" stroke="rgb(0,0,0)" stroke-width="1" fill="none"></path>
+        <path id="Oval" d="M222,392 C249,392 272,369 272,342 C272,314 249,292 222,292 C194,292 172,314 172,342 C172,369 194,392 222,392" stroke="rgb(0,0,0)" stroke-width="1" fill="none"></path>
+        <path id="Oval decoration" d="" stroke="rgb(0,0,0)" stroke-width="1" fill="none"></path>
+        <path id="Oval" d="M187,515 C231,515 267,479 267,435 C267,390 231,355 187,355 C142,355 107,390 107,435 C107,479 142,515 187,515" stroke="rgb(0,0,0)" stroke-width="1" fill="none"></path>
+        <path id="Oval decoration" d="" stroke="rgb(0,0,0)" stroke-width="1" fill="none"></path>
+        <path id="Oval" d="M376,471 C442,471 496,417 496,351 C496,284 442,231 376,231 C309,231 256,284 256,351 C256,417 309,471 376,471" stroke="rgb(0,0,0)" stroke-width="1" fill="none"></path>
+        <path id="Oval decoration" d="" stroke="rgb(0,0,0)" stroke-width="1" fill="none"></path>
+        <path id="Oval" d="M500,515 C541,515 575,481 575,440 C575,398 541,365 500,365 C458,365 425,398 425,440 C425,481 458,515 500,515" stroke="rgb(0,0,0)" stroke-width="1" fill="none"></path>
+        <path id="Oval decoration" d="" stroke="rgb(0,0,0)" stroke-width="1" fill="none"></path>
+        <path id="Oval" d="M605,125 C604,120 604,116 604,112 C604,84 626,62 654,62 C670,62 685,70 694,82 C710,35 755,1 808,1 C874,1 928,54 928,121 C928,125 927,129 927,134 C928,134 930,134 932,134 C973,134 1007,167 1007,209 C1007,250 973,284 932,284 C931,284 619,284 619,284 C574,283 539,247 539,204 C539,164 567,131 605,125 L605,125" stroke="rgb(0,0,0)" stroke-width="1" fill="none"></path>
+        <path id="Oval decoration" d="" stroke="rgb(0,0,0)" stroke-width="1" fill="none"></path>
+    </g>
+</svg>
