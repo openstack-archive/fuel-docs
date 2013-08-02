@@ -4,12 +4,12 @@ Network Issues
 .. contents:: :local:
 
 Fuel has built-in capability to run network check before or after OpenStack 
-deployment. Currently it can check connectivity between nodes within configured 
-VLANs on configured server interfaces. Image below shows sample result of such 
-check. By using this simple table it is easy to say which interfaces do not 
-receive certain VLAN IDs.
-Usually it means that switch or multiple switches are not configured correctly 
-and do not allow certain tagged traffic to pass through.
+deployment. Currently it can check connectivity between nodes within 
+configured VLANs on configured server interfaces. Image below shows sample 
+result of such check. By using this simple table it is easy to say which 
+interfaces do not receive certain VLAN IDs. Usually it means that switch or 
+multiple switches are not configured correctly and do not allow certain 
+tagged traffic to pass through.
 
 .. image:: /_images/net_verify_failure.png
     :width: 100%
@@ -18,23 +18,22 @@ On VirtualBox
 -------------
 
 Scripts which are provided for quick Fuel setup, create 3 host-interface 
-adapters. Basically networking works as this being a 3 bridges, in each of them 
-the only one VMs interfaces is connected.
-It means there is only L2 connectivity between VMs on interfaces with the 
-same name. If you try to move, for example, management network to eth1 on 
-controller node, and the same network to eth2 on the compute, then there will be 
-no connectivity between OpenStack services in spite of being configured to live 
-on the same VLAN.
-It is very easy to validate network settings before deployment by clicking the 
-"Verify Networks" button.
+adapters. Basically networking works as this being a 3 bridges, in each of 
+them the only one VMs interfaces is connected. It means there is only L2 
+connectivity between VMs on interfaces with the same name. If you try to 
+move, for example, management network to eth1 on controller node, and the 
+same network to eth2 on the compute, then there will be no connectivity 
+between OpenStack services in spite of being configured to live on the same 
+VLAN. It is very easy to validate network settings before deployment by 
+clicking the "Verify Networks" button.
 
 Timeout in connection to OpenStack API from client applications
 ---------------------------------------------------------------
 
 If you use Java, Python or any other code to work with OpenStack API, all 
-connections should be done over OpenStack public network.
-To explain why we can not use Fuel admin network, let's try to run nova 
-client with debug option enabled::
+connections should be done over OpenStack public network. To explain why we 
+can not use Fuel admin network, let's try to run nova client with debug 
+option enabled::
 
   [root@controller-6 ~]# nova --debug list
 
@@ -50,10 +49,10 @@ client with debug option enabled::
 
   INFO (connectionpool:191) Starting new HTTP connection (1): 240.0.1.5
 
-Even though initial connection was in 192.168.0.5, then client tries to access 
-public network for Nova API. The reason is because Keystone
-returns the list of OpenStack services URLs, and for production-grade deployments 
-it is required to access services over public network.
-If you still need to work with OpenStack API without routing configured, tell us 
-your use case on IRC channel **#openstack-fuel** (on freenode) and
-we might be able to figure it out together.
+Even though initial connection was in 192.168.0.5, then client tries to 
+access public network for Nova API. The reason is because Keystone returns 
+the list of OpenStack services URLs, and for production-grade deployments it 
+is required to access services over public network. If you still need to 
+work with OpenStack API without routing configured, tell us your use case on 
+IRC channel **#openstack-fuel** (on freenode) and we might be able to figure 
+it out together.
