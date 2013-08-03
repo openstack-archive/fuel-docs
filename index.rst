@@ -52,7 +52,7 @@ The Fuel User Guide is organized as follows:
 * :ref:`About_Fuel`, gives you an 
   overview of Fuel and gives you a general idea of how it works.
 
-* :ref:`Reference-Architecture`, provides a 
+* :ref:`Reference-Architectures`, provides a 
   general look at the components that make up OpenStack.
 
 * :ref:`Create-Cluster-UI`,
