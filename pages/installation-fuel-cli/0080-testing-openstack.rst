@@ -42,7 +42,8 @@ for a drive around the block. Follow these steps:
 
      cd ~
      source openrc
-     glance image-create --name cirros --container-format bare --disk-format qcow2 --is-public yes --location https://launchpad.net/cirros/trunk/0.3.0/+download/cirros-0.3.0-x86_64-disk.img
+     glance image-create --name cirros --container-format bare --disk-format qcow2 --is-public yes \
+     --location https://launchpad.net/cirros/trunk/0.3.0/+download/cirros-0.3.0-x86_64-disk.img
 
 7. Go back to the browser and refresh the page. Launch a new instance of this image
    using the tiny flavor.  Click the ``Networking`` tab and choose the default 

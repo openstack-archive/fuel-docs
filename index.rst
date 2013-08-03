@@ -2,9 +2,9 @@
 
 .. _Introduction:
 
-===================================
-Introduction to Fuel™ for OpenStack
-===================================
+===============================
+Introducing Fuel™ for OpenStack
+===============================
 
 OpenStack is an extensible, versatile, and flexible cloud management platform. 
 By exposing its portfolio of cloud infrastructure services – compute, storage, 
@@ -47,35 +47,34 @@ or VMware, as well as OpenStack itself, but you don't need to be an expert.
 
 The Fuel User Guide is organized as follows:
 
-* :ref:`About Fuel <About_Fuel>`, gives you an 
+* :ref:`About_Fuel`, gives you an 
   overview of Fuel and gives you a general idea of how it works.
 
-* :ref:`Reference Architecture <Reference-Architecture>`, provides a 
+* :ref:`Reference-Architecture`, provides a 
   general look at the components that make up OpenStack.
 
-* :ref:`Create a multi-node OpenStack cluster using Fuel UI <Create-Cluster-UI>`,
+* :ref:`Create-Cluster-UI`,
   takes you step-by-step through the process of creating a high-availability 
   OpenStack cluster using Fuel Web UI. 
 
-* :ref:`Deploy an OpenStack cluster using Fuel CLI <Deploy-Cluster-CLI>`, 
+* :ref:`Deploy-Cluster-CLI`, 
   takes you step-by-step through the more advanced process of creating a 
   high-availability OpenStack cluster using the command line and Puppet manifests.
 
-* :ref:`Production Considerations <Production>`, looks at the 
+* :ref:`Production`, looks at the 
   real-world questions and problems involved in creating an OpenStack cluster 
   for production use. We discuss issues such as network layout and hardware 
   requirements, and provide tips and tricks for creating a cluster of up to 100 
   nodes.
 
 * With the current (3.1) release Fuel UI (aka FuelWeb) and Fuel CLI 
-  (aka Fuel Library) has been integrated. We encourage all users to use the Fuel 
+  (aka Fuel Library) are integrated. We encourage all users to use the Fuel 
   UI for installation and configuration. However, 
   the standard Fuel CLI installation process is still available for those who 
   prefer a more detailed approach to deployment. Even with a utility as powerful 
   as Fuel, creating an OpenStack cluster can be complex, and  
-  :ref:`Frequently Asked Questions <FAQ>` covers many of the issues that tend 
-  to arise during the process. 
+  :ref:`FAQ` covers many of the issues that tend to arise during the process. 
 
 Lets start off by taking a look at Fuel itself. We'll start by explaining what 
-it is and :ref:`how Fuel works <How-Fuel-Works>` , and then move to the process 
+it is and :ref:`How-Fuel-Works`, and then move to the process 
 of installation itself.
