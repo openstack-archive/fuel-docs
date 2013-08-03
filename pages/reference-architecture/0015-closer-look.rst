@@ -1,5 +1,5 @@
 A closer look at the Multi-node (HA) Compact deployment
--------------------------------------------------------
+=======================================================
 
 In this section, you'll learn more about the Multi-node (HA) Compact
 deployment configuration and how it achieves high availability. As you may 

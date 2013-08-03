@@ -87,7 +87,7 @@ nodes:
 .. index:: Deployment Configurations; Full HA
 
 Multi-node (HA) deployment (Full)
---------------------------------------------
+---------------------------------
 
 For large production deployments, its more common to provide
 dedicated hardware for storage. This architecture gives you the advantages of 

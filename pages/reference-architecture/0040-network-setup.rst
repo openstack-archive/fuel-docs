@@ -1,5 +1,7 @@
+.. index:: Network Architecture
+
 Network Architecture
-^^^^^^^^^^^^^^^^^^^^
+====================
 
 .. contents:: :local:
 
@@ -26,7 +28,7 @@ relevant nodes and networks.
 Lets take a closer look at each network and how its used within the cluster.
 
 Public Network
-++++++++++++++
+^^^^^^^^^^^^^^
 
 This network allows inbound connections to VMs from the outside world (allowing 
 users to connect to VMs from the Internet). It also allows outbound connections 
@@ -54,7 +56,7 @@ The public network also provides VIPs for Endpoint nodes, which are used to
 connect to OpenStack services APIs.
 
 Internal (Management) Network
-+++++++++++++++++++++++++++++
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The internal network connects all OpenStack nodes in the cluster. All components 
 of an OpenStack cluster communicate with each other using this network. This 
@@ -68,7 +70,7 @@ This network usually is a single C class network from your private, non-globally
 routed IP address range.
 
 Private Network
-+++++++++++++++
+^^^^^^^^^^^^^^^
 
 The private network facilitates communication between each tenant's VMs. Private 
 network address spaces are part of the enterprise network address space. Fixed 

@@ -65,7 +65,7 @@ interfaces. You might also want to consider 10G Ethernet trunking between
 infrastructure switches using CAT-6a or fiber cables to improve backend speeds 
 to reduce latency and provide more overall pipe. 
 
-.. seealso:: :ref:Sizing_Hardware for more information on choosing networking equipment.
+.. seealso:: :ref:`Sizing_Hardware` for more information on choosing networking equipment.
 
 ..
     Another option is to prevent the need to download so much data in the first place 

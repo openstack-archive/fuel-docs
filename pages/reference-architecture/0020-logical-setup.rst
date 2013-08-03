@@ -1,12 +1,12 @@
 Logical Setup 
-^^^^^^^^^^^^^
+=============
 .. contents:: :local:
 
 An OpenStack HA cluster involves, at a minimum, three types of nodes:
 controller nodes, compute nodes, and storage nodes.
 
 Controller Nodes
-++++++++++++++++
+^^^^^^^^^^^^^^^^
 
 The first order of business in achieving high availability (HA) is
 redundancy, so the first step is to provide multiple controller nodes.
@@ -44,7 +44,7 @@ mechanism for achieving HA:
 * Quantum agents are managed by Pacemaker.
 
 Compute Nodes
-+++++++++++++
+^^^^^^^^^^^^^
 
 OpenStack compute nodes are, in many ways, the foundation of your
 cluster; they are the servers on which your users will create their
@@ -59,7 +59,7 @@ controller nodes using the VIP and going through HAProxy.
     :height: 180px
 
 Storage Nodes
-+++++++++++++
+^^^^^^^^^^^^^
 
 In this OpenStack cluster reference architecture, shared storage acts
 as a backend for Glance, so that multiple Glance instances running on
