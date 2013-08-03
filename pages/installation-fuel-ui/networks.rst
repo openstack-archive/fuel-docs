@@ -10,8 +10,10 @@ VlanManager), but Fuel CLI supports all three.
 For more information about how the first two network managers work, you can read 
 these two resources:
 
-* `OpenStack Networking – FlatManager and FlatDHCPManager <http://www.mirantis.com/blog/openstack-networking-flatmanager-and-flatdhcpmanager/>`_
-* `Openstack Networking for Scalability and Multi-tenancy with VlanManager <http://www.mirantis.com/blog/openstack-networking-vlanmanager/>`_
+* `OpenStack Networking – FlatManager and FlatDHCPManager 
+  <http://www.mirantis.com/blog/openstack-networking-flatmanager-and-flatdhcpmanager/>`_
+* `Openstack Networking for Scalability and Multi-tenancy with VlanManager 
+  <http://www.mirantis.com/blog/openstack-networking-vlanmanager/>`_
 
 
 FlatDHCPManager (multi-host scheme)
@@ -236,13 +238,14 @@ types of traffic. When a node is added to the environment, click at the bottom
 line of the node icon. In the detailed information window, click the "Network 
 Configuration" button to open the physical interfaces configuration screen.
 
-.. image:: /_images/doc_network-settings-help.png
-    :width: 100%
+.. fancybox:: /_images/doc_network-settings-help.png
+    :width: 600px
+    :height: 600px
 
 On this screen you can drag-and-drop logical networks to physical interfaces 
 according to your network setup. 
 
-All networks are presented on the screen, except **fuel**.
+All networks are presented on the screen, except **Fuel**.
 It runs on the physical interface from which node was initially PXE booted,
 and in the current version it is not possible to map it on any other physical 
 interface. Also, once the network is configured and OpenStack is deployed,
@@ -258,60 +261,61 @@ different for different vendors, so we will try to provide vendor-agnostic
 information on how traffic should flow and leave the vendor-specific details to 
 you. We will provide an example for a Cisco switch.
 
-First of all, you must configure access ports to allow non-tagged PXE booting 
+First of all, you should configure access ports to allow non-tagged PXE booting 
 connections from all slave nodes to the Fuel node. We refer this network 
-as the "admin" network, or "fuel".
-By default, the Fuel master node uses the ``eth0`` interface to serve PXE 
+as the "Admin" network, or "Fuel" network.
+By default, the Fuel Master node uses the ``eth0`` interface to serve PXE 
 requests on this network.
-So if that's left unchanged, you must set the switch port for eth0 of Fuel to 
-access mode.
+So if that's left unchanged, you have to set the switch port for eth0 of Fuel 
+Master node to access mode.
 We recommend that you use the eth0 interfaces of all other nodes for PXE booting 
 as well. Corresponding ports must also be in access mode.
 
-Taking into account that this is the network for PXE booting, you must not mix 
-this L2 segment with any other company infrastructure. Fuel runs a DHCP 
-server, and if there is another company DHCP on the same L2, both the company's 
-infrastructure and Fuel's will be unable to function properly.
+Taking into account that this is the network for PXE booting, do not mix 
+this L2 segment with any other network segments. Fuel runs a DHCP 
+server, and if there is another DHCP on the same L2 network segment, both the 
+company's infrastructure and Fuel's will be unable to function properly.
 You also need to configure each of the switch's ports connected to nodes as an 
-"STP Edge port" (or a "spanning-tree portfast trunk", according to Cisco 
+"STP Edge port" (or a "spanning-tree port fast trunk", according to Cisco 
 terminology). If you don't do that, DHCP timeout issues may occur.
 
-As long as the "admin" network is configured, Fuel can operate.
+As long as the "Admin" network is configured, Fuel can operate.
 Other networks are required for OpenStack environments, and currently all of 
 these networks live in VLANs over the one or multiple physical interfaces on a 
 node. This means that the switch should pass tagged traffic, and untagging is done
 on the Linux hosts. 
 
 .. note:: 
+
     For the sake of simplicity, all the VLANs specified on the networks tab of 
-	the Fuel should be configured on switch ports, pointing to slave nodes, 
-	as tagged.
+    the Fuel UI should be configured on switch ports, pointing to Slave nodes, 
+    as tagged.
 
 Of course, it is possible to specify as tagged only certain ports for a certain 
 nodes. However, in the current version, all existing networks are automatically 
 allocated for each node, with any role.
-And network check will also check if tagged traffic pass, even if some node does 
-not require it (for example, Cinder nodes do not need fixed network traffic).
+And network check will also check if tagged traffic pass, even if some nodes do 
+not require this check (for example, Cinder nodes do not need fixed network traffic).
 
 This is enough to deploy the OpenStack environment. However, from a practical
 standpoint, it's still not really usable because there is no connection to other 
 corporate networks yet. To make that possible, you must configure uplink port(s). 
 
-One of the VLANs may carry the office network. To provide access to the Fuel 
-from the office network, any other free physical network interface on the 
-Fuel master node can be used and configured according to the office network 
-rules (static IP or DHCP). The same corporate network segment can be used for 
+One of the VLANs may carry the office network. To provide access to the Fuel Master 
+node from your network, any other free physical network interface on the 
+Fuel Master node can be used and configured according to your network 
+rules (static IP or DHCP). The same network segment can be used for 
 public and floating ranges. In this case, you must provide the corresponding 
 VLAN ID and IP ranges in the UI. One public IP per node will be used to SNAT
 traffic out of the VMs network, and one or more floating addresses per VM 
-instance will be used to get access to the VM from the corporate network, or 
+instance will be used to get access to the VM from your network, or 
 even the global Internet. To have a VM visible from the Internet is similar to 
 having it visible from corporate network - corresponding IP ranges and VLAN IDs
 must be specified for the floating and public networks. One current limitation 
 of Fuel is that the user must use the same L2 segment for both public and 
 floating networks.
 
-Example configuration for one of the ports on a Cisco switch html::
+Example configuration for one of the ports on a Cisco switch::
 
   interface GigabitEthernet0/6               # switch port
   description s0_eth0 jv                     # description
@@ -330,12 +334,12 @@ To make it possible for VMs to access the outside world, you must have an IP
 address set on a router in the public network.
 In the examples provided, that IP is 12.0.0.1 in VLAN 101.
 
-Fuel has a special field on the networking tab for the gateway address. As 
+Fuel UI has a special field on the networking tab for the gateway address. As 
 soon as deployment of OpenStack is started, the network on nodes is reconfigured
 to use this gateway IP as the default gateway.
 
-If floating addresses are from another other L3 network, then you must set the 
-IP (or even multiple IPs if floating addresses are from more than one L3 
+If floating addresses are from another L3 network, then you have to configure the 
+IP address (or even multiple IPs if floating addresses are from more than one L3 
 network) for them on the router as well.
 
 Otherwise, floating IPs on nodes will be inaccessible.

@@ -6,13 +6,15 @@ Installing Fuel Master Node
 .. contents:: :local:
 
 Fuel is distributed as both ISO and IMG image, each of them contains 
-an installer for Fuel Master node. The ISO image is used for CD media devices, 
+an installer for Fuel Master Node. The ISO image is used for CD media devices, 
 iLO or similar remote access systems. The IMG file is used for USB memory sticks.
 
 Once installed, Fuel can be used to deploy and manage OpenStack clusters. It 
 will assign IP addresses to the nodes, perform PXE boot and initial 
 configuration, and provision of OpenStack nodes according to their roles in the 
 cluster.
+
+.. _Install_Bare-Metal:
 
 On Bare-Metal Environment
 -------------------------
@@ -34,112 +36,115 @@ On Windows, you can write the installation image with
 `Win32 Disk Imager <http://sourceforge.net/projects/win32diskimager/>`_.
 
 After the installation is complete, you will need to allocate bare-metal nodes for 
-your OpenStack cluster, put them on the same L2 network as the master node, and 
-PXE boot. The UI will discover them and make them available for installing 
-OpenStack.
+your OpenStack cluster, put them on the same L2 network as the Master Node, and 
+boot them via PXE. The UI will automatically discover new nodes and make them 
+available for OpenStack installation.
 
 On VirtualBox
 -------------
 
 If you are going to evaluate Fuel on VirtualBox, you should know that we 
 provide a set of scripts that create and configure all of the required VMs for 
-you, including the master node and slave nodes for OpenStack itself. It's a very 
+you, including the Master Node and Slave Nodes for OpenStack itself. It's a very 
 simple, single-click installation.  
 
 .. note:: These scripts are not supported on Windows, but you can still test on 
-   VirtualBox by creating the VMs by yourself. See :ref:Manual_Mode for more 
+   VirtualBox by creating the VMs by yourself. See :ref:`Manual_Mode` for more 
    details.
 
 The requirements for running Fuel on VirtualBox are:
 
-* A host machine with Linux or Mac OS.
+A host machine with Linux or Mac OS.
+  The scripts have been tested on Mac OS 10.7.5, Mac OS 10.8.3, and Ubuntu 12.04.
 
-  * The scripts have been tested on Mac OS 10.7.5, Mac OS 10.8.3, and Ubuntu 12.04.
+VirtualBox 4.2.12 (or later) must be installed with the extension pack. Both 
+can be downloaded from `<http://www.virtualbox.org/>`_.
 
-* VirtualBox must be installed with the extension pack. Both can be downloaded 
-  from `<http://www.virtualbox.org/>`_.
+8 GB+ of RAM
+  to handle 4 VMs for non-HA OpenStack installation (1 Master node, 1 Controller 
+  node, 1 Compute node, 1 Cinder node) or 
+  to handle 5 VMs for HA OpenStack installation (1 Master node, 3 Controller 
+  nodes, 1 Compute node)
 
-  * The scripts have been tested using VirtualBox 4.2.12
+.. Install_Automatic:
 
-* 8 GB+ of RAM
-
-  * to handle 4 VMs for non-HA OpenStack installation (1 master node, 1 controller 
-    node, 1 compute node, 1 cinder node)
-  * to handle 5 VMs for HA OpenStack installation (1 master node, 3 controller 
-    nodes, 1 compute node)
-
-Automatic mode
+Automatic Mode
 ^^^^^^^^^^^^^^
 
 When you unpack the scripts, you will see the following important files and folders:
 
-* iso
+`iso`
+  This folder needs to contain a single ISO image for Fuel. Once you 
+  downloaded ISO from the portal, copy or move it into this directory.
 
-  * This folder needs to contain a single ISO image for Fuel. Once you 
-    download ISO from the portal, copy or move it into this directory
+`config.sh`
+  This file contains configuration, which can be fine-tuned. For example, you 
+  can select how many virtual nodes to launch, as well as how much memory to give them.
 
-* config.sh
-
-  * This file contains configuration, which can be fine-tuned. For example, you 
-    can select how many virtual nodes to launch, as well as how much memory to give them.
-
-* launch.sh
-
-  * Once executed, this script will pick up an image from the ``iso`` directory,
-    create a VM, mount the image to this VM, and automatically install the master 
-    node.
-  * After installation of the master node, the script creates slaves for OpenStack 
-    and PXE-boots them from the master node.
-  * Finally, the script gives you the link to access the Web-based UI for the 
-    master node so you can start installation of an OpenStack cluster.
+`launch.sh`
+  Once executed, this script will pick up an image from the ``iso`` directory,
+  create a VM, mount the image to this VM, and automatically install the Fuel 
+  Master Тode.
+  After installation of the master node, the script will create slave nodes for 
+  OpenStack and boot them via PXE from the Master Node.
+  Finally, the script will give you the link to access the Web-based UI for the 
+  Master Node so you can start installation of an OpenStack cluster.
 
 Here is the example configuration file, with the values that you can adjust:
 
 .. literalinclude:: /_static/config.sh
    :language: bash
 
-.. _Manual_Mode
+.. _Manual_Mode:
 
 Manual mode
 ^^^^^^^^^^^
 
-If you cannot or would rather not run the convenience scripts, you can still run 
+If you cannot or would rather not run our helper scripts, you can still run 
 Fuel on VirtualBox by following these steps.
 
-Master node deployment
+.. note::
+
+    However, these manual steps will allow you to set up the evaluation environment 
+    for vanilla OpenStack release only. `RHOS installation is not possible.`
+    
+    To download and deploy RedHat OpenStack you need to use automated VirtualBox
+    helper scripts or install Fuel :ref:`Install_Bare-Metal`.
+
+Master Node deployment
 ~~~~~~~~~~~~~~~~~~~~~
 
-First, create the master node.
+First, create the Master Node VM.
 
 1. Configure the host-only interface vboxnet0 in VirtualBox.
 
-  * IP address: 10.20.0.1
-  * Interface mask: 255.255.255.0
-  * DHCP disabled
+* IP address: 10.20.0.1
+* Interface mask: 255.255.255.0
+* DHCP disabled
 
 2. Create a VM for the master node with the following parameters:
 
-  * OS Type: Linux, Version: Red Hat (64bit)
-  * RAM: 1024 MB
-  * HDD: 16 GB, with dynamic disk expansion
-  * CDROM: mount Fuel ISO
-  * Network 1: host-only interface vboxnet0
+* OS Type: Linux, Version: Red Hat (64bit)
+* RAM: 1024 MB
+* HDD: 20 GB, with dynamic disk expansion
+* CDROM: mount Fuel ISO
+* Network 1: host-only interface vboxnet0
 
 3. Power on the VM in order to start the installation.
 
-4. Wait for the welcome message with all information needed to login into the UI 
+4. Wait for the Welcome message with all information needed to login into the UI 
 of Fuel.
 
-Adding slave nodes
+Adding Slave Nodes
 ~~~~~~~~~~~~~~~~~~
 
-Next, create nodes on which to install OpenStack.
+Next, create Slave nodes where OpenStack needs to be installed.
 
-1. Create VMs with the following parameters:
+1. Create 3 or 4 additional VMs depending on your wish with the following parameters:
 
 * OS Type: Linux, Version: Red Hat (64bit)
-* RAM: 768 MB
-* HDD: 16 GB, with dynamic disk expansion
+* RAM: 1024 MB
+* HDD: 30 GB, with dynamic disk expansion
 * Network 1: host-only interface vboxnet0, PCnet-FAST III device
 
 2. Set priority for the network boot:
@@ -150,38 +155,38 @@ Next, create nodes on which to install OpenStack.
 
 .. image:: /_images/vbox-image2.png
 
-Changing network parameters
----------------------------
+Changing network parameters before the installation
+---------------------------------------------------
 
 You can change the network settings for the admin (PXE booting) network, which 
-is 10.20.0.2/24 gw 10.20.0.1 by default.
+is ``10.20.0.2/24 gw 10.20.0.1`` by default.
 
 In order to do so, press the <TAB> key on the very first installation screen 
 which says "Welcome to Fuel Installer!" and update the kernel options. For 
-example, to use 192.168.1.10/24 IP address for the master node and 192.168.1.1 
+example, to use 192.168.1.10/24 IP address for the Master Node and 192.168.1.1 
 as the gateway and DNS server you should change the parameters to those shown 
 in the image below:
 
 .. image:: /_images/network-at-boot.png
 
-When you're finished making changes, press the Enter key and wait for the 
+When you're finished making changes, press the <ENTER> key and wait for the 
 installation to complete.
 
-Changing network parameters after booting
+Changing network parameters after installation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. warning::
 
-    Once IP settings are set at the boot time for Fuel master node, it **must not 
-    be changed during the whole lifecycle of Fuel.**
+    Once IP settings are set at the boot time for Fuel Master Node, they 
+    **should not be changed during the whole lifecycle of Fuel.**
 
 It is still possible to configure other interfaces, or add 802.1Q sub-interfaces 
-to the Fuel to be able to access it from office network if required.
+to the Master Node to be able to access it from your network if required.
 It is easy to do via standard network configuration scripts for CentOS. When the 
 installation is complete, you can modify 
 ``/etc/sysconfig/network-scripts/ifcfg-eth\*`` scripts. For example, if *eth1* 
 interface is on the L2 network which is planned for PXE booting, and *eth2* is 
-the interface connected to office network switch, *eth0* is not in use, then 
+the interface connected to your office network switch, *eth0* is not in use, then 
 settings can be the following:
 
 /etc/sysconfig/network-scripts/ifcfg-eth0::
@@ -215,18 +220,18 @@ new configuration::
 
   service network restart
 
-Now you should be able to connect to Fuel UI from the office network
-via `<http://172.18.0.5:8000/>`_
+Now you should be able to connect to Fuel UI from your network at 
+http://172.18.0.5:8000/
 
 Name resolution (DNS)
 ^^^^^^^^^^^^^^^^^^^^^
 
-During master node installation, it is assumed that there is a recursive DNS 
+During Master Node installation, it is assumed that there is a recursive DNS 
 service on 10.20.0.1.
 
-If you want to make it possible for slave nodes to be able to resolve public names,
+If you want to make it possible for Slave Nodes to be able to resolve public names,
 you need to change this default value to point to an actual DNS service.
-To make the change, run the following command on Fuel master node (replace IP to 
+To make the change, run the following command on Fuel Master Node (replace IP to 
 your actual DNS)::
 
   echo "nameserver 172.0.0.1" > /etc/dnsmasq.upstream
@@ -234,7 +239,7 @@ your actual DNS)::
 PXE booting settings
 ^^^^^^^^^^^^^^^^^^^^
 
-By default, `eth0` on Fuel master node serves PXE requests. If you are planning 
+By default, `eth0` on Fuel Master Node serves PXE requests. If you are planning 
 to use another interface, then it is required to modify dnsmasq settings (which 
 acts as DHCP server). Edit the file ``/etc/cobbler/dnsmasq.template``, find the line 
 ``"interface=eth0"`` and replace the interface name with the one you want to use. 
@@ -245,26 +250,27 @@ Launch command to synchronize cobbler service afterwards::
 
 During synchronization cobbler builds actual dnsmasq configuration file 
 ``/etc/dnsmasq.conf`` from template ``/etc/cobbler/dnsmasq.template``. That is 
-why you should not edit ``/etc/dnsmasq.conf``.
-Cobbler rewrites it each time when it is synchronized.
+why you should not edit ``/etc/dnsmasq.conf``. Cobbler rewrites it each time 
+when it is synchronized.
 
-If you try to use virtual machines to launch Fuel then you have to be sure
-that dnsmasq on master node is configured to support that PXE client you use on your
-virtual machines. We enabled *dhcp-no-override* option because without it enabled
-dnsmasq tries to move out PXE filename and PXE servername special fields into DHCP options.
-Not all PXE implementations can recognize those options and therefore they will not be
-able to boot. For example, Centos 6.4 uses gPXE implementation instead of more advanced
-iPXE by default.
+If you want to use virtual machines to launch Fuel then you have to be sure
+that dnsmasq on master node is configured to support the PXE client you use on your
+virtual machines. We enabled *dhcp-no-override* option because without it
+dnsmasq tries to move ``PXE filename`` and ``PXE servername`` special fields 
+into DHCP options. Not all PXE implementations can recognize those options and 
+therefore they will not be able to boot. For example, CentOS 6.4 uses gPXE 
+implementation instead of more advanced iPXE by default.
 
-When configuration is done
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+When Master Node installation is done
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Once the master node is installed, power on all other nodes and log in to the 
+Once the Master Node is installed, power on all other nodes and log in to the 
 Fuel UI.
 
 Slave nodes will be booted in bootstrap mode (CentOS based Linux in memory) via 
 PXE and you will see notifications in the user interface about discovered nodes. 
 This is the point when you can create an environment, add nodes into it, and 
-start configuration.
+start configuration...
+
 Networking configuration is most complicated part, so please read the networking 
 section of documentation carefully.

@@ -14,19 +14,18 @@ You must keep in mind, however, that the database uses Galera to
 achieve HA, and Galera is a quorum-based system. That means that you must provide 
 at least 3 controller nodes.
 
-.. fancybox:: /_images/030-logical-diagram-controllers_svg.png
+.. fancybox:: /_images/logical-diagram-controller_svg.png
     :width: 400px
     :height: 400px
 
-Every OpenStack controller runs keepalived, which manages a single
-Virtual IP (VIP) for all controller nodes, and HAProxy, which manages
-HTTP and TCP load balancing of requests going to OpenStack API
-services, RabbitMQ, and MySQL.
+Every OpenStack controller runs HAProxy, which manages a single External
+Virtual IP (VIP) for all controller nodes and provides HTTP and TCP load 
+balancing of requests going to OpenStack API services, RabbitMQ, and MySQL.
 
 When an end user accesses the OpenStack cloud using Horizon or makes a
 request to the REST API for services such as nova-api, glance-api,
 keystone-api, quantum-api, nova-scheduler, MySQL or RabbitMQ, the
-request goes to the live controller node currently holding the VIP,
+request goes to the live controller node currently holding the External VIP,
 and the connection gets terminated by HAProxy. When the next request
 comes in, HAProxy handles it, and may send it to the original
 controller or another in the cluster, depending on load conditions.
@@ -41,7 +40,8 @@ mechanism for achieving HA:
   at the load balancer.
 * RabbitMQ provides active/active high availability using mirrored queues.
 * MySQL high availability is achieved through Galera active/active multi-master 
-  deployment.
+  deployment and Pacemaker.
+* Quantum agents are managed by Pacemaker.
 
 Compute Nodes
 +++++++++++++
@@ -54,9 +54,9 @@ as RabbitMQ and MySQL. They use the same approach that provides
 redundancy to the end-users of Horizon and REST APIs, reaching out to
 controller nodes using the VIP and going through HAProxy.
 
-.. fancybox:: /_images/040-logical-diagram-compute_svg.png
+.. fancybox:: /_images/logical-diagram-compute_svg.png
     :width: 400px
-    :height: 350px
+    :height: 180px
 
 Storage Nodes
 +++++++++++++
@@ -68,6 +68,6 @@ achieve this, you are going to deploy Swift. This enables you to use
 it not only for storing VM images, but also for any other objects such
 as user files.
 
-.. fancybox:: /_images/050-logical-diagram-storage_svg.png
+.. fancybox:: /_images/logical-diagram-storage_svg.png
     :width: 400px
-    :height: 400px
+    :height: 200px

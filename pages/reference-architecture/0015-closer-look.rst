@@ -2,11 +2,10 @@ A closer look at the Multi-node (HA) Compact deployment
 -------------------------------------------------------
 
 In this section, you'll learn more about the Multi-node (HA) Compact
-deployment configuration and how it achieves high availability in preparation
-for installing this cluster in section 3. As you may recall, this
-configuration looks something like this:
+deployment configuration and how it achieves high availability. As you may 
+recall, this configuration looks something like this:
 
-.. fancybox:: /_images/060-deployment-compact-w_quantum_svg.png
+.. fancybox:: /_images/deployment-ha-compact_svg.png
     :width: 400px
     :height: 250px
 
@@ -19,7 +18,7 @@ rely on their respective active/active modes for high availability.
 For example, RabbitMQ uses built-in clustering capabilities, while the
 database uses MySQL/Galera replication.
 
-.. fancybox:: /_images/020-overview_svg.png
+.. fancybox:: /_images/ha-overview_svg.png
     :width: 400px
     :height: 250px
 

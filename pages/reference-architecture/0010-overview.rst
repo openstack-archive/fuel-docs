@@ -44,26 +44,20 @@ As you know, OpenStack provides the following basic services:
 These services can be combined in many different ways. Out of the box,
 Fuel supports the following deployment configurations:
 
-.. index:: Deployment Configurations; Single node
+.. index:: Deployment Configurations; Simple (non-HA)
 
-Single node deployment
-----------------------
+Simple (non-HA) deployment
+--------------------------
 
-In a production environment, you will never have a single-node
+In a production environment, you will never have a Simple non-HA
 deployment of OpenStack, partly because it forces you to make a number
 of compromises as to the number and types of services that you can
 deploy. It is, however, extremely useful if you just want to see how
-OpenStack works from a user's point of view. In this case, all of the
-essential services run out of a single server:
+OpenStack works from a user's point of view. 
 
-.. fancybox:: /_images/060-single-node_svg.png
+.. fancybox:: /_images/deployment-simple_svg.png
     :width: 400px
-    :height: 250px
-
-.. index:: Deployment Configurations; Compact Swift non-HA
-
-Multi-node (non-HA) deployment (compact Swift)
-----------------------------------------------
+    :height: 200px
 
 More commonly, your OpenStack installation will consist of multiple
 servers. Exactly how many is up to you, of course, but the main idea
@@ -73,21 +67,7 @@ enable you to achieve this separation while still keeping your
 hardware investment relatively modest is to house your storage on your
 controller nodes.
 
-.. index:: Deployment Configurations; Standalone Swift non-HA
-
-Multi-node (non-HA) deployment (standalone Swift)
--------------------------------------------------
-
-A more common arrangement is to provide separate servers for storage.
-This has the advantage of reducing the number of controllers you must
-provide; because Swift runs on its own servers, you can reduce the
-number of controllers from three (or five, for a full Swift implementation) to one, if desired:
-
-.. fancybox:: /_images/060-single-controller-swift-standalone_svg.png
-    :width: 400px
-    :height: 250px
-
-.. index:: Deployment Configurations; Compact Swift HA
+.. index:: Deployment Configurations; Compact HA
 
 Multi-node (HA) deployment (Compact)
 ------------------------------------
@@ -100,44 +80,28 @@ single points of failure. That's not to say, however, that you can't
 reduce hardware requirements by combining your storage, network, and controller
 nodes:
 
-.. fancybox:: /_images/060-deployment-compact-w_quantum_svg.png
+.. fancybox:: /_images/deployment-ha-compact_svg.png
     :width: 400px
     :height: 250px
 
-.. index:: Deployment Configurations; Compact Neutron HA
+.. index:: Deployment Configurations; Full HA
 
-Multi-node (HA) deployment (Compact Neutron)
+Multi-node (HA) deployment (Full)
 --------------------------------------------
 
-Another way you can add functionality to your cluster without
-increasing hardware requirements is to install Quantum on your
-controller nodes. This architecture still provides high availability,
-but avoids the need for a separate Neutron node:
+For large production deployments, its more common to provide
+dedicated hardware for storage. This architecture gives you the advantages of 
+high availability, but this clean separation makes your cluster more 
+maintainable by separating storage and controller functionality:
 
-.. fancybox:: /_images/060-deployment-standalone-w_quantum_svg.png
+.. fancybox:: /_images/deployment-ha-full_svg.png
     :width: 400px
-    :height: 250px
+    :height: 200px
 
-.. index:: Deployment Configurations; Standalone Swift HA
-
-Multi-node (HA) deployment (Standalone)
----------------------------------------
-
-For larger production deployments, its more common to provide
-dedicated hardware for storage and networking. This architecture still
-gives you the advantages of high availability, but this clean
-separation makes your cluster more maintainable by separating storage,
-networking, and controller functionality:
-
-.. fancybox:: /_images/070-deployment-controllers-and-storage-separate_svg.png
-    :width: 400px
-    :height: 300px
-
-Where Fuel really shines is in the creation of more complex
-architectures, so in this document you'll learn how to use Fuel to
-easily create a multi-node HA OpenStack cluster. To reduce the amount
-of hardware you'll need to follow the installation,
-however, the guide focuses on the Multi-node HA Compact 
+Where Fuel really shines is in the creation of more complex architectures, so 
+in this document you'll learn how to use Fuel to easily create a multi-node HA 
+OpenStack cluster. To reduce the amount of hardware you'll need to follow the 
+installation, however, the guide focuses on the Multi-node HA Compact 
 architecture.
 
 Lets take a closer look at the details of this deployment configuration.

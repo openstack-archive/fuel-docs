@@ -11,8 +11,9 @@ receive certain VLAN IDs.
 Usually it means that switch or multiple switches are not configured correctly 
 and do not allow certain tagged traffic to pass through.
 
-.. image:: /_images/net_verify_failure.png
-    :width: 100%
+.. fancybox:: /_images/net_verify_failure.png
+    :width: 600px
+    :height: 200px
 
 On VirtualBox
 -------------
