@@ -5,27 +5,27 @@ Installing Fuel Master Node
 
 .. contents:: :local:
 
-Fuel is distributed as both ISO and IMG image, each of them contains 
-an installer for Fuel Master Node. The ISO image is used for CD media devices, 
+Fuel is distributed as both ISO and IMG images, each of them contains 
+an installer for Fuel Master node. The ISO image is used for CD media devices, 
 iLO or similar remote access systems. The IMG file is used for USB memory sticks.
 
 Once installed, Fuel can be used to deploy and manage OpenStack clusters. It 
 will assign IP addresses to the nodes, perform PXE boot and initial 
-configuration, and provision of OpenStack nodes according to their roles in the 
-cluster.
+configuration, and provision of OpenStack nodes according to their roles in 
+the cluster.
 
 .. _Install_Bare-Metal:
 
 On Bare-Metal Environment
 -------------------------
 
-To install Fuel on bare-metal environment, you need to burn the provided ISO to a 
-CD/DVD, or IMG file to a USB stick, and start the installation process by 
-booting from that media, very much like any other OS.
+To install Fuel on bare-metal environment, you need to burn the provided ISO 
+to a CD/DVD, or IMG file to a USB stick, and start the installation process 
+by booting from that media, very much like any other OS.
 
 Linux and Mac users can prepare an installation USB stick with the ``dd`` 
-command. For example, if your flash drive is ``/dev/sdb``, you can use following 
-command line::
+command. For example, if your flash drive is ``/dev/sdb``, you can use 
+following command line::
 
     dd if=fuel.img of=/dev/sdb
 
@@ -71,7 +71,8 @@ can be downloaded from `<http://www.virtualbox.org/>`_.
 Automatic Mode
 ^^^^^^^^^^^^^^
 
-When you unpack the scripts, you will see the following important files and folders:
+When you unpack the scripts, you will see the following important files and 
+folders:
 
 `iso`
   This folder needs to contain a single ISO image for Fuel. Once you 
@@ -229,9 +230,9 @@ Name resolution (DNS)
 During Master Node installation, it is assumed that there is a recursive DNS 
 service on 10.20.0.1.
 
-If you want to make it possible for Slave Nodes to be able to resolve public names,
+If you want to make it possible for Slave nodes to be able to resolve public names,
 you need to change this default value to point to an actual DNS service.
-To make the change, run the following command on Fuel Master Node (replace IP to 
+To make the change, run the following command on Fuel Master node (replace IP to 
 your actual DNS)::
 
   echo "nameserver 172.0.0.1" > /etc/dnsmasq.upstream
@@ -239,7 +240,7 @@ your actual DNS)::
 PXE booting settings
 ^^^^^^^^^^^^^^^^^^^^
 
-By default, `eth0` on Fuel Master Node serves PXE requests. If you are planning 
+By default, `eth0` on Fuel Master node serves PXE requests. If you are planning 
 to use another interface, then it is required to modify dnsmasq settings (which 
 acts as DHCP server). Edit the file ``/etc/cobbler/dnsmasq.template``, find the line 
 ``"interface=eth0"`` and replace the interface name with the one you want to use. 
@@ -264,7 +265,7 @@ implementation instead of more advanced iPXE by default.
 When Master Node installation is done
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Once the Master Node is installed, power on all other nodes and log in to the 
+Once the Master node is installed, power on all other nodes and log in to the 
 Fuel UI.
 
 Slave nodes will be booted in bootstrap mode (CentOS based Linux in memory) via 

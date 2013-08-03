@@ -18,6 +18,7 @@ Let's start with the basic network customization:
 .. code-block:: ruby
 
   ### GENERAL CONFIG ###
+
   # This section sets main parameters such as hostnames and IP addresses of different nodes
 
   # This is the name of the public interface. The public network provides address 
@@ -123,7 +124,7 @@ Next, the `site.pp` file lists all of the nodes and roles you defined in the
             {'public_address' => '192.168.0.110','name' => 'fuel-compute-01','role' => 
              'compute','internal_address' => '10.0.0.110'}]
 
-Possible roles include ‘compute’,  ‘controller’, ‘primary-controller’, ‘storage’, 
+Possible roles include ‘compute’, ‘controller’, ‘primary-controller’, ‘storage’, 
 ‘swift-proxy’, ‘quantum’, ‘master’, and ‘cobbler’. Check the IP addresses for 
 each node and make sure that they match the contents of this array.
 
@@ -152,18 +153,9 @@ Next lines in `site.pp` define DNS servers and provide netmasks:
   $ha_provider = 'pacemaker'
   $use_unicast_corosync = false
 
-.. Next specify the main controller as the Nagios master. ::
-
-..
-  # Set nagios master fqdn
-  $nagios_master = 'fuel-controller-01.localdomain'
-  ## proj_name  name of environment nagios configuration
-  $proj_name            = 'test'
 
 ..
   Here again we have a parameter that looks ahead to things to come.
-  OpenStack supports monitoring via Nagios.  
-  In this section, you can choose the Nagios master server as well as setting a project name. ::
 
   #Specify if your installation contains multiple Nova controllers. Defaults to true as it is the most common scenario.
   $multi_host              = true
@@ -220,7 +212,7 @@ the existing nodes:
   $quantum = true
   $quantum_netnode_on_cnt  = true
 
-In this case, we're using a "compact" architecture, so we want to install Quantum 
+In this case, we're using a "Compact" architecture, so we want to install Quantum 
 on the controllers::
 
   # Specify network creation criteria:
@@ -279,7 +271,7 @@ single controller controls Quantum:
      'ext_bridge' => '0.0.0.0'
   }
 
-  # Neutron segmentation range.
+  # Quantum segmentation range.
   # For VLAN networks: valid VLAN VIDs can be 1 through 4094.
   # For GRE networks: Valid tunnel IDs can be any 32-bit unsigned integer.
   $segment_range = '900:999'
@@ -291,7 +283,7 @@ single controller controls Quantum:
   # Assign floating IPs to VMs on startup automatically?
   $auto_assign_floating_ip = false
 
-  # Database connection for Neutron configuration (quantum.conf)
+  # Database connection for Quantum configuration (quantum.conf)
   $quantum_sql_connection  = "mysql://${quantum_db_user}:${quantum_db_password}@${$internal_virtual_ip}/{quantum_db_dbname}"
 
   if $quantum {
@@ -302,9 +294,10 @@ single controller controls Quantum:
     $internal_int = $internal_interface
   }
 
-If the system is set up to use Neutron, the public and internal interfaces are set to use the appropriate bridges, rather than the defined interfaces.
+If the system is set up to use Quantum, the public and internal interfaces 
+are set to use the appropriate bridges, rather than the defined interfaces.
 
-The remaining configuration is used to define classes that will be added to each Neutron node:
+The remaining configuration is used to define classes that will be added to each Quantum node:
 
 .. code-block:: ruby
 
@@ -354,7 +347,8 @@ The remaining configuration is used to define classes that will be added to each
   }
   ### NETWORK/QUANTUM END ###
 
-All of this assumes, of course, that you're using Neutron; if you're using nova-network instead, only these values apply.
+All of this assumes, of course, that you're using Quantum; if you're using 
+nova-network instead, only these values apply.
 
 Defining the Current Cluster
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -587,7 +581,7 @@ your distribution vendors, make sure the ``$mirror_type`` variable is set to
 
 Once again, the ``$mirror_type`` **must** be set to ``default``. 
 If you set it correctly in ``config.yaml`` and ran ``openstack_system`` this 
-will already be taken care of.  Otherwise, **make sure** to set this value manually.
+will already be taken care of. Otherwise, **make sure** to set this value manually.
 
 Future versions of Fuel will enable you to use your own internal repositories.
 
@@ -696,7 +690,9 @@ Defining the node configurations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Now that we've set all of the global values, its time to make sure that the 
-actual node definitions are correct. For example, by default all nodes will enable Cinder on ``/dev/sdb``.  If you don't want to enable Cinder on all controllers set ``nv_physical_volume`` to ``null`` for a specific node or nodes:
+actual node definitions are correct. For example, by default all nodes will 
+enable Cinder on ``/dev/sdb``. If you don't want to enable Cinder on all 
+controllers set ``nv_physical_volume`` to ``null`` for a specific node or nodes:
 
 .. code-block:: ruby
 
@@ -762,9 +758,9 @@ lets you specify the individual controllers and compute nodes:
       }
     }
 
-Note that each controller has the swift_zone specified, so each of the three 
+Note that each controller has the `swift_zone` specified, so each of the three 
 controllers can represent each of the three Swift zones.
-Similarly, site.pp defines a class for the compute nodes.
+Similarly, `site.pp` defines a class for the compute nodes.
 
 .. include /pages/installation-fuel-cli/0065-install nagios.rst
 

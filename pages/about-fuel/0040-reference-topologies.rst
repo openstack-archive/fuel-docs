@@ -6,11 +6,11 @@ Deployment Configurations Provided By Fuel
 ==========================================
 
 One of the advantages of Fuel is that it comes with a number of pre-built 
-deployment configurations that you can use to quickly build your own OpenStack 
-cloud infrastructure. These are well-specified configurations of OpenStack and 
-its constituent components are tailored to one or more common cloud use cases. 
-Fuel provides the ability to create the following cluster types without requiring 
-extensive customization:
+deployment configurations that you can use to quickly build your own 
+OpenStack cloud infrastructure. These are well-specified configurations of 
+OpenStack and its constituent components that are expertly tailored to one 
+or more common cloud use cases. Fuel provides the ability to create the 
+following cluster types without requiring extensive customization:
 
 **Simple (non-HA)**: The Simple (non-HA) installation provides an easy way 
 to install an entire OpenStack cluster without requiring the degree of 
@@ -33,5 +33,5 @@ Multi-node (HA) configurations:
 
 In addition to these configurations, Fuel is designed to be completely 
 customizable. For assistance on deeper customization options based on the 
-included configurations you can 
-`contact Mirantis for further assistance <http://www.mirantis.com/contact/>`_.
+included configurations you can `contact Mirantis for further assistance 
+<http://www.mirantis.com/contact/>`_.

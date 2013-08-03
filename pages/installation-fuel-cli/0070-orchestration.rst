@@ -57,10 +57,10 @@ If, for some reason, you choose not to use orchestration (one common example is
 adding a single node to an existing (non-HA) cluster) you have the option to 
 install on one or more nodes using Puppet manually.
 
-Start by logging in to the target server (fuel-controller-01 to start, if you're 
+Start by logging in to the target server (`fuel-controller-01` to start, if you're 
 starting from scratch) and running the Puppet agent.
 
-One optional step would be to use the script command to log all of your output 
+One optional step would be to use the ``script`` command to log all of your output 
 so you can check for errors::
 
     script agent-01.log
@@ -72,7 +72,8 @@ to stop logging and grep for errors::
 
     grep err: agent-01.log
 
-If you find any errors relating to other nodes you may safely ignore them for now.
+If you find any errors relating to other nodes you may safely ignore them 
+for now.
 
 Now you can run the same installation procedure on fuel-controller-02 and 
 fuel-controller-03, as well as fuel-compute-01.
