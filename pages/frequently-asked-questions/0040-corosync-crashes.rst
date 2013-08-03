@@ -9,17 +9,19 @@ through Corosync and Corosync with MySQL issues.
 
 **Workaround:**
 
-#. Verify that corosync is really broken ``service corosync status``.
-	* You should see next error: ``corosync dead but pid file exists``
+1. Verify that corosync is really broken ``service corosync status``.
 
-#. Start corosync manually ``service corosync start``.
+   * You should see next error: ``corosync dead but pid file exists``
 
-#. Run ``ps -ef | grep mysql`` and kill ALL(!) **mysqld** and 
-**mysqld_safe** processes.
+2. Start corosync manually ``service corosync start``.
 
-#. Wait while pacemaker starts mysql processes again.
-	* You can check it with ``ps -ef | grep mysql`` command.
-	* If it doesn't start, run ``crm resource p_mysql`` start.
+3. Run ``ps -ef | grep mysql`` and kill ALL(!) **mysqld** and 
+   **mysqld_safe** processes.
 
-#. Check with ``crm status`` command that this host is part of the cluster 
-and p_mysql is not within "Failed actions".
+4. Wait while pacemaker starts mysql processes again.
+
+   * You can check it with ``ps -ef | grep mysql`` command.
+   * If it doesn't start, run ``crm resource p_mysql`` start.
+
+5. Check with ``crm status`` command that this host is part of the cluster 
+   and p_mysql is not within "Failed actions".

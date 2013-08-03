@@ -1,3 +1,5 @@
+.. This is not ready for inclusion into docs
+
 .. _add-remove-nodes-without-downtime:
 
 Add or Remove Controller and Compute Nodes Without Downtime
@@ -8,23 +10,23 @@ processes around the management of controller and compute nodes within an
 OpenStack cluster. There are some specific details to note, making this 
 document required reading.
 
-	1. The addition of compute nodes works seamlessly - just specify its 
-	IPs  in site.pp (if needed) and run puppet
+1. The addition of compute nodes works seamlessly - just specify its 
+  IPs in `site.pp` file (if needed) and run puppet agent
 
-	2. Deletion of computes is the same as deletion from openstack: migrate 
-	machines, shutdown node, delete from database (Puppet class needed)
+2. Deletion of computes is the same as deletion from OpenStack: migrate 
+   machines, shutdown node, delete from database (Puppet class needed)
 
-	3. Addition of controllers works as soon as puppet deploys. Which 
-	testing is needed:
+3. Addition of controllers works as soon as puppet deploys. Which 
+   testing is needed:
 
-		a. Test that altering the site.pp (adding new controller) and 
-		running puppet consequently on all controllers does not break anything
+   - Test that altering the `site.pp` (adding new controller) and 
+    running puppet consequently on all controllers does not break anything
 
-	4. Deletion of controllers should work as soon as quorum for galera and 
-	pacemaker is OK.  What to test:
+4. Deletion of controllers should work as soon as quorum for Galera and 
+   pacemaker is OK. What to test:
 
-		a. Altering of quorum in case of node deletion
-		b. If we need to alter quorum - we need to write classes for this
+   - Altering of quorum in case of node deletion
+   - If we need to alter quorum - we need to write classes for this
 
 Node deletion
 ^^^^^^^^^^^^^
