@@ -17,7 +17,7 @@
    inkscape:version="0.48.4 r9939"
    width="100%"
    height="100%"
-   sodipodi:docname="060-deployment-compact-w_quantum.svg">
+   sodipodi:docname="deployment-ha-compact.svg">
   <metadata
      id="metadata103">
     <rdf:RDF>
@@ -26,7 +26,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -41,8 +41,8 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1920"
-     inkscape:window-height="1061"
+     inkscape:window-width="1366"
+     inkscape:window-height="749"
      id="namedview99"
      showgrid="true"
      showguides="false"
@@ -50,7 +50,7 @@
      inkscape:zoom="1.0560446"
      inkscape:cx="404.5968"
      inkscape:cy="165.88193"
-     inkscape:window-x="1362"
+     inkscape:window-x="-4"
      inkscape:window-y="-4"
      inkscape:window-maximized="1"
      inkscape:current-layer="g7">
@@ -335,7 +335,7 @@
          id="tspan3126"
          x="636.98688"
          y="158.98689"
-         style="font-size:14px">Quantum (Hot Standby)</tspan></text>
+         style="font-size:13px">Quantum (Hot Standby)</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
@@ -369,7 +369,7 @@
          id="tspan3126-1"
          x="382.01791"
          y="158.32288"
-         style="font-size:14px">Quantum (Hot Standby)</tspan></text>
+         style="font-size:13px">Quantum (Hot Standby)</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"

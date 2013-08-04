@@ -38,9 +38,9 @@
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1920"
-     inkscape:window-height="1061"
-     inkscape:window-x="1362"
+     inkscape:window-width="1366"
+     inkscape:window-height="749"
+     inkscape:window-x="-4"
      inkscape:window-y="-4"
      inkscape:window-maximized="1" />
   <metadata
@@ -149,7 +149,7 @@
          id="tspan3977"
          x="248.99905"
          y="129.80286"
-         style="font-size:40px">Controller Node 1</tspan></text>
+         style="font-size:36px">Controller Node 1</tspan></text>
     <rect
        style="fill:#e9c6af;fill-opacity:1;stroke:#ffb380;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
        id="rect3720"
@@ -523,7 +523,7 @@
          id="tspan3977-8"
          x="1045.1852"
          y="129.72908"
-         style="font-size:40px">Controller Node 2</tspan></text>
+         style="font-size:36px">Controller Node 2</tspan></text>
     <rect
        style="fill:#e9c6af;fill-opacity:1;stroke:#ffb380;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
        id="rect3720-6"

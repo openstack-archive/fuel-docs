@@ -24,7 +24,7 @@ In practice, that means that the process of using Fuel looks like 1-2-3:
 All of this is desgined to enable you to maintain your cluster while giving 
 you the flexibility to adapt it to your own configuration.
 
-.. fancybox:: /_images/010-how-it-works_svg.png
+.. fancybox:: /_images/how-it-works_svg.png
     :width: 400px
     :height: 400px
 

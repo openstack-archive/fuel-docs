@@ -17,7 +17,7 @@
    inkscape:version="0.48.4 r9939"
    width="100%"
    height="100%"
-   sodipodi:docname="020-overview.svg">
+   sodipodi:docname="ha-overview.svg">
   <metadata
      id="metadata323">
     <rdf:RDF>
@@ -26,7 +26,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -41,14 +41,14 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1920"
-     inkscape:window-height="1061"
+     inkscape:window-width="1366"
+     inkscape:window-height="749"
      id="namedview319"
      showgrid="false"
      inkscape:zoom="2.1600271"
      inkscape:cx="363.26723"
-     inkscape:cy="233.39458"
-     inkscape:window-x="1362"
+     inkscape:cy="140.80315"
+     inkscape:window-x="-4"
      inkscape:window-y="-4"
      inkscape:window-maximized="1"
      inkscape:current-layer="g7" />
@@ -1123,6 +1123,6 @@
          id="tspan3302-9"
          x="333.84372"
          y="433.47897"
-         style="font-size:14px">pacemaker</tspan></text>
+         style="font-size:12px">pacemaker</tspan></text>
   </g>
 </svg>

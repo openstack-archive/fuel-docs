@@ -1,17 +1,46 @@
-Understanding the Puppet Manifest
----------------------------------
+Understanding the Deployment Configuration Files
+------------------------------------------------
 
 .. contents:: :local:
 
-At this point you should have functioning servers that are ready to take an 
+At this point you should have functioning nodes that are ready to take an 
 OpenStack installation. If you're using VirtualBox, save the current state of 
 every virtual machine by taking a snapshot using `File->Take Snapshot`. 
 Snapshots are a useful tool when you made a mistake, encounter an issue, or just 
 want to try different configurations, all without having to start from scratch.
 
-Next, go through the `/etc/puppet/manifests/site.pp` file and make any necessary 
-customizations.  If you have run ``openstack_system`` before, there shouldn't be 
-anything to change.
+Next, go through the sample yaml files file and make any necessary 
+customizations. 
+
+Let's look at the sample yaml file structure.
+
+The high level structure of deployment configuration file is:
+
+.. code-block:: yaml
+
+    nodes:          # Array of nodes
+    - role:         # Definition of node and its role
+    attributes:     # Openstack cluster attributes used during deployment
+    engine:         # Cobbler engine parameters
+
+nodes Section
++++++++++++++
+
+In this section you define nodes and their roles in cluster.
+To do this you shall add as many roles as you have in your cluster
+
+.. code-block:: yaml
+
+    nodes:          # Array of nodes
+    - role:         # Definition of node and its role
+
+
+
+
+
+
+
+
 
 Let's start with the basic network customization:
 
