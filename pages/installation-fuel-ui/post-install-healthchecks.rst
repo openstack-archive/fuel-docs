@@ -7,27 +7,27 @@ Post-Deployment Check
 
 On occasion, even a successful deployment may result in some OpenStack 
 components not working correctly. If this happens, Fuel offers the 
-ability to perform post-deployment checks to verify operations. The goal of 
-this functionality is to provide near real-time information on the status of 
-the most commonly used components and the most recently performed actions. 
+ability to perform post-deployment checks to verify operations. Part of Fuel's 
+goal is to provide easily accessible status information about the most commonly 
+used components and the most recently performed actions. 
 To perform these checks you will use Sanity and Smoke checks, as described 
 below:
 
 **Sanity Checks**
-  Reveal whether the overall system is functional. If it fails, most likely you 
-  will need to restart some services to operate OpenStack.
+  Reveal whether the overall system is functional. If it fails, you will most 
+  likely need to restart some services to operate OpenStack. 
 
 **Smoke Checks**
-  Give an understanding if something should be fixed relatively to specific 
-  OpenStack functions. Smoke checks reveal networking, system-requirements, 
+  Dive in a little deeper and reveal networking, system-requirements, 
   functionality issues.
 
 Sanity Checks will likely be the point on which the success of your 
-deployment pivots, but it is critical to pay close attention to all information 
-derived from theses tests. Another way to look at these tests is how they 
-are named Sanity Checks are intended to assist in maintaining your sanity. 
-Smoke Checks tell you where the fires are so you can put them out 
+deployment pivots, but it is critical to pay close attention to all 
+information collected from theses tests. Another way to look at these tests 
+is by their names. Sanity Checks are intended to assist in maintaining your 
+sanity. Smoke Checks tell you where the fires are so you can put them out 
 strategically instead of firehosing the entire installation.
+
 
 Benefits 
 --------
@@ -35,18 +35,20 @@ Benefits
 * Using post-deployment checks helps you identify potential issues which 
   may impact the health of a deployed system.  
 
-* All post-deployment checks provide detailed description on failed operations 
-  and tell you which component or components are not working properly.  
+* All post-deployment checks provide detailed descriptions about failed 
+  operations and tell you which component or components are not working 
+  properly.
 
-* Previously, performing these checks manually would have consumed a great deal 
-  of time. Now, with these checks the process will take only a few minutes. 
+* Previously, performing these checks manually would have consumed a 
+  great deal of time. Now, with these checks the process will take only a 
+  few minutes. 
 
-* Aside from verifying that everything is working correctly, the process will 
-  also determine how quickly your system works.  
+* Aside from verifying that everything is working correctly, the process 
+  will also determine how quickly your system works.
 
-* Post-deployment checks continue to be useful, for example after sizable 
-  changes are made in the system you can use the checks to determine if any 
-  new failure points have been introduced.  
+* Post-deployment checks continue to be useful, for example after 
+  sizable changes are made in the system you can use the checks to 
+  determine if any new failure points have been introduced.
 
 Running post-deployment checks 
 ------------------------------
@@ -104,11 +106,11 @@ dig deep. The most common issues are:
 
 * Not all OpenStack services are running
 * Any defined quota has been exceeded
-* Something has broken in the network configuration
+* Something has been broken in the network configuration
 * There is a general lack of resources (memory/disk space)
 
-The first thing to be done is to ensure all OpenStack services are on. To do 
-this you can run sanity test set, or execute the following command on your 
+The first thing to be done is to ensure all OpenStack services are up and running.
+To do this you can run sanity test set, or execute the following command on your 
 controller node::
 
     nova-manage service list
@@ -151,7 +153,6 @@ what test is used for each service:
     Test scenario: 
 
     1. Request list of images.
-
     2. Check returned list is not empty.
 
 .. topic:: Volumes list availability
@@ -161,7 +162,6 @@ what test is used for each service:
     Test scenario:
 
     1. Request list of volumes.
-
     2. Check returned list is not empty.
 
 .. topic:: Snapshots list availability
@@ -171,7 +171,6 @@ what test is used for each service:
     Test scenario:
 
     1. Request list of snapshots.
-
     2. Check returned list is not empty.
 
 .. topic:: Flavors list availability
@@ -181,7 +180,6 @@ what test is used for each service:
     Test scenario:
 
     1. Request list of flavors.
-
     2. Check returned list is not empty.
 
 .. topic:: Limits list availability
@@ -191,7 +189,6 @@ what test is used for each service:
     Test scenario:
 
     1. Request list of limits.
-
     2. Check response.
 
 .. topic:: Services list availability
@@ -201,7 +198,6 @@ what test is used for each service:
     Test scenario:
 
     1. Request list of services. 
-
     2. Check returned list is not empty.
 
 .. topic:: User list availability
@@ -211,7 +207,6 @@ what test is used for each service:
     Test scenario:
 
     1. Request list of services.
-
     2. Check returned list is not empty.
 
 .. topic:: Services execution monitoring
@@ -222,9 +217,7 @@ what test is used for each service:
     Test scenario:
 
     1. Connect to a controller via SSH.
-    
     2. Execute nova-manage service list command.
-    
     3. Check there are no failed services.
 
 .. topic:: DNS availability
@@ -234,9 +227,7 @@ what test is used for each service:
     Test scenario:
 
     1. Connect to a controller node via SSH.
-    
     2. Execute host command for the controller IP.
-    
     3. Check DNS name can be successfully resolved.
 
 .. topic:: Networks availability
@@ -246,7 +237,6 @@ what test is used for each service:
     Test scenario:
     
     1. Request list of networks.
-    
     2. Check returned list is not empty.
 
 .. topic:: Ports availability
@@ -256,7 +246,6 @@ what test is used for each service:
     Test scenario:
 
     1. Request list of ports.
-    
     2. Check returned list is not empty.
 
 For more information refer to nova cli reference.
@@ -285,12 +274,10 @@ negatives. The following is a description of each sanity test available:
     Scenario:
 
     1. Create small-size flavor.
-
     2. Check created flavor has expected name.
-
     3. Check flavor disk has expected size.
 
-For more information refer to nova cli reference.
+    For more information refer to nova cli reference.
 
 .. topic:: Volume creation
 
@@ -301,29 +288,20 @@ For more information refer to nova cli reference.
     Scenario:
 
     1. Create a new small-size volume.
-
     2. Wait for "available" volume status.
-
     3. Check response contains "display_name" section.
-
     4. Create instance and wait for "Active" status
-
     5. Attach volume to instance.
-
     6. Check volume status is "in use".
-
     7. Get created volume information by its id.
-
     8. Detach volume from instance.
-
     9. Check volume has "available" status.
-
     10. Delete volume.
 
-If you see that created volume is in ERROR status, it can mean that you`ve 
-exceeded the maximum number of volumes that can be created. You can check it 
-on OpenStack dashboard. For more information refer to volume management 
-instructions.
+    If you see that created volume is in ERROR status, it can mean that you`ve 
+    exceeded the maximum number of volumes that can be created. You can check it 
+    on OpenStack dashboard. For more information refer to volume management 
+    instructions.
 
 .. topic:: Instance booting and snapshotting
 
@@ -337,17 +315,14 @@ instructions.
     Scenario:
 
     1. Create new keypair to boot an instance.
-
     2. Boot default image.
-
     3. Make snapshot of created server.
-
     4. Boot another instance from created snapshot.
  
-If you see that created instance is in ERROR status, it can mean that you`ve 
-exceeded any system requirements limit. The test is using a nano-flavor with 
-parameters: 64 RAM, 1 GB disk space, 1 virtual CPU presented. For more 
-information refer to nova cli reference, image management instructions.
+    If you see that created instance is in ERROR status, it can mean that you`ve 
+    exceeded any system requirements limit. The test is using a nano-flavor with 
+    parameters: 64 RAM, 1 GB disk space, 1 virtual CPU presented. For more 
+    information refer to nova cli reference, image management instructions.
 
 .. topic:: Keypair creation
 
@@ -356,9 +331,9 @@ information refer to nova cli reference, image management instructions.
     Scenario:
 
     1. Create a new keypair, check if it was created successfully 
-    (check name is expected, response status is 200).
+       (check name is expected, response status is 200).
 
-For more information refer to nova cli reference.
+    For more information refer to nova cli reference.
 
 .. topic:: Security group creation
 
@@ -367,9 +342,9 @@ For more information refer to nova cli reference.
     Scenario:
 
     1. Create security group, check if it was created correctly 
-    (check name is expected, response status is 200).
+       (check name is expected, response status is 200).
 
-For more information refer to nova cli reference.
+    For more information refer to nova cli reference.
 
 .. topic:: Network parameters check
 
@@ -378,12 +353,10 @@ For more information refer to nova cli reference.
     Scenario:
 
     1. Get list of networks.
-
     2. Check seen network labels equal to expected ones.
-
     3. Check seen network ids equal to expected ones.
 
-For more information refer to nova cli reference.
+    For more information refer to nova cli reference.
 
 .. topic:: Instance creation
     Target component: Nova
@@ -391,13 +364,11 @@ For more information refer to nova cli reference.
     Scenario:
 
     1. Create new keypair (if it`s nonexistent yet).
-
     2. Create new sec group (if it`s nonexistent yet).
-
     3. Create instance with usage of created sec group and keypair.
 
-For more information refer to nova cli reference, instance management 
-instructions.
+    For more information refer to nova cli reference, instance management 
+    instructions.
 
 .. topic:: Floating IP assignment
 
@@ -406,17 +377,13 @@ instructions.
     Scenario:
 
     1. Create new keypair (if it`s nonexistent yet).
-
     2. Create new sec group (if it`s nonexistent yet).
-
     3. Create instance with usage of created sec group and keypair.
-
     4. Create new floating ip.
-
     5. Assign floating ip to created instance.
     
-For more information refer to nova cli reference, floating ips management 
-instructions.
+    For more information refer to nova cli reference, floating ips management 
+    instructions.
 
 .. topic:: Network connectivity check through floating IP
 
@@ -425,16 +392,13 @@ instructions.
     Scenario:
 
     1. Create new keypair (if it`s nonexistent yet).
-
     2. Create new sec group (if it`s nonexistent yet).
-
     3. Create instance with usage of created sec group and keypair.
-
     4. Check connectivity for all floating ips using ping command.
 
-If this test failed, it`s better to run a network check and verify that all 
-connections are correct. For more information refer to the Nova CLI reference's
-floating IPs management instructions.
+    If this test failed, it`s better to run a network check and verify that all 
+    connections are correct. For more information refer to the Nova CLI reference's
+    floating IPs management instructions.
 
 .. topic:: User creation and authentication in Horizon
 
@@ -444,26 +408,17 @@ floating IPs management instructions.
     Scenario:
 
     1. Create a new tenant.
-
     2. Check tenant was created successfully.
-
     3. Create a new user.
-
     4. Check user was created successfully.
-
     5. Create a new user role.
-
     6. Check user role was created successfully.
-
     7. Perform token authentication.
-
     8. Check authentication was successful.
-
     9. Send authentication request to Horizon.
-
     10. Verify response status is 200.
 
-If this test fails on the authentication step, you should first try opening 
-the dashboard - it may be unreachable for some reason and then you should 
-check your network configuration. For more information refer to nova cli 
-reference.
+    If this test fails on the authentication step, you should first try opening 
+    the dashboard - it may be unreachable for some reason and then you should 
+    check your network configuration. For more information refer to nova cli 
+    reference.
