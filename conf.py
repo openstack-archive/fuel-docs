@@ -74,7 +74,7 @@ release = '3.1'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-exclude_patterns = ['_build']
+exclude_patterns = ['_*', "pages"]
 
 # The reST default role (used for this markup: `text`) to use for all documents.
 #default_role = None
@@ -128,7 +128,7 @@ html_logo = '_static/fuel_gradient_200.png'
 # The name of an image file (within the static path) to use as favicon of the
 # docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
 # pixels large.
-html_favicon = None
+html_favicon = '_static/mirantis_icon.ico'
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -137,7 +137,7 @@ html_static_path = ['_static']
 
 # If not '', a 'Last updated on:' timestamp is inserted at every page bottom,
 # using the given strftime format.
-html_last_updated_fmt = '%b %d, %Y'
+html_last_updated_fmt = '%c, %Z'
 
 # If true, SmartyPants will be used to convert quotes and dashes to
 # typographically correct entities.
@@ -159,7 +159,7 @@ html_sidebars = {
 html_use_index = True
 
 # If true, the index is split into individual pages for each letter.
-html_split_index = False
+html_split_index = True
 
 # If true, links to the reST sources are added to the pages.
 html_show_sourcelink = False
@@ -179,7 +179,7 @@ html_show_copyright = True
 #html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'fuel'
+htmlhelp_basename = 'fueldoc'
 
 
 # -- Options for LaTeX output --------------------------------------------------

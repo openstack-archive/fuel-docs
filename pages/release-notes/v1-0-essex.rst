@@ -1,6 +1,9 @@
+.. index:: Release Notes; v1.0-essex
+
+.. _RelNotes_1.0:
 
 v1.0-essex
-^^^^^^^^^^
+==========
 
 * Features:
 

@@ -1,7 +1,10 @@
-Supported Software
-------------------
+.. index: Supported Software; Components
 
-Fuel has been tested and is guaranteed to work with the following software components:
+Supported Software
+==================
+
+Fuel has been tested and is guaranteed to work with the following software 
+components:
 
 * Operating Systems
     * CentOS 6.4 (x86_64 architecture only)
