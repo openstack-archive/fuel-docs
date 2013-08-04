@@ -14,24 +14,35 @@ will assign IP addresses to the nodes, perform PXE boot and initial
 configuration, and provision of OpenStack nodes according to their roles in 
 the cluster.
 
-On Bare-Metal Environment
--------------------------
+Preparing Bootable Media
+------------------------
 
-To install Fuel on bare-metal environment, you need to burn the provided ISO 
-to a CD/DVD, or IMG file to a USB stick, and start the installation process 
-by booting from that media, very much like any other OS.
+To install Fuel on bare-metal hardware, you need to burn the provided ISO to 
+a CD/DVD or create a bootable USB stick. You would then begin the 
+installation process by booting from that media, very much like any other OS.
 
-Linux and Mac users can prepare an installation USB stick with the ``dd`` 
-command. For example, if your flash drive is ``/dev/sdb``, you can use 
-following command line::
+Burning an ISO to optical media is a deeply supported function on all OSes. 
+For Linux there are several interfaces avaiable such as Brasero or Xfburn, 
+two of the more commonly pre-installed desktop applications. There are also 
+a number for Windows such as `ImgBurn <http://www.imgburn.com/>`_ and the 
+open source `InfraRecorder <http://infrarecorder.org/>`_.
 
-    dd if=fuel.img of=/dev/sdb
+Burning an ISO in Mac OS X is deceptively simple. Open Disk Utility from 
+Applications > Utilities, drag the ISO into the disk list on the left side 
+of the window and select it, insert blank media with enough room, and click 
+Burn. If you prefer a utility, check out the open source `Burn 
+<http://burn-osx.sourceforge.net/Pages/English/home.html>`_.
 
-You can find the actual device name in the output of the ``dmesg`` command for 
-Linux or ``diskutil list`` for Mac OS.
+Installing the ISO to a bootable USB stick, however, is an entirely different matter. Canonical suggests PenDriveLinux which is a GUI tool for Windows
 
-On Windows, you can write the installation image with 
-`Win32 Disk Imager <http://sourceforge.net/projects/win32diskimager/>`_.
+On Windows, you can write the installation image with a number of different 
+utilities. The following list links to some of the more popular ones and they are 
+all available at no cost: 
+
+`Win32 Disk Imager 
+<http://sourceforge.net/projects/win32diskimager/>`_.
+
+`ISOtoUSB <http://www.isotousb.com/>`_.
 
 After the installation is complete, you will need to allocate bare-metal 
 nodes for your OpenStack cluster, put them on the same L2 network as the 
