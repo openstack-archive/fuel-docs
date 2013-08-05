@@ -303,7 +303,7 @@ pdf_fit_mode = "shrink"
 #pdf_inline_footnotes = True
 
 # verbosity level. 0 1 or 2
-# pdf_verbosity = 2
+pdf_verbosity = 2
 
 # If false, no index is generated.
 #pdf_use_index = True
