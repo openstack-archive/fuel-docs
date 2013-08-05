@@ -1,12 +1,12 @@
-Testing OpenStack
------------------
+Testing OpenStack Cluster
+=========================
 
 Now that you've installed OpenStack, its time to take your new OpenStack cloud 
 for a drive around the block. Follow these steps:
 
-1. On the host machine, open your browser to http://192.168.0.10/  (change the 
-   IP address value to your own ``public_virtual_ip``) and login as 
-   ``nova/nova`` (unless you changed these credentials in ``site.pp``)
+1. On the host machine, open your browser to http://192.168.0.10/ (change the 
+  IP address value to your own ``public_virtual_ip``) and login as 
+  ``nova/nova`` (unless you changed these credentials in YAML file).
 
 2. Click the ``Project`` tab in the left-hand column.
 
@@ -34,12 +34,12 @@ settings:
 5. Click ``Images & Snapshots``, then ``Create Image``.
 
 - Enter a name and specify the ``Image Location`` as 
-  https://launchpad.net/cirros/trunk/0.3.0/+download/cirros-0.3.0-x86_64-disk.
-  img, with a ``Format`` of ``QCOW2``.  Check the ``Public`` checkbox.
+  https://launchpad.net/cirros/trunk/0.3.0/+download/cirros-0.3.0-x86_64-disk.img
+  with a ``Format`` of ``QCOW2``.  Check the ``Public`` checkbox.
 
 6. The next step is to upload an image to use for creating VMs, but an OpenStack 
-   bug prevents you from doing this in the browser. Instead, log in to any 
-   of the controllers as ``root`` and execute the following commands::
+  bug prevents you from doing this in the browser. Instead, log in to any 
+  of the controllers as ``root`` and execute the following commands::
 
      cd ~
      source openrc
@@ -47,8 +47,8 @@ settings:
      --location https://launchpad.net/cirros/trunk/0.3.0/+download/cirros-0.3.0-x86_64-disk.img
 
 7. Go back to the browser and refresh the page. Launch a new instance of this image
-   using the tiny flavor.  Click the ``Networking`` tab and choose the 
-   default ``net04_ext`` network, then click the Launch button.
+  using the tiny flavor.  Click the ``Networking`` tab and choose the 
+  default ``net04_ext`` network, then click the Launch button.
 
 8. On the instances page:
 
@@ -65,18 +65,18 @@ settings:
 - Enter ``sudo fdisk -l`` to see that no volume has yet been assigned to this VM.
 
 9. On the ``Instances`` page, click ``Assign Floating IP`` and assign an IP 
-   address to your instance. You can either choose from one of the existing 
-   created IPs by using the pulldown menu or click the plus sign (+) to choose 
-   a network and allocate a new IP address.
+  address to your instance. You can either choose from one of the existing 
+  created IPs by using the pulldown menu or click the plus sign (+) to choose 
+  a network and allocate a new IP address.
 
 - From your host machine, ping the floating IP assigned to this VM.
 
 - If that works, try to ``ssh cirros@floating-ip`` from the host machine.
 
 10. Back in the browser, click ``Volumes`` and ``Create Volume``.  Create the 
-    new volume, and attach it to the instance.
+   new volume, and attach it to the instance.
 
 11. Go back to the VNC tab and repeat ``fdisk -l`` to see the new unpartitioned 
-    disk attached.
+   disk attached.
 
 Now your new VM is ready to be used.

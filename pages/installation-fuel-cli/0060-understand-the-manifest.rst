@@ -1,7 +1,5 @@
 Understanding the CLI Deployment Workflow
------------------------------------------
-
-.. contents:: :local:
+=========================================
 
 To deploy OpenStack using CLI successfully you need nodes to pass through the 
 "Prepare->Discover->Provision->Deploy" workflow. Following sections describe how 
@@ -10,7 +8,7 @@ During `Prepare` stage nodes should be connected correctly to the Master node fo
 network booting. Then turn on the nodes to boot using PXE provided by Fuel Master node.
 
 Discover
-++++++++
+--------
 
 Nodes being booted into bootstrap mode run all the required services for the node 
 to be managed by Fuel Master node. When booted into bootstrap phase, node 
@@ -20,7 +18,7 @@ configures MCollective on the node and specifies ID used by Astute orchestrator
 to check the status of the node.
 
 Provision
-+++++++++
+---------
 
 Provisioning is done using Cobbler. Astute orchestrator parses ``nodes`` section 
 of YAML configuration file and creates corresponding Cobbler systems using 
@@ -29,7 +27,7 @@ created, it connects to Cobbler engine and reboots nodes according to the power
 management parameters of the node. 
 
 Deploy
-++++++
+------
 
 Deployment is done using Astute orchestrator, which parses ``nodes`` and 
 ``attributes`` sections and recalculates parameters needed for deployment.
@@ -41,7 +39,9 @@ during catalog compilation phase by puppet master. Finally catalog is executed
 and Astute orchestrator passes to the next node in deployment sequence.
 
 Deploying OpenStack Cluster Using CLI
--------------------------------------
+=====================================
+
+.. contents:: :local:
 
 After you understood how deployment workflow is traversed, you can finally start. 
 Connect the nodes to Master node and power them on. You should also plan your 
@@ -49,6 +49,9 @@ cluster configuration meaning that you should know which node should host which
 role in the cluster. As soon as nodes boot into bootstrap mode and populate 
 their data to MCollective you will need to fill configuration YAML file and
 consequently trigger Provisioning and Deployment phases.
+
+YAML High Level Structure
+-------------------------
 
 The high level structure of deployment configuration file is:
 
@@ -82,7 +85,7 @@ This section specifies parameters used to connect to Cobbler engine during
 provisioning phase.
 
 Collecting Identities
-+++++++++++++++++++++
+---------------------
 
 After the nodes boot to bootstrap mode, you need to collect their MCollective 
 identities. You can do this in two ways:
@@ -96,7 +99,7 @@ identities. You can do this in two ways:
   http://<master_ip>:8000/api/nodes/
 
 Configuring Nodes for Provisioning
-++++++++++++++++++++++++++++++++++
+----------------------------------
 
 In order to provision nodes you need to configure ``nodes`` section of YAML 
 file for each node.
@@ -328,10 +331,12 @@ orchestrator and point it to corresponding YAML file:
 Wait for command to finish. Now you can start configuring OpenStack cluster parameters.
 
 Configuring Nodes for Deployment
-++++++++++++++++++++++++++++++++
+================================
+
+.. contents:: :local:
 
 Node Configuration
-~~~~~~~~~~~~~~~~~~
+------------------
 
 In order to deploy OpenStack cluster, you need to populate each node's ``nodes`` 
 section of the file with data related to deployment.
@@ -384,7 +389,7 @@ section of the file with data related to deployment.
     uid: 1  
 
 General Parameters
-~~~~~~~~~~~~~~~~~~
+------------------
 
 Once nodes are populated with role and networking information, 
 it is time to set some general parameters for deployment.
@@ -473,14 +478,14 @@ it is time to set some general parameters for deployment.
     - pool.ntp.org
 
 Configure Deployment Scenario
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------------
 
 Choose deployment scenario you want to use. 
 Currently supported scenarios are:
 
-- HA Compact (:download:`Sample YAML file </_static/compact.yaml>`)
-- HA Full (:download:`Sample YAML file </_static/full.yaml>`)
-- Non-HA Multinode Simple (:download:`Sample YAML file </_static/simple.yaml>`)
+- HA Compact
+- HA Full
+- Non-HA Multinode Simple
 
 .. code-block:: yaml
 
@@ -491,7 +496,7 @@ Currently supported scenarios are:
     deployment_mode: ha
 
 Enabling Nova Network
-~~~~~~~~~~~~~~~~~~~~~
+---------------------
 
 If you want to use Nova Network as networking engine for your
 OpenStack cloud, you need to set `quantum` parameter to *false* in 
@@ -522,7 +527,7 @@ You need also to configure some nova-network related parameters:
       num_networks: <Integer>  
 
 Enabling Quantum
-~~~~~~~~~~~~~~~~
+----------------
 
 In order to deploy OpenStack with Quantum you need to enable quantum in your YAML file
 
@@ -554,7 +559,7 @@ You need also to configure some nova-network related parameters:
       metadata_proxy_shared_secret: quantum
 
 Enabling Cinder
-~~~~~~~~~~~~~~~
+---------------
 
 Our example uses Cinder, and with some very specific variations from the default. 
 Specifically, as we said before, while the Cinder scheduler will continue to 
@@ -572,7 +577,7 @@ run on the controllers, the actual storage can be specified by setting
     - controller
 
 Configuring Syslog Parameters
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------------
 
 To configure syslog servers to use, specify several parameters:
 
@@ -591,7 +596,7 @@ To configure syslog servers to use, specify several parameters:
     syslog_server: ''
 
 Setting Verbosity
-~~~~~~~~~~~~~~~~~ 
+----------------- 
 
 You also have the option to determine how much information OpenStack provides 
 when performing configuration:
@@ -604,7 +609,7 @@ when performing configuration:
     debug: false
 
 Enabling Horizon HTTPS/SSL mode
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------
 
 Using the ``horizon_use_ssl`` variable, you have the option to decide whether 
 the OpenStack dashboard (Horizon) uses HTTP or HTTPS:
@@ -655,7 +660,7 @@ This variable accepts the following values:
   Then reload the puppetmaster service for these changes to take effect.
 
 Dealing With Multicast Issues
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------------
 
 Fuel uses Corosync and Pacemaker cluster engines for HA scenarios, thus requiring 
 consistent multicast networking. Sometimes it is not possible to configure 
@@ -665,11 +670,11 @@ unicast addressing by setting ``use_unicast_corosync`` variable to ``true``.
 .. code-block:: yaml
 
   # == use_unicast_corosync
-  # which communaction protocol to use for corosync
+  # which communication protocol to use for corosync
   use_unicast_corosync: false
 
 Finally Triggering the Deployment
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+=================================
 
 After YAML is updated with all the required parameters you can finally trigger deployment by issuing
 deploy command to Astute orchestrator.

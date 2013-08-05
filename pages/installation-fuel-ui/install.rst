@@ -58,7 +58,9 @@ provide a set of scripts that create and configure all of the required VMs for
 you, including the Master node and Slave nodes for OpenStack itself. It's a very 
 simple, single-click installation.  
 
-.. note:: These scripts are not supported on Windows, but you can still test on 
+.. note:: 
+
+  These scripts are not supported on Windows, but you can still test on 
   VirtualBox by creating the VMs by yourself. See :ref:`Install_Manual` for more 
   details.
 
@@ -100,11 +102,6 @@ folders:
   OpenStack and boot them via PXE from the Master Node.
   Finally, the script will give you the link to access the Web-based UI for the 
   Master Node so you can start installation of an OpenStack cluster.
-
-Here is the example configuration file, with the values that you can adjust:
-
-.. literalinclude:: /_static/config.sh
-   :language: bash
 
 .. _Install_Manual:
 
@@ -161,10 +158,12 @@ Next, create Slave nodes where OpenStack needs to be installed.
 2. Set priority for the network boot:
 
 .. image:: /_images/vbox-image1.jpg
+    :width: 600px
 
 3. Configure the network adapter on each VM:
 
 .. image:: /_images/vbox-image2.jpg
+    :width: 600px
 
 Changing network parameters before the installation
 ---------------------------------------------------
@@ -184,7 +183,7 @@ When you're finished making changes, press the <ENTER> key and wait for the
 installation to complete.
 
 Changing network parameters after installation
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. warning::
 

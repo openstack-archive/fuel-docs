@@ -31,6 +31,7 @@ interface is used to give network access to virtual machines, while **eth0**
 interface is the management network interface.
 
 .. image:: /_images/flatdhcpmanager-mh_scheme.jpg
+    :width: 600px
 
 ..
  .. uml::
@@ -93,6 +94,7 @@ FlatDHCPManager (single-interface scheme)
 
 
 .. image:: /_images/flatdhcpmanager-mh_scheme.jpg
+    :width: 600px
 
 ..
  .. uml::
@@ -155,6 +157,7 @@ VMs of other projects. Switch ports must be configured as tagged (trunk)
 ports to allow this scheme to work.
 
 .. image:: /_images/flatdhcpmanager-mh_scheme.jpg
+    :width: 600px
 
 ..
   .. uml::
@@ -222,6 +225,7 @@ Once you choose a networking mode (FlatDHCP/VLAN), you must configure equipment
 accordingly. The diagram below shows an example configuration.
 
 .. image:: /_images/physical-network.jpg
+    :width: 600px
 
 Fuel operates with following logical networks:
 
@@ -255,6 +259,7 @@ line of the node icon. In the detailed information window, click the "Network
 Configuration" button to open the physical interfaces configuration screen.
 
 .. image:: /_images/network-settings.jpg
+    :width: 600px
 
 On this screen you can drag-and-drop logical networks to physical interfaces 
 according to your network setup. 
@@ -300,11 +305,9 @@ these networks live in VLANs over the one or multiple physical interfaces on a
 node. This means that the switch should pass tagged traffic, and untagging is done
 on the Linux hosts. 
 
-.. note:: 
-
-    For the sake of simplicity, all the VLANs specified on the networks tab of 
-    the Fuel UI should be configured on switch ports, pointing to Slave nodes, 
-    as tagged.
+.. note:: For the sake of simplicity, all the VLANs specified on the networks tab of 
+  the Fuel UI should be configured on switch ports, pointing to Slave nodes, 
+  as tagged.
 
 Of course, it is possible to specify as tagged only certain ports for a certain 
 nodes. However, in the current version, all existing networks are automatically 

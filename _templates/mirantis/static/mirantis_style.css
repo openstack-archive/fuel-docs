@@ -484,3 +484,8 @@ a.active {
 }
 
 /* MIRANTIS CSS*/
+
+tt.literal
+{
+    border: none;
+}

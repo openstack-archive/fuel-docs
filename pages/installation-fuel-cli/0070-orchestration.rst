@@ -1,7 +1,7 @@
 .. _orchestration:
 
 Deploying via Orchestration
----------------------------
+===========================
 
 .. contents:: :local:
 
@@ -48,7 +48,7 @@ it will return you to the command prompt.  In the meantime, you can see what's
 going on by watching the logs on each individual machine.
 
 Installing OpenStack using Puppet directly
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------------------------
 
 If, for some reason, you choose not to use orchestration (one common example is 
 adding a single node to an existing (non-HA) cluster) you have the option to 
@@ -87,7 +87,7 @@ controllers, and again grep for error messages. When you see no errors on any
 of your nodes, your OpenStack cluster is ready to go.
 
 Examples of OpenStack installation sequences
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+--------------------------------------------
 
 When running Puppet manually, the exact sequence depends on the configuration 
 goals you're trying to achieve. In most cases, you'll need to run Puppet more 
@@ -100,6 +100,7 @@ to the OpenStack configuration, stores and applies necessary changes.
   previous one is finished.
    
 **Example 1: Full OpenStack deployment with standalone Storage nodes**
+  (:download:`Download example YAML file </_static/full.yaml>`)
 
 * Create necessary volumes on Storage nodes as described in :ref:`create-the-XFS-partition`.
 * Sequentially run a deployment pass on every SwiftProxy node 
@@ -117,6 +118,7 @@ to the OpenStack configuration, stores and applies necessary changes.
 
 **Example 2: Compact OpenStack deployment with Storage and swift-proxy 
 combined with nova-controller on the same nodes**
+  (:download:`Download example YAML file </_static/compact.yaml>`)
 
 * Create the necessary volumes on Controller nodes as described 
   in :ref:`create-the-XFS-partition`
@@ -132,7 +134,8 @@ combined with nova-controller on the same nodes**
   `fuel-compute-xx`) - unlike the Controllers these nodes may be deployed in parallel.
 
 **Example 3:** **Simple OpenStack non-HA installation**
-
+  (:download:`Download example YAML file </_static/simple.yaml>`)
+  
 * Sequentially run a deployment pass on the Controller (`fuel-controller-01`). 
   No errors should appear during this deployment pass.
 * Run a deployment pass on every Compute node (`fuel-compute-01` ... 

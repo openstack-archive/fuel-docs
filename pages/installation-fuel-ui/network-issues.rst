@@ -1,8 +1,6 @@
 Network Issues
 ==============
 
-.. contents:: :local:
-
 Fuel has a built-in capability to run network check before or after OpenStack 
 deployment. Currently it can check connectivity between nodes within 
 configured VLANs on configured server interfaces. Image below shows sample 
