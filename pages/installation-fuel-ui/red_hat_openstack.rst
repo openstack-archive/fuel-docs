@@ -33,10 +33,8 @@ Optional requirements
 Deployment types
 ^^^^^^^^^^^^^^^^
 
-* `Red Hat Subscription Management 
-<https://access.redhat.com/site/articles/143253>`_ (default) 
-* `Red Hat RHN 
-Satellite <http://www.redhat.com/products/enterprise-linux/rhn-satellite/>`_
+* `Red Hat Subscription Management <https://access.redhat.com/site/articles/143253>`_ (default) 
+* `Red Hat RHN Satellite <http://www.redhat.com/products/enterprise-linux/rhn-satellite/>`_
 
 Red Hat Subscription Management overview
 ----------------------------------------

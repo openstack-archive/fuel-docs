@@ -1,0 +1,14 @@
+HowTo: Enable/Disable Galera Cluster autorebuild mechanism
+----------------------------------------------------------
+
+By defaults Fuel reassembles Galera cluster automatically without need for any 
+user interaction.
+
+To prevent `autorebuild feature` you shall do::
+
+  crm_attribute -t crm_config --name mysqlprimaryinit --delete
+
+To re-enable `autorebuild feature` you should do::
+  
+  crm_attribute -t crm_config --name mysqlprimaryinit --update done
+

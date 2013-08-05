@@ -14,7 +14,6 @@ you can read these two resources:
 * `Openstack Networking for Scalability and Multi-tenancy with VlanManager 
   <http://www.mirantis.com/blog/openstack-networking-vlanmanager/>`_
 
-
 FlatDHCPManager (multi-host scheme)
 ------------------------------------
 
@@ -31,6 +30,10 @@ The simplest case here is as shown on the following diagram. Here the **eth1**
 interface is used to give network access to virtual machines, while **eth0** 
 interface is the management network interface.
 
+.. image:: /_images/flatdhcpmanager-mh_scheme.jpg
+    :width: 600px
+
+..
  .. uml::
     node "Compute1" {
         [eth1\nVM] as compute1_eth1
@@ -88,6 +91,12 @@ VLAN interface (i.e. **eth0.102**).
 FlatDHCPManager (single-interface scheme)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+
+
+.. image:: /_images/flatdhcpmanager-mh_scheme.jpg
+    :width: 600px
+
+..
  .. uml::
     node "Compute1 Node" {
         [eth0] as compute1_eth0
@@ -147,7 +156,11 @@ given project to communicate with each other and not to see any traffic from
 VMs of other projects. Switch ports must be configured as tagged (trunk) 
 ports to allow this scheme to work.
 
-.. uml::
+.. image:: /_images/flatdhcpmanager-mh_scheme.jpg
+    :width: 600px
+
+..
+  .. uml::
     node "Compute1 Node" {
         [eth0] as compute1_eth0
         [eth0.101\nManagement] as compute1_eth0_101
@@ -211,22 +224,31 @@ Configuring the network
 Once you choose a networking mode (FlatDHCP/VLAN), you must configure equipment 
 accordingly. The diagram below shows an example configuration.
 
-.. image:: /_images/physical_sample.jpg
-    :width: 100%
+.. image:: /_images/physical-network.jpg
+    :width: 600px
 
 Fuel operates with following logical networks:
 
-* **Fuel** network is used for internal Fuel communications only and PXE
-  booting (untagged on the scheme);
-* **Public** network is used to get access from virtual machines to outside, 
-  Internet or office network (vlan 101 on the scheme);
-* **Floating** network is used to get access to virtual machines from outside 
-  (shared L2-interface with **Public** network; in this case it's vlan 101);
-* **Management** network is used for internal OpenStack communications 
-  (vlan 102 on the scheme);
-* **Storage** network is used for storage traffic (vlan 103 on the scheme);
-* **Fixed** - one (for flat mode) or more (for vlan mode) virtual machines 
-  network(s) (vlan 104 on the scheme).
+**Fuel** network 
+  Used for internal Fuel communications only and PXE booting (untagged on the scheme);
+
+**Public** network 
+  Is used to get access from virtual machines to outside, Internet or office 
+  network (vlan 101 on the scheme);
+
+**Floating** network 
+  Used to get access to virtual machines from outside (shared L2-interface with 
+  **Public** network; in this case it's vlan 101);
+
+**Management** network 
+  Is used for internal OpenStack communications (vlan 102 on the scheme);
+  
+**Storage** network 
+  Is used for storage traffic (vlan 103 on the scheme);
+
+**Fixed** network
+  One (for flat mode) or more (for vlan mode) virtual machines 
+  networks (vlan 104 on the scheme).
 
 Mapping logical networks to physical interfaces on servers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -236,7 +258,8 @@ types of traffic. When a node is added to the environment, click at the bottom
 line of the node icon. In the detailed information window, click the "Network 
 Configuration" button to open the physical interfaces configuration screen.
 
-.. image:: /_images/doc_network-settings-help.jpg
+.. image:: /_images/network-settings.jpg
+    :width: 600px
 
 On this screen you can drag-and-drop logical networks to physical interfaces 
 according to your network setup. 
@@ -257,11 +280,10 @@ is different for different vendors, so we will try to provide
 vendor-agnostic information on how traffic should flow and leave the 
 vendor-specific details to you. We will provide an example for a Cisco switch.
 
-as the "Admin" network, or "Fuel".
 By default, the Fuel Master node uses the ``eth0`` interface to serve PXE 
 First of all, you should configure access ports to allow non-tagged PXE booting 
 connections from all slave nodes to the Fuel node. We refer this network 
-as the "Admin" network, or "Fuel" network.
+as the "Fuel" network.
 By default, the Fuel Master node uses the ``eth0`` interface to serve PXE 
 requests on this network.
 So if that's left unchanged, you have to set the switch port for eth0 of Fuel 
@@ -277,17 +299,15 @@ You also need to configure each of the switch's ports connected to nodes as an
 "STP Edge port" (or a "spanning-tree port fast trunk", according to Cisco 
 terminology). If you don't do that, DHCP timeout issues may occur.
 
-As long as the "Admin" network is configured, Fuel can operate.
+As long as the "Fuel" network is configured, Fuel can operate.
 Other networks are required for OpenStack environments, and currently all of 
 these networks live in VLANs over the one or multiple physical interfaces on a 
 node. This means that the switch should pass tagged traffic, and untagging is done
 on the Linux hosts. 
 
-.. note:: 
-
-    For the sake of simplicity, all the VLANs specified on the networks tab of 
-    the Fuel UI should be configured on switch ports, pointing to Slave nodes, 
-    as tagged.
+.. note:: For the sake of simplicity, all the VLANs specified on the networks tab of 
+  the Fuel UI should be configured on switch ports, pointing to Slave nodes, 
+  as tagged.
 
 Of course, it is possible to specify as tagged only certain ports for a certain 
 nodes. However, in the current version, all existing networks are automatically 

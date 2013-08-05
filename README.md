@@ -28,15 +28,15 @@ package, which is commonly an optional install on most distributions.
 
 To get started, you need to install Sphinx and necessary extensions:
 
-      sudo easy_install -U Sphinx
-      sudo easy_install -U cloud_sptheme
-      sudo easy_install -U sphinxcontrib-fancybox
-      sudo easy_install -U rst2pdf
-      sudo easy_install -U sphinxcontrib-blockdiag
-      sudo easy_install -U sphinxcontrib-actdiag
-      sudo easy_install -U sphinxcontrib-seqdiag
-      sudo easy_install -U sphinxcontrib-nwdiag
-      sudo easy_install -U sphinxcontrib-plantuml
+    sudo easy_install -U Sphinx
+    sudo easy_install -U cloud_sptheme
+    sudo easy_install -U sphinxcontrib-fancybox
+    sudo easy_install -U rst2pdf
+    sudo easy_install -U sphinxcontrib-blockdiag
+    sudo easy_install -U sphinxcontrib-actdiag
+    sudo easy_install -U sphinxcontrib-seqdiag
+    sudo easy_install -U sphinxcontrib-nwdiag
+    sudo easy_install -U sphinxcontrib-plantuml
 
 In addition to these eggs you will need to install 
 [PlantUML](http://plantuml.sourceforge.net/ "PlantUML") and 
@@ -44,9 +44,9 @@ In addition to these eggs you will need to install
 
 To install PlantUML you run this wget process:
 
-	  sudo wget 
-	  http://sourceforge.net/projects/plantuml/files/plantuml.jar/download 
-	  /sbin/plantuml.jar
+    sudo wget \
+    http://sourceforge.net/projects/plantuml/files/plantuml.jar/download \
+    -O /sbin/plantuml.jar
 
 To edit SVG images we use [Inkscape](http://inkscape.org/ "Inkscape") but 
 you may use any other SVG-capable tool you like. We're not picky.
