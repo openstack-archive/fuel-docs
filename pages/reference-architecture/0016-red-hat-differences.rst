@@ -11,13 +11,13 @@ a highly available OpenStack cluster.
 
 Below is the list of modifications:
 
-..topic:: Database backend:
+.. topic:: Database backend:
 
     MySQL with Galera has been replaced with native replication in a 
     Master/Slave configuration. MySQL master is elected via Corosync
     and master and slave status is managed via Pacemaker.
 
-..topic:: Messaging backend:
+.. topic:: Messaging backend:
 
     RabbitMQ has been replaced with QPID. Qpid is an AMQP provider that Red
     Hat offers, but it cannot be clustered in Red Hat's offering. As a result,
@@ -25,7 +25,7 @@ Below is the list of modifications:
     offers HA for messaging backend via virtual IP management provided by
     Corosync.
 
-..topic:: Nova networking:
+.. topic:: Nova networking:
 
     Quantum is not available for Red Hat OpenStack because the Red Hat kernel
     lacks GRE tunneling support for OpenVSwitch. This issue should be
