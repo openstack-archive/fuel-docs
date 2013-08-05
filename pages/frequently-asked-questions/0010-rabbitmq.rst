@@ -1,5 +1,5 @@
 RabbitMQ Cluster Restart Issues Following A Systemwide Failure
-==============================================================
+--------------------------------------------------------------
 
 **Issue:** As a rule of thumb, all RabbitMQ nodes must not be shut down 
 simultaneously. RabbitMQ requires that after a full shutdown of the cluster, 
