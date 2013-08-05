@@ -42,9 +42,7 @@ of compromises as to the number and types of services that you can
 deploy. It is, however, extremely useful if you just want to see how
 OpenStack works from a user's point of view.
 
-.. fancybox:: /_images/deployment-simple-red-hat_svg.png
-    :width: 400px
-    :height: 200px
+.. image:: /_images/deployment-simple_svg.jpg
 
 More commonly, your OpenStack installation will consist of multiple
 servers. Exactly how many is up to you, of course, but the main idea
@@ -65,12 +63,15 @@ single points of failure. That's not to say, however, that you can't
 reduce hardware requirements by combining your storage, network, and controller
 nodes:
 
-.. fancybox:: /_images/deployment-ha-compact-red-hat_svg.png
-    :width: 400px
-    :height: 250px
+.. image:: /_images/deployment-ha-compact-red-hat_svg.jpg
 
-OpenStack services are interconnected by RESTful HTTP-based APIs and AMQP-based RPC messages. So redundancy for stateless OpenStack API services is implemented through the combination of Virtual IP (VIP) management using Corosync and load balancing using HAProxy. Stateful OpenStack components, such as the state database and messaging server, rely on their respective active/passive modes for high availability. For example, MySQL uses built-in replication capabilities (plus the help of Pacemaker), while QPID is offered in three independent brokers with virtual IP management to provide high availability.
+OpenStack services are interconnected by RESTful HTTP-based APIs and AMQP-based 
+RPC messages. So redundancy for stateless OpenStack API services is implemented 
+through the combination of Virtual IP (VIP) management using Corosync and load 
+balancing using HAProxy. Stateful OpenStack components, such as the state database 
+and messaging server, rely on their respective active/passive modes for high 
+availability. For example, MySQL uses built-in replication capabilities (plus 
+the help of Pacemaker), while QPID is offered in three independent brokers with 
+virtual IP management to provide high availability.
 
-.. fancybox:: /_images/ha-overview-red-hat_svg.png
-    :width: 400px
-    :height: 250px
+.. image:: /_images/ha-overview-red-hat_svg.jpg
