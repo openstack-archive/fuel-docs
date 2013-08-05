@@ -14,40 +14,40 @@ will assign IP addresses to the nodes, perform PXE boot and initial
 configuration, and provision of OpenStack nodes according to their roles in 
 the cluster.
 
-Preparing Bootable Media
-------------------------
+.. _Install_Bare-Metal:
 
+On Bare-Metal Environment
+-------------------------
 
 To install Fuel on bare-metal hardware, you need to burn the provided ISO to 
 a CD/DVD or create a bootable USB stick. You would then begin the 
 installation process by booting from that media, very much like any other OS.
 
 Burning an ISO to optical media is a deeply supported function on all OSes. 
-For Linux there are several interfaces avaiable such as Brasero or Xfburn, 
+For Linux there are several interfaces available such as `Brasero` or `Xfburn`, 
 two of the more commonly pre-installed desktop applications. There are also 
 a number for Windows such as `ImgBurn <http://www.imgburn.com/>`_ and the 
 open source `InfraRecorder <http://infrarecorder.org/>`_.
 
-Burning an ISO in Mac OS X is deceptively simple. Open Disk Utility from 
-Applications > Utilities, drag the ISO into the disk list on the left side 
+Burning an ISO in Mac OS X is deceptively simple. Open `Disk Utility` from 
+`Applications > Utilities`, drag the ISO into the disk list on the left side 
 of the window and select it, insert blank media with enough room, and click 
-Burn. If you prefer a utility, check out the open source `Burn 
+`Burn`. If you prefer a utility, check out the open source `Burn 
 <http://burn-osx.sourceforge.net/Pages/English/home.html>`_.
 
-Installing the ISO to a bootable USB stick, however, is an entirely different matter. Canonical suggests PenDriveLinux which is a GUI tool for Windows
+Installing the ISO to a bootable USB stick, however, is an entirely different 
+matter. Canonical suggests `PenDriveLinux` which is a GUI tool for Windows.
 
 On Windows, you can write the installation image with a number of different 
 utilities. The following list links to some of the more popular ones and they are 
 all available at no cost: 
 
-`Win32 Disk Imager 
-<http://sourceforge.net/projects/win32diskimager/>`_.
-
-`ISOtoUSB <http://www.isotousb.com/>`_.
+- `Win32 Disk Imager <http://sourceforge.net/projects/win32diskimager/>`_.
+- `ISOtoUSB <http://www.isotousb.com/>`_.
 
 After the installation is complete, you will need to allocate bare-metal 
 nodes for your OpenStack cluster, put them on the same L2 network as the 
-admin node, and PXE boot. The UI will discover them and make them available 
+Master node, and PXE boot. The UI will discover them and make them available 
 for installing OpenStack.
 
 On VirtualBox
@@ -55,12 +55,12 @@ On VirtualBox
 
 If you are going to evaluate Fuel on VirtualBox, you should know that we 
 provide a set of scripts that create and configure all of the required VMs for 
-you, including the Master Node and Slave Nodes for OpenStack itself. It's a very 
+you, including the Master node and Slave nodes for OpenStack itself. It's a very 
 simple, single-click installation.  
 
 .. note:: These scripts are not supported on Windows, but you can still test on 
-   VirtualBox by creating the VMs by yourself. See :ref:`Manual_Mode` for more 
-   details.
+  VirtualBox by creating the VMs by yourself. See :ref:`Install_Manual` for more 
+  details.
 
 The requirements for running Fuel on VirtualBox are:
 
@@ -76,7 +76,7 @@ can be downloaded from `<http://www.virtualbox.org/>`_.
   to handle 5 VMs for HA OpenStack installation (1 Master node, 3 Controller 
   nodes, 1 Compute node)
 
-.. Install_Automatic:
+.. _Install_Automatic:
 
 Automatic Mode
 ^^^^^^^^^^^^^^
@@ -106,7 +106,7 @@ Here is the example configuration file, with the values that you can adjust:
 .. literalinclude:: /_static/config.sh
    :language: bash
 
-.. _Manual_Mode:
+.. _Install_Manual:
 
 Manual mode
 ^^^^^^^^^^^
@@ -169,7 +169,7 @@ Next, create Slave nodes where OpenStack needs to be installed.
 Changing network parameters before the installation
 ---------------------------------------------------
 
-You can change the network settings for the admin (PXE booting) network, which 
+You can change the network settings for the Fuel (PXE booting) network, which 
 is ``10.20.0.2/24 gw 10.20.0.1`` by default.
 
 In order to do so, press the <TAB> key on the very first installation screen 
