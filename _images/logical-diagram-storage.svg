@@ -14,7 +14,7 @@
    inkscape:version="0.48.4 r9939"
    width="100%"
    height="100%"
-   sodipodi:docname="050-logical-diagram-storage.svg"
+   sodipodi:docname="logical-diagram-storage.svg"
    style="fill:none;stroke:none">
   <metadata
      id="metadata157">
@@ -38,18 +38,18 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1920"
-     inkscape:window-height="1061"
+     inkscape:window-width="1366"
+     inkscape:window-height="749"
      id="namedview153"
      showgrid="false"
      inkscape:snap-object-midpoints="true"
      inkscape:zoom="0.85798046"
      inkscape:cx="444.85891"
-     inkscape:cy="475.70368"
-     inkscape:window-x="1362"
+     inkscape:cy="335.84035"
+     inkscape:window-x="-4"
      inkscape:window-y="-4"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg2" />
+     inkscape:current-layer="g7" />
   <clipPath
      id="p.0">
     <path
@@ -126,7 +126,7 @@
          x="189.72931"
          style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
          xml:space="preserve"><tspan
-           style="font-size:40px;font-weight:normal;-inkscape-font-specification:Sans"
+           style="font-size:40px;font-weight:normal;-inkscape-font-specification:PT Sans;font-family:PT Sans;font-style:normal;font-stretch:normal;font-variant:normal"
            y="256.01593"
            x="189.72931"
            id="tspan3935"
@@ -136,9 +136,9 @@
          id="text3937"
          y="254.02962"
          x="73.931664"
-         style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans"
          xml:space="preserve"><tspan
-           style="font-size:32px;font-weight:normal;-inkscape-font-specification:Sans"
+           style="font-size:32px;font-weight:normal;-inkscape-font-specification:PT Sans;font-family:PT Sans"
            y="254.02962"
            x="73.931664"
            id="tspan3939"
@@ -148,9 +148,9 @@
          id="text3937-4"
          y="252.10518"
          x="306.31552"
-         style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans"
          xml:space="preserve"><tspan
-           style="font-size:32px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Sans;-inkscape-font-specification:Sans"
+           style="font-size:32px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:PT Sans;-inkscape-font-specification:PT Sans"
            y="252.10518"
            x="306.31552"
            id="tspan3939-0"
@@ -158,7 +158,7 @@
     </g>
     <text
        xml:space="preserve"
-       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       style="font-size:16px;font-style:normal;font-weight:bold;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans Bold"
        x="190.97246"
        y="123.95339"
        id="text3975"
@@ -167,7 +167,7 @@
          id="tspan3977"
          x="190.97246"
          y="123.95339"
-         style="font-size:40px">Controller Node</tspan></text>
+         style="font-size:35px;-inkscape-font-specification:PT Sans Bold;font-family:PT Sans;font-weight:bold">Controller Node</tspan></text>
     <rect
        style="fill:#f2f2f2;fill-opacity:1;stroke:#000000;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
        id="rect3134-9"
@@ -178,7 +178,7 @@
        ry="37.958794" />
     <text
        xml:space="preserve"
-       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       style="font-size:16px;font-style:normal;font-weight:bold;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans Bold"
        x="565.51056"
        y="69.381065"
        id="text3975-4"
@@ -187,7 +187,7 @@
          id="tspan3977-8"
          x="565.51056"
          y="69.381065"
-         style="font-size:40px">Swift Nodes</tspan></text>
+         style="font-size:36px;-inkscape-font-specification:PT Sans Bold;font-family:PT Sans;font-weight:bold">Swift Nodes</tspan></text>
     <rect
        ry="17.772001"
        y="102.74622"
@@ -198,7 +198,7 @@
        style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none" />
     <text
        xml:space="preserve"
-       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:pt Sans;-inkscape-font-specification:pt Sans"
        x="565.22668"
        y="147.05086"
        id="text4021"
@@ -207,7 +207,7 @@
          id="tspan4023"
          x="565.22668"
          y="147.05086"
-         style="font-size:40px">swift</tspan></text>
+         style="font-size:40px;-inkscape-font-specification:pt Sans;font-family:pt Sans">swift</tspan></text>
     <path
        style="fill:none;stroke:#ff6600;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:24, 3;stroke-dashoffset:0"
        d="m 677.1716,128.65538 c 110.87082,-2.76813 47.64094,20.83381 47.64094,20.83381"
@@ -232,7 +232,7 @@
        ry="37.958794" />
     <text
        xml:space="preserve"
-       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       style="font-size:16px;font-style:normal;font-weight:bold;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans Bold"
        x="565.66711"
        y="303.82129"
        id="text3975-4-5"
@@ -241,7 +241,7 @@
          id="tspan3977-8-1"
          x="565.66711"
          y="303.82129"
-         style="font-size:40px">Swift Proxies</tspan></text>
+         style="font-size:36px;-inkscape-font-specification:PT Sans Bold;font-family:PT Sans;font-weight:bold">Swift Proxies</tspan></text>
     <rect
        ry="17.772001"
        y="337.18646"
@@ -252,7 +252,7 @@
        style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none" />
     <text
        xml:space="preserve"
-       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:pt Sans;-inkscape-font-specification:pt Sans"
        x="565.38324"
        y="381.49109"
        id="text4021-1"
@@ -261,7 +261,7 @@
          id="tspan4023-1"
          x="565.38324"
          y="381.49109"
-         style="font-size:40px">swift-proxy</tspan></text>
+         style="font-size:40px;-inkscape-font-specification:pt Sans;font-family:pt Sans">swift-proxy</tspan></text>
     <path
        style="fill:none;stroke:#de8787;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:24, 3;stroke-dashoffset:0"
        d="M 328.67881,240.10896 453.39028,363.07214"

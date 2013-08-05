@@ -34,7 +34,7 @@
      inkscape:pageshadow="2"
      inkscape:zoom="0.7"
      inkscape:cx="748.9681"
-     inkscape:cy="577.55364"
+     inkscape:cy="634.6965"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -106,9 +106,9 @@
          id="text3933"
          y="256.01593"
          x="189.72931"
-         style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans;font-stretch:normal;font-variant:normal"
          xml:space="preserve"><tspan
-           style="font-size:40px;font-weight:normal;-inkscape-font-specification:Sans"
+           style="font-size:40px;font-weight:normal;-inkscape-font-specification:PT Sans;font-family:PT Sans;font-style:normal;font-stretch:normal;font-variant:normal"
            y="256.01593"
            x="189.72931"
            id="tspan3935"
@@ -118,9 +118,9 @@
          id="text3937"
          y="254.02962"
          x="73.931664"
-         style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans;font-stretch:normal;font-variant:normal"
          xml:space="preserve"><tspan
-           style="font-size:32px;font-weight:normal;-inkscape-font-specification:Sans"
+           style="font-size:32px;font-weight:normal;-inkscape-font-specification:PT Sans;font-family:PT Sans;font-style:normal;font-stretch:normal;font-variant:normal"
            y="254.02962"
            x="73.931664"
            id="tspan3939"
@@ -130,9 +130,9 @@
          id="text3937-4"
          y="252.10518"
          x="306.31552"
-         style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans;font-stretch:normal;font-variant:normal"
          xml:space="preserve"><tspan
-           style="font-size:32px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Sans;-inkscape-font-specification:Sans"
+           style="font-size:32px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:PT Sans;-inkscape-font-specification:PT Sans"
            y="252.10518"
            x="306.31552"
            id="tspan3939-0"
@@ -140,7 +140,7 @@
     </g>
     <text
        xml:space="preserve"
-       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       style="font-size:32px;font-style:normal;font-weight:bold;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans Bold;font-stretch:normal;font-variant:normal"
        x="248.99905"
        y="129.80286"
        id="text3975"
@@ -149,7 +149,7 @@
          id="tspan3977"
          x="248.99905"
          y="129.80286"
-         style="font-size:36px">Controller Node 1</tspan></text>
+         style="font-size:32px;-inkscape-font-specification:PT Sans Bold;font-family:PT Sans;font-weight:bold;font-style:normal;font-stretch:normal;font-variant:normal">Controller Node 1</tspan></text>
     <rect
        style="fill:#e9c6af;fill-opacity:1;stroke:#ffb380;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
        id="rect3720"
@@ -168,7 +168,7 @@
        ry="18.627411" />
     <text
        xml:space="preserve"
-       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans;font-stretch:normal;font-variant:normal"
        x="247.07144"
        y="179.43362"
        id="text4497"
@@ -177,7 +177,7 @@
          id="tspan4499"
          x="247.07144"
          y="179.43362"
-         style="font-size:28px">pacemaker</tspan></text>
+         style="font-size:28px;-inkscape-font-specification:PT Sans;font-family:PT Sans;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal">pacemaker</tspan></text>
     <rect
        style="fill:#ffffff;fill-opacity:1;stroke:#999999;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
        id="rect4501"
@@ -188,7 +188,7 @@
        ry="8.3928566" />
     <text
        xml:space="preserve"
-       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans;font-stretch:normal;font-variant:normal"
        x="246.07141"
        y="227.79074"
        id="text4503"
@@ -197,11 +197,11 @@
          id="tspan4505"
          x="246.07141"
          y="227.79074"
-         style="font-size:28px">quantum agents</tspan><tspan
+         style="font-size:28px;-inkscape-font-specification:PT Sans;font-family:PT Sans;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal">quantum agents</tspan><tspan
          sodipodi:role="line"
          x="246.07141"
          y="262.79074"
-         style="font-size:28px"
+         style="font-size:28px;-inkscape-font-specification:PT Sans;font-family:PT Sans;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal"
          id="tspan4751">(active)</tspan></text>
     <rect
        style="fill:#ffffff;fill-opacity:1;stroke:#999999;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
@@ -213,7 +213,7 @@
        ry="8.3928566" />
     <text
        xml:space="preserve"
-       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans;font-stretch:normal;font-variant:normal"
        x="245.85712"
        y="320.755"
        id="text4503-7"
@@ -222,7 +222,7 @@
          id="tspan4505-4"
          x="245.85712"
          y="320.755"
-         style="font-size:28px">mysql-wsrep</tspan></text>
+         style="font-size:28px;-inkscape-font-specification:PT Sans;font-family:PT Sans;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal">mysql-wsrep</tspan></text>
     <rect
        style="fill:#ffffff;fill-opacity:1;stroke:#999999;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
        id="rect4501-1-9"
@@ -233,7 +233,7 @@
        ry="8.3928566" />
     <text
        xml:space="preserve"
-       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans;font-stretch:normal;font-variant:normal"
        x="245.18401"
        y="512.55219"
        id="text4503-7-4"
@@ -242,7 +242,7 @@
          id="tspan4505-4-8"
          x="245.18401"
          y="512.55219"
-         style="font-size:28px">horizon</tspan></text>
+         style="font-size:28px;-inkscape-font-specification:PT Sans;font-family:PT Sans;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal">horizon</tspan></text>
     <rect
        style="fill:#ffffff;fill-opacity:1;stroke:#999999;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
        id="rect4501-1-5"
@@ -253,7 +253,7 @@
        ry="8.3928566" />
     <text
        xml:space="preserve"
-       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans;font-stretch:normal;font-variant:normal"
        x="245.40793"
        y="936.75513"
        id="text4503-7-5"
@@ -262,7 +262,7 @@
          id="tspan4505-4-1"
          x="245.40793"
          y="936.75513"
-         style="font-size:28px">cinder-api</tspan></text>
+         style="font-size:28px;-inkscape-font-specification:PT Sans;font-family:PT Sans;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal">cinder-api</tspan></text>
     <rect
        style="fill:#ffffff;fill-opacity:1;stroke:#999999;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
        id="rect4501-1-7"
@@ -273,7 +273,7 @@
        ry="8.3928566" />
     <text
        xml:space="preserve"
-       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans;font-stretch:normal;font-variant:normal"
        x="245.40793"
        y="876.75525"
        id="text4503-7-1"
@@ -282,7 +282,7 @@
          id="tspan4505-4-15"
          x="245.40793"
          y="876.75525"
-         style="font-size:28px">quantum-api</tspan></text>
+         style="font-size:28px;-inkscape-font-specification:PT Sans;font-family:PT Sans;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal">quantum-api</tspan></text>
     <rect
        style="fill:#ffffff;fill-opacity:1;stroke:#999999;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
        id="rect4501-1-2"
@@ -293,7 +293,7 @@
        ry="8.3928566" />
     <text
        xml:space="preserve"
-       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans;font-stretch:normal;font-variant:normal"
        x="245.40793"
        y="816.75525"
        id="text4503-7-7"
@@ -302,7 +302,7 @@
          id="tspan4505-4-6"
          x="245.40793"
          y="816.75525"
-         style="font-size:28px">keystone-api</tspan></text>
+         style="font-size:28px;-inkscape-font-specification:PT Sans;font-family:PT Sans;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal">keystone-api</tspan></text>
     <rect
        style="fill:#ffffff;fill-opacity:1;stroke:#999999;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
        id="rect4501-1-1"
@@ -313,7 +313,7 @@
        ry="8.3928566" />
     <text
        xml:space="preserve"
-       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans;font-stretch:normal;font-variant:normal"
        x="245.40793"
        y="754.75525"
        id="text4503-7-42"
@@ -322,7 +322,7 @@
          id="tspan4505-4-3"
          x="245.40793"
          y="754.75525"
-         style="font-size:28px">glance-api</tspan></text>
+         style="font-size:28px;-inkscape-font-specification:PT Sans;font-family:PT Sans;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal">glance-api</tspan></text>
     <rect
        style="fill:#ffffff;fill-opacity:1;stroke:#999999;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
        id="rect4501-1-22"
@@ -333,7 +333,7 @@
        ry="8.3928566" />
     <text
        xml:space="preserve"
-       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans;font-stretch:normal;font-variant:normal"
        x="245.40793"
        y="692.75525"
        id="text4503-7-16"
@@ -342,7 +342,7 @@
          id="tspan4505-4-85"
          x="245.40793"
          y="692.75525"
-         style="font-size:28px">nova-api</tspan></text>
+         style="font-size:28px;-inkscape-font-specification:PT Sans;font-family:PT Sans;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal">nova-api</tspan></text>
     <rect
        style="fill:#ffffff;fill-opacity:1;stroke:#999999;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
        id="rect4501-1-76"
@@ -353,7 +353,7 @@
        ry="8.3928566" />
     <text
        xml:space="preserve"
-       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans;font-stretch:normal;font-variant:normal"
        x="245.40793"
        y="632.75525"
        id="text4503-7-18"
@@ -362,7 +362,7 @@
          id="tspan4505-4-9"
          x="245.40793"
          y="632.75525"
-         style="font-size:28px">nova-scheduler</tspan></text>
+         style="font-size:28px;-inkscape-font-specification:PT Sans;font-family:PT Sans;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal">nova-scheduler</tspan></text>
     <rect
        style="fill:#ffffff;fill-opacity:1;stroke:#999999;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
        id="rect4501-1-27"
@@ -373,7 +373,7 @@
        ry="8.3928566" />
     <text
        xml:space="preserve"
-       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans;font-stretch:normal;font-variant:normal"
        x="245.40793"
        y="572.75525"
        id="text4503-7-9"
@@ -382,7 +382,7 @@
          id="tspan4505-4-5"
          x="245.40793"
          y="572.75525"
-         style="font-size:28px">glance-registry</tspan></text>
+         style="font-size:28px;-inkscape-font-specification:PT Sans;font-family:PT Sans;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal">glance-registry</tspan></text>
     <rect
        style="fill:#ffffff;fill-opacity:1;stroke:#999999;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
        id="rect4501-1-5-2"
@@ -393,7 +393,7 @@
        ry="8.3928566" />
     <text
        xml:space="preserve"
-       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans;font-stretch:normal;font-variant:normal"
        x="245.35712"
        y="998.64771"
        id="text4503-7-5-3"
@@ -402,7 +402,7 @@
          id="tspan4505-4-1-3"
          x="245.35712"
          y="998.64771"
-         style="font-size:28px">rabbitmq</tspan></text>
+         style="font-size:28px;-inkscape-font-specification:PT Sans;font-family:PT Sans;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal">rabbitmq</tspan></text>
     <path
        style="fill:none;stroke:#4d4d4d;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:36, 3;stroke-dashoffset:0"
        d="m 363.65237,505.86966 c 103.43913,-9.65095 84.85441,-39.21033 23.2335,-88.89343 55.45253,32.13564 150.5919,99.87426 -23.73858,147.98735"
@@ -480,9 +480,9 @@
          id="text3933-2"
          y="256.01593"
          x="189.72931"
-         style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans;font-stretch:normal;font-variant:normal"
          xml:space="preserve"><tspan
-           style="font-size:40px;font-weight:normal;-inkscape-font-specification:Sans"
+           style="font-size:40px;font-weight:normal;-inkscape-font-specification:PT Sans;font-family:PT Sans;font-style:normal;font-stretch:normal;font-variant:normal"
            y="256.01593"
            x="189.72931"
            id="tspan3935-7"
@@ -492,9 +492,9 @@
          id="text3937-7"
          y="254.02962"
          x="73.931664"
-         style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans;font-stretch:normal;font-variant:normal"
          xml:space="preserve"><tspan
-           style="font-size:32px;font-weight:normal;-inkscape-font-specification:Sans"
+           style="font-size:32px;font-weight:normal;-inkscape-font-specification:PT Sans;font-family:PT Sans;font-style:normal;font-stretch:normal;font-variant:normal"
            y="254.02962"
            x="73.931664"
            id="tspan3939-9"
@@ -504,9 +504,9 @@
          id="text3937-4-3"
          y="252.10518"
          x="306.31552"
-         style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans;font-stretch:normal;font-variant:normal"
          xml:space="preserve"><tspan
-           style="font-size:32px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Sans;-inkscape-font-specification:Sans"
+           style="font-size:32px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:PT Sans;-inkscape-font-specification:PT Sans"
            y="252.10518"
            x="306.31552"
            id="tspan3939-0-1"
@@ -514,7 +514,7 @@
     </g>
     <text
        xml:space="preserve"
-       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       style="font-size:32px;font-style:normal;font-weight:bold;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans Bold;font-stretch:normal;font-variant:normal"
        x="1045.1852"
        y="129.72908"
        id="text3975-9"
@@ -523,7 +523,7 @@
          id="tspan3977-8"
          x="1045.1852"
          y="129.72908"
-         style="font-size:36px">Controller Node 2</tspan></text>
+         style="font-size:32px;-inkscape-font-specification:PT Sans Bold;font-family:PT Sans;font-weight:bold;font-style:normal;font-stretch:normal;font-variant:normal">Controller Node 2</tspan></text>
     <rect
        style="fill:#e9c6af;fill-opacity:1;stroke:#ffb380;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
        id="rect3720-6"
@@ -542,7 +542,7 @@
        ry="18.627411" />
     <text
        xml:space="preserve"
-       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans;font-stretch:normal;font-variant:normal"
        x="1043.2576"
        y="179.35985"
        id="text4497-0"
@@ -551,7 +551,7 @@
          id="tspan4499-2"
          x="1043.2576"
          y="179.35985"
-         style="font-size:28px">pacemaker</tspan></text>
+         style="font-size:28px;-inkscape-font-specification:PT Sans;font-family:PT Sans;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal">pacemaker</tspan></text>
     <rect
        style="fill:#ffffff;fill-opacity:1;stroke:#999999;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
        id="rect4501-8"
@@ -562,7 +562,7 @@
        ry="8.3928566" />
     <text
        xml:space="preserve"
-       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans;font-stretch:normal;font-variant:normal"
        x="1042.2576"
        y="227.71696"
        id="text4503-6"
@@ -571,11 +571,11 @@
          id="tspan4505-0"
          x="1042.2576"
          y="227.71696"
-         style="font-size:28px">quantum agents</tspan><tspan
+         style="font-size:28px;-inkscape-font-specification:PT Sans;font-family:PT Sans;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal">quantum agents</tspan><tspan
          sodipodi:role="line"
          x="1042.2576"
          y="262.71698"
-         style="font-size:28px"
+         style="font-size:28px;-inkscape-font-specification:PT Sans;font-family:PT Sans;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal"
          id="tspan4751-2">(hot standby)</tspan></text>
     <rect
        style="fill:#ffffff;fill-opacity:1;stroke:#999999;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
@@ -587,7 +587,7 @@
        ry="8.3928566" />
     <text
        xml:space="preserve"
-       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans;font-stretch:normal;font-variant:normal"
        x="1042.0432"
        y="320.68124"
        id="text4503-7-8"
@@ -596,7 +596,7 @@
          id="tspan4505-4-65"
          x="1042.0432"
          y="320.68124"
-         style="font-size:28px">mysql-wsrep</tspan></text>
+         style="font-size:28px;-inkscape-font-specification:PT Sans;font-family:PT Sans;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal">mysql-wsrep</tspan></text>
     <rect
        style="fill:#ffffff;fill-opacity:1;stroke:#999999;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
        id="rect4501-1-9-0"
@@ -607,7 +607,7 @@
        ry="8.3928566" />
     <text
        xml:space="preserve"
-       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans;font-stretch:normal;font-variant:normal"
        x="1041.3701"
        y="512.47839"
        id="text4503-7-4-9"
@@ -616,7 +616,7 @@
          id="tspan4505-4-8-0"
          x="1041.3701"
          y="512.47839"
-         style="font-size:28px">horizon</tspan></text>
+         style="font-size:28px;-inkscape-font-specification:PT Sans;font-family:PT Sans;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal">horizon</tspan></text>
     <rect
        style="fill:#ffffff;fill-opacity:1;stroke:#999999;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
        id="rect4501-1-5-0"
@@ -627,7 +627,7 @@
        ry="8.3928566" />
     <text
        xml:space="preserve"
-       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans;font-stretch:normal;font-variant:normal"
        x="1041.5941"
        y="936.6814"
        id="text4503-7-5-6"
@@ -636,7 +636,7 @@
          id="tspan4505-4-1-1"
          x="1041.5941"
          y="936.6814"
-         style="font-size:28px">cinder-api</tspan></text>
+         style="font-size:28px;-inkscape-font-specification:PT Sans;font-family:PT Sans;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal">cinder-api</tspan></text>
     <rect
        style="fill:#ffffff;fill-opacity:1;stroke:#999999;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
        id="rect4501-1-7-3"
@@ -647,7 +647,7 @@
        ry="8.3928566" />
     <text
        xml:space="preserve"
-       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans;font-stretch:normal;font-variant:normal"
        x="1041.5941"
        y="876.68146"
        id="text4503-7-1-8"
@@ -656,7 +656,7 @@
          id="tspan4505-4-15-9"
          x="1041.5941"
          y="876.68146"
-         style="font-size:28px">quantum-api</tspan></text>
+         style="font-size:28px;-inkscape-font-specification:PT Sans;font-family:PT Sans;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal">quantum-api</tspan></text>
     <rect
        style="fill:#ffffff;fill-opacity:1;stroke:#999999;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
        id="rect4501-1-2-3"
@@ -667,7 +667,7 @@
        ry="8.3928566" />
     <text
        xml:space="preserve"
-       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans;font-stretch:normal;font-variant:normal"
        x="1041.5941"
        y="816.68146"
        id="text4503-7-7-4"
@@ -676,7 +676,7 @@
          id="tspan4505-4-6-4"
          x="1041.5941"
          y="816.68146"
-         style="font-size:28px">keystone-api</tspan></text>
+         style="font-size:28px;-inkscape-font-specification:PT Sans;font-family:PT Sans;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal">keystone-api</tspan></text>
     <rect
        style="fill:#ffffff;fill-opacity:1;stroke:#999999;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
        id="rect4501-1-1-6"
@@ -687,7 +687,7 @@
        ry="8.3928566" />
     <text
        xml:space="preserve"
-       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans;font-stretch:normal;font-variant:normal"
        x="1041.5941"
        y="754.68146"
        id="text4503-7-42-0"
@@ -696,7 +696,7 @@
          id="tspan4505-4-3-6"
          x="1041.5941"
          y="754.68146"
-         style="font-size:28px">glance-api</tspan></text>
+         style="font-size:28px;-inkscape-font-specification:PT Sans;font-family:PT Sans;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal">glance-api</tspan></text>
     <rect
        style="fill:#ffffff;fill-opacity:1;stroke:#999999;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
        id="rect4501-1-22-6"
@@ -707,7 +707,7 @@
        ry="8.3928566" />
     <text
        xml:space="preserve"
-       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans;font-stretch:normal;font-variant:normal"
        x="1041.5941"
        y="692.68146"
        id="text4503-7-16-1"
@@ -716,7 +716,7 @@
          id="tspan4505-4-85-8"
          x="1041.5941"
          y="692.68146"
-         style="font-size:28px">nova-api</tspan></text>
+         style="font-size:28px;-inkscape-font-specification:PT Sans;font-family:PT Sans;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal">nova-api</tspan></text>
     <rect
        style="fill:#ffffff;fill-opacity:1;stroke:#999999;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
        id="rect4501-1-76-4"
@@ -727,7 +727,7 @@
        ry="8.3928566" />
     <text
        xml:space="preserve"
-       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans;font-stretch:normal;font-variant:normal"
        x="1041.5941"
        y="632.68146"
        id="text4503-7-18-9"
@@ -736,7 +736,7 @@
          id="tspan4505-4-9-6"
          x="1041.5941"
          y="632.68146"
-         style="font-size:28px">nova-scheduler</tspan></text>
+         style="font-size:28px;-inkscape-font-specification:PT Sans;font-family:PT Sans;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal">nova-scheduler</tspan></text>
     <rect
        style="fill:#ffffff;fill-opacity:1;stroke:#999999;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
        id="rect4501-1-27-3"
@@ -747,7 +747,7 @@
        ry="8.3928566" />
     <text
        xml:space="preserve"
-       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans;font-stretch:normal;font-variant:normal"
        x="1041.5941"
        y="572.68146"
        id="text4503-7-9-7"
@@ -756,7 +756,7 @@
          id="tspan4505-4-5-8"
          x="1041.5941"
          y="572.68146"
-         style="font-size:28px">glance-registry</tspan></text>
+         style="font-size:28px;-inkscape-font-specification:PT Sans;font-family:PT Sans;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal">glance-registry</tspan></text>
     <rect
        style="fill:#ffffff;fill-opacity:1;stroke:#999999;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
        id="rect4501-1-5-2-8"
@@ -767,7 +767,7 @@
        ry="8.3928566" />
     <text
        xml:space="preserve"
-       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans;font-stretch:normal;font-variant:normal"
        x="1041.5432"
        y="998.57385"
        id="text4503-7-5-3-2"
@@ -776,7 +776,7 @@
          id="tspan4505-4-1-3-9"
          x="1041.5432"
          y="998.57385"
-         style="font-size:28px">rabbitmq</tspan></text>
+         style="font-size:28px;-inkscape-font-specification:PT Sans;font-family:PT Sans;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal">rabbitmq</tspan></text>
     <path
        style="fill:none;stroke:#4d4d4d;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:36, 3;stroke-dashoffset:0"
        d="m 920.35714,317.71932 -531.78571,98.21429 532.14286,88.57143"
@@ -815,7 +815,7 @@
        inkscape:connector-curvature="0" />
     <text
        xml:space="preserve"
-       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans;font-stretch:normal;font-variant:normal"
        x="640.61438"
        y="295.75793"
        id="text5104"
@@ -824,15 +824,15 @@
          id="tspan5106"
          x="640.61438"
          y="295.75793"
-         style="font-size:24px">MySQL Galera Cluster</tspan><tspan
+         style="font-size:24px;-inkscape-font-specification:PT Sans;font-family:PT Sans;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal">MySQL Galera Cluster</tspan><tspan
          sodipodi:role="line"
          x="640.61438"
          y="325.75793"
          id="tspan5108"
-         style="font-size:24px">(Active/Active)</tspan></text>
+         style="font-size:24px;-inkscape-font-specification:PT Sans;font-family:PT Sans;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal">(Active/Active)</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans;font-stretch:normal;font-variant:normal"
        x="638.4519"
        y="983.6109"
        id="text5110"
@@ -841,12 +841,12 @@
          id="tspan5112"
          x="638.4519"
          y="983.6109"
-         style="font-size:24px">RabbitMQ Cluster</tspan><tspan
+         style="font-size:24px;-inkscape-font-specification:PT Sans;font-family:PT Sans;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal">RabbitMQ Cluster</tspan><tspan
          sodipodi:role="line"
          x="638.4519"
          y="1013.6109"
          id="tspan5114"
-         style="font-size:24px">(Active/Active)</tspan></text>
+         style="font-size:24px;-inkscape-font-specification:PT Sans;font-family:PT Sans;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal">(Active/Active)</tspan></text>
     <path
        inkscape:connector-curvature="0"
        id="path27"
@@ -860,7 +860,7 @@
        sodipodi:nodetypes="cc" />
     <text
        xml:space="preserve"
-       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans;font-stretch:normal;font-variant:normal"
        x="654.85712"
        y="18.076468"
        id="text6239"
@@ -869,7 +869,7 @@
          id="tspan6241"
          x="654.85712"
          y="18.076468"
-         style="font-size:32px">External VIP</tspan></text>
+         style="font-size:32px;-inkscape-font-specification:PT Sans;font-family:PT Sans;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal">External VIP</tspan></text>
     <path
        inkscape:connector-curvature="0"
        id="path27-4"
@@ -877,7 +877,7 @@
        style="fill:#f4d7d7;fill-opacity:0.80882353;stroke:#000000;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none;marker-end:none" />
     <text
        xml:space="preserve"
-       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans;font-stretch:normal;font-variant:normal"
        x="531.85712"
        y="446.21933"
        id="text6239-7"
@@ -886,6 +886,6 @@
          id="tspan6241-8"
          x="531.85712"
          y="446.21933"
-         style="font-size:32px">Internal VIP</tspan></text>
+         style="font-size:32px;-inkscape-font-specification:PT Sans;font-family:PT Sans;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal">Internal VIP</tspan></text>
   </g>
 </svg>
