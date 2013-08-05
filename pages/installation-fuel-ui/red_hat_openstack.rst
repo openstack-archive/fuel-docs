@@ -125,7 +125,7 @@ subscriptions associated with your account.
 If you are still encountering issues, contact Mirantis Support.
 
 Issues downloading from Red Hat RHN Satellite
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If you receive an error from Fuel UI regarding Red Hat OpenStack download 
 issues, ensure that you have all the necessary channels available on your 
@@ -159,3 +159,14 @@ Satellite Server.
 You may find solutions to your issues with repomd.xml at the 
 `Red Hat Knowledgebase <https://access.redhat.com/>`_ or contact 
 `Red Hat Support. <https://access.redhat.com/support/>`_.
+
+GPG Key download failed. Looking for URL your-satellite-server/pub/RHN-ORG-TRUSTED-SSL-CERT
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This issue has two known problems. If you are using VirtualBox, this may not 
+be properly configured. Ensure that your upstream DNS resolver is correct
+in `/etc/dnsmasq.upstream`. This setting is configured during the bootstrap 
+process, but it is not possible to validate resolution of internal DNS names
+at that time. Also, this may be caused by other DNS issues, local network,
+or incorrect spelling of the RHN Satellite Server. Check your local network
+and settings and try again.
