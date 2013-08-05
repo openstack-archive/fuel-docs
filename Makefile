@@ -15,8 +15,9 @@ ALLSPHINXOPTS   = -d $(BUILDDIR)/doctrees $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .
 I18NSPHINXOPTS  = $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .
 
 IMAGEDIRS     = _images
-SVG2PNG       = convert
-SVG2PNG_FLAGS = 
+SVG2JPG       = convert
+# JPGs will be resized to 600px width
+SVG2JPG_FLAGS = -resize 600x
 
 .PHONY: help clean html dirhtml singlehtml pickle json htmlhelp qthelp devhelp epub latex latexpdf pdf text man changes linkcheck doctest gettext
 
@@ -45,17 +46,17 @@ help:
 
 clean:
 	-rm -rf $(BUILDDIR)/*
-	-@rm -f $(PNGs) 
+	-@rm -f $(JPGs) 
 
-# Pattern rule for converting SVG to PNG
-%_svg.png : %.svg
-	$(SVG2PNG) $(SVG2PNG_FLAGS) $< $@
+# Pattern rule for converting SVG to JPG
+%_svg.jpg : %.svg
+	$(SVG2JPG) $(SVG2JPG_FLAGS) $< $@
 
-# Build a list of SVG files to convert to PNGs
-PNGs := $(foreach dir, $(IMAGEDIRS), $(patsubst %.svg,%_svg.png,$(wildcard $(dir)/*.svg)))
+# Build a list of SVG files to convert to JPGs
+JPGs := $(foreach dir, $(IMAGEDIRS), $(patsubst %.svg,%_svg.jpg,$(wildcard $(dir)/*.svg)))
 	
-# Make a rule to build the PNGs
-images: $(PNGs)
+# Make a rule to build the JPGs
+images: $(JPGs)
 
 all: clean html dirhtml singlehtml latexpdf pdf
 

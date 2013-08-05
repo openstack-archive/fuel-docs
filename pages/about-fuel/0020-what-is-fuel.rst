@@ -20,7 +20,4 @@ through a single installation.
 Simply put, Fuel is a way for you to easily configure and install an 
 OpenStack-based infrastructure in your own environment.
 
-.. fancybox:: /_images/FuelSimpleDiagramv.png
-    :width: 400px
-    :height: 400px
-	
+.. image:: /_images/FuelSimpleDiagramv.jpg

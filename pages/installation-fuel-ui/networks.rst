@@ -211,7 +211,7 @@ Configuring the network
 Once you choose a networking mode (FlatDHCP/VLAN), you must configure equipment 
 accordingly. The diagram below shows an example configuration.
 
-.. image:: /_images/physical_sample.png
+.. image:: /_images/physical_sample.jpg
     :width: 100%
 
 Fuel operates with following logical networks:
@@ -236,9 +236,7 @@ types of traffic. When a node is added to the environment, click at the bottom
 line of the node icon. In the detailed information window, click the "Network 
 Configuration" button to open the physical interfaces configuration screen.
 
-.. fancybox:: /_images/doc_network-settings-help.png
-    :width: 600px
-    :height: 600px
+.. image:: /_images/doc_network-settings-help.jpg
 
 On this screen you can drag-and-drop logical networks to physical interfaces 
 according to your network setup. 

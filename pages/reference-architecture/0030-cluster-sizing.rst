@@ -15,9 +15,7 @@ deployment is to allocate 4 nodes:
 
 - 1 compute node
 
-.. fancybox:: /_images/deployment-ha-compact_svg.png
-    :width: 400px
-    :height: 250px
+.. image:: /_images/deployment-ha-compact_svg.jpg
 
 If you want to run storage separately from the controllers, you can do that as 
 well by raising the bar to 9 nodes:
@@ -30,9 +28,7 @@ well by raising the bar to 9 nodes:
 
 - 1 Compute node
 
-.. fancybox:: /_images/deployment-ha-full_svg.png
-    :width: 400px
-    :height: 200px
+.. image:: /_images/deployment-ha-full_svg.jpg
 
 Of course, you are free to choose how to deploy OpenStack based on the
 amount of available hardware and on your goals (such as whether you

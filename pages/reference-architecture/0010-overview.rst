@@ -55,9 +55,7 @@ of compromises as to the number and types of services that you can
 deploy. It is, however, extremely useful if you just want to see how
 OpenStack works from a user's point of view. 
 
-.. fancybox:: /_images/deployment-simple_svg.png
-    :width: 400px
-    :height: 200px
+.. image:: /_images/deployment-simple_svg.jpg
 
 More commonly, your OpenStack installation will consist of multiple
 servers. Exactly how many is up to you, of course, but the main idea
@@ -80,9 +78,7 @@ single points of failure. That's not to say, however, that you can't
 reduce hardware requirements by combining your storage, network, and controller
 nodes:
 
-.. fancybox:: /_images/deployment-ha-compact_svg.png
-    :width: 400px
-    :height: 250px
+.. image:: /_images/deployment-ha-compact_svg.jpg
 
 .. index:: Deployment Configurations; Full HA
 
@@ -94,9 +90,7 @@ dedicated hardware for storage. This architecture gives you the advantages of
 high availability, but this clean separation makes your cluster more 
 maintainable by separating storage and controller functionality:
 
-.. fancybox:: /_images/deployment-ha-full_svg.png
-    :width: 400px
-    :height: 200px
+.. image:: /_images/deployment-ha-full_svg.jpg
 
 Where Fuel really shines is in the creation of more complex architectures, so 
 in this document you'll learn how to use Fuel to easily create a multi-node HA 

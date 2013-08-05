@@ -21,9 +21,7 @@ In the multi-host networking mode, you can choose between the FlatDHCPManager
 and VlanManager network managers in OpenStack. The figure below illustrates the 
 relevant nodes and networks.
 
-.. fancybox:: /_images/080-networking-diagram_svg.png
-    :width: 400px
-    :height: 500px
+.. image:: /_images/080-networking-diagram_svg.jpg
 
 Lets take a closer look at each network and how its used within the cluster.
 

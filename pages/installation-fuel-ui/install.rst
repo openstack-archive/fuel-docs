@@ -113,7 +113,7 @@ Fuel on VirtualBox by following these steps.
     helper scripts or install Fuel :ref:`Install_Bare-Metal`.
 
 Master Node deployment
-~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
 
 First, create the Master Node VM.
 
@@ -150,11 +150,11 @@ Next, create Slave nodes where OpenStack needs to be installed.
 
 2. Set priority for the network boot:
 
-.. image:: /_images/vbox-image1.png
+.. image:: /_images/vbox-image1.jpg
 
 3. Configure the network adapter on each VM:
 
-.. image:: /_images/vbox-image2.png
+.. image:: /_images/vbox-image2.jpg
 
 Changing network parameters before the installation
 ---------------------------------------------------
@@ -168,7 +168,7 @@ example, to use 192.168.1.10/24 IP address for the Master Node and 192.168.1.1
 as the gateway and DNS server you should change the parameters to those shown 
 in the image below:
 
-.. image:: /_images/network-at-boot.png
+.. image:: /_images/network-at-boot.jpg
 
 When you're finished making changes, press the <ENTER> key and wait for the 
 installation to complete.

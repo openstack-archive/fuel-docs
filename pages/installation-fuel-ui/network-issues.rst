@@ -11,9 +11,7 @@ interfaces do not receive certain VLAN IDs. Usually it means that switch or
 multiple switches are not configured correctly and do not allow certain 
 tagged traffic to pass through.
 
-.. fancybox:: /_images/net_verify_failure.png
-    :width: 600px
-    :height: 200px
+.. image:: /_images/net_verify_failure.jpg
 
 On VirtualBox
 -------------

@@ -56,7 +56,7 @@ Running post-deployment checks
 Now, let`s take a closer look on what should be done to execute the tests and 
 to understand if something is wrong with your OpenStack cluster.
 
-.. image::  /_images/healthcheck_tab.png
+.. image::  /_images/healthcheck_tab.jpg
 
 As you can see on the image above, the Fuel UI now contains a ``Healthcheck``
 tab, indicated by the Heart icon.
@@ -84,9 +84,7 @@ this section.
 
 An actual test run looks like this:
 
-.. fancybox::  /_images/ostf_screen.png
-    :width: 600px
-    :height: 330px
+.. image::  /_images/ostf_screen.jpg
 
 What should be done when a test failed 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
