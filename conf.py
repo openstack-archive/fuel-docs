@@ -32,7 +32,8 @@ on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
 #  extensions = ['sphinx.ext.autodoc','sphinxcontrib.plantuml']
 #  display_github = False
 #else:
-extensions = ['sphinx.ext.autodoc','rst2pdf.pdfbuilder','sphinxcontrib.plantuml','sphinxcontrib.fancybox']
+extensions = ['sphinx.ext.autodoc','rst2pdf.pdfbuilder','sphinxcontrib.plantuml']
+#,'sphinxcontrib.fancybox']
 
 plantuml = ['java','-jar','/sbin/plantuml.jar']
   
