@@ -32,7 +32,8 @@ on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
 #  extensions = ['sphinx.ext.autodoc','sphinxcontrib.plantuml']
 #  display_github = False
 #else:
-extensions = ['sphinx.ext.autodoc','rst2pdf.pdfbuilder','sphinxcontrib.plantuml','sphinxcontrib.fancybox']
+extensions = ['sphinx.ext.autodoc','rst2pdf.pdfbuilder','sphinxcontrib.plantuml']
+#,'sphinxcontrib.fancybox']
 
 plantuml = ['java','-jar','/sbin/plantuml.jar']
   
@@ -260,7 +261,7 @@ texinfo_documents = [
 
 # Add any Sphinx extension module names here, as strings. They can be extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
-extensions += ['sphinx.ext.inheritance_diagram', 'sphinxcontrib.blockdiag', 'sphinxcontrib.actdiag', 'sphinxcontrib.seqdiag', 'sphinxcontrib.nwdiag']
+# extensions += ['sphinx.ext.inheritance_diagram', 'sphinxcontrib.blockdiag', 'sphinxcontrib.actdiag', 'sphinxcontrib.seqdiag', 'sphinxcontrib.nwdiag']
  
 # The encoding of source files.
 source_encoding = 'utf-8'
