@@ -11,7 +11,7 @@ for a drive around the block. Follow these steps:
 2. Click the ``Project`` tab in the left-hand column.
 
 3. Under ``Manage Compute``, choose ``Access & Security`` to set security 
-settings:
+  settings:
 
 - Click ``Create Keypair`` and enter a name for the new keypair.  The 
   private key should download automatically; make sure to keep it safe.
@@ -29,7 +29,7 @@ settings:
   -1 to the default Security Group and click ``Add Rule`` to save.
 
 4. Click ``Allocate IP To Project`` and add two new floating IPs.  Notice that 
-   they come from the pool specified in ``config.yaml`` and ``site.pp``.
+  they come from the pool specified in ``config.yaml`` and ``site.pp``.
 
 5. Click ``Images & Snapshots``, then ``Create Image``.
 

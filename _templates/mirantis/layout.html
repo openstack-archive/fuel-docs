@@ -77,7 +77,9 @@ var ga_enabled = !$.cookie('disable-ga');
 if(ga_enabled){
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', '{{ theme_googleanalytics_id }}']);
+
   _gaq.push(['_setCookiePath', '{{ theme_googleanalytics_path }}']);
+  _gaq.push(['_setDomainName', 'mirantis.com']);
   _gaq.push(['_setDetectFlash', false]);
   _gaq.push(['_trackPageview']);
   (function() {

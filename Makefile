@@ -17,7 +17,7 @@ I18NSPHINXOPTS  = $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .
 IMAGEDIRS     = _images
 SVG2JPG       = convert
 # JPGs will be resized to 600px width
-SVG2JPG_FLAGS = -resize 600x
+SVG2JPG_FLAGS = -resize 600x -quality 100%
 
 .PHONY: help clean html dirhtml singlehtml pickle json htmlhelp qthelp devhelp epub latex latexpdf pdf text man changes linkcheck doctest gettext
 

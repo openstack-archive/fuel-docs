@@ -1,7 +1,9 @@
-Red Hat OpenStack Overview
-==========================
+.. index:: Deployment Configurations; Red Hat OpenStack
 
-.. contents:: :local:
+Red Hat OpenStack Architectures
+===============================
+
+.. contents :local:
 
 Red Hat has partnered with Mirantis to offer an end-to-end supported
 distribution of OpenStack powered by Fuel. Because Red Hat offers support
@@ -11,27 +13,27 @@ a highly available OpenStack cluster.
 
 Below is the list of modifications:
 
-.. topic:: Database backend:
+**Database backend:**
+  MySQL with Galera has been replaced with native replication in a 
+  Master/Slave configuration. MySQL master is elected via Corosync
+  and master and slave status is managed via Pacemaker.
 
-    MySQL with Galera has been replaced with native replication in a 
-    Master/Slave configuration. MySQL master is elected via Corosync
-    and master and slave status is managed via Pacemaker.
+**Messaging backend:**
+  RabbitMQ has been replaced with QPID. Qpid is an AMQP provider that Red
+  Hat offers, but it cannot be clustered in Red Hat's offering. As a result,
+  Fuel configures three non-clustered, independent QPID brokers. Fuel still
+  offers HA for messaging backend via virtual IP management provided by
+  Corosync.
 
-.. topic:: Messaging backend:
+**Nova networking:**
+  Quantum is not available for Red Hat OpenStack because the Red Hat kernel
+  lacks GRE tunneling support for OpenVSwitch. This issue should be
+  fixed in a future release. As a result, Fuel for Red Hat OpenStack 
+  Platform will only support Nova networking.
 
-    RabbitMQ has been replaced with QPID. Qpid is an AMQP provider that Red
-    Hat offers, but it cannot be clustered in Red Hat's offering. As a result,
-    Fuel configures three non-clustered, independent QPID brokers. Fuel still
-    offers HA for messaging backend via virtual IP management provided by
-    Corosync.
+.. index:: Deployment Configurations; Red Hat OpenStack; RHOS Non-HA Simple
 
-.. topic:: Nova networking:
-
-    Quantum is not available for Red Hat OpenStack because the Red Hat kernel
-    lacks GRE tunneling support for OpenVSwitch. This issue should be
-    fixed in a future release. As a result, Fuel for Red Hat OpenStack 
-    Platform will only support Nova networking.
-
+.. _RHOS_Simple:
 
 Simple (non-HA) Red Hat OpenStack deployment
 --------------------------------------------
@@ -43,6 +45,7 @@ deploy. It is, however, extremely useful if you just want to see how
 OpenStack works from a user's point of view.
 
 .. image:: /_images/deployment-simple_svg.jpg
+  :align: center
 
 More commonly, your OpenStack installation will consist of multiple
 servers. Exactly how many is up to you, of course, but the main idea
@@ -51,6 +54,10 @@ which your users' VMs will actually run. One arrangement that will
 enable you to achieve this separation while still keeping your
 hardware investment relatively modest is to house your storage on your
 controller nodes.
+
+.. index:: Deployment Configurations; Red Hat OpenStack; RHOS HA Compact
+
+.. _RHOS_Compact:
 
 Multi-node (HA) Red Hat OpenStack deployment (Compact)
 ------------------------------------------------------
@@ -64,6 +71,7 @@ reduce hardware requirements by combining your storage, network, and controller
 nodes:
 
 .. image:: /_images/deployment-ha-compact-red-hat_svg.jpg
+  :align: center
 
 OpenStack services are interconnected by RESTful HTTP-based APIs and AMQP-based 
 RPC messages. So redundancy for stateless OpenStack API services is implemented 
@@ -75,3 +83,4 @@ the help of Pacemaker), while QPID is offered in three independent brokers with
 virtual IP management to provide high availability.
 
 .. image:: /_images/ha-overview-red-hat_svg.jpg
+  :align: center

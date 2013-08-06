@@ -6,6 +6,9 @@
 Create an OpenStack cluster using Fuel UI
 ============================================
 
+.. contents:: :local:
+  :depth: 2
+
 .. include:: /pages/installation-fuel-ui/install.rst
 .. include:: /pages/installation-fuel-ui/networks.rst
 .. include:: /pages/installation-fuel-ui/network-issues.rst

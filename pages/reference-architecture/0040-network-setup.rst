@@ -3,18 +3,21 @@
 Network Architecture
 ====================
 
-.. contents:: :local:
+.. contents :local:
 
 The current architecture assumes the presence of 3 NICs, but it can be 
 customized for two or 4+ network interfaces. Most servers arebuilt with at least 
 two network interfaces. In this case, let's consider a typical example of three 
 NIC cards. They're utilized as follows:
 
-- **eth0**: the internal management network, used for communication with Puppet & Cobbler
+**eth0**: 
+  The internal management network, used for communication with Puppet & Cobbler
 
-- **eth1**: the public network, and floating IPs assigned to VMs
+**eth1**: 
+  The public network, and floating IPs assigned to VMs
 
-- **eth2**: the private network, for communication between OpenStack VMs, and the 
+**eth2**: 
+  The private network, for communication between OpenStack VMs, and the 
   bridge interface (VLANs)
 
 In the multi-host networking mode, you can choose between the FlatDHCPManager 
@@ -22,11 +25,12 @@ and VlanManager network managers in OpenStack. The figure below illustrates the
 relevant nodes and networks.
 
 .. image:: /_images/080-networking-diagram_svg.jpg
+  :align: center
 
 Lets take a closer look at each network and how its used within the cluster.
 
 Public Network
-^^^^^^^^^^^^^^
+--------------
 
 This network allows inbound connections to VMs from the outside world (allowing 
 users to connect to VMs from the Internet). It also allows outbound connections 
@@ -54,7 +58,7 @@ The public network also provides VIPs for Endpoint nodes, which are used to
 connect to OpenStack services APIs.
 
 Internal (Management) Network
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------------
 
 The internal network connects all OpenStack nodes in the cluster. All components 
 of an OpenStack cluster communicate with each other using this network. This 
@@ -68,7 +72,7 @@ This network usually is a single C class network from your private, non-globally
 routed IP address range.
 
 Private Network
-^^^^^^^^^^^^^^^
+---------------
 
 The private network facilitates communication between each tenant's VMs. Private 
 network address spaces are part of the enterprise network address space. Fixed 

@@ -8,7 +8,7 @@ v3.1-grizzly
 New Features in Fuel 3.1
 -------------------------
 
-.. contents:: :local:
+.. contents :local:
 
 * Combined Fuel library and Fuel Web products
 * Option to deploy Red Hat Enterprise Linux® OpenStack® Platform
@@ -18,11 +18,11 @@ New Features in Fuel 3.1
 * Improved High Availability resiliency
 * Horizon password entry can be hidden
 
-Fuel 3.1 with Integrated graphical and command line controls
+Fuel 3.1 with Integrated Graphical and Command Line Controls
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In earlier releases, Fuel was distributed as two packages – “Fuel Web” for 
-graphical workflow, and “Fuel library” for command-line based manipulation. 
+graphical workflow, and “Fuel Library” for command-line based manipulation. 
 Starting with this 3.1 release, we’ve integrated these two capabilities into 
 a single offering, referred to simply as Fuel.  If you used Fuel Web, you’ll 
 see that capability along with its latest improvements to that capability in 
@@ -32,7 +32,7 @@ configurations. Advanced users with more complex environmental needs can
 still get command-line access to the underlying deployment engine (aka “Fuel 
 Library”).
   
-Option to deploy Red Hat Enterprise Linux® OpenStack® Platform
+Option to Deploy Red Hat Enterprise Linux® OpenStack® Platform
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Mirantis Fuel now includes the ability to deploy the Red Hat Enterprise 
@@ -44,8 +44,8 @@ nodes or installing the Red Hat provided OpenStack distribution onto Red Hat
 Enterprise Linux powered nodes.
 
 .. note:: A Red Hat subscription is required to download and deploy Red Hat 
-    Enterprise Linux OpenStack Platform.
-	
+  Enterprise Linux OpenStack Platform.
+
 Mirantis OpenStack Health Check 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -78,7 +78,7 @@ Improved High Availability resiliency
 
 To improve the resiliency of the Mirantis OpenStack High Availability 
 reference architecture, Fuel now deploys all HA services under Pacemaker, a 
-scalable cluster resource manager developed by Clusterlabs.  Additional 
+scalable cluster resource manager developed by ClusterLabs.  Additional 
 options in the Fuel Library have also been added to Corosync to enable more 
 granular tuning. 
 

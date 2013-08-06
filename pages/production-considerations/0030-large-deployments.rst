@@ -3,12 +3,10 @@
 .. _Large_Scale_Deployments:
 
 Large Scale Deployments
------------------------
+=======================
 
 When deploying large clusters (of 100 nodes or more) there are two basic 
 bottlenecks:
-
-.. contents:: :local:
 
 Careful planning is key to eliminating these potential problem areas, but 
 there's another way. 
@@ -18,7 +16,7 @@ however, that it's always good to have a sense of how to solve these problems
 should they appear.
 
 Certificate signing requests and Puppet Master/Cobbler capacity
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------------------------------------------
 
 When deploying a large cluster, you may find that Puppet Master begins to have 
 difficulty when you start exceeding 20 or more simultaneous requests. Part of 
@@ -52,9 +50,10 @@ combination of rsync (for modules, manifests, and SSL data) and database
 replication.
 
 .. image:: /_images/cobbler-puppet-ha.jpg
+  :align: center
     
 Downloading of operating systems and other software
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------------------------------
 
 Large deployments can also suffer from a bottleneck in terms of the additional 
 traffic created by downloading software from external sources. One way to avoid 

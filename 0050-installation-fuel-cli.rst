@@ -6,7 +6,8 @@
 Deploy an OpenStack cluster using Fuel CLI
 ==========================================
 
-.. contents: :local:
+.. contents:: :local:
+  :depth: 2
 
 .. include: /pages/installation-fuel-cli/0000-preamble.rst
 .. include: /pages/installation-fuel-cli/0010-introduction.rst

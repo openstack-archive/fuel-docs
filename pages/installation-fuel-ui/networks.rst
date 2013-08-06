@@ -1,10 +1,12 @@
-Understanding and configuring the network
+.. index:: Fuel UI; Network Configuration
+
+Understanding and Configuring the Network
 =========================================
 
-.. contents:: :local:
+.. contents :local:
 
 OpenStack clusters use several types of network managers: FlatDHCPManager, 
-VlanManager and Neutron (formerly Quantum). The current version of Fuel UI 
+VLANManager and Neutron (formerly Quantum). The current version of Fuel UI 
 supports only two (FlatDHCP and VlanManager), but Fuel CLI supports all 
 three. For more information about how the first two network managers work, 
 you can read these two resources:
@@ -15,7 +17,7 @@ you can read these two resources:
   <http://www.mirantis.com/blog/openstack-networking-vlanmanager/>`_
 
 FlatDHCPManager (multi-host scheme)
-------------------------------------
+-----------------------------------
 
 The main idea behind the flat network manager is to configure a bridge 
 (i.e. **br100**) on every compute node and have one of the machine's host 
@@ -31,49 +33,7 @@ interface is used to give network access to virtual machines, while **eth0**
 interface is the management network interface.
 
 .. image:: /_images/flatdhcpmanager-mh_scheme.jpg
-    :width: 600px
-
-..
- .. uml::
-    node "Compute1" {
-        [eth1\nVM] as compute1_eth1
-        [eth0\nManagement] as compute1_eth0
-        [vm0] as compute1_vm0
-        [vm1] as compute1_vm1
-        [br100] as compute1_br100
-        compute1_br100 -up- compute1_eth1
-        compute1_vm0 -up- compute1_br100
-        compute1_vm1 -up- compute1_br100
-    }
-
-    node "Compute2" {
-        [eth1\nVM] as compute2_eth1
-        [eth0\nManagement] as compute2_eth0
-        [vm0] as compute2_vm0
-        [vm1] as compute2_vm1
-        [br100] as compute2_br100
-        compute2_br100 -up- compute2_eth1
-        compute2_vm0 -up- compute2_br100
-        compute2_vm1 -up- compute2_br100
-    }
-
-    node "Compute3" {
-        [eth1\nVM] as compute3_eth1
-        [eth0\nManagement] as compute3_eth0
-        [vm0] as compute3_vm0
-        [vm1] as compute3_vm1
-        [br100] as compute3_br100
-        compute3_br100 -up- compute3_eth1
-        compute3_vm0 -up- compute3_br100
-        compute3_vm1 -up- compute3_br100
-    }
-
-    compute1_eth1 -up- [L2 switch]
-    compute2_eth1 -up- [L2 switch]
-    compute3_eth1 -up- [L2 switch]
-    compute1_eth0 .up. [L2 switch]
-    compute2_eth0 .up. [L2 switch]
-    compute3_eth0 .up. [L2 switch]
+  :align: center
 
 Fuel deploys OpenStack in FlatDHCP mode with the so called **multi-host** 
 feature enabled. Without this feature enabled, network traffic from each VM 
@@ -89,53 +49,10 @@ the physical network interfaces that are connected to the bridge, but the
 VLAN interface (i.e. **eth0.102**).
 
 FlatDHCPManager (single-interface scheme)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-
+-----------------------------------------
 
 .. image:: /_images/flatdhcpmanager-mh_scheme.jpg
-    :width: 600px
-
-..
- .. uml::
-    node "Compute1 Node" {
-        [eth0] as compute1_eth0
-        [eth0.101\nManagement] as compute1_eth0_101
-        [eth0.102\nVM] as compute1_eth0_102
-        [vm0] as compute1_vm0
-        [vm1] as compute1_vm1
-        [vm2] as compute1_vm2
-        [vm3] as compute1_vm3
-        [br100] as compute1_br100
-        compute1_eth0 -down- compute1_eth0_101
-        compute1_eth0 -down- compute1_eth0_102
-        compute1_eth0_102 -down- compute1_br100
-        compute1_br100 -down- compute1_vm0
-        compute1_br100 -down- compute1_vm1
-        compute1_br100 -down- compute1_vm2
-        compute1_br100 -down- compute1_vm3
-    }
-
-    node "Compute2 Node" {
-        [eth0] as compute2_eth0
-        [eth0.101\nManagement] as compute2_eth0_101
-        [eth0.102\nVM] as compute2_eth0_102
-        [vm0] as compute2_vm0
-        [vm1] as compute2_vm1
-        [vm2] as compute2_vm2
-        [vm3] as compute2_vm3
-        [br100] as compute2_br100
-        compute2_eth0 -down- compute2_eth0_101
-        compute2_eth0 -down- compute2_eth0_102
-        compute2_eth0_102 -down- compute2_br100
-        compute2_br100 -down- compute2_vm0
-        compute2_br100 -down- compute2_vm1
-        compute2_br100 -down- compute2_vm2
-        compute2_br100 -down- compute2_vm3
-    }
-
-    compute1_eth0 -up- [L2 switch]
-    compute2_eth0 -up- [L2 switch]
+  :align: center
 
 Therefore all switch ports where compute nodes are connected must be 
 configured as tagged (trunk) ports with required vlans allowed (enabled, 
@@ -157,59 +74,12 @@ VMs of other projects. Switch ports must be configured as tagged (trunk)
 ports to allow this scheme to work.
 
 .. image:: /_images/flatdhcpmanager-mh_scheme.jpg
-    :width: 600px
+  :align: center
 
-..
-  .. uml::
-    node "Compute1 Node" {
-        [eth0] as compute1_eth0
-        [eth0.101\nManagement] as compute1_eth0_101
-        [vlan102\n] as compute1_vlan102
-        [vlan103\n] as compute1_vlan103
-        [vm0] as compute1_vm0
-        [vm1] as compute1_vm1
-        [vm2] as compute1_vm2
-        [vm3] as compute1_vm3
-        [br102] as compute1_br102
-        [br103] as compute1_br103
-        compute1_eth0 -down- compute1_eth0_101
-        compute1_eth0 -down- compute1_vlan102
-        compute1_eth0 -down- compute1_vlan103
-        compute1_vlan102 -down- compute1_br102
-        compute1_vlan103 -down- compute1_br103
-        compute1_br102 -down- compute1_vm0
-        compute1_br102 -down- compute1_vm1
-        compute1_br103 -down- compute1_vm2
-        compute1_br103 -down- compute1_vm3
-    }
+.. index:: Fuel UI; Deployment Schema
 
-    node "Compute2 Node" {
-        [eth0] as compute2_eth0
-        [eth0.101\nManagement] as compute2_eth0_101
-        [vlan102\n] as compute2_vlan102
-        [vlan103\n] as compute2_vlan103
-        [vm0] as compute2_vm0
-        [vm1] as compute2_vm1
-        [vm2] as compute2_vm2
-        [vm3] as compute2_vm3
-        [br102] as compute2_br102
-        [br103] as compute2_br103
-        compute2_eth0 -down- compute2_eth0_101
-        compute2_eth0 -down- compute2_vlan102
-        compute2_eth0 -down- compute2_vlan103
-        compute2_vlan102 -down- compute2_br102
-        compute2_vlan103 -down- compute2_br103
-        compute2_br102 -down- compute2_vm0
-        compute2_br102 -down- compute2_vm1
-        compute2_br103 -down- compute2_vm2
-        compute2_br103 -down- compute2_vm3
-    }
-
-    compute1_eth0 -up- [L2 switch]
-    compute2_eth0 -up- [L2 switch]
-
-Fuel deployment schema
-^^^^^^^^^^^^^^^^^^^^^^
+Fuel Deployment Schema
+======================
 
 One of the physical interfaces on each host has to be chosen to carry 
 VM-to-VM traffic (fixed network), and switch ports must be configured to 
@@ -225,7 +95,8 @@ Once you choose a networking mode (FlatDHCP/VLAN), you must configure equipment
 accordingly. The diagram below shows an example configuration.
 
 .. image:: /_images/physical-network.jpg
-    :width: 600px
+  :width: 100%
+  :align: center
 
 Fuel operates with following logical networks:
 
@@ -251,7 +122,7 @@ Fuel operates with following logical networks:
   networks (vlan 104 on the scheme).
 
 Mapping logical networks to physical interfaces on servers
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 Fuel allows you to use different physical interfaces to handle different 
 types of traffic. When a node is added to the environment, click at the bottom 
@@ -259,7 +130,7 @@ line of the node icon. In the detailed information window, click the "Network
 Configuration" button to open the physical interfaces configuration screen.
 
 .. image:: /_images/network-settings.jpg
-    :width: 600px
+  :align: center
 
 On this screen you can drag-and-drop logical networks to physical interfaces 
 according to your network setup. 
@@ -272,7 +143,7 @@ you may not modify network settings, even to move a logical network to another
 physical interface or VLAN number.
 
 Switch
-^^^^^^
+++++++
 
 Fuel can configure hosts, however switch configuration is still manual work. 
 Unfortunately the set of configuration steps, and even the terminology used, 
@@ -347,7 +218,7 @@ Example configuration for one of the ports on a Cisco switch::
   vlan 262,100,102,104                       # Might be needed for enabling VLANs
 
 Router
-^^^^^^
+++++++
 
 To make it possible for VMs to access the outside world, you must have an IP 
 address set on a router in the public network. In the examples provided, 

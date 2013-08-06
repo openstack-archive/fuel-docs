@@ -6,7 +6,8 @@
 FAQ (Frequently Asked Questions) 
 ================================
 
-.. _contents:: :local:
+.. contents:: :local:
+  :depth: 2
 
 .. Known Issues and Workarounds
 

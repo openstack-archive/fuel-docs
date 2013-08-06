@@ -13,11 +13,16 @@
 
 @import url("mirantis_style.css");
 
+.highlight .hll {
+    background-color: #C0FF7C !important;
+}
+
+
 div.highlight pre,
 div.highlight-python pre
 {
     border-width: 0px 3px;
-
+    background-color: #F7FFE8;
     border-radius: 6px;
     -moz-border-radius: 6px;
     -webkit-border-radius: 6px;

@@ -4,7 +4,8 @@
 About Fuel
 ============
 
-.. _contents:: :local:
+.. contents:: :local:
+  :depth: 2
 
 .. include /pages/about-fuel/0010-introduction.rst
 .. include:: /pages/about-fuel/0020-what-is-fuel.rst

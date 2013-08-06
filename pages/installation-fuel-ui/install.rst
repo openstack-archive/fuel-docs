@@ -3,7 +3,7 @@
 Installing Fuel Master Node
 ===========================
 
-.. contents:: :local:
+.. contents :local:
 
 Fuel is distributed as both ISO and IMG images, each of them contains 
 an installer for Fuel Master node. The ISO image is used for CD media devices, 
@@ -67,7 +67,7 @@ simple, single-click installation.
 The requirements for running Fuel on VirtualBox are:
 
 A host machine with Linux or Mac OS.
-  The scripts have been tested on Mac OS 10.7.5, Mac OS 10.8.3, and Ubuntu 12.04.
+  The scripts have been tested on Mac OS 10.7.5, Mac OS 10.8.3, Ubuntu 12.04 and Ubuntu 12.10.
 
 VirtualBox 4.2.12 (or later) must be installed with the extension pack. Both 
 can be downloaded from `<http://www.virtualbox.org/>`_.
@@ -81,7 +81,7 @@ can be downloaded from `<http://www.virtualbox.org/>`_.
 .. _Install_Automatic:
 
 Automatic Mode
-^^^^^^^^^^^^^^
+++++++++++++++
 
 When you unpack the scripts, you will see the following important files and 
 folders:
@@ -97,16 +97,49 @@ folders:
 `launch.sh`
   Once executed, this script will pick up an image from the ``iso`` directory,
   create a VM, mount the image to this VM, and automatically install the Fuel 
-  Master Тode.
-  After installation of the master node, the script will create slave nodes for 
-  OpenStack and boot them via PXE from the Master Node.
+  Master node.
+  After installation of the Master node, the script will create Slave nodes for 
+  OpenStack and boot them via PXE from the Master node.
   Finally, the script will give you the link to access the Web-based UI for the 
   Master Node so you can start installation of an OpenStack cluster.
 
+Networking Notes for Slave Nodes
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Helper scripts for VirtualBox create network adapters eth0, eth1, eth2 assigned 
+to vboxnet0, vboxnet1, vboxnet2 correspondingly. vboxnet0 is dedicated for Fuel 
+network so it is impossible to use it for any other untagged networks.
+
+Also these scripts assign IP addresses for adapters: vboxnet0 - 10.20.0.1/24, 
+vboxnet1 - 172.16.1.1/24, vboxnet2 - 172.16.0.1/24.
+
+To access guest VMs from host machine Public and/or Management networks must be 
+untagged and assigned to vboxnet1 and vboxnet2 adapters with IP addresses from 
+ranges specified earlier.
+
+During installation the Slave nodes access the Internet via Master node. 
+But when installation is done Slave nodes on guest VMs shall access the 
+Internet via the Public network. To make it happen the following command must be 
+executed on host::
+
+  sudo iptables -t nat -A POSTROUTING -s 172.16.1.0/24 \! -d 172.16.1.0/24 -j MASQUERADE
+
+To access VMs managed by OpenStack it is needed to provide IP addresses from 
+floating IP range. When OpenStack cluster is deployed it is needed to create 
+security groups to provide access to guest VMs using following commands::
+
+  nova secgroup-add-rule default icmp -1 -1 0.0.0.0/0
+  nova secgroup-add-rule default tcp 22 22 0.0.0.0/0
+
+You can also add these security groups from Horizon UI.
+
+IP ranges for Public and Management networks (172.16.*.*) defined in `config.sh` 
+script. You can reassign these IP ranges before running VirtualBox scripts only.   
+  
 .. _Install_Manual:
 
 Manual mode
-^^^^^^^^^^^
++++++++++++
 
 If you cannot or would rather not run our helper scripts, you can still run 
 Fuel on VirtualBox by following these steps.
@@ -120,7 +153,7 @@ Fuel on VirtualBox by following these steps.
     helper scripts or install Fuel :ref:`Install_Bare-Metal`.
 
 Master Node deployment
-~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^
 
 First, create the Master Node VM.
 
@@ -144,7 +177,7 @@ First, create the Master Node VM.
 of Fuel.
 
 Adding Slave Nodes
-~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^
 
 Next, create Slave nodes where OpenStack needs to be installed.
 
@@ -158,12 +191,12 @@ Next, create Slave nodes where OpenStack needs to be installed.
 2. Set priority for the network boot:
 
 .. image:: /_images/vbox-image1.jpg
-    :width: 600px
+  :align: center
 
 3. Configure the network adapter on each VM:
 
 .. image:: /_images/vbox-image2.jpg
-    :width: 600px
+  :align: center
 
 Changing network parameters before the installation
 ---------------------------------------------------
@@ -178,12 +211,13 @@ as the gateway and DNS server you should change the parameters to those shown
 in the image below:
 
 .. image:: /_images/network-at-boot.jpg
+  :align: center
 
 When you're finished making changes, press the <ENTER> key and wait for the 
 installation to complete.
 
 Changing network parameters after installation
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+----------------------------------------------
 
 .. warning::
 
@@ -234,7 +268,7 @@ Now you should be able to connect to Fuel UI from your network at
 http://172.18.0.5:8000/
 
 Name resolution (DNS)
-^^^^^^^^^^^^^^^^^^^^^
+---------------------
 
 During Master Node installation, it is assumed that there is a recursive DNS 
 service on 10.20.0.1.
@@ -247,7 +281,7 @@ your actual DNS)::
   echo "nameserver 172.0.0.1" > /etc/dnsmasq.upstream
 
 PXE booting settings
-^^^^^^^^^^^^^^^^^^^^
+--------------------
 
 By default, `eth0` on Fuel Master node serves PXE requests. If you are planning 
 to use another interface, then it is required to modify dnsmasq settings (which 
@@ -272,7 +306,7 @@ therefore they will not be able to boot. For example, CentOS 6.4 uses gPXE
 implementation instead of more advanced iPXE by default.
 
 When Master Node installation is done
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-------------------------------------
 
 Once the Master node is installed, power on all other nodes and log in to the 
 Fuel UI.

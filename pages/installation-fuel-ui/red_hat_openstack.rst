@@ -1,7 +1,9 @@
+.. index:: Red Hat OpenStack
+
 Red Hat OpenStack Notes
 =======================
 
-.. contents:: :local:
+.. contents :local:
 
 Overview
 --------
@@ -14,33 +16,34 @@ Red Hat account credentials in order to download Red Hat OpenStack Platform.
 The necessary components will be prepared and loaded into Cobbler. There are 
 two methods Fuel supports for obtaining Red Hat OpenStack packages: 
 
-* Red Hat Subscription Manager (RHSM) 
-* and Red Hat RHN Satellite.
+* :ref:`RHSM` (default) 
+* :ref:`RHN_Satellite`
+
+.. index:: Red Hat OpenStack; Deployment Requirements
+
+Deployment Requirements
+-----------------------
 
 Minimal Requirements
-^^^^^^^^^^^^^^^^^^^^
+++++++++++++++++++++
 
 * Red Hat account (https://access.redhat.com)
-* Red Hat OpenStack entitlement (one per host)
-* Internet access for Fuel master host
+* Red Hat OpenStack entitlement (one per node)
+* Internet access for Fuel Master name
 
 Optional requirements
-^^^^^^^^^^^^^^^^^^^^^
++++++++++++++++++++++
 
 * Red Hat Satellite Server
 * Configured Satellite activation key 
 
-Deployment types
-^^^^^^^^^^^^^^^^
+.. _RHSM:
 
-* `Red Hat Subscription Management <https://access.redhat.com/site/articles/143253>`_ (default) 
-* `Red Hat RHN Satellite <http://www.redhat.com/products/enterprise-linux/rhn-satellite/>`_
-
-Red Hat Subscription Management overview
-----------------------------------------
+Red Hat Subscription Management (RHSM)
+--------------------------------------
 
 Benefits
-^^^^^^^^
+++++++++
 
 * No need to handle large ISOs or physical media.
 * Register all your clients with just a single username and password.
@@ -50,16 +53,22 @@ Benefits
 * Download only necessary packages.
 
 Considerations
-^^^^^^^^^^^^^^
+++++++++++++++
 
 * Must observe Red Hat licensing requirements after deployment
 * Package download time is dependent on network speed (20-60 minutes)
 
-Red Hat RHN Satellite overview
-------------------------------
+.. seealso:: 
+  
+  `Overview of Subscription Management - Red Hat Customer Portal <https://access.redhat.com/site/articles/143253>`_
+
+.. _RHN_Satellite:
+  
+Red Hat RHN Satellite
+---------------------
 
 Benefits
-^^^^^^^^
+++++++++
 
 * Faster download of Red Hat OpenStack packages
 * Register all your clients with an activation key
@@ -68,7 +77,7 @@ Benefits
 * Easier to consume for large enterprise customers
 
 Considerations
-^^^^^^^^^^^^^^
+++++++++++++++
 
 * Red Hat RHN Satellite is a separate offering from Red Hat and requires 
   dedicated hardware
@@ -76,7 +85,7 @@ Considerations
   registration packages (just for Fuel Master host)
 
 What you need
-^^^^^^^^^^^^^
++++++++++++++
 
 * Red Hat account (https://access.redhat.com)
 * Red Hat OpenStack entitlement (one per host)
@@ -85,7 +94,7 @@ What you need
 * Configured Satellite activation key 
 
 Your RHN Satellite activation key must be configured the following channels
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 * RHEL Server High Availability
 * RHEL Server Load Balancer
@@ -93,6 +102,10 @@ Your RHN Satellite activation key must be configured the following channels
 * RHEL Server Resilient Storage
 * RHN Tools for RHEL
 * Red Hat OpenStack 3.0
+
+.. seealso:: 
+  
+  `Red Hat | Red Hat Network Satellite <http://www.redhat.com/products/enterprise-linux/rhn-satellite/>`_
 
 .. _rhn_sat_channels:
 
@@ -106,11 +119,13 @@ Fuel looks for the following RHN Satellite channels.
 
 .. note:: If you create cloned channels, leave these channel strings intact.
 
+.. index:: Red Hat OpenStack; Troubleshooting
+
 Troubleshooting
 ---------------
 
 Issues downloading from Red Hat Subscription Manager
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 If you receive an error from Fuel UI regarding Red Hat OpenStack download 
 issues, ensure that you have a valid subscription to the Red Hat OpenStack 
@@ -123,7 +138,7 @@ subscriptions associated with your account.
 If you are still encountering issues, contact Mirantis Support.
 
 Issues downloading from Red Hat RHN Satellite
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
++++++++++++++++++++++++++++++++++++++++++++++
 
 If you receive an error from Fuel UI regarding Red Hat OpenStack download 
 issues, ensure that you have all the necessary channels available on your 
@@ -134,7 +149,7 @@ representative <https://access.redhat.com/site/solutions/368643>`_ to get
 the proper subscriptions associated with your account.
 
 RHN Satellite error: "rhel-x86_64-server-rs-6 not found"
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 This means your Red Hat Satellite Server has run out of available entitlements 
 or your licenses have expired. Check your RHN Satellite to ensure there is at 
@@ -146,7 +161,7 @@ account, please contact your `Red Hat sales representative
 subscriptions associated with your account.
 
 Yum Error: Cannot retrieve repository metadata (repomd.xml) for repository: rhel-x86_64-server-6.
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 This can be caused by many problems. This could happen if your SSL 
 certificate does not match the hostname of your RHN Satellite Server or if 
@@ -159,7 +174,7 @@ You may find solutions to your issues with repomd.xml at the
 `Red Hat Support. <https://access.redhat.com/support/>`_.
 
 GPG Key download failed. Looking for URL your-satellite-server/pub/RHN-ORG-TRUSTED-SSL-CERT
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 This issue has two known problems. If you are using VirtualBox, this may not 
 be properly configured. Ensure that your upstream DNS resolver is correct

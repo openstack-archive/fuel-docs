@@ -3,7 +3,7 @@
 Deploying via Orchestration
 ===========================
 
-.. contents:: :local:
+.. contents :local:
 
 Performing a small series of manual installs many be an acceptable approach in 
 some circumstances, but if you plan on deploying to a large number of servers 

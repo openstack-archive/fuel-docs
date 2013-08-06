@@ -1,12 +1,12 @@
 Logical Setup 
 =============
-.. contents:: :local:
+.. contents :local:
 
 An OpenStack HA cluster involves, at a minimum, three types of nodes:
 controller nodes, compute nodes, and storage nodes.
 
 Controller Nodes
-^^^^^^^^^^^^^^^^
+----------------
 
 The first order of business in achieving high availability (HA) is
 redundancy, so the first step is to provide multiple controller nodes.
@@ -15,6 +15,7 @@ achieve HA, and Galera is a quorum-based system. That means that you must provid
 at least 3 controller nodes.
 
 .. image:: /_images/logical-diagram-controller_svg.jpg
+  :align: center
 
 Every OpenStack controller runs HAProxy, which manages a single External
 Virtual IP (VIP) for all controller nodes and provides HTTP and TCP load 
@@ -42,7 +43,7 @@ mechanism for achieving HA:
 * Quantum agents are managed by Pacemaker.
 
 Compute Nodes
-^^^^^^^^^^^^^
+-------------
 
 OpenStack compute nodes are, in many ways, the foundation of your
 cluster; they are the servers on which your users will create their
@@ -53,9 +54,10 @@ redundancy to the end-users of Horizon and REST APIs, reaching out to
 controller nodes using the VIP and going through HAProxy.
 
 .. image:: /_images/logical-diagram-compute_svg.jpg
+  :align: center
 
 Storage Nodes
-^^^^^^^^^^^^^
+-------------
 
 In this OpenStack cluster reference architecture, shared storage acts
 as a backend for Glance, so that multiple Glance instances running on
@@ -65,3 +67,4 @@ it not only for storing VM images, but also for any other objects such
 as user files.
 
 .. image:: /_images/logical-diagram-storage_svg.jpg
+  :align: center

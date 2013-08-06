@@ -75,7 +75,8 @@ release = '3.1'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-exclude_patterns = ['_*', "pages"]
+exclude_patterns = ['_*', "pages", 'rn_index.rst']
+# exclude_patterns = ['_*', 'rn_index.rst']
 
 # The reST default role (used for this markup: `text`) to use for all documents.
 #default_role = None
@@ -142,7 +143,7 @@ html_static_path = ['_static']
 
 # If true, SmartyPants will be used to convert quotes and dashes to
 # typographically correct entities.
-html_use_smartypants = True
+html_use_smartypants = False
 
 # Custom sidebar templates, maps document names to template names.
 html_sidebars = {
@@ -160,7 +161,7 @@ html_sidebars = {
 html_use_index = True
 
 # If true, the index is split into individual pages for each letter.
-html_split_index = True
+html_split_index = False
 
 # If true, links to the reST sources are added to the pages.
 html_show_sourcelink = False
@@ -293,18 +294,18 @@ pdf_fit_mode = "shrink"
 # Section level that forces a break page.
 # For example: 1 means top-level sections start in a new page
 # 0 means disabled
-#pdf_break_level = 0
+pdf_break_level = 2
 
 # When a section starts in a new page, force it to be 'even', 'odd',
 # or just use 'any'
-#pdf_breakside = 'any'
+pdf_breakside = 'any'
 
 # Insert footnotes where they are defined instead of 
 # at the end.
 #pdf_inline_footnotes = True
 
 # verbosity level. 0 1 or 2
-pdf_verbosity = 2
+pdf_verbosity = 0
 
 # If false, no index is generated.
 #pdf_use_index = True
@@ -337,7 +338,7 @@ pdf_cover_template = 'mirantiscover.tmpl'
 pdf_page_template = 'oneColumn'
 
 # Show Table Of Contents at the beginning?
-pdf_use_toc = False
+pdf_use_toc = True
 
 # How many levels deep should the table of contents be?
 pdf_toc_depth = 2

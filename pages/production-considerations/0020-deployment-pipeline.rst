@@ -3,9 +3,9 @@
 .. _Redeploying_An_Environment:
 
 Redeploying An Environment
---------------------------
+==========================
 
-.. contents:: :local:
+.. contents :local:
 
 Because Puppet is additive only, there is no ability to revert changes as you 
 would in a typical application deployment. If a change needs to be backed out, 
@@ -19,13 +19,13 @@ and minimizes the headaches associated with maintaining multiple configurations
 through a single Puppet Master by creating what are called environments.
 
 Environments
-^^^^^^^^^^^^
+------------
 
 Puppet supports assigning nodes 'environments'. These environments can be 
 mapped directly to your development, QA and production life cycles, so it’s a 
 way to distribute code to nodes that are assigned to those environments.
 
-* On the Master Node
+* On the Master node
 
   The Puppet Master tries to find modules using its ``modulepath`` setting, 
   which by default is ``/etc/puppet/modules``. It is common practice to set 
@@ -35,16 +35,18 @@ way to distribute code to nodes that are assigned to those environments.
 
   For example, you can specify several search paths. The following example 
   dynamically sets the ``modulepath`` so Puppet will check a per-environment 
-  folder for a module before serving it from the main set::
+  folder for a module before serving it from the main set:
 
-      [master]
-        modulepath = $confdir/$environment/modules:$confdir/modules
+.. code-block:: ini
 
-      [production]
-        manifest   = $confdir/manifests/site.pp
+  [master]
+    modulepath = $confdir/$environment/modules:$confdir/modules
 
-      [development]
-        manifest   = $confdir/$environment/manifests/site.pp
+  [production]
+    manifest   = $confdir/manifests/site.pp
+
+  [development]
+    manifest   = $confdir/$environment/manifests/site.pp
 
 * On the Slave Node
 
@@ -53,13 +55,15 @@ way to distribute code to nodes that are assigned to those environments.
   ``production`` environment.
 
   To set aslave-side environment, just specify the environment setting in the 
-  ``[agent]`` block of ``puppet.conf``::
+  ``[agent]`` block of ``puppet.conf``:
 
-      [agent]
-        environment = development
+.. code-block:: ini
+
+  [agent]
+    environment = development
 
 Deployment pipeline
-^^^^^^^^^^^^^^^^^^^
+-------------------
 
 * Deploy
 

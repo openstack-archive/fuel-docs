@@ -3,9 +3,9 @@
 .. _Sizing_Hardware:
 
 Sizing Hardware
----------------
+===============
 
-.. contents:: :local:
+.. contents :local:
 
 One of the first questions people ask when planning an OpenStack deployment is 
 "what kind of hardware do I need?" There is no such thing as a one-size-fits-all 
@@ -28,7 +28,7 @@ Your needs in each of these areas are going to determine your overall hardware
 requirements.
 
 Processing
-^^^^^^^^^^
+----------
 
 In order to calculate how much processing power you need to acquire you will 
 need to determine the number of VMs your cloud will support. You must also 
@@ -61,7 +61,7 @@ You will also need to take into account the following:
 * Choose a good value CPU that supports the technologies you require.
 
 Memory
-^^^^^^
+------
 
 Continuing to use the example from the previous section, we need to determine 
 how much RAM will be required to support 17 VMs per server. Let's assume that 
@@ -86,7 +86,7 @@ all core OS requirements.
 You can adjust this calculation based on your needs. 
 
 Storage Space
-^^^^^^^^^^^^^
+-------------
 
 When it comes to disk space there are several types that you need to consider:
 
@@ -125,7 +125,7 @@ it critical, a single server would need 18 drives, most likely 2.5" 15,000RPM
 146GB SAS drives. 
 
 Throughput
-~~~~~~~~~~
+++++++++++
 
 As far as throughput, that's going to depend on what kind of storage you choose.
 In general, you calculate IOPS based on the packing density (drive IOPS * drives 
@@ -161,7 +161,7 @@ replace the drive and push a new node copy. The remaining VMs carry whatever
 additional load is present due to the temporary loss of one node.
 
 Remote storage
-~~~~~~~~~~~~~~
+++++++++++++++
 
 IOPS will also be a factor in determining how you plan to handle persistent 
 storage. For example, consider these options for laying out your 50 TB of remote 
@@ -185,7 +185,7 @@ You can accomplish the same thing with a single 36 drive frame using 3 TB
 drives, but this becomes a single point of failure in your cluster.
 
 Object storage
-~~~~~~~~~~~~~~
+++++++++++++++
 
 When it comes to object storage, you will find that you need more space than 
 you think.  For example, this example specifies 50 TB of object storage. 
@@ -209,7 +209,7 @@ each, but its not recommended due to the high cost of failure to replication
 and capacity issues.
 
 Networking
-^^^^^^^^^^
+----------
 
 Perhaps the most complex part of designing an OpenStack cluster is the 
 networking. 
@@ -235,7 +235,7 @@ decrease latency by using two 10 Gb links, bringing the bandwidth per VM to
 consider.
 
 Scalability and oversubscription
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+++++++++++++++++++++++++++++++++
 
 It is one of the ironies of networking that 1Gb Ethernet generally scales 
 better than 10Gb Ethernet -- at least until 100Gb switches are more commonly 
@@ -250,7 +250,7 @@ racks, so plan to create "pods", each of which includes both storage and
 compute nodes. Generally, a pod is the size of a non-oversubscribed L2 domain.
 
 Hardware for this example
-~~~~~~~~~~~~~~~~~~~~~~~~~
++++++++++++++++++++++++++
 
 In this example, you are looking at:
 
@@ -264,7 +264,7 @@ switches. Also, as your network grows, you will need to consider uplinks and
 aggregation switches.
 
 Summary
-^^^^^^^
+-------
 
 In general, your best bet is to choose a 2 socket server with a balance in I/O, 
 CPU, Memory, and Disk that meets your project requirements. 

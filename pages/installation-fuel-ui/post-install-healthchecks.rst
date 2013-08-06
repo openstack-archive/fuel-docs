@@ -1,9 +1,11 @@
+.. index:: Fuel UI; Post-Deployment Check
+
 .. _Post-Deployment-Check:
 
 Post-Deployment Check
 =====================
 
-.. contents:: :local:
+.. contents :local:
 
 On occasion, even a successful deployment may result in some OpenStack 
 components not working correctly. If this happens, Fuel offers the 
@@ -27,7 +29,6 @@ information collected from theses tests. Another way to look at these tests
 is by their names. Sanity Checks are intended to assist in maintaining your 
 sanity. Smoke Checks tell you where the fires are so you can put them out 
 strategically instead of firehosing the entire installation.
-
 
 Benefits 
 --------
@@ -57,6 +58,7 @@ Now, let`s take a closer look on what should be done to execute the tests and
 to understand if something is wrong with your OpenStack cluster.
 
 .. image::  /_images/healthcheck_tab.jpg
+  :align: center
 
 As you can see on the image above, the Fuel UI now contains a ``Healthcheck``
 tab, indicated by the Heart icon.
@@ -85,9 +87,10 @@ this section.
 An actual test run looks like this:
 
 .. image::  /_images/ostf_screen.jpg
+  :align: center
 
 What should be done when a test failed 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+--------------------------------------
 
 If a test failed, there are several ways to investigate the problem. You may 
 prefer to start in Fuel UI since it's feedback is directly related to the 
@@ -111,11 +114,11 @@ The first thing to be done is to ensure all OpenStack services are up and runnin
 To do this you can run sanity test set, or execute the following command on your 
 controller node::
 
-    nova-manage service list
+  nova-manage service list
 
 If any service is off (has “XXX” status), you can restart it using this command::
 
-    service openstack-<service name> restart
+  service openstack-<service name> restart
 
 If all services are on, but you`re still experiencing some issues, you can 
 gather information on OpenStack Dashboard (exceeded number of instances, 
@@ -126,7 +129,7 @@ have underprovisioned your environment and should check your math and your
 project requirements.
 
 Sanity tests description 
-^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------
 
 Sanity checks work by sending a query to all OpenStack components to get a 
 response back from them. Many of these tests are simple in that they ask 
@@ -137,119 +140,119 @@ what test is used for each service:
 
 .. topic:: Instances list availability
 
-    Test checks that Nova component can return list of instances. 
+  Test checks that Nova component can return list of instances. 
 
-    Test scenario:
+  Test scenario:
 
-    1. Request list of instances.
-    2. Check returned list is not empty.
+  1. Request list of instances.
+  2. Check returned list is not empty.
 
 .. topic:: Images list availability
 
-    Test checks that Glance component can return list of images.
+  Test checks that Glance component can return list of images.
 
-    Test scenario: 
+  Test scenario: 
 
-    1. Request list of images.
-    2. Check returned list is not empty.
+  1. Request list of images.
+  2. Check returned list is not empty.
 
 .. topic:: Volumes list availability
 
-    Test checks that Swift component can return list of volumes.
+  Test checks that Swift component can return list of volumes.
 
-    Test scenario:
+  Test scenario:
 
-    1. Request list of volumes.
-    2. Check returned list is not empty.
+  1. Request list of volumes.
+  2. Check returned list is not empty.
 
 .. topic:: Snapshots list availability
 
-    Test checks that Glance component can return list of snapshots.
+  Test checks that Glance component can return list of snapshots.
 
-    Test scenario:
+  Test scenario:
 
-    1. Request list of snapshots.
-    2. Check returned list is not empty.
+  1. Request list of snapshots.
+  2. Check returned list is not empty.
 
 .. topic:: Flavors list availability
 
-    Test checks that Nova component can return list of flavors.
+  Test checks that Nova component can return list of flavors.
 
-    Test scenario:
+  Test scenario:
 
-    1. Request list of flavors.
-    2. Check returned list is not empty.
+  1. Request list of flavors.
+  2. Check returned list is not empty.
 
 .. topic:: Limits list availability
 
-    Test checks that Nova component can return list of absolute limits.
+  Test checks that Nova component can return list of absolute limits.
 
-    Test scenario:
+  Test scenario:
 
-    1. Request list of limits.
-    2. Check response.
+  1. Request list of limits.
+  2. Check response.
 
 .. topic:: Services list availability
 
-    Test checks that Nova component can return list of services.
+  Test checks that Nova component can return list of services.
 
-    Test scenario:
+  Test scenario:
 
-    1. Request list of services. 
-    2. Check returned list is not empty.
+  1. Request list of services. 
+  2. Check returned list is not empty.
 
 .. topic:: User list availability
 
-    Test checks that Keystone component can return list of users.
+  Test checks that Keystone component can return list of users.
 
-    Test scenario:
+  Test scenario:
 
-    1. Request list of services.
-    2. Check returned list is not empty.
+  1. Request list of services.
+  2. Check returned list is not empty.
 
 .. topic:: Services execution monitoring
 
-    Test checks that all of the expected services are on, meaning the test will 
-    fail if any of the listed services is in “XXX” status. 
+  Test checks that all of the expected services are on, meaning the test will 
+  fail if any of the listed services is in “XXX” status. 
 
-    Test scenario:
+  Test scenario:
 
-    1. Connect to a controller via SSH.
-    2. Execute nova-manage service list command.
-    3. Check there are no failed services.
+  1. Connect to a controller via SSH.
+  2. Execute nova-manage service list command.
+  3. Check there are no failed services.
 
 .. topic:: DNS availability
 
-    Test checks that DNS is available. 
+  Test checks that DNS is available. 
 
-    Test scenario:
+  Test scenario:
 
-    1. Connect to a controller node via SSH.
-    2. Execute host command for the controller IP.
-    3. Check DNS name can be successfully resolved.
+  1. Connect to a controller node via SSH.
+  2. Execute host command for the controller IP.
+  3. Check DNS name can be successfully resolved.
 
 .. topic:: Networks availability
 
-    Test checks that Nova component can return list of available networks. 
-    
-    Test scenario:
-    
-    1. Request list of networks.
-    2. Check returned list is not empty.
+  Test checks that Nova component can return list of available networks. 
+  
+  Test scenario:
+  
+  1. Request list of networks.
+  2. Check returned list is not empty.
 
 .. topic:: Ports availability
 
-    Test checks that Nova component can return list of available ports.
+  Test checks that Nova component can return list of available ports.
 
-    Test scenario:
+  Test scenario:
 
-    1. Request list of ports.
-    2. Check returned list is not empty.
+  1. Request list of ports.
+  2. Check returned list is not empty.
 
 For more information refer to nova cli reference.
 
 Smoke tests description 
-^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------
 
 Smoke tests verify how your system handles basic OpenStack operations under 
 normal circumstances. The Smoke test series uses timeout tests for 
@@ -265,158 +268,161 @@ negatives. The following is a description of each sanity test available:
 
 .. topic:: Flavor creation
 
-    Test checks that low requirements flavor can be created.
+  Test checks that low requirements flavor can be created.
 
-    Target component: Nova
+  Target component: Nova
 
-    Scenario:
+  Scenario:
 
-    1. Create small-size flavor.
-    2. Check created flavor has expected name.
-    3. Check flavor disk has expected size.
+  1. Create small-size flavor.
+  2. Check created flavor has expected name.
+  3. Check flavor disk has expected size.
 
-    For more information refer to nova cli reference.
+  For more information refer to nova cli reference.
 
 .. topic:: Volume creation
 
-    Test checks that a small-sized volume can be created.
+  Test checks that a small-sized volume can be created.
 
-    Target component: Compute
+  Target component: Compute
 
-    Scenario:
+  Scenario:
 
-    1. Create a new small-size volume.
-    2. Wait for "available" volume status.
-    3. Check response contains "display_name" section.
-    4. Create instance and wait for "Active" status
-    5. Attach volume to instance.
-    6. Check volume status is "in use".
-    7. Get created volume information by its id.
-    8. Detach volume from instance.
-    9. Check volume has "available" status.
-    10. Delete volume.
+  1. Create a new small-size volume.
+  2. Wait for "available" volume status.
+  3. Check response contains "display_name" section.
+  4. Create instance and wait for "Active" status
+  5. Attach volume to instance.
+  6. Check volume status is "in use".
+  7. Get created volume information by its id.
+  8. Detach volume from instance.
+  9. Check volume has "available" status.
+  10. Delete volume.
 
-    If you see that created volume is in ERROR status, it can mean that you`ve 
-    exceeded the maximum number of volumes that can be created. You can check it 
-    on OpenStack dashboard. For more information refer to volume management 
-    instructions.
+  If you see that created volume is in ERROR status, it can mean that you`ve 
+  exceeded the maximum number of volumes that can be created. You can check it 
+  on OpenStack dashboard. For more information refer to volume management 
+  instructions.
 
 .. topic:: Instance booting and snapshotting
 
-    Test creates a keypair, checks that instance can be booted from default 
-    image, then a snapshot can be created from it and a new instance can be 
-    booted from a snapshot.  Test also verifies that instances and images reach 
-    ACTIVE state upon their creation. 
+  Test creates a keypair, checks that instance can be booted from default 
+  image, then a snapshot can be created from it and a new instance can be 
+  booted from a snapshot.  Test also verifies that instances and images reach 
+  ACTIVE state upon their creation. 
 
-    Target component: Glance
+  Target component: Glance
 
-    Scenario:
+  Scenario:
 
-    1. Create new keypair to boot an instance.
-    2. Boot default image.
-    3. Make snapshot of created server.
-    4. Boot another instance from created snapshot.
- 
-    If you see that created instance is in ERROR status, it can mean that you`ve 
-    exceeded any system requirements limit. The test is using a nano-flavor with 
-    parameters: 64 RAM, 1 GB disk space, 1 virtual CPU presented. For more 
-    information refer to nova cli reference, image management instructions.
+  1. Create new keypair to boot an instance.
+  2. Boot default image.
+  3. Make snapshot of created server.
+  4. Boot another instance from created snapshot.
+
+  If you see that created instance is in ERROR status, it can mean that you`ve 
+  exceeded any system requirements limit. The test is using a nano-flavor with 
+  parameters: 64 RAM, 1 GB disk space, 1 virtual CPU presented. For more 
+  information refer to nova cli reference, image management instructions.
 
 .. topic:: Keypair creation
 
-    Target component: Nova.
+  Target component: Nova.
 
-    Scenario:
+  Scenario:
 
-    1. Create a new keypair, check if it was created successfully 
-       (check name is expected, response status is 200).
+  1. Create a new keypair, check if it was created successfully 
+     (check name is expected, response status is 200).
 
-    For more information refer to nova cli reference.
+  For more information refer to nova cli reference.
 
 .. topic:: Security group creation
 
-    Target component: Nova
+  Target component: Nova
 
-    Scenario:
+  Scenario:
 
-    1. Create security group, check if it was created correctly 
-       (check name is expected, response status is 200).
+  1. Create security group, check if it was created correctly 
+     (check name is expected, response status is 200).
 
-    For more information refer to nova cli reference.
+  For more information refer to nova cli reference.
 
 .. topic:: Network parameters check
 
-    Target component: Nova
+  Target component: Nova
 
-    Scenario:
+  Scenario:
 
-    1. Get list of networks.
-    2. Check seen network labels equal to expected ones.
-    3. Check seen network ids equal to expected ones.
+  1. Get list of networks.
+  2. Check seen network labels equal to expected ones.
+  3. Check seen network ids equal to expected ones.
 
-    For more information refer to nova cli reference.
+  For more information refer to nova cli reference.
 
 .. topic:: Instance creation
-    Target component: Nova
 
-    Scenario:
+  Target component: Nova
 
-    1. Create new keypair (if it`s nonexistent yet).
-    2. Create new sec group (if it`s nonexistent yet).
-    3. Create instance with usage of created sec group and keypair.
+  Scenario:
 
-    For more information refer to nova cli reference, instance management 
-    instructions.
+  1. Create new keypair (if it`s nonexistent yet).
+  2. Create new sec group (if it`s nonexistent yet).
+  3. Create instance with usage of created sec group and keypair.
+
+  For more information refer to nova cli reference, instance management 
+  instructions.
 
 .. topic:: Floating IP assignment
 
-    Target component: Nova
+  Target component: Nova
 
-    Scenario:
+  Scenario:
 
-    1. Create new keypair (if it`s nonexistent yet).
-    2. Create new sec group (if it`s nonexistent yet).
-    3. Create instance with usage of created sec group and keypair.
-    4. Create new floating ip.
-    5. Assign floating ip to created instance.
-    
-    For more information refer to nova cli reference, floating ips management 
-    instructions.
+  1. Create new keypair (if it`s nonexistent yet).
+  2. Create new sec group (if it`s nonexistent yet).
+  3. Create instance with usage of created sec group and keypair.
+  4. Create new floating IP.
+  5. Assign floating IP to created instance.
+  
+  For more information refer to nova cli reference, floating ips management 
+  instructions.
 
 .. topic:: Network connectivity check through floating IP
 
-    Target component: Nova
+  Target component: Nova
 
-    Scenario:
+  Scenario:
 
-    1. Create new keypair (if it`s nonexistent yet).
-    2. Create new sec group (if it`s nonexistent yet).
-    3. Create instance with usage of created sec group and keypair.
-    4. Check connectivity for all floating ips using ping command.
+  1. Create new keypair (if it`s nonexistent yet).
+  2. Create new sec group (if it`s nonexistent yet).
+  3. Create instance with usage of created sec group and keypair.
+  4. Check connectivity for all floating IPs using ping command.
 
-    If this test failed, it`s better to run a network check and verify that all 
-    connections are correct. For more information refer to the Nova CLI reference's
-    floating IPs management instructions.
+  If this test failed, it`s better to run a network check and verify that all 
+  connections are correct. For more information refer to the Nova CLI reference's
+  floating IPs management instructions.
 
 .. topic:: User creation and authentication in Horizon
 
-    Test creates new user, tenant, user role with admin privileges and logs in 
-    to dashboard. Target components: Nova, Keystone
+  Test creates new user, tenant, user role with admin privileges and logs in 
+  to dashboard. 
+  
+  Target components: Nova, Keystone
 
-    Scenario:
+  Scenario:
 
-    1. Create a new tenant.
-    2. Check tenant was created successfully.
-    3. Create a new user.
-    4. Check user was created successfully.
-    5. Create a new user role.
-    6. Check user role was created successfully.
-    7. Perform token authentication.
-    8. Check authentication was successful.
-    9. Send authentication request to Horizon.
-    10. Verify response status is 200.
+  1. Create a new tenant.
+  2. Check tenant was created successfully.
+  3. Create a new user.
+  4. Check user was created successfully.
+  5. Create a new user role.
+  6. Check user role was created successfully.
+  7. Perform token authentication.
+  8. Check authentication was successful.
+  9. Send authentication request to Horizon.
+  10. Verify response status is 200.
 
-    If this test fails on the authentication step, you should first try opening 
-    the dashboard - it may be unreachable for some reason and then you should 
-    check your network configuration. For more information refer to nova cli 
-    reference.
+  If this test fails on the authentication step, you should first try opening 
+  the dashboard - it may be unreachable for some reason and then you should 
+  check your network configuration. For more information refer to nova cli 
+  reference.

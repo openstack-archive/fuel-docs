@@ -1,3 +1,7 @@
+.. index:: Deployment Configurations; HA Compact Details
+
+.. _Close_look_Compact:
+
 A closer look at the Multi-node (HA) Compact deployment
 =======================================================
 
@@ -6,6 +10,7 @@ deployment configuration and how it achieves high availability. As you may
 recall, this configuration looks something like this:
 
 .. image:: /_images/deployment-ha-compact_svg.jpg
+  :align: center
 
 OpenStack services are interconnected by RESTful HTTP-based APIs and
 AMQP-based RPC messages. So redundancy for stateless OpenStack API
@@ -17,6 +22,7 @@ For example, RabbitMQ uses built-in clustering capabilities, while the
 database uses MySQL/Galera replication.
 
 .. image:: /_images/ha-overview_svg.jpg
+  :align: center
 
 Lets take a closer look at what an OpenStack deployment looks like, and
 what it will take to achieve high availability for an OpenStack

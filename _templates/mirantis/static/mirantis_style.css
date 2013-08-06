@@ -3,8 +3,14 @@ li.toctree-l1, li.toctree-l2
 	margin-top: 4px;
 }
 
+div.disqus_thread
+{
+    padding: 10px;
+}
+
 div.relbar-bottom div.related_hf
 {
+    background: #FFFFFF;
     border-radius: 0 0 .7em .7em;
     -moz-border-radius: 0 0 .7em .7em;
     -webkit-border-radius: 0 0 .7em .7em;

@@ -41,7 +41,7 @@ and Astute orchestrator passes to the next node in deployment sequence.
 Deploying OpenStack Cluster Using CLI
 =====================================
 
-.. contents:: :local:
+.. contents :local:
 
 After you understood how deployment workflow is traversed, you can finally start. 
 Connect the nodes to Master node and power them on. You should also plan your 
@@ -111,6 +111,9 @@ Sample YAML configuration for provisioning is listed below:
     # == id 
     # MCollective node id in mcollective server.cfg.
   - id: 1
+    # == uid
+    # UID of the node for deployment engine. Should be equal to `id`
+    uid: 1  
     # == mac
     # MAC address of the interface being used for network boot.
     mac: 64:43:7B:CA:56:DD
@@ -333,7 +336,7 @@ Wait for command to finish. Now you can start configuring OpenStack cluster para
 Configuring Nodes for Deployment
 ================================
 
-.. contents:: :local:
+.. contents :local:
 
 Node Configuration
 ------------------
@@ -384,9 +387,6 @@ section of the file with data related to deployment.
     # == internal_br
     # Name of the internal bridge for Quantum-enabled configuration
     internal_br: br-mgmt
-    # == id
-    # UID of the node for deployment engine. Should be equal to `id`
-    uid: 1  
 
 General Parameters
 ------------------
