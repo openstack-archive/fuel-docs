@@ -6,7 +6,7 @@
         .. cssclass:: header-table
         
         +-------------------------------------+-----------------------------------+
-        | Fuel™ for Openstack v|version|      |                .. cssclass:: right|
+        | Fuel™ for v|version Openstack|      |                .. cssclass:: right|
         |                                     |                                   |
         | Release Notes                       |                     ###Section### |
         +-------------------------------------+-----------------------------------+
