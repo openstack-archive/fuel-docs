@@ -137,7 +137,7 @@ types of traffic. When a node is added to the environment, click at the bottom
 line of the node icon. In the detailed information window, click the "Network 
 Configuration" button to open the physical interfaces configuration screen.
 
-.. image:: /_images/network_settings.jpg
+.. image:: /_images/network-settings.jpg
   :align: center
 
 On this screen you can drag-and-drop logical networks to physical interfaces 
