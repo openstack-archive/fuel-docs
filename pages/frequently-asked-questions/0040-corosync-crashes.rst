@@ -1,9 +1,5 @@
-.. raw:: pdf
-
-   PageBreak
-
 Corosync crashes without network connectivity
-=============================================
+---------------------------------------------
 
 Depending on a wide range of systems and configurations in network it is 
 possible for Corosync's networking protocol, TOTEM, to time out. If this 

@@ -126,8 +126,8 @@ Fuel looks for the following RHN Satellite channels.
 
 .. index:: Red Hat OpenStack: Troubleshooting
 
-Troubleshooting
----------------
+Troubleshooting Red Hat OpenStack Deployment
+--------------------------------------------
 
 Issues downloading from Red Hat Subscription Manager
 ++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -140,7 +140,8 @@ Active Subscriptions. Contact your `Red Hat sales representative
 <https://access.redhat.com/site/solutions/368643>`_ to get the proper 
 subscriptions associated with your account. 
 
-If you are still encountering issues, contact Mirantis Support.
+If you are still encountering issues, `contact Mirantis 
+Support <http://www.mirantis.com/contact/>`_.
 
 Issues downloading from Red Hat RHN Satellite
 +++++++++++++++++++++++++++++++++++++++++++++
@@ -174,7 +175,7 @@ you configured Fuel to use an IP address during deployment. This is not
 recommended and you should use a fully qualified domain name for your RHN 
 Satellite Server.
 
-You may find solutions to your issues with repomd.xml at the 
+You may find solutions to your issues with ``repomd.xml`` at the 
 `Red Hat Knowledgebase <https://access.redhat.com/>`_ or contact 
 `Red Hat Support. <https://access.redhat.com/support/>`_.
 
@@ -183,7 +184,7 @@ GPG Key download failed. Looking for URL your-satellite-server/pub/RHN-ORG-TRUST
 
 This issue has two known problems. If you are using VirtualBox, this may not 
 be properly configured. Ensure that your upstream DNS resolver is correct
-in `/etc/dnsmasq.upstream`. This setting is configured during the bootstrap 
+in ``/etc/dnsmasq.upstream``. This setting is configured during the bootstrap 
 process, but it is not possible to validate resolution of internal DNS names
 at that time. Also, this may be caused by other DNS issues, local network,
 or incorrect spelling of the RHN Satellite Server. Check your local network

@@ -6,8 +6,8 @@
 
 .. _Close_look_Compact:
 
-A closer look at the Multi-node (HA) Compact deployment
-=======================================================
+Details of HA Compact Deployment
+================================
 
 In this section, you'll learn more about the Multi-node (HA) Compact
 deployment configuration and how it achieves high availability. As you may 

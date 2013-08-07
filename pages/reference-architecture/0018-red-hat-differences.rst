@@ -36,11 +36,10 @@ Below is the list of modifications:
   Platform will only support Nova networking.
 
 .. index:: Reference Architectures: RHOS Non-HA Simple, RHOS Non-HA Simple
-.. index Deployment Configurations; Red Hat OpenStack; RHOS Non-HA Simple
 
 .. _RHOS_Simple:
 
-Simple (non-HA) Red Hat OpenStack deployment
+Simple (non-HA) Red Hat OpenStack Deployment
 --------------------------------------------
 
 In a production environment, you will never have a Simple non-HA
@@ -61,11 +60,10 @@ hardware investment relatively modest is to house your storage on your
 controller nodes.
 
 .. index:: Reference Architectures: RHOS HA Compact, RHOS HA Compact
-.. index Deployment Configurations; Red Hat OpenStack; RHOS HA Compact
 
 .. _RHOS_Compact:
 
-Multi-node (HA) Red Hat OpenStack deployment (Compact)
+Multi-node (HA) Red Hat OpenStack Deployment (Compact)
 ------------------------------------------------------
 
 Production environments typically require high availability, which

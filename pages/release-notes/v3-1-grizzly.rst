@@ -7,20 +7,21 @@ New Features in Fuel 3.1
 
 .. contents:: :local:
   :depth: 1
+  :backlinks: none
 
 Fuel 3.1 with Integrated Graphical and Command Line controls
 ------------------------------------------------------------
 
-In earlier releases, Fuel was distributed as two packages – ``Fuel Web`` for 
-graphical workflow, and ``Fuel Library`` for command-line based manipulation. 
+In earlier releases, Fuel was distributed as two packages – `Fuel Web` for 
+graphical workflow, and `Fuel Library` for command-line based manipulation. 
 Starting with this 3.1 release, we’ve integrated these two capabilities into 
 a single offering, referred to simply as Fuel. If you used Fuel Web, you’ll 
 see that capability along with its latest improvements to that capability in 
 the the Fuel User Interface (UI), providing a streamlined, graphical console 
 that enables a point-and-click experience for the most commonly deployed 
 configurations. Advanced users with more complex environmental needs can 
-still get command-line access to the underlying deployment engine (aka ``Fuel 
-Library``).
+still get command-line access to the underlying deployment engine (aka `Fuel 
+Library`).
 
 Option to deploy Red Hat Enterprise Linux® OpenStack® Platform
 --------------------------------------------------------------
@@ -55,12 +56,19 @@ segregate network traffic. In these networks, Fuel can now be configured
 through the Fuel UI to disable the need for VLAN tagging. This configuration 
 option is available through the Network Settings tab.
 
+Full support of Quantum networking engine
+-----------------------------------------
+
+This release now supports all the features of Quantum OpenStack virtual 
+networking implementation including network namespaces feature ported to 
+2.6.32 CentOS kernel allowing virtual networks overlapping.
+
 Improved High Availability resiliency
 -------------------------------------
 
 To improve the resiliency of the Mirantis OpenStack High Availability reference 
 architecture, Fuel now deploys all HA services under Pacemaker, a scalable 
-cluster resource manager developed by Clusterlabs.  
+cluster resource manager developed by ClusterLabs.  
 
 Horizon password entry can be hidden
 ------------------------------------
@@ -71,6 +79,10 @@ This icon acts as a toggle between hidden and visible input modes.
 
 Resolved Issues in Fuel 3.1
 ===========================
+
+.. contents:: :local:
+  :depth: 1
+  :backlinks: none
 
 Disk Configuration now displays proper size and validates input
 ---------------------------------------------------------------
@@ -123,10 +135,11 @@ Separate Logical Volume Manager (LVM) now used for Glance storage
 
 Glance storage was previously configured to use a root partition on a 
 controller node. Because of this, in HA mode, Swift was configured to use 
-only 5 Gb of storage. A user was unable to load large images into Glance in 
+only 5 GB of storage. A user was unable to load large images into Glance in 
 HA mode and could receive an out of space error message if a small root 
 partition were used. This situation has been corrected by creating special LVM 
-for Glance storage. You can modify the size of this partition in the `Disk Configuration` screen.
+for Glance storage. You can modify the size of this partition in the 
+`Disk Configuration` screen.
 
 Memory leaks in nailgun service
 -------------------------------
@@ -156,7 +169,7 @@ Provisioning failure on large hard drives
 -----------------------------------------
 
 In previous releases, when ext4 was used as a file system for a partition, 
-provisioning would fail for for large volumes (larger than 16 Tb) in some 
+provisioning would fail for for large volumes (larger than 16 TB) in some 
 cases. Ext4 has been replaced by the xfs file system which works well on large 
 volumes.
 
@@ -182,33 +195,49 @@ about the node is unavailable.
 Known Issues in Fuel 3.1
 ========================
 
-Support for OpenStack Grizzly
------------------------------
+.. contents:: :local:
+  :depth: 1
+  :backlinks: none
+
+Limited Support for OpenStack Grizzly
+-------------------------------------
 
 The following improvements in Grizzly are not currently supported directly by 
 Fuel:
+
 - Nova Compute
+
   - Cells
   - Availability zones
   - Host aggregates
+
 - Neutron (formerly Quantum)
+
   - LBaaS (Load Balancer as a Service)
   - Multiple L3 and DHCP agents per cloud
+  
 - Keystone
+
   - Multi-factor authentication
   - PKI authentication
+  
 - Swift
+
   - Regions
   - Adjustable replica count
   - Cross-project ACLs
+
 - Cinder
+
   - Support for FCoE
   - Support for LIO as an iSCSI backend
   - Support for multiple backends on the same manager
+  
 - Ceilometer
+
 - Heat
 
-It is expected that these capabilities will be supported in a future release 
+It is expected that these capabilities will be supported in future releases 
 of Fuel.
 
 In addition, support for High Availability of Neutron (Quantum) on Red Hat 
@@ -216,11 +245,18 @@ Enterprise Linux® (RHEL) is not available due to a limitation within the
 Red Hat kernel. It is expected that this issue will be addressed by a patch to 
 RHEL in late 2013.
 
+Nagios deployment is disabled
+-----------------------------
+
+Due to instability of PuppetDB and Nagios manifests we decided to 
+temporarily disable the Nagios deployment feature. It is planned to re-enable
+this feature in next release with improved and much more stable manifests.
+
 Ability to deploy Swift and Neutron (Quantum) is limited to Fuel CLI
 --------------------------------------------------------------------
 
 At this time, customers wishing to deploy Swift or Neutron (Quantum) will need 
-to do so through the Fuel Library.  An option to deploy these components as 
+to do so through the Fuel CLI.  An option to deploy these components as 
 standalone nodes is not currently present in the Fuel UI.  It is expect that 
 a near future release will enable this capability.
 
@@ -320,7 +356,7 @@ Other Limitations:
 - Neutron (Quantum) multi-node balancing conflicts with pacemaker, so the two 
   should not be used together in the same environment.
 
-- When deploying Neutron (Quantum) with the Fuel Library and when virtual 
+- When deploying Neutron (Quantum) with the Fuel CLI and when virtual 
   machines need to have access to internet and/or external networks you need 
   to set the floating network prefix and public_address so that they do not 
   intersect with the network external interface to which it belongs. This is 

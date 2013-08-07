@@ -6,7 +6,7 @@
 
 .. _HA_Compact:
 
-Multi-node (HA) deployment (Compact)
+Multi-node (HA) Deployment (Compact)
 ====================================
 
 Production environments typically require high availability, which

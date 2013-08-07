@@ -22,4 +22,3 @@ Reference Architectures
 .. include:: /pages/reference-architecture/0060-quantum-vs-nova-network.rst
 .. include:: /pages/reference-architecture/0070-cinder-vs-nova-volume.rst
 .. include:: /pages/reference-architecture/0080-swift-notes.rst
-.. include:: /pages/reference-architecture/0090-ha-notes.rst

@@ -25,19 +25,19 @@ Scripts which are provided for quick Fuel setup, create 3 host-interface
 adapters. Basically networking works as this being a 3 bridges, in each of 
 them the only one VMs interfaces is connected. It means there is only L2 
 connectivity between VMs on interfaces with the same name. If you try to 
-move, for example, management network to eth1 on controller node, and the 
-same network to eth2 on the compute, then there will be no connectivity 
+move, for example, management network to `eth1` on Controller node, and the 
+same network to `eth2` on the Compute, then there will be no connectivity 
 between OpenStack services in spite of being configured to live on the same 
 VLAN. It is very easy to validate network settings before deployment by 
 clicking the "Verify Networks" button.
-If you need to access OpenStack REST API over public network, VNC console of VMs,
+If you need to access OpenStack REST API over Public network, VNC console of VMs,
 Horizon in HA mode or VMs, refer to this section: :ref:`access_to_public_net`.
 
-Timeout in connection to OpenStack API from client applications
+Timeout In Connection to OpenStack API From Client Applications
 ---------------------------------------------------------------
 
 If you use Java, Python or any other code to work with OpenStack API, all 
-connections should be done over OpenStack public network. To explain why we 
+connections should be done over OpenStack Public network. To explain why we 
 can not use Fuel network, let's try to run nova client with debug 
 option enabled::
 
@@ -98,5 +98,6 @@ Even though initial connection was in 192.168.0.2, then client tries to
 access Public network for Nova API. The reason is because Keystone returns 
 the list of OpenStack services URLs, and for production-grade deployments it 
 is required to access services over public network. 
-See :ref:`access_to_public_net` if you want to configure the installation
-on VirtualBox to make all these issues fixed.
+
+.. seealso:: :ref:`access_to_public_net` if you want to configure the installation
+  on VirtualBox to make all these issues fixed.

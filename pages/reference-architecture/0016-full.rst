@@ -6,7 +6,7 @@
 
 .. _HA_Full:
 
-Multi-node (HA) deployment (Full)
+Multi-node (HA) Deployment (Full)
 =================================
 
 For large production deployments, its more common to provide

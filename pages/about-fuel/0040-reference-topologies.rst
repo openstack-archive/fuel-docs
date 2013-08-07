@@ -27,12 +27,12 @@ ability to individually specify services such as Cinder, Neutron (formerly
 Quantum), and Swift, Fuel provides the following variations of the 
 Multi-node (HA) configurations:
 
-  **Compact HA**: When you choose this option, Swift will be installed on 
+- **Compact HA**: When you choose this option, Swift will be installed on 
   your controllers, reducing your hardware requirements by eliminating the need 
   for additional Swift servers while still addressing high availability 
   requirements.
 
-  **Full HA**: This option enables you to install independent Swift and Proxy
+- **Full HA**: This option enables you to install independent Swift and Proxy
   nodes, so that you can separate their operation from your controller nodes.
 
 In addition to these configurations, Fuel is designed to be completely 
