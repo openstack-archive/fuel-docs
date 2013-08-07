@@ -20,6 +20,16 @@
 
 {% extends "cloud/layout.html" %}
 
+{%- block sidebarlogo %}
+    {%- if logo %}
+        <p class="logo"><a href="{{ pathto(theme_logotarget) }}">
+          <img class="logo" src="{{ pathto('_static/' + logo, 1) }}" alt="Logo"/>
+        </a><br>Version {{ version }}
+        
+        </p>
+    {%- endif %}
+{%- endblock %}
+
 {%- block relbar1 %}
     <div class="relbar-top">
     <div class="related_hf">

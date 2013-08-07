@@ -98,6 +98,12 @@ div.section.emphasize-children > div.section > h3
     border-width: 1px 1px 1px 1px;
     font-style: normal;
 }
+
+div.sphinxsidebar
+{
+    line-height: 100%;
+}
+
 div.sphinxsidebar #searchbox input[type="text"] {
     width: 145px;
 }
