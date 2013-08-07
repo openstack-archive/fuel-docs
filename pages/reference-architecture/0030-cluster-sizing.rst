@@ -1,7 +1,11 @@
+.. raw:: pdf
+
+   PageBreak
+
 .. index:: Cluster Sizing
 
 Cluster Sizing
-^^^^^^^^^^^^^^
+==============
 
 This reference architecture is well suited for production-grade
 OpenStack deployments on a medium and large scale when you can afford
@@ -15,21 +19,22 @@ deployment is to allocate 4 nodes:
 
 - 1 compute node
 
-.. fancybox:: /_images/060-deployment-controllers-and-storage-combined_svg.png
-    :width: 400px
-    :height: 250px
+.. image:: /_images/deployment-ha-compact_svg.jpg
+  :align: center
 
-If you want to run storage separately from the controllers, you can do that as well by raising the bar to 7 nodes:
+If you want to run storage separately from the controllers, you can do that as 
+well by raising the bar to 9 nodes:
 
-- 3 controller nodes
+- 3 Controller nodes
 
-- 3 storage nodes
+- 3 Storage nodes
 
-- 1 compute node
+- 2 Swift Proxy nodes
 
-.. fancybox:: /_images/070-deployment-controllers-and-storage-separate_svg.png
-    :width: 400px
-    :height: 300px
+- 1 Compute node
+
+.. image:: /_images/deployment-ha-full_svg.jpg
+  :align: center
 
 Of course, you are free to choose how to deploy OpenStack based on the
 amount of available hardware and on your goals (such as whether you
@@ -39,11 +44,14 @@ For a typical OpenStack compute deployment, you can use this table as
 high-level guidance to determine the number of controllers, compute,
 and storage nodes you should have:
 
-=============  ===========  =======  ==============
-# of Machines  Controllers  Compute  Storage
-=============  ===========  =======  ==============
-4-10           3            1-7      on controllers
-11-40          3            5-34     3 (separate)
-41-100         4            31-90    6 (separate)
->100           5            >86      9 (separate)
-=============  ===========  =======  ==============
++----------+-----------+--------+-----------------------+
+|# of Nodes|Controllers|Computes|Storages               |
++==========+===========+========+=======================+
+|4-10      |  3        |   1-7  |3 (on controllers)     |
++----------+-----------+--------+-----------------------+
+|11-40     |  3        |   3-32 |3+ (swift) + 2 (proxy) |
++----------+-----------+--------+-----------------------+
+|41-100    |  4        |  29-88 |6+ (swift) + 2 (proxy) |
++----------+-----------+--------+-----------------------+
+|>100      |  5        |   >84  |9+ (swift) + 2 (proxy) |
++----------+-----------+--------+-----------------------+

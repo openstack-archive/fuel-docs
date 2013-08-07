@@ -1,3 +1,7 @@
+.. raw:: pdf
+
+   PageBreak
+
 .. index: How Fuel Works
 
 .. _How-Fuel-Works:
@@ -5,32 +9,51 @@
 How Fuel Works
 ==============
 
-Fuel works on a simple premise. Rather than installing each of the myriad 
+Fuel is a ready-to-install collection of the packages and scripts you need 
+to create a robust, configurable, vendor-independent OpenStack cloud in your 
+own environment. As of Fuel 3.1, Fuel Library and Fuel Web have been merged 
+into a single toolbox with options to use the UI or CLI for management. 
+
+A single OpenStack cloud consists of packages from many different open source 
+projects, each with its own requirements, installation procedures, and 
+configuration management. Fuel brings all of these projects together into a 
+single open source distribution, with components that have been tested and are 
+guaranteed to work together, and all wrapped up using scripts to help you work 
+through a single installation.
+
+Simply put, Fuel is a way for you to easily configure and install an 
+OpenStack-based infrastructure in your own environment.
+
+.. image:: /_images/FuelSimpleDiagram.jpg
+  :align: center
+
+Fuel works on a simple premise. Rather than installing each of the 
 components that make up OpenStack directly, you instead use a configuration 
-management system like Puppet to create scripts that can provide a configurable, 
-reproducible, sharable installation process.
+management system like Puppet to create scripts that can provide a 
+configurable, reproducible, sharable installation process.
 
-In practice, that means that the process of using Fuel looks like 1-2-3:
+In practice, Fuel works as follows:
 
-1. First, set up Fuel Admin Node using the ISO. This process only needs to be 
-   completed once per installation.
+1. First, set up Fuel Master Node using the ISO. This process only needs to 
+   be completed once per installation.
 
-2. Next, discover your virtual or phisical nodes and configure your OpenStack 
-   cluster using the Fuel UI.
+2. Next, discover your virtual or physical nodes and configure your 
+   OpenStack cluster using the Fuel UI.
 
-3. Finally, deploy your OpenStack cluster on discovered nodes. Fuel will do all 
-   deployment magic for you by applying completely customizable Puppet manifests, 
-   enabling you to maintain your cluster and adapt to your own configuration as 
-   necessary.
+3. Finally, deploy your OpenStack cluster on discovered nodes. Fuel will 
+   perform all deployment magic for you by applying pre-configured and 
+   pre-integrated Puppet manifests via Astute orchestration engine.
 
-.. fancybox:: /_images/010-how-it-works_svg.png
-    :width: 300px
-    :height: 300px
+Fuel is designed to enable you to maintain your cluster while giving you the 
+flexibility to adapt it to your own configuration.
 
-Fuel comes with several pre-defined deployment configurations, some of which 
-include additional options from which you can choose.
+.. image:: /_images/how-it-works_svg.jpg
+  :align: center
 
-..
-    FuelWeb integrates all of the components of Fuel Library into a unified, 
-	web-based graphical user interface that walks administrators through the 
-	process of installing and configuring a fully functional OpenStack environment.
+Fuel comes with several pre-defined deployment configurations, some of them 
+include additional configuration options that allow you to adapt OpenStack 
+deployment to your environment.
+
+Fuel UI integrates all of the deployments scripts into a unified, 
+Web-based Graphical User Interface that walks administrators through the 
+process of installing and configuring a fully functional OpenStack environment.

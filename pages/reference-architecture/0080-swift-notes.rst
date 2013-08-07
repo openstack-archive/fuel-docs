@@ -1,21 +1,23 @@
+.. index:: Object storage, Swift, Glance
+
 .. _Swift-and-object-storage-notes:
 
-Swift (object storage) notes
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Object Storage Deployment
+-------------------------
 
-FUEL currently supports several ways to deploy the swift service:
+Fuel currently supports several scenarios to deploy the object storage:
 
-* Swift absent
+**Glance + filesystem**
+  By default, Glance uses the file system backend to store virtual machine images. 
+  In this case, you can use any of shared file systems supported by Glance. 
 
-  By default, Glance uses the filesystem backend to store virtual machine images. In this case, you can use any of shared file systems Glance supports. 
+**Swift on controllers**
+  In this mode the role of swift-storage and swift-proxy are combined with a 
+  nova-controller. Use it only for testing in order to save nodes. It's not 
+  suitable for production environments.
 
-* Swift compact
-
-  In this mode the role of swift-storage and swift-proxy are combined with a nova-controller. Use it only for testing in order to save nodes; it's not suitable for production.
-
-* Swift standalone
-
-  In this case the Proxy service and Storage (account/container/object) services reside on separate nodes, with one proxy node and a minimum of three storage nodes.  (For a production cluster, a minimum of five nodes is recommended.)
-
-Now let's look at performing an actual OpenStack installation using Fuel.
+**Swift on dedicated nodes**
+  In this case the Proxy service and Storage (account/container/object) services 
+  reside on separate nodes, with two proxy nodes and a minimum of three storage 
+  nodes.
 

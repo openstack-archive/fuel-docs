@@ -1,73 +1,109 @@
+.. raw:: pdf
+
+   PageBreak
+
+.. index:: Redeploying An Environment
+
+.. _Redeploying_An_Environment:
+
 Redeploying An Environment
---------------------------
+==========================
 
-.. contents:: :local:
+.. contents :local:
 
-Because Puppet is additive only, there is no ability to revert changes as you would in a typical application deployment. If a change needs to be backed out, you must explicitly add a configuration to reverse it, check the configuration in, and promote it to production using the pipeline. This means that if a breaking change does get deployed into production, typically a manual fix is applied, with the proper fix subsequently checked into version control.
+Because Puppet is additive only, there is no ability to revert changes as you 
+would in a typical application deployment. If a change needs to be backed out, 
+you must explicitly add a configuration to reverse it, check the configuration 
+in, and promote it to production using the pipeline. This means that if a 
+breaking change does get deployed into production, typically a manual fix is 
+applied, with the proper fix subsequently checked into version control.
 
-Fuel offers the ability to isolate code changes while developing a deployment and minimizes the headaches associated with maintaining multiple configurations through a single Puppet Master by creating what are called environments.
+Fuel offers the ability to isolate code changes while developing a deployment 
+and minimizes the headaches associated with maintaining multiple configurations 
+through a single Puppet Master by creating what are called environments.
 
 Environments
-^^^^^^^^^^^^
+------------
 
-Puppet supports assigning nodes 'environments'. These environments can be mapped directly to your development, QA and production life cycles, so it’s a way to distribute code to nodes that are assigned to those environments.
+Puppet supports assigning nodes 'environments'. These environments can be 
+mapped directly to your development, QA and production life cycles, so it’s a 
+way to distribute code to nodes that are assigned to those environments.
 
-* On the Master/Server Node
+**On the Master node:**
 
-  The Puppet Master tries to find modules using its ``modulepath`` setting, which by default is ``/etc/puppet/modules``. It is common practice to set this value once in your ``/etc/puppet/puppet.conf``.  Environments expand on this idea and give you the ability to use different settings for different configurations.
+  The Puppet Master tries to find modules using its ``modulepath`` setting, 
+  which by default is ``/etc/puppet/modules``. It is common practice to set 
+  this value once in your ``/etc/puppet/puppet.conf``. Environments expand on 
+  this idea and give you the ability to use different settings for different 
+  configurations.
 
-  For example, you can specify several search paths. The following example dynamically sets the ``modulepath`` so Puppet will check a per-environment folder for a module before serving it from the main set::
+  For example, you can specify several search paths. The following example 
+  dynamically sets the ``modulepath`` so Puppet will check a per-environment 
+  folder for a module before serving it from the main set:
 
-      [master]
-        modulepath = $confdir/$environment/modules:$confdir/modules
+  .. code-block:: ini
 
-      [production]
-        manifest   = $confdir/manifests/site.pp
+    [master]
+      modulepath = $confdir/$environment/modules:$confdir/modules
 
-      [development]
-        manifest   = $confdir/$environment/manifests/site.pp
+    [production]
+      manifest   = $confdir/manifests/site.pp
 
-* On the Agent Node
+    [development]
+      manifest   = $confdir/$environment/manifests/site.pp
 
-  Once the agent node makes a request, the Puppet Master gets informed of its environment. If you don’t specify an environment, the agent uses the default ``production`` environment.
+**On the Slave Node:**
 
-  To set an environment agent-side, just specify the environment setting in the ``[agent]`` block of ``puppet.conf``::
+  Once the slave node makes a request, the Puppet Master gets informed of its 
+  environment. If you don’t specify an environment, the agent uses the default 
+  ``production`` environment.
 
-      [agent]
-        environment = development
+  To set aslave-side environment, just specify the environment setting in the 
+  ``[agent]`` block of ``puppet.conf``:
 
+  .. code-block:: ini
+
+    [agent]
+      environment = development
 
 Deployment pipeline
-^^^^^^^^^^^^^^^^^^^
+-------------------
 
-* Deploy
+1. Deploy
 
-  In order to deploy multiple environments that don't interfere with each other, you should specify the ``$deployment_id`` option in ``/etc/puppet/manifests/site.pp``.  It should be an even integer value in the range of 2-254.
+  In order to deploy multiple environments that don't interfere with each other, 
+  you should specify the ``deployment_id`` option in YAML file. 
+  It should be an even integer value in the range of 2-254.
 
-  This value is used in dynamic environment-based tag generation.  Fuel applies that tag globally to all resources on each node.  It is also used for the keepalived daemon, which evaluates a unique ``virtual_router_id``.
+  This value is used in dynamic environment-based tag generation. Fuel applies 
+  that tag globally to all resources and some services on each node.
 
-* Clean/Revert
+2. Clean/Revert
 
-  At this stage you just need to make sure the environment has the original/virgin state.
+  At this stage you just need to make sure the environment has the 
+  original/virgin state.
 
-* Puppet node deactivate
+3. Puppet node deactivate
 
-  This will ensure that any resources exported by that node will stop appearing in the catalogs served to the agent nodes::
+  This will ensure that any resources exported by that node will stop appearing 
+  in the catalogs served to the slave nodes::
 
       puppet node deactivate <node>
 
-  where ``<node>`` is the fully qualified domain name as seen in ``puppet cert list --all``.
+  where ``<node>`` is the fully qualified domain name as seen in 
+  ``puppet cert list --all``.
 
-  You can deactivate nodes manually one by one, or execute the following command to automatically deactivate all nodes::
+  You can deactivate nodes manually one by one, or execute the following 
+  command to automatically deactivate all nodes::
 
       cert list --all | awk '! /DNS:puppet/ { gsub(/"/, "", $2); print $2}' | xargs puppet node deactivate
 
-* Redeploy
+4. Redeploy
 
   Start the puppet agent again to apply a desired node configuration.
 
-Links
-^^^^^
+.. seealso::
 
-* http://puppetlabs.com/blog/a-deployment-pipeline-for-infrastructure/
-* http://docs.puppetlabs.com/guides/environment.html
+  http://puppetlabs.com/blog/a-deployment-pipeline-for-infrastructure/
+
+  http://docs.puppetlabs.com/guides/environment.html

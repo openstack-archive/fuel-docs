@@ -1,0 +1,24 @@
+.. raw:: pdf
+
+   PageBreak
+
+.. index:: Reference Architectures: HA Full, HA Full
+
+.. _HA_Full:
+
+Multi-node (HA) Deployment (Full)
+=================================
+
+For large production deployments, its more common to provide
+dedicated hardware for storage. This architecture gives you the advantages of 
+high availability, but this clean separation makes your cluster more 
+maintainable by separating storage and controller functionality:
+
+.. image:: /_images/deployment-ha-full_svg.jpg
+  :align: center
+
+Where Fuel really shines is in the creation of more complex architectures, so 
+in this document you'll learn how to use Fuel to easily create a multi-node HA 
+OpenStack cluster. To reduce the amount of hardware you'll need to follow the 
+installation, however, the guide focuses on the Multi-node HA Compact 
+architecture.

@@ -1,0 +1,249 @@
+---
+nodes:
+- role: compute
+  network_data:
+  - name: public
+    ip: 10.20.0.122
+    dev: eth0
+    netmask: 255.255.255.0
+    gateway: 10.20.0.1
+  - name:
+    - management
+    - storage
+    ip: 10.20.1.122
+    dev: eth0
+    netmask: 255.255.255.0
+  - name: fixed
+    dev: eth2
+  public_br: br-ex
+  internal_br: br-mgmt
+  id: '1'
+  default_gateway: 10.20.0.1
+  uid: '1'
+  mac: 64:7D:B8:84:64:79
+  name: compute-01
+  ip: 10.20.0.122
+  profile: centos-x86_64
+  fqdn: compute-01.domain.tld
+  power_type: ssh
+  power_user: root
+  power_pass: /root/.ssh/bootstrap.rsa
+  power_address: 10.20.0.122
+  netboot_enabled: '1'
+  name_servers: 10.20.0.2
+  puppet_master: fuel.domain.tld
+  ks_meta: &17570000
+    ks_spaces: ! '"[{\"type\": \"disk\", \"id\": \"disk/by-path/pci-0000:00:06.0-virtio-pci-virtio3\",\"volumes\":
+      [{\"mount\": \"/boot\", \"type\": \"partition\", \"size\": 200}, {\"type\":
+      \"mbr\"}, {\"size\": 20275, \"type\": \"pv\", \"vg\": \"os\"}],\"size\": 19232},{\"type\":
+      \"vg\", \"id\": \"os\", \"volumes\": [{\"mount\": \"/\", \"type\": \"lv\", \"name\":
+      \"root\", \"size\": 19232},  {\"mount\": \"swap\", \"type\": \"lv\", \"name\":
+      \"swap\", \"size\": 1024}]}, {\"type\": \"disk\", \"id\": \"disk/by-path/pci-0000:00:07.0-virtio-pci-virtio4\",
+      \"volumes\":  [{\"type\": \"mbr\"}, {\"size\": 20476, \"type\": \"pv\", \"vg\":
+      \"cinder-volumes\"}], \"size\": 20476}]"'
+    mco_enable: 1
+    mco_vhost: mcollective
+    mco_pskey: unset
+    mco_user: mcollective
+    puppet_enable: 0
+    install_log_2_syslog: 1
+    mco_password: marionette
+    puppet_auto_setup: 1
+    puppet_master: fuel.domain.tld
+    mco_auto_setup: 1
+    auth_key: ! '""'
+    puppet_version: 2.7.19
+    mco_connector: rabbitmq
+    mco_host: 10.20.0.2
+  interfaces:
+    eth0:
+      ip_address: 10.20.0.122
+      netmask: 255.255.255.0
+      dns_name: compute-01.domain.tld
+      static: '1'
+      mac_address: 64:7D:B8:84:64:79
+  interfaces_extra:
+    eth0:
+      onboot: 'yes'
+      peerdns: 'no'
+    eth1:
+      onboot: 'no'
+      peerdns: 'no'
+    eth2:
+      onboot: 'no'
+      peerdns: 'no'
+  meta: &17588060
+    memory:
+      total: 778694656
+    interfaces:
+    - mac: 64:D8:E1:F6:66:43
+      max_speed: 100
+      name: eth2
+      ip: 10.22.0.94
+      netmask: 255.255.255.0
+      current_speed: 100
+    - mac: 64:C8:E2:3B:FD:6E
+      max_speed: 100
+      name: eth1
+      ip: 10.21.0.94
+      netmask: 255.255.255.0
+      current_speed: 100
+    - name: eth0
+      ip: 10.20.0.94
+      netmask: 255.255.255.0
+      mac: 64:43:7B:CA:56:DD
+      max_speed: 100
+      current_speed: 100
+    disks:
+    - model: VBOX HARDDISK
+      disk: disk/by-path/pci-0000:00:0d.0-scsi-2:0:0:0
+      name: sdc
+      size: 2411724800000
+    - model: VBOX HARDDISK
+      disk: disk/by-path/pci-0000:00:0d.0-scsi-1:0:0:0
+      name: sdb
+      size: 536870912000
+    - model: VBOX HARDDISK
+      disk: disk/by-path/pci-0000:00:0d.0-scsi-0:0:0:0
+      name: sda
+      size: 17179869184
+    system:
+      serial: '0'
+      version: '1.2'
+      fqdn: bootstrap
+      family: Virtual Machine
+      manufacturer: VirtualBox
+    cpu:
+      real: 0
+      total: 1
+      spec:
+      - model: Intel(R) Core(TM)2 Duo CPU P8600 @ 2.40GHz
+        frequency: 2397
+  error_type: 
+- role: primary-controller
+  network_data:
+  - name: public
+    ip: 10.20.0.94
+    dev: eth0
+    netmask: 255.255.255.0
+    gateway: 10.20.0.1
+  - name:
+    - management
+    - storage
+    ip: 10.20.1.94
+    dev: eth0
+    netmask: 255.255.255.0
+  - name: fixed
+    dev: eth2
+  public_br: br-ex
+  internal_br: br-mgmt
+  id: '2'
+  default_gateway: 10.20.0.1
+  uid: '2'
+  mac: 64:43:7B:CA:56:DD
+  name: controller-01
+  ip: 10.20.0.94
+  profile: centos-x86_64
+  fqdn: controller-01.domain.tld
+  power_type: ssh
+  power_user: root
+  power_pass: /root/.ssh/bootstrap.rsa
+  power_address: 10.20.0.94
+  netboot_enabled: '1'
+  name_servers: 10.20.0.2
+  puppet_master: fuel.domain.tld
+  ks_meta: *17570000
+  interfaces:
+    eth0:
+      ip_address: 10.20.0.94
+      netmask: 255.255.255.0
+      dns_name: controller-01.domain.tld
+      static: '1'
+      mac_address: 64:43:7B:CA:56:DD
+  interfaces_extra:
+    eth0:
+      onboot: 'yes'
+      peerdns: 'no'
+    eth1:
+      onboot: 'no'
+      peerdns: 'no'
+    eth2:
+      onboot: 'no'
+      peerdns: 'no'
+  meta: *17588060
+  error_type: 
+attributes:
+  use_cow_images: true
+  libvirt_type: kvm
+  dns_nameservers: 10.20.0.2
+  verbose: true
+  debug: true
+  auto_assign_floating_ip: true
+  start_guests_on_host_boot: true
+  create_networks: true
+  compute_scheduler_driver: nova.scheduler.multi.MultiScheduler
+  quantum: true
+  master_hostname: controller-01
+  nagios: false
+  proj_name: test
+  nagios_master: fuelweb.domain.tld
+  management_vip: 10.20.1.200
+  public_vip: 10.20.0.200
+  novanetwork_parameters:
+    vlan_start: <1-1024>
+    network_manager: String
+    network_size: <Integer>
+  quantum_parameters:
+    tenant_network_type: gre
+    segment_range: 300:500
+    metadata_proxy_shared_secret: quantum
+  mysql:
+    root_password: root
+  glance:
+    db_password: glance
+    user_password: glance
+  swift:
+    user_password: swift_pass
+  nova:
+    db_password: nova
+    user_password: nova
+  access:
+    password: admin
+    user: admin
+    tenant: admin
+    email: admin@example.org
+  keystone:
+    db_password: keystone
+    admin_token: nova
+  quantum_access:
+    user_password: quantum
+    db_password: quantum
+  rabbit:
+    password: nova
+    user: nova
+  cinder:
+    password: cinder
+    user: cinder
+  floating_network_range: 10.20.0.150/28
+  fixed_network_range: 10.20.1.0/24
+  base_syslog:
+    syslog_port: '514'
+    syslog_server: 10.20.0.2
+  syslog:
+    syslog_port: '514'
+    syslog_transport: udp
+    syslog_server: ''
+  use_unicast_corosync: false
+  horizon_use_ssl: false
+  cinder_nodes:
+  - controller
+  ntp_servers:
+  - pool.ntp.org
+  deployment_id: 1
+  deployment_mode: ha
+  deployment_source: cli
+  deployment_engine: nailyfact
+engine:
+  url: http://localhost/cobbler_api
+  username: cobbler
+  password: cobbler

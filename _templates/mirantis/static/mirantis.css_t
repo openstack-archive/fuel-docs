@@ -13,11 +13,16 @@
 
 @import url("mirantis_style.css");
 
+.highlight .hll {
+    background-color: #C0FF7C !important;
+}
+
+
 div.highlight pre,
 div.highlight-python pre
 {
     border-width: 0px 3px;
-
+    background-color: #F7FFE8;
     border-radius: 6px;
     -moz-border-radius: 6px;
     -webkit-border-radius: 6px;
@@ -25,13 +30,13 @@ div.highlight-python pre
 
 div.documentwrapper
 {
-	border-top: 1px solid {{ theme_table_trim_color }};
-	border-bottom: 1px solid {{ theme_table_trim_color }};
+    border-top: 1px solid {{ theme_table_trim_color }};
+    border-bottom: 1px solid {{ theme_table_trim_color }};
 }
 
 div.document, div.related, div.related_hf
 {
-	max-width: 100%;
+    max-width: 100%;
 }
 
 div.related_hf
@@ -46,8 +51,8 @@ div.related_hf
 
 div.doc-license
 {
-	font-size: 70%;
-	line-height: 100%;
+    font-size: 70%;
+    line-height: 100%;
 }
 
 div.sidebartoggle button
@@ -57,6 +62,32 @@ div.sidebartoggle button
 
 div.body h1 {
     text-align: left;
+    font-size: 200%;
+}
+
+div.body h2 {
+    font-size: 180%;
+    margin: 1em 0 0 0;
+}
+
+div.body h3 {
+    font-size: 160%;
+    margin: 1em 0 .25em 0;
+}
+
+div.body h4 {
+    font-size: 140%;
+    margin: 1em 0 .25em 0;
+}
+
+div.body h5 {
+    font-size: 130%;
+    margin: 1em 0 .25em 0;
+}
+
+div.body h6 {
+    font-size: 120%;
+    margin: 1em 0 .25em 0;
 }
 
 div.body h2,
@@ -65,9 +96,14 @@ div.section.emphasized > h3, /* deprecated in favor of below: */
 div.section.emphasize-children > div.section > h3
 {
     border-width: 1px 1px 1px 1px;
-	font-style: normal;
-	
+    font-style: normal;
 }
+
+div.sphinxsidebar
+{
+    line-height: 100%;
+}
+
 div.sphinxsidebar #searchbox input[type="text"] {
     width: 145px;
 }
