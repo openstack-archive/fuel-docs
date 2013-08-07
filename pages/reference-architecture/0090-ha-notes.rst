@@ -3,7 +3,7 @@
 HA with Pacemaker and Corosync
 ==============================
 
-.. index:: HA with Pacemaker and Corosync; Corosync settings
+.. index:: Corosync settings
 
 Corosync settings
 -----------------
@@ -50,7 +50,7 @@ corosync configuration, which can also be altered in Fuel manifests.
   http://clusterlabs.org/doc/ if you want to know how to tune installation 
   completely
 
-.. index:: HA with Pacemaker and Corosync; Pacemaker settings
+.. index:: Pacemaker settings
 
 Pacemaker settings
 ------------------
@@ -79,7 +79,7 @@ booted to participate in such election. Every node is a self-aware, that means
 if nobody pushes higher epoch that it retrieved from corosync(neither no one did), 
 it will just elect itself as a master.
 
-.. index:: HA with Pacemaker and Corosync; How Fuel Deploys HA
+.. index:: How Fuel Deploys HA
 
 How Fuel Deploys HA
 -------------------
@@ -153,7 +153,7 @@ And ties them with pacemaker colocation resource::
   order l3-after-metadata inf: clone_p_quantum-metadata-agent p_quantum-l3-agent
   order l3-after-ovs inf: clone_p_quantum-openvswitch-agent p_quantum-l3-agent
 
-.. index:: HA with Pacemaker and Corosync; How To Troubleshoot Corosync/Pacemaker
+.. index:: HowTo: Troubleshoot Corosync/Pacemaker
 
 How To Troubleshoot Corosync/Pacemaker
 --------------------------------------
@@ -275,7 +275,7 @@ There are several points:
 
 2) corosync should start after network interfaces are configured
 
-3) bindnetaddr should be in the management network or at least in the same 
+3) `bindnetaddr` should be in the management network or at least in the same 
    multicast reachable segment
 
 You can check this in output of ``ip maddr show``:
@@ -315,7 +315,7 @@ If there is only one IP in members list that means there is corosync connectivit
 issue because the node does not see the other ones. The same stays for the case 
 when members list is incomplete.
 
-.. index:: HA with Pacemaker and Corosync; How To smoke test HA
+.. index:: HowTo: Smoke Test HA
 
 How To Smoke Test HA
 --------------------

@@ -1,4 +1,4 @@
-.. index:: Deployment Configurations; Non-HA Simple
+.. index:: Reference Architectures: Non-HA Simple, Non-HA Simple
 
 .. _Simple:
 

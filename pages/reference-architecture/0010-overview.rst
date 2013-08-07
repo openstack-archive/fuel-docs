@@ -1,4 +1,4 @@
-.. index:: Deployment Configurations
+.. index Reference Architectures
 
 Overview 
 ========

@@ -1,4 +1,4 @@
-.. index:: Deployment Configurations; HA Compact
+.. index:: Reference Architectures: HA Compact, HA Compact
 
 .. _HA_Compact:
 

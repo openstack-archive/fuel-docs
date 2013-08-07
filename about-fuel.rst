@@ -1,3 +1,4 @@
+.. index:: About Fuel
 .. _About_Fuel:
 
 ============

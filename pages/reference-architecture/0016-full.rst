@@ -1,4 +1,4 @@
-.. index:: Deployment Configurations; HA Full
+.. index:: Reference Architectures: HA Full, HA Full
 
 .. _HA_Full:
 

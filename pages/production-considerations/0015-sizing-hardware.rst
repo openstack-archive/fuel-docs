@@ -2,8 +2,8 @@
 
 .. _Sizing_Hardware:
 
-Sizing Hardware
-===============
+Sizing Hardware for Production Deployment
+=========================================
 
 .. contents :local:
 

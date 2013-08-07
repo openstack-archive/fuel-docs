@@ -190,12 +190,12 @@ Next, create Slave nodes where OpenStack needs to be installed.
 
 2. Set priority for the network boot:
 
-.. image:: /_images/vbox-image1.jpg
+.. image:: /_images/vbox-image1.png
   :align: center
 
 3. Configure the network adapter on each VM:
 
-.. image:: /_images/vbox-image2.jpg
+.. image:: /_images/vbox-image2.png
   :align: center
 
 Changing network parameters before the installation

@@ -49,7 +49,8 @@ profiles and distributions. Similarly, Puppet Master can be kept in sync with a
 combination of rsync (for modules, manifests, and SSL data) and database 
 replication.
 
-.. image:: /_images/cobbler-puppet-ha.jpg
+.. 
+  image:: /_images/cobbler-puppet-ha.jpg
   :align: center
     
 Downloading of operating systems and other software

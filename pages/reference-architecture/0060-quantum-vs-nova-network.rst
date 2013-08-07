@@ -1,3 +1,5 @@
+.. index:: Neutron vs. nova-network, Quantum vs. nova-network
+
 Neutron vs. nova-network
 ========================
 

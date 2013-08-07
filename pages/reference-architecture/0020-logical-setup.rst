@@ -1,5 +1,8 @@
-Logical Setup 
-=============
+.. index:: Reference Architectures: HA Logical Setup, HA Logical Setup 
+
+HA Logical Setup 
+================
+
 .. contents :local:
 
 An OpenStack HA cluster involves, at a minimum, three types of nodes:

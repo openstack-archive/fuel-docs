@@ -1,4 +1,4 @@
-.. index:: Fuel UI; Network Issues
+.. index:: Fuel UI: Network Issues
 
 Network Issues
 ==============

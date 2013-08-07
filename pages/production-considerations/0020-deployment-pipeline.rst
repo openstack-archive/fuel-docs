@@ -25,7 +25,7 @@ Puppet supports assigning nodes 'environments'. These environments can be
 mapped directly to your development, QA and production life cycles, so it’s a 
 way to distribute code to nodes that are assigned to those environments.
 
-* On the Master node
+**On the Master node:**
 
   The Puppet Master tries to find modules using its ``modulepath`` setting, 
   which by default is ``/etc/puppet/modules``. It is common practice to set 
@@ -48,7 +48,7 @@ way to distribute code to nodes that are assigned to those environments.
   [development]
     manifest   = $confdir/$environment/manifests/site.pp
 
-* On the Slave Node
+**On the Slave Node:**
 
   Once the slave node makes a request, the Puppet Master gets informed of its 
   environment. If you don’t specify an environment, the agent uses the default 
@@ -65,22 +65,21 @@ way to distribute code to nodes that are assigned to those environments.
 Deployment pipeline
 -------------------
 
-* Deploy
+1. Deploy
 
   In order to deploy multiple environments that don't interfere with each other, 
-  you should specify the ``$deployment_id`` option in 
-  ``/etc/puppet/manifests/site.pp``. It should be an even integer value in the 
-  range of 2-254.
+  you should specify the ``deployment_id`` option in YAML file. 
+  It should be an even integer value in the range of 2-254.
 
   This value is used in dynamic environment-based tag generation. Fuel applies 
   that tag globally to all resources and some services on each node.
 
-* Clean/Revert
+2. Clean/Revert
 
   At this stage you just need to make sure the environment has the 
   original/virgin state.
 
-* Puppet node deactivate
+3. Puppet node deactivate
 
   This will ensure that any resources exported by that node will stop appearing 
   in the catalogs served to the slave nodes::
@@ -95,7 +94,7 @@ Deployment pipeline
 
       cert list --all | awk '! /DNS:puppet/ { gsub(/"/, "", $2); print $2}' | xargs puppet node deactivate
 
-* Redeploy
+4. Redeploy
 
   Start the puppet agent again to apply a desired node configuration.
 

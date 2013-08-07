@@ -1,4 +1,4 @@
-.. index: Download Fuel
+.. index:: Download Fuel
 
 Download Fuel
 =============

@@ -29,6 +29,8 @@ relevant nodes and networks.
 
 Lets take a closer look at each network and how its used within the cluster.
 
+.. index:: Public Network
+
 Public Network
 --------------
 
@@ -57,6 +59,8 @@ performed for traffic going from VM instances on the compute node to Internet.
 The public network also provides VIPs for Endpoint nodes, which are used to 
 connect to OpenStack services APIs.
 
+.. index:: Internal Network, Management Network
+
 Internal (Management) Network
 -----------------------------
 
@@ -70,6 +74,8 @@ between Compute and Storage nodes.
 
 This network usually is a single C class network from your private, non-globally 
 routed IP address range.
+
+.. index:: Private Network
 
 Private Network
 ---------------

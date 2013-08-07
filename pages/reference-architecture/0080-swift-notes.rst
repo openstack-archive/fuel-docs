@@ -1,4 +1,4 @@
-.. index:: Object storage, Swift
+.. index:: Object storage, Swift, Glance
 
 .. _Swift-and-object-storage-notes:
 
@@ -20,6 +20,4 @@ Fuel currently supports several scenarios to deploy the object storage:
   In this case the Proxy service and Storage (account/container/object) services 
   reside on separate nodes, with two proxy nodes and a minimum of three storage 
   nodes.
-
-Now let's look at performing an actual OpenStack deployment using Fuel.
 

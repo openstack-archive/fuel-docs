@@ -1,4 +1,4 @@
-.. index:: Deployment Configurations; Red Hat OpenStack
+.. index:: Reference Architectures: RHOS, Red Hat OpenStack Architecture
 
 Red Hat OpenStack Architectures
 ===============================
@@ -31,7 +31,8 @@ Below is the list of modifications:
   fixed in a future release. As a result, Fuel for Red Hat OpenStack 
   Platform will only support Nova networking.
 
-.. index:: Deployment Configurations; Red Hat OpenStack; RHOS Non-HA Simple
+.. index:: Reference Architectures: RHOS Non-HA Simple, RHOS Non-HA Simple
+.. index Deployment Configurations; Red Hat OpenStack; RHOS Non-HA Simple
 
 .. _RHOS_Simple:
 
@@ -55,7 +56,8 @@ enable you to achieve this separation while still keeping your
 hardware investment relatively modest is to house your storage on your
 controller nodes.
 
-.. index:: Deployment Configurations; Red Hat OpenStack; RHOS HA Compact
+.. index:: Reference Architectures: RHOS HA Compact, RHOS HA Compact
+.. index Deployment Configurations; Red Hat OpenStack; RHOS HA Compact
 
 .. _RHOS_Compact:
 

@@ -1,3 +1,5 @@
+.. index:: Cinder vs. nova-volume
+
 Cinder vs. nova-volume
 ======================
 
