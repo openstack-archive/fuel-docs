@@ -68,7 +68,7 @@ Improved High Availability resiliency
 
 To improve the resiliency of the Mirantis OpenStack High Availability reference 
 architecture, Fuel now deploys all HA services under Pacemaker, a scalable 
-cluster resource manager developed by Clusterlabs.  
+cluster resource manager developed by ClusterLabs.  
 
 Horizon password entry can be hidden
 ------------------------------------
@@ -135,10 +135,11 @@ Separate Logical Volume Manager (LVM) now used for Glance storage
 
 Glance storage was previously configured to use a root partition on a 
 controller node. Because of this, in HA mode, Swift was configured to use 
-only 5 Gb of storage. A user was unable to load large images into Glance in 
+only 5 GB of storage. A user was unable to load large images into Glance in 
 HA mode and could receive an out of space error message if a small root 
 partition were used. This situation has been corrected by creating special LVM 
-for Glance storage. You can modify the size of this partition in the `Disk Configuration` screen.
+for Glance storage. You can modify the size of this partition in the 
+`Disk Configuration` screen.
 
 Memory leaks in nailgun service
 -------------------------------
@@ -168,7 +169,7 @@ Provisioning failure on large hard drives
 -----------------------------------------
 
 In previous releases, when ext4 was used as a file system for a partition, 
-provisioning would fail for for large volumes (larger than 16 Tb) in some 
+provisioning would fail for for large volumes (larger than 16 TB) in some 
 cases. Ext4 has been replaced by the xfs file system which works well on large 
 volumes.
 

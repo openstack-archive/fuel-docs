@@ -11,20 +11,20 @@ Understanding and Configuring the Network
 
 OpenStack clusters use several types of network managers: FlatDHCPManager, 
 VLANManager and Neutron (formerly Quantum). The current version of Fuel UI 
-supports only two (FlatDHCP and VlanManager), but Fuel CLI supports all 
+supports only two (FlatDHCP and VLANManager), but Fuel CLI supports all 
 three. For more information about how the first two network managers work, 
 you can read these two resources:
 
 * `OpenStack Networking – FlatManager and FlatDHCPManager 
   <http://www.mirantis.com/blog/openstack-networking-flatmanager-and-flatdhcpmanager/>`_
-* `Openstack Networking for Scalability and Multi-tenancy with VlanManager 
+* `Openstack Networking for Scalability and Multi-tenancy with VLANManager 
   <http://www.mirantis.com/blog/openstack-networking-vlanmanager/>`_
 
 FlatDHCPManager (multi-host scheme)
 -----------------------------------
 
 The main idea behind the flat network manager is to configure a bridge 
-(i.e. **br100**) on every compute node and have one of the machine's host 
+(i.e. **br100**) on every Compute node and have one of the machine's host 
 interfaces connect to it. Once the virtual machine is launched its virtual 
 interface will connect to that bridge as well.
 The same L2 segment is used for all OpenStack projects, which means that there 
@@ -42,7 +42,7 @@ interface is the management network interface.
 Fuel deploys OpenStack in FlatDHCP mode with the so called **multi-host** 
 feature enabled. Without this feature enabled, network traffic from each VM 
 would go through the single gateway host, which basically becomes a single 
-point of failure. In enabled mode, each compute node becomes a gateway for 
+point of failure. In enabled mode, each Compute node becomes a gateway for 
 all the VMs running on the host, providing a balanced networking solution. 
 In this case, if one of the computes goes down, the rest of the environment 
 remains operational.
@@ -58,10 +58,10 @@ FlatDHCPManager (single-interface scheme)
 .. image:: /_images/flatdhcpmanager-mh_scheme.jpg
   :align: center
 
-Therefore all switch ports where compute nodes are connected must be 
-configured as tagged (trunk) ports with required vlans allowed (enabled, 
+Therefore all switch ports where Compute nodes are connected must be 
+configured as tagged (trunk) ports with required VLANs allowed (enabled, 
 tagged). Virtual machines will communicate with each other on L2 even if 
-they are on different compute nodes. If the virtual machine sends IP packets 
+they are on different Compute nodes. If the virtual machine sends IP packets 
 to a different network, they will be routed on the host machine according to 
 the routing table. The default route will point to the gateway specified on 
 the networks tab in the UI as the gateway for the public network.
@@ -113,21 +113,21 @@ Fuel operates with following logical networks:
 
 **Public** network 
   Is used to get access from virtual machines to outside, Internet or office 
-  network (vlan 101 on the scheme);
+  network (VLAN 101 on the scheme);
 
 **Floating** network 
   Used to get access to virtual machines from outside (shared L2-interface with 
-  **Public** network; in this case it's vlan 101);
+  **Public** network; in this case it's VLAN 101);
 
 **Management** network 
-  Is used for internal OpenStack communications (vlan 102 on the scheme);
+  Is used for internal OpenStack communications (VLAN 102 on the scheme);
   
 **Storage** network 
-  Is used for storage traffic (vlan 103 on the scheme);
+  Is used for storage traffic (VLAN 103 on the scheme);
 
 **Fixed** network
-  One (for flat mode) or more (for vlan mode) virtual machines 
-  networks (vlan 104 on the scheme).
+  One (for flat mode) or more (for VLAN mode) virtual machines 
+  networks (VLAN 104 on the scheme).
 
 Mapping logical networks to physical interfaces on servers
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -161,7 +161,7 @@ vendor-specific details to you. We will provide an example for a Cisco switch.
 
 By default, the Fuel Master node uses the ``eth0`` interface to serve PXE 
 First of all, you should configure access ports to allow non-tagged PXE booting 
-connections from all slave nodes to the Fuel node. We refer this network 
+connections from all Slave nodes to the Fuel node. We refer this network 
 as the "Fuel" network.
 By default, the Fuel Master node uses the ``eth0`` interface to serve PXE 
 requests on this network.

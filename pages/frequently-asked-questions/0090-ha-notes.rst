@@ -7,9 +7,9 @@
 How HA with Pacemaker and Corosync Works
 ========================================
 
-.. index:: Corosync settings
+.. index:: Corosync Settings
 
-Corosync settings
+Corosync Settings
 -----------------
 
 Corosync is using Totem protocol which is an implementation of Virtual Synchrony 
@@ -18,10 +18,10 @@ decide if cluster is quorate to provide services, to provide data layer for
 services that want to use features of Virtual Synchrony.
 
 Corosync is used in Fuel as communication and quorum service for Pacemaker 
-cluster resource manager. It's main configuration file is located in 
+cluster resource manager (`crm`). It's main configuration file is located in 
 ``/etc/corosync/corosync.conf``.
 
-The main corosync section is `totem` section which describes how cluster nodes 
+The main Corosync section is ``totem`` section which describes how cluster nodes 
 should communicate::
 
   totem {
@@ -47,40 +47,40 @@ should communicate::
 Corosync usually uses multicast UDP transport and sets "redundant ring" for 
 communication. Currently Fuel deploys controllers with one redundant ring. Each 
 ring has it’s own multicast address and bind net address that specifies on which 
-interface corosync should join corresponding multicast group. Fuel uses default 
-corosync configuration, which can also be altered in Fuel manifests.
+interface Corosync should join corresponding multicast group. Fuel uses default 
+Corosync configuration, which can also be altered in Fuel manifests.
 
-.. seealso:: ``man corosync.conf`` or corosync documentation at 
+.. seealso:: ``man corosync.conf`` or Corosync documentation at 
   http://clusterlabs.org/doc/ if you want to know how to tune installation 
   completely
 
-.. index:: Pacemaker settings
+.. index:: Pacemaker Settings
 
-Pacemaker settings
+Pacemaker Settings
 ------------------
 
 Pacemaker is the cluster resource manager used by Fuel to manage Quantum 
 resources, HAProxy, virtual IP addresses and MySQL Galera (or simple MySQL 
-Master/slave replication in case of RHOS installation) cluster. It is done by 
-use of Open Cluster Framework (see http://linux-ha.org/wiki/OCF_Resource_Agents ) 
+Master/Slave replication in case of RHOS installation) cluster. It is done by 
+use of Open Cluster Framework (see http://linux-ha.org/wiki/OCF_Resource_Agents) 
 agent scripts which are deployed in order to start/stop/monitor Quantum services, 
 to manage HAProxy, virtual IP addresses and MySQL replication. These are located 
 at ``/usr/lib/ocf/resource.d/mirantis/quantum-agent-[ovs|dhcp|l3]``, 
 ``/usr/lib/ocf/resource.d/mirantis/mysql``, ``/usr/lib/ocf/resource.d/ocf/haproxy``. 
-Firstly, MySQL agent is started, HAproxy  and virtual IP addresses are set up. 
+Firstly, MySQL agent is started, HAproxy and virtual IP addresses are set up. 
 Then Open vSwitch and metadata agents are cloned on all the nodes. Then dhcp and 
-L3 agents are started and tied together by use of pacemaker constraints called 
+L3 agents are started and tied together by use of Pacemaker constraints called 
 "colocation".
 
 .. seealso:: `Using Rules to Determine Resource 
    Location <http://clusterlabs.org/doc/en-US/Pacemaker/1.1/html/Pacemaker_Explained/_using_rules_to_determine_resource_location.html>`_
 
 MySQL HA script primarily targets to the cluster rebuild after power failure or 
-equal type of disaster - it needs working corosync in which it forms quorum of 
+equal type of disaster - it needs working Corosync in which it forms quorum of 
 an epochs of replication and then electing master from node with newest epoch. 
 Be aware of default five minute interval in which every cluster member should be 
 booted to participate in such election. Every node is a self-aware, that means 
-if nobody pushes higher epoch that it retrieved from corosync(neither no one did), 
+if nobody pushes higher epoch that it retrieved from Corosync (neither no one did), 
 it will just elect itself as a master.
 
 .. index:: How Fuel Deploys HA
@@ -88,11 +88,11 @@ it will just elect itself as a master.
 How Fuel Deploys HA
 -------------------
 
-Fuel installs corosync service, configures `corosync.conf` and includes pacemaker 
-service plugin into `/etc/corosync/service.d`. Then corosync service starts and 
-spawns corresponding pacemaker processes. Fuel configures cluster properties of 
-pacemaker and then injects resources configuration for virtual IPs, haproxy, 
-mysql and quantum agent resources::
+Fuel installs Corosync service, configures ``corosync.conf`` and includes Pacemaker 
+service plugin into ``/etc/corosync/service.d``. Then Corosync service starts and 
+spawns corresponding Pacemaker processes. Fuel configures cluster properties of 
+Pacemaker and then injects resources configuration for virtual IPs, HAProxy, 
+MySQL and Quantum agent resources::
 
   primitive p_haproxy ocf:pacemaker:haproxy \
     op monitor interval="20" timeout="30" \
@@ -143,7 +143,7 @@ mysql and quantum agent resources::
   clone clone_p_quantum-openvswitch-agent p_quantum-openvswitch-agent \
     meta interleave="true"
 
-And ties them with pacemaker colocation resource::
+And ties them with Pacemaker colocation resource::
 
   colocation dhcp-with-metadata inf: p_quantum-dhcp-agent \
     clone_p_quantum-metadata-agent

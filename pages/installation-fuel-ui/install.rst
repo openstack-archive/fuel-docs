@@ -105,7 +105,7 @@ folders:
   After installation of the Master node, the script will create Slave nodes for 
   OpenStack and boot them via PXE from the Master node.
   Finally, the script will give you the link to access the Web-based UI for the 
-  Master Node so you can start installation of an OpenStack cluster.
+  Master node so you can start installation of an OpenStack cluster.
 
 Networking Notes for Slave Nodes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -142,7 +142,7 @@ script. You can reassign these IP ranges before running VirtualBox scripts only.
   
 .. _Install_Manual:
 
-Manual mode
+Manual Mode
 +++++++++++
 
 .. note::
@@ -156,10 +156,10 @@ Manual mode
 If you cannot or would rather not run our helper scripts, you can still run 
 Fuel on VirtualBox by following these steps.
 
-Master Node deployment
+Master Node Deployment
 ^^^^^^^^^^^^^^^^^^^^^^
 
-First, create the Master Node VM.
+First, create the Master node VM.
 
 1. Configure the host-only interface vboxnet0 in VirtualBox.
 
@@ -167,7 +167,7 @@ First, create the Master Node VM.
 * Interface mask: 255.255.255.0
 * DHCP disabled
 
-2. Create a VM for the master node with the following parameters:
+2. Create a VM for the Master node with the following parameters:
 
 * OS Type: Linux, Version: Red Hat (64bit)
 * RAM: 1024 MB
@@ -178,7 +178,7 @@ First, create the Master Node VM.
 3. Power on the VM in order to start the installation.
 
 4. Wait for the Welcome message with all information needed to login into the UI 
-of Fuel.
+   of Fuel.
 
 Adding Slave Nodes
 ^^^^^^^^^^^^^^^^^^
@@ -202,7 +202,7 @@ Next, create Slave nodes where OpenStack needs to be installed.
 .. image:: /_images/vbox-image2.png
   :align: center
 
-Changing network parameters before the installation
+Changing Network Parameters Before the Installation
 ---------------------------------------------------
 
 You can change the network settings for the Fuel (PXE booting) network, which 
@@ -210,7 +210,7 @@ is ``10.20.0.2/24 gw 10.20.0.1`` by default.
 
 In order to do so, press the <TAB> key on the very first installation screen 
 which says "Welcome to Fuel Installer!" and update the kernel options. For 
-example, to use 192.168.1.10/24 IP address for the Master Node and 192.168.1.1 
+example, to use 192.168.1.10/24 IP address for the Master node and 192.168.1.1 
 as the gateway and DNS server you should change the parameters to those shown 
 in the image below:
 
@@ -220,11 +220,11 @@ in the image below:
 When you're finished making changes, press the <ENTER> key and wait for the 
 installation to complete.
 
-Changing network parameters after installation
+Changing Network Parameters After Installation
 ----------------------------------------------
 
 It is still possible to configure other interfaces, or add 802.1Q sub-interfaces 
-to the Master Node to be able to access it from your network if required.
+to the Master node to be able to access it from your network if required.
 It is easy to do via standard network configuration scripts for CentOS. When the 
 installation is complete, you can modify 
 ``/etc/sysconfig/network-scripts/ifcfg-eth\*`` scripts. For example, if *eth1* 
@@ -260,7 +260,7 @@ settings can be the following:
 
 .. warning::
 
-  Once IP settings are set at the boot time for Fuel Master Node, they 
+  Once IP settings are set at the boot time for Fuel Master node, they 
   **should not be changed during the whole lifecycle of Fuel.**
 
 After modification of network configuration files, it is required to apply the 
@@ -271,10 +271,10 @@ new configuration::
 Now you should be able to connect to Fuel UI from your network at 
 http://172.18.0.5:8000/
 
-Name resolution (DNS)
+Name Resolution (DNS)
 ---------------------
 
-During Master Node installation, it is assumed that there is a recursive DNS 
+During Master node installation, it is assumed that there is a recursive DNS 
 service on 10.20.0.1.
 
 If you want to make it possible for Slave nodes to be able to resolve public names,
@@ -284,13 +284,13 @@ your actual DNS)::
 
   echo "nameserver 172.0.0.1" > /etc/dnsmasq.upstream
 
-PXE booting settings
+PXE Booting Settings
 --------------------
 
 By default, `eth0` on Fuel Master node serves PXE requests. If you are planning 
 to use another interface, then it is required to modify dnsmasq settings (which 
 acts as DHCP server). Edit the file ``/etc/cobbler/dnsmasq.template``, find the line 
-``"interface=eth0"`` and replace the interface name with the one you want to use. 
+``interface=eth0`` and replace the interface name with the one you want to use. 
 
 Launch command to synchronize cobbler service afterwards::
 
@@ -302,14 +302,14 @@ why you should not edit ``/etc/dnsmasq.conf``. Cobbler rewrites it each time
 when it is synchronized.
 
 If you want to use virtual machines to launch Fuel then you have to be sure
-that dnsmasq on master node is configured to support the PXE client you use on your
+that dnsmasq on Master node is configured to support the PXE client you use on your
 virtual machines. We enabled *dhcp-no-override* option because without it
 dnsmasq tries to move ``PXE filename`` and ``PXE servername`` special fields 
 into DHCP options. Not all PXE implementations can recognize those options and 
 therefore they will not be able to boot. For example, CentOS 6.4 uses gPXE 
 implementation instead of more advanced iPXE by default.
 
-When Master Node installation is done
+When Master Node Installation is Done
 -------------------------------------
 
 Once the Master node is installed, power on all other nodes and log in to the 

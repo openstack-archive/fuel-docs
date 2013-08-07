@@ -940,7 +940,7 @@ Finally Triggering the Deployment
 After YAML is updated with all the required parameters you can finally trigger 
 deployment by issuing ``deploy`` command to Astute orchestrator.
 
-.. code-block:: bash
+.. code-block:: none
 
     [root@fuel ~]# astute -f simple.yaml -c deploy
 

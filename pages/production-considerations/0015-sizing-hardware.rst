@@ -69,22 +69,22 @@ Memory
 
 Continuing to use the example from the previous section, we need to determine 
 how much RAM will be required to support 17 VMs per server. Let's assume that 
-you need an average of 4GBs of RAM per VM with dynamic allocation for up to 
-12GBs for each VM. Calculating that all VMs will be using 12GBs of RAM requires 
-that each server have 204GBs of available RAM. 
+you need an average of 4 GBs of RAM per VM with dynamic allocation for up to 
+12GBs for each VM. Calculating that all VMs will be using 12 GBs of RAM requires 
+that each server have 204 GBs of available RAM. 
 
 You must also consider that the node itself needs sufficient RAM to accommodate 
 core OS operations as well as RAM for each VM container (not the RAM allocated 
 to each VM, but the memory the core OS uses to run the VM). The node's OS must 
 run it's own operations, schedule processes, allocate dynamic resources, and 
-handle network operations, so giving the node itself at least 16GBs or more RAM 
+handle network operations, so giving the node itself at least 16 GBs or more RAM 
 is not unreasonable.
 
-Considering that the RAM we would consider for servers comes in 4GB, 8GB, 16GB 
-and 32GB sticks, we would need a total of 265GBs of RAM installed per server. 
+Considering that the RAM we would consider for servers comes in 4 GB, 8 GB, 16 GB 
+and 32 GB sticks, we would need a total of 256 GBs of RAM installed per server. 
 For an average 2-CPU socket server board you get 16-24 RAM slots. To have 
-256GBs installed you would need sixteen 16GB sticks of RAM to satisfy your RAM 
-needs for up to 17 VMs requiring dynamic allocation up to 12GBs and to support 
+256 GBs installed you would need sixteen 16 GB sticks of RAM to satisfy your RAM 
+needs for up to 17 VMs requiring dynamic allocation up to 12 GBs and to support 
 all core OS requirements. 
 
 You can adjust this calculation based on your needs. 
@@ -108,16 +108,16 @@ example of 100 VMs we make the following assumptions:
 
 Returning to our already established example, we need to figure out how much 
 storage to install per server. This storage will service the 17 VMs per server. 
-If we are assuming 50GBs of storage for each VMs drive container, then we would 
-need to install 2.5TBs of storage on the server. Since most servers have 
+If we are assuming 50 GBs of storage for each VMs drive container, then we would 
+need to install 2.5 TBs of storage on the server. Since most servers have 
 anywhere from 4 to 32 2.5" drive slots or 2 to 12 3.5" drive slots, depending on 
 server form factor (i.e., 2U vs. 4U), you will need to consider how the storage 
 will be impacted by the intended use.
 
 If storage impact is not expected to be significant, then you may consider using 
-unified storage. For this example a single 3TB drive would provide more than 
-enough storage for 17 150GB VMs. If speed is really not an issue, you might even 
-consider installing two or three 3TB drives and configure a RAID-1 or RAID-5 
+unified storage. For this example a single 3 TB drive would provide more than 
+enough storage for seventeen 150 GB VMs. If speed is really not an issue, you might even 
+consider installing two or three 3 TB drives and configure a RAID-1 or RAID-5 
 for redundancy. If speed is critical, however, you will likely want to have a 
 single hardware drive for each VM. In this case you would likely look at a 3U 
 form factor with 24-slots.
@@ -125,8 +125,8 @@ form factor with 24-slots.
 Don't forget that you will also need drive space for the node itself, and don't 
 forget to order the correct backplane that supports the drive configuration 
 that meets your needs. Using our example specifications and assuming that speed 
-it critical, a single server would need 18 drives, most likely 2.5" 15,000RPM 
-146GB SAS drives. 
+it critical, a single server would need 18 drives, most likely 2.5" 15,000 RPM 
+146 GB SAS drives. 
 
 Throughput
 ++++++++++
@@ -140,11 +140,11 @@ drive technology you choose.  For example:
 
   * 100 IOPS * 2 drives / 17 VMs per server = 12 Read IOPS, 6 Write IOPS
 
-* 2.5" 15K (200 IOPS, 4 600 GB drive, RAID 10)
+* 2.5" 15K (200 IOPS, four 600 GB drive, RAID-10)
 
   * 200 IOPS * 4 drives / 17 VMs per server = 48 Read IOPS, 24 Write IOPS
 
-* SSD (40K IOPS, 8 300 GB drive, RAID 10)
+* SSD (40K IOPS, eight 300 GB drive, RAID-10)
 
   * 40K * 8 drives / 17 VMs per server = 19K Read IOPS, 9.5K Write IOPS
 
@@ -194,7 +194,7 @@ Object storage
 When it comes to object storage, you will find that you need more space than 
 you think.  For example, this example specifies 50 TB of object storage. 
 
-Easy right? Not really. 
+`Easy right?` Not really. 
 
 Object storage uses a default of 3 times the required space for replication, 
 which means you will need 150 TB. However, to accommodate two hands-off zones, 
@@ -230,7 +230,7 @@ In terms of the example network, consider these assumptions:
 * HA architecture
 * Network Storage is not latency sensitive
 
-In order to achieve this, you can use two 1Gb links per server (2 x 1000 
+In order to achieve this, you can use two 1 Gb links per server (2 x 1000 
 Mbits/second / 17 VMs = 118 Mbits/second). 
 
 Using two links also helps with HA. You can also increase throughput and 
@@ -241,11 +241,11 @@ consider.
 Scalability and oversubscription
 ++++++++++++++++++++++++++++++++
 
-It is one of the ironies of networking that 1Gb Ethernet generally scales 
-better than 10Gb Ethernet -- at least until 100Gb switches are more commonly 
-available. It's possible to aggregate the 1Gb links in a 48 port switch, so 
-that you have 48 1Gb links down, but 4 10GB links up. Do the same thing with a 
-10Gb switch, however, and you have 48 10Gb links down and 4 100Gb links up, 
+It is one of the ironies of networking that 1 Gb Ethernet generally scales 
+better than 10Gb Ethernet -- at least until 100 Gb switches are more commonly 
+available. It's possible to aggregate the 1 Gb links in a 48 port switch, so 
+that you have 48 x 1 Gb links down, but 4 x 10 Gb links up. Do the same thing with a 
+10 Gb switch, however, and you have 48 x 10 Gb links down and 4 x 100b links up, 
 resulting in oversubscription.
 
 Like many other issues in OpenStack, you can avoid this problem to a great 
@@ -259,8 +259,8 @@ Hardware for this example
 In this example, you are looking at:
 
 * 2 data switches (for HA), each with a minimum of 12 ports for data 
-  (2 x 1Gb links per server x 6 servers)
-* 1 1Gb switch for IPMI (1 port per server x 6 servers)
+  (2 x 1 Gb links per server x 6 servers)
+* 1 x 1 Gb switch for IPMI (1 port per server x 6 servers)
 * Optional Cluster Management switch, plus a second for HA
 
 Because your network will in all likelihood grow, it's best to choose 48 port 

@@ -25,8 +25,8 @@ Scripts which are provided for quick Fuel setup, create 3 host-interface
 adapters. Basically networking works as this being a 3 bridges, in each of 
 them the only one VMs interfaces is connected. It means there is only L2 
 connectivity between VMs on interfaces with the same name. If you try to 
-move, for example, management network to eth1 on controller node, and the 
-same network to eth2 on the compute, then there will be no connectivity 
+move, for example, management network to eth1 on Controller node, and the 
+same network to eth2 on the Compute, then there will be no connectivity 
 between OpenStack services in spite of being configured to live on the same 
 VLAN. It is very easy to validate network settings before deployment by 
 clicking the "Verify Networks" button.
