@@ -55,6 +55,13 @@ segregate network traffic. In these networks, Fuel can now be configured
 through the Fuel UI to disable the need for VLAN tagging. This configuration 
 option is available through the Network Settings tab.
 
+Full support of Quantum networking engine
+-----------------------------------------
+
+This release now supports all the features of Quantum OpenStack virtual 
+networking implementation including network namespaces feature ported to 
+2.6.32 CentOS kernel allowing virtual networks overlapping.
+
 Improved High Availability resiliency
 -------------------------------------
 
@@ -216,11 +223,21 @@ Enterprise Linux® (RHEL) is not available due to a limitation within the
 Red Hat kernel. It is expected that this issue will be addressed by a patch to 
 RHEL in late 2013.
 
+.. contents:: :local:
+  :depth: 1
+
+Nagios deployment is disabled
+-----------------------------
+
+Due to instability of PuppetDB and Nagios manifests we decided to 
+temporarily disable the Nagios deployment feature. It is planned to re-enable
+this feature in next release with improved and much more stable manifests.
+
 Ability to deploy Swift and Neutron (Quantum) is limited to Fuel CLI
 --------------------------------------------------------------------
 
 At this time, customers wishing to deploy Swift or Neutron (Quantum) will need 
-to do so through the Fuel Library.  An option to deploy these components as 
+to do so through the Fuel CLI.  An option to deploy these components as 
 standalone nodes is not currently present in the Fuel UI.  It is expect that 
 a near future release will enable this capability.
 
@@ -320,7 +337,7 @@ Other Limitations:
 - Neutron (Quantum) multi-node balancing conflicts with pacemaker, so the two 
   should not be used together in the same environment.
 
-- When deploying Neutron (Quantum) with the Fuel Library and when virtual 
+- When deploying Neutron (Quantum) with the Fuel CLI and when virtual 
   machines need to have access to internet and/or external networks you need 
   to set the floating network prefix and public_address so that they do not 
   intersect with the network external interface to which it belongs. This is 
