@@ -1,3 +1,7 @@
+.. raw:: pdf
+
+   PageBreak
+
 .. index:: Reference Architectures: HA Compact, HA Compact
 
 .. _HA_Compact:

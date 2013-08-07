@@ -1,3 +1,7 @@
+.. raw:: pdf
+
+   PageBreak
+
 .. index:: Fuel UI: Network Configuration
 
 Understanding and Configuring the Network
@@ -76,7 +80,11 @@ ports to allow this scheme to work.
 .. image:: /_images/flatdhcpmanager-mh_scheme.jpg
   :align: center
 
-.. index:: Fuel UI; Deployment Schema
+.. raw:: pdf
+
+   PageBreak
+
+.. index:: Fuel UI: Deployment Schema
 
 Fuel Deployment Schema
 ======================

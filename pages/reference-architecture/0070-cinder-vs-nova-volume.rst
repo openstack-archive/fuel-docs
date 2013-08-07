@@ -1,7 +1,7 @@
 .. index:: Cinder vs. nova-volume
 
 Cinder vs. nova-volume
-======================
+----------------------
 
 Cinder is a persistent storage management service, also known as 
 block-storage-as-a-service. It was created to replace nova-volume, and

@@ -1,7 +1,7 @@
 .. index:: Neutron vs. nova-network, Quantum vs. nova-network
 
 Neutron vs. nova-network
-========================
+------------------------
 
 Neutron (formerly Quantum) is a service which provides Networking-as-a-Service 
 functionality in OpenStack. It has a rich tenant-facing API for defining network 

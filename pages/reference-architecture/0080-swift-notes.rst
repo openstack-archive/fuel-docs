@@ -3,7 +3,7 @@
 .. _Swift-and-object-storage-notes:
 
 Object Storage Deployment
-=========================
+-------------------------
 
 Fuel currently supports several scenarios to deploy the object storage:
 
