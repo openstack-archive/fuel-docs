@@ -107,20 +107,36 @@ folders:
   Finally, the script will give you the link to access the Web-based UI for the 
   Master Node so you can start installation of an OpenStack cluster.
 
-Networking Notes for Slave Nodes
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Deployment configuration to access OpenStack API and VMs from host machine
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Helper scripts for VirtualBox create network adapters eth0, eth1, eth2 assigned 
-to vboxnet0, vboxnet1, vboxnet2 correspondingly. vboxnet0 is dedicated for Fuel 
-network so it is impossible to use it for any other untagged networks.
-
-Also these scripts assign IP addresses for adapters: vboxnet0 - 10.20.0.1/24, 
+Helper scripts for VirtualBox create network adapters eth0, eth1, eth2 which
+are represented on host machine as 
+vboxnet0, vboxnet1, vboxnet2 correspondingly, and assign
+IP addresses for adapters: vboxnet0 - 10.20.0.1/24, 
 vboxnet1 - 172.16.1.1/24, vboxnet2 - 172.16.0.1/24.
+For the demo environment on
+VirtualBox, the first NIC is used to run Fuel network traffic, including PXE discovery.
 
-To access guest VMs from host machine Public and/or Management networks must be 
-untagged and assigned to vboxnet1 and vboxnet2 adapters with IP addresses from 
-ranges specified earlier.
+To access the Horizon and OpenStack REST API via public network from the host machine,
+it is required to have route from your host to the public IP address on the OpenStack controller.
+Also, if access to floating IP of VM is required, it is also required to have route
+to the floating IP on compute host, which is binded to public interface there.
+To make this configuration possible on VirtualBox demo environment, the user has
+to run public network untagged. On the image below you can see the configuration of
+public and floating networks which will allow to make this happen.
 
+.. image:: /_images/picture.img
+  :align: center
+
+By default public and floating networks are run on the first network interface.
+It is required to change it, as you can see on this image below:
+
+.. image:: /_images/image2.img
+  :align: center
+
+
+(add note that this would 
 During installation the Slave nodes access the Internet via Master node. 
 But when installation is done Slave nodes on guest VMs shall access the 
 Internet via the Public network. To make it happen the following command must be 
