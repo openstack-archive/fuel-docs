@@ -265,14 +265,14 @@ To make this configuration possible on VirtualBox demo environment, the user has
 to run Public network untagged. On the image below you can see the configuration of
 Public and Floating networks which will allow to make this happen.
 
-.. image:: /_images/vbox_public_settings.png
+.. image:: /_images/vbox_public_settings.jpg
   :align: center
 
 By default Public and Floating networks are run on the first network interface.
 It is required to change it, as you can see on this image below. Make sure you change
 it on every node.
 
-.. image:: /_images/vbox_node_settings.png
+.. image:: /_images/vbox_node_settings.jpg
   :align: center
 
 If you use default configuration in VirtualBox scripts, and follow the exact same
