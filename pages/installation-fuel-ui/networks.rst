@@ -55,7 +55,7 @@ VLAN interface (i.e. *eth0.102*).
 FlatDHCPManager (single-interface scheme)
 -----------------------------------------
 
-.. image:: /_images/flatdhcpmanager-mh_scheme.jpg
+.. image:: /_images/flatdhcpmanager-sh_scheme.jpg
   :align: center
 
 Therefore all switch ports where Compute nodes are connected must be 
@@ -77,7 +77,7 @@ given project to communicate with each other and not to see any traffic from
 VMs of other projects. Switch ports must be configured as tagged (trunk) 
 ports to allow this scheme to work.
 
-.. image:: /_images/flatdhcpmanager-mh_scheme.jpg
+.. image:: /_images/vlanmanager_scheme.jpg
   :align: center
 
 .. raw:: pdf
