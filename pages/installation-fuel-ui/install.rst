@@ -141,9 +141,6 @@ script. You can reassign these IP ranges before running VirtualBox scripts only.
 Manual mode
 +++++++++++
 
-If you cannot or would rather not run our helper scripts, you can still run 
-Fuel on VirtualBox by following these steps.
-
 .. note::
 
     However, these manual steps will allow you to set up the evaluation environment 
@@ -151,6 +148,9 @@ Fuel on VirtualBox by following these steps.
     
     To download and deploy RedHat OpenStack you need to use automated VirtualBox
     helper scripts or install Fuel :ref:`Install_Bare-Metal`.
+
+If you cannot or would rather not run our helper scripts, you can still run 
+Fuel on VirtualBox by following these steps.
 
 Master Node deployment
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -219,11 +219,6 @@ installation to complete.
 Changing network parameters after installation
 ----------------------------------------------
 
-.. warning::
-
-    Once IP settings are set at the boot time for Fuel Master Node, they 
-    **should not be changed during the whole lifecycle of Fuel.**
-
 It is still possible to configure other interfaces, or add 802.1Q sub-interfaces 
 to the Master Node to be able to access it from your network if required.
 It is easy to do via standard network configuration scripts for CentOS. When the 
@@ -258,6 +253,11 @@ settings can be the following:
   PEERDNS=no
   IPADDR=172.18.0.5
   NETMASK=255.255.255.0
+
+.. warning::
+
+  Once IP settings are set at the boot time for Fuel Master Node, they 
+  **should not be changed during the whole lifecycle of Fuel.**
 
 After modification of network configuration files, it is required to apply the 
 new configuration::

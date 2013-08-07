@@ -74,6 +74,6 @@ to reduce latency and provide more overall pipe.
     should specify Cobbler's IP address and the apt-cacher port as the proxy server. 
     This will prevent all of the nodes from having to download the software 
     individually.
-
-`Contact Mirantis <http://www.mirantis.com/contact/>`_ for information on 
-creating a private repository.
+    
+    `Contact Mirantis <http://www.mirantis.com/contact/>`_ for information on 
+    creating a private repository.
