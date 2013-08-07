@@ -53,14 +53,13 @@ How To Obtain The Product
 
 Fuel is distributed as a self-contained ISO that, once downloaded, does not 
 require Internet access to provision OpenStack nodes. This ISO is available in 
-the Fuel Download http://fuel.mirantis.com/your-downloads/ section of the 
-Fuel Portal http://fuel.mirantis.com/ 
+the `Fuel Download <http://fuel.mirantis.com/your-downloads/>`_ section of the 
+Fuel Portal. 
 
 Here you will also find the Oracle VirtualBox scripts to enable quick and easy 
 deployment of a multi-node OpenStack cloud for evaluation purposes. Note that 
-you will need to be subscribed to the Mirantis site to access the downloads. 
-
-Subscription is free of charge.
+you will need to opt-in to the Mirantis portal to access the downloadable 
+files, which is free of charge.
 
 .. raw:: pdf
 
@@ -71,12 +70,12 @@ Contacting Support
 
 You can contact support online, through E-mail or via phone. Instructions on 
 how to use any of these contact options can be found on the 
-Support Home Page at https://mirantis.zendesk.com/home
+`support home page <https://mirantis.zendesk.com/home>`_.
 
 
 .. raw:: pdf
 
-  Spacer 0 200
+  Spacer 0 12cm
 
 .. image:: /_static/mirantis_logo.png
   :align: left

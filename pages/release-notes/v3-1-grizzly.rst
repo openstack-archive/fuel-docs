@@ -56,19 +56,17 @@ segregate network traffic. In these networks, Fuel can now be configured
 through the Fuel UI to disable the need for VLAN tagging. This configuration 
 option is available through the Network Settings tab.
 
-Full support of Quantum networking engine
------------------------------------------
-
-This release now supports all the features of Quantum OpenStack virtual 
-networking implementation including network namespaces feature ported to 
-2.6.32 CentOS kernel allowing virtual networks overlapping.
-
 Improved High Availability resiliency
 -------------------------------------
 
 To improve the resiliency of the Mirantis OpenStack High Availability reference 
-architecture, Fuel now deploys all HA services under Pacemaker, a scalable 
-cluster resource manager developed by ClusterLabs.  
+architecture, Fuel now deploys services including Neutron (Quantum) Agents, 
+HAProxy, Galera or MySQL native Master/Slave replication under Pacemaker from 
+ClusterLabs. Neutron (Quantum) agents now support seamless failover with 
+metadata proxy and agent support, allowing minimum downtime for cluster 
+Neutron (Quantum)-enabled networking. The Galera/Mysql replication engine now 
+supports automatic cluster reassembling after the entire cluster is rebooted.
+
 
 Horizon password entry can be hidden
 ------------------------------------
@@ -76,6 +74,16 @@ Horizon password entry can be hidden
 In the OpenStack settings tab, the input of the password used for Horizon 
 access can now be hidden by clicking on the eye icon to the left of the field. 
 This icon acts as a toggle between hidden and visible input modes.
+
+Full support of Neutron (Quantum) networking engine
+---------------------------------------------------
+
+All the features of the Neutron (Quantum) OpenStack virtual networking 
+implementation, including the network namespaces feature allowing virtual 
+networks to be overlapping, are now supported by Fuel. This improvement also 
+enables Neutron (Quantum) to work properly with Open vSwitch GRE tunnels. 
+This capability is currently supported only with the Mirantis OpenStack 
+distribution and CentOS version (2.6.32-358) included with Fuel.
 
 Resolved Issues in Fuel 3.1
 ===========================

@@ -281,7 +281,7 @@ nwdiag_antialias = True
 
 extensions += ['rst2pdf.pdfbuilder']
 pdf_documents = [ 
-    ('pdf_index', u'Fuel for OpenStack',  u'User Guide',
+    ('pdf_index', u'Fuel-for-OpenStack-3.1-UserGuide',  u'User Guide',
     u'2013, Mirantis Inc.')
 #    (master_doc, project, project, copyright),
 ]
