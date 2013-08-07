@@ -2,7 +2,7 @@
 
    PageBreak
 
-..index:: Testing OpenStack Cluster Manually
+.. index:: Testing OpenStack Cluster Manually
 
 Testing OpenStack Cluster
 =========================

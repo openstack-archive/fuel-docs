@@ -95,7 +95,8 @@ option enabled::
 Even though initial connection was in 192.168.0.5, then client tries to 
 access Public network for Nova API. The reason is because Keystone returns 
 the list of OpenStack services URLs, and for production-grade deployments it 
-is required to access services over public network. If you still need to 
-work with OpenStack API without routing configured, tell us your use case on 
-IRC channel **#openstack-fuel** (on freenode) and we might be able to figure 
-it out together.
+is required to access services over public network.
+
+If you still need to work with OpenStack API without routing configured, tell 
+us your use case on IRC channel **#openstack-fuel** (on freenode) and we might 
+be able to figure it out together.

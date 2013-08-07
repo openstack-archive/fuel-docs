@@ -7,20 +7,21 @@ New Features in Fuel 3.1
 
 .. contents:: :local:
   :depth: 1
+  :backlinks: none
 
 Fuel 3.1 with Integrated Graphical and Command Line controls
 ------------------------------------------------------------
 
-In earlier releases, Fuel was distributed as two packages – ``Fuel Web`` for 
-graphical workflow, and ``Fuel Library`` for command-line based manipulation. 
+In earlier releases, Fuel was distributed as two packages – `Fuel Web` for 
+graphical workflow, and `Fuel Library` for command-line based manipulation. 
 Starting with this 3.1 release, we’ve integrated these two capabilities into 
 a single offering, referred to simply as Fuel. If you used Fuel Web, you’ll 
 see that capability along with its latest improvements to that capability in 
 the the Fuel User Interface (UI), providing a streamlined, graphical console 
 that enables a point-and-click experience for the most commonly deployed 
 configurations. Advanced users with more complex environmental needs can 
-still get command-line access to the underlying deployment engine (aka ``Fuel 
-Library``).
+still get command-line access to the underlying deployment engine (aka `Fuel 
+Library`).
 
 Option to deploy Red Hat Enterprise Linux® OpenStack® Platform
 --------------------------------------------------------------
@@ -78,6 +79,10 @@ This icon acts as a toggle between hidden and visible input modes.
 
 Resolved Issues in Fuel 3.1
 ===========================
+
+.. contents:: :local:
+  :depth: 1
+  :backlinks: none
 
 Disk Configuration now displays proper size and validates input
 ---------------------------------------------------------------
@@ -189,42 +194,55 @@ about the node is unavailable.
 Known Issues in Fuel 3.1
 ========================
 
-Support for OpenStack Grizzly
------------------------------
+.. contents:: :local:
+  :depth: 1
+  :backlinks: none
+
+Limited Support for OpenStack Grizzly
+-------------------------------------
 
 The following improvements in Grizzly are not currently supported directly by 
 Fuel:
+
 - Nova Compute
+
   - Cells
   - Availability zones
   - Host aggregates
+
 - Neutron (formerly Quantum)
+
   - LBaaS (Load Balancer as a Service)
   - Multiple L3 and DHCP agents per cloud
+  
 - Keystone
+
   - Multi-factor authentication
   - PKI authentication
+  
 - Swift
+
   - Regions
   - Adjustable replica count
   - Cross-project ACLs
+
 - Cinder
+
   - Support for FCoE
   - Support for LIO as an iSCSI backend
   - Support for multiple backends on the same manager
+  
 - Ceilometer
+
 - Heat
 
-It is expected that these capabilities will be supported in a future release 
+It is expected that these capabilities will be supported in future releases 
 of Fuel.
 
 In addition, support for High Availability of Neutron (Quantum) on Red Hat 
 Enterprise Linux® (RHEL) is not available due to a limitation within the 
 Red Hat kernel. It is expected that this issue will be addressed by a patch to 
 RHEL in late 2013.
-
-.. contents:: :local:
-  :depth: 1
 
 Nagios deployment is disabled
 -----------------------------

@@ -1,9 +1,5 @@
-.. raw:: pdf
-
-   PageBreak
-
 RabbitMQ Cluster Restart Issues Following A Systemwide Power Failure
-====================================================================
+--------------------------------------------------------------------
 
 **Issue:** 
   As a rule of thumb, all RabbitMQ nodes must not be shut down 

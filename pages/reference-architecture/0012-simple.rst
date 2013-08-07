@@ -6,7 +6,7 @@
 
 .. _Simple:
 
-Simple (non-HA) deployment
+Simple (non-HA) Deployment
 ==========================
 
 In a production environment, you will never have a Simple non-HA
