@@ -19,8 +19,8 @@ the user and cloud administrator, to organize and manage an extensive array
 of configuration options. Consequently, getting the most out of your 
 OpenStack cloud over time – in terms of flexibility, scalability, and 
 manageability – requires a thoughtful combination of complex configuration 
-choices. This can be very time consuming and requires a significant amount 
-of studious documentation to comprehend.
+choices. This can be very time consuming and requires that you become 
+familiar with a lot of documentation from a number of different projects.
 
 Mirantis Fuel™ for OpenStack was created to eliminate exactly these problems. 
 This step-by-step guide takes you through this process of:
@@ -72,12 +72,11 @@ The Fuel User Guide is organized as follows:
 
 * With the current (3.1) release Fuel UI (aka FuelWeb) and Fuel CLI 
   (aka Fuel Library) are integrated. We encourage all users to use the Fuel 
-  UI for installation and configuration. However, 
-  the standard Fuel CLI installation process is still available for those who 
-  prefer a more detailed approach to deployment. Even with a utility as powerful 
-  as Fuel, creating an OpenStack cluster can be complex, and  
-  :ref:`FAQ` covers many of the issues that tend to arise during the process. 
+  UI for installation and configuration. However, the standard Fuel CLI 
+  installation process is still available for those who prefer a more 
+  detailed approach to deployment. Even with a utility as powerful as Fuel, 
+  creating an OpenStack cluster can be complex, and :ref:`FAQ` section covers 
+  many of the issues that tend to arise during the process. 
 
-Lets start off by taking a look at Fuel itself. We'll start by explaining what 
-it is and :ref:`How-Fuel-Works`, and then move to the process 
-of installation itself.
+Lets start off by taking a closer look at Fuel itself. We'll start by explaining 
+:ref:`How-Fuel-Works` and then move to the process of installation itself.  

@@ -19,7 +19,7 @@ two methods Fuel supports for obtaining Red Hat OpenStack packages:
 * :ref:`RHSM` (default) 
 * :ref:`RHN_Satellite`
 
-.. index:: Red Hat OpenStack; Deployment Requirements
+.. index:: Red Hat OpenStack: Deployment Requirements
 
 Deployment Requirements
 -----------------------
@@ -60,7 +60,8 @@ Considerations
 
 .. seealso:: 
   
-  `Overview of Subscription Management - Red Hat Customer Portal <https://access.redhat.com/site/articles/143253>`_
+  `Overview of Subscription Management - Red Hat Customer 
+  Portal <https://access.redhat.com/site/articles/143253>`_
 
 .. _RHN_Satellite:
   
@@ -119,7 +120,7 @@ Fuel looks for the following RHN Satellite channels.
 
 .. note:: If you create cloned channels, leave these channel strings intact.
 
-.. index:: Red Hat OpenStack; Troubleshooting
+.. index:: Red Hat OpenStack: Troubleshooting
 
 Troubleshooting
 ---------------

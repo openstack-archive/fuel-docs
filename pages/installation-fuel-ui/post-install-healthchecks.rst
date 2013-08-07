@@ -1,4 +1,4 @@
-.. index:: Fuel UI; Post-Deployment Check
+.. index:: Fuel UI: Post-Deployment Check
 
 .. _Post-Deployment-Check:
 
@@ -8,12 +8,11 @@ Post-Deployment Check
 .. contents :local:
 
 On occasion, even a successful deployment may result in some OpenStack 
-components not working correctly. If this happens, Fuel offers the 
-ability to perform post-deployment checks to verify operations. Part of Fuel's 
-goal is to provide easily accessible status information about the most commonly 
-used components and the most recently performed actions. 
-To perform these checks you will use Sanity and Smoke checks, as described 
-below:
+components not working correctly. If this happens, Fuel offers the ability 
+to perform post-deployment checks to verify operations. Part of Fuel's goal 
+is to provide easily accessible status information about the most commonly 
+used components and the most recently performed actions. To perform these 
+checks you will use Sanity and Smoke checks, as described below:
 
 **Sanity Checks**
   Reveal whether the overall system is functional. If it fails, you will most 
@@ -89,15 +88,15 @@ An actual test run looks like this:
 .. image::  /_images/ostf_screen.jpg
   :align: center
 
-What should be done when a test failed 
---------------------------------------
+What to do when a test fails 
+----------------------------
 
-If a test failed, there are several ways to investigate the problem. You may 
+If a test fails, there are several ways to investigate the problem. You may 
 prefer to start in Fuel UI since it's feedback is directly related to the 
 health of the deployment. To do so, start by checking the following:
 
 * Under the `Healthcheck` tab
-* In the OpenStack dashboard
+* In the OpenStack Dashboard
 * In the test execution logs (/var/log/ostf-stdout.log)
 * In the individual OpenStack components logs
 
@@ -110,9 +109,9 @@ dig deep. The most common issues are:
 * Something has been broken in the network configuration
 * There is a general lack of resources (memory/disk space)
 
-The first thing to be done is to ensure all OpenStack services are up and running.
-To do this you can run sanity test set, or execute the following command on your 
-controller node::
+The first thing to be done is to ensure all OpenStack services are up and 
+running. To do this you can run sanity test set, or execute the following 
+command on your controller node::
 
   nova-manage service list
 

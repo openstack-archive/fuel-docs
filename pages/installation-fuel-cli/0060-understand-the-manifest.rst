@@ -1,3 +1,5 @@
+.. index:: CLI Deployment Workflow
+
 Understanding the CLI Deployment Workflow
 =========================================
 
@@ -37,6 +39,8 @@ Calculated parameters are passed to the nodes being deployed by use of
 Facter plugin and uploads these facts into puppet. These facts are used 
 during catalog compilation phase by puppet master. Finally catalog is executed 
 and Astute orchestrator passes to the next node in deployment sequence.
+
+.. index:: Deploying Using CLI
 
 Deploying OpenStack Cluster Using CLI
 =====================================
@@ -98,8 +102,163 @@ identities. You can do this in two ways:
 - Get discovered nodes JSON file by issuing GET HTTP request to 
   http://<master_ip>:8000/api/nodes/
 
+Calculating Partitioning of the Nodes
+-------------------------------------
+
+In order to provision nodes, you need to calculate partitioning for each 
+particular node. 
+
+Currently, the smallest partitioning scheme includes two partitions: **root** 
+and **swap**. These ones reside on **os** LVM volume group. If you want
+to have separate partition for Glance and Swift what we strongly suggest you 
+to do, then you need to create a partition with mount point ``/var/lib/glance``.
+
+If you want the node to work as cinder LVM storage you will also need to 
+create a ``cinder`` LVM Volume Group.
+
+.. warning:: Do not use '_' and '-' symbols in cinder volume names since the 
+  Anaconda limitation.
+
+Partitioning is done by parsing ``ks_spaces`` section of node's ``ks_meta`` hash.
+Example ``ks_spaces`` is pasted below.
+
+Be also aware that the sizes are provided in MiBs (= 1024KiB = 1048576 bytes) 
+and Anaconda uses 32MiB physical extents for LVM. 
+Thus your LVM PVs size MUST be multiple of 32.
+
+.. code-block:: yaml
+
+  # == ks_spaces
+  # Kickstart data for disk partitioning
+  # The simplest way to calculate is to use REST call to nailgun api,
+  # recalculate disk size into MiB and dump the following config. 
+  # Workflow is as follows:
+  # GET request to http://<fuel-master-node>:8000/api/nodes
+  # Parse JSON and derive disk data from meta['disks']. 
+  # Set explicitly which disk is system and which is for cinder.
+  # $system_disk_size=floor($system_disk_meta['disks']['size']/1048756)
+  # $system_disk_path=$system_disk_meta['disks']['disk']
+  # $cinder_disk_size=floor($cinder_disk_meta['disks']['size']/1048756)
+  #
+  # $cinder_disk_path=$cinder_disk_meta['disks']['disk']
+  #
+  # All further calculations are made in MiB
+  # Calculation of system partitions
+  #
+  # For each node:
+  #    calculate size of physical volume for operating system:
+  #    $pv_size = $system_disk_size - 200 - 1
+  #    declare $swap_size
+  #    calculate size of root partition:
+  #        $free_vg_size = $pv_size - $swap_size
+  #        $free_extents = floor($free_vg_size/32)
+  #        $system_disk_size = 32 * $free_extents 
+  #  ks_spaces: '"[
+  #                {
+  #                 \"type\": \"disk\", 
+  #                 \"id\": \"$system_disk_path\",
+  #                 \"volumes\":
+  #                  [
+  #                   {
+  #                    \"mount\": \"/boot\", 
+  #                    \"type\": \"partition\", 
+  #                    \"size\": 200
+  #                   },
+  #                   {
+  #                    \"type\": \"mbr\"
+  #                   },
+  #                   {
+  #                    \"size\": $pv_size, 
+  #                    \"type\": \"pv\", 
+  #                    \"vg\": \"os\"
+  #                   }
+  #                  ],
+  #                 \"size\": $system_disk_size
+  #                },
+  #                {
+  #                 \"type\": \"vg\", 
+  #                 \"id\": \"os\", 
+  #                 \"volumes\":
+  #                  [
+  #                   {
+  #                    \"mount\": \"/\", 
+  #                    \"type\": \"lv\", 
+  #                    \"name\": \"root\", 
+  #                    \"size\": $system_disk_size 
+  #                   },
+  #                   {
+  #                    \"mount\": \"swap\", 
+  #                    \"type\": \"lv\", 
+  #                    \"name\": \"swap\", 
+  #                    \"size\": $swap_size
+  #                   }
+  #                  ]
+  #                },
+  #                {
+  #                 \"type\": \"disk\", 
+  #                 \"id\": \"$path_to_cinder_disk\",
+  #                 \"volumes\":
+  #                  [
+  #                   {
+  #                    \"type\": \"mbr\"
+  #                   },
+  #                   {
+  #                    \"size\": $cinder_disk_size, 
+  #                    \"type\": \"pv\", 
+  #                    \"vg\": \"cinder\"
+  #                   }
+  #                  ],
+  #                 \"size\": $cinder_disk_size
+  #                }
+  #               ]"'
+  ks_spaces: '"
+              [
+               {
+                \"type\": \"disk\", 
+                \"id\": \"disk/by-path/pci-0000:00:06.0-virtio-pci-virtio3\",
+                \"volumes\": 
+                 [
+                  {
+                   \"mount\": \"/boot\", 
+                   \"type\": \"partition\", 
+                   \"size\": 200
+                  },
+                  {
+                   \"type\": \"mbr\"
+                  }, 
+                  {
+                   \"size\": 20000, 
+                   \"type\": \"pv\", 
+                   \"vg\": \"os\"
+                  }
+                 ],
+                \"size\": 20480
+               }, 
+               {
+                \"type\": \"vg\", 
+                \"id\": \"os\", 
+                \"volumes\": 
+                 [
+                  {
+                   \"mount\": \"/\", 
+                   \"type\": \"lv\", 
+                   \"name\": \"root\", 
+                   \"size\": 10240
+                  }, 
+                  {
+                   \"mount\": \"swap\", 
+                   \"type\": \"lv\", 
+                   \"name\": \"swap\", 
+                   \"size\": 2048
+                  }
+                 ]
+               }
+              ]"'
+
+.. index:: Configuring Nodes for Provisioning
+
 Configuring Nodes for Provisioning
-----------------------------------
+==================================
 
 In order to provision nodes you need to configure ``nodes`` section of YAML 
 file for each node.
@@ -187,37 +346,106 @@ Sample YAML configuration for provisioning is listed below:
       #        $free_vg_size = $pv_size - $swap_size
       #        $free_extents = floor($free_vg_size/32)
       #        $system_disk_size = 32 * $free_extents 
-      # ks_spaces: '"[
-      #{\"type\": \"disk\", \"id\": \"$system_disk_path\",
-      #\"volumes\":
-      #[
-      # {\"mount\": \"/boot\", \"type\": \"partition\", \"size\": 200},
-      # {\"type\": \"mbr\"},
-      # {\"size\": $pv_size, \"type\": \"pv\", \"vg\": \"os\"}
-      #],
-      #\"size\": $system_disk_size
-      #},
-      #{\"type\": \"vg\", \"id\": \"os\", \"volumes\":
-      #[
-      # {\"mount\": \"/\", \"type\": \"lv\", \"name\": \"root\", \"size\": $system_disk_size },
-      # {\"mount\": \"swap\", \"type\": \"lv\", \"name\": \"swap\", \"size\": $swap_size}
-      #]
-      #},
-      #{\"type\": \"disk\", \"id\": \"$path_to_cinder_disk\",
-      #\"volumes\":
-      #[
-      # {\"type\": \"mbr\"},
-      # {\"size\": $cinder_disk_size, \"type\": \"pv\", \"vg\": \"cinder-volumes\"}
-      #],
-      #\"size\": $cinder_disk_size
-      #}
-      #]"'
-      ks_spaces: '"[{\"type\": \"disk\", \"id\": \"disk/by-path/pci-0000:00:06.0-virtio-pci-virtio3\",
-       \"volumes\": [{\"mount\": \"/boot\", \"type\": \"partition\", \"size\": 200},
-       {\"type\": \"mbr\"}, {\"size\": 20000, \"type\": \"pv\", \"vg\": \"os\"}],
-       \"size\": 20480}, {\"type\": \"vg\", \"id\": \"os\", \"volumes\": [{\"mount\":
-       \"/\", \"type\": \"lv\", \"name\": \"root\", \"size\": 10240 }, {\"mount\":
-       \"swap\", \"type\": \"lv\", \"name\": \"swap\", \"size\": 2048}]}]"'
+      #  ks_spaces: '"[
+      #                {
+      #                 \"type\": \"disk\", 
+      #                 \"id\": \"$system_disk_path\",
+      #                 \"volumes\":
+      #                  [
+      #                   {
+      #                    \"mount\": \"/boot\", 
+      #                    \"type\": \"partition\", 
+      #                    \"size\": 200
+      #                   },
+      #                   {
+      #                    \"type\": \"mbr\"
+      #                   },
+      #                   {
+      #                    \"size\": $pv_size, 
+      #                    \"type\": \"pv\", 
+      #                    \"vg\": \"os\"
+      #                   }
+      #                  ],
+      #                 \"size\": $system_disk_size
+      #                },
+      #                {
+      #                 \"type\": \"vg\", 
+      #                 \"id\": \"os\", 
+      #                 \"volumes\":
+      #                  [
+      #                   {
+      #                    \"mount\": \"/\", 
+      #                    \"type\": \"lv\", 
+      #                    \"name\": \"root\", 
+      #                    \"size\": $system_disk_size 
+      #                   },
+      #                   {
+      #                    \"mount\": \"swap\", 
+      #                    \"type\": \"lv\", 
+      #                    \"name\": \"swap\", 
+      #                    \"size\": $swap_size
+      #                   }
+      #                  ]
+      #                },
+      #                {
+      #                 \"type\": \"disk\", 
+      #                 \"id\": \"$path_to_cinder_disk\",
+      #                 \"volumes\":
+      #                  [
+      #                   {
+      #                    \"type\": \"mbr\"
+      #                   },
+      #                   {
+      #                    \"size\": $cinder_disk_size, 
+      #                    \"type\": \"pv\", 
+      #                    \"vg\": \"cinder\"
+      #                   }
+      #                  ],
+      #                 \"size\": $cinder_disk_size
+      #                }
+      #               ]"'
+      ks_spaces: '"[
+                    {
+                     \"type\": \"disk\", 
+                     \"id\": \"disk/by-path/pci-0000:00:06.0-virtio-pci-virtio3\",
+                     \"volumes\": 
+                      [
+                       {
+                        \"mount\": \"/boot\", 
+                        \"type\": \"partition\", 
+                        \"size\": 200
+                       },
+                       {
+                        \"type\": \"mbr\"
+                       }, 
+                       {
+                        \"size\": 20000, 
+                        \"type\": \"pv\", 
+                        \"vg\": \"os\"
+                       }
+                      ],
+                     \"size\": 20480
+                    }, 
+                    {
+                     \"type\": \"vg\", 
+                     \"id\": \"os\", 
+                     \"volumes\": 
+                      [
+                       {
+                        \"mount\":\"/\", 
+                        \"type\": \"lv\", 
+                        \"name\": \"root\", 
+                        \"size\": 10240 
+                       }, 
+                       {
+                        \"mount\": \"swap\", 
+                        \"type\": \"lv\", 
+                        \"name\": \"swap\", 
+                        \"size\": 2048
+                       }
+                      ]
+                    }
+                   ]"'
       # == mco_enable
       # If mcollective should be installed and enabled on the node
       mco_enable: 1
@@ -331,7 +559,10 @@ orchestrator and point it to corresponding YAML file:
 
   [root@fuel ~]# astute -f simple.yaml -c provision
 
-Wait for command to finish. Now you can start configuring OpenStack cluster parameters.
+Wait for command to finish. Now you can start configuring OpenStack cluster 
+parameters.
+
+.. index:: Configuring Nodes for Deployment
 
 Configuring Nodes for Deployment
 ================================
@@ -408,10 +639,12 @@ it is time to set some general parameters for deployment.
     # [web|cli] - should be set to cli for CLI installation
     deployment_source: cli
     # == management_vip
-    # Virtual IP address for internal services (MySQL, AMQP, internal OpenStack endpoints)
+    # Virtual IP address for internal services 
+    # (MySQL, AMQP, internal OpenStack endpoints)
     management_vip: 10.20.1.200 
     # == public_vip
-    # Virtual IP address for public services (Horizon, public OpenStack endpoints)
+    # Virtual IP address for public services 
+    # (Horizon, public OpenStack endpoints)
     public_vip: 10.20.0.200
     # == auto_assign_floating_ip
     # Whether to assign floating IPs automatically
@@ -477,8 +710,10 @@ it is time to set some general parameters for deployment.
     ntp_servers:
     - pool.ntp.org
 
+.. index:: Configure Deployment Scenario
+
 Configure Deployment Scenario
------------------------------
+=============================
 
 Choose deployment scenario you want to use. 
 Currently supported scenarios are:
@@ -499,7 +734,7 @@ Enabling Nova Network
 ---------------------
 
 If you want to use Nova Network as networking engine for your
-OpenStack cloud, you need to set `quantum` parameter to *false* in 
+OpenStack cloud, you need to set ``quantum`` parameter to *false* in 
 your config file:
 
 .. code-block:: yaml
@@ -529,7 +764,8 @@ You need also to configure some nova-network related parameters:
 Enabling Quantum
 ----------------
 
-In order to deploy OpenStack with Quantum you need to enable quantum in your YAML file
+In order to deploy OpenStack with Quantum you need to enable ``quantum`` in your 
+YAML file
 
 .. code-block:: yaml
 
@@ -572,7 +808,8 @@ run on the controllers, the actual storage can be specified by setting
   .....
     # == cinder_nodes
     # Which nodes to use as cinder-volume backends
-    # Array of values 'all'|<hostname>|<internal IP address of node>|'controller'|<node_role>
+    # Array of values 
+    # 'all'|<hostname>|<internal IP address of node>|'controller'|<node_role>
     cinder_nodes:
     - controller
 
@@ -673,11 +910,13 @@ unicast addressing by setting ``use_unicast_corosync`` variable to ``true``.
   # which communication protocol to use for corosync
   use_unicast_corosync: false
 
+.. index:: Triggering the Deployment
+
 Finally Triggering the Deployment
 =================================
 
-After YAML is updated with all the required parameters you can finally trigger deployment by issuing
-deploy command to Astute orchestrator.
+After YAML is updated with all the required parameters you can finally trigger 
+deployment by issuing ``deploy`` command to Astute orchestrator.
 
 .. code-block:: bash
 

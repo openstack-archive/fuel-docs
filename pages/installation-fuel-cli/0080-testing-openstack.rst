@@ -1,3 +1,5 @@
+..index:: Testing OpenStack Cluster Manually
+
 Testing OpenStack Cluster
 =========================
 

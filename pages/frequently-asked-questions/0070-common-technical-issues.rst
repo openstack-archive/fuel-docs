@@ -1,3 +1,5 @@
+.. index:: Common Technical Issues
+
 .. _common-technical-issues:
 
 Common Technical Issues

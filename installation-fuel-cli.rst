@@ -15,5 +15,5 @@ Deploy an OpenStack cluster using Fuel CLI
 .. include: /pages/installation-fuel-cli/0020-machines.rst
 .. include: /pages/installation-fuel-cli/0057-prepare-for-deployment.rst
 .. include:: /pages/installation-fuel-cli/0060-understand-the-manifest.rst
-.. include:: /pages/installation-fuel-cli/0070-orchestration.rst
+.. include /pages/installation-fuel-cli/0070-orchestration.rst
 .. include:: /pages/installation-fuel-cli/0080-testing-openstack.rst
