@@ -748,36 +748,37 @@ Currently supported scenarios are:
     # [ha|ha_full|multinode]
     deployment_mode: ha
 
-Enabling Nova Network
----------------------
+..
+  Enabling Nova Network
+  ---------------------
 
-If you want to use Nova Network as networking engine for your
-OpenStack cloud, you need to set ``quantum`` parameter to *false* in 
-your config file:
+  If you want to use Nova Network as networking engine for your
+  OpenStack cloud, you need to set ``quantum`` parameter to *false* in 
+  your config file:
 
-.. code-block:: yaml
+  .. code-block:: yaml
 
-  attributes:
-  .....
-    quantum: false
+    attributes:
+    .....
+      quantum: false
 
-You need also to configure some nova-network related parameters:
+  You need also to configure some nova-network related parameters:
 
-.. code-block:: yaml
+  .. code-block:: yaml
 
-  attributes:
-  .....
-    novanetwork_parameters:
-      vlan_start: <1-1024>
-      # == network_manager
-      # Which nova-network manager to use
-      network_manager: String
-      # == network_size
-      # which network size to use during fixed network range segmentation
-      network_size: <Integer>
-      # == num_networks
-      # number of networks  into which to split fixed_network_range
-      num_networks: <Integer>  
+    attributes:
+    .....
+      novanetwork_parameters:
+        vlan_start: <1-1024>
+        # == network_manager
+        # Which nova-network manager to use
+        network_manager: String
+        # == network_size
+        # which network size to use during fixed network range segmentation
+        network_size: <Integer>
+        # == num_networks
+        # number of networks  into which to split fixed_network_range
+        num_networks: <Integer>  
 
 Enabling Quantum
 ----------------
