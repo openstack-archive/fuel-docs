@@ -30,6 +30,8 @@ same network to eth2 on the compute, then there will be no connectivity
 between OpenStack services in spite of being configured to live on the same 
 VLAN. It is very easy to validate network settings before deployment by 
 clicking the "Verify Networks" button.
+If you need to access OpenStack REST API over public network, VNC console of VMs,
+Horizon in HA mode or VMs, refer to this section: :ref:`access_to_public_net`.
 
 Timeout in connection to OpenStack API from client applications
 ---------------------------------------------------------------
@@ -92,10 +94,9 @@ option enabled::
 
   INFO (connectionpool:191) Starting new HTTP connection (1): 172.16.1.2
 
-Even though initial connection was in 192.168.0.5, then client tries to 
+Even though initial connection was in 192.168.0.2, then client tries to 
 access Public network for Nova API. The reason is because Keystone returns 
 the list of OpenStack services URLs, and for production-grade deployments it 
-is required to access services over public network. If you still need to 
-work with OpenStack API without routing configured, tell us your use case on 
-IRC channel **#openstack-fuel** (on freenode) and we might be able to figure 
-it out together.
+is required to access services over public network. 
+See :ref:`access_to_public_net` if you want to configure the installation
+on VirtualBox to make all these issues fixed.

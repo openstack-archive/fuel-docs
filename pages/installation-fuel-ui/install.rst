@@ -107,55 +107,6 @@ folders:
   Finally, the script will give you the link to access the Web-based UI for the 
   Master Node so you can start installation of an OpenStack cluster.
 
-Deployment configuration to access OpenStack API and VMs from host machine
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Helper scripts for VirtualBox create network adapters eth0, eth1, eth2 which
-are represented on host machine as 
-vboxnet0, vboxnet1, vboxnet2 correspondingly, and assign
-IP addresses for adapters: vboxnet0 - 10.20.0.1/24, 
-vboxnet1 - 172.16.1.1/24, vboxnet2 - 172.16.0.1/24.
-For the demo environment on
-VirtualBox, the first NIC is used to run Fuel network traffic, including PXE discovery.
-
-To access the Horizon and OpenStack REST API via public network from the host machine,
-it is required to have route from your host to the public IP address on the OpenStack controller.
-Also, if access to floating IP of VM is required, it is also required to have route
-to the floating IP on compute host, which is binded to public interface there.
-To make this configuration possible on VirtualBox demo environment, the user has
-to run public network untagged. On the image below you can see the configuration of
-public and floating networks which will allow to make this happen.
-
-.. image:: /_images/vbox_public_settings.png
-  :align: center
-
-By default public and floating networks are run on the first network interface.
-It is required to change it, as you can see on this image below:
-
-.. image:: /_images/vbox_node_settings.png
-  :align: center
-
-
-(add note that this would 
-During installation the Slave nodes access the Internet via Master node. 
-But when installation is done Slave nodes on guest VMs shall access the 
-Internet via the Public network. To make it happen the following command must be 
-executed on host::
-
-  sudo iptables -t nat -A POSTROUTING -s 172.16.1.0/24 \! -d 172.16.1.0/24 -j MASQUERADE
-
-To access VMs managed by OpenStack it is needed to provide IP addresses from 
-floating IP range. When OpenStack cluster is deployed it is needed to create 
-security groups to provide access to guest VMs using following commands::
-
-  nova secgroup-add-rule default icmp -1 -1 0.0.0.0/0
-  nova secgroup-add-rule default tcp 22 22 0.0.0.0/0
-
-You can also add these security groups from Horizon UI.
-
-IP ranges for Public and Management networks (172.16.*.*) defined in `config.sh` 
-script. You can reassign these IP ranges before running VirtualBox scripts only.   
-  
 .. _Install_Manual:
 
 Manual mode
