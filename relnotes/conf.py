@@ -75,7 +75,7 @@ release = '3.1'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-exclude_patterns = ['_*', "pages", 'relnotes']
+exclude_patterns = ['_*', "pages"]
 # exclude_patterns = ['_*', 'rn_index.rst']
 
 # The reST default role (used for this markup: `text`) to use for all documents.
@@ -281,7 +281,7 @@ nwdiag_antialias = True
 
 extensions += ['rst2pdf.pdfbuilder']
 pdf_documents = [ 
-    ('pdf_index', u'Fuel for OpenStack',  u'User Guide',
+    ('relnotes/index', u'Fuel-for-OpenStack-3.1-RelNotes',  u'Release Notes',
     u'2013, Mirantis Inc.')
 #    (master_doc, project, project, copyright),
 ]
@@ -295,7 +295,7 @@ pdf_fit_mode = "shrink"
 # Section level that forces a break page.
 # For example: 1 means top-level sections start in a new page
 # 0 means disabled
-pdf_break_level = 1
+pdf_break_level = 2
 
 # When a section starts in a new page, force it to be 'even', 'odd',
 # or just use 'any'
@@ -309,7 +309,7 @@ pdf_breakside = 'any'
 pdf_verbosity = 0
 
 # If false, no index is generated.
-#pdf_use_index = True
+pdf_use_index = False
 
 # If false, no modindex is generated.
 #pdf_use_modindex = False
@@ -339,7 +339,7 @@ pdf_cover_template = 'mirantiscover.tmpl'
 pdf_page_template = 'oneColumn'
 
 # Show Table Of Contents at the beginning?
-pdf_use_toc = True
+pdf_use_toc = False
 
 # How many levels deep should the table of contents be?
 pdf_toc_depth = 2

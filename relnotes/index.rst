@@ -1,14 +1,11 @@
-:orphan:
-
-
 .. header::
 
         .. cssclass:: header-table
         
         +-------------------------------------+-----------------------------------+
-        | Fuel™ for v|version| Openstack      |                .. cssclass:: right|
+        | Fuel™ 3.1 for Openstack             |                .. cssclass:: right|
         |                                     |                                   |
-        | Release Notes                       |                     ###Section### |
+        |                                     |                     Release Notes |
         +-------------------------------------+-----------------------------------+
 
 .. footer::
@@ -16,14 +13,14 @@
         .. cssclass:: footer-table
         
         +--------------------------+----------------------+
-        |                          |   .. cssclass:: right|
+        | ©2013, Mirantis Inc.     |   .. cssclass:: right|
         |                          |                      |
-        | ©2013, Mirantis Inc.     |      Page ###Page### |
+        | All rights reserved.     |      Page ###Page### |
         +--------------------------+----------------------+
 
 .. raw:: pdf
 
    PageBreak oneColumn
 
-.. include:: 0030-release-notes.rst
+.. include:: /pages/release-notes/v3-1-grizzly-full.rst
    

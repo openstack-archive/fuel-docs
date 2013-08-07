@@ -124,9 +124,12 @@ latex: images
 pdf: images
 	$(SPHINXBUILD) -b pdf $(ALLSPHINXOPTS) $(BUILDDIR)/pdf
 	@echo
-	@echo "Build finished; the LaTeX files are in $(BUILDDIR)/pdf."
-	@echo "Run \`make' in that directory to run these through pdf" \
-	      "(use \`make pdf' here to do that automatically)."
+	@echo "Build finished; the PDF file is in $(BUILDDIR)/pdf."
+
+rnpdf: images
+	$(SPHINXBUILD) -b pdf -c relnotes $(ALLSPHINXOPTS) $(BUILDDIR)/pdf
+	@echo
+	@echo "Build finished; the PDF file is in $(BUILDDIR)/pdf."
 
 latexpdf: images
 	$(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) $(BUILDDIR)/latex
