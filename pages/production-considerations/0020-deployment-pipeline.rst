@@ -41,16 +41,16 @@ way to distribute code to nodes that are assigned to those environments.
   dynamically sets the ``modulepath`` so Puppet will check a per-environment 
   folder for a module before serving it from the main set:
 
-.. code-block:: ini
+  .. code-block:: ini
 
-  [master]
-    modulepath = $confdir/$environment/modules:$confdir/modules
+    [master]
+      modulepath = $confdir/$environment/modules:$confdir/modules
 
-  [production]
-    manifest   = $confdir/manifests/site.pp
+    [production]
+      manifest   = $confdir/manifests/site.pp
 
-  [development]
-    manifest   = $confdir/$environment/manifests/site.pp
+    [development]
+      manifest   = $confdir/$environment/manifests/site.pp
 
 **On the Slave Node:**
 
@@ -61,10 +61,10 @@ way to distribute code to nodes that are assigned to those environments.
   To set aslave-side environment, just specify the environment setting in the 
   ``[agent]`` block of ``puppet.conf``:
 
-.. code-block:: ini
+  .. code-block:: ini
 
-  [agent]
-    environment = development
+    [agent]
+      environment = development
 
 Deployment pipeline
 -------------------

@@ -114,11 +114,11 @@ Manual Mode
 
 .. note::
 
-    However, these manual steps will allow you to set up the evaluation environment 
-    for vanilla OpenStack release only. `RHOS installation is not possible.`
-    
-    To download and deploy RedHat OpenStack you need to use automated VirtualBox
-    helper scripts or install Fuel :ref:`Install_Bare-Metal`.
+  However, these manual steps will allow you to set up the evaluation environment 
+  for vanilla OpenStack release only. `RHOS installation is not possible.`
+  
+  To download and deploy RedHat OpenStack you need to use automated VirtualBox
+  helper scripts or install Fuel :ref:`Install_Bare-Metal`.
 
 If you cannot or would rather not run our helper scripts, you can still run 
 Fuel on VirtualBox by following these steps.
