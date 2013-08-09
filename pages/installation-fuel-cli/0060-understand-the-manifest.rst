@@ -671,7 +671,7 @@ it is time to set some general parameters for deployment.
     create_networks: true
     # == compute_scheduler_driver 
     # Nova scheduler driver class
-    compute_scheduler_driver: nova.scheduler.multi.MultiSchedule
+    compute_scheduler_driver: nova.scheduler.multi.MultiScheduler
     == use_cow_images:
     # Whether to use cow images
     use_cow_images: true
@@ -736,9 +736,9 @@ Configure Deployment Scenario
 Choose deployment scenario you want to use. 
 Currently supported scenarios are:
 
-- HA Compact
-- HA Full
-- Non-HA Multinode Simple
+- HA Compact (:download:`Download example YAML file </_static/compact.yaml>`)
+- HA Full (:download:`Download example YAML file </_static/full.yaml>`)
+- Non-HA Multinode Simple (:download:`Download example YAML file </_static/simple.yaml>`)
 
 .. code-block:: yaml
 
