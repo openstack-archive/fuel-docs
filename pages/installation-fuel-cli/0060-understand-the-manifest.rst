@@ -144,9 +144,9 @@ Thus your LVM PVs size MUST be multiple of 32.
   # GET request to http://<fuel-master-node>:8000/api/nodes
   # Parse JSON and derive disk data from meta['disks']. 
   # Set explicitly which disk is system and which is for cinder.
-  # $system_disk_size=floor($system_disk_meta['disks']['size']/1048756)
+  # $system_disk_size=floor($system_disk_meta['disks']['size']/1048576)
   # $system_disk_path=$system_disk_meta['disks']['disk']
-  # $cinder_disk_size=floor($cinder_disk_meta['disks']['size']/1048756)
+  # $cinder_disk_size=floor($cinder_disk_meta['disks']['size']/1048576)
   #
   # $cinder_disk_path=$cinder_disk_meta['disks']['disk']
   #
@@ -341,9 +341,9 @@ Sample YAML configuration for provisioning is listed below:
       # GET request to http://<fuel-master-node>:8000/api/nodes
       # Parse JSON and derive disk data from meta['disks']. 
       # Set explicitly which disk is system and which is for cinder.
-      # $system_disk_size=floor($system_disk_meta['disks']['size']/1048756)
+      # $system_disk_size=floor($system_disk_meta['disks']['size']/1048576)
       # $system_disk_path=$system_disk_meta['disks']['disk']
-      # $cinder_disk_size=floor($cinder_disk_meta['disks']['size']/1048756)
+      # $cinder_disk_size=floor($cinder_disk_meta['disks']['size']/1048576)
       #
       # $cinder_disk_path=$cinder_disk_meta['disks']['disk']
       #
