@@ -148,7 +148,7 @@ html_use_smartypants = False
 
 # Custom sidebar templates, maps document names to template names.
 html_sidebars = {
-  '**': ['searchbox.html', 'globaltoc.html', 'doc_license.html', 'relations.html'],
+  '**': ['searchbox.html', 'globaltoc.html'],
 }
 
 # Additional templates that should be rendered to pages, maps page names to
