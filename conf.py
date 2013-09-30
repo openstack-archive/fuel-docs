@@ -285,7 +285,8 @@ extensions += ['rst2pdf.pdfbuilder']
 pdf_documents = [ 
     ('pdf_index', u'Fuel-for-OpenStack-3.1-UserGuide',  u'User Guide',
     u'2013, Mirantis Inc.'),
-    ('pdf_install', u'Fuel-for-Openstack-3.1-InstallGuide', u'Installation Guide', u'2013, Mirantis, Inc.')
+    ('pdf_install', u'Fuel-for-Openstack-3.1-InstallGuide', u'Installation Guide', u'2013, Mirantis Inc.'),
+    ('pdf_reference', u'Fuel-for-OpenStack-3.1-ReferenceArchitecture', u'Reference Architecture', u'2013, Mirantis Inc.')
 #    (master_doc, project, project, copyright),
 ]
 pdf_stylesheets = ['letter', 'mirantis']
@@ -302,7 +303,7 @@ pdf_break_level = 1
 
 # When a section starts in a new page, force it to be 'even', 'odd',
 # or just use 'any'
-pdf_breakside = 'any'
+pdf_breakside = 'odd'
 
 # Insert footnotes where they are defined instead of 
 # at the end.

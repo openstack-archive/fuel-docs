@@ -1,6 +1,12 @@
-..index:: copyright_page
+.. raw::pdf
 
-©2013 Mirantis, Inc. All rights reserved. 
+   PageBreak
+
+.. index:: copyright_page
+
+.. _CopyrightPage:
+
+2013 Mirantis, Inc. All rights reserved. 
 
 This product is protected by U.S. and international copyright and 
 intellectual property laws.  No part of this publication may be 

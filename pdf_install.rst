@@ -6,7 +6,7 @@
   +-------------------------------------+-----------------------------------+
   | Fuel™ for Openstack v3.1            |                .. cssclass:: right|
   |                                     |                                   |
-  | User Guide                          |                    ###Section###  |
+  | Installation Guide                  |                    ###Section###  |
   +-------------------------------------+-----------------------------------+
 
 .. footer::
@@ -26,4 +26,4 @@
 .. contents:: Table of Contents
   :depth: 2
    
-.. include:: contents-user.rst
+.. include:: contents-install.rst
