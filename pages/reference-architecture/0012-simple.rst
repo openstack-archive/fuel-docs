@@ -6,8 +6,8 @@
 
 .. _Simple:
 
-Simple (non-HA) Deployment
-==========================
+Simple (no High Availability) Deployment
+========================================
 
 In a production environment, you will never have a Simple non-HA
 deployment of OpenStack, partly because it forces you to make a number
