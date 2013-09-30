@@ -1,9 +1,9 @@
-.. index:: FAQ (Frequently Asked Questions) 
+.. index:: F.A.Q.
 
-.. _FAQ:
+.. _F.A.Q.:
 
 ===========================================
-FAQ (Frequently Asked Questions) and HowTos
+F.A.Q
 ===========================================
 
 .. contents:: :local:

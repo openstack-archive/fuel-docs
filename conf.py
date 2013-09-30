@@ -47,7 +47,7 @@ source_suffix = '.rst'
 #source_encoding = 'utf-8-sig'
 
 # The master toctree document.
-master_doc = 'contents'
+# master_doc = 'contents'
 
 # General information about the project.
 project = u'Fuel for OpenStack'
@@ -148,7 +148,7 @@ html_use_smartypants = False
 
 # Custom sidebar templates, maps document names to template names.
 html_sidebars = {
-  '**': ['searchbox.html', 'globaltoc.html', 'doc_license.html'],
+  '**': ['searchbox.html', 'globaltoc.html'],
 }
 
 # Additional templates that should be rendered to pages, maps page names to
@@ -202,6 +202,8 @@ latex_elements = {
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
   ('index', 'fuel.tex', u'Fuel for OpenStack | Documentation',
+   u'Mirantis Inc.', 'manual'),
+   ('install', 'install.tex', u'Fuel Installation Guide | Documentation',
    u'Mirantis Inc.', 'manual'),
 ]
 
@@ -282,7 +284,9 @@ nwdiag_antialias = True
 extensions += ['rst2pdf.pdfbuilder']
 pdf_documents = [ 
     ('pdf_index', u'Fuel-for-OpenStack-3.1-UserGuide',  u'User Guide',
-    u'2013, Mirantis Inc.')
+    u'2013, Mirantis Inc.'),
+    ('pdf_install', u'Fuel-for-Openstack-3.1-InstallGuide', u'Installation Guide', u'2013, Mirantis Inc.'),
+    ('pdf_reference', u'Fuel-for-OpenStack-3.1-ReferenceArchitecture', u'Reference Architecture', u'2013, Mirantis Inc.')
 #    (master_doc, project, project, copyright),
 ]
 pdf_stylesheets = ['letter', 'mirantis']
@@ -299,7 +303,7 @@ pdf_break_level = 1
 
 # When a section starts in a new page, force it to be 'even', 'odd',
 # or just use 'any'
-pdf_breakside = 'any'
+pdf_breakside = 'odd'
 
 # Insert footnotes where they are defined instead of 
 # at the end.

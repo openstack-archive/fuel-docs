@@ -1,16 +1,13 @@
-.. index Table of Contents
+.. index Documentation
 
-.. _ToC:
+.. _Documentation:
 
-.. toctree:: Table of Contents
+.. toctree:: Documentation
   :maxdepth: 2
 
-  index
-  about-fuel
-  release-notes
+  install-guide
+  user-guide
   reference-architecture
-  production-considerations
-  installation-fuel-ui
-  installation-fuel-cli
+  release-notes
   frequently-asked-questions
   copyright
