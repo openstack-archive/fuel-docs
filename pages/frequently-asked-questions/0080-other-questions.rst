@@ -5,6 +5,7 @@
 Other Questions
 ===============
 
+.. TODO(mihgen): Provide more clear and reflecting reality answer
 1. **[Q]** Why did you decide to provide OpenStack packages through your own 
    repository?
 

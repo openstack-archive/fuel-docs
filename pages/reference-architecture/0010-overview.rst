@@ -20,15 +20,15 @@ As you know, OpenStack provides the following basic services:
 **Compute:**
   Compute servers are the workhorses of your installation; they're 
   the servers on which your users' virtual machines are created. 
-  `nova-scheduler` controls the life-cycle of these VMs.
+  `nova-compute` controls the life-cycle of these VMs.
 
 **Networking:**
   Because an OpenStack cluster (virtually) always includes 
   multiple servers, the ability for them to communicate with each other and with 
   the outside world is crucial. Networking was originally handled by the 
   `nova-network` service, but it has given way to the newer Neutron (formerly 
-  Quantum) networking service. Authentication and authorization for these 
-  transactions are handled by `keystone`.
+  Quantum) networking service. `nova-network` still has some advantages over Neutron,
+  and it is supported by Fuel in both Flat-DHCP and VLAN modes.
 
 **Storage:**
   OpenStack provides for two different types of storage: block 

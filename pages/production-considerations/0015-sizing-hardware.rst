@@ -11,6 +11,7 @@ Sizing Hardware for Production Deployment
 
 .. contents :local:
 
+.. TODO(mihgen): Add link to Hardware calculator on Mirantis site
 One of the first questions people ask when planning an OpenStack deployment is 
 "what kind of hardware do I need?" There is no such thing as a one-size-fits-all 
 answer, but there are straightforward rules to selecting appropriate hardware 
