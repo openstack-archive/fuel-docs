@@ -49,6 +49,12 @@ mechanism for achieving HA:
   deployment and Pacemaker.
 * Quantum agents are managed by Pacemaker.
 
+When Ceph storage is used in the OpenStack cloud, Ceph Monitor service
+is also housed on the controller nodes. Ceph implements its own quorum
+based HA mechanism and imposes very strict requirements on clock
+synchronization between the nodes. Clock drift higher than 50ms may
+impact the Ceph Monitors quorum or even crash the Ceph service.
+
 Compute Nodes
 -------------
 

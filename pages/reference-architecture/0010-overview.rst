@@ -20,30 +20,37 @@ As you know, OpenStack provides the following basic services:
 **Compute:**
   Compute servers are the workhorses of your installation; they're 
   the servers on which your users' virtual machines are created. 
-  `nova-compute` controls the life-cycle of these VMs.
+  `nova-compute` controls the life cycle of these VMs.
 
 **Networking:**
-  Because an OpenStack environment (virtually) always includes 
-  multiple servers, the ability for them to communicate with each other and with 
-  the outside world is crucial. Networking was originally handled by the 
-  `nova-network` service, but it has given way to the newer Neutron (formerly 
-  Quantum) networking service. `nova-network` still has some advantages over Neutron,
-  and it is supported by Fuel in both Flat-DHCP and VLAN modes. Neutron is
-  available in both VLAN segmentation and GRE segmentation modes.
+  Because an OpenStack cluster (virtually) always includes multiple
+  servers, the ability for them to communicate with each other and with
+  the outside world is crucial.
 
-**Block storage and Image Storage:**
-  OpenStack provides for two different types of storage: block 
-  storage and object storage. Block storage is traditional data storage, with 
-  small, fixed-size blocks that are mapped to locations on storage media. At its 
-  simplest level, OpenStack provides block storage using `nova-volume`, but it 
-  is common to use `cinder`.
+  Networking in OpenStack was originally handled by the `nova-network`
+  service, but it has given way to the newer `neutron` (formerly
+  `quantum`) networking service. `nova-network` still has some
+  advantages over `neutron`, so Fuel supports both. With `nova-network`,
+  Flat-DHCP and VLAN modes are available. With `neutron`, VLAN or GRE
+  can be used for network segmentation.
 
-  Object storage, on the other hand, consists of single variable-size objects 
-  that are described by system-level metadata, and you can access this capability 
-  using `swift` or `Ceph`.
+**Storage:**
+  OpenStack provides for two different types of storage: block storage
+  and object storage. Block storage is traditional data storage, with
+  volumes composed of small, fixed-size blocks that are mapped to
+  locations on storage media. In OpenStack, block storage is managed by
+  `cinder` service.
 
-  OpenStack storage is used for your users' objects, but it is also used for 
-  storing the images used to create new VMs. This capability is handled by `glance`.
+  Object storage implements a pragmatic middle ground between block
+  storage and hierarchical file systems: data is exposed as a flat set
+  of variable-size objects, and is separated from metadata. OpenStack
+  provides a reference implementation of object storage in `swift`
+  service, Fuel also supports using `Ceph` as object storage backend for
+  various OpenStack components.
+
+  In addition to being useful to store your users' data, object storage
+  is also used by the OpenStack `glance` service for storing the images
+  used to create new VMs.
 
 These services can be combined in many different ways. Out of the box,
 Fuel supports the following deployment configurations:
