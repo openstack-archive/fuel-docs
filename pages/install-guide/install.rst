@@ -169,23 +169,35 @@ Next, create Slave nodes where OpenStack needs to be installed.
 .. image:: /_images/vbox-image2.png
   :align: center
 
-Changing Network Parameters Before the Installation
+Changing Network Parameters During Installation
 ---------------------------------------------------
 
-You can change the network settings for the Fuel (PXE booting) network, which 
-is ``10.20.0.2/24 gw 10.20.0.1`` by default.
+The console-based Fuel Setup allows you to customize the Fuel (PXE booting)
+network, which is ``10.20.0.2/24`` with a gateway of ``10.20.0.1`` by default.
 
 In order to do so, press the <TAB> key on the very first installation screen 
-which says "Welcome to Fuel Installer!" and update the kernel options. For 
-example, to use 192.168.1.10/24 IP address for the Master node and 192.168.1.1 
-as the gateway and DNS server you should change the parameters to those shown 
-in the image below:
+which says "Welcome to Fuel Installer!" and update the kernel option 
+``showmenu=no`` to ``showmenu=yes``. Alternatively, you can press a key to 
+start Fuel Setup during the first boot after installation.
 
-.. image:: /_images/network-at-boot.jpg
+Within Fuel Setup you can configure the following parameters:
+
+* DHCP/Static configuration for each network interface
+* Select interface for Fuel network
+* Define DHCP pool (bootstrap) and static range (installed nodes)
+* Root password
+* DNS hostname, search domain, and upstream DNS resolver
+
+The main function of this tool is to provide a simple way to configure Fuel for
+your particular networking environment, but help detect errors early so you 
+need not waste time troubleshooting ifcfg-eth* files.
+
+.. image:: /_images/fuel-menu-interfaces.png
   :align: center
 
-When you're finished making changes, press the <ENTER> key and wait for the 
-installation to complete.
+Use the arrow keys to navigate through the tool. Once you have made your 
+changes, go to Save & Quit.
+
 
 Changing Network Parameters After Installation
 ----------------------------------------------
