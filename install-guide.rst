@@ -7,6 +7,7 @@ Installation Guide
 
 .. contents:: :local:
   :depth: 2
+
 .. include:: /pages/install-guide/0030-how-it-works.rst
 .. include:: /pages/install-guide/0040-reference-topologies.rst
 .. include:: /pages/install-guide/0050-supported-software.rst

@@ -1,11 +1,14 @@
-.. index Table of Contents
+.. index:: Reference Architectures
 
-.. _ToC:
+.. _Reference-Architectures:
 
-.. toctree:: Table of Contents
-  :maxdepth: 2
+=======================
+Reference Architectures
+=======================
 
-  preface
+.. contents:: :local:
+  :depth: 2
+
 .. include:: /pages/reference-architecture/0010-overview.rst
 .. include:: /pages/reference-architecture/0012-simple.rst
 .. include:: /pages/reference-architecture/0014-compact.rst
