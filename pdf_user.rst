@@ -6,7 +6,7 @@
   +-------------------------------------+-----------------------------------+
   | Fuel™ for Openstack v3.1            |                .. cssclass:: right|
   |                                     |                                   |
-  | Installation Guide                  |                    ###Section###  |
+  | User Guide                          |                    ###Section###  |
   +-------------------------------------+-----------------------------------+
 
 .. footer::
@@ -24,8 +24,5 @@
    PageBreak oneColumn
 
 .. toctree:: Table of Contents
-   :maxdepth: 2     
-.. include:: contents-install.rst
-
-
-   
+  :maxdepth: 2
+.. include:: contents-user.rst

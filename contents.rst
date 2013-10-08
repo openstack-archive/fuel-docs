@@ -10,4 +10,4 @@
   reference-architecture
   release-notes
   frequently-asked-questions
-  copyright
+  eula

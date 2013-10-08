@@ -13,16 +13,16 @@ PDFs
 ---------
 The following Fuel documentation is available in PDF:
 
-* Installation Guide 
+* `Installation Guide <../pdf/Fuel-for-Openstack-3.1-InstallGuide.pdf>`_
   
   This document describes how to install pre-configure your 
   OpenStack environment and install the Fuel Master Node.
   
-* User Guide
+* `User Guide <../pdf/Fuel-for-OpenStack-3.1-UserGuide.pdf>`_
   
   This document describes how to deploy compute nodes for Fuel.
 
-* Reference Architecture
+* `Reference Architecture <../pdf/Fuel-for-OpenStack-3.1-ReferenceArchitecture.pdf>`_
   
   A deep dive into the structure of the Fuel OpenStack environment,
   network considerations, and deployment options.
