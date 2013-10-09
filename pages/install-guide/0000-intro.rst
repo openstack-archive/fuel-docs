@@ -65,28 +65,6 @@ For more information, contact `Mirantis <http://www.mirantis.com/contact/>`_.
 
 .. seealso:: `Reference Architecture <../html/reference-architecture.html>`_
 
-About Fuel Components
------------------------
-
-You can use Fuel to quickly deploy and manage the OpenStack environment.
-
-Fuel includes the following components:
-
-* **Master Node (Controller Node)**
-   A controller node that manages the OpenStack environment including
-   deployment of additional controller and compute nodes, configuring
-   network settings, and so on. For HA deployments, Mirantis recommends
-   to deploy at least 3 controller nodes.
-  
-* **Compute Node(s)**
-   A compute node is a server where you run virtual machines and 
-   applications.
-  
-* **Storage Node(s)**
-   Optional component. You can deploy a separate Swift storage node
-   Mirantis recommends to deploy standalone storage nodes for high 
-   availability environments. 
-
 Fuel Installation Procedures
 ----------------------------
 You must complete the following tasks to install Fuel:
@@ -94,7 +72,7 @@ You must complete the following tasks to install Fuel:
 # Install the Fuel Master Node on physical or virtual hardware using
   the Fuel installation image
 # Power on the other nodes to make them accessible for Fuel Master node
-# Deploy the OpenStack environment on the discovered nodes using Fuel UI.
+# Deploy the OpenStack environment on the discovered nodes using Fuel UI or CLI.
 
 Fuel is designed to maintain the OpenStack environment while providing
 the flexibility to adapt it to your configuration.
