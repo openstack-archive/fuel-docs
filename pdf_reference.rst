@@ -26,4 +26,4 @@
 .. contents:: Table of Contents
   :depth: 2
    
-.. include:: contents-refarch.rst
+.. include:: contents/contents-refarch.rst

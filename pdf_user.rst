@@ -25,4 +25,4 @@
 
 .. toctree:: Table of Contents
   :maxdepth: 2
-.. include:: contents-user.rst
+.. include:: contents/contents-user.rst

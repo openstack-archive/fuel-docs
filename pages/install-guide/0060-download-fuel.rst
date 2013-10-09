@@ -4,15 +4,28 @@
 
 .. index:: Download Fuel
 
-Download Fuel
-=============
+Downloadng Fuel
+===============
 
-The first step in installing Fuel is to download the version appropriate to 
-your environment.
+Before installation, download the installation image from the `Mirantis
+web-site <http://fuel.mirantis.com/redirect-page/>`_.
 
-Fuel is available for Essex, Folsom and Grizzly OpenStack installations, and 
-will be available for Havana shortly after Havana's release.
+.. note::  You must sign in to download the Fuel image.
 
-The Fuel ISO and IMG, along with other Fuel releases, are available in the 
-`Downloads <http://fuel.mirantis.com/your-downloads/>`_ section of the Fuel 
-portal. 
+Fuel supports the following OpenStack releases:
+
+* **Essex** 
+* **Folsom** 
+* **Grizzly**
+* **Havana** 
+
+Fuel provides the following installation options: 
+
+* **ISO image**
+  For installation from CD media devices.
+
+* **Raw sector file (IMG)**
+  For instalation from flash media devices (USB).
+Both installation images contain the installer for Fuel Master node.
+
+.. seealso:: `Downloads <http://fuel.mirantis.com/your-downloads/>`_  

@@ -1,6 +1,11 @@
 .. index Documentation
 
+
 .. _Documentation:
+
+=============================
+Documentation
+=============================
 
 .. toctree:: Documentation
   :maxdepth: 2
