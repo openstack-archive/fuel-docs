@@ -35,7 +35,7 @@ components:
 * Hypervisor
 
   * KVM
-  
+
   * QEMU
 
 * Open vSwitch

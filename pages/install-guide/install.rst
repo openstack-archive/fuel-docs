@@ -9,9 +9,10 @@ Installing Fuel Master Node
 
 .. contents :local:
 
-Fuel is distributed as both ISO and IMG images, each of them contains 
-an installer for Fuel Master node. The ISO image is used for CD media devices, 
-iLO or similar remote access systems. The IMG file is used for USB memory sticks.
+Fuel is distributed via both ISO and IMG images. Eac contains an installer for 
+Fuel Master node. The ISO image is used for CD media devices, iLO (HP) or 
+similar remote access systems. The IMG file is used for USB memory stick-based
+installation.
 
 Once installed, Fuel can be used to deploy and manage OpenStack clusters. It 
 will assign IP addresses to the nodes, perform PXE boot and initial 
@@ -20,47 +21,49 @@ the cluster.
 
 .. _Install_Bare-Metal:
 
-On Bare-Metal Environment
--------------------------
+Bare-Metal Environment
+----------------------
 
 To install Fuel on bare-metal hardware, you need to burn the provided ISO to 
-a CD/DVD or create a bootable USB stick. You would then begin the 
-installation process by booting from that media, very much like any other OS.
+a writeable DVD or create a bootable USB stick. You would then begin the 
+installation process by booting from that media, very much like any other OS
+install process.
 
-Burning an ISO to optical media is a deeply supported function on all OSes. 
-For Linux there are several interfaces available such as `Brasero` or `Xfburn`, 
-two of the more commonly pre-installed desktop applications. There are also 
+Burning an ISO to optical media is a commonly supported function on all OSes. 
+On Linux, there are several programs available, such as `Brasero` or `Xfburn`, 
+two commonly pre-installed desktop applications. There are also 
 a number for Windows such as `ImgBurn <http://www.imgburn.com/>`_ and the 
 open source `InfraRecorder <http://infrarecorder.org/>`_.
 
-Burning an ISO in Mac OS X is deceptively simple. Open `Disk Utility` from 
+Burning an ISO in Mac OS X is quite simple. Open `Disk Utility` from 
 `Applications > Utilities`, drag the ISO into the disk list on the left side 
-of the window and select it, insert blank media with enough room, and click 
-`Burn`. If you prefer a utility, check out the open source `Burn 
+of the window and select it, insert blank DVD, and click `Burn`. If you prefer 
+a different utility, check out the open source `Burn 
 <http://burn-osx.sourceforge.net/Pages/English/home.html>`_.
 
 Installing the ISO to a bootable USB stick, however, is an entirely different 
 matter. Canonical suggests `PenDriveLinux` which is a GUI tool for Windows.
 
 On Windows, you can write the installation image with a number of different 
-utilities. The following list links to some of the more popular ones and they are 
-all available at no cost: 
+utilities. The following list links to some of the more popular ones and they 
+are all available at no cost:
 
 - `Win32 Disk Imager <http://sourceforge.net/projects/win32diskimager/>`_.
 - `ISOtoUSB <http://www.isotousb.com/>`_.
 
-After the installation is complete, you will need to allocate bare-metal 
-nodes for your OpenStack cluster, put them on the same L2 network as the 
-Master node, and PXE boot. The UI will discover them and make them available 
-for installing OpenStack.
+After the installation is complete, you will need to make your bare-metal nodes
+available for your OpenStack cluster. Attach them to the same L2 network
+(broadcast domain) as the Master node, and configure them to automatically
+boot via network. The UI will discover them and make them available for 
+installing OpenStack.
 
-On VirtualBox
--------------
+VirtualBox
+----------
 
-If you are going to evaluate Fuel on VirtualBox, you should know that we 
-provide a set of scripts that create and configure all of the required VMs for 
-you, including the Master node and Slave nodes for OpenStack itself. It's a very 
-simple, single-click installation.  
+If you would like to evaluate Fuel on VirtualBox, you can take advantage of the 
+included set of scripts that create and configure all the required VMs for a 
+test environment, including the Master node and Slave nodes for OpenStack 
+itself. It is a simple, single-click installation.
 
 .. note:: 
 
@@ -71,15 +74,17 @@ simple, single-click installation.
 The requirements for running Fuel on VirtualBox are:
 
 A host machine with Linux or Mac OS.
-  The scripts have been tested on Mac OS 10.7.5, Mac OS 10.8.3, Ubuntu 12.04 and Ubuntu 12.10.
+  The scripts have been tested on Mac OS 10.7.5, Mac OS 10.8.3, Ubuntu 12.04,
+  Ubuntu 12.10, and Fedora 19.
 
-VirtualBox 4.2.12 (or later) must be installed with the extension pack. Both 
-can be downloaded from `<http://www.virtualbox.org/>`_.
+VirtualBox 4.2.12 (or later) must be installed, along with the extension pack. 
+Both can be downloaded from `<http://www.virtualbox.org/>`_.
 
 8 GB+ of RAM
-  to handle 4 VMs for non-HA OpenStack installation (1 Master node, 1 Controller 
-  node, 1 Compute node, 1 Cinder node) or 
-  to handle 5 VMs for HA OpenStack installation (1 Master node, 3 Controller 
+  Will support 4 VMs for non-HA OpenStack installation (1 Master node, 
+  1 Controller node, 1 Compute node, 1 Cinder node) or 
+
+  Will support 5 VMs for HA OpenStack installation (1 Master node, 3 Controller 
   nodes, 1 Compute node)
 
 .. _Install_Automatic:
