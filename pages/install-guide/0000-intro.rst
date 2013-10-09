@@ -24,33 +24,40 @@ The following diagram describes how Fuel functions:
 .. image:: /_images/how-it-works_svg.jpg
   :align: center
 
-About Fuel Deployment Options
+Deployment Modes
 -----------------------------
 You can use Fuel™ for OpenStack to create virtually any OpenStack 
 configuration. However, Mirantis provides several pre-defined 
 architectures for your convenience. 
 The pre-defined architectures include:
  
-* **Simple (non-HA)**
-   The Simple (non-HA) installation provides an easy way 
-   to install an entire OpenStack cluster without requiring the degree 
-   of increased hardware involved in ensuring high availability.
-   Mirantis recommends that you use this architecture for testing
-   purposes.
+* **Multi-node (non-HA)**
+  The Multi-node (non-HA) environment provides an easy way 
+  to install an entire OpenStack cluster without requiring the degree 
+  of increased hardware involved in ensuring high availability.
+  Mirantis recommends that you use this architecture for testing
+  purposes.
   
-* **Compact High Availability**
-   The Compact HA architecture provides high availability and at 
-   the same time saves on hardware. When you deploy the Compact 
-   HA, Fuel uses controller nodes to install Swift. Therefore, it reduces
-   the hardware requirements by eliminating the need for additional 
-   storage servers while addressing high availability requirements.
+* **Multi-node with HA**
+  The Multi-node with HA environment is dedicated for highly available
+  production deployments. Using Multi-node with HA you can deploy
+  additional services, such as Cinder, Neutron, and Ceph.
+  You can create the following multi-node environments: 
+ 
+  * **Compact HA**
+    The Compact HA installation provides high availability and at 
+    the same time saves on hardware. When you deploy  Compact 
+    HA, Fuel uses controller nodes to install Swift. Therefore,
+    the hardware requirements are reduced by eliminating the need
+    for additional  storage servers while addressing the high
+    availability requirements.
 
-* **Full High Availability**
-   The Full HA installation requires maximum hardware and provides 
-   complete highly available OpenStack deployment. With Full HA, you 
-   can install independent Swift and Proxy nodes. Using standalone
-   Swift and Proxy servers, you can isolate their operations from 
-   your controller nodes.
+  * **Full HA**
+    The Full HA installation requires maximum hardware and provides 
+    complete highly available OpenStack deployment. With Full HA, you 
+    can install independent Ceph and Cinder nodes. Using the standalone
+    Ceph and Cinder servers, you can isolate their operations from 
+    the controller nodes.
    
 With Fuel, you can create your own cloud environment that include
 additional components. 
@@ -79,3 +86,17 @@ Fuel includes the following components:
    Optional component. You can deploy a separate Swift storage node
    Mirantis recommends to deploy standalone storage nodes for high 
    availability environments. 
+
+Fuel Installation Procedures
+----------------------------
+You must complete the following tasks to install Fuel:
+
+# Install the Fuel Master Node on physical or virtual hardware using
+  the Fuel installation image
+# Power on the other nodes to make them accessible for Fuel Master node
+# Deploy the OpenStack environment on the discovered nodes using Fuel UI.
+
+Fuel is designed to maintain the OpenStack environment while providing
+the flexibility to adapt it to your configuration.
+
+.. image:: /_images/how-it-works_svg.jpg

@@ -30,7 +30,7 @@ When you plan your OpenStack environment, consider the following:
   machine, and network storage. 
   
 Example of Hardware Requirements Calculation 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------------------------------
 When you calculate resources for your OpenStack environment, consider 
 the resources required for expanding your environment.
 
@@ -44,11 +44,11 @@ has the following prerequisites:
 * 16 x Amazon EC2 compute units 16 GHz maximum
 
 Calculating CPU
-^^^^^^^^^^^^^^^^
+----------------
 
 Use the following formula to calculate the number of CPU cores per virtual machine::
 
-  max GHz/number of GHz per core x 1.3 for hyper-threading
+  max GHz /(number of GHz per core x 1.3 for hyper-threading)
 
 Example::
   
@@ -62,7 +62,7 @@ Use the following formula to calculate the total number of CPU cores::
 
 Example::
 
-  (100 VMs * 2 GHz per VM)/2.4 GHz per core) = 84
+  (100 VMs * 2 GHz per VM) / 2.4 GHz per core = 84
 
 Therefore, the total number of CPU cores for 100 virtual machines is 84.
 
@@ -105,7 +105,7 @@ The calculation presumes the following conditions:
 * CPU supports the technologies required for your deployment
 
 Calculating Memory
-^^^^^^^^^^^^^^^^^^^
+--------------------
 
 Continuing to use the example from the previous section, we need to determine 
 how much RAM will be required to support 17 VMs per server. Let's assume that 
@@ -130,7 +130,7 @@ all core OS requirements.
 You can adjust this calculation based on your needs. 
 
 Calculating Storage
-^^^^^^^^^^^^^^^^^^^^
+--------------------
 
 When it comes to disk space there are several types that you need to consider:
 
@@ -251,7 +251,7 @@ each, but its not recommended due to the high cost of failure to replication
 and capacity issues.
 
 Calculating Network
-^^^^^^^^^^^^^^^^^^^
+--------------------
 
 Perhaps the most complex part of designing an OpenStack cluster is the 
 networking. 
@@ -306,7 +306,7 @@ switches. Also, as your network grows, you will need to consider uplinks and
 aggregation switches.
 
 Summary
-^^^^^^^^^^
+----------
 
 In general, your best bet is to choose a 2 socket server with a balance in I/O, 
 CPU, Memory, and Disk that meets your project requirements. 

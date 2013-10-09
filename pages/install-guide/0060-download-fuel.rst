@@ -4,7 +4,7 @@
 
 .. index:: Download Fuel
 
-Downloadng Fuel
+Downloading Fuel
 ===============
 
 Before installation, download the installation image from the `Mirantis
@@ -15,9 +15,10 @@ web-site <http://fuel.mirantis.com/redirect-page/>`_.
 Fuel supports the following OpenStack releases:
 
 * **Essex** 
-* **Folsom** 
-* **Grizzly**
-* **Havana** 
+
+* **Folsom**
+ 
+* **Grizzly** 
 
 Fuel provides the following installation options: 
 
