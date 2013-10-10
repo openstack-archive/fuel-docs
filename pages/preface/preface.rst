@@ -26,5 +26,5 @@ The following table lists the released revisions of this documentation:
 +--------------------+----------------------------+
 |Revision Date       |Description                 |
 +====================+============================+
-|September, 2013     |Testing Preface             |
+|October, 2013       |3.2 GA                      |
 +--------------------+----------------------------+

@@ -1,11 +1,11 @@
 .. index Table of Contents
 
-.. _ToC:
+.. _ReferenceArchitecture:
 
 .. toctree:: Table of Contents
   :maxdepth: 2
 
-  preface
+.. include:: /pages/preface/preface.rst
 .. include:: /pages/reference-architecture/0010-overview.rst
 .. include:: /pages/reference-architecture/0012-simple.rst
 .. include:: /pages/reference-architecture/0014-compact.rst
