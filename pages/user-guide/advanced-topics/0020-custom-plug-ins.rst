@@ -19,11 +19,11 @@ Fuel is designed to help you easily install a standard OpenStack cluster, but wh
 Fuel usage scenarios and how they affect installation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Two basic Fuel usage scenarios exist::
+Two basic Fuel usage scenarios exist:
 
-  * In the first scenario, a deployment engineer uses the Fuel ISO image to create a master node, make necessary changes to configuration files, and deploy OpenStack.  In this scenario, each node gets a clean OpenStack installation.
+* In the first scenario, a deployment engineer uses the Fuel ISO image to create a master node, make necessary changes to configuration files, and deploy OpenStack.  In this scenario, each node gets a clean OpenStack installation.
 
-  * In the second scenario, the master node and other nodes in the cluster have already been installed, and the deployment engineer has to deploy OpenStack to an existing configuration.
+* In the second scenario, the master node and other nodes in the cluster have already been installed, and the deployment engineer has to deploy OpenStack to an existing configuration.
 
 For this discussion, the first scenario requires that any customizations needed must be applied during the deployment and the second scenario already has customizations applied. 
 

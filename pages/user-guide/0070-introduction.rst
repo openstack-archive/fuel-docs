@@ -19,7 +19,7 @@ of configuration options. Consequently, getting the most out of your
 OpenStack cloud over time – in terms of flexibility, scalability, and 
 manageability – requires a thoughtful combination of complex configuration 
 choices. This can be very time consuming and requires that you become 
-familiar with a lot of documentation from a number of different projects.
+familiar with much of the documentation from the number of different projects.
 
 Mirantis Fuel™ for OpenStack was created to eliminate exactly these problems. 
 This step-by-step guide takes you through this process of:
@@ -28,14 +28,14 @@ This step-by-step guide takes you through this process of:
   architecture
 * Deploying that architecture through an effective, well-integrated automation 
   package that sets up and maintains the components and their configurations
-* Providing access to a well-integrated, up-to-date set of components known to 
-  work together
+* Providing access to a tested, integrated, and up-to-date set of components 
+  proven to work together
 
-Fuel™ for OpenStack can be used to create virtually any OpenStack 
-configuration. To make things easier, the installation includes several 
-pre-defined architectures. For the sake of simplicity, this guide emphasises 
+Fuel™ for OpenStack can be used to create and support many popular OpenStack 
+configurations. To make the process easier, the installation includes several 
+pre-defined architectures. For the sake of simplicity, this guide emphasizes 
 a single, common reference architecture; the multi-node, high-availability 
 configuration. We begin with an explanation of this architecture, then move 
 on to the details of creating the configuration in a test environment using 
-VirtualBox. Finally, we give you the information you need to know to create 
+VirtualBox. Finally, we provide you the information you need to know to create 
 this and other OpenStack architectures in a production environment.

@@ -12,16 +12,16 @@ How HA with Pacemaker and Corosync Works
 Corosync Settings
 -----------------
 
-Corosync is using Totem protocol which is an implementation of Virtual Synchrony 
+Corosync uses Totem protocol, which is an implementation of Virtual Synchrony 
 protocol. It uses it in order to provide connectivity between cluster nodes, 
 decide if cluster is quorate to provide services, to provide data layer for 
 services that want to use features of Virtual Synchrony.
 
-Corosync is used in Fuel as communication and quorum service for Pacemaker 
+Corosync fuctions in Fuel as the communication and quorum service via Pacemaker 
 cluster resource manager (`crm`). It's main configuration file is located in 
 ``/etc/corosync/corosync.conf``.
 
-The main Corosync section is ``totem`` section which describes how cluster nodes 
+The main Corosync section is the ``totem`` section which describes how cluster nodes 
 should communicate::
 
   totem {
@@ -44,11 +44,11 @@ should communicate::
     }
   }
 
-Corosync usually uses multicast UDP transport and sets "redundant ring" for 
-communication. Currently Fuel deploys controllers with one redundant ring. Each 
-ring has it’s own multicast address and bind net address that specifies on which 
-interface Corosync should join corresponding multicast group. Fuel uses default 
-Corosync configuration, which can also be altered in Fuel manifests.
+Corosync usually uses multicast UDP transport and sets up a "redundant ring" 
+for communication. Currently Fuel deploys controllers with one redundant ring. 
+Each ring has it’s own multicast address and bind net address that specifies on 
+which interface Corosync should join corresponding multicast group. Fuel uses 
+default Corosync configuration, which can also be altered in Fuel manifests.
 
 .. seealso:: ``man corosync.conf`` or Corosync documentation at 
   http://clusterlabs.org/doc/ if you want to know how to tune installation 
