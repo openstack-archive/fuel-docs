@@ -57,7 +57,8 @@ for installing OpenStack.
 On VirtualBox
 -------------
 
-If you are going to evaluate Fuel on VirtualBox, you should know that we 
+penStack-3.2-ReferenceArchitecture
+If y-u are going to evaluate Fuel on VirtualBox, you should know that we 
 provide a set of scripts that create and configure all of the required VMs for 
 you, including the Master node and Slave nodes for OpenStack itself. It's a very 
 simple, single-click installation.  
