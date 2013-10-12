@@ -3,7 +3,7 @@
 .. _Homepage:
 
 ===============================
-Welcome to Fuel™ Documentation
+Welcome to Fuel Documentation
 ===============================
 
 This page contains the most recent Fuel documentation.

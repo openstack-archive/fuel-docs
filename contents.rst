@@ -8,7 +8,7 @@ Documentation
 =============================
 
 .. toctree:: Documentation
-  :maxdepth: 3
+  :maxdepth: 2
 
   install-guide
   user-guide
