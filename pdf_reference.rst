@@ -4,7 +4,7 @@
   .. cssclass:: header-table
   
   +-------------------------------------+-----------------------------------+
-  | Fuel™ for Openstack v3.1            |                .. cssclass:: right|
+  | Fuel™ for Openstack v3.2            |                .. cssclass:: right|
   |                                     |                                   |
   | Reference Architecture              |                    ###Section###  |
   +-------------------------------------+-----------------------------------+

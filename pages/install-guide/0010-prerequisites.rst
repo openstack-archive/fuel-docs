@@ -1,4 +1,4 @@
-..index:: Prerequisites
+.. index:: Prerequisites
 
 .. _Prerequisites:
 
@@ -42,6 +42,8 @@ has the following prerequisites:
 * 2 x Amazon EC2 compute units 2 GHz average
 
 * 16 x Amazon EC2 compute units 16 GHz maximum
+
+.. seealso:: `Fuel Hardware Calculator <https://www.mirantis.com/openstack-services/bom-calculator/>`_
 
 Calculating CPU
 ----------------

@@ -5,7 +5,7 @@
 .. toctree:: Table of Contents
   :maxdepth: 2
 
-  preface
+.. include:: /pages/preface/preface.rst
 .. include:: /pages/user-guide/0070-introduction.rst
 .. include:: /pages/user-guide/red_hat_openstack.rst
 .. include:: /pages/user-guide/post-install-healthchecks.rst

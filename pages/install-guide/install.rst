@@ -9,7 +9,7 @@ Installing Fuel Master Node
 
 .. contents :local:
 
-Fuel is distributed via both ISO and IMG images. Eac contains an installer for 
+Fuel is distributed via both ISO and IMG images. Each contains an installer for 
 Fuel Master node. The ISO image is used for CD media devices, iLO (HP) or 
 similar remote access systems. The IMG file is used for USB memory stick-based
 installation.
@@ -59,6 +59,8 @@ installing OpenStack.
 
 VirtualBox
 ----------
+
+.. OpenStack-3.2-ReferenceArchitecture:
 
 If you would like to evaluate Fuel on VirtualBox, you can take advantage of the 
 included set of scripts that create and configure all the required VMs for a 
