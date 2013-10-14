@@ -10,10 +10,10 @@ important decisions:
     optional OpenStack features you will need. For example, you must decide 
     whether you want to install Swift, whether you want Glance to use Swift for 
     image storage, whether you want Cinder for block storage, and whether you 
-    want nova-network or Quantum to handle your network 
+    want nova-network or Neutron (formerly Quantum) to handle your network 
     connectivity. In our example installation we will be installing Glance with 
     Swift support and Cinder for block storage. Also, due to the fact that it 
-    can be easily installed using orchestration, we will be using Quantum.
+    can be easily installed using orchestration, we will be using Neutron.
 
 **Deployment configuration** 
     Next, you need to decide whether your 
