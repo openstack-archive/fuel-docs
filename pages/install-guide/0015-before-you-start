@@ -10,10 +10,10 @@ important decisions:
     optional OpenStack features you will need. For example, you must decide 
     whether you want to install Swift, whether you want Glance to use Swift for 
     image storage, whether you want Cinder for block storage, and whether you 
-    want nova-network or Quantum to handle your network 
+    want nova-network or Neutron (formerly Quantum) to handle your network 
     connectivity. In our example installation we will be installing Glance with 
     Swift support and Cinder for block storage. Also, due to the fact that it 
-    can be easily installed using orchestration, we will be using Quantum.
+    can be easily installed using orchestration, we will be using Neutron.
 
 **Deployment configuration** 
     Next, you need to decide whether your 
@@ -44,7 +44,7 @@ important decisions:
     you are deploying on physical hardware, two of them -- the public network 
     and the internal, or management network -- must be routable in your 
     networking infrastructure. The third network is used by the nodes for 
-    inter-node communications. Also, if you intend for your cluster to be 
+    inter-node communications. Also, if you intend for your environment to be 
     accessible from the Internet, you'll want the public network to be on the 
     proper network segment.  For simplicity in this case, this example assumes 
     an Internet router at 192.168.0.1.  Additionally, a set of private network 

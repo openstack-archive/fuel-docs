@@ -5,15 +5,18 @@
 HowTo Notes
 ===========
 
-.. index:: HowTo: Create the XFS partition
+.. index:: HowTo: Create an XFS disk partition
 
 .. _create-the-XFS-partition:
 
-HowTo: Create the XFS partition
--------------------------------
+HowTo: Create an XFS disk partition
+-----------------------------------
 
 In most cases, Fuel creates the XFS partition for you.  If for some reason you 
 need to create it yourself, use this procedure:
+
+.. note:: Replace ``/dev/sdb`` with the appropriate block device you wish to
+  configure.
 
 1. Create the partition itself::
 
@@ -40,6 +43,7 @@ need to create it yourself, use this procedure:
   noatime,nodiratime,nobarrier,logbufs=8 0 0" >> /etc/fstab
   mount -a
 
+
 .. index:: HowTo: Redeploy a node from scratch
 
 .. _Redeploy_node_from_scratch:
@@ -47,15 +51,15 @@ need to create it yourself, use this procedure:
 HowTo: Redeploy a node from scratch
 ------------------------------------
 
-Compute and Cinder nodes in an HA configuration and controller in any 
-configuration cannot be redeployed without completely redeploying the cluster.  
-However, in a non-HA situation you can redeploy a Compute or Cinder node.  
-To do so, follow these steps:
+Compute and Cinder nodes can be redeployed in both multinode and multinode HA 
+configurations. However, controllers cannot be redeployed without compeltely 
+redeploying the environment. To do so, follow these steps:
 
-1. Remove the certificate for the node by executing the command     
-   ``puppet cert clean <hostname>`` on Fuel Master node.
-2. Reboot the node over the network so it can be picked up by cobbler.
-3. Run the puppet agent on the target node using ``puppet agent --test``.
+1. Remove the node from your environment in the Fuel UI
+2. Deploy Changes
+3. Wait for the host to become available as an unallocated node
+4. Add the node to the environment with the same role as before
+5. Deploy Changes
 
 .. _Enable_Disable_Galera_autorebuild:
 
@@ -125,16 +129,16 @@ Here you can enter resource-specific commands::
 
 **crm(live)resource#  start|restart|stop|cleanup <resource_name>**
 
-These commands let you correspondingly start, stop, restart resources. 
+These commands allow you to respectively start, stop, and restart resources. 
 
 **cleanup**
 
-Cleanup command cleans resources state on the nodes in case of their failure or 
-unexpected operation, e.g. some residuals of SysVInit operation on resource, in 
-which case pacemaker will manage it by itself, thus deciding in which node to 
-run the resource.
+The pacemaker cleanup command resets a resource's state on the node if it is
+currently in a failed state or due to some unexpected operation, such as some 
+side effects of a SysVInit operation on the resource. In such an event, 
+pacemaker will manage it by itself, deciding which node will run the resource.
 
-E.g.::
+Example::
 
   3 Nodes configured, 3 expected votes
   3 Resources configured.
@@ -192,13 +196,13 @@ You can troubleshoot this by checking corosync connectivity between nodes.
 There are several points:
 
 1) Multicast should be enabled in the network, IP address configured as 
-   multicast should not be filtered, mcastport and mcasport - 1 udp ports should 
-   be accepted on management network between controllers
+   multicast should not be filtered. The mcast port, a single udp port should 
+   be accepted on the management network among all controllers
 
-2) corosync should start after network interfaces are configured
+2) Corosync should start after network interfaces are activated.
 
-3) `bindnetaddr` should be in the management network or at least in the same 
-   multicast reachable segment
+3) `bindnetaddr` should be located in the management network or at least in 
+   the same multicast reachable segment
 
 You can check this in output of ``ip maddr show``:
 
@@ -242,8 +246,9 @@ when members list is incomplete.
 How To Smoke Test HA
 --------------------
 
-To test if Quantum HA is working, simply shut down the node hosting, e.g. Quantum 
-agents (either gracefully or hardly). You should see agents start on the other node::
+To test if NeutrnoHA is working, simply shut down the node hosting, e.g. 
+Neutron agents (either gracefully or hardly). You should see agents start on 
+the other node::
 
 
   # crm status
@@ -255,7 +260,7 @@ agents (either gracefully or hardly). You should see agents start on the other n
   p_quantum-dhcp-agent (ocf::pacemaker:quantum-agent-dhcp): Started fuel-controller-02
   p_quantum-l3-agent (ocf::pacemaker:quantum-agent-l3): Started fuel-controller-02
 
-and see corresponding Quantum interfaces on the new Quantum node::
+and see corresponding Neutron interfaces on the new Neutron node::
 
   # ip link show
 
@@ -323,4 +328,4 @@ tunnels/bridges/interfaces are created and connected properly::
             Interface br-tun
                 type: internal
     ovs_version: "1.4.0+build0"
- 
+

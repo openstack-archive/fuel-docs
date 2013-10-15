@@ -33,13 +33,13 @@ Minimal Requirements
 
 * Red Hat account (https://access.redhat.com)
 * Red Hat OpenStack entitlement (one per node)
-* Internet access for Fuel Master name
+* Internet access for Fuel Master node
 
 Optional requirements
 +++++++++++++++++++++
 
 * Red Hat Satellite Server
-* Configured Satellite activation key 
+* Configured Satellite activation key
 
 .. _RHSM:
 
@@ -50,9 +50,8 @@ Benefits
 ++++++++
 
 * No need to handle large ISOs or physical media.
-* Register all your clients with just a single username and password.
-* Automatically register the necessary products required for installation and 
-  downloads a full cache.
+* Register all your hosts with just a single username and password.
+* Automatically register the necessary products required for installation.
 * Download only the latest packages.
 * Download only necessary packages.
 
@@ -87,7 +86,7 @@ Considerations
 * Red Hat RHN Satellite is a separate offering from Red Hat and requires 
   dedicated hardware
 * Still requires Red Hat Subscription Manager and Internet access to download 
-  registration packages (just for Fuel Master host)
+  registration packages (for Master node only)
 
 What you need
 +++++++++++++

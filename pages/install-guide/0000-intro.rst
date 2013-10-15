@@ -28,34 +28,18 @@ configuration. However, Mirantis provides several pre-defined
 architectures for your convenience. 
 The pre-defined architectures include:
  
-* **Multi-node (non-HA)**
-  The Multi-node (non-HA) environment provides an easy way 
-  to install an entire OpenStack cluster without requiring the degree 
+* **Multi-node**
+  The Multi-node environment provides an easy way 
+  to install an entire OpenStack environment without requiring the degree 
   of increased hardware involved in ensuring high availability.
   Mirantis recommends that you use this architecture for testing
   purposes.
   
-* **Multi-node with HA**
+* **Multi-node HA**
   The Multi-node with HA environment is dedicated for highly available
   production deployments. Using Multi-node with HA you can deploy
   additional services, such as Cinder, Neutron, and Ceph.
   You can create the following multi-node environments: 
- 
-  * **Compact HA**
-    The Compact HA installation provides high availability and at 
-    the same time saves on hardware. When you deploy  Compact 
-    HA, Fuel uses controller nodes to install Swift. Therefore,
-    the hardware requirements are reduced by eliminating the need
-    for additional  storage servers while addressing the high
-    availability requirements.
-
-  * **Full HA**
-    The Full HA installation requires maximum hardware and provides 
-    complete highly available OpenStack deployment. With Full HA, you 
-    can install independent Ceph and Cinder nodes. Using the standalone
-    Ceph and Cinder servers, you can isolate their operations from 
-    the controller nodes.
-   
 
 With Fuel, you can create your own cloud environment that include
 additional components. 

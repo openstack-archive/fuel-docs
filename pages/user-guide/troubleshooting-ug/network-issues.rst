@@ -7,13 +7,13 @@
 Network Issues
 ==============
 
-Fuel has a built-in capability to run network check before or after OpenStack 
-deployment. Currently it can check connectivity between nodes within 
-configured VLANs on configured server interfaces. Image below shows sample 
-result of such check. By using this simple table it is easy to say which 
-interfaces do not receive certain VLAN IDs. Usually it means that switch or 
-multiple switches are not configured correctly and do not allow certain 
-tagged traffic to pass through.
+Fuel has the built-in capability to run a network check before or after 
+OpenStack deployment. The network check includes tests for connectivity between 
+nodes via configured VLANs on configured host interfaces. Additionally, checks 
+for an unexpected DHCP server are done to ensure outside DHCP servers will not 
+interfere with deployment. The image below shows a sample result of the check. 
+If there are errors, it is either in your configuration of interfaces or 
+possibly the VLAN tagging feature is disabled on your switch port. 
 
 .. image:: /_images/net_verify_failure.jpg
   :align: center
@@ -21,17 +21,18 @@ tagged traffic to pass through.
 On VirtualBox
 -------------
 
-Scripts which are provided for quick Fuel setup, create 3 host-interface 
-adapters. Basically networking works as this being a 3 bridges, in each of 
-them the only one VMs interfaces is connected. It means there is only L2 
-connectivity between VMs on interfaces with the same name. If you try to 
-move, for example, management network to `eth1` on Controller node, and the 
+The scripts provided for quick Fuel setup create 3 host-interface adapters.
+Basically, networking works as if you have 3 switches, with one connected
+to a VM network interface. It means that there is only L2 connectivity between 
+VMs on interfaces with the same name. If you try to move, for example, 
+the management network to `eth1` on Controller node, and the 
 same network to `eth2` on the Compute, then there will be no connectivity 
-between OpenStack services in spite of being configured to live on the same 
-VLAN. It is very easy to validate network settings before deployment by 
+between OpenStack services, despite being configured to exist on the same 
+VLAN. It is very easy to validate network settings prior to deployment by 
 clicking the "Verify Networks" button.
-If you need to access OpenStack REST API over Public network, VNC console of VMs,
-Horizon in HA mode or VMs, refer to this section: :ref:`access_to_public_net`.
+If you need to access the OpenStack REST API over Public network, VNC console 
+of VMs, Horizon in HA mode or VMs, refer to this section: 
+:ref:`access_to_public_net`.
 
 Timeout In Connection to OpenStack API From Client Applications
 ---------------------------------------------------------------
@@ -94,10 +95,10 @@ option enabled::
 
   INFO (connectionpool:191) Starting new HTTP connection (1): 172.16.1.2
 
-Even though initial connection was in 192.168.0.2, then client tries to 
-access Public network for Nova API. The reason is because Keystone returns 
+Even though initial connection was in 192.168.0.2, the client tries to 
+access the Public network for Nova API. The reason is because Keystone returns 
 the list of OpenStack services URLs, and for production-grade deployments it 
 is required to access services over public network. 
 
-.. seealso:: :ref:`access_to_public_net` if you want to configure the installation
-  on VirtualBox to make all these issues fixed.
+.. seealso:: :ref:`access_to_public_net` if you want to configure the 
+  installation on VirtualBox and fix issues like the one above.

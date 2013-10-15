@@ -5,10 +5,10 @@
 Add or Remove Controller and Compute Nodes Without Downtime
 ===========================================================
 
-This document will assist you in understanding certain concepts and 
-processes around the management of controller and compute nodes within an 
-OpenStack cluster. There are some specific details to note, making this 
-document required reading.
+This document will help you become familiar with the process around lifecycle
+management of controller and compute nodes within an OpenStack environment 
+deployed by Fuel. There are some specific details to note, so reading this 
+document is highly recommended.
 
 1. The addition of compute nodes works seamlessly - just specify its 
   IPs in `site.pp` file (if needed) and run puppet agent

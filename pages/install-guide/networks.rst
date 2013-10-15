@@ -9,28 +9,28 @@ Understanding and Configuring the Network
 
 .. contents :local:
 
-OpenStack clusters use several types of network managers: FlatDHCPManager, 
-VLANManager and Neutron (formerly Quantum). The current version of Fuel UI 
-supports only two (FlatDHCP and VLANManager), but Fuel CLI supports all 
-three. For more information about how the first two network managers work, 
-you can read these two resources:
+OpenStack environments use several types of network managers: FlatDHCPManager, 
+VLANManager (Nova Network) and Neutron (formerly Quantum). All configurations 
+are supported. For more information about how the network managers work, you 
+can read these two resources:
 
 * `OpenStack Networking – FlatManager and FlatDHCPManager 
   <http://www.mirantis.com/blog/openstack-networking-flatmanager-and-flatdhcpmanager/>`_
 * `Openstack Networking for Scalability and Multi-tenancy with VLANManager 
   <http://www.mirantis.com/blog/openstack-networking-vlanmanager/>`_
+* `Neutron - OpenStack <https://wiki.openstack.org/wiki/Neutron/>`_
 
 FlatDHCPManager (multi-host scheme)
 -----------------------------------
 
-The main idea behind the flat network manager is to configure a bridge 
-(i.e. **br100**) on every Compute node and have one of the machine's host 
-interfaces connect to it. Once the virtual machine is launched its virtual 
-interface will connect to that bridge as well.
+The main ingredient in FlatManager is to configure a bridge 
+(i.e. **br100**) on every Compute node and have one of the machine's physical 
+interfaces connect to it. Once the virtual machine is launched, its virtual 
+interface connects to that bridge as well.
 The same L2 segment is used for all OpenStack projects, which means that there 
 is no L2 isolation between virtual hosts, even if they are owned by separate 
-projects, and there is only one flat IP pool defined for the cluster. For this 
-reason it is called the *Flat* manager.
+projects. Additionally, there is only one flat IP pool defined for the entire 
+environment. For this reason, it is called the *Flat* manager.
 
 The simplest case here is as shown on the following diagram. Here the *eth1* 
 interface is used to give network access to virtual machines, while *eth0* 
@@ -39,17 +39,17 @@ interface is the management network interface.
 .. image:: /_images/flatdhcpmanager-mh_scheme.jpg
   :align: center
 
-Fuel deploys OpenStack in FlatDHCP mode with the so called **multi-host** 
+Fuel deploys OpenStack in FlatDHCP mode with the **multi-host** 
 feature enabled. Without this feature enabled, network traffic from each VM 
-would go through the single gateway host, which basically becomes a single 
-point of failure. In enabled mode, each Compute node becomes a gateway for 
-all the VMs running on the host, providing a balanced networking solution. 
+would go through the single gateway host, which inevitably creates a single 
+point of failure. In **multi-host** mode, each Compute node becomes a gateway 
+for all the VMs running on the host, providing a balanced networking solution. 
 In this case, if one of the Computes goes down, the rest of the environment 
 remains operational.
 
 The current version of Fuel uses VLANs, even for the FlatDHCP network 
 manager. On the Linux host, it is implemented in such a way that it is not 
-the physical network interfaces that are connected to the bridge, but the 
+the physical network interfaces that connects to the bridge, but the 
 VLAN interface (i.e. *eth0.102*).
 
 FlatDHCPManager (single-interface scheme)
@@ -58,24 +58,25 @@ FlatDHCPManager (single-interface scheme)
 .. image:: /_images/flatdhcpmanager-sh_scheme.jpg
   :align: center
 
-Therefore all switch ports where Compute nodes are connected must be 
-configured as tagged (trunk) ports with required VLANs allowed (enabled, 
-tagged). Virtual machines will communicate with each other on L2 even if 
-they are on different Compute nodes. If the virtual machine sends IP packets 
-to a different network, they will be routed on the host machine according to 
-the routing table. The default route will point to the gateway specified on 
-the networks tab in the UI as the gateway for the Public network.
+In order for FlatDHCPManager to work, one designated switch port where each 
+Compute node is connected needs to be configured as tagged (trunk) port 
+with the required VLANs allowed (enabled, tagged). Virtual machines will 
+communicate with each other on L2 even if they are on different Compute nodes. 
+If the virtual machine sends IP packets to a different network, they will be 
+routed on the host machine according to the routing table. The default route 
+will point to the gateway specified on the networks tab in the UI as the 
+gateway for the Public network.
 
 VLANManager
 ------------
 
 VLANManager mode is more suitable for large scale clouds. The idea behind 
-this mode is to separate groups of virtual machines, owned by different 
-projects, on different L2 layers. In VLANManager this is done by tagging IP 
-frames, or simply speaking, by VLANs. It allows virtual machines inside the 
-given project to communicate with each other and not to see any traffic from 
-VMs of other projects. Switch ports must be configured as tagged (trunk) 
-ports to allow this scheme to work.
+this mode is to separate groups of virtual machines owned by different 
+projects into separate and distinct L2 networks. In VLANManager, this is done 
+by tagging IP frames, identified by a given VLAN. It allows virtual machines 
+inside the given project to communicate with each other and not to see any 
+traffic from VMs of other projects. Again, like with FlatDHCPManager, switch 
+ports must be configured as tagged (trunk) ports to allow this scheme to work.
 
 .. image:: /_images/vlanmanager_scheme.jpg
   :align: center
@@ -89,9 +90,7 @@ ports to allow this scheme to work.
 Fuel Deployment Schema
 ======================
 
-One of the physical interfaces on each host has to be chosen to carry 
-VM-to-VM traffic (fixed network), and switch ports must be configured to 
-allow tagged traffic to pass through. OpenStack Computes will untag the IP 
+Via VLAN tagging on a physical interface, OpenStack Computes will untag the IP 
 packets and send them to the appropriate VMs. Simplifying the configuration 
 of VLAN Manager, there is no known limitation which Fuel could add in this 
 particular networking mode.
@@ -287,7 +286,7 @@ For Ubuntu, the following command, executed on the host, can make this happen::
   sudo iptables -t nat -A POSTROUTING -s 172.16.1.0/24 \! -d 172.16.1.0/24 -j MASQUERADE
 
 To access VMs managed by OpenStack it is needed to provide IP addresses from 
-Floating IP range. When OpenStack cluster is deployed and VM is provisioned there,
+Floating IP range. When OpenStack environment is deployed and VM is provisioned there,
 you have to associate one of the Floating IP addresses from the pool to this VM,
 whether in Horizon or via Nova CLI. By default, OpenStack blocking all the traffic to the VM.
 To allow the connectivity to the VM, you need to configure security groups.

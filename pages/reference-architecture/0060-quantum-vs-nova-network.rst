@@ -13,8 +13,8 @@ common of them, called Provider Router with Private Networks. It provides each
 tenant with one or more private networks, which can communicate with the outside 
 world via a Neutron router.
 
-Neutron is not, however, required in order to run an OpenStack cluster. If you 
-don't need (or want) this added functionality, it's perfectly acceptable to 
+Neutron is not, however, required in order to run an OpenStack environment. If 
+you don't need (or want) this added functionality, it's perfectly acceptable to 
 continue using nova-network.
 
 In order to deploy Neutron, you need to enable it in the Fuel configuration. 

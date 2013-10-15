@@ -12,15 +12,15 @@ Other Questions
    **[A]** We are fully committed to providing our customers with working and 
    stable bits and pieces in order to make successful OpenStack deployments. 
    Please note that we do not distribute our own version of OpenStack; we rather 
-   provide a plain vanilla distribution. As such, there is no vendor lock-in. 
-   For convenience, our repository maintains the history of OpenStack packages 
-   certified to work with our Puppet manifests.  
+   provide a plain vanilla distribution. Put simply, there is no vendor lock-in
+   with Fuel. For your convenience, we maintain repositories containing a
+   history of OpenStack packages certified to work with our Puppet manifests.
 
    The advantage of this approach is that you can install any OpenStack version 
-   you want. If you are running Essex, just use the Puppet manifests which 
-   reference OpenStack packages for Essex from our repository. With each new 
-   release we add new OpenStack packages to our repository and created a 
-   separate branch with the Puppet manifests (which, in turn, reference these 
-   packages) corresponding to each release. With EPEL this would not be 
-   possible, as that repository only keeps the latest version for OpenStack 
-   packages.
+   you want (with possible custom big fixes). Even if you are running Essex, 
+   just use the Puppet manifests which reference OpenStack packages for Essex 
+   from our repository. With each new release we add new OpenStack packages to 
+   our repository and create a new branch with Puppet manifests (which, in 
+   turn, reference these packages) corresponding to each release. With EPEL 
+   this would not be possible, as that repository only keeps the latest version
+   for OpenStack packages.
