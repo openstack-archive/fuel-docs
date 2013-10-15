@@ -13,22 +13,33 @@ here: http://savanna.readthedocs.org/en/0.2.2
 
 **Notes and Limitations**
 
-Currently Savanna does not configure security groups, and at the same
-time it requires access to the VMs. That means that the default
-security group must have 22 port open for Savanna to work properly.
-HDP plugin also requires 8080 port to be open. Also you might have
-to open some ports for your use, like 50030 and 50070 to access
-JobTracker and NameNode web interface, or 80 to access Ambari console
-if HDP plugin is used. Also any inter-VM communication must not be
-blocked. That is a requirement only for tenants where
-Savanna will be used.
+Fuel configures Savanna to use floating IPs to access and configure VMs.
 
-Note that Fuel configures Savanna to use floating IPs to access and
-configure VMs. If your installation does not have floating IP auto
-assignment enabled (for nova-network) or Neutron is used, then on
-each Hadoop cluster launch you will need to specify network from
-which Savanna should assign floating IPs to the cluster nodes.
+Savanna does not configure OpenStack Security Groups, so manual configuration
+is required in each tenant where Savanna is going to be used. Savanna
+requires the following network ports to be open for inbound traffic:
 
-Hadoop requires at least 1G of memory to run. That means you must
-use flavors having not less than 1G of memory for Hadoop cluster
-nodes.
+ * Port 22 (TCP)
+
+   Required for communication between Savanna and virtual machines.
+
+ * Port 8080 (TCP)
+
+   Ambari REST API [HDP plugin only]
+
+ * Port 50070 (TCP)
+
+   NameNode web interface
+
+ * Port 50030 (TCP)
+
+   JobTracker web interface
+
+ * Port 80 (TCP)
+
+   Ambari web interface [HDP plugin only]
+
+Also verify that communication between virtual machines is not blocked.
+
+.. note:: Hadoop requires at least 1G of memory to run. That means you must
+    use flavors having not less than 1G of memory for Hadoop cluster nodes.

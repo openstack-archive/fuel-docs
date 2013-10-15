@@ -252,17 +252,17 @@ what test is used for each service:
   1. Request list of ports.
   2. Check returned list is not empty.
 
-.. topic:: Basic operations with Savanna templates
+.. topic:: Savanna basic test
 
-  Test checks that Savanna can create templates.
+  Test checks that Savanna can work with templates.
 
   Test scenario:
 
-  1. Create a flavor for Savanna VMs.
-  2. Create node group template for TaskTracker and DataNode processes.
-  3. Create node group template for TaskTracker process.
-  4. Create node group template for DataNode process.
-  5. Create cluster template based on created node group templates.
+  1. Create a Nova flavor for Savanna VMs.
+  2. Create a node group template for the TaskTracker and DataNode processes.
+  3. Create a node group template for the TaskTracker process.
+  4. Create a node group template for the DataNode process.
+  5. Create a cluster template using the node group templates.
   6. List current node group templates.
   7. List current cluster templates.
   8. Delete the created cluster template.
@@ -451,14 +451,15 @@ Platform Tests Description
 --------------------------
 
 Platform tests verify basic functionality of Heat, Savanna and Murano services.
-It is required to perform a number of manual actions before Savanna tests
-could be run.
+Typically, preparation for Savanna testing is a lengthy process that
+involves several manual configuration steps.
 
-Savanna Platform Tests Prerequisites
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Preparing Savanna for Testing
++++++++++++++++++++++++++++++
 
-The platform tests are run in the 'admin' tenant, so that is the
-tenant where changes are need to be performed.
+The platform tests are run in the tenant you've specified in
+'OpenStack Settings' tab during OpenStack installation. By default that is
+'admin' tenant. Perform in the that tenant the following actions:
 
 1. Configure security groups in the 'admin' tenant. See
    :ref:`savanna-deployment-label` for the details.
@@ -481,9 +482,12 @@ tenant where changes are need to be performed.
 After the steps above are done, the Savanna is ready to be tested.
 
 Platform Tests Details
-^^^^^^^^^^^^^^^^^^^^^^
+++++++++++++++++++++++
 
 .. topic:: Hadoop cluster operations
+
+  Test checks that Savanna can launch a Hadoop cluster
+  using the Vanilla plugin.
 
   Target component: Savanna
 
@@ -491,7 +495,7 @@ Platform Tests Details
 
   1. Create a flavor for Savanna VMs.
   2. Create a node group template for JobTracker and NameNode.
-  3. Create a cluster template based on created node group template.
+  3. Create a cluster template using the node group template.
   4. List current node group templates.
   5. List current cluster templates.
   6. Launch a Hadoop cluster with the created cluster template.
@@ -502,5 +506,5 @@ Platform Tests Details
   10. Delete the created node group templates.
   11. Delete the created flavor.
 
-  For more information refer to
+  For more information, see:
   `Savanna documentation <http://savanna.readthedocs.org/en/0.2.2/>`_
