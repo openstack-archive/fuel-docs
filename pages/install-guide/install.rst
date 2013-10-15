@@ -14,10 +14,10 @@ Fuel Master node. The ISO image is used for CD media devices, iLO (HP) or
 similar remote access systems. The IMG file is used for USB memory stick-based
 installation.
 
-Once installed, Fuel can be used to deploy and manage OpenStack clusters. It 
-will assign IP addresses to the nodes, perform PXE boot and initial 
+Once installed, Fuel can be used to deploy and manage OpenStack environments. 
+It will assign IP addresses to the nodes, perform PXE boot and initial 
 configuration, and provision of OpenStack nodes according to their roles in 
-the cluster.
+the environment.
 
 .. _Install_Bare-Metal:
 
@@ -52,7 +52,7 @@ are all available at no cost:
 - `ISOtoUSB <http://www.isotousb.com/>`_.
 
 After the installation is complete, you will need to make your bare-metal nodes
-available for your OpenStack cluster. Attach them to the same L2 network
+available for your OpenStack environment. Attach them to the same L2 network
 (broadcast domain) as the Master node, and configure them to automatically
 boot via network. The UI will discover them and make them available for 
 installing OpenStack.
@@ -60,7 +60,7 @@ installing OpenStack.
 VirtualBox
 ----------
 
-.. OpenStack-3.2-ReferenceArchitecture:
+.. OpenStack-3.2-ReferenceArchitecture::
 
 If you would like to evaluate Fuel on VirtualBox, you can take advantage of the 
 included set of scripts that create and configure all the required VMs for a 
@@ -83,13 +83,13 @@ VirtualBox 4.2.16 (or later) is required, along with the extension pack.
 Both can be downloaded from `<http://www.virtualbox.org/>`_.
 
 8 GB+ of RAM
-  Will support 4 VMs for non-HA OpenStack installation (1 Master node, 
+  Will support 4 VMs for Multi-node OpenStack installation (1 Master node, 
   1 Controller node, 1 Compute node, 1 Cinder node) 
 
   or
 
-  Will support 5 VMs for HA OpenStack installation (1 Master node, 3 Controller 
-  + Cinder nodes, 1 Compute node)
+  Will support 5 VMs for Multi-node with HA OpenStack installation (1 Master 
+  node, 3 Controller + Cinder nodes, 1 Compute node)
 
 .. _Install_Automatic:
 
@@ -114,7 +114,7 @@ important files and folders:
   After installation of the Master node, the script will create Slave nodes for 
   OpenStack and boot them via PXE from the Master node.
   Finally, the script will give you the link to access the Web-based UI for the 
-  Master node so you can start installation of an OpenStack cluster.
+  Master node so you can start installation of an OpenStack environment.
 
 .. _Install_Manual:
 
@@ -150,7 +150,7 @@ First, create the Master node VM.
 * OS Type: Linux
 * Version: Red Hat (64bit)
 * RAM: 1024+ MB
-* HDD: 20 GB (35gb for Red Hat OpenStack) with dynamic disk expansion
+* HDD: 50 GB with dynamic disk expansion
 
 3. Modify your VM settings:
 
@@ -221,67 +221,15 @@ changes, go to Save & Quit.
 Changing Network Parameters After Installation
 ----------------------------------------------
 
-It is still possible to configure other interfaces, or add 802.1Q sub-interfaces 
-to the Master node to be able to access it from your network if required.
-It is easy to do via standard network configuration scripts for CentOS. When the 
-installation is complete, you can modify 
-``/etc/sysconfig/network-scripts/ifcfg-eth\*`` scripts. For example, if *eth1* 
-interface is on the L2 network which is planned for PXE booting, and *eth2* is 
-the interface connected to your office network switch, *eth0* is not in use, then 
-settings can be the following:
-
-/etc/sysconfig/network-scripts/ifcfg-eth0::
-
-  DEVICE=eth0
-  ONBOOT=no
-
-/etc/sysconfig/network-scripts/ifcfg-eth1::
-
-  DEVICE=eth1
-  ONBOOT=yes
-  HWADDR=<your MAC>
-  ..... (other settings in your config) .....
-  PEERDNS=no
-  BOOTPROTO=static
-  IPADDR=192.168.1.10
-  NETMASK=255.255.255.0
-
-/etc/sysconfig/network-scripts/ifcfg-eth2::
-
-  DEVICE=eth2
-  ONBOOT=yes
-  HWADDR=<your MAC>
-  ..... (other settings in your config) .....
-  PEERDNS=no
-  IPADDR=172.18.0.5
-  NETMASK=255.255.255.0
+It is possible to run "fuelmenu" from a root shell on Fuel Master node after 
+deployment to make minor changes to network interfaces, DNS, and gateway. The 
+PXE settings, however, cannot be changed after deployment as it will lead to 
+deployment failure.
 
 .. warning::
 
   Once IP settings are set at the boot time for Fuel Master node, they 
   **should not be changed during the whole lifecycle of Fuel.**
-
-After modification of network configuration files, it is necessary to apply the 
-new configuration::
-
-  service network restart
-
-Now you should be able to connect to Fuel UI from your network at 
-http://172.18.0.5:8000/
-
-Name Resolution (DNS)
----------------------
-
-During Master node installation, by default it is assumed that there is a 
-recursive DNS service on 10.20.0.1.
-
-If you want to make it possible for Slave nodes to be able to resolve public names,
-you need to change this default value to point to an actual DNS service.
-To make the change, run the following commands on Fuel Master node (replace IP to 
-your actual DNS)::
-
-  echo "nameserver `XXX.XXX.XXX.XXX`" > /etc/dnsmasq.upstream
-  cobbler sync
 
 PXE Booting Settings
 --------------------

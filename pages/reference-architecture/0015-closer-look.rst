@@ -2,14 +2,14 @@
 
    PageBreak
 
-.. index:: Reference Architectures: HA Compact Details, HA Compact Details
+.. index:: Reference Architectures: Multi-node with HA Details
 
-.. _Close_look_Compact:
+.. _Close_look_Multi-node_HA:
 
-Details of HA Compact Deployment
-================================
+Details of Multi-node with HA Deployment
+===================================
 
-In this section, you'll learn more about the Multi-node (HA) Compact
+In this section, you'll learn more about the Multi-node with HA 
 deployment configuration and how it achieves high availability. As you may 
 recall, this configuration looks something like this:
 

@@ -8,12 +8,12 @@ Network Issues
 ==============
 
 Fuel has the built-in capability to run a network check before or after 
-OpenStack deployment. Currently, it can check connectivity between nodes within 
-configured VLANs on configured server interfaces. The image below shows sample 
-result of such check. By using this simple table it is easy to determine which 
-interfaces do not receive certain VLAN IDs. Usually, it means that a switch or 
-multiple switches are not configured correctly and do not allow certain 
-tagged traffic to pass through.
+OpenStack deployment. The network check includes tests for connectivity between 
+nodes via configured VLANs on configured host interfaces. Additionally, checks 
+for an unexpected DHCP server are done to ensure outside DHCP servers will not 
+interfere with deployment. The image below shows a sample result of the check. 
+If there are errors, it is either in your configuration of interfaces or 
+possibly the VLAN tagging feature is disabled on your switch port. 
 
 .. image:: /_images/net_verify_failure.jpg
   :align: center

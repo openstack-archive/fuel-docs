@@ -23,7 +23,7 @@ As you know, OpenStack provides the following basic services:
   `nova-compute` controls the life-cycle of these VMs.
 
 **Networking:**
-  Because an OpenStack cluster (virtually) always includes 
+  Because an OpenStack environment (virtually) always includes 
   multiple servers, the ability for them to communicate with each other and with 
   the outside world is crucial. Networking was originally handled by the 
   `nova-network` service, but it has given way to the newer Neutron (formerly 
@@ -47,8 +47,7 @@ As you know, OpenStack provides the following basic services:
 These services can be combined in many different ways. Out of the box,
 Fuel supports the following deployment configurations:
 
-- :ref:`Non-HA Simple <Simple>`
-- :ref:`HA Compact <HA_Compact>`
-- :ref:`HA Full <HA_Full>`
-- :ref:`RHOS Non-HA Simple <RHOS_Simple>`
-- :ref:`RHOS HA Compact <RHOS_Compact>`
+- :ref:`Multi-node <Multi-node>`
+- :ref:`Multi-node with HA <Multi-node_HA>`
+- :ref:`RHOS Multi-node <RHOS_Multi-node>`
+- :ref:`RHOS Multi-node with HA <RHOS_Multi-node_HA>`

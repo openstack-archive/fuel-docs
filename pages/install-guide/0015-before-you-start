@@ -44,7 +44,7 @@ important decisions:
     you are deploying on physical hardware, two of them -- the public network 
     and the internal, or management network -- must be routable in your 
     networking infrastructure. The third network is used by the nodes for 
-    inter-node communications. Also, if you intend for your cluster to be 
+    inter-node communications. Also, if you intend for your environment to be 
     accessible from the Internet, you'll want the public network to be on the 
     proper network segment.  For simplicity in this case, this example assumes 
     an Internet router at 192.168.0.1.  Additionally, a set of private network 

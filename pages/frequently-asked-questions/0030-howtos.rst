@@ -51,15 +51,15 @@ need to create it yourself, use this procedure:
 HowTo: Redeploy a node from scratch
 ------------------------------------
 
-Compute and Cinder nodes in an HA configuration and controller in any 
-configuration cannot be redeployed without completely redeploying the cluster.  
-However, for a non-HA OpenStack cluster, you can redeploy a Compute or 
-Cinder node. To do so, follow these steps:
+Compute and Cinder nodes can be redeployed in both multinode and multinode HA 
+configurations. However, controllers cannot be redeployed without compeltely 
+redeploying the environment. To do so, follow these steps:
 
-1. Remove the certificate for the node by executing the command 
-   ``puppet cert clean <hostname>`` on Fuel Master node.
-2. Reboot the node over the network so it can be picked up by Cobbler.
-3. Run the puppet agent on the target node using ``puppet agent --test``.
+1. Remove the node from your environment in the Fuel UI
+2. Deploy Changes
+3. Wait for the host to become available as an unallocated node
+4. Add the node to the environment with the same role as before
+5. Deploy Changes
 
 .. _Enable_Disable_Galera_autorebuild:
 
@@ -129,7 +129,7 @@ Here you can enter resource-specific commands::
 
 **crm(live)resource#  start|restart|stop|cleanup <resource_name>**
 
-These commands allow you torespectively start, stop, and restart resources. 
+These commands allow you to respectively start, stop, and restart resources. 
 
 **cleanup**
 
@@ -246,8 +246,8 @@ when members list is incomplete.
 How To Smoke Test HA
 --------------------
 
-To test if Quantum HA is working, simply shut down the node hosting, e.g. 
-Quantum agents (either gracefully or hardly). You should see agents start on 
+To test if NeutrnoHA is working, simply shut down the node hosting, e.g. 
+Neutron agents (either gracefully or hardly). You should see agents start on 
 the other node::
 
 
@@ -260,7 +260,7 @@ the other node::
   p_quantum-dhcp-agent (ocf::pacemaker:quantum-agent-dhcp): Started fuel-controller-02
   p_quantum-l3-agent (ocf::pacemaker:quantum-agent-l3): Started fuel-controller-02
 
-and see corresponding Quantum interfaces on the new Quantum node::
+and see corresponding Neutron interfaces on the new Neutron node::
 
   # ip link show
 

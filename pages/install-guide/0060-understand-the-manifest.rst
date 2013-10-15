@@ -46,8 +46,8 @@ and Astute orchestrator passes to the next node in deployment sequence.
 
 .. index:: Deploying Using CLI
 
-Deploying OpenStack Cluster Using CLI
-=====================================
+Deploying OpenStack Environment Using CLI
+=========================================
 
 .. contents :local:
 

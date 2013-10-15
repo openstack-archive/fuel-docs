@@ -9,8 +9,8 @@ HA Logical Setup
 
 .. contents :local:
 
-An OpenStack HA cluster involves, at a minimum, three types of nodes:
-controller nodes, compute nodes, and storage nodes.
+An OpenStack Multi-node HA environment involves, at a minimum, three types of 
+nodes: controller nodes, compute nodes, and storage nodes.
 
 Controller Nodes
 ----------------
@@ -34,7 +34,7 @@ keystone-api, quantum-api, nova-scheduler, MySQL or RabbitMQ, the
 request goes to the live controller node currently holding the External VIP,
 and the connection gets terminated by HAProxy. When the next request
 comes in, HAProxy handles it, and may send it to the original
-controller or another in the cluster, depending on load conditions.
+controller or another in the environment, depending on load conditions.
 
 Each of the services housed on the controller nodes has its own
 mechanism for achieving HA:
@@ -53,7 +53,7 @@ Compute Nodes
 -------------
 
 OpenStack compute nodes are, in many ways, the foundation of your
-cluster; they are the servers on which your users will create their
+environment; they are the servers on which your users will create their
 Virtual Machines (VMs) and host their applications. Compute nodes need
 to talk to controller nodes and reach out to essential services such
 as RabbitMQ and MySQL. They use the same approach that provides
@@ -66,7 +66,7 @@ controller nodes using the VIP and going through HAProxy.
 Storage Nodes
 -------------
 
-In this OpenStack cluster reference architecture, shared storage acts
+In this OpenStack environment reference architecture, shared storage acts
 as a backend for Glance, so that multiple Glance instances running on
 controller nodes can store images and retrieve images from it. To
 achieve this, you are going to deploy Swift. This enables you to use

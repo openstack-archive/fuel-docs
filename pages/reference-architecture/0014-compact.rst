@@ -2,12 +2,12 @@
 
    PageBreak
 
-.. index:: Reference Architectures: HA Compact, HA Compact
+.. index:: Reference Architectures: Multi-node with HA
 
-.. _HA_Compact:
+.. _Multi-node_HA:
 
-Multi-node (HA) Deployment (Compact)
-====================================
+Multi-node with HA Deployment
+=============================
 
 Production environments typically require high availability, which
 involves several architectural requirements. Specifically, you will
@@ -21,4 +21,4 @@ nodes:
   :align: center
 
 We'll take a closer look at the details of this deployment configuration in 
-:ref:`Close_look_Compact` section.
+:ref:`Close_look_Multi-node_HA` section.

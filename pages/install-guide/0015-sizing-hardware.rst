@@ -18,7 +18,7 @@ that will suit your needs. The Golden Rule, however, is to always plan
 for growth. With the potential for growth in your design, you can move onto
 your actual hardware needs.
 
-Many factors contribute to selecting hardware for an OpenStack cluster -- 
+Many factors contribute to selecting hardware for an OpenStack environment -- 
 `contact Mirantis <http://www.mirantis.com/contact/>`_ for information on your 
 specific requirements -- but in general, you will want to consider the following 
 factors:
@@ -187,7 +187,7 @@ volume space:
   * 5 frames x 2400 IOPS per frame / 100 VMs = 120 Read IOPS, 60 Write IOPS per frame
 
 You can accomplish the same thing with a single 36 drive frame using 3 TB 
-drives, but this becomes a single point of failure in your cluster.
+drives, but this becomes a single point of failure in your environment.
 
 Object storage
 ++++++++++++++
@@ -216,10 +216,11 @@ and capacity issues.
 Networking
 ----------
 
-Perhaps the most complex part of designing an OpenStack cluster is networking.
+Perhaps the most complex part of designing an OpenStack environment is 
+networking.
 
-An OpenStack cluster can involve multiple networks even beyond the required
-Public, Private, and Internal networks.  Your cluster may involve tenant 
+An OpenStack environment can involve multiple networks even beyond the required
+Public, Private, and Internal networks.  Your environment may involve tenant 
 networks, storage networks, multiple tenant private networks, and so on. Many 
 of these will be VLANs, and all of them will need to be planned out in advance 
 to avoid configuration issues.

@@ -13,7 +13,7 @@ Red Hat has partnered with Mirantis to offer an end-to-end supported
 distribution of OpenStack powered by Fuel. Because Red Hat offers support
 for a subset of all available open source packages, the reference architecture
 has been slightly modified to meet Red Hat's support requirements to provide
-a highly available OpenStack cluster.
+a highly available OpenStack environment.
 
 Below is the list of modifications:
 
@@ -35,14 +35,14 @@ Below is the list of modifications:
   fixed in a future release. As a result, Fuel for Red Hat OpenStack 
   Platform will only support Nova networking.
 
-.. index:: Reference Architectures: RHOS Non-HA Simple, RHOS Non-HA Simple
+.. index:: Reference Architectures: RHOS Multi-node
 
-.. _RHOS_Simple:
+.. _RHOS_Multi-node:
 
-Simple (non-HA) Red Hat OpenStack Deployment
+Multi-node Red Hat OpenStack Deployment
 --------------------------------------------
 
-In a production environment, you will never have a Simple non-HA
+In a production environment, it is not likely you will ever have a Multi-node 
 deployment of OpenStack, partly because it forces you to make a number
 of compromises as to the number and types of services that you can
 deploy. It is, however, extremely useful if you just want to see how
@@ -59,12 +59,12 @@ enable you to achieve this separation while still keeping your
 hardware investment relatively modest is to house your storage on your
 controller nodes.
 
-.. index:: Reference Architectures: RHOS HA Compact, RHOS HA Compact
+.. index:: Reference Architectures: RHOS Multi-node with HA
 
-.. _RHOS_Compact:
+.. _RHOS_Multi-node_HA:
 
-Multi-node (HA) Red Hat OpenStack Deployment (Compact)
-------------------------------------------------------
+Multi-node with HA Red Hat OpenStack Deployment
+-----------------------------------------------
 
 Production environments typically require high availability, which
 involves several architectural requirements. Specifically, you will

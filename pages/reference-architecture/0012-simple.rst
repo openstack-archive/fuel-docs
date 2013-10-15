@@ -2,14 +2,14 @@
 
    PageBreak
 
-.. index:: Reference Architectures: Non-HA Simple, Non-HA Simple
+.. index:: Reference Architectures: Multi-node
 
-.. _Simple:
+.. _Multi-node:
 
-Simple (no High Availability) Deployment
+Multi-node Deployment
 ========================================
 
-In a production environment, you will never have a Simple non-HA
+In a production environment, you will not likely ever have a Multi-node 
 deployment of OpenStack, partly because it forces you to make a number
 of compromises as to the number and types of services that you can
 deploy. It is, however, extremely useful if you just want to see how

@@ -38,7 +38,7 @@ well by raising the bar to 9 nodes:
 
 Of course, you are free to choose how to deploy OpenStack based on the
 amount of available hardware and on your goals (such as whether you
-want a compute-oriented or storage-oriented cluster).
+want a compute-oriented or storage-oriented environment).
 
 For a typical OpenStack compute deployment, you can use this table as
 high-level guidance to determine the number of controllers, compute,

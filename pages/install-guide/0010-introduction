@@ -3,7 +3,7 @@ How installation works
 
 While version 2.0 of Fuel provided the ability to simplify installation of 
 OpenStack, versions 2.1 and above include orchestration capabilities that 
-simplify deployment of OpenStack clusters.  The deployment process using 
+simplify deployment of OpenStack environments. The deployment process using 
 Fuel CLI follows this general procedure:
 
 #.  Design your architecture.

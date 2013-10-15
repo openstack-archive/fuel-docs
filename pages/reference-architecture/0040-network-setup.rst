@@ -31,7 +31,7 @@ relevant nodes and networks.
 .. image:: /_images/080-networking-diagram_svg.jpg
   :align: center
 
-Lets take a closer look at each network and how its used within the cluster.
+Lets take a closer look at each network and how its used within the environment.
 
 .. index:: Public Network
 
@@ -50,7 +50,7 @@ To enable Internet access to VMs, the public network provides the address space
 for the floating IPs assigned to individual VM instances by the project 
 administrator. Nova-network or Neutron (formerly Quantum) services can then 
 configure this address on the public network interface of the Network controller 
-node. Clusters based on nova-network use iptables to create a 
+node. Environments based on nova-network use iptables to create a 
 Destination NAT from this address to the fixed IP of the corresponding VM 
 instance through the appropriate virtual bridge interface on the Network 
 controller node.
@@ -68,10 +68,10 @@ connect to OpenStack services APIs.
 Internal (Management) Network
 -----------------------------
 
-The internal network connects all OpenStack nodes in the cluster. All components 
-of an OpenStack cluster communicate with each other using this network. This 
-network must be isolated from both the private and public networks for security 
-reasons.
+The internal network connects all OpenStack nodes in the environment. All 
+components of an OpenStack environment communicate with each other using this 
+network. This network must be isolated from both the private and public 
+networks for security reasons.
 
 The internal network can also be used for serving iSCSI protocol exchanges 
 between Compute and Storage nodes.
