@@ -56,19 +56,19 @@ To list environments:
 
   fuel env
 
-for creating environment run:
+To create an environment, run:
 
   fuel env create --name MyEnv --rel 1 
 
 by default it creates environment in ``multinode`` mode, and ``nova`` network mode, to specify other modes you can add optional arguments
 
-  fuel env create --name MyEnv --rel 1 --mode ha_compact --network-mode neutron
+  fuel env create --name MyEnv --rel 1 --mode ha --network-mode neutron
 
 For changing environments name, mode or network mode exists ``set`` action
   
   fuel --env 1 env set --name NewEmvName --mode ha_compact
 
-For deliting some environment
+To delete the environment:
   
   fuel --env 1 env delete
 
