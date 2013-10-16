@@ -38,6 +38,10 @@ components:
 
   * QEMU
 
+* Savanna
+
+  * 0.2.2
+
 * Open vSwitch
 
   * 1.10.0
