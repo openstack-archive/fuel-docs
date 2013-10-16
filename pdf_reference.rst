@@ -4,7 +4,7 @@
   .. cssclass:: header-table
   
   +-------------------------------------+-----------------------------------+
-  | Fuel™ for Openstack v3.2            |                .. cssclass:: right|
+  | Fuel for Openstack v3.2            |                .. cssclass:: right|
   |                                     |                                   |
   | Reference Architecture              |                    ###Section###  |
   +-------------------------------------+-----------------------------------+
@@ -23,7 +23,6 @@
 
    PageBreak oneColumn
 
-.. contents:: Table of Contents
-  :depth: 2
-   
+.. toctree:: Table of Contents
+  :maxdepth: 2
 .. include:: contents/contents-refarch.rst
