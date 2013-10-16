@@ -7,10 +7,10 @@ Introduction
 This section introduces Fuel for OpenStack and its components. 
 
 
-Introducing Fuel™ for OpenStack
+Introducing Fuel for OpenStack
 --------------------------------
 
-Mirantis Fuel™ for Openstack is a set of deployment tools that helps you to 
+Mirantis Fuel for Openstack is a set of deployment tools that helps you to 
 quickly deploy your cloud environment. Fuel includes the scripts that 
 dramatically facilitate and speed up the process of cloud deployment. 
 Typically, OpenStack installation requires you familiarize yourself 
@@ -23,7 +23,7 @@ The following diagram describes how Fuel functions:
 
 Deployment Modes
 -----------------------------
-You can use Fuel™ for OpenStack to create virtually any OpenStack 
+You can use Fuel for OpenStack to create virtually any OpenStack 
 configuration. However, Mirantis provides several pre-defined 
 architectures for your convenience. 
 The pre-defined architectures include:
@@ -74,11 +74,6 @@ Fuel includes the following components:
 Fuel Installation Procedures
 ----------------------------
 You must complete the following tasks to install Fuel:
-
-# Install the Fuel Master Node on physical or virtual hardware using
-  the Fuel installation image
-# Power on the other nodes to make them accessible for Fuel Master node
-# Deploy the OpenStack environment on the discovered nodes using Fuel UI or CLI.
 
 1. Install the Fuel Master Node on physical or virtual hardware using 
    the Fuel installation image

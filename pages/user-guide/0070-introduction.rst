@@ -2,7 +2,7 @@
 
 .. _Introduction:
 
-Introducing Fuel™ for OpenStack
+Introducing Fuel for OpenStack
 ===============================
 
 OpenStack is an extensible, versatile, and flexible cloud management 
@@ -21,7 +21,7 @@ manageability – requires a thoughtful combination of complex configuration
 choices. This can be very time consuming and requires that you become 
 familiar with much of the documentation from the number of different projects.
 
-Mirantis Fuel™ for OpenStack was created to eliminate exactly these problems. 
+Mirantis Fuel for OpenStack was created to eliminate exactly these problems. 
 This step-by-step guide takes you through this process of:
 
 * Configuring OpenStack and its supporting components into a robust cloud 
@@ -31,7 +31,7 @@ This step-by-step guide takes you through this process of:
 * Providing access to a tested, integrated, and up-to-date set of components 
   proven to work together
 
-Fuel™ for OpenStack can be used to create and support many popular OpenStack 
+Fuel for OpenStack can be used to create and support many popular OpenStack 
 configurations. To make the process easier, the installation includes several 
 pre-defined architectures. For the sake of simplicity, this guide emphasizes 
 a single, common reference architecture; the multi-node, high-availability 
