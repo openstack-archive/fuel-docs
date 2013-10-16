@@ -12,15 +12,15 @@ Understanding Environment deployment with Fuel-CLI
 Basic usage
 -----------------------------------------
 
-Fuel-Cli has following usage pattern:
+Fuel CLI has following usage pattern:
 
   fuel [global optional args] <namespace> [action] <optional args>
 
-e.g.
+Example:
 
   fuel --env-id=1 node set --node-id=1,4,5 --role=controller,compute
 
-where ``--env-id=1`` is global optional argument poinitng to specific environment, ``node`` - is a namespace for all node control functions, ``set`` is action that assigns specific nodes to some environments in some roles.
+where ``--env-id=1`` is global optional argument pointing to specific environment, ``node`` - is a namespace for all node control functions, ``set`` is action that assigns specific nodes to some environments in some roles.
 
 for getting list of all global optional args and namespaces you can run:
 
@@ -30,7 +30,7 @@ and for getting actions and optional args for some namespace run:
 
   fuel <namespace> --help
 
-Use case
+CLI commands reference
 -----------------------------------------
 
 Release
@@ -52,11 +52,11 @@ for specific release
 Environment
 +++++++++++
 
-Than you can list all environments
+To list environments:
 
   fuel env
 
-for creating environment run
+for creating environment run:
 
   fuel env create --name MyEnv --rel 1 
 
