@@ -28,9 +28,10 @@ As you know, OpenStack provides the following basic services:
   the outside world is crucial. Networking was originally handled by the 
   `nova-network` service, but it has given way to the newer Neutron (formerly 
   Quantum) networking service. `nova-network` still has some advantages over Neutron,
-  and it is supported by Fuel in both Flat-DHCP and VLAN modes.
+  and it is supported by Fuel in both Flat-DHCP and VLAN modes. Neutron is
+  available in both VLAN segmentation and GRE segmentation modes.
 
-**Storage:**
+**Block storage and Image Storage:**
   OpenStack provides for two different types of storage: block 
   storage and object storage. Block storage is traditional data storage, with 
   small, fixed-size blocks that are mapped to locations on storage media. At its 
@@ -39,7 +40,7 @@ As you know, OpenStack provides the following basic services:
 
   Object storage, on the other hand, consists of single variable-size objects 
   that are described by system-level metadata, and you can access this capability 
-  using `swift`.
+  using `swift` or `Ceph`.
 
   OpenStack storage is used for your users' objects, but it is also used for 
   storing the images used to create new VMs. This capability is handled by `glance`.
