@@ -35,7 +35,9 @@ Mirantis OpenStack is made up of three items:
  of network and storage configuration through an simple to use 
  graphical user experience. Baked into Fuel are:
 
- * Mirantis reference architectures that we’ve tested and certified    to ensure that your deployed cloud can scale, is reliable and is    production quality.
+ * Mirantis reference architectures that we’ve tested and certified
+   to ensure that your deployed cloud can scale, is reliable and is
+   production quality.
 
  * An open and flexible library that enables customers to make 
    configuration changes that may be more advanced or focused than 
