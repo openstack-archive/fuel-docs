@@ -9,6 +9,9 @@ Release Notes for Mirantis OpenStack version 3.2
   :depth: 1
   :backlinks: none
 
+Overview
+---------
+
 Mirantis, Inc. is releasing version 3.2 of Mirantis OpenStack.  
 Mirantis OpenStack is a complete solution that includes three 
 major components:

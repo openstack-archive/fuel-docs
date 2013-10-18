@@ -179,3 +179,9 @@ negatives. The following is a description of each sanity test available:
 * Floating IP assignment
 * Network connectivity check through floating IP
 * User creation and authentication in Horizon
+
+Additional Checks
+-----------------
+If you have installed OpenStack as a High Availability (HA) architecture
+or have installed related OpenStack projects like Savanna or Murano, 
+additional tests will be shown.
