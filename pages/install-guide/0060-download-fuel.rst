@@ -14,11 +14,10 @@ web-site <http://fuel.mirantis.com/redirect-page/>`_.
 
 Fuel supports the following OpenStack releases:
 
-* **Essex** 
-
-* **Folsom**
- 
 * **Grizzly** 
+
+Fuel Master node, CentOS & Ubuntu operating systems for deployment as
+an OpenStack nodes’ host OS, and the Mirantis OpenStack hardened packages.
 
 Fuel provides the following installation options: 
 

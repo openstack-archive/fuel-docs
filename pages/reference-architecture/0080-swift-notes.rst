@@ -8,6 +8,9 @@ Object Storage Deployment
 .. TODO(mihgen): we need to rewrite this and add info about Ceph
 Fuel currently supports several scenarios to deploy the object storage:
 
+**Glance + Ceph**
+  Ceph can be used as an object storage option for Glance.
+
 **Glance + filesystem**
   By default, Glance uses the file system backend to store virtual machine images. 
   In this case, you can use any of shared file systems supported by Glance. 
