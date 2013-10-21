@@ -16,6 +16,8 @@ components:
 
   * RHEL 6.4 (x86_64 architecture only)
 
+  * Ubuntu Server 12.04 LTS (x86_64 architecture only)
+
 * Puppet (IT automation tool) 
 
   * 2.7.19
@@ -30,7 +32,9 @@ components:
 
 * OpenStack
 
-  * Grizzly release 2013.1.2
+  * Grizzly release 2013.1.3 (for Centos and Ubuntu)
+
+  * RedHat OpenStack 3.0 Grizzly 2013.1.2 for RHEL
 
 * Hypervisor
 
@@ -56,7 +60,7 @@ components:
 
 * RabbitMQ
 
-  * 2.8.7
+  * 2.8.7 with mirrored queue patch
 
 * Pacemaker
 

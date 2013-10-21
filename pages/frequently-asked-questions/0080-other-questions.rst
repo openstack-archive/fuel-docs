@@ -15,6 +15,9 @@ Other Questions
    provide a plain vanilla distribution. Put simply, there is no vendor lock-in
    with Fuel. For your convenience, we maintain repositories containing a
    history of OpenStack packages certified to work with our Puppet manifests.
+   Additionally, we keep updated or customized versions of some Linux 
+   components, of those we know their particular versions has blocker issues, 
+   preventing some OpenStack components from normal operation.
 
    The advantage of this approach is that you can install any OpenStack version 
    you want (with possible custom big fixes). Even if you are running Essex, 
