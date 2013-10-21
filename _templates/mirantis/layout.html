@@ -21,7 +21,7 @@
 
 {# add script file to instrument collapsable sections  and other features #}
 {% set script_files = script_files + ['_static/jquery.cookie.js',
-                                      '_static/cloud.js'] %}
+                                      '_static/cloud.js', '_static/menu.js'] %}
 
 {# add font stylesheets #}
 {% set css_files = css_files + [theme_fontcssurl] %}
@@ -75,6 +75,59 @@ if(ga_enabled){
 </script>
         {%- endif %}
 {%- endblock %}
+
+{% block header %}
+    <div id="masthead">
+        <div id="globalNav">
+            <div id="globalLink">
+                <a href="http://software.mirantis.com/" id="gl1" class="glink active" name="gl1">Software</a>
+                <a href="http://www.mirantis.com/openstack-services/" id="gl2" class="glink"  name="gl2">Services</a>
+                <a href="http://training.mirantis.com" id="gl3" class="glink" name="gl3">Training</a>
+                <a href="http://www.mirantis.com/openstack/" id="gl4" class="glink"  name="gl4">OpenStack</a>
+                <a href="http://www.mirantis.com/openstack-use-cases/" id="gl5" class="glink" name="gl5">Use Cases</a>
+                <a href="http://www.mirantis.com/company/" id="gl6" class="glink" name="gl6">Company</a>
+            </div>
+        </div>
+
+        <div id="subglobal1" class="subglobalNav" style="visibility: hidden;">
+			<div class="subglobal_vis">
+				<a href="http://software.mirantis.com/">Downloads</a>
+				<a href="http://software.mirantis.com/core-openstack/">Core OpenStack</a>
+				<a href="http://software.mirantis.com/key-related-openstack-projects/">Key Related Projects</a>
+				<a href="http://software.mirantis.com/plugins-and-drivers/">Plugins & Drivers</a>
+			</div>
+        </div>
+
+        <div id="subglobal2" class="subglobalNav" style="visibility: hidden;">
+			<div class="subglobal_vis">
+				<a href="http://www.mirantis.com/openstack-services/solutions-engineering/">Solutions Engineering</a>
+				<a href="http://www.mirantis.com/openstack-services/custom-deployment/">Custom Deployment</a>
+				<a href="http://www.mirantis.com/openstack-services/custom-support/">Custom Support</a>
+				<a href="http://www.mirantis.com/openstack-services/driver-development/">Drivers</a>
+			</div>	
+		</div>
+
+        <div id="subglobal5" class="subglobalNav" style="visibility: hidden;">
+			<div class="subglobal_vis">
+				<a href="http://www.mirantis.com/openstack-use-cases/saas-web/">SaaS/Web Vendors</a>
+				<a href="http://www.mirantis.com/openstack-use-cases/service-providers/">Service Providers</a>
+				<a href="http://www.mirantis.com/openstack-use-cases/enterprise-private-cloud/">Enterprise Cloud</a>
+				<a href="http://www.mirantis.com/openstack-use-cases/infrastructure-technology/">Infrastructure Vendors</a>
+			</div>
+		</div>
+
+        <div id="subglobal6" class="subglobalNav" style="visibility: hidden;">
+			<div class="subglobal_vis">
+				<a href="http://www.mirantis.com/company/about/">About</a>
+				<a href="http://www.mirantis.com/company/our-philosophy/">Our Philosophy</a>
+				<a href="http://www.mirantis.com/company/customer-successes/">Customer Successes</a>
+				<a href="http://www.mirantis.com/company/leadership/">Leadership</a>
+				<a href="http://www.mirantis.com/company/investors/">Investors</a>
+				<a href="http://www.mirantis.com/company/press-center/info/">Press Center</a>
+			</div>
+        </div>
+    </div>
+{% endblock %}
 
 {% block footer -%}
     {{ super() }}
