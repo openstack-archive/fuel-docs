@@ -15,7 +15,7 @@ interfere with deployment. The image below shows a sample result of the check.
 If there are errors, it is either in your configuration of interfaces or 
 possibly the VLAN tagging feature is disabled on your switch port. 
 
-.. image:: /_images/net_verify_failure.jpg
+.. image:: /_images/net_verify_failure.png
   :align: center
 
 On VirtualBox
