@@ -12,6 +12,7 @@
 @import url("cloud.css");
 
 @import url("mirantis_style.css");
+@import url("menu.css");
 
 .highlight .hll {
     background-color: #C0FF7C !important;

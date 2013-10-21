@@ -413,7 +413,7 @@ a.glink:hover {
   font-size: 14px;
   white-space: nowrap;
   text-decoration: none;
-  right: 0px;
+  left: 0px;
   padding-top: 10px;
 }
 
