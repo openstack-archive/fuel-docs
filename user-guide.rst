@@ -15,3 +15,4 @@ User Guide
 .. include:: /pages/user-guide/advanced-topics/0020-custom-plug-ins.rst
 .. include:: /pages/user-guide/advanced-topics/0030-quantum-HA.rst
 .. include:: /pages/user-guide/advanced-topics/0040-bonding.rst
+.. include:: /pages/user-guide/cli.rst
