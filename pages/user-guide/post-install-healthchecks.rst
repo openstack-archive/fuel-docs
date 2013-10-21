@@ -152,7 +152,6 @@ includes the suite of sanity tests implemented:
 * Check Internet connectivity from a compute
 * Check DNS resolution on a compute
 * Networks availability
-* Ports availability
 
 Smoke Tests Description 
 -----------------------
@@ -169,19 +168,29 @@ is recommended to run all sanity checks prior to your smoke checks to determine
 that all services are alive. This helps ensure that you don't get any false 
 negatives. The following is a description of each sanity test available:
 
-* Flavor creation
-* Volume creation
-* Instance booting and snapshotting
+* Create instance flavor
+* Create instance volume
+* Launch instance, create snapshot, launch instance from snapshot
 * Keypair creation
 * Security group creation
-* Network parameters check
-* Instance creation
-* Floating IP assignment
-* Network connectivity check through floating IP
+* Check networks parameters
+* Launch instance
+* Assign floating IP
+* Check that VM is accessible via floating IP address
+* Check network connectivity from instance via floating IP
+* Check network connectivity from instance without floating IP
 * User creation and authentication in Horizon
 
 Additional Checks
 -----------------
 If you have installed OpenStack as a High Availability (HA) architecture
 or have installed related OpenStack projects like Savanna or Murano, 
-additional tests will be shown.
+additional tests will be shown. The following are the tests available
+in HA mode:
+
+* Check data replication over mysql
+* Check amount of tables in os databases is the same on each node
+* Check mysql environment state
+* Check galera environment state
+* RabbitMQ availability
+
