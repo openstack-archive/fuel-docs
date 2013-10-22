@@ -85,7 +85,7 @@ Round the number of sockets to an even number to get 12 sockets. Use the followi
 
   12 / 2 = 6
 
-Therefore, you need 6 dual core servers.  
+Therefore, you need 6 dual socket servers.  
 You can calculate the number of virtual machines per server using the following formula::
 
   number of virtual machines / number of servers

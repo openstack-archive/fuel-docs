@@ -34,10 +34,9 @@ Deploy
 Deployment is done using Astute orchestrator, which parses ``nodes`` and 
 ``attributes`` sections and recalculates parameters needed for deployment.
 Calculated parameters are passed to the nodes being deployed by use of 
-``nailyfact`` MCollective agent that uploads these attributes to
-``/etc/naily.facts`` file of the node. Then puppet parses this file using 
-Facter plugin and uploads these facts into puppet. These facts are used 
-during catalog compilation phase by puppet master. Finally catalog is executed 
+astute.yaml file. Then puppet parses this file using 
+Facter plugin and uploads the node settings into puppet. These settings are used 
+during catalog compilation phase by puppet. Finally catalog is executed 
 and Astute orchestrator passes to the next node in deployment sequence.
 
 .. raw:: pdf
