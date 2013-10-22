@@ -475,3 +475,103 @@ Contacting Support
 You can contact support online, through E-mail, or by phone. 
 Instructions on how to use any of these contact options can be found 
 here: https://mirantis.zendesk.com/home.
+
+
+Issues fixed in this release
+----------------------------
+
+*PRD-976 Management network not configured correctly during deployment*
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  IP address is now correctly assigned to the network interface, belonging to
+  management network.
+  
+*PRD-999 Fuel-web rabbitmq use of short names should use IP addresses*
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Name resolving is added for internal OpenStack network to allow hostnames
+  usage for OpenStack components.
+  
+*PRD-1507 Metadata issue in FuelWeb 3.0.1*
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  Kernel namespaces are enabled for Centos in order to get Neuton metadata
+  operable. Ubuntu 12.04 LTS has kernel namespaces support out of the box.
+  RedHat is going to enable kernel namespaces in ipcoming RHEL 6.5 release.
+  Updated Cirros image, included to Fuel ISO with fixed cloudinit.
+  
+*PRD-1024 FuelWeb doesn't work when DHCP interface is not eth0*
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  Ability to set and customize DHCP interface settings was added to Fuel master 
+  node installation sequence.
+  
+*PRD-1404 Add links to sub-headers in the Understanding the Puppet Manifest documentation page*
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  Added missing links to Fuel online documentation.
+  
+*PRD-1117 Mistakes on page Configuring the network of Fuel Web docs*
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  Fuel online docs were corrected.
+  
+*PRD-1131 Glance cache must be cleaned up periodically*
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  New controller health-check logic was implemented to maintain the remained
+  free space, cleanups and so on.
+  
+*PRD-1308 Need validation of network ranges* **(M/A::marked as unresolved)**
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  Network ranges validation was improved to block even more potentially 
+  not-working network configurations. Fuel 3.2 strongly prohibits every untagged
+  traffic over the admin (PXE) network. Please expect not all custom network 
+  settings that worked in 3.1 should continue working in 3.2!
+  
+*PRD-1379 RedHat subscriptions for RHOS-backed FUEL*
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  Now Fuel 3.2 security settings allow RHEL download for RedHat personnel, 
+  if they download RHEL distribution media from internal RedHat network. 
+  
+*PRD-1383 Nodes of OpenStack don't boot up if boot order of disks changed.*
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  New partition manager was implemented to eliminate multiple issues, discovered 
+  on multiple hard drive configurations. GRUB no more fails node boot when disk 
+  size exceeds 4 Gb. GRUB no more fails node boot in case of several hard drives
+  connected to the target node.
+  
+*PRD-1476 Fuel can not install master node with disks larger than 3TB*
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  Now Fuel 3.2 master node can be installed to the disk drive greater than 2.2Tb
+  GPT is used as default partition type.
+  
+*PRD-1498 quantum net unreachable long time (5-6 minutes)* **(M/A::marked as unresolved)**
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  L3 agent migration speed time was decreased in order to get Neutron network
+  accessible in lesser time after neutron controller node failure in HA mode.
+  
+*PRD-1499 FuelWeb 3.0.1 Missing keystone_ec2_url configuration option in /etc/nova/nova.conf*
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  Fuel 3.2 correctly sets keystone_ec2_url parameter to /etc/nova/nova.conf
+  
+*PRD-1620 Debug logging option enabled out of box in "/etc/openstack-dashboard/local_settings"*
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  Debug mode for OpenStack dashboard is turned off by default in Fuel 3.2
+  No more unnecessary tons of access logs appear on the controller nodes.
+  
+*PRD-1716 Default gateway is not defined on slaves for certain configuration*
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  Now default gateway is correctly set for all configurations.
+  
+*PRD-1732 Can not add security group to instance with Horizon dashboard*
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  OpenStack dashboard issue. Due to input validation bug Horizon incorrectly 
+  allows usage of underscore characters in security group names.
+  This bug is fixed in the Havana OpenStack release.
+  
+*PRD-2076** *kvm-qemu crashes due to incorrect disk cache mode*
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  Fuel 3.2 sets KVM disk cache mode properly on bare-metal nodes.
+  
+*PRD-2241 Only 10 Gb for / partition* **(M/A::marked as unresolved)**
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  Default root partition size for nodes was increased in Fuel 3.2
+  
+*PRD-2263 Smoke test fails at "Create new security group"*
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  Smoke tests in Fuel 3.2 UI were fixed.
+  
