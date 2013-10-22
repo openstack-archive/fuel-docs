@@ -126,6 +126,7 @@ New in Fuel 3.2 is a guided deployment wizard that will walk you
 through the major decisions regarding your desired OpenStack 
 configuration prior to deployment.  This wizard will enable you to 
 make a choice about:
+
 * Operating System and distribution combination
 * Reference architecture
 * Hypervisor
@@ -368,23 +369,34 @@ The following improvements in Grizzly are not currently supported
 directly by Fuel:
 
 * Nova Compute
+
   * Cells
   * Availability zones
   * Host aggregates
+
 * Neutron (formerly Quantum)
+
   * LBaaS (Load Balancer as a Service)
   * Multiple L3 and DHCP agents per cloud
+
 * Keystone
+
   * Multi-factor authentication
   * PKI authentication
+
 * Swift
+
   * Regions
   * Adjustable replica count
   * Cross-project ACLs
+
 * Cinder
+
   * Support for FCoE
   * Support for LIO as an iSCSI backend
+
 * Ceilometer
+
 It is expected that these capabilities will be supported in a future 
 release of Mirantis OpenStack.
 
@@ -458,6 +470,11 @@ Other Limitations
   the host OS, the Base System partition modifications will not properly 
   take effect. The default Base System partition will be applied 
   regardless of user choice due to limitations in Ubuntu provisioning.
+* Platform Tests were added to ensure that platform level services
+  are operating correctly. Heat, Savanna and Murano services are tested.
+  However due to a bug the tests are not working properly and always
+  fail.
+
 
 How to obtain the product
 -------------------------
