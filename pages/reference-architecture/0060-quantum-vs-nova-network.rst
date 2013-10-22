@@ -69,3 +69,35 @@ The most likely configuration for different number NICs on cluster nodes:
 |      |    :align: center                      |    :align: center                      |
 +------+----------------------------------------+----------------------------------------+
 
+
+Known limitations
+-----------------
+
+* You need not less two network cards per node for deploy OpenStack with Neutron/GRE and not less three network cards -- for Neutron/VLAN.
+
+* After installation you have no reserved floating-ip for admin tenant. It not need for outcoming connectivity to internet, but need for receive incoming requests from there. Cluster administrator should to create floating IP pool. After that in tenant appear pool of floating-ip addresses. For add floating-ip address to tenant you should to execute following commands:
+
+| get admin credentials:
+| # source /root/openrc
+| get admin tenant-ID:
+| # keystone tenant-list
+
++----------------------------------+----------+---------+
+|                id                |   name   | enabled |
++==================================+==========+=========+
+| b796f91df6b84860a7cd474148fb2229 |  admin   |   True  |
++----------------------------------+----------+---------+
+| cba7b0ff68ee4985816ac3585c8e23a9 | services |   True  |
++----------------------------------+----------+---------+
+
+| create floating-ip for admin tenant:
+| # quantum floatingip-create --tenant-id=b796f91df6b84860a7cd474148fb2229 net04_ext
+
+
+FAQ
+---
+
+| Q: For demo purpose I try deploy FUEL to virtual machines on Virtualbox. Deploy not succefful.
+| A: You should to enable “promisc” mode on all network interfaces in Virtualbox. Your VMs must use only PCnet PCI II model network card.
+
+
