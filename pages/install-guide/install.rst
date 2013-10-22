@@ -184,6 +184,12 @@ Next, create Slave nodes where OpenStack needs to be installed.
 .. image:: /_images/vbox-image2.png
   :align: center
 
+4. Open "advanced" collapse, and check following options:
+
+* Promiscuous mode is a "Allow All"
+* Adapter type is a "PCnet PCI II"
+* Cable connected is a On
+
 
 .. _Network_Install:
 
