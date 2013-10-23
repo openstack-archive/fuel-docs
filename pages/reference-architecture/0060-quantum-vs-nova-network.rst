@@ -26,22 +26,50 @@ install Neutron on the controllers.
 Terminology
 -----------
 
-* Public network -- network, that gives access to the internet for each node. This network also may be named “external”.
-* Floating IP network -- subnet (always part of public network), that used for give access to the internet for each tenant. Each router, that has gateway, take IP address for NAT tenant network from here. If we delegate floating-ip address to tenant -- IP address got from here.
-* Private network -- network, that used for pass tenant private traffic.
-* Administrative network -- network, used for PXE booting and communicating between Fuel Node and each cluster node.
-* Storage network -- network, used for communicating between storage nodes (ceph, swift, cinder) and compute nodes.
-* Router -- virtual neutron router.
-* NIC -- network interface card (ethernet adapter).
+* **Public network** network used for Internet access to all nodes.
+  This network also may be called “external”.
+* **Floating IP network** subnet (always part of public network), that
+  is allocated for access to the internet for each tenant. The local router or 
+  DHCP server directly assigns IP addresses for this network. If a tenant delegate 
+  floating-ip address to tenant IP address got from here.
+* **Private network** network, that used for pass tenant private traffic.
+* **Admin network** network, used for PXE booting and communicating 
+  between Fuel Node and each cluster node.
+* **Storage network** network, used for communicating between storage nodes 
+  (using Ceph, swift, or cinder) and compute nodes.
+* **Router** virtual neutron router.
+* **NIC** network interface card (ethernet adapter).
 
 Overview
 --------
-Openstack networking with Neutron (Quantum) some differences with Nova-Network. Network virtualization in the Neutron  provided on 2nd level OSI (instead 3-d level in nova-network) -- it a main different between old and new openstack networking. Virtual networks (one or more) builds for each tenant. It a L2-networks. This network's usually call “Private-Networks”.  We can use more than one IP subnet over each private-network. On physical level private-networks may segmented by two methods:
+Openstack networking with Neutron (Quantum) has some differences from 
+Nova-network. Neutron is able to virtualize and manage both layer 2 (logical) 
+and layer 3 (network) of the OSI network model, as compared to simple layer 3 
+virtualization provided by nova-network. This is the main difference between 
+the two networking models for OpenStack. Virtual networks (one or more) can be 
+created for a single tenant, forming an isolated L2 network called a 
+"private network." Each private network can support one or many IP subnets.
+Private networks can be segmented using two different technologies:
 
-* VLAN segmentation mode. For isolating tenants network private traffic Neutron will be use dedicated network adapter. Connected to dedicated untagged network segment. No other network can't share this network adapter. Even 802.1q vlans. For each private network Neutron select vlan-id (from given range) and use one vlan for one private network. You network hardware must pass 802.1q traffic between all compute and controller nodes.
+* **VLAN segmentation** Isolated tenant "private network" traffic is managed by 
+Neutron by the use of a dedicated network adapter. This network adapter must be 
+attached to an untagged network segment. This network segment also must be 
+reserved only for Neutron on each host (Computes and Controllers). You should 
+not use any other 802.1q VLANs on this network for other purposes. 
+Additionally, each private network requires its own dedicated VLAN, selected 
+from a given range configured in Fuel UI. 
 
-* GRE segmentation mode. In this operation mode no need dedicated network adapter. Neutron build mesh of GRE tunnels from each to each compute and controller nodes. For isolating tenants network private traffic Neutron use virtual networks above this mesh.
-Some networks may be 802.1q networks and based on one NIC. But Administrative and Private (if you use VLAN-segmentation) networks must placed on dedicated NIC. Also recommended make Public network as untagged, if you union some networks by 801.1q to one NIC.
+* **GRE segmentation** In this mode of operation, Neutron does not
+require a dedicated network adapter. Neutron builds a mesh of GRE tunnels from
+each compute node and controller nodes to every other node. Private networks
+for each tenant make use of this mesh for isolated traffic. Additionally, your
+Public network should remain untagged if you consolidate all Neutron traffic to
+one NIC.
+
+Some networks may be 802.1q networks and based on one NIC. But Administrative 
+and Private (if you use VLAN-segmentation) networks must placed on dedicated 
+NIC. Also recommended make Public network as untagged, if you union some 
+networks by 801.1q to one NIC.
 
 Commonly, network map for VLAN mode may be looked as:
 
@@ -73,9 +101,14 @@ The most likely configuration for different number NICs on cluster nodes:
 Known limitations
 -----------------
 
-* You need not less two network cards per node for deploy OpenStack with Neutron/GRE and not less three network cards -- for Neutron/VLAN.
+* You need not less two network cards per node for deploy OpenStack with 
+Neutron/GRE and not less three network cards -- for Neutron/VLAN.
 
-* After installation you have no reserved floating-ip for admin tenant. It not need for outcoming connectivity to internet, but need for receive incoming requests from there. Cluster administrator should to create floating IP pool. After that in tenant appear pool of floating-ip addresses. For add floating-ip address to tenant you should to execute following commands:
+* After installation you have no reserved floating-ip for admin tenant. It not 
+need for outcoming connectivity to internet, but need for receive incoming 
+requests from there. Cluster administrator should to create floating IP pool. 
+After that in tenant appear pool of floating-ip addresses. For add floating-ip 
+address to tenant you should to execute following commands:
 
 | get admin credentials:
 | # source /root/openrc
@@ -97,7 +130,10 @@ Known limitations
 FAQ
 ---
 
-| Q: For demo purpose I try deploy FUEL to virtual machines on Virtualbox. Deploy not succefful.
-| A: You should to enable “promisc” mode on all network interfaces in Virtualbox. Your VMs must use only PCnet PCI II model network card.
+| Q: For demo purpose I try deploy FUEL with Neutron configured on on Virtualbox,
+     but deployment failed.
+| A: You should to choose ”Allow all” promiscuous mode on all network 
+     interfaces in VirtualBox and modify the network cards to use the PCnet 
+     PCI II model network card.
 
 
