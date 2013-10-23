@@ -433,6 +433,13 @@ tagging causes issue, they will be further documented.  Currently, a
 known limitation is that untagged networks should not be mapped to 
 the physical network interface that is used for PXE provisioning.
 
+Platform Tests Are Broken
+^^^^^^^^^^^^^^^^^^^^^^^^^
+Platform Tests were added to ensure that platform level services
+are operating correctly after OpenStack cluster is deployed.
+Heat, Savanna and Murano services are tested. However due to a bug
+the tests are not working properly and always fail.
+
 Other Limitations
 ^^^^^^^^^^^^^^^^^^
 * The Fuel master node is installed with CentOS as the host Operating 
@@ -470,11 +477,6 @@ Other Limitations
   the host OS, the Base System partition modifications will not properly 
   take effect. The default Base System partition will be applied 
   regardless of user choice due to limitations in Ubuntu provisioning.
-* Platform Tests were added to ensure that platform level services
-  are operating correctly. Heat, Savanna and Murano services are tested.
-  However due to a bug the tests are not working properly and always
-  fail.
-
 
 How to obtain the product
 -------------------------
