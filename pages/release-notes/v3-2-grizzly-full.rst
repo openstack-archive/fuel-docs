@@ -433,8 +433,8 @@ tagging causes issue, they will be further documented.  Currently, a
 known limitation is that untagged networks should not be mapped to 
 the physical network interface that is used for PXE provisioning.
 
-Platform Tests Are Broken
-^^^^^^^^^^^^^^^^^^^^^^^^^
+Platform Tests' Limitations
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Platform Tests ensure that platform level services operate correctly
 after OpenStack cluster is deployed. Heat, Savanna and Murano services
 are verified by Platform Tests. However due to a bug the tests are not
