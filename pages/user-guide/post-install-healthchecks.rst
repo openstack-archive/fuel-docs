@@ -150,9 +150,13 @@ includes the suite of sanity tests implemented:
 * Limits list availability
 * Services list availability
 * User list availability
+* Stack list availability
 * Check all the services execute normally
 * Check Internet connectivity from a compute
 * Check DNS resolution on a compute
+* Check Default Key Pair 'murano-lb-key' For Server Farms
+* Check Windows Image With Murano Tag
+* Murano environment and service creation, listing and deletion
 * Networks availability
 
 Smoke Tests Description 
@@ -232,6 +236,31 @@ http://savanna-files.mirantis.com/savanna-0.2-vanilla-1.1.2-ubuntu-12.10.qcow2
 
 After the steps above are done, the Savanna is ready to be tested.
 
+Preparing Murano for Testing
++++++++++++++++++++++++++++++
+
+The platform tests are run in the tenant you've specified in
+'OpenStack Settings' tab during OpenStack installation. By default that is
+'admin' tenant. Perform in the that tenant the following actions:
+
+1. Configure key pair 'murano-lb-key' in the 'admin' tenant.
+2. Get an Windows image with Murano agent for Murano and register it with Murano.
+
+   * First create Windows image with Murano agent. Please refer to 
+the `Murano documentation <http://murano-docs.github.io/latest/administrators-guide/content/ch03.html>`_
+   * Then upload the image into OpenStack Image Service (Glance) into
+     'admin' tenant and name it 'ws-2012-std'.
+   * In OpenStack Dashboard (Horizon) access 'Project' tab.
+   * Switch to 'admin' tenant if you are not in it already.
+   * Go to the ‘Environmnets’ menu. Here push ‘Marked Images’ button.
+   * Click on ‘Mark Image’.
+     Image registration window will open up.
+   * Select the image you’ve just uploaded. 
+   * Set Title to ‘ws-2012-std’ and select Type to ‘Windows Server 2012’.
+   * Finally push ‘Mark’ button.
+
+After the steps above are done, the Murano is ready to be tested.
+
 Platform Tests Details
 ++++++++++++++++++++++
 
@@ -259,3 +288,166 @@ Platform Tests Details
 
   For more information, see:
   `Savanna documentation <http://savanna.readthedocs.org/en/0.2.2/>`_ 
+
+.. topic:: Create stack, check its details, then update and delete stack
+
+  Test checks that Heat can create, launch and delete stack.
+
+  Target component: Heat
+
+  Scenario:
+
+  1. Create stack.
+  2. Wait for stack status to become 'CREATE_COMPLETE'.
+  3. Get details of the created stack by its name.
+  4. Update stack.
+  5. Wait for stack to be updated.
+  6. Delete stack.
+  7. Wait for stack to be deleted.
+
+.. topic:: Murano environment with AD service deployment
+
+  Test checks that Murano can create and deploy Active Directory service.
+
+  Target component: Murano
+
+  Scenario:
+
+  1. Check Windows Server 2012 image in glance.
+  2. Send request to create environment.
+  3. Send request to create session for environment.
+  4. Send request to create service AD.
+  5. Request to deploy session.
+  6. Checking environment status.
+  7. Checking deployments status
+  8. Send request to delete environment.
+
+  For more infromation, see:
+  `Murano documentation <https://wiki.openstack.org/wiki/Murano#Documentation>`_
+
+.. topic:: Murano environment with ASP.NET application service deployment
+
+  Test checks that Murano can create and deploy ASP.NET service.
+
+  Target component: Murano
+
+  Scenario:
+
+  1. Check Windows Server 2012 image in glance.
+  2. Send request to create environment.
+  3. Send request to create session for environment.
+  4. Send request to create service ASPNet.
+  5. Request to deploy session.
+  6. Checking environment status.
+  7. Checking deployments status
+  8. Send request to delete environment.
+
+  For more infromation, see:
+  `Murano documentation <https://wiki.openstack.org/wiki/Murano#Documentation>`_
+
+.. topic:: Murano environment with ASP.NET Servers Farm service deployment
+
+  Test checks that Murano can create and deploy ASP.NET Servers Farm service.
+
+  Target component: Murano
+
+  Scenario:
+
+  1. Check Windows Server 2012 image in glance.
+  2. Check that Key Pair 'murano-lb-key' exists.
+  3. Send request to create environment.
+  4. Send request to create session for environment.
+  5. Send request to create service ASPNet farm.
+  6. Request to deploy session.
+  7. Checking environment status.
+  8. Checking deployments status
+  9. Send request to delete environment.
+
+  For more infromation, see:
+  `Murano documentation <https://wiki.openstack.org/wiki/Murano#Documentation>`_
+
+.. topic:: Murano environment with IIS service deployment
+
+  Test checks that Murano can create and deploy IIS service.
+
+  Target component: Murano
+
+  Scenario:
+
+  1. Check Windows Server 2012 image in glance.
+  2. Send request to create environment.
+  3. Send request to create session for environment.
+  4. Send request to create service IIS.
+  5. Request to deploy session.
+  6. Checking environment status.
+  7. Checking deployments status
+  8. Send request to delete environment.
+
+  For more infromation, see:
+  `Murano documentation <https://wiki.openstack.org/wiki/Murano#Documentation>`_
+
+.. topic:: Murano environment with IIS Servers Farm service deployment
+
+  Test checks that Murano can create and deploy IIS Servers Farm service.
+
+  Target component: Murano
+
+  Scenario:
+
+  1. Check Windows Server 2012 image in glance.
+  2. Check that Key Pair 'murano-lb-key' exists.
+  3. Send request to create environment.
+  4. Send request to create session for environment.
+  5. Send request to create service IIS farm.
+  6. Request to deploy session.
+  7. Checking environment status.
+  8. Checking deployments status
+  9. Send request to delete environment.
+
+  For more infromation, see:
+  `Murano documentation <https://wiki.openstack.org/wiki/Murano#Documentation>`_
+
+.. topic:: Murano environment with SQL service deployment
+
+  Test checks that Murano can create and deploy SQL service.
+
+  Target component: Murano
+
+  Scenario:
+
+  1. Check Windows Server 2012 image in glance.
+  2. Send request to create environment.
+  3. Send request to create session for environment.
+  4. Send request to create service SQL.
+  5. Request to deploy session.
+  6. Checking environment status.
+  7. Checking deployments status
+  8. Send request to delete environment.
+
+  For more infromation, see:
+  `Murano documentation <https://wiki.openstack.org/wiki/Murano#Documentation>`_
+
+.. topic:: Murano environment with SQL Cluster service deployment
+
+  Test checks that Murano can create and deploy SQL Cluster service.
+
+  Target component: Murano
+
+  Scenario:
+
+  1. Check Windows Server 2012 image in glance.
+  2. Send request to create environment.
+  3. Send request to create session for environment.
+  4. Send request to create service AD.
+  5. Request to deploy session.
+  6. Checking environment status.
+  7. Checking deployments status.
+  8. Send request to create session for environment.
+  9. Send request to create service SQL cluster.
+  10. Request to deploy session..
+  11. Checking environment status.
+  12. Checking deployments status.
+  13. Send request to delete environment.
+
+  For more infromation, see:
+  `Murano documentation <https://wiki.openstack.org/wiki/Murano#Documentation>`_
