@@ -440,7 +440,7 @@ are operating correctly after OpenStack cluster is deployed.
 However due to a bug the sanity tests for Heat and Murano are not working
 properly and always fail.
 
-Platform Tests Limitations
+Platform Tests' Limitations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Platform Tests ensure that platform level services operate correctly
 after OpenStack cluster is deployed. Heat, Savanna and Murano services
