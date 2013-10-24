@@ -240,26 +240,27 @@ Preparing Murano for Testing
 +++++++++++++++++++++++++++++
 
 The platform tests are run in the tenant you've specified in
-'OpenStack Settings' tab during OpenStack installation. By default that is
-'admin' tenant. Perform in the that tenant the following actions:
+'OpenStack Settings' tab during OpenStack installation.
+The 'admin' tenant is selected by default.
+
+To prepare Murano for testing:
 
 1. Configure key pair 'murano-lb-key' in the 'admin' tenant.
-2. Get an Windows image with Murano agent for Murano and register it with Murano.
+2. Create a Windows image with Murano agent. 
+   See `Murano documentation <http://murano-docs.github.io/latest/administrators-guide/content/ch03.html>`_
+3. Upload the image to the OpenStack Image Service (Glance) into the 'admin' tenant.
+4. Rename the image name to 'ws-2012-std'.
+5. In the OpenStack Dashboard, click the 'Project' tab.
+6. Switch to admin tenant if needed.
+7. Click the 'Environments' menu.
+8. Click the 'Marked Images' button.
+9. Click 'Mark Image'. The Image registration window displays.
+10. Select the image.
+11. In the 'Title' field, select 'ws-2012-std'.
+12. Select the 'Windows Server 2012' type. 
+13. Click 'Mark'.
 
-   * First create Windows image with Murano agent. Please refer to 
-the `Murano documentation <http://murano-docs.github.io/latest/administrators-guide/content/ch03.html>`_
-   * Then upload the image into OpenStack Image Service (Glance) into
-     'admin' tenant and name it 'ws-2012-std'.
-   * In OpenStack Dashboard (Horizon) access 'Project' tab.
-   * Switch to 'admin' tenant if you are not in it already.
-   * Go to the ‘Environmnets’ menu. Here push ‘Marked Images’ button.
-   * Click on ‘Mark Image’.
-     Image registration window will open up.
-   * Select the image you’ve just uploaded. 
-   * Set Title to ‘ws-2012-std’ and select Type to ‘Windows Server 2012’.
-   * Finally push ‘Mark’ button.
-
-After the steps above are done, the Murano is ready to be tested.
+Murano is ready for testing.
 
 Platform Tests Details
 ++++++++++++++++++++++
@@ -291,7 +292,7 @@ Platform Tests Details
 
 .. topic:: Create stack, check its details, then update and delete stack
 
-  Test checks that Heat can create, launch and delete stack.
+  The test verifies that the Heat service can create, launch, and delete a stack.
 
   Target component: Heat
 

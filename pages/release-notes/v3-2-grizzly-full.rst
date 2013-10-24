@@ -435,10 +435,9 @@ the physical network interface that is used for PXE provisioning.
 
 Sanity Tests For Murano And Heat Are Broken
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Sanity Tests for Murano and Heat were added to ensure that services
-are operating correctly after OpenStack cluster is deployed.
-However due to a bug the sanity tests for Heat and Murano are not working
-properly and always fail.
+Mirantis added sanity tests for Murano and Heat. The tests verify that 
+these services work correctly after OpenStack cluster is deployed.
+However, the tests may fail due to a bug.
 
 Platform Tests' Limitations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
