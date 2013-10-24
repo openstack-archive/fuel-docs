@@ -176,13 +176,19 @@ Next, create Slave nodes where OpenStack needs to be installed.
 
 2. Set Network as first in the boot order:
 
-.. image:: /_images/vbox-image1.png
+.. image:: /_images/vbox-image1.jpg
   :align: center
 
 3. Configure the network adapter on each VM:
 
-.. image:: /_images/vbox-image2.png
+.. image:: /_images/vbox-image2.jpg
   :align: center
+
+4. Open "advanced" collapse, and check following options:
+
+* Promiscuous mode is a "Allow All"
+* Adapter type is a "PCnet PCI II"
+* Cable connected is a On
 
 
 .. _Network_Install:
@@ -211,7 +217,7 @@ The main function of this tool is to provide a simple way to configure Fuel for
 your particular networking environment, while helping to detect errors early 
 so you need not waste time troubleshooting individual configuration files.
 
-.. image:: /_images/fuel-menu-interfaces.png
+.. image:: /_images/fuel-menu-interfaces.jpg
   :align: center
 
 Use the arrow keys to navigate through the tool. Once you have made your 

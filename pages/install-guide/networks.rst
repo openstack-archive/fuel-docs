@@ -136,8 +136,9 @@ types of traffic. When a node is added to the environment, click at the bottom
 line of the node icon. In the detailed information window, click the "Configure 
 Interfaces" button to open the physical interfaces configuration screen.
 
-.. image:: /_images/network-settings.jpg
+.. image:: /_images/network_settings.jpg
   :align: center
+  :width: 100%
 
 On this screen you can drag-and-drop logical networks to physical interfaces 
 according to your network setup. 
@@ -267,6 +268,7 @@ Public and Floating networks which will allow to make this happen.
 
 .. image:: /_images/vbox_public_settings.jpg
   :align: center
+  :width: 100%
 
 By default Public and Floating networks are run on the first network interface.
 It is required to change it, as you can see on this image below. Make sure you change
@@ -274,6 +276,7 @@ it on every node.
 
 .. image:: /_images/vbox_node_settings.jpg
   :align: center
+  :width: 100%
 
 If you use default configuration in VirtualBox scripts, and follow the exact same
 settings on the images above, you should be able to access OpenStack Horizon via

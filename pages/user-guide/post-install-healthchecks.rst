@@ -60,8 +60,9 @@ Running Post-Deployment Checks
 Now, let`s take a closer look on what should be done to execute the tests and 
 to understand if something is wrong with your OpenStack environment.
 
-.. image::  /_images/healthcheck_tab.jpg
+.. image::  /_images/001-health-check-tab.jpg
   :align: center
+  :width: 100%
 
 As you can see on the image above, the Fuel UI now contains a ``Health Check``
 tab, indicated by the Heart icon.
@@ -89,8 +90,9 @@ this section.
 
 An actual test run looks like this:
 
-.. image::  /_images/ostf_screen.jpg
+.. image::  /_images/002-health-check-results.jpg
   :align: center
+  :width: 100%
 
 What To Do When a Test Fails 
 ----------------------------
@@ -194,3 +196,66 @@ in HA mode:
 * Check galera environment state
 * RabbitMQ availability
 
+Platform Tests Description
+--------------------------
+
+Platform tests verify basic functionality of Heat, Savanna and Murano
+services.
+Typically, preparation for Savanna testing is a lengthy process that
+involves several manual configuration steps.
+
+Preparing Savanna for Testing
++++++++++++++++++++++++++++++
+
+The platform tests are run in the tenant you've specified in
+'OpenStack Settings' tab during OpenStack installation. By default that is
+'admin' tenant. Perform in the that tenant the following actions:
+
+1. Configure security groups in the 'admin' tenant. See
+   :ref:`savanna-deployment-label` for the details.
+2. Get an image with Hadoop for Savanna and register it with Savanna.
+
+   * First download the following image:
+
+http://savanna-files.mirantis.com/savanna-0.2-vanilla-1.1.2-ubuntu-12.10.qcow2
+   * Then upload the image into OpenStack Image Service (Glance) into
+     'admin' tenant and name it 'savanna'.
+   * In OpenStack Dashboard (Horizon) access 'Savanna' tab.
+   * Switch to 'admin' tenant if you are not in it already.
+   * Go to the ‘Image Registry’ menu. Here push ‘Register Image’ button.
+     Image registration window will open up.
+   * Select the image you’ve just uploaded.
+   * Set username to ‘ubuntu’
+   * For tags, pick ‘vanilla’ plugin and ‘1.2.1’ version and press
+     ‘Add all’ button.
+   * Finally push ‘Done’ button
+
+After the steps above are done, the Savanna is ready to be tested.
+
+Platform Tests Details
+++++++++++++++++++++++
+
+.. topic:: Hadoop cluster operations
+
+  Test checks that Savanna can launch a Hadoop cluster
+  using the Vanilla plugin.
+
+  Target component: Savanna
+
+  Scenario:
+
+  1. Create a flavor for Savanna VMs.
+  2. Create a node group template for JobTracker and NameNode.
+  3. Create a cluster template using the node group template.
+  4. List current node group templates.
+  5. List current cluster templates.
+  6. Launch a Hadoop cluster with the created cluster template.
+  7. Check the launched Hadoop cluster is up by accessing web interfaces of
+     the appropriate components (JobTracker, NameNode, TaskTracker, DataNode).
+  8. Terminate the launched cluster.
+  9. Delete the created cluster template.
+  10. Delete the created node group templates.
+  11. Delete the created flavor.
+
+  For more information, see:
+  `Savanna documentation <http://savanna.readthedocs.org/en/0.2.2/>`_ 
