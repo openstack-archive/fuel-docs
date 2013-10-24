@@ -435,10 +435,10 @@ the physical network interface that is used for PXE provisioning.
 
 Platform Tests Are Broken
 ^^^^^^^^^^^^^^^^^^^^^^^^^
-Platform Tests were added to ensure that platform level services
-are operating correctly after OpenStack cluster is deployed.
-Heat, Savanna and Murano services are tested. However due to a bug
-the tests are not working properly and always fail.
+Platform Tests ensure that platform level services operate correctly
+after OpenStack cluster is deployed. Heat, Savanna and Murano services
+are verified by Platform Tests. However due to a bug the tests are not
+working properly and always fail.
 
 Other Limitations
 ^^^^^^^^^^^^^^^^^^
