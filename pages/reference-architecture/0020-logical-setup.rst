@@ -48,12 +48,9 @@ mechanism for achieving HA:
 * MySQL high availability is achieved through Galera active/active multi-master 
   deployment and Pacemaker.
 * Quantum agents are managed by Pacemaker.
-
-When Ceph storage is used in the OpenStack cloud, Ceph Monitor service
-is also housed on the controller nodes. Ceph implements its own quorum
-based HA mechanism and imposes very strict requirements on clock
-synchronization between the nodes. Clock drift higher than 50ms may
-impact the Ceph Monitors quorum or even crash the Ceph service.
+* Ceph monitors implement their own quorum based HA mechanism and
+  require time synchronization between all nodes. Clock drift higher
+  than 50ms may break the quorum or even crash the Ceph service.
 
 Compute Nodes
 -------------
