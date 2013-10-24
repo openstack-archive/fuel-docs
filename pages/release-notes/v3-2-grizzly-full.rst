@@ -594,3 +594,39 @@ Name resolving is added for internal OpenStack network to allow hostnames
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   Smoke tests in Fuel 3.2 UI were fixed.
   
+*PRD-2288, PRD-2343 IntegrityError: (IntegrityError) null value in column "mac" violates not-null constraint*
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  REST API was fixed to eliminate appearance of Error 500 IntegrityError messages.
+  
+*PRD-2291 Test "Stack list availability" has failed without any messages*
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  OSTF tests no more fail without any messages.
+  
+*PRD-2429 Test "Create stack, check its details, then update and delete stack" has failed without any messages*
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  OSTF tests no more fail without any messages.
+  
+*PRD-2418, PRD-2425 Puppet need certificate. Deployment on Ubuntu has failed*
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  Issued with Puppet certificate distribution under Ubuntu were fixed.
+  
+*PRD-2408 Ubuntu: OSTF run: Unable to launch instance* **(M/A::marked as unresolved)**
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  Libvirt-bin for Ubuntu should be updated to version 1.1.1
+  
+*PRD-2139 "Check network connectivity from instance without floating IP" functional test failed on good ha nova-network env*
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  External DNS accessibility test no more fails when external DNS is actually accessible.
+  
+*PRD-2179 OSTF tests skip "Create instance flavor"* **(M/A::marked as unresolved)**
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  Test "Create instance flavor" is skipped by mistake.
+  
+*PRD-2223, PRD-2224, PRD-2225 Traceback: fuel_health.tests.sanity.test_sanity_murano.MuranoSanityTests.test_create_and_delete_service*
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  Murano (Windows virtual machine support in OpenStack) tests failure.
+  This failure happens by design - manual test preparations from user side
+  required to run Murano tests.
+  These steps may be found at https://github.com/Mirantis/fuel-docs/pull/29
+  
+  
