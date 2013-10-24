@@ -308,7 +308,7 @@ Platform Tests Details
 
 .. topic:: Murano environment with AD service deployment
 
-  Test checks that Murano can create and deploy Active Directory service.
+  The test verifies that the Murano service can create and deploy the Active Directory service.
 
   Target component: Murano
 
@@ -328,7 +328,7 @@ Platform Tests Details
 
 .. topic:: Murano environment with ASP.NET application service deployment
 
-  Test checks that Murano can create and deploy ASP.NET service.
+  The test verifies that the Murano service can create and deploy the ASP.NET service.
 
   Target component: Murano
 
@@ -348,7 +348,7 @@ Platform Tests Details
 
 .. topic:: Murano environment with ASP.NET Servers Farm service deployment
 
-  Test checks that Murano can create and deploy ASP.NET Servers Farm service.
+  The test verifies that the Murano service can create and deploy the ASP.NET Servers Farm service.
 
   Target component: Murano
 
@@ -369,7 +369,7 @@ Platform Tests Details
 
 .. topic:: Murano environment with IIS service deployment
 
-  Test checks that Murano can create and deploy IIS service.
+  The test verifies that the Murano service can create and deploy the IIS service.
 
   Target component: Murano
 
@@ -389,7 +389,7 @@ Platform Tests Details
 
 .. topic:: Murano environment with IIS Servers Farm service deployment
 
-  Test checks that Murano can create and deploy IIS Servers Farm service.
+  The test verifies that the Murano service can create and deploy the IIS Servers Farm service.
 
   Target component: Murano
 
@@ -410,7 +410,7 @@ Platform Tests Details
 
 .. topic:: Murano environment with SQL service deployment
 
-  Test checks that Murano can create and deploy SQL service.
+  The test verifies that the Murano service can create and deploy the SQL service.
 
   Target component: Murano
 
@@ -430,7 +430,7 @@ Platform Tests Details
 
 .. topic:: Murano environment with SQL Cluster service deployment
 
-  Test checks that Murano can create and deploy SQL Cluster service.
+  The test verifies that the Murano service can create and deploy the SQL Cluster service.
 
   Target component: Murano
 
