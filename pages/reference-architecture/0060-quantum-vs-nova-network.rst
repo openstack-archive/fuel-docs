@@ -55,19 +55,18 @@ created for a single tenant, forming an isolated L2 network called a
 Private networks can be segmented using two different technologies:
 
 * **VLAN segmentation** Isolated tenant "private network" traffic is managed by 
-Neutron by the use of a dedicated network adapter. This network adapter must be 
-attached to a tagged network port. This network segment also must be 
-reserved only for Neutron on each host (Computes and Controllers). You should 
-not use any other 802.1q VLANs on this network for other purposes. 
-Additionally, each private network requires its own dedicated VLAN, selected 
-from a given range configured in Fuel UI. 
-
+  Neutron by the use of a dedicated network adapter. This network adapter must be 
+  attached to a tagged network port. This network segment also must be 
+  reserved only for Neutron on each host (Computes and Controllers). You should 
+  not use any other 802.1q VLANs on this network for other purposes. 
+  Additionally, each private network requires its own dedicated VLAN, selected 
+  from a given range configured in Fuel UI. 
 * **GRE segmentation** In this mode of operation, Neutron does not
-require a dedicated network adapter. Neutron builds a mesh of GRE tunnels from
-each compute node and controller nodes to every other node. Private networks
-for each tenant make use of this mesh for isolated traffic. Additionally, your
-Public network should remain untagged if you consolidate all Neutron traffic to
-one NIC.
+  require a dedicated network adapter. Neutron builds a mesh of GRE tunnels from
+  each compute node and controller nodes to every other node. Private networks
+  for each tenant make use of this mesh for isolated traffic. Additionally, your
+  Public network should remain untagged if you consolidate all Neutron traffic to
+  one NIC.
 
 It is important to note that if you use tagged networks for your configuration 
 and combine multiple networks onto one NIC, you should make the Public 
