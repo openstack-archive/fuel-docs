@@ -10,30 +10,27 @@ ability to leverage different networking technologies to power their cloud
 networking.
 
 There are various deployment use cases for Neutron. Fuel supports the most 
-common of them, called Provider Router with Private Networks. It provides each 
-tenant with one or more private networks, which can communicate with the 
-outside world via a Neutron router. This allows full routing isolation for 
-each tenant private network.
+common of them, called Per-tenant Routers with Private Networks. It provides each 
+tenant has a virtual Neutron router with one or more private networks, which can communicate with the 
+outside world. This allows full routing isolation for each tenant private network.
 
 Neutron is not, however, required in order to run an OpenStack environment. If 
 you don't need (or want) this added functionality, it's perfectly acceptable to 
 continue using nova-network.
 
 In order to deploy Neutron, you need to enable it in the Fuel configuration. 
-Fuel will then set up an additional node in the OpenStack installation to act 
-as an L3 router, or, depending on the configuration options you've chosen, 
-install Neutron on the controllers.
+Fuel will then set up an additional Neutron components on the controllers.
 
 
 Terminology
 -----------
 
-* **Public network** (also known as External) network used for Internet 
-  access for all nodes. This network also may be called “external”.
+* **Public network** (also known as External network) used for Internet 
+  access for all nodes.
 * **Floating IP network** subnet within public network allocated for tenant 
-  Internet access. A DHCP server directly assigns IP addresses for this network.
+  Internet access. A Neutron server directly assigns IP addresses for this network.
   If a user delegates a floating IP address to an instance, an IP address will 
-  be assigned from this subnet.
+  be assigned from this subnet (by snat/dnat).
 * **Private network** used for passing tenant private traffic.
 * **Admin network** shared network between Fuel Master and all nodes in the 
   cluster for PXE installation and orchestration of environment for deployment.
