@@ -114,7 +114,7 @@ Known limitations
   tenant is created, a floating IP range must be created. Note that this does 
   not prevent Internet connectivity for a tenant's instances, but it would 
   prevent them from receiving incoming connections. You, the administrator, 
-  should assign a floating IP adresses for the tenant. Below are steps you can 
+  should assign a floating IP addresses for the tenant. Below are steps you can 
   follow to do this:
 
   | get admin credentials:
