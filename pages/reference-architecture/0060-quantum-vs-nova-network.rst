@@ -31,7 +31,7 @@ Terminology
 * **Floating IP network** subnet within public network allocated for tenant 
   Internet access. A Neutron server directly assigns IP addresses for this network.
   If a user delegates a floating IP address to an instance, an IP address will 
-  be assigned from this subnet (by snat/dnat).
+  be assigned from this subnet (by SNAT/DNAT).
 * **Private network** used for passing tenant private traffic.
 * **Admin network** shared network between Fuel Master and all nodes in the 
   cluster for PXE installation and orchestration of environment for deployment.
