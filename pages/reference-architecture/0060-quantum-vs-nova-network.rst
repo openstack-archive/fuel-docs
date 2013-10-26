@@ -55,7 +55,7 @@ created for a single tenant, forming an isolated L2 network called a
 "private network". Each private network can support one or many IP subnets.
 Private networks can be segmented using two different technologies:
 
-* **VLAN segmentation** Isolated tenant "private network" traffic is managed by 
+* **VLAN segmentation** "Private network" traffic is managed by 
   Neutron by the use of a dedicated network adapter. This network adapter must be 
   attached to a untagged network port. This network segment also must be 
   reserved only for Neutron on each host (Computes and Controllers). You should 
