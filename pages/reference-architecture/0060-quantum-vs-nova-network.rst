@@ -10,9 +10,10 @@ ability to leverage different networking technologies to power their cloud
 networking.
 
 There are various deployment use cases for Neutron. Fuel supports the most 
-common of them, called Per-tenant Routers with Private Networks. It provides each 
-tenant has a virtual Neutron router with one or more private networks, which can communicate with the 
-outside world. This allows full routing isolation for each tenant private network.
+common of them, called Per-tenant Routers with Private Networks. 
+Each tenant has a virtual Neutron router with one or more private networks,
+which can communicate with the outside world. 
+This allows full routing isolation for each tenant private network.
 
 Neutron is not, however, required in order to run an OpenStack environment. If 
 you don't need (or want) this added functionality, it's perfectly acceptable to 
