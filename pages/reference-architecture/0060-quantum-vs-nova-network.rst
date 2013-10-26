@@ -20,8 +20,8 @@ you don't need (or want) this added functionality, it's perfectly acceptable to
 continue using nova-network.
 
 In order to deploy Neutron, you need to enable it in the Fuel configuration. 
-Fuel will then set up an additional Neutron components on the controllers.
-
+Fuel sets up Neutron components on each of the controllers to act as a router 
+in HA (if deploying in HA mode).
 
 Terminology
 -----------
