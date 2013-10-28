@@ -11,4 +11,5 @@
 .. include:: /pages/user-guide/post-install-healthchecks.rst
 .. include:: /pages/user-guide/troubleshooting-ug/network-issues.rst
 .. include:: /pages/user-guide/cli.rst
+.. include:: /pages/user-guide/custom-attributes.rst
 .. include:: /pages/user-guide/murano.rst
