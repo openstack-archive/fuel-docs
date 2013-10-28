@@ -433,6 +433,12 @@ tagging causes issue, they will be further documented.  Currently, a
 known limitation is that untagged networks should not be mapped to 
 the physical network interface that is used for PXE provisioning.
 
+Sanity Tests For Murano And Heat Are Broken
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Mirantis added sanity tests for Murano and Heat. The tests verify that 
+these services work correctly after OpenStack cluster is deployed.
+However, the tests may fail due to a bug.
+
 Platform Tests' Limitations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Platform Tests ensure that platform level services operate correctly
@@ -441,7 +447,7 @@ are verified by Platform Tests. However due to a bug the tests are not
 working properly and always fail.
 
 Other Limitations
-^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^
 * The Fuel master node is installed with CentOS as the host Operating 
   System.  While OpenStack nodes can be installed with Ubuntu, Red Hat 
   Enterprise Linux or CentOS as the host OS, the Fuel master node is 
