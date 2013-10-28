@@ -1,7 +1,15 @@
+.. raw:: pdf
+
+   PageBreak
+
+.. index:: Passing Custom Attributes From Fuel To Puppet
+
 Passing Custom Attributes From Fuel To Puppet
 =============================================
 
-Passing custom attributes can be helpful in cases you have some Puppet manifests 
+.. contents :local:
+
+Passing custom attributes can be helpful in case you have some Puppet manifests 
 which should be run, but are not supported by Fuel itself.
 
 You can do this at your own risk, and some features might 
@@ -36,13 +44,14 @@ example we can set MySQL root password in this block::
 
 **Adding new modules**: Some people may want to extend Fuel functionality by adding 
 new Puppet modules. You can do it by adding them to '/etc/puppet/modules' on master 
-node, or you can edit existing modules there changing deployment behaviour in some 
+node, or you can edit existing modules changing deployment behaviour in some 
 way. 
 
 Let’s try to add new module that will install some useful packages from repository, 
-which is located on master node.
+which is located on the master node.
 
-In this example, module will be named *'packages'* and it will have this structure::
+In this example, our module will be named *'packages'* and it will have following 
+structure::
 
 	packages/
 	packages/manifests
@@ -57,10 +66,11 @@ In this example, module will be named *'packages'* and it will have this structu
 	   	}
 	}
 
-Then we can copy this module to '/etc/puppet/modules' on master node and add 'include 
-profile' to the end of '/etc/puppet/manifests/site.pp' file to enable this module.
+Then we can copy this module to '/etc/puppet/modules' folder on the master node and add 
+'include profile' to the end of '/etc/puppet/manifests/site.pp' file to enable this 
+module.
 
-As you can see, it uses list of tools to install that should be passed through Fuel 
+As you can see, there is list of packages to install that should be passed through Fuel 
 parameters system.
 
 Let's add this attribute to the downloaded file’s top level hash::
@@ -81,7 +91,7 @@ Then we can upload modified configuration and start deployment process as usual:
 You can also use ``--dir`` option to set a directory where to load parameters from, 
 if it's not default.
 
-This operation leads to two things:
+This operation has following effects:
 	
 	* parameters which are about to send to orchestrator are replaced completely with 
 	the ones you specified
