@@ -10,30 +10,28 @@ ability to leverage different networking technologies to power their cloud
 networking.
 
 There are various deployment use cases for Neutron. Fuel supports the most 
-common of them, called Provider Router with Private Networks. It provides each 
-tenant with one or more private networks, which can communicate with the 
-outside world via a Neutron router. This allows full routing isolation for 
-each tenant private network.
+common of them, called Per-tenant Routers with Private Networks. 
+Each tenant has a virtual Neutron router with one or more private networks,
+which can communicate with the outside world. 
+This allows full routing isolation for each tenant private network.
 
 Neutron is not, however, required in order to run an OpenStack environment. If 
 you don't need (or want) this added functionality, it's perfectly acceptable to 
 continue using nova-network.
 
 In order to deploy Neutron, you need to enable it in the Fuel configuration. 
-Fuel will then set up an additional node in the OpenStack installation to act 
-as an L3 router, or, depending on the configuration options you've chosen, 
-install Neutron on the controllers.
-
+Fuel sets up Neutron components on each of the controllers to act as a router 
+in HA (if deploying in HA mode).
 
 Terminology
 -----------
 
-* **Public network** (also known as External) network used for Internet 
-  access for all nodes. This network also may be called “external”.
+* **Public network** (also known as External network) used for Internet 
+  access for all nodes.
 * **Floating IP network** subnet within public network allocated for tenant 
-  Internet access. A DHCP server directly assigns IP addresses for this network.
+  Internet access. A Neutron server directly assigns IP addresses for this network.
   If a user delegates a floating IP address to an instance, an IP address will 
-  be assigned from this subnet.
+  be assigned from this subnet (by SNAT/DNAT).
 * **Private network** used for passing tenant private traffic.
 * **Admin network** shared network between Fuel Master and all nodes in the 
   cluster for PXE installation and orchestration of environment for deployment.
@@ -54,29 +52,32 @@ and layer 3 (network) of the OSI network model, as compared to simple layer 3
 virtualization provided by nova-network. This is the main difference between 
 the two networking models for OpenStack. Virtual networks (one or more) can be 
 created for a single tenant, forming an isolated L2 network called a 
-"private network." Each private network can support one or many IP subnets.
+"private network". Each private network can support one or many IP subnets.
 Private networks can be segmented using two different technologies:
 
-* **VLAN segmentation** Isolated tenant "private network" traffic is managed by 
-Neutron by the use of a dedicated network adapter. This network adapter must be 
-attached to a tagged network port. This network segment also must be 
-reserved only for Neutron on each host (Computes and Controllers). You should 
-not use any other 802.1q VLANs on this network for other purposes. 
-Additionally, each private network requires its own dedicated VLAN, selected 
-from a given range configured in Fuel UI. 
-
+* **VLAN segmentation** "Private network" traffic is managed by 
+  Neutron by the use of a dedicated network adapter. This network adapter must be 
+  attached to a untagged network port. This network segment also must be 
+  reserved only for Neutron on each host (Computes and Controllers). You should 
+  not use any other 802.1q VLANs on this network for other purposes. 
+  Additionally, each private network requires its own dedicated VLAN, selected 
+  from a given range configured in Fuel UI. 
 * **GRE segmentation** In this mode of operation, Neutron does not
-require a dedicated network adapter. Neutron builds a mesh of GRE tunnels from
-each compute node and controller nodes to every other node. Private networks
-for each tenant make use of this mesh for isolated traffic. Additionally, your
-Public network should remain untagged if you consolidate all Neutron traffic to
-one NIC.
+  require a dedicated network adapter. Neutron builds a mesh of GRE tunnels from
+  each compute node and controller nodes to every other node. Private networks
+  for each tenant make use of this mesh for isolated traffic. 
 
-It is important to note that if you use tagged networks for your configuration 
-and combine multiple networks onto one NIC, you should make the Public 
-network untagged on this NIC, but it is not a requirement. Additionally, it is 
-best if you place both the Private and Admin networks on a separate NIC from
-the Public network to ensure that traffic is separated adequately.
+It is important to note:
+
+* if you use tagged networks for your configuration 
+  and combine multiple networks onto one NIC, you should make the Public 
+  network untagged on this NIC. 
+  It is not a requirement, but best for access to the Openstack Dashboard 
+  and public Openstack API.
+* Is a best if you place the Private, Admin, Public and Management networks on a 
+  separate NIC to ensure that traffic is separated adequately.
+* Admin and Private networks must be located together on separate NIC from the 
+  other networks.
 
 A typical network configuration for Neutron with VLAN segmentation might look
 like this:
@@ -110,34 +111,34 @@ The most likely configuration for different number NICs on cluster nodes:
 Known limitations
 -----------------
 
-* To deploy OpenStack using Neutron with GRE segmentation, each node requires at
-least 2 NICs.
-* To deploy OpenStack using Neutron with VLAN segmentation, each node requires
-at least 3 NICs.
-
 * Neutron will not allocate a floating IP range for your tenants. After each 
   tenant is created, a floating IP range must be created. Note that this does 
   not prevent Internet connectivity for a tenant's instances, but it would 
   prevent them from receiving incoming connections. You, the administrator, 
-  should assign a floating IP network for the tenant. Below are steps you can 
+  should assign a floating IP addresses for the tenant. Below are steps you can 
   follow to do this:
 
-| get admin credentials:
-| # source /root/openrc
-| get admin tenant-ID:
-| # keystone tenant-list
+  | get admin credentials:
+  | # source /root/openrc
+  | get admin tenant-ID:
+  | # keystone tenant-list
 
-+----------------------------------+----------+---------+
-|                id                |   name   | enabled |
-+==================================+==========+=========+
-| b796f91df6b84860a7cd474148fb2229 |  admin   |   True  |
-+----------------------------------+----------+---------+
-| cba7b0ff68ee4985816ac3585c8e23a9 | services |   True  |
-+----------------------------------+----------+---------+
+  +----------------------------------+----------+---------+
+  |                id                |   name   | enabled |
+  +==================================+==========+=========+
+  | b796f91df6b84860a7cd474148fb2229 |  admin   |   True  |
+  +----------------------------------+----------+---------+
+  | cba7b0ff68ee4985816ac3585c8e23a9 | services |   True  |
+  +----------------------------------+----------+---------+
 
-| create floating-ip for admin tenant:
-| # quantum floatingip-create --tenant-id=b796f91df6b84860a7cd474148fb2229 net04_ext
+  | create one floating-ip address for admin tenant:
+  | # quantum floatingip-create --tenant-id=b796f91df6b84860a7cd474148fb2229 net04_ext
 
+* You can't combine Private or Admin network with any other networks on one NIC.
+* To deploy OpenStack using Neutron with GRE segmentation, each node requires at
+  least 2 NICs.
+* To deploy OpenStack using Neutron with VLAN segmentation, each node requires
+  at least 3 NICs.
 
 FAQ
 ---
