@@ -505,134 +505,239 @@ here: https://mirantis.zendesk.com/home.
 Issues fixed in this release
 ----------------------------
 
-*PRD-976 Management network not configured correctly during deployment*
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  IP address is now correctly assigned to the network interface, belonging to
-  management network.
-  
-*PRD-999 Fuel-web rabbitmq use of short names should use IP addresses*
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Name resolving is added for internal OpenStack network to allow hostnames
-  usage for OpenStack components.
-  
-*PRD-1507 Metadata issue in FuelWeb 3.0.1*
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  Kernel namespaces are enabled for Centos in order to get Neuton metadata
-  operable. Ubuntu 12.04 LTS has kernel namespaces support out of the box.
-  RedHat is going to enable kernel namespaces in ipcoming RHEL 6.5 release.
-  Updated Cirros image, included to Fuel ISO with fixed cloudinit.
-  
-*PRD-1024 FuelWeb doesn't work when DHCP interface is not eth0*
+*Management network not configured correctly during deployment*
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  Ability to set and customize DHCP interface settings was added to Fuel master 
-  node installation sequence.
+  Fixed the issue with the incorrect management network configuration. 
+  The IP address is now correctly assigned to the network interface that belongs
+  to management network. 
   
-*PRD-1404 Add links to sub-headers in the Understanding the Puppet Manifest documentation page*
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*Fuel-web rabbitmq use of short names should use IP addresses*
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  Short DNS name resolution now works on the Management networking, 
+  satisfying a technical requirement in RabbitMQ
+  
+*Metadata issue in FuelWeb 3.0.1*
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  Kernel namespaces are enabled for CentOS in order to make Neuton metadata
+  service operable. Ubuntu 12.04 LTS supports kernel namespaces out of the box.
+  Red Hat will enable kernel namespaces in upcoming RHEL 6.5 release.
+  Updated Cirros image with fixed Cloudinit component is included to the Fuel ISO.
+  
+*FuelWeb doesn't work when DHCP interface is not eth0*
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  Added the ability to set and configure DHCP settings to the Fuel Master Node 
+  installation wizard.
+  
+*Add links to sub-headers in the Understanding the Puppet Manifest documentation page*
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   Added missing links to Fuel online documentation.
   
-*PRD-1117 Mistakes on page Configuring the network of Fuel Web docs*
+*Mistakes on page Configuring the network of Fuel Web docs*
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  Fixed Fuel online documentation
+  
+*Glance cache must be cleaned up periodically*
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  Added new controller health-check logic to maintain (manage?) free space, 
+  cleanups, and so on. 
+
+*RedHat subscriptions for RHOS-backed Fuel*
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  Corrected Fuel 3.2 security settings bug, blocking RHEL download for RedHat personnel, 
+  if they were downloading RHEL distribution media from internal RedHat network.
+  
+*Nodes of OpenStack don't boot up if boot order of disks changed.*
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Implemented a new partition manager that helps to eliminate issues with many hard drive configurations.
+The fixed issues include:
+
+* GRUB fails to boot a node when disk size exceeds 4 GB.
+* GRUB fails to boot a boot if more than one single hard drives are connected to the target node
+
+  
+*Fuel can not install master node with disks larger than 3TB*
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  Added support for Fuel Master Node installation on disk drives that have capacities that exceed 2.2 TB.
+  By default, GUID Partition Table is used.
+   
+*FuelWeb 3.0.1 Missing keystone_ec2_url configuration option in /etc/nova/nova.conf*
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  Fixed the issue with incorrect ``keystone_ec2_url`` parameter setting in ``/etc/nova/nova.conf``
+  
+*Debug logging option enabled out of box in "/etc/openstack-dashboard/local_settings"*
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  Changed the default setting of debug mode for the OpenStack dashboard to off.
+  This eliminates the excessive log messages generation on controller nodes.
+  This also reduces the log size on the Fuel Master as well.
+  Debug mode can be enabled in Environment Settings before deploying.
+  
+*Default gateway is not defined on slaves for certain configuration*
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  Fuel online docs were corrected.
+  Default gateway is correctly set for all configurations.
   
-*PRD-1131 Glance cache must be cleaned up periodically*
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  New controller health-check logic was implemented to maintain the remained
-  free space, cleanups and so on.
-  
-*PRD-1308 Need validation of network ranges* **(M/A::marked as unresolved)**
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  Network ranges validation was improved to block even more potentially 
-  not-working network configurations. Fuel 3.2 strongly prohibits every untagged
-  traffic over the admin (PXE) network. Please expect not all custom network 
-  settings that worked in 3.1 should continue working in 3.2!
-  
-*PRD-1379 RedHat subscriptions for RHOS-backed FUEL*
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  Now Fuel 3.2 security settings allow RHEL download for RedHat personnel, 
-  if they download RHEL distribution media from internal RedHat network. 
-  
-*PRD-1383 Nodes of OpenStack don't boot up if boot order of disks changed.*
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  New partition manager was implemented to eliminate multiple issues, discovered 
-  on multiple hard drive configurations. GRUB no more fails node boot when disk 
-  size exceeds 4 Gb. GRUB no more fails node boot in case of several hard drives
-  connected to the target node.
-  
-*PRD-1476 Fuel can not install master node with disks larger than 3TB*
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  Now Fuel 3.2 master node can be installed to the disk drive greater than 2.2Tb
-  GPT is used as default partition type.
-  
-*PRD-1498 quantum net unreachable long time (5-6 minutes)* **(M/A::marked as unresolved)**
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  L3 agent migration speed time was decreased in order to get Neutron network
-  accessible in lesser time after neutron controller node failure in HA mode.
-  
-*PRD-1499 FuelWeb 3.0.1 Missing keystone_ec2_url configuration option in /etc/nova/nova.conf*
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  Fuel 3.2 correctly sets keystone_ec2_url parameter to /etc/nova/nova.conf
-  
-*PRD-1620 Debug logging option enabled out of box in "/etc/openstack-dashboard/local_settings"*
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  Debug mode for OpenStack dashboard is turned off by default in Fuel 3.2
-  No more unnecessary tons of access logs appear on the controller nodes.
-  
-*PRD-1716 Default gateway is not defined on slaves for certain configuration*
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  Now default gateway is correctly set for all configurations.
-  
-*PRD-1732 Can not add security group to instance with Horizon dashboard*
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  OpenStack dashboard issue. Due to input validation bug Horizon incorrectly 
-  allows usage of underscore characters in security group names.
-  This bug is fixed in the Havana OpenStack release.
-  
-*PRD-2076** *kvm-qemu crashes due to incorrect disk cache mode*
+*Can not add security group to instance with Horizon dashboard*
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  Fuel 3.2 sets KVM disk cache mode properly on bare-metal nodes.
+  Fixed the OpenStack dashboard issue. Due to the input validation bug, 
+  Horizon incorrectly enables the usage of underscores in names of security groups. 
+  This issue is fixed in the Havana OpenStack release. Havana refers to security
+  groups by IDs, while Grizzly refers by names.
   
-*PRD-2241 Only 10 Gb for / partition* **(M/A::marked as unresolved)**
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  Default root partition size for nodes was increased in Fuel 3.2
-  
-*PRD-2263 Smoke test fails at "Create new security group"*
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  Smoke tests in Fuel 3.2 UI were fixed.
-  
-*PRD-2288, PRD-2343 IntegrityError: (IntegrityError) null value in column "mac" violates not-null constraint*
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  REST API was fixed to eliminate appearance of Error 500 IntegrityError messages.
-  
-*PRD-2291 Test "Stack list availability" has failed without any messages*
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  OSTF tests no more fail without any messages.
-  
-*PRD-2429 Test "Create stack, check its details, then update and delete stack" has failed without any messages*
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  OSTF tests no more fail without any messages.
-  
-*PRD-2418, PRD-2425 Puppet need certificate. Deployment on Ubuntu has failed*
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  Issued with Puppet certificate distribution under Ubuntu were fixed.
-  
-*PRD-2408 Ubuntu: OSTF run: Unable to launch instance* **(M/A::marked as unresolved)**
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  Libvirt-bin for Ubuntu should be updated to version 1.1.1
-  
-*PRD-2139 "Check network connectivity from instance without floating IP" functional test failed on good ha nova-network env*
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  External DNS accessibility test no more fails when external DNS is actually accessible.
-  
-*PRD-2179 OSTF tests skip "Create instance flavor"* **(M/A::marked as unresolved)**
+*KVM-QEMU crashes due to incorrect disk cache mode*
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  Test "Create instance flavor" is skipped by mistake.
+  Fixed the issue when Fuel incorrectly sets KVM disk cache mode on bare-metal nodes.
   
-*PRD-2223, PRD-2224, PRD-2225 Traceback: fuel_health.tests.sanity.test_sanity_murano.MuranoSanityTests.test_create_and_delete_service*
+
+*Smoke test fails at "Create new security group"*
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  Fixed smoke tests in Fuel UI.
+ 
+*Traceback: fuel_health.tests.platform_tests.test_platform_savanna.PlatformSavannaTests.test_platform_savanna*
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  Fixed Murano+Savanna built-in smoke test failure.
+  
+  
+Known issues
+------------ 
+  
+*Instance volume doesn't create in Horizon*
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  Instance volume creation built-in test in OpenStack dashboard is broken.
+  
+*Size of networks change after moving to VLAN Manager and untagging*
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  Size of networks changes incorrectly after all networks made untagged and VLAN manager selected.
+  
+*Red Hat OpenStack with HA: error on controller and compute nodes*
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  RHOS may fail to deploy with default settings in HA mode
+  
+*No storage and management network ranges in astute.yaml with Neutron*
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  Ceph uses storage_network_range and management_network_range keys in fuel_settings 
+  to configure Ceph cluster and public networks. 
+  When Neutron is enabled, these settings are not present in astute.yaml.
+  
+*If controller-1 runs out of space, HA breaks and OpenStack API fails*
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  OpenStack API and RabbitMQ stops operation in case Controller1 runs out 
+  of free space on root partition.
+  
+*Using hardware iSCSI as backend for Cinder and Swift*
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  OpenStack documentation does not include description for several built-in
+  Cinder backend drivers. Need to add description for OpeniSCSI driver, since 
+  it is not clear for all customers how to connect remote iSCSI target to Cinder.
+  
+*Can not create more than one volume in Horizon*
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  Google Chrome issue. Several fast clicks to Create Volume button make OpenStack 
+  dashboard completely stuck until cookies not cleared.
+  
+*Separate netmask field for storage network on network settings page*
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  Need to add ability to define the netmask separate with the address range Fuel
+  assigns to deployed nodes.
+  
+*Ubuntu: quantum agents crm start hangs randomly*
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  One of quantum agents instances may hang at start step when deployed in HA mode.
+  
+*Upgrade scsi-target-utils package to version 1.0.25 or higher*
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  scsi-target-utils prior to version 1.0.25 may fail in case user creates several 
+  volumes at the same time using some batch script.
+  
+*Redesign rc-scripts for quantum-<...>-agent*
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  Neutron OVS agent drops all virtual networks and related settings on compute node after 
+  manual restart. Normally it is managed by Controller and get all settings from it.
+  
+*deleting a node should remove it from nova services*
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  Nova-compute service list does not updated after the node was deleted from 
+  OpenStack cluster and continues to show already deleted nodes as shut down.
+  
+*(/Strage[main]/Nova::Api/Exec[nova-db-sync]) change from notrun to 0 failed:*
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  Fuel deployment may fail because `nova-db sync` failure to access the controller node 
+  via mgmt interface despite the Fuel network test show all is OK.
+  
+*Nodes failed to reboot*
+^^^^^^^^^^^^^^^^^^^^^^^^
+  OpenStack deployment with nova-network and VLAN manager may fail with the following
+  Cobbler error: `internal error, unknown distro name bootstrap`
+  This issue happens because Cobbler SSH fence agent is unable to login to the 
+  bootstrap node.
+  
+*Public network in Neutron must be IP range, not CIDR*
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  Fuel does not allow to use IP ranges for Public network with Neutron enabled.
+  
+*CentOS kickstart does not wipe volume groups*
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  Fuel does not silently erase existing volume groups on the node before creating
+  new ones at the time of OpenStack node deployment.
+
+*Need validation of network ranges*
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  It is possible to create several networks with the same network number. 
+  It causes issues with instances can't obtain DHCP address.
+
+*quantum net unreachable long time (5-6 minutes)*
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  Neutron L3 agent migration time may exceed 5 minutes.
+
+*Only 10 Gb for / partition*
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  Fuel installs OpenStack nodes with too low free space on root partition.
+
+*IntegrityError: (IntegrityError) null value in column "mac" violates not-null constraint*
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  Puppet agent may save incorrect data to master node.
+  
+*Test "Stack list availability" has failed without any messages*
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  OSTF tests may fail without any messages.
+
+*Test "Create stack, check its details, then update and delete stack" has failed without any messages*
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  OSTF tests may fail without any messages.
+
+*Puppet need certificate. Deployment on Ubuntu has failed*
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  Ceph node deployment may fail due to Puppet certificate error.
+
+*Ubuntu: OSTF run: Unable to launch instance*
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  Libvirt-bin for Ubuntu should be updated to version 1.1.1
+
+*Check network connectivity from instance without floating IP" functional test failed on good ha nova-network env*
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  External DNS accessibility test fails when external DNS is actually accessible.
+
+*OSTF tests skip "Create instance flavor"*
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  Test "Create instance flavor" is skipped by mistake.
+
+*Traceback: fuel_health.tests.sanity.test_sanity_murano.MuranoSanityTests.test_create_and_delete_service*
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   Murano (Windows virtual machine support in OpenStack) tests failure.
   This failure happens by design - manual test preparations from user side
   required to run Murano tests.
   These steps may be found at https://github.com/Mirantis/fuel-docs/pull/29
   
-  
+*Traceback: fuel_health.tests.platform_tests.test_murano.MuranoDeploymentSmokeTests.test_deploy_sql_cluster*
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  Issue with SQL cluster deployment in built-in smoke tests.
+
+*Traceback: fuel_health.tests.platform_tests.test_murano.MuranoDeploymentSmokeTests.test_deploy_iis_farm*
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  Issue with AD,  IIS and ASPNet farm deployment in built-in smoke tests.
+
+*Traceback: fuel_health.tests.platform_tests.test_heat.TestStackAction.test_stack*
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  Broken test stack in built-in smoke tests.
+
+*RHOS HA mode: Test "Check data replication over mysql" failed without message*
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  MySQL data replication test under RHOS in built-in smoke tests is broken.
