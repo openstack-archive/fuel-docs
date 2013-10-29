@@ -103,8 +103,7 @@ It is important to note:
   and public Openstack API.
 * Is a best if you place the Private, Admin, Public and Management networks on a 
   separate NIC to ensure that traffic is separated adequately.
-* Admin and Private networks must be located on separate NICs from the 
-  other networks.
+* You need a dedicated NIC each for Admin and Private networks.
 
 A typical network configuration for Neutron with VLAN segmentation might look
 like this:
