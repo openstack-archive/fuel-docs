@@ -9,7 +9,6 @@
 .. include:: /pages/reference-architecture/0010-overview.rst
 .. include:: /pages/reference-architecture/0012-simple.rst
 .. include:: /pages/reference-architecture/0014-compact.rst
-.. include:: /pages/reference-architecture/0016-full.rst
 .. include:: /pages/reference-architecture/0015-closer-look.rst
 .. include:: /pages/reference-architecture/0018-red-hat-differences.rst
 .. include:: /pages/reference-architecture/0020-logical-setup.rst

@@ -1,7 +1,27 @@
 .. index:: Neutron vs. nova-network, Quantum vs. nova-network
 
-Neutron vs. Nova Network
+Neutron vs. nova-network
 ========================
+
+Neutron (formerly Quantum) is a service which provides Networking-as-a-Service 
+functionality in OpenStack. It has a rich tenant-facing API for defining 
+network connectivity and addressing in the cloud, and gives operators the 
+ability to leverage different networking technologies to power their cloud 
+networking.
+
+There are various deployment use cases for Neutron. Fuel supports the most 
+common of them, called Per-tenant Routers with Private Networks. 
+Each tenant has a virtual Neutron router with one or more private networks,
+which can communicate with the outside world. 
+This allows full routing isolation for each tenant private network.
+
+Neutron is not, however, required in order to run an OpenStack environment. If 
+you don't need (or want) this added functionality, it's perfectly acceptable to 
+continue using nova-network.
+
+In order to deploy Neutron, you need to enable it in the Fuel configuration. 
+Fuel sets up Neutron components on each of the controllers to act as a router 
+in HA (if deploying in HA mode).
 
 Terminology
 -----------
@@ -26,73 +46,26 @@ Terminology
 
 Overview
 --------
-
-With Fuel you can chose between two network providers: Nova Network and Neutron.
-
-Nova Network
-------------
-
-Nova Network is based on standart Linux bridges and uses firewall of the host node.
-Nova Network was a default network provider in OpenStack before Grizzly release.
-It can use two network managers: Flat DHCP Manager and Vlan Manager.
-
-* **Flat DHCP Manager** keeps all tenants in one L2 broadcast segment, so there is nothing
-  about security and tenant isolation. If you want to make a quick and simple
-  cluster you can use this manager.
-
-* **Vlan Manager** uses VLANs to separate tenants from each other.
-
-Because of Nova Network uses the host node's kernel for an IP routing, 
-the IP address spaces inside of tenants can't be intersected.
-Also you can not apply restrictions to a tenant's internal traffic at cluster level.
-All traffic filtering in Nova Network applies at the border between external network and
-tenant's internal network.
-
-Neutron
--------
-
-Neutron (formerly Quantum) is a service which provides Networking-as-a-Service 
-functionality in OpenStack. It has a rich tenant-facing API for defining 
-network connectivity and addressing in the cloud, and gives operators the 
-ability to leverage different networking technologies to power their cloud 
-networking.
-
-There are various deployment use cases for Neutron. Fuel supports the most 
-common of them, called Per-tenant Routers with Private Networks. 
-Each tenant has a virtual Neutron router with one or more private networks,
-which can communicate with the outside world. 
-This allows full routing isolation for each tenant private network.
-
-Neutron is not, however, required in order to run an OpenStack environment. If 
-you don't need (or want) this added functionality, it's perfectly acceptable to 
-continue using Nova Network.
-
-In order to deploy Neutron, you need to enable it in the Fuel configuration. 
-Fuel sets up Neutron components on each of the controllers to act as a router 
-in HA (if deploying in HA mode).
-
-OpenStack networking with Neutron has some differences from 
-Nova Network. Neutron is able to virtualize and manage both layer 2 (logical) 
+OpenStack networking with Neutron (Quantum) has some differences from 
+Nova-network. Neutron is able to virtualize and manage both layer 2 (logical) 
 and layer 3 (network) of the OSI network model, as compared to simple layer 3 
-virtualization provided by Nova Network. This is the main difference between 
+virtualization provided by nova-network. This is the main difference between 
 the two networking models for OpenStack. Virtual networks (one or more) can be 
 created for a single tenant, forming an isolated L2 network called a 
 "private network". Each private network can support one or many IP subnets.
 Private networks can be segmented using two different technologies:
 
-* **VLAN segmentation** "Private network" traffic is managed by Neutron
-  by the use of a dedicated network adapter. This network segment also must be 
-  reserved only for Neutron on each host (Computes and Controllers). 
+* **VLAN segmentation** "Private network" traffic is managed by 
+  Neutron by the use of a dedicated network adapter. This network adapter must be 
+  attached to a untagged network port. This network segment also must be 
+  reserved only for Neutron on each host (Computes and Controllers). You should 
+  not use any other 802.1q VLANs on this network for other purposes. 
   Additionally, each private network requires its own dedicated VLAN, selected 
   from a given range configured in Fuel UI. 
 * **GRE segmentation** In this mode of operation, Neutron does not
   require a dedicated network adapter. Neutron builds a mesh of GRE tunnels from
   each compute node and controller nodes to every other node. Private networks
-  for each tenant make use of this mesh for isolated traffic.
-  The good point for using GRE segmentation is when you don't have enough 
-  free VLAN ranges in your network backbone or single L2 segment for all nodes
-  cannot be established. But GRE processing eats system resources a lot as well
-  as network performance.
+  for each tenant make use of this mesh for isolated traffic. 
 
 It is important to note:
 
@@ -103,7 +76,8 @@ It is important to note:
   and public Openstack API.
 * Is a best if you place the Private, Admin, Public and Management networks on a 
   separate NIC to ensure that traffic is separated adequately.
-* You need a dedicated NIC each for Admin and Private networks.
+* Admin and Private networks must be located together on separate NIC from the 
+  other networks.
 
 A typical network configuration for Neutron with VLAN segmentation might look
 like this:
@@ -120,58 +94,45 @@ like this:
   
 The most likely configuration for different number NICs on cluster nodes:
 
-+------+----------------------------------------+-------------------------------------------+ 
-| NICs | VLAN                                   |                        GRE                | 
-+======+========================================+===========================================+ 
-|   2  |  Not supported                         | .. image:: /_images/q32_gre_2nic.svg      | 
-|      |                                        |    :align: center                         |
-|      |                                        |    :width: 500                            |
-|      |                                        |    :height: 200                           |
-+------+----------------------------------------+-------------------------------------------+
-|   3  | .. image:: /_images/q32_vlan_3nic.svg  | .. image:: /_images/q32_gre_3nic.svg      |
-|      |    :align: center                      |    :align: center                         |
-|      |    :width: 500                         |    :width: 500                            |
-|      |    :height: 250                        |    :height: 250                           |
-+------+----------------------------------------+-------------------------------------------+
-|   4  | .. image:: /_images/q32_vlan_4nic.svg  | .. image:: /_images/q32_gre_4nic.svg      |
-|      |    :align: center                      |    :align: center                         |
-|      |    :width: 500                         |    :width: 500                            |
-|      |    :height: 300                        |    :height: 300                           |
-+------+----------------------------------------+-------------------------------------------+
++------+----------------------------------------+----------------------------------------+ 
+| NICs | VLAN                                   |                        GRE             | 
++======+========================================+========================================+ 
+|   2  |  Not supported                         | .. image:: /_images/q32_gre_2nic.svg   | 
+|      |                                        |    :align: center                      |
++------+----------------------------------------+----------------------------------------+
+|   3  | .. image:: /_images/q32_vlan_3nic.svg  | .. image:: /_images/q32_gre_3nic.svg   |
+|      |    :align: center                      |    :align: center                      |
++------+----------------------------------------+----------------------------------------+
+|   4  | .. image:: /_images/q32_vlan_4nic.svg  | .. image:: /_images/q32_gre_4nic.svg   |
+|      |    :align: center                      |    :align: center                      |
++------+----------------------------------------+----------------------------------------+
 
 
 Known limitations
 -----------------
 
-* To deploy OpenStack using Neutron with GRE segmentation, each node requires at
-least 2 NICs.
-* To deploy OpenStack using Neutron with VLAN segmentation, each node requires
-at least 3 NICs.
-
 * Neutron will not allocate a floating IP range for your tenants. After each 
   tenant is created, a floating IP range must be created. Note that this does 
   not prevent Internet connectivity for a tenant's instances, but it would 
   prevent them from receiving incoming connections. You, the administrator, 
-  should assign a floating IP network for the tenant. Below are steps you can 
+  should assign a floating IP addresses for the tenant. Below are steps you can 
   follow to do this:
 
-  ::
+  | get admin credentials:
+  | # source /root/openrc
+  | get admin tenant-ID:
+  | # keystone tenant-list
 
-    %get admin credentials:
-    (bash)# source /root/openrc
-    %get admin tenant-ID:
-    (bash)# keystone tenant-list
-    
-    +----------------------------------+----------+---------+
-    |                id                |   name   | enabled |
-    +==================================+==========+=========+
-    | b796f91df6b84860a7cd474148fb2229 |  admin   |   True  |
-    +----------------------------------+----------+---------+
-    | cba7b0ff68ee4985816ac3585c8e23a9 | services |   True  |
-    +----------------------------------+----------+---------+
-    
-    %create floating-ip for admin tenant:
-    (bash)# quantum floatingip-create --tenant-id=b796f91df6b84860a7cd474148fb2229 net04_ext
+  +----------------------------------+----------+---------+
+  |                id                |   name   | enabled |
+  +==================================+==========+=========+
+  | b796f91df6b84860a7cd474148fb2229 |  admin   |   True  |
+  +----------------------------------+----------+---------+
+  | cba7b0ff68ee4985816ac3585c8e23a9 | services |   True  |
+  +----------------------------------+----------+---------+
+
+  | create one floating-ip address for admin tenant:
+  | # quantum floatingip-create --tenant-id=b796f91df6b84860a7cd474148fb2229 net04_ext
 
 * You can't combine Private or Admin network with any other networks on one NIC.
 * To deploy OpenStack using Neutron with GRE segmentation, each node requires at

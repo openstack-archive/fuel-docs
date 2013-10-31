@@ -5,7 +5,7 @@
 .. index:: Download Fuel
 
 Downloading Fuel
-===============
+================
 
 Before installation, download the installation image from the `Mirantis
 web-site <http://fuel.mirantis.com/redirect-page/>`_.
@@ -26,6 +26,6 @@ Fuel provides the following installation options:
 
 * **Raw sector file (IMG)**
   For instalation from flash media devices (USB).
-Both installation images contain the installer for Fuel Master node.
+  Both installation images contain the installer for Fuel Master node.
 
 .. seealso:: `Downloads <http://fuel.mirantis.com/your-downloads/>`_  

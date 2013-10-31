@@ -6,7 +6,7 @@
   +-------------------------------------+-----------------------------------+
   | Fuel for Openstack v3.2             |                .. cssclass:: right|
   |                                     |                                   |
-  | Installation Guide                  |                    ###Section###  |
+  | Pre-Installation Guide              |                    ###Section###  |
   +-------------------------------------+-----------------------------------+
 
 .. footer::
@@ -25,7 +25,7 @@
 
 .. toctree:: Table of Contents
    :maxdepth: 2     
-.. include:: contents/contents-install.rst
+.. include:: contents/contents-pre-install-guide.rst
 
 
    

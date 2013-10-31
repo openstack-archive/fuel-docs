@@ -4,6 +4,9 @@
 
 .. index:: Fuel UI: Network Configuration
 
+.. _fuelui-network:
+
+
 Understanding and Configuring the Network
 =========================================
 

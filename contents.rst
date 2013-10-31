@@ -13,6 +13,7 @@ Documentation
   install-guide
   user-guide
   reference-architecture
+  pre-install-guide
   release-notes
   frequently-asked-questions
   eula
