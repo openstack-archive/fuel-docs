@@ -72,8 +72,8 @@ It is important to note:
 * if you use tagged networks for your configuration 
   and combine multiple networks onto one NIC, you should make the Public 
   network untagged on this NIC. 
-  It is not a requirement, but best for access to the Openstack Dashboard 
-  and public Openstack API.
+  It is not a requirement, but best for access to the OpenStack Dashboard 
+  and public OpenStack API.
 * Is a best if you place the Private, Admin, Public and Management networks on a 
   separate NIC to ensure that traffic is separated adequately.
 * Admin and Private networks must be located together on separate NIC from the 

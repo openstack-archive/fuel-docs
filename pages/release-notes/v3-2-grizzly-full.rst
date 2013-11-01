@@ -173,7 +173,7 @@ Inclusion of Inktank’s Ceph software-defined storage system in the
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 hardened packages and the ability to deploy Ceph via Fuel
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Included now in the Mirantis Openstack hardened packages is Inktank’s 
+Included now in the Mirantis OpenStack hardened packages is Inktank’s 
 Ceph software-defined storage system.  Ceph can be used either as an 
 object storage option for Glance or as a block storage option for Cinder. 
 As you define an OpenStack environment through the Fuel UI, you may 
@@ -195,7 +195,7 @@ Inclusion of the OpenStack Savanna and Murano projects in the hardened
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 packages and the ability to deploy them via Fuel
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Savanna and Murano are related Openstack projects initially led by 
+Savanna and Murano are related OpenStack projects initially led by 
 Mirantis.  Savanna enables on demand provisioning of Hadoop clusters 
 that can run on top of OpenStack.  Savanna includes support for many 
 different distributions of Hadoop including Hortonworks, Cloudera and 

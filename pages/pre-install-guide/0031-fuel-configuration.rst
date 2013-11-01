@@ -88,7 +88,7 @@ including networking, storage, and optional parameters.
 | 1  | Point your browser to the  | For example: http://10.20.0.2:8000/       |
 |    | Fuel server (on port 8000) |                                           |
 +----+----------------------------+-------------------------------------------+
-| 2  | Click on the **New**       | The **Create a new Openstack              |
+| 2  | Click on the **New**       | The **Create a new OpenStack              |
 |    | *OpenStack environment*    | Environment** wizard launches             |
 |    | icon to create a new       | automatically.                            |
 |    | environment.               |                                           |
@@ -112,7 +112,7 @@ including networking, storage, and optional parameters.
 |    | service (Nova-network,     | choose FlatDHCP or VLAN Manager later in  |
 |    | Neutron with GRE           | the **Network** settings tab.             |
 |    | segmentation or Neutron    |                                           |
-|    | with vlan segmentation.    |                                           |
+|    | with VLAN segmentation.    |                                           |
 +----+----------------------------+-------------------------------------------+
 | 7  | Select your storage        | If you select **default**, then the Local |
 |    | backend for Cinder.        | Volumes over iSCSI are used as backend for|
@@ -142,7 +142,7 @@ including networking, storage, and optional parameters.
 |    |                            | compute role.                             |
 +----+----------------------------+-------------------------------------------+
 | 12 | In **Network** tab,        | If you chose Neutron as your network      |
-|    | configure the network      | service, additioanl sections are          |
+|    | configure the network      | service, additional sections are          |
 |    | settings from the address  | available for setting your L2 and L3      |
 |    | plan prepared earlier.     | configuration.                            |
 +----+----------------------------+-------------------------------------------+
@@ -158,7 +158,7 @@ including networking, storage, and optional parameters.
 |    | logging, and other         |                                           |
 |    | OpenStack options.         |                                           |
 +----+----------------------------+-------------------------------------------+
-| 15 | Click the **Deploy**       | Mirantis OpenStack deploymenent may take  |
+| 15 | Click the **Deploy**       | Mirantis OpenStack deployment may take    |
 |    | **Changes** button.        | 15-60 minutes, depending on your the      |
 |    |                            | selected options. You can monitor status  |
 |    |                            | by opening the **Nodes** tab or by        |

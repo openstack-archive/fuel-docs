@@ -19,7 +19,7 @@ can read these two resources:
 
 * `OpenStack Networking – FlatManager and FlatDHCPManager 
   <http://www.mirantis.com/blog/openstack-networking-flatmanager-and-flatdhcpmanager/>`_
-* `Openstack Networking for Scalability and Multi-tenancy with VLANManager 
+* `OpenStack Networking for Scalability and Multi-tenancy with VLANManager 
   <http://www.mirantis.com/blog/openstack-networking-vlanmanager/>`_
 * `Neutron - OpenStack <https://wiki.openstack.org/wiki/Neutron/>`_
 

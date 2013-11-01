@@ -1,4 +1,4 @@
-.. index:: Introductio
+.. index:: Introduction
 
 .. _QSIntro:
 
@@ -27,4 +27,4 @@ Installing Fuel for OpenStack includes the following tasks:
 
 #. Install Node servers.
 
-#. Verify your succesesful deployment.
+#. Verify your successful deployment.

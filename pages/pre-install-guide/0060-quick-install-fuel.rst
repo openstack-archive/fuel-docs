@@ -52,7 +52,7 @@ To install Fuel using the ISO image:
    4. Click **Apply**.
 
 14. Click **Deploy Changes**.
-    Depending on your environemnt deployment of Mirantis OpenStack may take 
+    Depending on your environment deployment of Mirantis OpenStack may take 
     some time. 
 
 After you deployed Mirantis OpenStack, verify the configuration by

@@ -25,7 +25,7 @@ Suggested minimum configuration for installation in production environment:
 -  128GB SAS Disk
 -  IPMI access through independent management network
 
-Suggested minumum configuration for installation in lab environment:
+Suggested minimum configuration for installation in lab environment:
 
 -  Dual-core CPU
 -  2GB RAM

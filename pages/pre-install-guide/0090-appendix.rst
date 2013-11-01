@@ -9,7 +9,7 @@ As a model example, the following configuration is used:
 
 **Hardware and environment:**
 
-* 7 servers with two 1Gb/s ethernet NIC and IPMI
+* 7 servers with two 1Gb/s Ethernet NIC and IPMI
 * 1 Cisco Catalyst 2960G switch
 * Independent out of band management network for IPMI
 * Connection to the Internet or/and DC network via a router called
@@ -26,7 +26,7 @@ As a model example, the following configuration is used:
 **Network configuration plan:**
 
 * Public network 172.16.1.0/24
-* Floting network 172.16.0.0/24 in VLAN 100
+* Floating network 172.16.0.0/24 in VLAN 100
 * Management network 192.168.0.0/24 in VLAN 101
 * Storage network 192.168.1.0/24 in VLAN 102
 * Private (Fixed) network 10.0.0.0/24 in VLAN 103
@@ -39,7 +39,7 @@ As a model example, the following configuration is used:
 * DNS 10.20.0.1
 
 .. note:: The Internet and rest of DC access is available through the  Public 
-          network (for Openstack Nodes) and Administrative network (Fuel server)
+          network (for OpenStack Nodes) and Administrative network (Fuel server)
 
 From the server node side, ports with the following VLAN IDs for
 networks are used:
@@ -92,23 +92,22 @@ assignment.
 +--------+-------------------+--------+-----------+-------------------------+
   
 
-Connect the cable servers to the switch as in the diagram below:
+Connect the servers to the switch as in the diagram below:
 
 .. image:: /_images/preinstall_d_switch_connect.jpg 
    :align: center
 
-The following diagram describes network for this environment.
+The following diagram describes the network topology for this environment.
 
 .. image:: /_images/preinstall_d_logic_network.jpg
    :align: center
 
-To deploy Mirantis OpenStack, use the following  switch
-configuration.
   
 Switch configuration (Cisco Catalyst 2960G)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-::
+Use the following configuration to deploy Mirantis OpenStack using a Cisco
+Catalyst 2960G network switch.::
 
   service timestamps debug datetime msec localtime show-timezone
   service timestamps log datetime msec localtime show-timezone
@@ -152,13 +151,13 @@ Switch configuration (Cisco Catalyst 2960G)
    name Admin
    !
   interface GigabitEthernet0/1
-     description Fule Node eth0
+     description Fuel Node eth0
      switchport access vlan 104
      switchport mode access
      spanning-tree portfast
      !
   interface GigabitEthernet0/2
-     description Fule Node eth1 (optional to have direct access to Public net) 
+     description Fuel Node eth1 (optional to have direct access to Public net) 
      switchport access vlan 100
      switchport mode access
      spanning-tree portfast
@@ -275,7 +274,8 @@ Switch configuration (Cisco Catalyst 2960G)
 Switch configuration (Juniper EX4200)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-::
+Use the following configuration to deploy Mirantis OpenStack using
+Juniper EX4200 network switch.::
 
   system {
       host-name OpenStack_sw1;
@@ -296,7 +296,7 @@ Switch configuration (Juniper EX4200)
   
   interfaces {
       ge-0/0/0 {
-          description Fule Node eth0;
+          description Fuel Node eth0;
               unit 0 {
                   family ethernet-switching {
                          port-mode access;
@@ -307,7 +307,7 @@ Switch configuration (Juniper EX4200)
               }
       }
       ge-0/0/1 {
-          description Fule Node eth1 (optional to have direct access to Public
+          description Fuel Node eth1 (optional to have direct access to Public
   net);
               unit 0 {
                   family ethernet-switching {
@@ -552,7 +552,7 @@ As a model example, the following configuration is used:
 
 **Network Configuration Plan:**
 
-* Floating/Public network 172.16.0.0/24 in VLAN 100 (unttaged on
+* Floating/Public network 172.16.0.0/24 in VLAN 100 (untagged on
   servers)
 * Floating IP range 172.16.0.130 - 254
 * Internal network (private) 192.168.111.0/24
@@ -569,7 +569,7 @@ As a model example, the following configuration is used:
 * Default gateway: 10.20.0.1 
 * DNS: 10.20.0.1
 
-.. note:: The Internet and rest of DC access via Public network (for Openstack
+.. note:: The Internet and rest of DC access via Public network (for OpenStack
           Nodes) and Administrative network (Fuel server).
 
 From server side, ports with following VLAN IDs are used:
@@ -623,7 +623,7 @@ The following table describes port configuration for this deployment.
 Switch configuration (Cisco Catalyst 2960G)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Use the following configuration to deploy Mirantis OpenStack using Cisco
+Use the following configuration to deploy Mirantis OpenStack using a Cisco
 Catalyst 2960G network switch.
 
 ::
@@ -668,13 +668,13 @@ Catalyst 2960G network switch.
   name Admin
   !
   interface GigabitEthernet0/1
-   description Fule Node eth0
+   description Fuel Node eth0
    switchport access vlan 103
    switchport mode access
    spanning-tree portfast
   !
   interface GigabitEthernet0/2
-   description Fule Node eth1 (optional to have direct access to Public net)
+   description Fuel Node eth1 (optional to have direct access to Public net)
    switchport access vlan 100
    switchport mode access
    spanning-tree portfast
@@ -820,7 +820,7 @@ Juniper EX4200 network switch.
   
   interfaces {
       ge-0/0/0 {
-          description Fule Node eth0;
+          description Fuel Node eth0;
               unit 0 {
                   family ethernet-switching {
                          port-mode access;
@@ -831,7 +831,7 @@ Juniper EX4200 network switch.
               }
       }
       ge-0/0/1 {
-          description Fule Node eth1 (optional to have direct access to Public
+          description Fuel Node eth1 (optional to have direct access to Public
   net);
               unit 0 {
                   family ethernet-switching {

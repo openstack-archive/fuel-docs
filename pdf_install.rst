@@ -4,7 +4,7 @@
   .. cssclass:: header-table
   
   +-------------------------------------+-----------------------------------+
-  | Fuel for Openstack v3.2             |                .. cssclass:: right|
+  | Fuel for OpenStack v3.2             |                .. cssclass:: right|
   |                                     |                                   |
   | Installation Guide                  |                    ###Section###  |
   +-------------------------------------+-----------------------------------+

@@ -37,7 +37,7 @@ a successful deployment.
 | The node servers are set to network boot using PXE.    |              |
 +--------------------------------------------------------+--------------+
 | You have a method to reboot node servers (remotely or  |              |
-| onsite).                                               |              |
+| on-site).                                              |              |
 +--------------------------------------------------------+--------------+
 | The network equipment supports VLANs.                  |              |
 +--------------------------------------------------------+--------------+
@@ -49,8 +49,8 @@ a successful deployment.
 | the Fuel server from your PC).                         |              |
 +--------------------------------------------------------+--------------+
 
-.. note:: You needd this for VLAN Manager or Quantum VLAN mode, where tagged
-  ports are required.
+.. note:: * You need tagged ports in order to use Nova-network VLAN Manager or 
+          Neutron with VLAN segmentation.
 
 If you checked all the boxes in the above table, you are ready to deploy
-Mirantis Openstack with Fuel.
+Mirantis OpenStack with Fuel.
