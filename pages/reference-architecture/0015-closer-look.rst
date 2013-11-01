@@ -7,7 +7,7 @@
 .. _Close_look_Multi-node_HA:
 
 Details of Multi-node with HA Deployment
-===================================
+========================================
 
 In this section, you'll learn more about the Multi-node with HA 
 deployment configuration and how it achieves high availability. As you may 

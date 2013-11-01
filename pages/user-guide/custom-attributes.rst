@@ -51,14 +51,13 @@ Let’s try to add new module that will install some useful packages from reposi
 which is located on the master node.
 
 In this example, our module will be named *'packages'* and it will have following 
-structure::
+structure:::
 
 	packages/
 	packages/manifests
 	packages/manifests/init.pp
 
-**init.pp** should have this content:
-
+**init.pp** should have this content:::
 	class profile {
 		$tools = $::fuel_settings['tools']
 		package { $tools :
@@ -94,6 +93,6 @@ if it's not default.
 This operation has following effects:
 	
 	* parameters which are about to send to orchestrator are replaced completely with 
-	the ones you specified
+	  the ones you specified
 	* cluster sets *is_customized* flag, which is checked by UI, so you will get a 
-	message about attributes customization
+	  message about attributes customization

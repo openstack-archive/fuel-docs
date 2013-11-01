@@ -1,5 +1,6 @@
 .. index:: Installation Guide
-.. _Installation_Guide:
+
+.. _install-guide:
 
 =====================
 Installation Guide

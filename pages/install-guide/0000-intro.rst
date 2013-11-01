@@ -10,7 +10,7 @@ This section introduces Fuel for OpenStack and its components.
 Introducing Fuel for OpenStack
 --------------------------------
 
-Mirantis Fuel for Openstack is a set of deployment tools that helps you to 
+Mirantis Fuel for OpenStack is a set of deployment tools that helps you to 
 quickly deploy your cloud environment. Fuel includes the scripts that 
 dramatically facilitate and speed up the process of cloud deployment. 
 Typically, OpenStack installation requires you familiarize yourself 
@@ -56,7 +56,7 @@ Fuel includes the following components:
 * **Master Node**
    The Fuel Master Node is the lifecycle management application for
    deployment and managing OpenStack. It sits outside the OpenStack
-   environment and services as a control plane for multiple Openstack
+   environment and services as a control plane for multiple OpenStack
    envionments. 
 
 * **Controller Node**

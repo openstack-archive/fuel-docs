@@ -6,6 +6,7 @@ Object Storage Deployment
 =========================
 
 .. TODO(mihgen): we need to rewrite this and add info about Ceph
+
 Fuel currently supports several scenarios to deploy the object storage:
 
 **Glance + Ceph**
