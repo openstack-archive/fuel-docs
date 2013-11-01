@@ -3,9 +3,9 @@ Example 1: HA + Nova-network FlatDHCP manager
 
 As a model example, the following configuration is used:
 
-* Deployment mode: Multi-node HA
+* **Deployment mode:** Multi-node HA
 
-* Networking model: Nova-network FlatDHCP manager
+* **Networking model:** Nova-network FlatDHCP manager
 
 **Hardware and environment:**
 
@@ -13,7 +13,7 @@ As a model example, the following configuration is used:
 * 1 Cisco Catalyst 2960G switch
 * Independent out of band management network for IPMI
 * Connection to the Internet or/and DC network via a router called
-  *Gateway* and IP 172.16.1.1
+  **Gateway** and IP 172.16.1.1
 
 **Node Server roles:**
 
@@ -44,188 +44,63 @@ As a model example, the following configuration is used:
 From the server node side, ports with the following VLAN IDs for
 networks are used:
 
-* eth0 - Management VLAN 101 (tagged), Storage VLAN 102(tagged) and
-         Administrative VLAN 104 (untagged)
-* eth1 - Public/Floating VLAN 100 (tagged), Private VLAN 103 (tagged)
+* eth0 -  Management VLAN 101 (tagged), Storage VLAN 102(tagged) and 
+ Administrative VLAN 104 (untagged)
+* eth1 -  Public/Floating VLAN 100 (tagged), Private VLAN 103 (tagged)
 
 
-Detailed ports configuration
+Detailed Port Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-::
- 
-  Switch port
-  
-  Server name
-  
-  Server NIC
-  
-  tagged/
-  
-  untagged
-  
-  VLAN IDs
-  
-  G0/1
+The following table describes the detailed  port configuration and VLAN
+assignment. 
 
-  Fuel
++--------+-------------------+--------+-----------+-------------------------+
+| Switch | Server name       | Server | tagged /  | VLAN ID                 |
+| Port   |                   | NIC    | untagged  |                         |
++========+===================+========+===========+=========================+   
+| G0/1   | Fuel              | eth0   | untagged  | 104                     |
++--------+-------------------+--------+-----------+-------------------------+
+| G0/2   | Fuel              | eth1   | untagged  | 100                     |
++--------+-------------------+--------+-----------+-------------------------+  
+| G0/3   | Compute Node 1    | eth0   | tagged    | 101, 102, 104 (untagged)|
++--------+-------------------+--------+-----------+-------------------------+
+| G0/4   | Compute Node 1    | eth1   | tagged    | 100, 103                |
++--------+-------------------+--------+-----------+-------------------------+
+| G0/5   | Compute Node n    | eth0   | tagged    | 101, 102, 104 (untagged)|
++--------+-------------------+--------+-----------+-------------------------+
+| G0/6   | Compute Node n    | eth1   | tagged    | 100, 103                |
++--------+-------------------+--------+-----------+-------------------------+
+| G0/7   | Controller Node 1 | eth0   | tagged    | 101, 102, 104(untagged) |
++--------+-------------------+--------+-----------+-------------------------+
+| G0/8   | Controller Node 1 | eth1   | tagged    | 100, 103                |
++--------+-------------------+--------+-----------+-------------------------+
+| G0/9   | Controller Node 2 | eth0   | tagged    | 101, 102, 104 (untagged)|
++--------+-------------------+--------+-----------+-------------------------+
+| G0/10  | Controller Node 2 | eth1   | tagged    | 100, 103                |
++--------+-------------------+--------+-----------+-------------------------+
+| G0/11  | Controller Node 3 | eth0   | tagged    | 101, 102, 104 (untagged)|
++--------+-------------------+--------+-----------+-------------------------+
+| G0/12  | Controller Node 3 | eth1   | tagged    | 100, 103                |
++--------+-------------------+--------+-----------+-------------------------+
+| G0/13  | Cinder Node       | eth0   | tagged    | 101, 102, 104 (untagged)|
++--------+-------------------+--------+-----------+-------------------------+
+| G0/14  | Cinder Node       | eth1   | tagged    | 100, 103                |
++--------+-------------------+--------+-----------+-------------------------+
+| G0/24  | Router (default   | -      | untagged  | 100                     |
+|        | gateway)          |        |           |                         |
++--------+-------------------+--------+-----------+-------------------------+
   
-  eth0
-  
-  untagged
-  
-  104
-  
-  G0/2
-  
-  Fuel
-  
-  eth1
-  
-  untagged
-  
-  100
-  
-  G0/3
-  
-  Compute Node 1
-  
-  eth0
-  
-  tagged
-  
-  101, 102, 104 (untagged)
-  
-  G0/4
-  
-  Compute Node 1
-  
-  eth1
-  
-  tagged
-  
-  100, 103
-  
-  G0/5
-  
-  Compute Node n
-  
-  eth0
-  
-  tagged
-  
-  101, 102, 104 (untagged)
-  
-  G0/6
-  
-  Compute Node n
-  
-  eth1
-  
-  tagged
-  
-  100, 103
-  
-  G0/7
-  
-  Controller Node 1
-  
-  eth0
-  
-  tagged
-  
-  101, 102, 104 (untagged)
-  
-  G0/8
-  
-  Controller Node 1
-  
-  eth1
-  
-  tagged
-  
-  100, 103
-  
-  G0/9
-  
-  Controller Node 2
-
-  eth0
-  
-  tagged
-  
-  101, 102, 104 (untagged)
-  
-  G0/10
-  
-  Controller Node 2
-  
-  eth1
-  
-  tagged
-  
-  100, 103
-  
-  G0/11
-  
-  Controller Node 3
-  
-  eth0
-  
-  tagged
-  
-  101, 102, 104 (untagged)
-  
-  G0/12
-  
-  Controller Node 3
-  
-  eth1
-  
-  tagged
-  
-  100, 103
-  
-  G0/13
-  
-  Cinder Node
-  
-  eth0
-  
-  tagged
-  
-  101, 102, 104 (untagged)
-  
-  G0/14
-  
-  Cinder Node
-  
-  eth1
-  
-  tagged
-  
-  100, 103
-  
-  G0/24
-  
-  Router (default gateway)
-   
-  -
-
-  untagged
-
-  100
-  
-  --------------|image9|
-
 
 Connect the cable servers to the switch as in the diagram below:
 
-|image9|
+.. image:: /_images/preinstall_d_switch_connect.jpg 
+   :align: center
 
-The following diagram describes the network for this environment.
+The following diagram describes network for this environment.
 
-|image10|
+.. image:: /_images/preinstall_d_logic_network.jpg
+   :align: center
 
 To deploy Mirantis OpenStack, use the following  switch
 configuration.
@@ -654,235 +529,102 @@ Switch configuration (Juniper EX4200)
 
 Example 2: HA + Neutron with GRE
 --------------------------------
+As a model example, the following configuration is used:
 
+* **Deploying mode:** Multi-node HA
 
-**Deploying mode:** Multi-node HA
+* **Networking model:** Neutron with GRE
 
-**Networking model:** Neutron with GRE
+**Hardware and environment:**
 
-Hardware and environment:
+* 7 servers with two 1Gb/s ethernet NIC and IPMI
+* 1 Cisco Catalyst 3750 switch
+* Independent out of band management network for IPMI
+* Connection to the Internet or/and DC network via a router called
+  **Gateway** and IP 172.16.1.1
 
--  7 servers with two 1Gb/s ethernet NIC and IPMI
--  1 Cisco Catalyst 3750 switch
--  Independent out of band management network for IPMI
--  Connection to the Internet or/and DC network via a router called
-   “Gateway” and IP 172.16.1.1
+**Node servers roles:**
 
-` <#>`__
+* 1 server as Fuel Node
+* 3 servers as Controller Node
+* 1 server as Cinder Node
+* 2 servers as Compute Node
 
-Node servers roles:
+**Network Configuration Plan:**
 
--  1 server as Fuel Node
--  3 servers as Controller Node
--  1 server as Cinder Node
--  2 servers as Compute Node
+* Floating/Public network 172.16.0.0/24 in VLAN 100 (unttaged on
+  servers)
+* Floating IP range 172.16.0.130 - 254
+* Internal network (private) 192.168.111.0/24
+* Gateway 192.168.111.1
+* DNS 8.8.4.4, 8.8.8.8
+* Tunnel ID range 2 - 65535
+* Management network 192.168.0.0/24 in VLAN 101
+* Storage network 192.168.1.0/24 in VLAN 102
+* Administrative network (for Fuel) 10.20.0.0/24 in VLAN 103
 
-` <#>`__
+**Network Parameters**
 
-Plan of network configuration:
+* Fuel server: IP 10.20.0.2/24
+* Default gateway: 10.20.0.1 
+* DNS: 10.20.0.1
 
--  Floating/Public network 172.16.0.0/24 in VLAN 100 (unttaged on
-   servers)
+.. note:: The Internet and rest of DC access via Public network (for Openstack
+          Nodes) and Administrative network (Fuel server).
 
--  floating IP range 172.16.0.130 - 254
+From server side, ports with following VLAN IDs are used:
 
--  Internal network (private) 192.168.111.0/24
-
--  gateway 192.168.111.1
--  DNS 8.8.4.4, 8.8.8.8
--  tunnel ID range 2 - 65535
-
--  Management network 192.168.0.0/24 in VLAN 101
--  Storage network 192.168.1.0/24 in VLAN 102
--  Administrative network (for Fuel) 10.20.0.0/24 in VLAN 103
-
-Fuel server IP 10.20.0.2/24, default gateway 10.20.0.1, DNS 10.20.0.1
-
-The Internet and rest of DC access via Public network (for Openstack
-Nodes) and Administrative network (Fuel server).
-
-From server side we will use ports with following VLAN IDs for networks:
-
--  eth0 - Administrative VLAN 103 (untagged)
--  eth1 - Public/Floating VLAN 100 (untagged), Management VLAN 101
+*  eth0 - Administrative VLAN 103 (untagged)
+*  eth1 - Public/Floating VLAN 100 (untagged), Management VLAN 101
    (tagged), Storage VLAN 102 (tagged)
 
-Detailed ports configuration:
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Detailed port configuration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The following table describes port configuration for this deployment.
+
++--------+-------------------+--------+-----------+-------------------------+
+| Switch | Server name       | Server | tagged /  | VLAN ID                 |
+| Port   |                   | NIC    | untagged  |                         |
++========+===================+========+===========+=========================+
+| G0/1   | Fuel              | eth0   | untagged  | 103                     |
++--------+-------------------+--------+-----------+-------------------------+
+| G0/2   | Fuel              | eth1   | untagged  | 100                     |
++--------+-------------------+--------+-----------+-------------------------+
+| G0/3   | Compute Node 1    | eth0   | untagged  | 103                     |
++--------+-------------------+--------+-----------+-------------------------+
+| G0/4   | Compute Node 1    | eth1   | tagged    | 100(untagged), 101, 102 |
++--------+-------------------+--------+-----------+-------------------------+
+| G0/5   | Compute Node n    | eth0   | tagged    | 103                     |
++--------+-------------------+--------+-----------+-------------------------+
+| G0/6   | Compute Node n    | eth1   | tagged    | 100(untagged), 101, 102 |
++--------+-------------------+--------+-----------+-------------------------+
+| G0/7   | Controller Node 1 | eth0   | tagged    | 103                     |
++--------+-------------------+--------+-----------+-------------------------+
+| G0/8   | Controller Node 1 | eth1   | tagged    | 100(untagged), 101, 102 |
++--------+-------------------+--------+-----------+-------------------------+
+| G0/9   | Controller Node 2 | eth0   | tagged    | 103                     |
++--------+-------------------+--------+-----------+-------------------------+
+| G0/10  | Controller Node 2 | eth1   | tagged    | 100(untagged), 101, 102 |
++--------+-------------------+--------+-----------+-------------------------+
+| G0/11  | Controller Node 3 | eth0   | tagged    | 103                     |
++--------+-------------------+--------+-----------+-------------------------+
+| G0/12  | Controller Node 3 | eth1   | tagged    | 100(untagged), 101, 102 |
++--------+-------------------+--------+-----------+-------------------------+
+| G0/13  | Cinder Node       | eth0   | tagged    | 103                     |
++--------+-------------------+--------+-----------+-------------------------+
+| G0/14  | Cinder Node       | eth1   | tagged    | 100(untagged), 101, 102 |
++--------+-------------------+--------+-----------+-------------------------+
+| G0/24  | Router (default   | -      | untagged  | 100                     |
+|        | gateway)          |        |           |                         |
++--------+-------------------+--------+-----------+-------------------------+
 
-Switch port
-
-Server name
-
-Server NIC
-
-tagged/
-
-untagged
-
-VLAN IDs
-
-G0/1
-
-Fuel
-
-eth0
-
-untagged
-
-103
-
-G0/2
-
-Fuel
-
-eth1
-
-untagged
-
-100
-
-G0/3
-
-Compute Node 1
-
-eth0
-
-untagged
-
-103
-
-G0/4
-
-Compute Node 1
-
-eth1
-
-tagged
-
-100(untagged), 101, 102
-
-G0/5
-
-Compute Node n
-
-eth0
-
-tagged
-
-103
-
-G0/6
-
-Compute Node n
-
-eth1
-
-tagged
-
-100(untagged), 101, 102
-
-G0/7
-
-Controller Node 1
-
-eth0
-
-tagged
-
-103
-
-G0/8
-
-Controller Node 1
-
-eth1
-
-tagged
-
-100(untagged), 101, 102
-
-G0/9
-
-Controller Node 2
-
-eth0
-
-tagged
-
-103
-
-G0/10
-
-Controller Node 2
-
-eth1
-
-tagged
-
-100(untagged), 101, 102
-
-G0/11
-
-Controller Node 3
-
-eth0
-
-tagged
-
-103
-
-G0/12
-
-Controller Node 3
-
-eth1
-
-tagged
-
-100(untagged), 101, 102
-
-G0/13
-
-Cinder Node
-
-eth0
-
-tagged
-
-103
-
-G0/14
-
-Cinder Node
-
-eth1
-
-tagged
-
-100(untagged), 101, 102
-
-G0/24
-
-Router (default gateway)
-
--
-
-untagged
-
-100
-
-Cable servers to the switch as in the diagram below.\ |image18|
-
-Here is the logical network diagram for this environment.
-
-|image19|
-
-To deploy Mirantis OpenStack you should use the following the switch
-configuration:
 
 Switch configuration (Cisco Catalyst 2960G)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Use the following configuration to deploy Mirantis OpenStack using Cisco
+Catalyst 2960G network switch.
 
 ::
 
@@ -1053,6 +795,9 @@ Switch configuration (Cisco Catalyst 2960G)
 
 Switch configuration (Juniper EX4200)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Use the following configuration to deploy Mirantis OpenStack using
+Juniper EX4200 network switch.
 
 ::
 

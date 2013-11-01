@@ -11,8 +11,6 @@ To help plan your OpenStack deployment, you can use the following
 checklist to quickly identify and confirm the basic steps necessary for
 a successful deployment.
 
-.. table:: Pre-installation Checklist
-
 +--------------------------------------------------------+--------------+
 | Item to confirm                                        | Status [tick |
 |                                                        | if done]     |

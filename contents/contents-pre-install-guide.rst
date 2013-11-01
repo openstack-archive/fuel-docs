@@ -3,7 +3,8 @@
 
 .. toctree:: Table of Contents
   :maxdepth: 2
-
+   
+.. include:: /pages/preface/preface.rst
 .. include:: /pages/pre-install-guide/0010-intro.rst
 .. include:: /pages/pre-install-guide/0020-system-requirements.rst
 .. include:: /pages/pre-install-guide/0031-fuel-configuration.rst

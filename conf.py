@@ -284,7 +284,8 @@ pdf_documents = [
     ('pdf_user', u'Fuel-for-OpenStack-3.2-UserGuide',  u'User Guide',
     u'2013, Mirantis Inc.'),
     ('pdf_install', u'Fuel-for-Openstack-3.2-InstallGuide', u'Installation Guide', u'2013, Mirantis Inc.'),
-    ('pdf_reference', u'Fuel-for-OpenStack-3.2-ReferenceArchitecture', u'Reference Architecture', u'2013, Mirantis Inc.')
+    ('pdf_reference', u'Fuel-for-OpenStack-3.2-ReferenceArchitecture', u'Reference Architecture', u'2013, Mirantis Inc.'),
+    ('pdf_preinstall', u'Fuel-for-OpenStack-3.2-Pre-InstallationGuide', u'Pre-Installation Guide', u'2013, Mirantis Inc.')
 #    (master_doc, project, project, copyright),
 ]
 pdf_stylesheets = ['letter', 'mirantis']

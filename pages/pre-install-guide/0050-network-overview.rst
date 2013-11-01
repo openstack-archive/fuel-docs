@@ -34,13 +34,12 @@ administrative purposes and network-based installation of Node servers.
 
 OVS is an abbreviation for Open vSwitch, a production quality, multilayer 
 virtual switch licensed under the open source `Apache
-2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>`__  license.
+2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>`_  license.
 
-For more information on each of these networks, check out the
-`:ref:ReferenceArchitecture`_.
+For more information about networks,  see
+:ref:`Reference Architecture<ref-arch>`.
 
-
-Network deployment models
+Network Deployment Models
 =========================
 
 This section describes the following network deployement models:
@@ -53,28 +52,53 @@ This section describes the following network deployement models:
 Nova-network
 ------------
 
-Nova-network offers two variants for deploying the private network for tenants:
-FlatDHCP Manager and VLAN Manager.
+Nova-network offers two options for deploying  private network for tenants:
 
-FlatDHCP Manager
-~~~~~~~~~~~~~~~~
+* FlatDHCP Manager
+* VLAN Manager
 
-|image0|
+FlatDHCP Manager Network Diagram
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For an overview of FlatDHCP Manager, refer to the `ReferenceArchitecture_`.
+The following diagram describes network configuration when you use 
+Nova-network with FlatDHCP Manager:
 
-This guide illustrates the recommended way to connect the physical interfaces
-of your servers to the OpenStack network.
+.. image:: /_images/preinstall_d_flat_dhcp.jpg
+   :align: center
 
-To associate each of the OpenStack networks to server NICs, this can be done
-in Fuel UI.
-* First, go to *Add Nodes*.
-* Next, select the role for this host and *Apply Changes*
-* Select the role you want to modify, and click *Configure Interfaces*.
-* Drag and drop the appropriate networks onto the physical interfaces.  
+For more information about FlatDHCP Manager, see :ref:`Reference Architecture<ref-arch>`.
 
-Depending how many NICs you have in your node servers, you can use the 
-following examples to plan your NIC assignment. 
+VLAN Manager Network Diagram
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The following diagram describes network configuration when you use
+Nova-network with VLAN Manager:
+
+.. image:: /_images/preinstall_d_vlan.jpg
+   :align: center
+
+
+Assigning OpenStack Networks to Network Interfaces
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+You must associate each OpenStack network with a server NIC.
+
+To assigna OpenStack networks to server NICs, using Fuel UI:
+
+1. Click  **Add Nodes**.
+2. Select the role for this host.
+3. Click **Apply Changes**.
+4. Select the role you want to modify, and click **Configure Interfaces**.
+5. Drag and drop the appropriate networks onto the physical interfaces.
+
+Network Planning Examples
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FlatDHCP
+^^^^^^^^
+
+Depending on the number of NICs you have in your node servers, you can use the 
+following examples to plan your NIC assignment: 
 
 1 NIC deployment
 
@@ -116,18 +140,10 @@ Routing recommendations
 
 
 VLAN Manager
-~~~~~~~~~~~~
+^^^^^^^^^^^^
 
-|image1|
-
-This guide illustrates the recommended way to connect the physical interfaces
-of your servers to the Openstack network.
-
-To connect OpenStack networks to server Ethernet cards, in the Fuel UI
-add a role to node, click on Configure Interfaces, and then drag and
-drop the appropriate networks onto the physical interfaces.  Here are
-the recommended network configurations depending on the number of NICs
-you have in the node server:
+Depending on the number of NICs you have in your node servers, you can use the
+following examples to plan your NIC assignment:
 
 1 NIC deployment
 
@@ -175,22 +191,41 @@ Routing recommendations
 Neutron
 -------
 
-VLAN segmentation
+This section describes recommended parameters for network configuration
+using the Neutron service.
+
+VLAN Segmentation
 ~~~~~~~~~~~~~~~~~
 
-The minimum number of NICs for this configuration is 3.
+The following diagram shows the network isolation using Open vSwitches and
+VLANs:
 
-|image2|
+.. image:: /_images/preinstall_d_vlan_segm.jpg
+   :align: center
+.. note:: You must have at least three network interfaces for this
+          configuration
 
+GRE Segmentation
+~~~~~~~~~~~~~~~~
 
-This guide illustrates the recommended way to connect the physical interfaces   
-of your servers to the Openstack network.
+The following diagram shows the network segmentation using Open vSwitch
+and GRE tunneling.
 
-To connect OpenStack networks to server ethernet cards, in the Fuel UI
-add a role to node, click on Configure Interfaces, and then drag and
-drop the appropriate networks onto the physical interfaces.  Here are
-the recommended network configurations depending on the number of NICs
-you have in the node server:
+.. image:: /_images/preinstall_d_gre_segm.jpg
+   :align: center
+
+Open vSwitch (OVS) GRE tunnels are provided through Management Network.
+
+.. note:: This setup does not include physical Private network.
+
+Network Planing Examples
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+VLAN Segmentation
+^^^^^^^^^^^^^^^^^
+
+Depending on the number of NICs you have in your node servers, you can use the
+following examples to plan your NIC assignment:
 
 3 NIC deployment
 
@@ -200,7 +235,8 @@ you have in the node server:
 -  eth2 (br-eth2) - port for Private network (where the number of VLANs
    depends on the number of tenant networks with a continuous range)
 
-|image3|
+.. image:: /_images/preinstall_d_vlan_3nics.png
+   :align: center
 
 4 NIC deployment
 
@@ -210,7 +246,8 @@ you have in the node server:
    IDs
 -  eth3 (br-eth1) - port for Storage network
 
-|image4|
+.. image:: /_images/preinstall_d_vlan_4nics.png
+   :align: center
 
 Routing recommendations
 
@@ -222,23 +259,12 @@ Routing recommendations
 -  The Storage and Private network (VLANs) should be configured without
    access to other networks (no L3 connectivity)
 
+
 GRE Segmentation
-~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^
 
-|image5|
-
-Open vSwitch (OVS) - GRE tunnels are provided via Management Network.
-Please note that in this setup, there is no physical Private
-network.
-
-This guide illustrates the recommended way to connect the physical interfaces   
-of your servers to the Openstack network.
-
-To connect OpenStack networks to server ethernet cards, in the Fuel UI
-add a role to node, click on Configure Interfaces, and then drag and
-drop the appropriate networks onto the physical interfaces.  Here are
-the recommended network configurations depending on the number of NICs
-you have in the node server:
+Depending on the number of NICs you have in your node servers, you can use the
+following examples to plan your NIC assignment:
 
 2  NIC deployment 
 
@@ -246,7 +272,8 @@ you have in the node server:
 -  eth1 (br-eth1) - port for networks: Public/Floating, Management,
    Storage
 
-|image6|
+.. image:: /_images/preinstall_d_gre_2nics.png
+   :align: center
 
 3  NIC deployment 
 
@@ -254,7 +281,8 @@ you have in the node server:
 -  eth1 (br-eth1) - port for networks: Public/Floating, Management
 -  eth2 (br-eth2) - port for Storage network
 
-|image7|
+.. image:: /_images/preinstall_d_gre_3nics.png
+   :align: center
 
 4  NIC deployment 
 
@@ -263,7 +291,8 @@ you have in the node server:
 -  eth2 (br-eth2) - port for Public/Floating network
 -  eth3 (br-eth3) - port for Storage network
 
-|image8|
+.. image:: /_images/preinstall_d_gre_4nics.png
+   :align: center
 
 Routing recommendations
 
@@ -278,7 +307,7 @@ Routing recommendations
 Routing recommendations
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-Consider the following routing recommendationswhen you configure your 
+Consider the following routing recommendations when you configure your 
 network:
 
 -  Use the default routing via a router in the Public network

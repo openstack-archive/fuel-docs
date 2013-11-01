@@ -30,8 +30,7 @@ To install Fuel using the ISO image:
 
 8. In the Fuel UI, create a new OpenStack environment.
 
-9. Configure the network settings using the address plan `that you prepared
-   earlier <#id.awjhoiu5x9zi>`__.
+9. Configure the network settings using the address plan.
 
 10. Verify the network configuration by clicking **Verify Networks**.
 
@@ -43,16 +42,12 @@ To install Fuel using the ISO image:
    * Scheduler driver
    * Syslog
 
-12. Assign roles for each node server that `you decided
-    earlier <#id.jjvc6acq4wu1>`__.
+12. Assign a role for each node server.
 
 13. Optionally, associate NICs with the OpenStack networks: 
 
    1. Select the nodes.
    2. Click **Configure Interfaces**.
-
-|image26|
-
    3. Drag and drop the appropriate networks onto the physical interfaces.
    4. Click **Apply**.
 
@@ -61,7 +56,7 @@ To install Fuel using the ISO image:
     some time. 
 
 After you deployed Mirantis OpenStack, verify the configuration by
-running the tests from the **Health Check**  tab.
+running the tests from the **Health Check** tab.
 
 .. |image20| image:: /_images/image22.png
 .. |image21| image:: /_images/image10.png
