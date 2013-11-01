@@ -87,7 +87,7 @@ assignment.
 +--------+-------------------+--------+-----------+-------------------------+
 | G0/14  | Cinder Node       | eth1   | tagged    | 100, 103                |
 +--------+-------------------+--------+-----------+-------------------------+
-| G0/24  | Router (default   | -      | untagged  | 100                     |
+| G0/24  | Router (default   | ---    | untagged  | 100                     |
 |        | gateway)          |        |           |                         |
 +--------+-------------------+--------+-----------+-------------------------+
   
@@ -96,11 +96,13 @@ Connect the servers to the switch as in the diagram below:
 
 .. image:: /_images/preinstall_d_switch_connect.jpg 
    :align: center
+   :width: 75%
 
 The following diagram describes the network topology for this environment.
 
 .. image:: /_images/preinstall_d_logic_network.jpg
    :align: center
+   :width: 75%
 
   
 Switch configuration (Cisco Catalyst 2960G)

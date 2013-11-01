@@ -65,6 +65,7 @@ Nova-network with FlatDHCP Manager:
 
 .. image:: /_images/preinstall_d_flat_dhcp.jpg
    :align: center
+   :width: 75%
 
 For more information about FlatDHCP Manager, see :ref:`Reference Architecture<ref-arch>`.
 
@@ -76,6 +77,7 @@ Nova-network with VLAN Manager:
 
 .. image:: /_images/preinstall_d_vlan.jpg
    :align: center
+   :width: 75%
 
 
 Assigning OpenStack Networks to Network Interfaces
@@ -202,6 +204,8 @@ VLANs:
 
 .. image:: /_images/preinstall_d_vlan_segm.jpg
    :align: center
+   :width: 75%
+
 .. note:: You must have at least three network interfaces for this
           configuration
 
@@ -213,6 +217,7 @@ and GRE tunneling.
 
 .. image:: /_images/preinstall_d_gre_segm.jpg
    :align: center
+   :width: 75%
 
 Open vSwitch (OVS) GRE tunnels are provided through Management Network.
 
@@ -237,6 +242,7 @@ following examples to plan your NIC assignment:
 
 .. image:: /_images/preinstall_d_vlan_3nics.png
    :align: center
+   :width: 50%
 
 4 NIC deployment
 
@@ -248,6 +254,7 @@ following examples to plan your NIC assignment:
 
 .. image:: /_images/preinstall_d_vlan_4nics.png
    :align: center
+   :width: 50%
 
 Routing recommendations
 
@@ -274,6 +281,7 @@ following examples to plan your NIC assignment:
 
 .. image:: /_images/preinstall_d_gre_2nics.png
    :align: center
+   :width: 50%
 
 3  NIC deployment 
 
@@ -283,6 +291,7 @@ following examples to plan your NIC assignment:
 
 .. image:: /_images/preinstall_d_gre_3nics.png
    :align: center
+   :width: 50%
 
 4  NIC deployment 
 
@@ -293,6 +302,7 @@ following examples to plan your NIC assignment:
 
 .. image:: /_images/preinstall_d_gre_4nics.png
    :align: center
+   :width: 50%
 
 Routing recommendations
 
