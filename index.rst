@@ -13,12 +13,12 @@ PDFs
 ---------
 The following Fuel documentation is available in PDF:
 
-* `Pre-Installation Guide <pdf/Fuel-for-OpenStack-3.2-Pre-InstallationGuide>`_
+* `Pre-Installation Guide <pdf/Fuel-for-OpenStack-3.2-Pre-InstallationGuide.pdf>`_
 
   Prerequisites and pre-installation steps that you must execute before 
   installing Fuel.
 
-* `Installation Guide <pdf/Fuel-for-Openstack-3.2-InstallGuide.pdf>`_
+* `Installation Guide <pdf/Fuel-for-OpenStack-3.2-InstallGuide.pdf>`_
   
   This document describes how to pre-configure your
   OpenStack environment and install the Fuel Master Node.
