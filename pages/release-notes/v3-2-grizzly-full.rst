@@ -480,9 +480,9 @@ Other Limitations
   ranges instead of CIDRs, however not all user input is properly 
   verified. Entering a wrong value may cause failures in deployment.
 * When configuring disks on nodes where Ubuntu has been selected as 
-  the host OS, the Base System partition modifications will not properly 
-  take effect. The default Base System partition will be applied 
-  regardless of user choice due to limitations in Ubuntu provisioning.
+  the host OS, the Base System partition is limited to the first disk
+  and must be smaller or equal to the size of the first disk due to
+  Ubuntu provisioning limitations.
 
 How to obtain the product
 -------------------------
