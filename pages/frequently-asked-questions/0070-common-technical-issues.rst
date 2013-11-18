@@ -29,12 +29,14 @@ This is a Puppet bug.  See: http://projects.puppetlabs.com/issues/4680
 
 **Workaround:**
 
-* On Puppet client::
+* On Puppet client
+  ::
 
   rm -f /etc/puppet/ssl/certificate_requests/\*.pem
   rm -f /etc/puppet/ssl/certs/\*.pem
 
-* On Puppet master::
+* On Puppet master
+  ::
 
   rm -f /var/lib/puppet/ssl/ca/requests/\*.pem
 
