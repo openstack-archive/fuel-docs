@@ -326,23 +326,19 @@ network:
 -  The Storage and VM networks should be configured without access to
    other networks (no L3 connectivity)
 
-.. |image89| image:: /_images/image04.jpg
-.. |image9| image:: /_images/image04.jpg
-.. |image10| image:: /_images/image12.jpg
-.. |image11| image:: /_images/image22.png
-.. |image12| image:: /_images/image10.png
-.. |image13| image:: /_images/image03.png
-.. |image14| image:: /_images/image18.png
-.. |image15| image:: /_images/image19.png
-.. |image16| image:: /_images/image00.png
-.. |image17| image:: /_images/image08.png
-.. |image18| image:: /_images/image04.jpg
-.. |image19| image:: /_images/image06.jpg
-.. |image20| image:: /_images/image22.png
-.. |image21| image:: /_images/image10.png
-.. |image22| image:: /_images/image03.png
-.. |image23| image:: /_images/image14.png
-.. |image24| image:: /_images/image02.png
-.. |image25| image:: /_images/image19.png
-.. |image26| image:: /_images/image17.png
-.. |image27| image:: /_images/image07.png
+.. image:: /_images/image22.png
+.. image:: /_images/image10.png
+.. image:: /_images/image03.png
+.. image:: /_images/image18.png
+.. image:: /_images/image19.png
+.. image:: /_images/image00.png
+.. image:: /_images/image08.png
+.. image:: /_images/image06.jpg
+.. image:: /_images/image22.png
+.. image:: /_images/image10.png
+.. image:: /_images/image03.png
+.. image:: /_images/image14.png
+.. image:: /_images/image02.png
+.. image:: /_images/image19.png
+.. image:: /_images/image17.png
+.. image:: /_images/image07.png

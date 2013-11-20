@@ -60,8 +60,6 @@ installing OpenStack.
 VirtualBox
 ----------
 
-.. OpenStack-3.2-ReferenceArchitecture::
-
 If you would like to evaluate Fuel on VirtualBox, you can take advantage of the 
 included set of scripts that create and configure all the required VMs for a 
 test environment, including the Master node and Slave nodes for OpenStack 
