@@ -1,10 +1,10 @@
 .. index Documentation
 
 
-.. _Documentation:
+.. Documentation_:
 
 =============================
-Documentation
+_Documentation
 =============================
 
 .. toctree:: Documentation

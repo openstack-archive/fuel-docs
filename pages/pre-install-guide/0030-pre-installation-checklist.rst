@@ -49,8 +49,7 @@ a successful deployment.
 | the Fuel server from your PC).                         |              |
 +--------------------------------------------------------+--------------+
 
-.. note:: * You need tagged ports in order to use Nova-network VLAN Manager or 
-          Neutron with VLAN segmentation.
+.. note:: * You need tagged ports in order to use Nova-network VLAN Manager or Neutron with VLAN segmentation.
 
 If you checked all the boxes in the above table, you are ready to deploy
 Mirantis OpenStack with Fuel.
