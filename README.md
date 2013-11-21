@@ -15,7 +15,7 @@ so feel free to hop in. The best way to contibute is to fork our repository,
 do your changes and send us a Pull Request. You are invited to contribute 
 any type of contribution like new ideas, testing, and even deployment scripts.
 
-We also have an IRC channel at ``#openstack-fuel`` on ``irc.freenode.net`` 
+We also have an IRC channel at ``#fuel`` & ``#fuel-dev``  on ``irc.freenode.net`` 
 where you can ask questions and give feedback. 
 
 Prerequisites
