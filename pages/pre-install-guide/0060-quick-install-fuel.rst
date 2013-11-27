@@ -35,11 +35,17 @@ To install Fuel using the ISO image:
 10. Verify the network configuration by clicking **Verify Networks**.
 
 11. In the **Settings** tab, modify additional options:
+
    * Access 
+
    * OpenStack Components 
+
    * Hypervisor type 
+
    * Storage 
+
    * Scheduler driver
+
    * Syslog
 
 12. Assign a role for each node server.

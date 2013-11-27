@@ -76,7 +76,6 @@ release = '3.2'
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 exclude_patterns = ['_*', "pages", 'relnotes', 'contents', 'index', '*-guide', '*.rst']
-#exclude_patterns = ['_*', "pages", 'relnotes', 'contents', 'index', '*-guide']#, 'pdf_*']
 # exclude_patterns = ['_*', 'rn_index.rst']
 
 # The reST default role (used for this markup: `text`) to use for all documents.

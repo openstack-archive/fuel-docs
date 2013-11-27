@@ -1,13 +1,15 @@
+:orphan:
+
 .. index Documentation
 
 
-.. Documentation_:
+.. Documentation:
 
 =============================
-_Documentation
+Documentation
 =============================
 
-.. toctree:: Documentation
+.. toctree:: 
   :maxdepth: 2
   
   pre-install-guide
