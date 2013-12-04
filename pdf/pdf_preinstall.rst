@@ -25,7 +25,7 @@
 
 .. toctree:: Table of Contents
    :maxdepth: 2     
-.. include:: contents/contents-pre-install-guide.rst
+.. include:: ../contents/contents-pre-install-guide.rst
 
 
    

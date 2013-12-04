@@ -11,9 +11,10 @@ through Corosync with MySQL issues.
 
 1. Verify that corosync is really broken ``service corosync status``.
 
-* You should see next error::
+* You should see next error
+  ::
 
-  corosync dead but pid file exists
+    corosync dead but pid file exists
 
 2. Start corosync manually ``service corosync start``.
 

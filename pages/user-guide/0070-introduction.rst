@@ -1,6 +1,6 @@
 .. index:: Introduction
 
-.. _Introduction:
+.. _User_Introduction:
 
 Introducing Fuel for OpenStack
 ===============================

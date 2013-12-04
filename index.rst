@@ -1,3 +1,5 @@
+:orphan:
+
 .. index:: Home page
 
 .. _Homepage:

@@ -19,33 +19,34 @@ need to create it yourself, use this procedure:
   configure.
 
 1. Create the partition itself
-  ::
+   ::
 
-  fdisk /dev/sdb
-    n(for new)
-    p(for partition)
-    <enter> (to accept the defaults)
-    <enter> (to accept the defaults)
-    w(to save changes)
+     fdisk /dev/sdb
+       n(for new)
+       p(for partition)
+       <enter> (to accept the defaults)
+       <enter> (to accept the defaults)
+       w(to save changes)
+
 
 2. Initialize the XFS partition
-  ::
+   ::
 
-  mkfs.xfs -i size=1024 -f /dev/sdb1
+     mkfs.xfs -i size=1024 -f /dev/sdb1
 
 3. For a standard swift install, all data drives are mounted directly under 
    /srv/node, so first create the mount point
-  ::
+   ::
 
-  mkdir -p /srv/node/sdb1
+     mkdir -p /srv/node/sdb1
 
 4. Finally, add the new partition to fstab so it mounts automatically, then 
    mount all current partitions
-  ::
+   ::
 
-  echo "/dev/sdb1 /srv/node/sdb1 xfs
-  noatime,nodiratime,nobarrier,logbufs=8 0 0" >> /etc/fstab
-  mount -a
+     echo "/dev/sdb1 /srv/node/sdb1 xfs
+     noatime,nodiratime,nobarrier,logbufs=8 0 0" >> /etc/fstab
+     mount -a
 
 
 .. index:: HowTo: Redeploy a node from scratch

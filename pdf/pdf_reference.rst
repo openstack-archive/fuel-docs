@@ -6,7 +6,7 @@
   +-------------------------------------+-----------------------------------+
   | Fuel for OpenStack v3.2             |                .. cssclass:: right|
   |                                     |                                   |
-  | User Guide                          |                    ###Section###  |
+  | Reference Architecture              |                    ###Section###  |
   +-------------------------------------+-----------------------------------+
 
 .. footer::
@@ -25,4 +25,4 @@
 
 .. toctree:: Table of Contents
   :maxdepth: 2
-.. include:: contents/contents-user.rst
+.. include:: ../contents/contents-refarch.rst

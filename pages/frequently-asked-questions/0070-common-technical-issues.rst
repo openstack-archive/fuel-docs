@@ -32,13 +32,13 @@ This is a Puppet bug.  See: http://projects.puppetlabs.com/issues/4680
 * On Puppet client
   ::
 
-  rm -f /etc/puppet/ssl/certificate_requests/\*.pem
-  rm -f /etc/puppet/ssl/certs/\*.pem
+    rm -f /etc/puppet/ssl/certificate_requests/\*.pem
+    rm -f /etc/puppet/ssl/certs/\*.pem
 
 * On Puppet master
   ::
 
-  rm -f /var/lib/puppet/ssl/ca/requests/\*.pem
+    rm -f /var/lib/puppet/ssl/ca/requests/\*.pem
 
 **Issue:**
   The manifests are up-to-date under ``/etc/puppet/manifests``, but Puppet 

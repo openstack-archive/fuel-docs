@@ -58,6 +58,7 @@ structure:::
 	packages/manifests/init.pp
 
 **init.pp** should have this content:::
+
 	class profile {
 		$tools = $::fuel_settings['tools']
 		package { $tools :

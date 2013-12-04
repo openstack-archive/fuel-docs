@@ -44,8 +44,8 @@ As a model example, the following configuration is used:
 From the server node side, ports with the following VLAN IDs for
 networks are used:
 
-* eth0 -  Management VLAN 101 (tagged), Storage VLAN 102(tagged) and 
- Administrative VLAN 104 (untagged)
+* eth0 -  Management VLAN 101 (tagged), Storage VLAN 102(tagged) and Administrative VLAN 104 (untagged)
+
 * eth1 -  Public/Floating VLAN 100 (tagged), Private VLAN 103 (tagged)
 
 

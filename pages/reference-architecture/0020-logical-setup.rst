@@ -21,7 +21,7 @@ You must keep in mind, however, that the database uses Galera to
 achieve HA, and Galera is a quorum-based system. That means that you must provide 
 at least 3 controller nodes.
 
-.. image:: /_images/logical-diagram-controller_svg.jpg
+.. image:: /_images/logical-diagram-controller.svg
   :align: center
 
 Every OpenStack controller runs HAProxy, which manages a single External

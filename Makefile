@@ -61,7 +61,7 @@ images: $(JPGs)
 all: clean html dirhtml singlehtml latexpdf pdf
 
 html: images
-	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
+	$(SPHINXBUILD) -b html -W $(ALLSPHINXOPTS) $(BUILDDIR)/html
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
 
@@ -122,7 +122,7 @@ latex: images
 	      "(use \`make latexpdf' here to do that automatically)."
 
 pdf: images
-	$(SPHINXBUILD) -b pdf $(ALLSPHINXOPTS) $(BUILDDIR)/pdf
+	$(SPHINXBUILD) -b pdf -c pdf $(ALLSPHINXOPTS) $(BUILDDIR)/pdf
 	@echo
 	@echo "Build finished; the PDF file is in $(BUILDDIR)/pdf."
 
