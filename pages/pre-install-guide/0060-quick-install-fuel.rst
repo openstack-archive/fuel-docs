@@ -64,20 +64,20 @@ To install Fuel using the ISO image:
 After you deployed Mirantis OpenStack, verify the configuration by
 running the tests from the **Health Check** tab.
 
-.. |image20| image:: /_images/image22.png
+.. image:: /_images/image22.png
    :align: center
-.. |image21| image:: /_images/image10.png
+.. image:: /_images/image10.png
    :align: center
-.. |image22| image:: /_images/image03.png
+.. image:: /_images/image03.png
    :align: center
-.. |image23| image:: /_images/image14.png
+.. image:: /_images/image14.png
    :align: center
-.. |image24| image:: /_images/image02.png
+.. image:: /_images/image02.png
    :align: center
-.. |image25| image:: /_images/image19.png
+.. image:: /_images/image19.png
    :align: center
-.. |image26| image:: /_images/image17.png
+.. image:: /_images/image17.png
    :align: center
-.. |image27| image:: /_images/image07.png
+.. image:: /_images/image07.png
 
 .. seealso:: :ref:`Installation Guide<install-guide>`
