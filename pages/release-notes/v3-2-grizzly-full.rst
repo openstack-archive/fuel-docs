@@ -171,10 +171,8 @@ Configure Interfaces buttons will become active if the nodes you’ve
 selected share a similar disk configuration or number and type of network 
 interfaces.
 
-Inclusion of Inktank’s Ceph software-defined storage system in the 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-hardened packages and the ability to deploy Ceph via Fuel
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Inclusion of Inktank’s Ceph software-defined storage system in the hardened packages and the ability to deploy Ceph via Fuel
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Included now in the Mirantis OpenStack hardened packages is Inktank’s 
 Ceph software-defined storage system.  Ceph can be used either as an 
 object storage option for Glance or as a block storage option for Cinder. 
@@ -193,10 +191,8 @@ Routing Encapsulation (GRE) segmentation or VLAN segmentation from
 the deployment wizard.  Additional settings can be through the Network 
 settings tab prior to deploying the OpenStack environment.
 
-Inclusion of the OpenStack Savanna and Murano projects in the hardened 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-packages and the ability to deploy them via Fuel
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Inclusion of the OpenStack Savanna and Murano projects in the hardened packages and the ability to deploy them via Fuel
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Savanna and Murano are related OpenStack projects initially led by 
 Mirantis.  Savanna enables on demand provisioning of Hadoop clusters 
 that can run on top of OpenStack.  Savanna includes support for many 

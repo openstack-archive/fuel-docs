@@ -25,7 +25,7 @@ Fuel provides the following installation options:
   For installation from CD media devices.
 
 * **Raw sector file (IMG)**
-  For instalation from flash media devices (USB).
+  For installation from flash media devices (USB).
   Both installation images contain the installer for Fuel Master node.
 
 .. seealso:: `Downloads <http://fuel.mirantis.com/your-downloads/>`_  

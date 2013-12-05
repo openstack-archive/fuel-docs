@@ -51,13 +51,13 @@ Let’s try to add new module that will install some useful packages from reposi
 which is located on the master node.
 
 In this example, our module will be named *'packages'* and it will have following 
-structure:::
+structure::
 
 	packages/
 	packages/manifests
 	packages/manifests/init.pp
 
-**init.pp** should have this content:::
+**init.pp** should have this content::
 
 	class profile {
 		$tools = $::fuel_settings['tools']

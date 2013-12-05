@@ -191,7 +191,7 @@ on the Linux hosts.
   the Fuel UI should be configured on switch ports, pointing to Slave nodes, 
   as tagged.
 
-Of course, it is possible to specify as tagged only certain ports for a certain 
+Of course, it is possible to specify as tagged only certain ports for certain 
 nodes. However, in the current version, all existing networks are automatically 
 allocated for each node, with any role.
 And network check will also check if tagged traffic pass, even if some nodes do 
@@ -273,7 +273,7 @@ Public and Floating networks which will allow to make this happen.
   :align: center
   :width: 100%
 
-By default Public and Floating networks are run on the first network interface.
+By default Public and Floating networks are ran on the first network interface.
 It is required to change it, as you can see on this image below. Make sure you change
 it on every node.
 
@@ -295,7 +295,7 @@ For Ubuntu, the following command, executed on the host, can make this happen::
 To access VMs managed by OpenStack it is needed to provide IP addresses from 
 Floating IP range. When OpenStack environment is deployed and VM is provisioned there,
 you have to associate one of the Floating IP addresses from the pool to this VM,
-whether in Horizon or via Nova CLI. By default, OpenStack blocking all the traffic to the VM.
+whether in Horizon or via Nova CLI. By default, OpenStack blocks all the traffic to the VM.
 To allow the connectivity to the VM, you need to configure security groups.
 It can be done in Horizon, or from OpenStack Controller using the following commands::
 

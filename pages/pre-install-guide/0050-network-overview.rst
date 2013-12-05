@@ -85,7 +85,7 @@ Assigning OpenStack Networks to Network Interfaces
 
 You must associate each OpenStack network with a server NIC.
 
-To assign a OpenStack networks to server NICs, using Fuel UI:
+To assign OpenStack networks to server NICs, using Fuel UI:
 
 1. Click  **Add Nodes**.
 2. Select the role for this host.
@@ -327,18 +327,34 @@ network:
    other networks (no L3 connectivity)
 
 .. image:: /_images/image22.png
+   :align: center
 .. image:: /_images/image10.png
+   :align: center
 .. image:: /_images/image03.png
+   :align: center
 .. image:: /_images/image18.png
+   :align: center
 .. image:: /_images/image19.png
+   :align: center
 .. image:: /_images/image00.png
+   :align: center
 .. image:: /_images/image08.png
+   :align: center
 .. image:: /_images/image06.jpg
+   :align: center
 .. image:: /_images/image22.png
+   :align: center
 .. image:: /_images/image10.png
+   :align: center
 .. image:: /_images/image03.png
+   :align: center
 .. image:: /_images/image14.png
+   :align: center
 .. image:: /_images/image02.png
+   :align: center
 .. image:: /_images/image19.png
+   :align: center
 .. image:: /_images/image17.png
+   :align: center
 .. image:: /_images/image07.png
+   :align: center

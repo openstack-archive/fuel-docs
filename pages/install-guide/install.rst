@@ -154,10 +154,10 @@ First, create the Master node VM.
 
 * Network: Attach `Adapter 1` to `Host-only adapter` ``vboxnet0``
 
-3. Power on the VM in order to start the installation. Choose your Fuel ISO 
+4. Power on the VM in order to start the installation. Choose your Fuel ISO 
    when prompted to select start-up disk.
 
-4. Wait for the Welcome message with all information needed to login into the UI 
+5. Wait for the Welcome message with all information needed to login into the UI 
    of Fuel.
 
 Adding Slave Nodes
