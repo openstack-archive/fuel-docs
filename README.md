@@ -28,6 +28,7 @@ package, which is commonly an optional install on most distributions.
 
 
 To get started, you need to install all necesasary tools:
+    
     sudo apt-get install git python-pip python-dev make imagemagick libjpeg-dev
 
 And Sphinx necessary extensions:
