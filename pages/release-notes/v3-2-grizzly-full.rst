@@ -1,5 +1,3 @@
-:orphan:
-
 .. index:: Release Notes: Fuel 3.2
 
 .. _RelNotes_3.2:
