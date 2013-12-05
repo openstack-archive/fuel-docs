@@ -12,7 +12,6 @@ When you plan your OpenStack environment, consider the following:
   
   Depends on the number of virtual machines that you plan to deploy
   in your cloud environment and the CPU per virtual machine.
-  See :ref:'Calculating CPU Requirements'
 
 * **Memory**
   
