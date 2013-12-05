@@ -10,6 +10,7 @@ Release Notes
   :depth: 1
 
 .. include:: /pages/release-notes/v3-2-grizzly-full.rst
+.. include:: /pages/release-notes/v3-2-1-grizzly-full.rst
 .. include /pages/release-notes/v3-1-grizzly.rst
 .. include /pages/release-notes/v3-0-grizzly.rst
 .. include /pages/release-notes/v2-1-folsom.rst

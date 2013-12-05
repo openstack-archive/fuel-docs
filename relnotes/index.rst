@@ -3,7 +3,7 @@
         .. cssclass:: header-table
         
         +-------------------------------------+-----------------------------------+
-        | Fuel 3.2 for OpenStack              |                .. cssclass:: right|
+        | Fuel 3.2.1 for OpenStack            |                .. cssclass:: right|
         |                                     |                                   |
         |                                     |                     Release Notes |
         +-------------------------------------+-----------------------------------+
@@ -22,5 +22,5 @@
 
    PageBreak oneColumn
 
-.. include:: /pages/release-notes/v3-2-grizzly-full.rst
+.. include:: /pages/release-notes/v3-2-1-grizzly-full.rst
 

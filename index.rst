@@ -34,10 +34,10 @@ The following Fuel documentation is available in PDF:
   A deep dive into the structure of the Fuel OpenStack environment,
   network considerations, and deployment options.
 
-* `Release Notes 3.2 <pdf/Fuel-for-OpenStack-3.2-RelNotes.pdf>`_
+* `Release Notes 3.2.1 <pdf/Fuel-for-OpenStack-3.2.1-RelNotes.pdf>`_
  
   The Release Notes provide general information about new features,
-  fixed issues, and known limitations in Fuel 3.2.
+  fixed issues, and known limitations in Fuel 3.2.1.
  
 Download Fuel
 ---------------
