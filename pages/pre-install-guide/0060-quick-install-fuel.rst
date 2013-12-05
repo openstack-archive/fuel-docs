@@ -42,11 +42,11 @@ To install Fuel using the ISO image:
 
    * Hypervisor type 
 
-   * Storage 
-
    * Scheduler driver
 
    * Syslog
+
+   * Storage
 
 12. Assign a role for each node server.
 
