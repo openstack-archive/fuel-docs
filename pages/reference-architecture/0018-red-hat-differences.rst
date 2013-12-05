@@ -30,7 +30,7 @@ Below is the list of modifications:
   Corosync.
 
 **Nova networking:**
-  Quantum is not available for Red Hat OpenStack because the Red Hat kernel
+  Neutron (Quantum) is not available for Red Hat OpenStack because the Red Hat kernel
   lacks GRE tunneling support for OpenVSwitch. This issue should be
   fixed in a future release. As a result, Fuel for Red Hat OpenStack 
   Platform will only support Nova networking.
