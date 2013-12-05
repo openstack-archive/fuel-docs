@@ -94,7 +94,7 @@ Both can be downloaded from `<http://www.virtualbox.org/>`_.
 Automatic Mode
 ++++++++++++++
 
-When you unpack `fuel-3.2-vbox-scripts.zip`, you will see the following 
+When you unpack VirtualBox scripts, you will see the following 
 important files and folders:
 
 `iso`
