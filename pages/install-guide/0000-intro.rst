@@ -39,12 +39,12 @@ The pre-defined architectures include:
   additional services, such as Cinder, Neutron, and Ceph.
   You can create the following multi-node environments: 
 
-With Fuel, you can create your own cloud environment that include
+With Fuel, you can create your own cloud environment that includes
 additional components. 
 
 For more information, contact `Mirantis <http://www.mirantis.com/contact/>`_.
 
-.. seealso:: `Reference Architecture`
+.. seealso:: `Reference Architecture<ref-arch>`
 
 About Fuel Components
 -----------------------

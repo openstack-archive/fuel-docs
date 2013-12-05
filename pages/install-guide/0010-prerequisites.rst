@@ -166,7 +166,7 @@ form factor with 24-slots.
 Don't forget that you will also need drive space for the node itself, and don't 
 forget to order the correct backplane that supports the drive configuration 
 that meets your needs. Using our example specifications and assuming that speed 
-it critical, a single server would need 18 drives, most likely 2.5" 15,000 RPM 
+is critical, a single server would need 18 drives, most likely 2.5" 15,000 RPM 
 146 GB SAS drives. 
 
 Throughput
