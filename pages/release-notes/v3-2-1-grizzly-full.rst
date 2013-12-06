@@ -68,8 +68,7 @@ Expanded choice of Ubuntu, CentOS, or Red Hat Enterprise Linux as the host opera
 Fuel 3.2 has added support for deploying the Mirantis OpenStack hardened packages on Ubuntu 12.04 as the host operating system for the OpenStack nodes. The Ubuntu 12.04 operating system is included in the ISO for Mirantis OpenStack, so you can select Ubuntu from the Releases window and deploy without requiring Internet access or downloading additional software. This expands your choices for deployment to Centos with Mirantis OpenStack hardened packages, Red Hat Enterprise Linux with Red Hat OpenStack, or Ubuntu with Mirantis OpenStack hardened packages. 
 
 Mirantis OpenStack hardened packages synchronized with the latest stable OpenStack Grizzly maintenance release
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The OpenStack core projects in the Mirantis OpenStack hardened packages have been synchronized with the 'OpenStack Grizzly 2013.1.4 bug fix update<https://wiki.openstack.org/wiki/ReleaseNotes/2013.1.4>'_.  Fuel 3.2.x will deploy this 2013.1.4 version of Grizzly when deploying an OpenStack environment on CentOS or Ubuntu.  For Red Hat Enterprise Linux OpenStack Platform (RHEL-OSP), Fuel will deploy RHEL-OSP version 3.0.
 
 A guided deployment wizard to simplify environmental configuration
@@ -101,8 +100,7 @@ You can review the nodes and the roles assigned to those nodes by grouping them 
 In addition to the role assignment, you can also configure the network interfaces or modify the disk configuration for a set of nodes from the Fuel UI. Once you’ve selected one or more allocated nodes, the *Configure Disks and Configure Interfaces* buttons will become active if the nodes you’ve selected share a similar disk configuration or the number and type of network interfaces.
 
 Inclusion of Inktank’s Ceph software-defined storage system in the hardened packages and the ability to deploy Ceph via Fuel
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The Mirantis OpenStack hardened packages now include Inktank’s Ceph software-defined storage system. Ceph can be used either as an object storage option for Glance or as a block storage option for Cinder. As you define an OpenStack environment through the Fuel UI, you may choose to use Ceph for one, both, or neither of these functions. In addition, you may choose where to install the Ceph roles--either as a standalone node or combined with a Controller or Compute node.
 
 Neutron (Quantum) as a deployment choice from the Fuel UI
@@ -110,8 +108,7 @@ Neutron (Quantum) as a deployment choice from the Fuel UI
 Fuel’s previous versions enabled deploying Neutron (Quantum) through the Fuel CLI Library. Fuel 3.2 now enables you to deploy Neutron as an OpenStack network component from the UI. The deployment wizard allows Neutron to be configured to use the Generic Routing Encapsulation (GRE) segmentation or VLAN segmentation. Additional settings can be configured through the Network settings tab prior to deploying the OpenStack environment.
 
 Inclusion of OpenStack Savanna and Murano projects in the hardened packages and the ability to deploy them via Fuel
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Savanna and Murano are related OpenStack projects initially led by Mirantis. Savanna enables on-demand provisioning of Hadoop clusters that can run on top of OpenStack. Savanna includes support for many different distributions of Hadoop including Hortonworks, Cloudera, and even Intel. This empowers Big Data solutions to take full advantage of the elastic nature of OpenStack. Savanna is currently a project that’s in incubation, but we’re confident that it will become a full project in OpenStack in a future release of OpenStack.
 
 Murano enables Windows-based services to be deployed on top of OpenStack. These datacenter services include Active Directory, IIS, Microsoft SQL, and ASP.NET. Thanks to Murano, companies can provide developers or end users with Windows-based services that they either depend on or need to use as a tool for transitioning from legacy dependencies to open source or other offerings.
@@ -133,8 +130,7 @@ Ability to register Fuel from within the UI
 To ensure that self-evaluating customers get the support they need when they need it, the Support window of the Fuel UI now contains an option that enables users to register Fuel once it has been installed. This registration activates a 30-day complimentary basic subscription support, enabling evaluation customers to contact Mirantis’ world-class support via the 'Mirantis support portal<https://mirantis.zendesk.com/home>'_ with questions or issues. 
 
 A new extended configuration menu available during the Fuel Master Node install, enabling you to change the network settings
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Advanced customers deploying the Fuel Master Node into their own network setups with unique network parameters may need to specify a broader set of network settings (for example, interfaces to use for PXE booting, IP address ranges, network masks, and so on). Incorrect settings could result in permanent problems that are not easily corrected later. To ensure that these critical parameters are set appropriately for the Fuel Master Node, a fully featured configuration menu is now available during the Fuel Master Node installation. 
 
 To access this advanced menu, you may choose to press any key when prompted during the first boot of the Fuel Master Node. If you don’t press the key, the installation will continue automatically and apply the default parameter values. If
@@ -249,8 +245,7 @@ https://bugs.launchpad.net/fuel/+bug/1253099
 Several race conditions have been fixed in the HA mode for the Pacemaker services, which were introduced by incorrectly coding the Corosync Puppet libraries and the corresponding parts of services manifests, including “Illegal seek” and “Execution expired” errors. These race conditions have now been corrected.
 
 Nova-compute service can't restart if at least one active instance exists on the Compute node
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Restarts of the nova-compute services failed in Neutron-enabled configurations due to the wrong file access rights for the Neutron rootwrap directory. This required additional steps to be done to make Compute nodes work after restarting the nova-compute services or rebooting the Compute node. This condition has been addressed and the nova-compute service can now restart even if an active instance exists on the Compute node.
 
 Ubuntu NIC naming inconsistent with the discovered interface names
@@ -262,8 +257,7 @@ Ceph did not work with dedicated journal drives
 Previously, Ceph had been unable to work with dedicated journal drives. This issue has been fixed by moving the partitioning of Ceph drives to the provisioning stage.
 
 Static files for Horizon were missing on the second and subsequent controllers in the HA mode
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 In the previous releases, the required static files for Horizon were not properly provisioned on the second and subsequent controllers when deployed in a High Availability reference architecture.  The Horizon static files are now explicitly generated on secondary controllers during deployment.
 
 Incorrect calculation of Glance’s cache size
@@ -341,8 +335,7 @@ Issues with Neutron-enabled installations when using certain NIC models
 Some drivers for legacy and virtual Ethernet adapters--for example, e1000, r8139 or vmxnet--may not work with Open vSwitch Neutron-enabled CentOS/RHEL installations. A workaround for this issue is is to use the VLAN splinters Open vSwitch flag, which can be enabled in the UI by checking the *VLAN splinters* checkbox on the *Settings* tab in your environment. However, this option introduces performance issues and is not recommended to be used with more than 256 VLANs for the Quantum VLAN mode.
 
 Poor network performance in Neutron-enabled configurations for virtio-enabled VMs on CentOS and RHEL
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Currently, there is a regression introduced by the backporting of the Open vSwitch networking code into the CentOS/RHEL kernel, which affects the performance of virtual machines using the paravirtualized VirtIO network adapters. A known workaround is to disable Generic and TCP Segmentation Offload on the VMs by issuing the following commands::
     ‘ethtool -K <iface_name> gso off’
 
@@ -364,31 +357,12 @@ Rarely, if an instance is launched from Horizon or Nova API, it launches correct
 How to Obtain the Product
 -------------------------
 
-Mirantis OpenStack is distributed as a self-contained ISO that, once downloaded, does not require Internet access to provision OpenStack nodes, if you deploy it using the Mirantis OpenStack hardened packages. This ISO is available in the Mirantis OpenStack download section of the `Mirantis Portalk<http://software.mirantis.com`_. Here you will also find the Oracle VirtualBox scripts to enable quick and easy deployment of a multi-node OpenStack cloud for evaluation purposes.
+Mirantis OpenStack is distributed as a self-contained ISO that, once downloaded, does not require Internet access to provision OpenStack nodes, if you deploy it using the Mirantis OpenStack hardened packages. This ISO is available in the Mirantis OpenStack download section of the `Mirantis Portal<http://software.mirantis.com>`_. Here you will also find the Oracle VirtualBox scripts to enable quick and easy deployment of a multi-node OpenStack cloud for evaluation purposes.
 
 Contacting Support
 ------------------
 
-You can contact support online, through email, or by phone. Instructions on how to use any of these contact options can be found through `Mirantis Service Desk<https://mirantis.zendesk.com/home`_.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+You can contact support online, through email, or by phone. Instructions on how to use any of these contact options can be found through `Mirantis Service Desk<https://mirantis.zendesk.com/home>`_.
 
 To learn more about how Mirantis can help your business, please visit www.mirantis.com.
 Mirantis, Fuel, the Mirantis logos and other Mirantis marks are trademarks or registered trademarks of Mirantis, Inc. in the U.S. and/or certain other countries. Red Hat Enterprise Linux is a registered trademark of Red Hat, Inc. Ubuntu is a registered trademark of Canonical Ltd. VirtualBox is a registered trademark of Oracle Corporation. All other registered trademarks or trademarks belong to their respective companies. © 2013 Mirantis, Inc. All rights reserved.
