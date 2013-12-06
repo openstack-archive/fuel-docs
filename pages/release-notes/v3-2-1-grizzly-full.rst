@@ -25,6 +25,7 @@ What is Mirantis OpenStack?
 ---------------------------
 
 Mirantis OpenStack is made up of three components:
+
 * Fuel for OpenStack
 * Mirantis OpenStack hardened packages
 * Mirantis Support
@@ -32,22 +33,20 @@ Mirantis OpenStack is made up of three components:
 Fuel for OpenStack
 ^^^^^^^^^^^^^^^^^^
 Fuel is a lifecycle management application that deploys multiple OpenStack 
-clouds from a single interface and then enables you to manage those clouds post
- deployment. You can add nodes, remove nodes, or even remove clouds, restoring 
+clouds from a single interface and then enables you to manage those clouds post 
+deployment. You can add nodes, remove nodes, or even remove clouds, restoring 
 those resources to the available resources pool. Fuel also eases the 
 complexities of network and storage configurations through a simple-to-use 
 graphical user experience. Baked into Fuel are:
-* Mirantis reference architectures that we’ve tested and certified to ensure 
-that your deployed clouds are scalable, reliable, and production quality.
-* An open and flexible library that enables customers to make configuration 
-changes that may be more advanced or focused than the default choices within 
-Fuel. This library also empowers organizations to fold additional drivers or 
-integrations into the deployed environment.
+
+* Mirantis reference architectures that we’ve tested and certified to ensure that your deployed clouds are scalable, reliable, and production quality. 
+* An open and flexible library that enables customers to make configuration changes that may be more advanced or focused than the default choices within Fuel. This library also empowers organizations to fold additional drivers or integrations into the deployed environment.
 
 Mirantis OpenStack hardened packages
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 These packages include the core OpenStack projects, updated with each stable 
 release of OpenStack. Also included are: 
+
 * Packages to ensure High Availability.
 * Any defect fixes reported by our customers that may not yet have been merged 
 into the community source.
@@ -64,22 +63,19 @@ Further, Mirantis OpenStack offers a subscription to our world-class support
 with defined service level agreements based on the severity of your issue. For 
 example, the premium support guarantees a one-hour response for severity 1 
 issues.
+
 New Features in Mirantis OpenStack 3.2.x
 ----------------------------------------
 
 Following is a list of features that are new in version 3.2.x:
-* Expanded choice of Ubuntu, CentOS, or Red Hat Enterprise Linux as the host 
-operating system
-* Mirantis OpenStack hardened packages synchronized with the latest stable 
-OpenStack Havana maintenance release
+
+* Expanded choice of Ubuntu, CentOS, or Red Hat Enterprise Linux as the host operating system
+* Mirantis OpenStack hardened packages synchronized with the latest stable OpenStack Havana maintenance release
 * A guided deployment wizard to simplify the environment configuration
-* Ability to combine multiple roles onto a single node for hardware 
-consolidation
-* Inclusion of Inktank’s Ceph software-defined storage system in the hardened 
-packages and the ability to deploy Ceph via Fuel
+* Ability to combine multiple roles onto a single node for hardware consolidation
+* Inclusion of Inktank’s Ceph software-defined storage system in the hardened packages and the ability to deploy Ceph via Fuel
 * Neutron (Quantum) as a deployment choice from the Fuel UI
-* Inclusion of OpenStack Savanna and Murano projects in the hardened packages 
-and the ability to deploy them via Fuel
+* Inclusion of OpenStack Savanna and Murano projects in the hardened packages and the ability to deploy them via Fuel
 * A published API in Fuel for Create, Read, Update and Delete (CRUD) operations
 * New High Availability tests added to OpenStack Health Check
 * Ability to register Fuel from within the UI
@@ -90,10 +86,8 @@ install, enabling you to change the network settings
 * Reporting of node usage and assigned roles
 * Increased security with dynamic and unique SSH keys for VM migration
 
-Expanded choice of Ubuntu, CentOS, or Red Hat Enterprise Linux as the host 
-operating system
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-^^^^^^^^^^^^^^^^
+Expanded choice of Ubuntu, CentOS, or Red Hat Enterprise Linux as the host operating system
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Fuel 3.2 has added support for deploying the Mirantis OpenStack hardened 
 packages on Ubuntu 12.04 as the host operating system for the OpenStack nodes. 
 The Ubuntu 12.04 operating system is included in the ISO for Mirantis 
@@ -103,15 +97,12 @@ expands your choices for deployment to Centos with Mirantis OpenStack
 hardened packages, Red Hat Enterprise Linux with Red Hat OpenStack, or 
 Ubuntu with Mirantis OpenStack hardened packages. 
 
-Mirantis OpenStack hardened packages synchronized with the latest stable 
-OpenStack Grizzly maintenance release
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Mirantis OpenStack hardened packages synchronized with the latest stable OpenStack Grizzly maintenance release
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The OpenStack core projects in the Mirantis OpenStack hardened packages have been 
-synchronized with the 'OpenStack Grizzly 2013.1.4 bug fix update
-<https://wiki.openstack.org/wiki/ReleaseNotes/2013.1.4>'_.  Fuel 3.2.x will deploy 
+synchronized with the `OpenStack Grizzly 2013.1.4 bug fix update <https://wiki.openstack.org/wiki/ReleaseNotes/2013.1.4>`_.  Fuel 3.2.x will deploy 
 this 2013.1.4 version of Grizzly when deploying an OpenStack environment on CentOS 
-or Ubuntu.  For Red Hat Enterprise Linux OpenStack Platform (RHEL-OSP), Fuel will 
+or Ubuntu. For Red Hat Enterprise Linux OpenStack Platform (RHEL-OSP), Fuel will 
 deploy RHEL-OSP version 3.0.
 
 A guided deployment wizard to simplify environmental configuration
@@ -119,6 +110,7 @@ A guided deployment wizard to simplify environmental configuration
 New in Fuel 3.2 is a guided deployment wizard that will walk you through the major 
 decisions regarding your desired OpenStack configuration prior to deployment. This 
 wizard will enable you to select:
+
 * The operating system and distribution combination.
 * Reference architecture.
 * Hypervisor.
@@ -153,7 +145,7 @@ click all of the nodes of a particular hardware configuration for a role
 assignment.
 
 You can review the nodes and the roles assigned to those nodes by grouping 
-them in a similar manner--either by roles or by hardware configuration.
+them in a similar manner -- either by roles or by hardware configuration.
 
 In addition to the role assignment, you can also configure the network 
 interfaces or modify the disk configuration for a set of nodes from the 
@@ -162,10 +154,8 @@ Disks" and "Configure Interfaces" buttons will become active if the nodes
 you’ve selected share a similar disk configuration or the number and type 
 of network interfaces.
 
-Inclusion of Inktank’s Ceph software-defined storage system in the hardened 
-packages and the ability to deploy Ceph via Fuel
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Inclusion of Inktank’s Ceph software-defined storage system in the hardened packages and the ability to deploy Ceph via Fuel
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The Mirantis OpenStack hardened packages now include Inktank’s Ceph 
 software-defined storage system. Ceph can be used either as an object storage 
 option for Glance or as a block storage option for Cinder. As you define an 
@@ -183,10 +173,8 @@ configured to use the Generic Routing Encapsulation (GRE) segmentation or
 VLAN segmentation. Additional settings can be configured through the Network 
 settings tab prior to deploying the OpenStack environment.
 
-Inclusion of OpenStack Savanna and Murano projects in the hardened packages 
-and the ability to deploy them via Fuel
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Inclusion of OpenStack Savanna and Murano projects in the hardened packages and the ability to deploy them via Fuel
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Savanna and Murano are related OpenStack projects initially led by Mirantis. 
 Savanna enables on-demand provisioning of Hadoop clusters that can run on top 
 of OpenStack. Savanna includes support for many different distributions of 
@@ -213,10 +201,8 @@ In addition to the ability to deploy Savanna or Murano, new tests have been
 added to the OpenStack Health Check to confirm the successful deployment 
 and operational readiness of Savanna and Murano.
 
-A published API in Fuel for create, read, update, and delete (CRUD) 
-operations
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-^^^^^^^^^^
+A published API in Fuel for create, read, update, and delete (CRUD) operations
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The API originally created between the Fuel UI and Fuel CLI Library is now 
 public and available in Fuel 3.2. This RESTful API enables auxiliary 
 applications to activate standard create, read, update, and delete (CRUD) 
@@ -227,7 +213,7 @@ could be done either from a self-service portal or by your cloud
 operations staff. In addition to cloud deployment operations, you can also 
 run health checks on demand or collect log information for troubleshooting. 
 Details on commands that can be executed through the API can be found in the 
-'extended documentation<http://docs.mirantis.com/fuel-dev/develop/api_doc.html>'_.
+`extended documentation<http://docs.mirantis.com/fuel-dev/develop/api_doc.html>`_.
 
 New High Availability tests added to the OpenStack Health Check
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -247,10 +233,8 @@ enabling evaluation customers to contact Mirantis’ world-class support via
 the 'Mirantis support portal<https://mirantis.zendesk.com/home>'_ with 
 questions or issues. 
 
-A new extended configuration menu available during the Fuel Master Node 
-install, enabling you to change the network settings
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+A new extended configuration menu available during the Fuel Master Node install, enabling you to change the network settings
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Advanced customers deploying the Fuel Master Node into their own network 
 setups with unique network parameters may need to specify a broader set of 
 network settings (for example, interfaces to use for PXE booting, IP 
@@ -291,6 +275,7 @@ tracks your node usage across all of your deployed clouds and makes that
 information available in a single report. This report can be launched from 
 the Fuel UI or accessed as a CSV-formatted file on the Fuel Master Node. The 
 report indicates the following:
+
 * The environment names of the deployed clouds
 * The node count for each cloud
 * The total number of deployed nodes across all clouds
@@ -359,10 +344,11 @@ deployments have network namespaces support built in through upstream
 fixes to the Linux kernel, which were contributed by Mirantis. This 
 built-in support allows greater flexibility with Neutron configurations 
 for tenant networks.
+
 Issues Resolved in Mirantis OpenStack 3.2.1
 -------------------------------------------
 The following is a list of customer-facing issues resolved in Mirantis 
-OpenStack 3.2.1. Click `here<https://launchpad.net/fuel/+milestone/3.2.1>`_ 
+OpenStack 3.2.1. Click `here <https://launchpad.net/fuel/+milestone/3.2.1>`_ 
 to get the full list of issues publicly reported against the the 3.2.1 version.
 
 * OpenStack Health Checks can now be launched from the Fuel CLI
@@ -370,11 +356,9 @@ to get the full list of issues publicly reported against the the 3.2.1 version.
 * Wrong IP address assigned to nodes
 * Health check platform tests have been fixed
 * Red Hat deployment times out registering to an RHN Satellite Server
-* High CPU load on Fuel Master node due to ``'mcollective_broadcast'`` exchange 
-absence
+* High CPU load on Fuel Master node due to ``'mcollective_broadcast'`` exchange absence
 * HA sustainability fixes
-* Nova-compute service can't restart if at least one active instance exists on 
-the Compute node
+* Nova-compute service can't restart if at least one active instance exists on the Compute node
 * Ubuntu NIC naming inconsistent with discovered interface names
 * Ceph did not work with dedicated journal drives
 * Horizon static files were missing on the second and subsequent controllers 
@@ -424,10 +408,8 @@ satellite registration. This used to restrict an entire deployment from moving
 forward. Now, if connectivity fails, the error is logged, but the deployment 
 proceeds.
 
-High CPU load on the Fuel Master node due to ``'mcollective_broadcast'`` 
-exchange absence
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-^^^^^^^^^^^^^^^^
+High CPU load on the Fuel Master node due to ``'mcollective_broadcast'`` exchange absence
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Launchpad bug: https://bugs.launchpad.net/fuel/+bug/1252269
 
 The master node installation previously would fail to create mcollective AMQP 
@@ -447,10 +429,8 @@ libraries and the corresponding parts of services manifests, including
 “Illegal seek” and “Execution expired” errors. These race conditions have now 
 been corrected.
 
-Nova-compute service can't restart if at least one active instance exists on 
-the Compute node
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-^^^^^^^^^^^^^^^^
+Nova-compute service can't restart if at least one active instance exists on the Compute node
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Restarts of the nova-compute services failed in Neutron-enabled configurations 
 due to the wrong file access rights for the Neutron rootwrap directory. This 
 required additional steps to be done to make Compute nodes work after restarting 
@@ -471,10 +451,8 @@ Previously, Ceph had been unable to work with dedicated journal drives. This
 issue has been fixed by moving the partitioning of Ceph drives to the 
 provisioning stage.
 
-Static files for Horizon were missing on the second and subsequent controllers 
-in the HA mode
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-^^^^^^^^^^^^^^
+Static files for Horizon were missing on the second and subsequent controllers in the HA mode
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 In the previous releases, the required static files for Horizon were not 
 properly provisioned on the second and subsequent controllers when deployed 
 in a High Availability reference architecture.  The Horizon static files are 
@@ -509,34 +487,36 @@ Compute nodes do not have default gateway after the deployment
 In some instances, Fuel did not properly set the default gateway for the Compute 
 nodes. This issue has been fixed by setting up a correct interface activation 
 order during the deployment phase.
+
 Known Limitations in Mirantis OpenStack 3.2.x
 ---------------------------------------------
+
 Support for OpenStack Grizzly
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The following improvements in Grizzly are not currently supported directly by 
 Fuel:
+
 * Nova Compute
-  - Cells
-  - Availability zones
-  - Host aggregates
+ - Cells 
+ - Availability zones
+ - Host aggregates
 * Neutron (formerly Quantum)
-  - Load Balancer as a Service (LBaaS)
-  - Multiple L3 and DHCP agents per cloud
+ - Load Balancer as a Service (LBaaS)
+ - Multiple L3 and DHCP agents per cloud
 * Keystone
-  - Multi-factor authentication
-  - PKI authentication
+ - Multi-factor authentication
+ - PKI authentication
 * Swift
-  - Regions
-  - Adjustable replica count
-  - Cross-project ACLs
+ - Regions
+ - Adjustable replica count
+ - Cross-project ACLs
 * Cinder
-  - Support for Fibre Channel over Ethernet (FCoE)
-  - Support for linux-iscsi.org (LIO) as an Internet Small Computer System 
-Interface (iSCSI) backend
+ - Support for Fibre Channel over Ethernet (FCoE)
+ - Support for linux-iscsi.org (LIO) as an Internet Small Computer System Interface (iSCSI) backend
 * Ceilometer
 * Heat
-These capabilities are being considered for the future releases of Mirantis 
-OpenStack.
+
+These capabilities are being considered for the future releases of Mirantis OpenStack.
 
 In addition, support for the High Availability of Neutron (Quantum) on RHEL 
 is not available due to a limitation within the RHEL kernel. This issue is 
@@ -553,11 +533,11 @@ deploy additional controller nodes in the High Availability mode.
 Other limitations
 ^^^^^^^^^^^^^^^^^
 * The Fuel Master Node is installed with CentOS as the host OS. While 
-OpenStack nodes can be installed with Ubuntu, RHEL, or CentOS as the host 
-OS, the Fuel Master Node is only supported on CentOS.
-* When using the Fuel UI, the floating VLAN and public networks must use 
-the same L2 network and L3 Subnet. In the UI, these two networks are locked 
-together and can only run via the same physical interface on the server. 
+OpenStack nodes can be installed with Ubuntu, RHEL, or CentOS as the 
+host OS, the Fuel Master Node is only supported on CentOS.
+* When using the Fuel UI, the floating VLAN and public networks must 
+use the same L2 network and L3 Subnet. In the UI, these two networks are 
+locked together and can only run via the same physical interface on the server. 
 This is due to a limitation in Neutron.
 * Deployments done through the Fuel UI create all of the networks on all 
 servers even if they are not required by a specific role (for example, a 
@@ -607,10 +587,8 @@ splinters* checkbox on the *Settings* tab in your environment. However, this
 option introduces performance issues and is not recommended to be used with 
 more than 256 VLANs for the Quantum VLAN mode.
 
-Poor network performance in Neutron-enabled configurations for virtio-enabled 
-VMs on CentOS and RHEL
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-^^^^^^^^^^^^^^^^^^^^^^
+Poor network performance in Neutron-enabled configurations for virtio-enabled VMs on CentOS and RHEL
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Currently, there is a regression introduced by the backporting of the Open 
 vSwitch networking code into the CentOS/RHEL kernel, which affects the 
 performance of virtual machines using the paravirtualized VirtIO network 
@@ -622,7 +600,8 @@ on the VMs by issuing the following commands::
 
 File injection into VMs fails on CentOS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-VM creation may fail, issuing the following error::
+VM creation may fail, issuing the following error:
+::
     ERROR: Error injecting data into image 
     5e9f173d-aa6f-4153-a41a-8f59c651651e (Error mounting 
     /var/lib/nova/instances/c0733320-0c11-48f9-863e-b7d54e8d0812/disk with 
@@ -646,7 +625,7 @@ Mirantis OpenStack is distributed as a self-contained ISO that, once downloaded,
 does not require Internet access to provision OpenStack nodes, if you deploy it 
 using the Mirantis OpenStack hardened packages. This ISO is available in the 
 Mirantis OpenStack download section of the `Mirantis 
-Portal<http://software.mirantis.com>`_. Here you will also find the Oracle 
+Portal <http://software.mirantis.com>`_. Here you will also find the Oracle 
 VirtualBox scripts to enable quick and easy deployment of a multi-node 
 OpenStack cloud for evaluation purposes.
 
@@ -655,7 +634,7 @@ Contacting Support
 
 You can contact support online, through email, or by phone. Instructions on how 
 to use any of these contact options can be found through `Mirantis Service 
-Desk<https://mirantis.zendesk.com/home>`_.
+Desk <https://mirantis.zendesk.com/home>`_.
 
 To learn more about how Mirantis can help your business, please visit 
 www.mirantis.com.
