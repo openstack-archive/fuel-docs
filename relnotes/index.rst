@@ -3,7 +3,7 @@
         .. cssclass:: header-table
         
         +-------------------------------------+-----------------------------------+
-        | Fuel 3.2.1 for OpenStack            |                .. cssclass:: right|
+        | Mirantis OpenStack v.3.2.1          |                .. cssclass:: right|
         |                                     |                                   |
         |                                     |                     Release Notes |
         +-------------------------------------+-----------------------------------+
