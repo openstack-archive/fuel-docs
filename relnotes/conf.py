@@ -50,7 +50,7 @@ source_suffix = '.rst'
 master_doc = 'contents'
 
 # General information about the project.
-project = u'Fuel for OpenStack'
+project = u'Mirantis OpenStack'
 copyright = u'2013, Mirantis Inc.'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -118,7 +118,7 @@ html_add_permalinks = None
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
 # html_title = project + ' v' + release + ' | Documentation'
-html_title = 'Fuel v' + release + ' for OpenStack | Documentation'
+html_title = 'Mirantis OpenStack' + 'v' + release + ' | Documentation'
 
 # A shorter title for the navigation bar.  Default is the same as html_title.
 #html_short_title = None
@@ -201,7 +201,7 @@ latex_elements = {
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'fuel.tex', u'Fuel for OpenStack | Documentation',
+  ('index', 'fuel.tex', u'Mirantis OpenStack | Documentation',
    u'Mirantis Inc.', 'manual'),
 ]
 
@@ -231,7 +231,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'fuel', u'Fuel for OpenStack | Documentation',
+    ('index', 'fuel', u'Mirantis OpenStack | Documentation',
      [u'Mirantis'], 1)
 ]
 
@@ -245,7 +245,7 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'fuel', u'Fuel for OpenStack | Documentation',
+  ('index', 'fuel', u'Mirantis OpenStack | Documentation',
    u'Mirantis Inc.', 'fuel', 'One line description of project.',
    'Miscellaneous'),
 ]
