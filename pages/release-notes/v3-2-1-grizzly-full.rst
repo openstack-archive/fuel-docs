@@ -497,23 +497,41 @@ The following improvements in Grizzly are not currently supported directly by
 Fuel:
 
 * Nova Compute
+
  - Cells 
+
  - Availability zones
+
  - Host aggregates
+
 * Neutron (formerly Quantum)
+
  - Load Balancer as a Service (LBaaS)
+
  - Multiple L3 and DHCP agents per cloud
+
 * Keystone
+
  - Multi-factor authentication
+
  - PKI authentication
+
 * Swift
+
  - Regions
+
  - Adjustable replica count
+
  - Cross-project ACLs
+
 * Cinder
+
  - Support for Fibre Channel over Ethernet (FCoE)
+
  - Support for linux-iscsi.org (LIO) as an Internet Small Computer System Interface (iSCSI) backend
+
 * Ceilometer
+
 * Heat
 
 These capabilities are being considered for the future releases of Mirantis OpenStack.
@@ -570,14 +588,14 @@ vSwitch networking code into the CentOS/RHEL kernel, which affects the
 performance of virtual machines using the paravirtualized VirtIO network 
 adapters. A known workaround is to disable Generic and TCP Segmentation Offload 
 on the VMs by issuing the following commands::
-    ‘ethtool -K <iface_name> gso off’
 
-    ‘ethtool -K <iface_name> tso off’
+  ‘ethtool -K <iface_name> gso off
+  ethtool -K <iface_name> tso off’
 
 File injection into VMs fails on CentOS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-VM creation may fail, issuing the following error:
-::
+VM creation may fail, issuing the following error::
+
     ERROR: Error injecting data into image 
     5e9f173d-aa6f-4153-a41a-8f59c651651e (Error mounting 
     /var/lib/nova/instances/c0733320-0c11-48f9-863e-b7d54e8d0812/disk with 
