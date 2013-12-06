@@ -48,10 +48,10 @@ These packages include the core OpenStack projects, updated with each stable
 release of OpenStack. Also included are: 
 
 * Packages to ensure High Availability.
-* Any defect fixes reported by our customers that may not yet have been merged 
-into the community source.
+* Any defect fixes reported by our customers that may not yet have been merged into the community source.
 * Mirantis-driven premium OpenStack projects (for example, Savanna and Murano).
 * Mirantis-certified partner plug-ins, drivers, and integrations.
+
 Another benefit you get from Mirantis OpenStack compared with some competitors 
 is our broad support for operating systems, hypervisors, and deployment 
 topologies. We don’t restrict your choices to one OS or one hypervisor type. In 
@@ -79,8 +79,7 @@ Following is a list of features that are new in version 3.2.x:
 * A published API in Fuel for Create, Read, Update and Delete (CRUD) operations
 * New High Availability tests added to OpenStack Health Check
 * Ability to register Fuel from within the UI
-* A new extended configuration menu available during the Fuel Master Node 
-install, enabling you to change the network settings
+* A new extended configuration menu available during the Fuel Master Node install, enabling you to change the network settings
 * Pre-deployment check for conflicting DHCP servers on the network
 * Expansion of log management to include OpenStack configuration files
 * Reporting of node usage and assigned roles
@@ -213,7 +212,7 @@ could be done either from a self-service portal or by your cloud
 operations staff. In addition to cloud deployment operations, you can also 
 run health checks on demand or collect log information for troubleshooting. 
 Details on commands that can be executed through the API can be found in the 
-`extended documentation<http://docs.mirantis.com/fuel-dev/develop/api_doc.html>`_.
+`extended documentation <http://docs.mirantis.com/fuel-dev/develop/api_doc.html>`_.
 
 New High Availability tests added to the OpenStack Health Check
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -230,7 +229,7 @@ need it, the Support window of the Fuel UI now contains an option that
 enables users to register Fuel once it has been installed. This 
 registration activates a 30-day complimentary basic subscription support, 
 enabling evaluation customers to contact Mirantis’ world-class support via 
-the 'Mirantis support portal<https://mirantis.zendesk.com/home>'_ with 
+the `Mirantis support portal <https://mirantis.zendesk.com/home>`_ with 
 questions or issues. 
 
 A new extended configuration menu available during the Fuel Master Node install, enabling you to change the network settings
@@ -296,6 +295,7 @@ Public IP ranges can now be set in Neutron network manager
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The ability to set up an explicit list of public IP addresses allows users 
 to incorporate an OpenStack cloud into an existing network segment.
+
 Issues Resolved First in Mirantis OpenStack 3.2
 -----------------------------------------------
 
@@ -347,6 +347,7 @@ for tenant networks.
 
 Issues Resolved in Mirantis OpenStack 3.2.1
 -------------------------------------------
+
 The following is a list of customer-facing issues resolved in Mirantis 
 OpenStack 3.2.1. Click `here <https://launchpad.net/fuel/+milestone/3.2.1>`_ 
 to get the full list of issues publicly reported against the the 3.2.1 version.
@@ -361,8 +362,7 @@ to get the full list of issues publicly reported against the the 3.2.1 version.
 * Nova-compute service can't restart if at least one active instance exists on the Compute node
 * Ubuntu NIC naming inconsistent with discovered interface names
 * Ceph did not work with dedicated journal drives
-* Horizon static files were missing on the second and subsequent controllers 
-in HA mode
+* Horizon static files were missing on the second and subsequent controllers in HA mode
 * Incorrect calculation of Glance cache size
 * Untagged public network by default
 * Ability to set external source of NTP synchronization for Fuel Master
@@ -532,38 +532,14 @@ deploy additional controller nodes in the High Availability mode.
 
 Other limitations
 ^^^^^^^^^^^^^^^^^
-* The Fuel Master Node is installed with CentOS as the host OS. While 
-OpenStack nodes can be installed with Ubuntu, RHEL, or CentOS as the 
-host OS, the Fuel Master Node is only supported on CentOS.
-* When using the Fuel UI, the floating VLAN and public networks must 
-use the same L2 network and L3 Subnet. In the UI, these two networks are 
-locked together and can only run via the same physical interface on the server. 
-This is due to a limitation in Neutron.
-* Deployments done through the Fuel UI create all of the networks on all 
-servers even if they are not required by a specific role (for example, a 
-Cinder node will have VLANs created and addresses obtained from the public 
-network).
-* Some of OpenStack’s services listen to all of the interfaces, a situation 
-that may be detected and reported by third-party scanning tools not provided 
-by Mirantis. Please discuss this issue with your security administrator if 
-it is a concern for your organization.
-* Murano requires additional, manual configuration of the Samba share for the 
-deployment of different Windows-based services such as IIS, ASP.NET, and SQL 
-services because we can’t provide the applications packages under commercial 
-licenses.
-* The provided scripts that enable Fuel to be automatically installed on 
-VirtualBox will create separate host interfaces. If a user associates logical 
-networks to different physical interfaces on different nodes, that will lead 
-to network connectivity issues between OpenStack components. Please check to 
-see if this has happened prior to deployment by clicking on the *Verify 
-Networks* button on the *Networks* tab.
-* When configuring disks on nodes where Ubuntu has been selected as the host 
-OS, the Base System partition is limited to the first disk and must be smaller 
-or equal to the size of the first disk due to Ubuntu provisioning limitations.
-* The *Verify Networks* button on the *Networks* tab allows you to check the 
-network connectivity between nodes both before deployment and on an installed 
-environment. However, this verification is not available on the environments 
-deployed with Neutron.
+* The Fuel Master Node is installed with CentOS as the host OS. While OpenStack nodes can be installed with Ubuntu, RHEL, or CentOS as the host OS, the Fuel Master Node is only supported on CentOS.
+* When using the Fuel UI, the floating VLAN and public networks must use the same L2 network and L3 Subnet. In the UI, these two networks are locked together and can only run via the same physical interface on the server. This is due to a limitation in Neutron.
+* Deployments done through the Fuel UI create all of the networks on all servers even if they are not required by a specific role (for example, a Cinder node will have VLANs created and addresses obtained from the public network).
+* Some of OpenStack’s services listen to all of the interfaces, a situation that may be detected and reported by third-party scanning tools not provided by Mirantis. Please discuss this issue with your security administrator if it is a concern for your organization.
+* Murano requires additional, manual configuration of the Samba share for the deployment of different Windows-based services such as IIS, ASP.NET, and SQL services because we can’t provide the applications packages under commercial licenses.
+* The provided scripts that enable Fuel to be automatically installed on VirtualBox will create separate host interfaces. If a user associates logical networks to different physical interfaces on different nodes, that will lead to network connectivity issues between OpenStack components. Please check to see if this has happened prior to deployment by clicking on the *Verify Networks* button on the *Networks* tab.
+* When configuring disks on nodes where Ubuntu has been selected as the host OS, the Base System partition is limited to the first disk and must be smaller or equal to the size of the first disk due to Ubuntu provisioning limitations.
+* The *Verify Networks* button on the *Networks* tab allows you to check the network connectivity between nodes both before deployment and on an installed environment. However, this verification is not available on the environments deployed with Neutron.
 
 Known Issues in Mirantis OpenStack 3.2.x
 ----------------------------------------
