@@ -1,10 +1,10 @@
 
-FUEL™ for OpenStack Documentation
+Mirantis OpenStack Documentation
 =================================
 
-This repository contains the FUEL™ for OpenStack user and administrator 
-guides. For more details, see the [FUEL™ for OpenStack 
-portal](http://fuel.mirantis.com "FUEL™ for OpenStack portal").
+This repository contains the Mirantis OpenStack user and administrator 
+guides. For more details, see the [Mirantis OpenStack 
+portal](http://software.mirantis.com "Mirantis OpenStack portal").
 
 Contributing
 ============
@@ -26,17 +26,13 @@ Documentation Generator") must be installed to build the documentation.
 Please note that easy_install is a component of Python's Setup Tools 
 package, which is commonly an optional install on most distributions.
 
-To get started, you need to install Sphinx and necessary extensions:
 
-    sudo easy_install -U Sphinx
-    sudo easy_install -U cloud_sptheme
-    sudo easy_install -U sphinxcontrib-fancybox
-    sudo easy_install -U rst2pdf
-    sudo easy_install -U sphinxcontrib-blockdiag
-    sudo easy_install -U sphinxcontrib-actdiag
-    sudo easy_install -U sphinxcontrib-seqdiag
-    sudo easy_install -U sphinxcontrib-nwdiag
-    sudo easy_install -U sphinxcontrib-plantuml
+To get started, you need to install all necesasary tools:
+    sudo apt-get install git python-pip python-dev make imagemagick libjpeg-dev
+
+And Sphinx necessary extensions:
+
+    sudo pip install -r requirements.txt
 
 In addition to these eggs you will need to install 
 [PlantUML](http://plantuml.sourceforge.net/ "PlantUML") and 
@@ -47,6 +43,9 @@ To install PlantUML you run this wget process:
     sudo wget \
     http://sourceforge.net/projects/plantuml/files/plantuml.jar/download \
     -O /sbin/plantuml.jar
+
+PlantumUML requires java:
+    sudo apt-get install openjdk-7-jre
 
 To edit SVG images we use [Inkscape](http://inkscape.org/ "Inkscape") but 
 you may use any other SVG-capable tool you like. We're not picky.
