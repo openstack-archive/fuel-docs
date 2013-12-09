@@ -69,3 +69,12 @@ You will find generated HTML documentation at:
 You will find generated PDF documentation at:
 
 	_build/pdf
+
+
+To generate the Release Rotes PDF file run this:
+
+    make rnpdf
+
+You will find generated Release Notes PDF at:
+
+    _build/pdf
