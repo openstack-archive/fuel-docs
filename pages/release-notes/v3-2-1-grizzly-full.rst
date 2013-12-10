@@ -70,7 +70,7 @@ New Features in Mirantis OpenStack 3.2.x
 Following is a list of features that are new in version 3.2.x:
 
 * Expanded choice of Ubuntu, CentOS, or Red Hat Enterprise Linux as the host operating system
-* Mirantis OpenStack hardened packages synchronized with the latest stable OpenStack Havana maintenance release
+* Mirantis OpenStack hardened packages synchronized with the latest stable OpenStack Grizzly maintenance release
 * A guided deployment wizard to simplify the environment configuration
 * Ability to combine multiple roles onto a single node for hardware consolidation
 * Inclusion of Inktank’s Ceph software-defined storage system in the hardened packages and the ability to deploy Ceph via Fuel
