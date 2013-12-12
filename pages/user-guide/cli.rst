@@ -133,7 +133,7 @@ Configuring
 
 Configuration of environment or some node is universal and done in three stages
 
-1. Download current or default configuration. works for (network, settings, deployment, provisioning, node --disk, node --network)
+1. Download current or default configuration. works for (``network``, ``settings``, ``node --disk``, ``node --network``). Operations with ``deployment`` and ``provisioning`` can be node specific. (e.g. ``fuel --env 1 deployment --node-id=1,2``)
    
 *Example*::
 
@@ -157,5 +157,13 @@ Deployment
 
 Finally you can deploying environmnet changes with
 
-  fuel --env 1 deploy
+::
 
+  fuel --env 1 deploy-changes
+
+Also, you can deploy and provision only some nodes like this
+
+::
+
+  fuel --env 1 node --provision --node 1,2
+  fuel --env 1 node --deploy --node 1,2
