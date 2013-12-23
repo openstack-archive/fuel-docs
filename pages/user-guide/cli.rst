@@ -2,17 +2,30 @@
 
    PageBreak
 
-.. index:: Fuel UI: Network Configuration
+.. index:: Understanding Environment deployment with Fuel CLI
 
-Understanding Environment deployment with Fuel-CLI
+.. _cli_usage:
+
+Understanding Environment deployment with Fuel CLI
 ==================================================
+
+Introduction
+------------
+
+Fuel CLI tool is a powerful tool that allows you to:
+
+* Operate with environments using the text console only.
+* Modify directly the internal data that you can't modify via the web UI.
+* Avoid data verifications done by the web UI logic.
+
+Fuel CLI may break your environment if not used carefully.
 
 .. contents :local:
 
 Basic usage
 -----------------------------------------
 
-Fuel CLI has following usage pattern:
+Fuel CLI has the following usage pattern:
 
 ::
 
@@ -22,7 +35,9 @@ Fuel CLI has following usage pattern:
 
   fuel --env-id=1 node set --node-id=1,4,5 --role=controller,compute
 
-where ``--env-id=1`` is global optional argument pointing to specific environment, ``node`` - is a namespace for all node control functions, ``set`` is action that assigns specific nodes to some environments in some roles.
+where ``--env-id=1`` is a global optional argument pointing to the specific
+environment, ``node`` - is a namespace for all node control functions, ``set``
+is an action that assigns specific nodes to some environments in certain roles.
 
 for getting list of all global optional args and namespaces you can run:
 ::
@@ -149,7 +164,21 @@ Configuration of environment or some node is universal and done in three stages
 *Example*::
 
    fuel --env 1 provisioning upload
-   fuel node --node-id 2 --disk --upload  
+   fuel node --node-id 2 --disk --upload
+
+.. note::
+
+   To protect yourself from sudden errors, please follow these simple rules:
+
+   * Back up all of your configuration before you begin any modifications.
+   * If you remove something from a configuration file, be sure you don't need
+     it. Fuel CLI doesn't merge new data with the existing - it will overwrite
+     the old data with the new.
+   * Keep in mind that if you upload any changes in provisioning or deployment
+     operations, you will freeze the entire environment configuration - any changes
+     with networks, cluster settings, or disk configurations won't take effect.
+     In order to modify such parameters, you will need to change the appropriate
+     section of each node configuration.
 
 
 Deployment
