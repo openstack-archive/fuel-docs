@@ -3,7 +3,7 @@
         .. cssclass:: header-table
         
         +-------------------------------------+-----------------------------------+
-        | Mirantis OpenStack v.3.2.1          |                .. cssclass:: right|
+        | Mirantis OpenStack v4.0             |                .. cssclass:: right|
         |                                     |                                   |
         |                                     |                     Release Notes |
         +-------------------------------------+-----------------------------------+

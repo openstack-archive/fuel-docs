@@ -15,26 +15,26 @@ PDFs
 ---------
 The following Mirantis OpenStack documentation is available in PDF:
 
-* `Pre-Installation Guide <pdf/Mirantis-OpenStack-3.2.1-Pre-InstallationGuide.pdf>`_
+* `Pre-Installation Guide <pdf/Mirantis-OpenStack-4.0-Pre-InstallationGuide.pdf>`_
 
   Prerequisites and pre-installation steps that you must execute before 
   installing Fuel.
 
-* `Installation Guide <pdf/Mirantis-OpenStack-3.2.1-InstallGuide.pdf>`_
+* `Installation Guide <pdf/Mirantis-OpenStack-4.0-InstallGuide.pdf>`_
   
   This document describes how to pre-configure your
   OpenStack environment and install the Fuel Master Node.
   
-* `User Guide <pdf/Mirantis-OpenStack-3.2.1-UserGuide.pdf>`_
+* `User Guide <pdf/Mirantis-OpenStack-4.0-UserGuide.pdf>`_
   
   This document describes how to deploy compute nodes for Fuel.
 
-* `Reference Architecture <pdf/Mirantis-OpenStack-3.2.1-ReferenceArchitecture.pdf>`_
+* `Reference Architecture <pdf/Mirantis-OpenStack-4.0-ReferenceArchitecture.pdf>`_
   
   A deep dive into the structure of the Fuel OpenStack environment,
   network considerations, and deployment options.
 
-* `Release Notes 3.2.1 <pdf/Mirantis-OpenStack-3.2.1-RelNotes.pdf>`_
+* `Release Notes 4.0 <pdf/Mirantis-OpenStack-4.0-RelNotes.pdf>`_
  
   The Release Notes provide general information about new features,
   fixed issues, and known limitations in Mirantis OpenStack |version|.
