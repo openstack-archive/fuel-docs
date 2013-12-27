@@ -45,7 +45,7 @@ additional components.
 
 For more information, contact `Mirantis <http://www.mirantis.com/contact/>`_.
 
-.. seealso:: `Reference Architecture<ref-arch>`
+.. seealso:: :ref:`Reference Architecture<ref-arch>`
 
 About Fuel and OpenStack Components
 -----------------------------------
