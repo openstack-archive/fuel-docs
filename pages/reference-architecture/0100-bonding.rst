@@ -279,7 +279,7 @@ problem, here is a solution:
      [root@fuel ~]# service cobblerd restart
 
 #. Design a good network scheme and apply it via the Fuel CLI tool.
-   For example, suppose you have a node with 2 NICs. To create a single bringe 'br-core', bond
+   For example, suppose you have a node with 2 NICs. To create a single bridge 'br-core', bond
    both NICs to it and connect other bridges to it via patches. The Admin network
    role 'fw-admin' should use the 'br-core' bridge. Here is a part of the node config:
 
@@ -337,5 +337,5 @@ problem, here is a solution:
         - 'action': 'add-patch'
           'bridges': ['br-core', 'br-prv']
 
-#. When the new network configuration is applied nodes will go offline. It's
-   a normal behaviour in this case.
+#. When the new network configuration is applied, nodes will be reported
+   as offline by Fuel. This is expected behavior in this case.
