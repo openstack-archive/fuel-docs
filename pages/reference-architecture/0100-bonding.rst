@@ -267,14 +267,14 @@ problem, here is a solution:
 
    ::
 
-     [root@fuel ~]# wget -O /tmp/ovs_pp.diff https://github.com/stackforge/fuel-docs/blob/master/_static/l2_ovs_bond_ovs_pp.diff
+     [root@fuel ~]# wget -O /tmp/ovs_pp.diff https://raw.github.com/stackforge/fuel-docs/master/_static/l2_ovs_bond_ovs_pp.diff
      [root@fuel ~]# patch -p0 < /tmp/ovs_pp.diff
 
 #. Disable Cobbler's control of the ``/etc/ethers`` file:
 
    ::
 
-     [root@fuel ~]# wget -O /tmp/dnsmasq_py.diff https://github.com/stackforge/fuel-docs/blob/master/_static/manage_dnsmasq_py.diff
+     [root@fuel ~]# wget -O /tmp/dnsmasq_py.diff https://raw.github.com/stackforge/fuel-docs/master/_static/manage_dnsmasq_py.diff
      [root@fuel ~]# patch -p0 < /tmp/dnsmasq_py.diff
      [root@fuel ~]# service cobblerd restart
 
