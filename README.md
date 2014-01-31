@@ -29,18 +29,20 @@ package, which is commonly an optional install on most distributions.
 
 To get started, you need to install all necesasary tools:
     
-    sudo apt-get install git python-pip python-dev make imagemagick libjpeg-dev
+    sudo apt-get install git python-pip python-dev make imagemagick libjpeg-dev inkscape
+
+Among other things that installs
+[ImageMagick](http://www.imagemagick.org/ "ImageMagick") and
+[Inkscape](http://inkscape.org/ "Inkscape").
 
 And Sphinx necessary extensions:
 
     sudo pip install -r requirements.txt
 
 In addition to these eggs you will need to install 
-[PlantUML](http://plantuml.sourceforge.net/ "PlantUML"), 
-[ImageMagick](http://www.imagemagick.org/ "ImageMagick"), and
-[Inkscape](http://inkscape.org/ "Inkscape").
+[PlantUML](http://plantuml.sourceforge.net/ "PlantUML")
 
-To install PlantUML you run this wget process:
+To install PlantUML run this wget process:
 
     sudo wget \
     http://sourceforge.net/projects/plantuml/files/plantuml.jar/download \
