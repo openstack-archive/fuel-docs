@@ -13,6 +13,15 @@ For better network performance and manageability, Fuel place different types
 of traffic into separate networks. This section describes how to distribute 
 the network traffic in an OpenStack cluster. 
 
+.. index:: Admin (PXE) Network
+
+This network is reserved for communcation with Fuel master for provisioning
+and orchestration of OpenStack deployment. It is used during installation to
+provide DNS, DHCP, and gateway services to a node if it requires it before
+provisioning. Nodes retrieve their network configuration via DHCP from Fuel
+Master node. This is why it is important that this network is isolated from
+your network and has no DHCP server (except Fuel Master) running on it.
+
 .. index:: Public Network
 
 Public Network
@@ -72,10 +81,11 @@ two network interfaces. In this case, let's consider a typical example of three
 NIC cards. They're utilized as follows:
 
 **eth0**: 
-  The internal management network, used for communication with Puppet & Cobbler
+  The Admin (PXE) network, used for communication with Fuel Master for
+  deployment.
 
 **eth1**: 
-  The public network, and floating IPs assigned to VMs
+  The public network and floating IPs assigned to VMs
 
 **eth2**: 
   The private network, for communication between OpenStack VMs, and the 
