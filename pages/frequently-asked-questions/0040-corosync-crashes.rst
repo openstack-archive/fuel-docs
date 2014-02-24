@@ -6,7 +6,7 @@
 
 .. _common-technical-issues:
 
-Common Technical Issues	
+Common Technical Issues
 =======================
 
 Corosync crashes without network connectivity
