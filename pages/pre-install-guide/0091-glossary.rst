@@ -1,6 +1,19 @@
 Dictionary of terms used in this document
 =========================================
 
+Bonding
+-------
+
+NIC Bonding (also called NIC Aggregation)
+allows you to aggregate multiple physical links to one link
+to increase speed and provide fault tolerance.
+
+Bonding is supported in the following modes:
+Active-backup, Balance SLB (Source Level Bonding), 
+and Balance TCP with LACP (Link Aggregation Control Protocol).
+
+The Fuel UI prevents you from configuring Bonding TCP by itself, without LACP.
+
 Ceilometer
 ----------
 Ceilometer collects measurements for monitoring and metering within OpenStack;
@@ -98,14 +111,6 @@ Red Hat OpenStack does not support Galera.
 Instead, it sets up native replication in a Master/Slave configuration.
 The MySQL master is elected using Corosync;
 master and slave status is managed using Pacemaker.
-
-Grizzly
--------
-Code name for the seventh release of the OpenStack software.
-For more information, see the
-`Grizzly web site <http://www.openstack.org/software/grizzly/>`_.
-Fuel 4.1 supports deployment of The RHEL OpenStack distribution
-that is based on the Grizzly code base.
 
 Havana
 ------
@@ -389,6 +394,10 @@ Nova networking:
    Only Nova networking is currently supported for Red Hat OpenStack.
    The Red Hat kernel lacks GRE tunneling support for OpenVSwitch
    so Neutron (Quantum) is not available for Red Hat OpenStack.
+
+Support for the Red Hat OpenStack Distribution
+was temporarily removed from Fuel 4.1 because of an incompatibility problem;
+see `LP1283072 <https://bugs.launchpad.net/fuel/+bug/1283072>`_.
 
 Security groups
 ---------------
