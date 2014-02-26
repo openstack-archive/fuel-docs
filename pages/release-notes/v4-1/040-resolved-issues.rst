@@ -1,4 +1,4 @@
-Issues Resolved in Mirantis OpenStack 4.0
+Issues Resolved in Mirantis OpenStack 4.1
 =========================================
 
 Ceph acting as a backend for ephemeral volumes is no longer experimental

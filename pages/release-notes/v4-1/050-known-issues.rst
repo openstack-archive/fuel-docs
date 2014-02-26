@@ -1,4 +1,4 @@
-Known Issues in Mirantis OpenStack 4.0
+Known Issues in Mirantis OpenStack 4.1
 ======================================
 
 Hardcoded "admin" tenant breaks Neutron default networks
@@ -115,7 +115,8 @@ The Nova Compute non-live migration process assumes
 that all image backends store ephemeral drives in a filesystem path on a compute host,
 which is not the case for Ceph RBD.
 Live migrations do not exhibit this behavior and work correctly with Ceph RBD.
-Because the Horizon Dashboard in Havana does not support live migrations, you must use the command line.
+Because the Horizon Dashboard in Havana does not support live migrations,
+you must use the command line.
 
 Other limitations
 -----------------

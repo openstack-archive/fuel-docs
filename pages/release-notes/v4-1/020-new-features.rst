@@ -1,4 +1,4 @@
-New Features in Mirantis OpenStack 4.0
+New Features in Mirantis OpenStack 4.1
 ======================================
 
 Mirantis OpenStack hardened packages support the latest stable OpenStack Havana maintenance release
