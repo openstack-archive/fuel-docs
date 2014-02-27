@@ -126,11 +126,7 @@ Manual Installation
 .. note::
 
   The following steps are only suitable for setting up a vanilla OpenStack 
-  environment for evaluation purposes only. `They are not complete enough to 
-  perform RHOS installation.`
-  
-  To download and deploy Red Hat OpenStack, you should use the automated 
-  VirtualBox helper scripts or install a Fuel :ref:`Install_Bare-Metal`.
+  environment for evaluation purposes only.
 
 If you cannot or would rather not run our helper scripts, you can still run 
 Fuel on VirtualBox by following these steps.
