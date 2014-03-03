@@ -13,7 +13,7 @@
    height="1170"
    id="svg3675"
    version="1.1"
-   inkscape:version="0.48.4 r9939"
+   inkscape:version="0.48.3.1 r9886"
    sodipodi:docname="logical-diagram-controller.svg">
   <defs
      id="defs3677">
@@ -34,14 +34,14 @@
      inkscape:pageshadow="2"
      inkscape:zoom="0.7"
      inkscape:cx="748.9681"
-     inkscape:cy="634.6965"
+     inkscape:cy="520.41078"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1366"
-     inkscape:window-height="749"
-     inkscape:window-x="-4"
-     inkscape:window-y="-4"
+     inkscape:window-width="1920"
+     inkscape:window-height="1031"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
      inkscape:window-maximized="1" />
   <metadata
      id="metadata3680">
@@ -188,7 +188,7 @@
        ry="8.3928566" />
     <text
        xml:space="preserve"
-       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans;font-stretch:normal;font-variant:normal"
+       style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans"
        x="246.07141"
        y="227.79074"
        id="text4503"
@@ -197,11 +197,11 @@
          id="tspan4505"
          x="246.07141"
          y="227.79074"
-         style="font-size:28px;-inkscape-font-specification:PT Sans;font-family:PT Sans;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal">quantum agents</tspan><tspan
+         style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:PT Sans;-inkscape-font-specification:PT Sans">neutron agents</tspan><tspan
          sodipodi:role="line"
          x="246.07141"
          y="262.79074"
-         style="font-size:28px;-inkscape-font-specification:PT Sans;font-family:PT Sans;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal"
+         style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:PT Sans;-inkscape-font-specification:PT Sans"
          id="tspan4751">(active)</tspan></text>
     <rect
        style="fill:#ffffff;fill-opacity:1;stroke:#999999;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
@@ -273,7 +273,7 @@
        ry="8.3928566" />
     <text
        xml:space="preserve"
-       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans;font-stretch:normal;font-variant:normal"
+       style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans"
        x="245.40793"
        y="876.75525"
        id="text4503-7-1"
@@ -282,7 +282,7 @@
          id="tspan4505-4-15"
          x="245.40793"
          y="876.75525"
-         style="font-size:28px;-inkscape-font-specification:PT Sans;font-family:PT Sans;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal">quantum-api</tspan></text>
+         style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:PT Sans;-inkscape-font-specification:PT Sans">neutron-api</tspan></text>
     <rect
        style="fill:#ffffff;fill-opacity:1;stroke:#999999;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
        id="rect4501-1-2"
@@ -562,7 +562,7 @@
        ry="8.3928566" />
     <text
        xml:space="preserve"
-       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans;font-stretch:normal;font-variant:normal"
+       style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans"
        x="1042.2576"
        y="227.71696"
        id="text4503-6"
@@ -571,11 +571,11 @@
          id="tspan4505-0"
          x="1042.2576"
          y="227.71696"
-         style="font-size:28px;-inkscape-font-specification:PT Sans;font-family:PT Sans;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal">quantum agents</tspan><tspan
+         style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:PT Sans;-inkscape-font-specification:PT Sans">neutron agents</tspan><tspan
          sodipodi:role="line"
          x="1042.2576"
          y="262.71698"
-         style="font-size:28px;-inkscape-font-specification:PT Sans;font-family:PT Sans;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal"
+         style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:PT Sans;-inkscape-font-specification:PT Sans"
          id="tspan4751-2">(hot standby)</tspan></text>
     <rect
        style="fill:#ffffff;fill-opacity:1;stroke:#999999;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
@@ -647,7 +647,7 @@
        ry="8.3928566" />
     <text
        xml:space="preserve"
-       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans;font-stretch:normal;font-variant:normal"
+       style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans"
        x="1041.5941"
        y="876.68146"
        id="text4503-7-1-8"
@@ -656,7 +656,7 @@
          id="tspan4505-4-15-9"
          x="1041.5941"
          y="876.68146"
-         style="font-size:28px;-inkscape-font-specification:PT Sans;font-family:PT Sans;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal">quantum-api</tspan></text>
+         style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:PT Sans;-inkscape-font-specification:PT Sans">neutron-api</tspan></text>
     <rect
        style="fill:#ffffff;fill-opacity:1;stroke:#999999;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
        id="rect4501-1-2-3"

@@ -14,7 +14,7 @@
    stroke-linecap="square"
    stroke-miterlimit="10"
    id="svg2"
-   inkscape:version="0.48.4 r9939"
+   inkscape:version="0.48.3.1 r9886"
    width="100%"
    height="100%"
    sodipodi:docname="deployment-ha-compact.svg">
@@ -42,7 +42,7 @@
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      inkscape:window-width="1920"
-     inkscape:window-height="1061"
+     inkscape:window-height="1031"
      id="namedview99"
      showgrid="true"
      showguides="false"
@@ -50,8 +50,8 @@
      inkscape:zoom="1.4934726"
      inkscape:cx="390.55965"
      inkscape:cy="180.60664"
-     inkscape:window-x="1362"
-     inkscape:window-y="-4"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
      inkscape:window-maximized="1"
      inkscape:current-layer="g7">
     <inkscape:grid
@@ -185,7 +185,7 @@
          y="116.66164">Storage</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans;font-stretch:normal;font-variant:normal"
+       style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans"
        x="125.90685"
        y="159.99231"
        id="text3124-4"
@@ -193,7 +193,7 @@
          sodipodi:role="line"
          id="tspan3126-2"
          x="125.90685"
-         y="159.99231">Quantum (Active)</tspan></text>
+         y="159.99231">Neutron (Active)</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:16px;font-style:normal;font-weight:bold;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans Bold;font-stretch:normal;font-variant:normal"
@@ -256,7 +256,7 @@
          y="116.66163">Storage</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans;font-stretch:normal;font-variant:normal"
+       style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans"
        x="383.93137"
        y="159.21521"
        id="text3124-1"
@@ -265,7 +265,7 @@
          id="tspan3126-1"
          x="383.93137"
          y="159.21521"
-         style="font-size:13px;-inkscape-font-specification:PT Sans;font-family:PT Sans;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal">Quantum (Hot Standby)</tspan></text>
+         style="font-size:13px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:PT Sans;-inkscape-font-specification:PT Sans">Neutron (Hot Standby)</tspan></text>
     <path
        inkscape:connector-curvature="0"
        d="m 557.19606,58.72714 0,0 c 0,-2.890492 2.3432,-5.2337 5.2337,-5.2337 l 154.19402,0 c 1.38806,0 2.71929,0.551407 3.7008,1.532913 0.9815,0.98151 1.53291,2.312722 1.53291,3.700787 l 0,20.93417 c 0,2.890495 -2.34322,5.233703 -5.23371,5.233703 l -154.19402,0 0,0 c -2.89049,0 -5.2337,-2.343208 -5.2337,-5.233703 z"
@@ -305,7 +305,7 @@
          y="116.66163">Storage</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans;font-stretch:normal;font-variant:normal"
+       style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans"
        x="639.46234"
        y="159.21521"
        id="text3124-1-5"
@@ -314,6 +314,6 @@
          id="tspan3126-1-2"
          x="639.46234"
          y="159.21521"
-         style="font-size:13px;-inkscape-font-specification:PT Sans;font-family:PT Sans;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal">Quantum (Hot Standby)</tspan></text>
+         style="font-size:13px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:PT Sans;-inkscape-font-specification:PT Sans">Neutron (Hot Standby)</tspan></text>
   </g>
 </svg>
