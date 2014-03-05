@@ -326,35 +326,21 @@ network:
 -  The Storage and VM networks should be configured without access to
    other networks (no L3 connectivity)
 
-.. image:: /_images/image22.png
+.. image:: /_images/fuel-network-scheme.jpg
    :align: center
-.. image:: /_images/image10.png
+.. image:: /_images/grub-screen.png
    :align: center
-.. image:: /_images/image03.png
+.. image:: /_images/grub-cmdline.png
    :align: center
-.. image:: /_images/image18.png
+.. image:: /_images/fuel-wizard.png
    :align: center
-.. image:: /_images/image19.png
+.. image:: /_images/fuel-network-settings.png
    :align: center
-.. image:: /_images/image00.png
+.. image:: /_images/fuel-settings.png
    :align: center
-.. image:: /_images/image08.png
+.. image:: /_images/fuel-nodes.png
    :align: center
-.. image:: /_images/image06.jpg
+.. image:: /_images/fuel-nodes-selected.png
    :align: center
-.. image:: /_images/image22.png
-   :align: center
-.. image:: /_images/image10.png
-   :align: center
-.. image:: /_images/image03.png
-   :align: center
-.. image:: /_images/image14.png
-   :align: center
-.. image:: /_images/image02.png
-   :align: center
-.. image:: /_images/image19.png
-   :align: center
-.. image:: /_images/image17.png
-   :align: center
-.. image:: /_images/image07.png
+.. image:: /_images/fuel-node-network.png
    :align: center

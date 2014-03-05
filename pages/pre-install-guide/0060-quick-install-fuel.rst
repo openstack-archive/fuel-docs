@@ -4,10 +4,10 @@
 Configuring Fuel Using the ISO image
 ====================================
 
-Mirantis provides the Fuel ISO image that is easy to install on a virtual machine 
-or physical hardware. 
+Mirantis provides the Fuel ISO image that is easy to install on a virtual machine
+or physical hardware.
 
-To install Fuel using the ISO image: 
+To install Fuel using the ISO image:
 
 1. Download the Fuel ISO from the `Mirantis web-site <http://software.mirantis.com/>`_.
 
@@ -16,7 +16,7 @@ To install Fuel using the ISO image:
 3. Power on your machine.
    The Fuel boot menu appears.
 
-4. Optionally, configure the IP address, default gateway, and DNS server by 
+4. Optionally, configure the IP address, default gateway, and DNS server by
    pressing TAB.
 
 5. Optionally, set the ``showmenu`` property to **Yes** to open the extended
@@ -36,11 +36,11 @@ To install Fuel using the ISO image:
 
 11. In the **Settings** tab, modify additional options:
 
-   * Access 
+   * Access
 
-   * OpenStack Components 
+   * OpenStack Components
 
-   * Hypervisor type 
+   * Hypervisor type
 
    * Scheduler driver
 
@@ -50,7 +50,7 @@ To install Fuel using the ISO image:
 
 12. Assign a role for each node server.
 
-13. Optionally, associate NICs with the OpenStack networks: 
+13. Optionally, associate NICs with the OpenStack networks:
 
    1. Select the nodes.
    2. Click **Configure Interfaces**.
@@ -58,26 +58,50 @@ To install Fuel using the ISO image:
    4. Click **Apply**.
 
 14. Click **Deploy Changes**.
-    Depending on your environment deployment of Mirantis OpenStack may take 
-    some time. 
+    Depending on your environment deployment of Mirantis OpenStack may take
+    some time.
 
 After you deployed Mirantis OpenStack, verify the configuration by
 running the tests from the **Health Check** tab.
 
-.. image:: /_images/image22.png
+.. image:: /_images/grub-screen.png
    :align: center
-.. image:: /_images/image10.png
+
+Booting the ISO image.
+
+.. image:: /_images/grub-cmdline.png
    :align: center
-.. image:: /_images/image03.png
+
+Editing grub command line.
+
+.. image:: /_images/fuel-wizard.png
    :align: center
-.. image:: /_images/image14.png
+
+Create a new environment.
+
+.. image:: /_images/fuel-network-settings.png
    :align: center
-.. image:: /_images/image02.png
+
+Network settings page.
+
+.. image:: /_images/fuel-settings.png
    :align: center
-.. image:: /_images/image19.png
+
+Settings page.
+
+.. image:: /_images/fuel-nodes.png
    :align: center
-.. image:: /_images/image17.png
+
+Add nodes to environment.
+
+.. image:: /_images/fuel-nodes-selected.png
    :align: center
-.. image:: /_images/image07.png
+
+Select discovered nodes.
+
+.. image:: /_images/fuel-node-network.png
+   :align: center
+
+Node's network settings.
 
 .. seealso:: :ref:`Installation Guide<install-guide>`
