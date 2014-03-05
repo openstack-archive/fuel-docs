@@ -11,6 +11,7 @@ Release Notes
 
 .. include:: /pages/release-notes/v4-1-havana-full.rst
 
+.. include /pages/release-notes/v4-0-havana-full.rst
 .. include /pages/release-notes/v3-2-1-grizzly-full.rst
 .. include /pages/release-notes/v3-1-grizzly.rst
 .. include /pages/release-notes/v3-0-grizzly.rst
