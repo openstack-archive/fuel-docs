@@ -83,6 +83,13 @@ If multiple environments are deployed or if the environments are slow,
 some tests may fail due to timeouts.
 Reducing the load on the environment allows the tests to run successfully.
 
+Placing Ceph OSD on Controller nodes is not recommended
+-------------------------------------------------------
+
+Placing Ceph OSD on Controllers is highly unadvisable because it can severely
+degrade controller's performance. It's better to use separate storage nodes
+if you have enough hardware.
+
 The ability to deploy Red Hat Enterprise Linux OpenStack Platform has been temporarily disabled
 -----------------------------------------------------------------------------------------------
 
