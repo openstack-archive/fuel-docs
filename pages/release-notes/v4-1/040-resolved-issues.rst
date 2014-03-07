@@ -4,17 +4,17 @@ Issues Resolved in Mirantis OpenStack 4.1
 Ceph acting as a backend for ephemeral volumes is no longer experimental
 ------------------------------------------------------------------------
 
-In Mirantis OpenStack 4.1,
+Starting with Mirantis OpenStack 4.0,
 Mirantis enables the the Nova (Compute) service in Mirantis OpenStack
-to support VM instances backed by ephemeral volumes stored in Ceph,
-with Glance, Cinder, and Nova all supporting the Ceph RBD backend.
+to support VM instances backed by ephemeral volumes stored in Ceph.
+With Glance, Cinder, and Nova all supporting the Ceph RBD backend,
 OpenStack VM instances can take advantage of Ceph clustered storage capabilities
 through all of the steps of their life cycle.
 Ephemeral volumes can be created as copy-on-write clones of Glance images,
 recovered from Compute node failures thanks to Ceph object replication,
-and shared among Compute nodes to enable a live migration of VMs.
+and shared among Compute nodes to enable live migration of VMs.
 
-In Mirantis OpenStack 4.1
+In Mirantis OpenStack 4.0,
 a `known Ceph issue <http://tracker.ceph.com/issues/5426>`_
 could have led to a
 `Ceph SEGV error <https://bugs.launchpad.net/fuel/+bug/1260911>`_
