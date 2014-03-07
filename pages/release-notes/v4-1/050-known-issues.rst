@@ -1,13 +1,6 @@
 Known Issues in Mirantis OpenStack 4.1
 ======================================
 
-Hardcoded "admin" tenant breaks Neutron default networks
---------------------------------------------------------
-
-Neutron default networks (net04 and net04-ext) are now properly created
-if a user changes the name of the default tenant.
-See `LP12267431 <https://bugs.launchpad.net/fuel/+bug/1267431>`_.
-
 Murano OSTF test for Linux Apache Service fails
 -----------------------------------------------
 
