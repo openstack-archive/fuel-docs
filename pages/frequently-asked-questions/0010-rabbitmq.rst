@@ -20,12 +20,12 @@ RabbitMQ Cluster Restart Issues Following A Systemwide Power Failure
   2. It's impossible to start the RabbitMQ master node due to a hardware or 
      system failure
 
-  Fuel updates the ``/etc/init.d/rabbitmq-server`` init scripts for 
-  RHEL/Centos to customized versions. These scripts attempt to 
-  start RabbitMQ twice, giving the RabbitMQ master node the necessary time to 
-  start after complete power loss. With the scripts in place, power up all 
-  nodes, then check to see whether the RabbitMQ server started on all nodes. 
-  All nodes should start automatically.
+  Fuel updates the ``/etc/init.d/rabbitmq-server`` init scripts for CentOS and
+  Ubuntu to customized versions. These scripts attempt to start RabbitMQ twice,
+  giving the RabbitMQ master node the necessary time to start after complete
+  power loss. With the scripts in place, power up all nodes, then check to see
+  whether the RabbitMQ server started on all nodes. All nodes should start
+  automatically.
 
   On the other hand, if the RabbitMQ master node has failed, the init script 
   performs the following actions during the rabbitmq-server start. It moves 

@@ -59,9 +59,8 @@ default Corosync configuration, which can also be altered in Fuel manifests.
 Pacemaker Settings
 ------------------
 
-Pacemaker is the cluster resource manager used by Fuel to manage Quantum 
-resources, HAProxy, virtual IP addresses and MySQL Galera (or simple MySQL 
-Master/Slave replication in case of RHOS installation) cluster. It is done by 
+Pacemaker is the cluster resource manager used by Fuel to manage Quantum
+resources, HAProxy, virtual IP addresses and MySQL Galera cluster. It is done by 
 use of Open Cluster Framework (see http://linux-ha.org/wiki/OCF_Resource_Agents) 
 agent scripts which are deployed in order to start/stop/monitor Quantum services, 
 to manage HAProxy, virtual IP addresses and MySQL replication. These are located 

@@ -146,7 +146,7 @@ First, create the Master node VM.
 2. Create a VM for the Master node with the following parameters:
 
 * OS Type: Linux
-* Version: Red Hat (64bit)
+* Version: Ubuntu (64bit)
 * RAM: 1536+ MB (2048+ MB recommended)
 * HDD: 50 GB with dynamic disk expansion
 
@@ -167,7 +167,7 @@ Next, create Slave nodes where OpenStack needs to be installed.
 
 1. Create 3 or 4 additional VMs depending on your wish with the following parameters:
 
-* OS Type: Linux, Version: Red Hat (64bit)
+* OS Type: Linux, Version: Ubuntu (64bit)
 * RAM: 1536+ MB (2048+ MB recommended)
 * HDD: 50+ GB, with dynamic disk expansion
 * Network 1: host-only interface vboxnet0, PCnet-FAST III device
