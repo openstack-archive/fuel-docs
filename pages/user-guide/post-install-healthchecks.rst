@@ -152,8 +152,6 @@ includes the suite of sanity tests implemented:
 * Check all the services execute normally
 * Check Internet connectivity from a compute
 * Check DNS resolution on a compute
-* Check Default Key Pair 'murano-lb-key' For Server Farms
-* Check Windows Image With Murano Tag
 * Murano environment and service creation, listing and deletion
 * Networks availability
 
@@ -246,7 +244,7 @@ The platform tests are run in the tenant you've specified in
 'OpenStack Settings' tab during OpenStack installation.
 The 'admin' tenant is selected by default.
 
-To prepare Murano for testing:
+To prepare Murano for Windows-based services deployment testing:
 
 * Add Windows based image to Murano:
 
@@ -279,7 +277,6 @@ To prepare Murano for testing:
     9. In the 'Title' field, set title for this image.
     10. Select the 'Generic Linux' type.
     11. Click 'Mark'.
-
 
 Murano is ready for testing.
 
