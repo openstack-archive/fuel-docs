@@ -91,7 +91,7 @@ Supported Software
 
 * **OpenStack Core Projects**
 
-  * Havana release 2013.2.1
+  * Havana release 2013.2.2
 
     * Nova (OpenStack Compute)
     * Swift (OpenStack Object Storage)
