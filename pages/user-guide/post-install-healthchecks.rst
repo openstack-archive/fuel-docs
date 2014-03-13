@@ -211,7 +211,6 @@ involves several manual configuration steps.
 
 Preparing Savanna for Testing
 +++++++++++++++++++++++++++++
-
 The platform tests are run in the tenant you've specified in
 'OpenStack Settings' tab during OpenStack installation. By default that is
 'admin' tenant. Perform in the that tenant the following actions:
@@ -222,17 +221,25 @@ The platform tests are run in the tenant you've specified in
 
    * First download the following image:
 
-http://savanna-files.mirantis.com/savanna-0.3-vanilla-1.2.1-ubuntu-13.04.qcow2
+     http://savanna-files.mirantis.com/savanna-0.3-vanilla-1.2.1-ubuntu-13.04.qcow2
+
    * Then upload the image into OpenStack Image Service (Glance) into
      'admin' tenant and name it 'savanna'.
+
    * In OpenStack Dashboard (Horizon) access 'Savanna' tab.
+
    * Switch to 'admin' tenant if you are not in it already.
+
    * Go to the ‘Image Registry’ menu. Here push ‘Register Image’ button.
      Image registration window will open up.
+
    * Select the image you’ve just uploaded.
+
    * Set username to ‘ubuntu’
+
    * For tags, pick ‘vanilla’ plugin and ‘1.2.1’ version and press
      ‘Add all’ button.
+
    * Finally push ‘Done’ button
 
 After the steps above are done, the Savanna is ready to be tested.
@@ -246,37 +253,59 @@ The 'admin' tenant is selected by default.
 
 To prepare Murano for Windows-based services deployment testing:
 
-* Add Windows based image to Murano:
+1. Add Windows based image to Murano:
 
-    1. Create a Windows image with Murano agent.
-       See `Murano documentation (Windows Image Builder) <http://murano-docs.github.io/latest/administrators-guide/content/ch03.html>`_
-       (Please note, the Murano Image Builder documentation referenced here cannot guarantee success with image creation and could be outdated)
-    2. Upload the image to the OpenStack Image Service (Glance) into the 'admin' tenant.
-    3. In the OpenStack Dashboard, click the 'Project' tab.
-    4. Switch to admin tenant if needed.
-    5. Open 'Murano' tab.
-    6. Click the 'Images' menu.
-    7. Click 'Mark Image'. The Image registration window displays.
-    8. Select the Windows image with Murano agent.
-    9. In the 'Title' field, set title for this image.
-    10. Select the 'Windows Server 2012' type.
-    11. Click 'Mark'.
+   * Create a Windows image with Murano agent.
+     See `Murano documentation (Windows Image Builder) <http://murano-docs.github.io/latest/administrators-guide/content/ch03.html>`_
 
-* Add Linux based image to Murano:
+     (Please note, the Murano Image Builder documentation referenced here cannot guarantee success with image creation and could be outdated)
 
-    1. Create a Linux image with Murano agent.
-        See `Murano documentation (Linux Image Builder) <http://murano-docs.github.io/latest/administrators-guide/content/ch04.html>`_
-        (Please note, the Murano Image Builder documentation referenced here cannot guarantee success with image creation and could be outdated)
-    2. Upload the image to the OpenStack Image Service (Glance) into the 'admin' tenant.
-    3. In the OpenStack Dashboard, click the 'Project' tab.
-    4. Switch to admin tenant if needed.
-    5. Open 'Murano' tab.
-    6. Click the 'Images' menu.
-    7. Click 'Mark Image'. The Image registration window displays.
-    8. Select the Linux image with Murano Agent.
-    9. In the 'Title' field, set title for this image.
-    10. Select the 'Generic Linux' type.
-    11. Click 'Mark'.
+   * Upload the image to the OpenStack Image Service (Glance) into the 'admin' tenant.
+
+   * In the OpenStack Dashboard, click the 'Project' tab.
+
+   * Switch to admin tenant if needed.
+
+   * Open 'Murano' tab.
+
+   * Click the 'Images' menu.
+
+   * Click 'Mark Image'. The Image registration window displays.
+
+   * Select the Windows image with Murano agent.
+
+   * In the 'Title' field, set title for this image.
+
+   * Select the 'Windows Server 2012' type.
+
+   * Click 'Mark'.
+
+2. Add Linux based image to Murano:
+
+   * Create a Linux image with Murano agent.
+     See `Murano documentation (Linux Image Builder) <http://murano-docs.github.io/latest/administrators-guide/content/ch04.html>`_
+
+     (Please note, the Murano Image Builder documentation referenced here cannot guarantee success with image creation and could be outdated)
+
+   * Upload the image to the OpenStack Image Service (Glance) into the 'admin' tenant.
+
+   * In the OpenStack Dashboard, click the 'Project' tab.
+
+   * Switch to admin tenant if needed.
+
+   * Open 'Murano' tab.
+
+   * Click the 'Images' menu.
+
+   * Click 'Mark Image'. The Image registration window displays.
+
+   * Select the Linux image with Murano Agent.
+
+   * In the 'Title' field, set title for this image.
+
+   * Select the 'Generic Linux' type.
+
+   * Click 'Mark'.
 
 Murano is ready for testing.
 
