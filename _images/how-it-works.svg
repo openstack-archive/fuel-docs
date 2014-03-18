@@ -11,7 +11,7 @@
    viewBox="0.0 0.0 677.0 617.0"
    stroke-miterlimit="10"
    id="svg2"
-   inkscape:version="0.48+devel r12685"
+   inkscape:version="0.48.3.1 r9886"
    width="100%"
    height="100%"
    sodipodi:docname="how-it-works.svg"
@@ -44,15 +44,15 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1366"
-     inkscape:window-height="706"
+     inkscape:window-width="1920"
+     inkscape:window-height="1031"
      id="namedview185"
      showgrid="false"
      inkscape:zoom="0.76499189"
      inkscape:cx="154.87188"
      inkscape:cy="449.33982"
-     inkscape:window-x="-8"
-     inkscape:window-y="-8"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
      inkscape:window-maximized="1"
      inkscape:current-layer="g7" />
   <clipPath
@@ -511,13 +511,10 @@
        fill-rule="nonzero"
        fill="#d9ead3" />
     <path
-       d="m181.9518 278.69995l0 0c0 -2.20047 1.783844 -3.984314 3.9843292 -3.984314l117.44867 0c1.0567017 0 2.0701294 0.4197693 2.8173218 1.1669922c0.7472229 0.7471924 1.1669922 1.7606201 1.1669922 2.8173218l0 15.936859c0 2.2005005 -1.783844 3.9843445 -3.984314 3.9843445l-117.44867 0l0 0c-2.2004852 0 -3.9843292 -1.783844 -3.9843292 -3.9843445z"
+       d="m 181.9518,278.69995 0,0 c 0,-2.20047 1.78384,-3.98431 3.98433,-3.98431 l 117.44867,0 c 1.0567,0 2.07013,0.41977 2.81732,1.16699 0.74722,0.74719 1.16699,1.76062 1.16699,2.81732 l 0,15.93686 c 0,2.2005 -1.78384,3.98434 -3.98431,3.98434 l -117.44867,0 0,0 c -2.20049,0 -3.98433,-1.78384 -3.98433,-3.98434 z"
        id="path181"
-       stroke-linejoin="round"
-       stroke-linecap="butt"
-       stroke-width="2.0"
-       stroke="#000000"
-       fill-rule="nonzero" />
+       inkscape:connector-curvature="0"
+       style="stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:round" />
     <text
        xml:space="preserve"
        style="font-size:20px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans Bold"
@@ -556,7 +553,7 @@
          style="font-size:18px;-inkscape-font-specification:PT Sans;font-family:PT Sans;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal">CentOS 6.4</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:20px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans;font-stretch:normal;font-variant:normal"
+       style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans"
        x="245.47569"
        y="256.44772"
        id="text3188"
@@ -564,19 +561,20 @@
          sodipodi:role="line"
          id="tspan3190"
          x="245.47569"
-         y="256.44772">RHEL 6.4</tspan></text>
+         y="256.44772">Ubuntu 12.04</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans"
-       x="244.35773"
-       y="293.8266"
+       style="font-size:43.23100662px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans"
+       x="-240.19954"
+       y="289.60977"
        id="text3192"
-       sodipodi:linespacing="125%"><tspan
+       sodipodi:linespacing="125%"
+       transform="scale(-1.0035067,0.99650558)"><tspan
          sodipodi:role="line"
          id="tspan3194"
-         x="244.35773"
-         y="293.8266"
-         style="font-size:17.5px">Ubuntu 12.04</tspan></text>
+         x="-240.19954"
+         y="289.60977"
+         style="font-size:43.23100662px">...</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:20px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans Bold"
@@ -805,5 +803,20 @@
          id="tspan3198-1"
          x="463.80667"
          y="313.84427">Manifests</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="277.12711"
+       y="292.81357"
+       id="text3111"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3113"
+         x="277.12711"
+         y="292.81357"></tspan><tspan
+         sodipodi:role="line"
+         id="tspan3115"
+         x="277.12711"
+         y="342.81357" /></text>
   </g>
 </svg>
