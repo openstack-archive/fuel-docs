@@ -6,7 +6,7 @@ Savanna Deployment
 ------------------
 
 Savanna is a service for launching Hadoop clusters on OpenStack.
-It is designed to be vendor-agnostic and currently supports three distributions:
+It is vendor-agnostic and currently supports three distributions:
 Vanilla Apache Hadoop, Hortonworks Data Platform (HDP),
 and the Intel Distribution for Apache Hadoop (IDH).
 For Savanna usage guidelines, read the User Guide section of the
@@ -16,16 +16,18 @@ For Savanna usage guidelines, read the User Guide section of the
 
 Fuel configures Savanna to use floating IPs to access and configure VMs.
 
-Savanna does not configure OpenStack Security Groups, so manual configuration
-is required in each tenant where Savanna is going to be used.
-The following table lists the ports that should be opened for inbound traffic.
-The ports having 'yes' in the 'Required for Savanna' column
-must be open in order for Savanna to function properly.
+Savanna does not configure OpenStack Security Groups so the default security
+group must be configured manually in each tenant where Savanna will be used.
+The table below lists the ports that must be open for inbound traffic
+(marked with 'yes' in the 'Required for Savanna' column) and the ports that
+are used for running Savanna post-deployment health checks.
 
-Also, Fuel has post-deployment checks for Savanna;
-see details in :ref:`platform-tests-label`.
-If you want to run the checks,
-open the ports that have 'yes' in the 'Required for Savanna post-deployment' column.
+For the post-deployment checks details see :ref:`platform-tests-label`.
+If you want to run the checks, open the ports that have 'yes' in the
+corresponding column. Note that the checks are run in the tenant you've
+specified in 'OpenStack Settings' tab during OpenStack installation, so
+that is where you need to configure the default Security Group.
+By default 'admin' tenant is used for post-deployment checks.
 
 +-----------------+-------------------+------------------------+--------------------------------------+
 | Port / protocol | Required for      | Required for Savanna   | Port                                 |
