@@ -4,7 +4,7 @@
 
 .. index:: Murano-operations
 
-.. _murano-deploy-notes:
+.. _Murano-deployment-notes:
 
 Murano Deployment Notes
 ==================================

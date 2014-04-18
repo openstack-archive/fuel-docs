@@ -5,7 +5,7 @@
   +-------------------------------------+-----------------------------------+
   | Mirantis OpenStack v4.1             |                .. cssclass:: right|
   |                                     |                                   |
-  | OpenStack Patching Quick Reference  |                    ###Section###  |
+  | Terminology Reference               |                    ###Section###  |
   +-------------------------------------+-----------------------------------+
 
 .. footer::
@@ -22,8 +22,4 @@
 
    PageBreak oneColumn
 
-.. toctree::
-   :maxdepth: 2
-
-.. include:: /pages/preface/preface.rst
-.. include:: /contents/contents-openstack-patch-quick-ref.rst
+.. include:: /contents/contents-terminology.rst
