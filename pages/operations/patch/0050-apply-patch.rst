@@ -3,7 +3,7 @@
 .. _ApplyPatch:
 
 Apply a patch
-==============
+-------------
 
 To apply the fix, first change the directory to the one that
 corresponds to your operating system. The OpenStack source code

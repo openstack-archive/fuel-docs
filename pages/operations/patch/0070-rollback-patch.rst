@@ -3,7 +3,7 @@
 .. _RollbackPatch:
 
 Roll back a patch
-=================
+-----------------
 
 You can roll back a patch by simply reinstalling your files from the backup
 or, if you chose the ``-b`` option, by using the patch commands’ ``-R`` flag. Again,

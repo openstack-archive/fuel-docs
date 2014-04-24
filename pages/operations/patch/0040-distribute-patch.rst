@@ -3,7 +3,7 @@
 .. _DistPatch:
 
 Distribute a patch
-==================
+------------------
 
 Regardless of the method used to obtain the patch, after you download
 the patch, transfer the patch to every node in the OpenStack environment

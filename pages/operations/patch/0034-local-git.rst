@@ -1,5 +1,5 @@
 Local git repository method
----------------------------
++++++++++++++++++++++++++++
 
 First, you will need to fetch repository data `using git <http://git-scm.com/book/en/Git-Basics-Getting-a-Git-Repository>`_.
 

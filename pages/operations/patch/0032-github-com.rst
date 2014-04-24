@@ -1,5 +1,5 @@
 github.com method
------------------
++++++++++++++++++
 
 To generate a patch file from a github commit, simply add ``.patch`` at the
 end of your commit URL.

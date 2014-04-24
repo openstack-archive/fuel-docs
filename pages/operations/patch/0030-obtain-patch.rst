@@ -3,7 +3,7 @@
 .. _ObtPatch:
 
 Obtain a patch
-==============
+--------------
 
 You can obtain patches in three different ways:
 

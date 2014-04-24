@@ -1,9 +1,9 @@
-.. index:: Introduction
+.. index:: Patching, OpenStack
 
 .. _Intro:
 
-Introduction
-============
+Applying a Patch
+================
 
 A patch file is a representation of the difference in the code between
 two points in time, many times resulting from a discovered defect or

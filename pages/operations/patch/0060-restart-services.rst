@@ -3,7 +3,7 @@
 .. _RestartSvc:
 
 Restart the services
-====================
+--------------------
 
 Once the files are patched, restart all appropriate OpenStack services.
 If you patch nova, for example, restart all nova services running on a

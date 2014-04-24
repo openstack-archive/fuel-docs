@@ -3,7 +3,7 @@
 .. _IdFile:
 
 Identify files to be patched
-============================
+----------------------------
 
 Identifying files or components to be patched usually involves investigating
 change logs for new OpenStack releases or git commit messages. You can find
