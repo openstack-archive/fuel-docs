@@ -18,6 +18,5 @@ Documentation
   operations
   reference-architecture
   release-notes
-  frequently-asked-questions
   terminology
   eula
