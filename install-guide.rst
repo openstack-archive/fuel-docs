@@ -7,11 +7,6 @@ Installation Guide
 =====================
 
 .. contents:: :local:
-  :depth: 2
-  
-.. include:: /pages/install-guide/0000-intro.rst
-.. include:: /pages/install-guide/0010-prerequisites.rst
-.. include:: /pages/install-guide/0060-download-fuel.rst
-.. include:: /pages/install-guide/0070-networks.rst
-.. include:: /pages/install-guide/install.rst
-.. include:: /pages/install-guide/stop_reset.rst
+   :depth: 3
+
+.. include:: /contents/contents-install.rst

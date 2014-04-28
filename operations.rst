@@ -7,7 +7,6 @@ Operations Guide
 ================
 
 .. contents:: :local:
-  :depth: 2
+   :depth: 3
   
-.. include:: /pages/operations/0000-intro.rst
-.. include:: /pages/operations/9500-patching.rst
+.. include:: /contents/contents-operations.rst
