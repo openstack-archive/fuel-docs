@@ -1,3 +1,6 @@
+
+.. _murano-test-prepare:
+
 Preparing Murano for Testing
 ----------------------------
 

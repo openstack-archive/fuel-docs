@@ -7,7 +7,7 @@
 .. _Murano-deployment-notes:
 
 Murano Deployment Notes
-==================================
+=======================
 
 .. contents :local:
 

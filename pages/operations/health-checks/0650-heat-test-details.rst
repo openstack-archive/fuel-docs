@@ -1,13 +1,8 @@
-Platform Tests Details
-++++++++++++++++++++++
 
-Platform tests include tests for Sahara, Heat, and Murano. For details
-on preparing and running Sahara platform tests, refer to
-:ref:`sahara-deployment-label`. Details about Heat platform tests follow
-below.
+.. _heat-test-details:
 
-.. TODO(angdraug): finish cleanup of this section (Heat, Murano)
-
+Details of Heat Platform Tests
+------------------------------
 
 .. topic:: Typical stack actions: create, update, delete, show details, etc
 
