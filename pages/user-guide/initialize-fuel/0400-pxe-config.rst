@@ -1,7 +1,8 @@
+
 .. _Network_Install:
 
-Changing PXE Network Parameters
--------------------------------
+Changing PXE Network Parameters During Installation
+---------------------------------------------------
 
 You may also need to customize the network settings for the Admin
 (PXE) logical network.
@@ -50,3 +51,4 @@ deployment failure.
 
   Once IP settings are set at the boot time for Fuel Master node, they
   **should not be changed during the whole lifecycle of Fuel.**
+
