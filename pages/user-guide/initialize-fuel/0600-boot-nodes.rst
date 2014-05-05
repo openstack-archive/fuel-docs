@@ -1,3 +1,4 @@
+
 .. _boot-nodes-ug:
 
 Boot the node servers
@@ -29,14 +30,11 @@ it, and start configuration.
 Networking configuration is the most complicated part, so please read the
 networking section of the documentation carefully.
 
-When you have configured all the nodes and their role s and pressed the Deploy button:
+When you have configured all the nodes and their roles and pressed the Deploy button:
 
 #. Each server should reboot and start the provisioning of the selected operating system using the
    same PXE boot scheme, so ensure that all the servers have successfully rebooted, booted over the
    network and started the installers.
 #. When all servers have been successfully provisioned and rebooted again from their local drives
    into the newly installed systems the Master node will start the deployment of OpenStack on them.
-
-
-
 

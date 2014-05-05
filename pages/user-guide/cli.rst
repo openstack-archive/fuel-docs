@@ -6,8 +6,8 @@
 
 .. _cli_usage:
 
-Understanding Environment deployment with Fuel CLI
-==================================================
+Using Fuel CLI
+==============
 
 Introduction
 ------------
@@ -50,7 +50,7 @@ and for getting actions and optional args for some namespace run:
   fuel <namespace> --help
 
 CLI commands reference
------------------------------------------
+----------------------
 
 Release
 +++++++
