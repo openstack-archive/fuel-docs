@@ -1,5 +1,5 @@
 Known limitations
-~~~~~~~~~~~~~~~~~
+-----------------
 
 * Neutron will not allocate a floating IP range for your tenants. After each
   tenant is created, a floating IP range must be created. Note that this does

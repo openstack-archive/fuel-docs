@@ -1,5 +1,5 @@
-Overview
-~~~~~~~~
+Neutron versus Nova-Network
+---------------------------
 
 OpenStack networking with Neutron (Quantum) has some differences from
 Nova-network. Neutron is able to virtualize and manage both layer 2 (logical)
@@ -8,7 +8,7 @@ virtualization provided by nova-network. This is the main difference between
 the two networking models for OpenStack. Virtual networks (one or more) can be
 created for a single tenant, forming an isolated L2 network called a
 "private network". Each private network can support one or many IP subnets.
-Private networks can be segmented using two different technologies:
+Private networks can be segmented using one of two different topologies:
 
 * **VLAN segmentation** "Private network" traffic is managed by
   Neutron by the use of a dedicated network adapter. This network adapter must be
@@ -24,15 +24,15 @@ Private networks can be segmented using two different technologies:
 
 It is important to note:
 
-* if you use tagged networks for your configuration
-  and combine multiple networks onto one NIC, you should make the Public
-  network untagged on this NIC.
-  It is not a requirement, but best for access to the OpenStack Dashboard
+* If you use tagged networks for your configuration
+  and combine multiple networks onto one NIC,
+  you should make the Public network untagged on this NIC.
+  This is not a requirement, but best for access to the OpenStack Dashboard
   and public OpenStack API.
-* Is a best if you place the Private, Admin, Public and Management networks on a
+* You should place the Private, Admin, Public and Management networks on a
   separate NIC to ensure that traffic is separated adequately.
-* Admin and Private networks must be located together on separate NIC from the
-  other networks.
+* Admin and Private networks must be located together
+  on a NIC that is separate from the other networks.
 
 A typical network configuration for Neutron with VLAN segmentation might look
 like this:
