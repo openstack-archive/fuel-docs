@@ -9,16 +9,6 @@ jQuery(document).ready(function(){
     };
   });
 
-  // Set "active" classes for navigation items
-  var url=location.href;
-  if(url.split('/')[3]!=0){url=url.split('/')[3];
-  jQuery.each(jQuery("#globalLink a[href*='\\/"+url+"']"),function(){
-    jQuery(this).addClass('active');
-    var id = jQuery(this).attr('name').substr(2,1);
-    jQuery("#subglobal"+id).addClass('currentSubNav');
-    jQuery("#gl"+id).css({ "background-color": "#f4f7fa"});
-  });};
-
   //Menu Initalization on start
   jQuery(".currentSubNav").css({'visibility': 'visible', opacity: 0.0});
 
