@@ -1,9 +1,9 @@
 .. header::
 
         .. cssclass:: header-table
-        
+
         +-------------------------------------+-----------------------------------+
-        | Mirantis OpenStack v4.1             |                .. cssclass:: right|
+        | Mirantis OpenStack v5.0             |                .. cssclass:: right|
         |                                     |                                   |
         |                                     |                     Release Notes |
         +-------------------------------------+-----------------------------------+
@@ -11,7 +11,7 @@
 .. footer::
 
         .. cssclass:: footer-table
-        
+
         +--------------------------+----------------------+
         | ©2014, Mirantis Inc.     |   .. cssclass:: right|
         |                          |                      |
@@ -22,4 +22,4 @@
 
    PageBreak oneColumn
 
-.. include:: /pages/release-notes/v4-1-havana-full.rst
+.. include:: /pages/release-notes/v5-0-icehouse-full.rst
