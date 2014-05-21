@@ -22,9 +22,10 @@ Here are the the available options:
     "action": "add-port",       # type of primitive
     "name": "xxx-port",         # unique name of the new port
     "bridge": "xxx",            # name of the bridge where the port should be created
-    "type": "internal",         # [optional; default: "internal"] a type of OVS interface
-                                # for the port (see OVS documentation);
-                                # possible values: "system", "internal", "tap", "gre", "null"
+    "type": "internal",         # [optional; default: "internal"] a type of OVS
+                                # interface # for the port (see OVS documentation);
+                                # possible values:
+                                # "system", "internal", "tap", "gre", "null"
     "tag": 0,                   # [optional; default: 0] a 802.1q tag of traffic that
                                 # should be captured from an OVS bridge;
                                 # possible values: 0 (means port is a trunk),
@@ -62,8 +63,9 @@ Here are the the available options:
                                 # tag passes); e.g. [0,10,20]
     "properties": [],           # [optional; default: []] a list of additional
                                 # OVS bonded port properties to modify them in OVS DB;
-                                # you can use it to set the aggregation mode and balancing
-                                # strategy, to configure LACP, and so on (see the OVS documentation)
+                                # you can use it to set the aggregation mode and
+                                # balancing # strategy, to configure LACP, and so on
+                                # (see the OVS documentation)
   },
   {
     "action": "add-patch",      # type of primitive

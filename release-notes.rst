@@ -1,6 +1,5 @@
 .. index:: Release Notes
-
-.. _Release_Notes:
+.. _release-notes:
 
 =============
 Release Notes

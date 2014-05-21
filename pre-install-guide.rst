@@ -1,10 +1,10 @@
-.. index:: Pre-install Guide
+.. index:: Planning Guide
 
-.. _Pre-install_Guide:
+.. _planning-guide:
 
-======================
-Pre-Installation Guide
-======================
+==============
+Planning Guide
+==============
 
 .. contents:: :local:
    :depth: 3
