@@ -11,7 +11,7 @@ The 'admin' tenant is selected by default.
 To prepare Murano for linux-based services deployment testing add Linux based image to Murano:
 
    * Create a Linux image with Murano agent.
-     See `Murano documentation (Linux Image Builder) <http://murano-api.readthedocs.org/en/latest>`_
+     See `Murano documentation (Linux Image Builder) <http://murano-api.readthedocs.org/en/latest/image_builders/index.html>`_
 
      (Please note, the Murano Image Builder documentation referenced here cannot guarantee success with image creation and could be outdated)
 
