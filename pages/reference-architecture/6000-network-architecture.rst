@@ -14,8 +14,11 @@ Logical Networks
 
 For better network performance and manageability,
 Fuel places different types of traffic into separate logical networks.
-his section describes how to distribute
+This section describes how to distribute
 the network traffic in an OpenStack cluster.
+
+Refer to :ref:`User_Guide` for instructions on how to configure network for
+your OpenStack environment.
 
 .. index:: Admin (PXE) Network
 

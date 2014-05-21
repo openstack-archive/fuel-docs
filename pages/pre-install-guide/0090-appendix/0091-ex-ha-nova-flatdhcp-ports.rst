@@ -1,5 +1,5 @@
 Detailed Port Configuration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------
 
 The following table describes the detailed  port configuration and VLAN
 assignment.

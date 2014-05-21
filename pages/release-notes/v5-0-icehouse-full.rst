@@ -1,5 +1,5 @@
 
-.. _RelNotes_50:
+.. _RelNotes-5-0:
 
 
 Release Notes for Mirantis OpenStack 5.0
