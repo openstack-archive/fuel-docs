@@ -3,8 +3,9 @@
 
 .. _user-guide:
 
+==========
 User Guide
-=====================
+==========
 
 .. contents:: :local:
    :depth: 3
