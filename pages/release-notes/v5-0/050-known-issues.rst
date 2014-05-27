@@ -209,6 +209,23 @@ Then run this command in the Fuel Master node shell:
 
 See `LP1312671 <https://bugs.launchpad.net/fuel/+bug/1312671>`_.
 
+Bootstrap kernel issues on certain hardware
+-------------------------------------------
+
+The bootstrap image shipped with Mirantis OpenStack
+is based on a 3.10 kernel with firmware built from 
+the in-kernel tree.
+This can lead to issues with some hardware configurations,
+(including some Dell R410/R610s servers).
+See `LP1323354 <https://bugs.launchpad.net/fuel/+bug/1323354>`_
+for details.
+As a workaround, use `bootstrap image with 2.6 kernel <http://9f2b43d3ab92f886c3f0-e8d43ffad23ec549234584e5c62a6e24.r60.cf1.rackcdn.com/bootstrap-5.0-kernel-2.6.zip>`_.
+Files from this ZIP archive should be placed inside the cobbler container
+in the /var/lib/tftpboot/images/bootstrap directory
+on the Fuel Master node.
+To apply changes to already bootstrapped nodes, simply reboot the
+affected nodes to boot with the 2.6 kernel.
+
 Bootstrap does not see Brocade NICs
 -----------------------------------
 
