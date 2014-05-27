@@ -1,10 +1,9 @@
-.. index:: VirtualBox Installation
 
-.. _virtualbox:
+.. _virtualbox-top:
 
-==========================
-Running Fuel on VirtualBox
-==========================
+=======================
+VirtualBox Installation
+=======================
 
 .. contents:: :local:
   :depth: 2
