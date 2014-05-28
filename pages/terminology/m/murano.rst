@@ -14,3 +14,8 @@ Fuel can deploy all Murano components, including the Murano Dashboard.
 See :ref:`Murano-deployment-notes`
 for more information about deploying Murano with Fuel.
 
+Murano requires one of the :ref:`neutron-term` network topologies;
+if you choose nova-network as the network type
+when deploying your OpenStack environment with Fuel,
+you will not be able to deploy Murano in that environment.
+
