@@ -220,9 +220,25 @@ This can lead to issues with some hardware configurations,
 See `LP1323354 <https://bugs.launchpad.net/fuel/+bug/1323354>`_
 for details.
 As a workaround, use `bootstrap image with 2.6 kernel <http://9f2b43d3ab92f886c3f0-e8d43ffad23ec549234584e5c62a6e24.r60.cf1.rackcdn.com/bootstrap-5.0-kernel-2.6.zip>`_.
-Files from this ZIP archive should be placed inside the cobbler container
-in the /var/lib/tftpboot/images/bootstrap directory
-on the Fuel Master node.
+Copy the downloaded zip archive to the Fuel master node
+::
+
+    scp bootstrap-5.0-kernel-2.6.zip root@10.20.0.2:/root/
+
+Log in to Fuel master node and run the following commands to install new bootstrap:
+::
+
+    cd /root/
+    yum -y install unzip
+    unzip bootstrap-5.0-kernel-2.6.zip
+    cp -b linux /var/www/nailgun/bootstrap/
+    chmod +x /var/www/nailgun/bootstrap/linux
+    chmod -w /var/www/nailgun/bootstrap/linux
+    cp -b initramfs.img /var/www/nailgun/bootstrap/
+    cobbler sync
+
+.. note:: Existing bootstrap files will be renamed to linux~ and initramfs.img~.
+
 To apply changes to already bootstrapped nodes, simply reboot the
 affected nodes to boot with the 2.6 kernel.
 
