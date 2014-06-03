@@ -4,7 +4,7 @@ Other Enhancements
 Murano has been updated to the latest version
 ---------------------------------------------
 
-Mirantis OpenStack 4.1 includes version 0.4.1 of Murano,
+Mirantis OpenStack 4.1.x includes version 0.4.1 of Murano,
 an application catalog and data services lifecycle management addition for OpenStack.
 This maintenance release of Murano includes several bug fixes
 and the following enhancements:
@@ -43,7 +43,7 @@ For detailed information, please refer to the
 Savanna includes the Intel Distribution for Apache Hadoop plugin
 ----------------------------------------------------------------
 
-The Savanna project provided with Mirantis OpenStack 4.1
+The Savanna project provided with Mirantis OpenStack 4.1.x
 includes the Intel Distribution for Apache Hadoop version 2.5.1.
 This plug-in enables features such as:
 
@@ -57,6 +57,15 @@ This plug-in enables features such as:
 
 More information about this integration is available in the
 `blueprint <https://blueprints.launchpad.net/savanna/+spec/idh-savanna-plugin>`_.
+
+Note that the project formerly known as "Savanna"
+is now called the "Sahara project";
+this resolves a trademark infringement issue.
+The change was made after the initial release
+of Mirantis OpenStack 4.1
+so the "Savanna" name is retained in
+Mirantis OpenStack 4.1.1.
+
 Additional information about Savanna can be found on the
 `Savanna project home page <https://wiki.openstack.org/wiki/Savanna>`_.
 Information about Intel Hadoop can be found at the
