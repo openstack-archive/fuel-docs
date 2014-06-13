@@ -55,8 +55,12 @@ MongoDB is now the default database for OpenStack Telemetry (Ceilometer)
 ------------------------------------------------------------------------
 
 Mirantis OpenStack 5.0 now defaults to installing MongoDB
-as the recommended back-end database for OpenStack Telemetry.
-The Fuel Master Node enables you to choose
-the installation of MongoDB as a role onto a node.
+as the recommended back-end database
+for OpenStack Telemetry (Ceilometer).
+When deploying your OpenStack environment with Fuel,
+you must deploy MongoDB in order to install Ceilometer.
 This resolves the Ceilometer performance issues caused
 by the volume of concurrent read/write operations.
+It is possible (although highly **not** recommended)
+to revert to using MySQL as the database for Ceilometer
+after the environment is deployed.
