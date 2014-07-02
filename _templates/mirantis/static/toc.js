@@ -7,16 +7,11 @@ jQuery(window).load(function() {
   $('.sphinxglobaltoc ul ul').hide();
 
   $('.sphinxglobaltoc li').on({
-    'mouseover': function () {
-      var that = this;
-      toc_open_timer = setTimeout(function () {
-        $(that).children('ul').show();
-      },
-      open_time);
-    },
-    'mouseout' : function () {
-      if (typeof toc_open_timer != undefined) {
-        clearTimeout(toc_open_timer);
+    'click': function (event) {
+      var children = $(this).children('ul');
+      if ((children.length > 0) && !children.first().is(":visible")) {
+        event.preventDefault();
+        children.show();
       }
     }
   });
