@@ -7,8 +7,15 @@ Introduction to the User Guide
 ==============================
 
 This guide gives instructions for using
-the Fuel Master node and the graphical Fuel screens
+the Fuel Master Node and the graphical Fuel screens
 to deploy a Mirantis OpenStack environment.
+
+If you already have a deployed Fuel Master Node based on v5.0,
+go to :ref:`upgrade-ug` for instructions about
+upgrading to v5.0.1.
+If you are deploying Mirantis OpenStack 5.x for the first time,
+continue reading this document for instructions.
+
 Before you do the procedures in this document,
 you should work through the information and procedures in the
 :ref:`Planning Guide<planning-guide>`.
