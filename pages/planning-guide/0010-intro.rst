@@ -52,7 +52,7 @@ You can also run Fuel to deploy a Mirantis OpenStack Environment
 on Oracle VirtualBox.
 VirtualBox deployment is useful for demonstrations
 and is a good way to begin your exploration of the tools and technologies.
-It is discussed in :ref:`Running Fuel on VirtualBox<virtualbox-top>`.
+It is discussed in :ref:`Running Fuel on VirtualBox<virtualbox>`.
 However, it is worth noting that deployments on top of VirtualBox
 do not generally meet the performance and robustness requirements
 of most production environments.

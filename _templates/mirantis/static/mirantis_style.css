@@ -515,6 +515,11 @@ a.active {
   border-left: 1px solid #d5dbe1;
 }
 
+a.external:before {
+    content: "";
+    padding-right: 0.1em;
+}
+
 /* MIRANTIS CSS*/
 
 tt.literal

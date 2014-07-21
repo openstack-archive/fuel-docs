@@ -1,6 +1,6 @@
 .. index:: VirtualBox Installation
 
-.. _virtualbox-top:
+.. _virtualbox:
 
 ========================================
 Running Mirantis OpenStack on VirtualBox

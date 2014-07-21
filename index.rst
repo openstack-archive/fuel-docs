@@ -11,59 +11,57 @@ Welcome to Mirantis OpenStack Documentation
 This page contains the most recent Mirantis OpenStack documentation.
 Select a document from the left menu and navigate through the topics.
 
-PDFs
-----
-The following Mirantis OpenStack documentation is available in PDF:
+:ref:`planning-guide` `(pdf) <pdf/Mirantis-OpenStack-5.0-PlanningGuide.pdf>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-* `Planning Guide <pdf/Mirantis-OpenStack-5.0-PlanningGuide.pdf>`_
+Planning information you should consider before
+installing Fuel and deploying Mirantis OpenStack.
 
-  Planning information you should consider before
-  installing Fuel and deploying Mirantis OpenStack.
+:ref:`user-guide` `(pdf) <pdf/Mirantis-OpenStack-5.0-UserGuide.pdf>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. * `Installation Guide <pdf/Mirantis-OpenStack-5.0-InstallGuide.pdf>`_
+This document describes how to deploy Mirantis OpenStack environments
+using Fuel.
 
-  This document describes how to pre-configure your
-  OpenStack environment and install the Fuel Master Node.
+:ref:`operations-guide` `(pdf) <pdf/Mirantis-OpenStack-5.0-OperationsGuide.pdf>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-* `User Guide <pdf/Mirantis-OpenStack-5.0-UserGuide.pdf>`_
+A collection of useful procedures for using and managing
+your Mirantis OpenStack environment.
 
-  This document describes how to deploy Mirantis OpenStack environments
-  using Fuel.
+:ref:`virtualbox` `(pdf) <pdf/Mirantis-OpenStack-5.0-Running-Mirantis-OpenStack-on-VirtualBox.pdf>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-* `Operations Guide <pdf/Mirantis-OpenStack-5.0-OperationsGuide.pdf>`_
+This document provides information about running Mirantis OpenStack on VirtualBox
+for demonstration and evaluation purposes.
 
-  A collection of useful procedures for using and managing
-  your Mirantis OpenStack environment.
+:ref:`ref-arch` `(pdf) <pdf/Mirantis-OpenStack-5.0-ReferenceArchitecture.pdf>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-* `Running Mirantis OpenStack on VirtualBox <pdf/Mirantis-OpenStack-5.0-Running-Mirantis-OpenStack-on-VirtualBox.pdf>`_
+A deep dive into the structure of the Mirantis OpenStack environment,
+network considerations, and deployment options.
 
-  This document provides information about running Mirantis OpenStack on VirtualBox
-  for demonstration and evaluation purposes.
+:ref:`terminology-ref` `(pdf) <pdf/Mirantis-OpenStack-5.0-Terminology-Reference.pdf>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-* `Reference Architecture <pdf/Mirantis-OpenStack-5.0-ReferenceArchitecture.pdf>`_
+Short articles about OpenStack terminology and technology
+with references to other documentation and other useful information.
 
-  A deep dive into the structure of the Mirantis OpenStack environment,
-  network considerations, and deployment options.
+:ref:`release-notes` `(pdf) <pdf/Mirantis-OpenStack-5.0-RelNotes.pdf>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-* `Terminology Reference <pdf/Mirantis-OpenStack-5.0-Terminology-Reference.pdf>`_
+The Release Notes provide general information about new features,
+fixed issues, and known limitations in Mirantis OpenStack |version|.
 
-  Short articles about OpenStack terminology and technology
-  with references to other documentation and other useful information.
+`Download Mirantis OpenStack <http://software.mirantis.com>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-* `Release Notes 5.0 <pdf/Mirantis-OpenStack-5.0-RelNotes.pdf>`_
-
-  The Release Notes provide general information about new features,
-  fixed issues, and known limitations in Mirantis OpenStack |version|.
-
-Download Mirantis OpenStack
----------------------------
 You can download the Mirantis OpenStack ISO, IMG, and VirtualBox scripts at http://software.mirantis.com
 
 .. note:: You must sign in to download Mirantis OpenStack. 
           If you do not have an account, sign up for a free account now.
 
-Demos and tutorials:
---------------------
-Watch the Mirantis OpenStack demos:
+`Demos and tutorials <https://vimeo.com/96222550>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-https://vimeo.com/96222550
+Watch the Mirantis OpenStack demos at https://vimeo.com/96222550

@@ -34,7 +34,7 @@ then use that media to install the software.
    In that case, copy the ISO file to the approriate directory
    and boot directly from that disk file.
    See the `Quick Start Guide <http://software.mirantis.com/quick-start/>`_.
-   and :ref:`virtualbox-top`.
+   and :ref:`virtualbox`.
 
 
 Use any standard software to burn the ISO to a writeable DVD.
