@@ -90,7 +90,7 @@ MySQL reconnect now catches 1047 errors
 
 In earlier releases,
 the MySQL 1047 error (unknown command)
-that occurred after the :ref:`galera-cluster-term`
+sometimes occurred after the Galera cluster
 was in non-primary state.
 This could cause the cluster to be non-functional
 even after Galera functionality is restored.
@@ -105,7 +105,8 @@ if expired tokens are not deleted regularly,
 system performance degrades significantly
 and the Keystone service will eventually fail
 because there is no room in the database for new tokens.
-See :ref:`keystone-tokens-perform` for information about
+See `Keystone Token Cleanup <http://docs.mirantis.com/openstack/fuel/fuel-5.0/operations.html#keystone-token-cleanup>`_
+for information about
 deleting expired tokens from the Keystone database.
 This issue is tracked in
 `LP1269819 <https://bugs.launchpad.net/fuel/+bug/1269819>`_.
@@ -115,7 +116,7 @@ This issue is tracked in
 
 The "Stop Deployment" button was added to the Fuel UI
 in Mirantis OpenStack 4.1;
-see :ref:`Stop_Deployment`.
+see `Stopping Deployment from Web UI <http://docs.mirantis.com/openstack/fuel/fuel-5.0/user-guide.html#stopping-deployment-from-web-ui>`_.
 However, this failed if you attempted to stop the deployment
 during the operating system provisioning phase
 because the operating system remained in a state

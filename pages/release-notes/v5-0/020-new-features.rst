@@ -22,14 +22,15 @@ with the VMWare vCenter server driver activated onto a controller node.
 This service then communicates directly with vCenter
 so that the OpenStack scheduler can create
 VM instances on ESXi servers.
-See :ref:`vcenter-plan`
+See `Planning for vSphere Integration <http://docs.mirantis.com/openstack/fuel/fuel-5.0/pre-install-guide.html#preparing-for-vsphere-integration>`_
+in the *Planning Guide*
 for information about planning your vSphere integration
 and links to instructions for setting up and installing your environment.
 
 MongoDB is now the default database for OpenStack Telemetry (Ceilometer)
 ------------------------------------------------------------------------
 
-Mirantis OpenStack 5.0 now defaults to installing :ref:`MongoDB<mongodb-term>`
+Mirantis OpenStack 5.0 now defaults to installing MongoDB
 as the recommended back-end database
 for OpenStack Telemetry (Ceilometer).
 When deploying your OpenStack environment with Fuel,

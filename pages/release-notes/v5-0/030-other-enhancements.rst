@@ -33,7 +33,7 @@ to make better decisions
 than the older scheduler.
 Users can, however, select the traditional ("naive") scheduler
 from the Fuel "Settings" page.
-This is discussed more in the :ref:`Scheduler, Nova<scheduler-term>` article.
+This is discussed more in the "Scheduler" article in the *Terminology Reference*.
 See `Some improvements in Nova Scheduler config
 <https://blueprints.launchpad.net/fuel/+spec/scheduler-config-improvements>`_
 for background information.
@@ -47,7 +47,7 @@ than is physically available on the Compute nodes.
 This allows you to better utilize the available resources
 because most instances are not fully active at the same time.
 
-See :ref:`Overcommit ratio<overcommit-term>` for information about
+See "Overcommit ratio" in the *Terminology Reference* for information about
 modifying the overcommit ratio for your environment
 by manually editing a configuration file.
 The overcommit ratio is not configurable from the Fuel UI; see
@@ -72,7 +72,7 @@ Note that what was previously known as the Savanna project
 is now called the Sahara project;
 this resolves a trademark infringement issue.
 
-See :ref:`Planning a Sahara Deployment<sahara-plan>`
+See `Planning a Sahara Deployment <http://docs.mirantis.com/openstack/fuel/fuel-5.0/pre-install-guide.html#planning-a-sahara-deployment>`_
 to get started implementing Sahara on Mirantis OpenStack.
 Additional information about Sahara can be found on the
 `Sahara project web page <https://wiki.openstack.org/wiki/Sahara>`_.
@@ -100,7 +100,8 @@ For detailed information about Murano,
 see the `Release Notes for Murano version 0.5
 <https://wiki.openstack.org/wiki/Murano/ReleaseNotes_v0.5>`_.
 For information about deploying Murano with Fuel,
-see :ref:`Murano Deployment Notes<Murano-deployment-notes>`.
+see `Murano Deployment Notes <http://docs.mirantis.com/openstack/fuel/fuel-5.0/operations.html#murano-deployment-notes>`_
+in the *Operations Guide*.
 
 Addition of "Live Migrate" option in Horizon
 --------------------------------------------

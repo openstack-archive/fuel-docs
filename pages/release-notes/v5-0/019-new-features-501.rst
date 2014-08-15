@@ -25,7 +25,8 @@ and perform other operational functions
 such as log management and Health Checks
 on either a 5.0.1 environment
 or a 5.0 environment.
-See :ref:`upgrade-ug` for details and instructions.
+See `Upgrade from an Earlier Version <http://docs.mirantis.com/openstack/fuel/fuel-5.0/user-guide.html#upgrade-from-an-earlier-version>`_
+for details and instructions.
 
 .. Note:: This only upgrades the Fuel Master Node.
    It does not patch or update the OpenStack environment.
@@ -35,6 +36,6 @@ See :ref:`upgrade-ug` for details and instructions.
 After the upgrade,
 you can deploy a Mirantis OpenStack 5.0 environment from the Fuel 5.0.1 dashboard
 by choosing one of the 2014.1 distros for the environment
-on the :ref:`name-distro-ug` screen.
+on the "Create a new OpenStack environment" screen.
 
 

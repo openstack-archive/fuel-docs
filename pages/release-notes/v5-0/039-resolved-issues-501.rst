@@ -199,7 +199,8 @@ Murano Health Check no longer downloads images for testing
 
 Before running the Murano Health Check,
 you should manually download the image
-as documented in :ref:`murano-test-prepare`.
+as documented in
+`Preparing Murano for Testing <http://docs.mirantis.com/openstack/fuel/fuel-5.0/pre-install-guide.html#preparing-for-vsphere-integration>`_.
 In earlier versions of Fuel,
 if the image was not present,
 the software would attempt to download the image

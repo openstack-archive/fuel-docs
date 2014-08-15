@@ -39,8 +39,8 @@ but it has some known limitations:
 Additional MongoDB roles cannot be added to an existing deployment
 ------------------------------------------------------------------
 
-Fuel 5.0.1 installs :ref:`mongodb-term`
-as a backend for :ref:`ceilometer-term`.
+Fuel 5.0.1 installs MongoDB
+as a backend for Ceilometer.
 When installing OpenStack in HA mode,
 Fuel does not force the user to set up multiple MongoDB roles
 although you should have one MongoDB role for each Controller node.
@@ -145,7 +145,7 @@ Fuel is not enforcing quorum on Controller clusters
 
 In order to incrementally add Controllers into the cluster,
 Fuel temporarily sets the **no-quorum-policy="ignore"** property
-in the :ref:`crm<crm-term>` configuration
+in the CRM configuration
 but is not resetting this property to activate the quorum
 after the environment is deployed.
 Consequently, in Controller clusters of three or more nodes,
@@ -198,8 +198,9 @@ This is because of flaws in the RabbitMQ clustering mechanism
 which are under investigation.
 In the meantime, you must manually bring down the RabbitMQ server
 and rejoin it to the cluster following the instructions in
-:ref:`restart-rabbitmq-ops`.
-See `LP1318936 <https://bugs.launchpad.net/fuel/+bug/1318936>_`.
+`RabbitMQ Clusterwide Restart Issues Following a Systemwide Power Failure <http://docs.mirantis.com/openstack/fuel/fuel-5.0/operations.html#rabbitmq-cluster-restart-issues-following-a-systemwide-power-failure>`_.
+
+See `LP1318936 <https://bugs.launchpad.net/fuel/+bug/1318936>`_.
 
 Some logs are excluded from the Diagnostic Snapshot
 ---------------------------------------------------
@@ -326,7 +327,7 @@ In Neutron GRE installations configured with the Fuel UI,
 a single physical interface is used
 for both OpenStack management traffic and VM-to-VM communications.
 This limitation only affects implementations deployed using the Fuel UI;
-you can use the :ref:`Fuel CLI<cli_usage>` to use other physical interfaces
+you can use the Fuel CLI to use other physical interfaces
 when you configure your environment.
 See `LP1285059 <https://bugs.launchpad.net/fuel/+bug/1285059>`_.
 
@@ -403,7 +404,7 @@ The problems include poor performance, intermittent connectivity problems,
 one VLAN but not others working, or total failure to pass traffic.
 This is because the CentOS kernel is based on a pre-3.3 kernel
 and so has poor support for VLAN tagged packets
-moving through :ref:`ovs-term`  Bridges.
+moving through OVS  Bridges.
 Ubuntu is not affected by this issue.
 
 A workaround is to enable VLAN Splinters in OVS.
@@ -423,7 +424,8 @@ soft trunks and hard trunks:
    This introduces additional performance overhead.
    In the hard trunks mode,  you should use fewer than 50 VLANs in the Neutron VLAN mode.
 
-See :ref:`ovs-arch`
+See `Advanced Network Configuration using Open Vswitch
+<http://docs.mirantis.com/openstack/fuel/fuel-5.0/reference-architecture.html#advanced-network-configuration-using-open-vswitch>`_
 for more information about using Open VSwitch.
 
 Keystone performance issues if memcache instance fails
