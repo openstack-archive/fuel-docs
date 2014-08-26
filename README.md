@@ -27,9 +27,15 @@ Please note that easy_install is a component of Python's Setup Tools
 package, which is commonly an optional install on most distributions.
 
 
-To get started, you need to install all necesasary tools:
+To get started, you need to install all necesasary tools.
+
+On Debian/Ubuntu:
     
     sudo apt-get install git python-pip python-dev make imagemagick libjpeg-dev inkscape
+
+On Fedora:
+
+	sudo yum install git python-pip python-devel make ImageMagick libjpeg-turbo-devel inkscape
 
 Among other things that installs
 [ImageMagick](http://www.imagemagick.org/ "ImageMagick") and
