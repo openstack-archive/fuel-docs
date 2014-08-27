@@ -107,6 +107,7 @@ introduced in Mirantis Openstack 5.0,
 the current state of the Fuel Master Node
 can now be backed up and, if necessary, restored.
 This must be done from the command line.
+See :ref:`Backup_and_restore_Fuel_Master` for instructions.
 
 VMware NSX is now supported as a network option
 -----------------------------------------------
