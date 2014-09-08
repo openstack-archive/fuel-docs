@@ -1,7 +1,7 @@
 Neutron versus Nova-Network
 ---------------------------
 
-OpenStack networking with Neutron (Quantum) has some differences from
+OpenStack networking with Neutron has some differences from
 Nova-network. Neutron is able to virtualize and manage both layer 2 (logical)
 and layer 3 (network) of the OSI network model, as compared to simple layer 3
 virtualization provided by nova-network. This is the main difference between
