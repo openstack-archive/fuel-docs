@@ -108,6 +108,16 @@ To delete the environment:
   fuel --env 1 env delete
 
 
+To update some environment to newer OpenStack release (available since Fuel 5.1):
+
+::
+
+  fuel env update --env 1 --rel 42
+
+In order to run rollback of failed updating, just change release id in the
+command above.
+
+
 Node
 ++++
 
