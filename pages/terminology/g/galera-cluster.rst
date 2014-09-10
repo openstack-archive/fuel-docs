@@ -12,5 +12,7 @@ Additional information is available:
 
 - :ref:`backport-galera-ocf-op` explains how to backport
   the Galera Pacemaker OCF script to pre-5.1 environments.
+- :ref:`enable-galera-autorebuild`
 - `Galera Cluster documentation
   <http://galeracluster.com/documentation-webpages/>`_.
+
