@@ -128,6 +128,24 @@ Limitations
 - Resetting or deleting the environment via "Reset" and "Delete" buttons
   on the Actions tab does not flush the entities (logical switches, routers,
   load balancers, etc) that were created in the NSX cluster.
-  Eventually, the cluster may run out of resources;
-  it is up to the cloud operator
-  to remove needless entities from the VMware NSX cluster.
+  Eventually, the cluster may run out of resources; it is up to the cloud
+  operator to remove unneeded entities from the VMware NSX cluster. Each time
+  the deployment fails or is interrupted; after solving the problem, restart
+  the deployment process.
+
+  To cleanup the NSX cluster, log into the NSX Manager, open the dashboard and
+  click on numbered link in "Hypervisor Software Version Summary":
+
+  .. image:: /_images/nsx-cleanup-1.png
+
+  Tick all registered nodes and press "Delete Checked" button:
+
+  .. image:: /_images/nsx-cleanup-2.png
+    :width: 60%
+
+  Then click on "Logical Layer" in the "category" column, tick all remaining
+  logical entities and remove them by pressing the corresponding "Delete
+  Checked" button:
+
+  .. image:: /_images/nsx-cleanup-3.png
+    :width: 60%
