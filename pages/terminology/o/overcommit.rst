@@ -26,7 +26,7 @@ This means that, if your physical node has 12 cores,
 the Filter :ref:`Scheduler<scheduler-term>` sees 96 available virtual cores
 and so could provision 24 4-core instances on that physical node.
 
-Fuel sets the overcommit ratio for RAM and disks at 1:1,
+Fuel sets the overcommit ratio for CPUs at 8:1, and RAM and disks at 1:1,
 meaning that the scheduler only sees the actual amount
 of physical memory and physical disk space that is allocated.
 Note that OpenStack sets the overcommit ratio for CPUs at 16:1
