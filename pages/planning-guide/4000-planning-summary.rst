@@ -32,6 +32,17 @@ complete to plan the Mirantis OpenStack deployment.
 +----------------------------+-------------------------------------------+
 | Plan monitoring facilities | See :ref:`monitoring-plan`                |
 +----------------------------+-------------------------------------------+
+| If you want to run         | See :ref:`sahara-plan`                    |
+| :ref:`Hadoop<hadoop-term>` |                                           |
+| plan to install Sahara.    |                                           | 
++----------------------------+-------------------------------------------+
+| If you want to run         | See :ref:`vcenter-plan`                   |
+| :ref:`vcenter-term`        |                                           |
+| or :ref`vsphere-term`      |                                           |
++----------------------------+-------------------------------------------+
+| If you want to use         | See :ref:`nsx-plan`                       |
+| :ref:`nsx-term`            |                                           |
++----------------------------+-------------------------------------------+
 | Calculate the server and   | See :ref:`hardware-plan`                  |
 | network hardware needed    |                                           |
 +----------------------------+-------------------------------------------+
