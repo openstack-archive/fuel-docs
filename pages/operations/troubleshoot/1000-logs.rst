@@ -171,3 +171,18 @@ On the Fuel Master node,
 */var/log/remote* is a symbolic link to the
 */var/log/docker-logs/remote* directory.
 
+Enabling debug logging for OpenStack services
++++++++++++++++++++++++++++++++++++++++++++++
+
+Most OpenStack services use the same configuration options to control log level
+and logging method. If you need to troubleshoot a specific service, locate its
+config file under */etc* (e.g. */etc/nova/nova.conf*) and revert the values of
+**debug** and **use_syslog** flags like this::
+
+  debug=True
+  use_syslog=False
+
+Disabling syslog will protect the Fuel master node from being overloaded from a
+flood of debug messages sent from that node to the rsyslog server. Do not
+forget to revert both flags back to original values when done with
+troubleshooting.
