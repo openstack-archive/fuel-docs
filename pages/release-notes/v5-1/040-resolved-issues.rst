@@ -180,7 +180,7 @@ for each package that contained a service to solve this issue.
 Now, the **upstart** process waits for a service to be configured
 before it starts it.
 Note that this means that, if Ceph is used for volumes,
-the cinder-volume overide is left on its own
+the cinder-volume override is left on its own
 until **rbd.pp** configures it.
 See `LP1348185 <https://bugs.launchpad.net/bugs/1348185>`_.
 and `LP1335804 <https://bugs.launchpad.net/bugs/1335804>`_.
@@ -459,7 +459,7 @@ Ceph can be used as a backend for ephemeral storage
 -----------------------------------------------------
 
 In previous releases,
-a VM instance woud not start
+a VM instance would not start
 if Ceph was used as the backend for the ephemeral storage.
 This now works,
 as long as the minimal required ephemeral drive size
