@@ -203,7 +203,7 @@ Fuel uses ports that may be used by other services
 --------------------------------------------------
 
 Fuel uses some high ports that may be used by other services
-such as RPC, NFS, passfive FTP (ephemeral ports 49000-65535).
+such as RPC, NFS, passive FTP (ephemeral ports 49000-65535).
 In some cases, this can lead to a port conflict during service restart.
 To avoid this, issue the following command
 so that ports above 49000 are not automatically assigned to other services:
