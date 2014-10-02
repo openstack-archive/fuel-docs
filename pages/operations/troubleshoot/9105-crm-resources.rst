@@ -70,8 +70,8 @@ Example::
 
   Online: [ controller-01 controller-02 controller-03 ]
 
-   vip__management_old	(ocf::heartbeat:IPaddr2):   	Started controller-01
-   vip__public_old    	(ocf::heartbeat:IPaddr2):   	Started controller-02
+   vip__management	(ocf::heartbeat:IPaddr2):   	Started controller-01
+   vip__public    	(ocf::heartbeat:IPaddr2):   	Started controller-02
    Clone Set: clone_p_haproxy [p_haproxy]
     Started: [ controller-01 controller-02 controller-03 ]
    Clone Set: clone_p_mysql [p_mysql]
