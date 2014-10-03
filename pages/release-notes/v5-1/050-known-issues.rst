@@ -720,6 +720,22 @@ Nodes added to an environment after a backup may be report as offline.
 Reboot any bootstrapped nodes after restoring your Fuel Master from a backup.
 See `LP1347718 <https://bugs.launchpad.net/bugs/1347718>`_.
 
+Creating volume from image performs full data copy even with Ceph backend
+-------------------------------------------------------------------------
+
+A regression was introduced into configuration of RBD backend for Cinder. In
+previous versions of Mirantis OpenStack, enabling RBD backend for both Cinder
+and Glance enabled zero-copy creation of a Cinder volume from a Glance image.
+
+To re-enable this functionality in Mirantis OpenStack 5.1, add the following
+line to */etc/cinder/cinder.conf*::
+
+    glance_api_version=2
+
+Then restart the *cinder-volume* service on all controller nodes.
+
+See `LP1373096 <https://bugs.launchpad.net/bugs/1373096>`_.
+
 Known Issues in Mirantis OpenStack 5.1 and 5.0.2
 ================================================
 
