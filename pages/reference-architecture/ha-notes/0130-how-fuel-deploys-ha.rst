@@ -40,12 +40,12 @@ MySQL and Neutron agent resources::
     op monitor interval="20" timeout="30" \
     op start interval="0" timeout="480" \
     op stop interval="0" timeout="480"
-  primitive vip__management_old ocf:heartbeat:IPaddr2 \
+  primitive vip__management ocf:heartbeat:IPaddr2 \
     op monitor interval="2" timeout="30" \
     op start interval="0" timeout="30" \
     op stop interval="0" timeout="30" \
     params nic="br-mgmt" iflabel="ka" ip="10.107.2.254"
-  primitive vip__public_old ocf:heartbeat:IPaddr2 \
+  primitive vip__public ocf:heartbeat:IPaddr2 \
     op monitor interval="2" timeout="30" \
     op start interval="0" timeout="30" \
     op stop interval="0" timeout="30" \
