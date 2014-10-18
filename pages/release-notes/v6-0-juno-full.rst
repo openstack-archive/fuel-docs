@@ -28,12 +28,11 @@ The following table lists the released revisions of this documentation:
 .. include:: /pages/release-notes/v6-0/1030-fuel-install.rst
 .. include:: /pages/release-notes/v6-0/1040-hardware.rst
 .. include:: /pages/release-notes/v6-0/1050-network.rst
-.. include:: /pages/release-notes/v6-0/1060-general.rst
+.. include:: /pages/release-notes/v6-0/1060-openstack.rst
 .. include:: /pages/release-notes/v6-0/1080-update-upgrade.rst
 .. include:: /pages/release-notes/v6-0/1090-test.rst
 .. include:: /pages/release-notes/v6-0/3000-storage.rst
-.. include:: /pages/release-notes/v6-0/5000-monitoring.rst
-.. include:: /pages/release-notes/v6-0/6000-other.rst
 .. include:: /pages/release-notes/v6-0/9010-vmware-tech.rst
+.. include:: /pages/release-notes/v6-0/6000-other.rst
 .. include:: /pages/release-notes/v6-0/0060-obtain-the-product.rst
 .. include:: /pages/release-notes/v6-0/0070-support.rst

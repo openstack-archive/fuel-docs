@@ -52,7 +52,7 @@ when you configure your environment.
 See `LP1285059 <https://bugs.launchpad.net/fuel/+bug/1285059>`_.
 
 Fuel default disk partition scheme is sub-optimal
--------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++
 
 * All available hardware LUNs under LVM are used and spanned across;
   for example, OpenStack and guest traffic are coupled.
@@ -63,7 +63,7 @@ Fuel default disk partition scheme is sub-optimal
   even if the user chose a different scheme.
 
 New node may not boot because of IOMMU issues
----------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++
 
 A new node fails when trying to boot into bootstrap.
 To fix this issue,
@@ -76,7 +76,7 @@ with the following console command on master node:
 See `LP1324483 <https://bugs.launchpad.net/bugs/1324483>`_.
 
 Anaconda fails with LVME error on CentOS
-----------------------------------------
+++++++++++++++++++++++++++++++++++++++++
 
 Anaconda fails with LVME error: deployment was aborted by provisioning timeout,
 because installation of CentOS failed on one of compute nodes.
@@ -84,7 +84,7 @@ See `LP1321790 <https://bugs.launchpad.net/bugs/1321790>`_.
 This is related to known issues with Anaconda.
 
 Fuel GUI does not prevent overlapping IP ranges
------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++
 
 Fuel menu allows IP ranges that overlap in PXE setup.
 When configuring IP ranges, be very careful not to use DHCP addresses
@@ -93,12 +93,21 @@ See :ref:`public-floating-ips-arch` for more information.
 See `LP1365067 <https://bugs.launchpad.net/bugs/1365067>`_.
 
 Invalid node status after restoring Fuel Master node from backup
-----------------------------------------------------------------
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 Invalid node status for nodes modified since backup after restore.
-Nodes added to an environment after a backup may be report as offline.
+Nodes added to an environment after a backup may be reported as offline.
 Reboot any bootstrapped nodes after restoring your Fuel Master from a backup.
 See `LP1347718 <https://bugs.launchpad.net/bugs/1347718>`_.
+
+Shotgun does not check available disk space before taking a diagnostic snapshot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Shotgun does not ensure that adequate disk space is available
+for the diagnostic snapshot.
+Users should manually verify the disk space
+before taking a diagnostic snapshot.
+See `LP1328879 <https://bugs.launchpad.net/bugs/1328879>`_.
 
 
 

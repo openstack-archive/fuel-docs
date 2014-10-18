@@ -1,8 +1,8 @@
 
 .. _fuel-general.rst:
 
-General issues
-==============
+OpenStack Deployment Issues
+===========================
 
 Known Issues in 5.1
 -------------------
@@ -37,15 +37,6 @@ to an existing environment,
 nova-api is unavailable for a few minutes
 which causes services to be unavailable.
 See `LP1370067 <https://bugs.launchpad.net/fuel/+bug/1370067>`_.
-
-Shotgun does not check available disk space before taking a diagnostic snapshot
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-Shotgun does not ensure that adequate disk space is available
-for the diagnostic snapshot.
-Users should manually verify the disk space
-before taking a diagnostic snapshot.
-See `LP1328879 <https://bugs.launchpad.net/bugs/1328879>`_.
 
 During traceback, an interface with an IP address on admin subnet is not found
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
