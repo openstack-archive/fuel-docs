@@ -31,19 +31,26 @@ meaning that the scheduler only sees the actual amount
 of physical memory and physical disk space that is allocated.
 Note that OpenStack sets the overcommit ratio for CPUs at 16:1
 and the overcommitment ratio for RAM at 1.5:1.
+The default CPU overcommit rate of 8:1 is necessary
+for the Mirantis CI tools
+but may not be the best default rate for customer environments.
+If you do not know what your VM workload is going to be,
+reset this ratio to 1:1 to avoid CPU congestion.
+You can then monitor activity in your environment
+to determine whether a different overcommit ratio
+is appropriate for your environment.
 
 To modify the overcommit ratio(s):
 
 - Log into each Compute node.
 - Edit the */etc/nova/nova.conf* file to change the values.
-- Log into each controller node and restart the nova-scheduler service.
+- Restart the nova-compute service.
+- Log into each Controller node and restart the nova-scheduler service.
 
 Note that the overcommit ratio is not recognized
 by the traditional Simple "naive" Scheduler.
 
-For more information, see:
+For more information, see
+`Overcommitting <http://docs.openstack.org/trunk/openstack-ops/content/compute_nodes.html#overcommit>`_.
 
-- `Overcommitting <http://docs.openstack.org/trunk/openstack-ops/content/compute_nodes.html#overcommit>`_
-- `Scheduler configuration improvements <https://www.mail-archive.com/fuel-dev%40lists.launchpad.net/msg00642.html>`_
-  discussion on the fuel-dev mailing list
 
