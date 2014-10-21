@@ -4,7 +4,7 @@
 Fuel Installation and Deployment Issues
 =======================================
 
-Known Issues in 5.1
+Known Issues in 6.0
 -------------------
 
 Fuel uses ports that may be used by other services
