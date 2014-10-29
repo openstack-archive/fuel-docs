@@ -4,7 +4,7 @@
 Hardware support issues
 =======================
 
-Known Issues in 5.1
+Known Issues in 6.0
 -------------------
 
 Some UEFI hardware cannot be used
@@ -82,13 +82,13 @@ HP BL120/320 RAID controller line is not supported
 You should contact Mirantis to get a non-standard kernel ISO.
 Note, that it is impossible to update the kernel if there are no drivers for this
 version. This happens because the source code for the hpvsa module is not open and
-HP issues the hpvsa binaries for specific kernel versions only.
+HP publishes the hpvsa binaries only for specific kernel versions.
 They do not always coincide with the ones used in Fuel with Ubuntu.
 Currently, no equipment for testing is available and the testing itself can not
 be performed due to closed HP VSA source code. ISO may be assembled only for kernel
-versions, provided by HP. See `LP1359331 <https://bugs.launchpad.net/bugs/1359331>`_.
-For information on some kernel modules, compiled for specific kernels' versions,
-see `HP storage <https://launchpad.net/~hp-iss-team/+archive/ubuntu/hp-storage>`_. and
+versions specified by HP. See `LP1359331 <https://bugs.launchpad.net/bugs/1359331>`_.
+For information about kernel modules that are compiled for specific kernel versions,
+see `HP storage <https://launchpad.net/~hp-iss-team/+archive/ubuntu/hp-storage>`_ and
 `hpvsa update <https://launchpad.net/~hp-iss-team/+archive/ubuntu/hpvsa-update>`_.
 
 RAID-1 spans all configured disks on a node
@@ -140,8 +140,6 @@ but sdc will not be used  as part of the RAID-1 array:
 
 See `LP1267569 <https://bugs.launchpad.net/fuel/+bug/1267569>`_
 and `LP1258347 <https://bugs.launchpad.net/fuel/+bug/1258347>`_.
-[LP1267569 is scheduled to be fixed in 5.1;
-LP1258347 is scheduled to be fixed in 6.0]
 
 Other issues
 ++++++++++++
@@ -149,4 +147,6 @@ Other issues
 * Large number of disks may fail Ubuntu installation.
   See `LP1340414 <https://bugs.launchpad.net/bugs/1340414>`_.
 
-
+* Currently, all vboxnets are created as host-only networks;
+  this disables checking an Internet connectivity from the deployed cluster.
+  We should set a vboxnet used for a Public network as a NAT-network. And don't forget to check against Ubuntu, MacOS X and any modern Windows.
