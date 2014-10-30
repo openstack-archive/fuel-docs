@@ -98,8 +98,8 @@ deployment actions when you use Mirantis OpenStack. The anonymous collection of
 statistics is on by default; during installation, you can opt out of statistics
 collection.
 
-* Anonymous usage statistics include information such as settings, button/menu
-  clicks, hardware configuration, and version information.
+* Anonymous usage statistics include information such as settings, actions,
+  hardware configuration, and version information.
 
 * The usage statistics do not include information such as passwords, IP
   addresses, or node names.
@@ -111,7 +111,7 @@ collection.
 Mirantis’ `privacy policy <https://www.mirantis.com/company/privacy-policy/>`_
 (“Privacy Policy”) describes our practices regarding the information we collect
 on the Mirantis web sites and through the use of our products and services, and
-how it is used and shared with third parties. See the `Send anonymous usage
+how it is used and shared with third parties. See the `Send usage
 information <https://blueprints.launchpad.net/fuel/+spec/send-anon-usage>`_
 blueprint for more details.
 
@@ -189,7 +189,7 @@ images to install the operating system on the target nodes instead of using
 customized versions of the native operating system installation scripts. This
 standardizes the installation procedure for CentOS and Ubuntu nodes, makes the
 installation process more robust, and significantly reduces the time required
-to install the target nodes. Note that the production image still uses
+to install the target nodes. Note that the production version still uses
 anaconda/preseed installers. See the `Image based OS provisioning
 <https://blueprints.launchpad.net/fuel/+spec/image-based-provisioning>`_
 blueprint for implementation details.
@@ -203,8 +203,8 @@ and performance issues for large environments. See the `100 nodes support
 <https://blueprints.launchpad.net/fuel/+spec/100-nodes-support>`_ blueprint for
 details about the implementation.
 
-Mutiple L2 networks can be supported in one environment
--------------------------------------------------------
+Mutiple L2 networks can be supported in one logical network
+-----------------------------------------------------------
 
 Multiple L2 network domains can be supported in one environment. This allows
 cloud operators to use the `leaf and spine
@@ -308,7 +308,7 @@ Fuel 6.0 can update existing 5.x Mirantis OpenStack environments (Experimental)
 An :ref:`experimental feature<experimental-features-term>` enables the Fuel
 Master Node to update existing 5.x environments to more recent maintenance
 releases of Mirantis OpenStack releases within the same release series (e.g.
-5.0.2 to 5.0.3, or 5.1 to 5.1.2). Once the Fuel Master Node is upgraded, the UI
+5.0.2 to 5.0.3, or 5.1 to 5.1.1). Once the Fuel Master Node is upgraded, the UI
 provides an option to update an existing environment.
 
 See :ref:`update-openstack-environ-ug` for instructions. You can also use Fuel
@@ -326,8 +326,8 @@ CLI to update the environment; see :ref:`cli_usage` for details.
 Improvements for Fuel Contributors
 ==================================
 
-Fuel can deploy the latest OpenStack features from upstream repository
-----------------------------------------------------------------------
+Fuel can build ISO with upstream vanilla OpenStack code
+-------------------------------------------------------
 
 A Fuel ISO can now be built from the stable/juno branch of the upstream
 OpenStack repositories and we are working on the ability to build a Fuel ISO
@@ -342,7 +342,8 @@ Public CI environment is available to contributors
 --------------------------------------------------
 
 The Fuel team now maintains a public CI infrastructure that contributors can
-use to build, test and publish rpm and deb packages for OpenStack and Fuel.
+use to build, test and publish rpm and deb packages for Fuel dependencies,
+which are not part of stackforge (for instance, MCollective).
 Code and package build scripts (rpm specs and deb rules) are stored in
 Git+Gerrit with Launchpad authorization. Any Launchpad user can propose a
 commit for review in this system.

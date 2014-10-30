@@ -29,7 +29,8 @@ Also included are:
 Fuel for OpenStack
 ------------------
 
-Fuel is a life cycle management application that deploys multiple
+`Fuel <https://wiki.openstack.org/wiki/Fuel>`_ is an Open Source
+life cycle management application that deploys multiple
 `OpenStack <https://www.openstack.org/>`_ clouds
 from a single interface and then enables you
 to manage those clouds post deployment.
@@ -38,7 +39,7 @@ restoring those resources to the available resources pool.
 Fuel also eases the complexities of network and storage configurations
 through a simple-to-use graphical user experience. Baked into Fuel are:
 
-* Mirantis reference architectures that we have tested and certified
+* Reference architectures that we have tested and certified
   to ensure that your deployed clouds are scalable, reliable,
   and production quality.
 * An open and flexible library
