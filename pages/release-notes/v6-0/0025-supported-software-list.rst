@@ -65,7 +65,7 @@ Major Component Versions
 * **RabbitMQ** `3.3.5 <http://www.rabbitmq.com/release-notes/README-3.3.5.txt>`_
 
 * **Pacemaker** `1.1.10
-  <http://www.rabbitmq.com/release-notes/README-3.3.5.txt>`_
+  <https://github.com/ClusterLabs/pacemaker/releases/Pacemaker-1.1.10>`_
 
 * **Corosync** `1.4.6
   <https://github.com/corosync/corosync/wiki/Corosync-1.4.6-release-notes>`_
