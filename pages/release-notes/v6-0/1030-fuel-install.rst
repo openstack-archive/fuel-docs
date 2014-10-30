@@ -7,20 +7,6 @@ Fuel Installation and Deployment Issues
 Known Issues in 6.0
 -------------------
 
-Fuel uses ports that may be used by other services
-++++++++++++++++++++++++++++++++++++++++++++++++++
-
-Fuel uses some high ports that may be used by other services
-such as RPC, NFS, passive FTP (ephemeral ports 49000-65535).
-In some cases, this can lead to a port conflict during service restart.
-To avoid this, issue the following command
-so that ports above 49000 are not automatically assigned to other services:
-::
-
-    `sysctl -w 'sys.net.ipv4.ip_local_reserved_ports=49000'`
-
-See `LP1353363 <https://bugs.launchpad.net/fuel/+bug/1353363>`_.
-
 Fuel may not allocate enough IP addresses for expansion
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
