@@ -148,6 +148,9 @@ the stability and scalability of the deployed environment:
 * Monit is now used in conjunction with Pacemaker to monitor and automatically
   repair critical services on OpenStack Compute nodes.
 
+* If the public NIC on the primary controller becomes unavailable,
+  the public VIP now migrates to another controller.
+
 Pluggable Architecture
 ----------------------
 
