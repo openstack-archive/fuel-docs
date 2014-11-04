@@ -266,8 +266,6 @@ do not include UEFI images.
 See `LP1291128 <https://bugs.launchpad.net/fuel/+bug/1291128>`_
 and the `UEFI support blueprint <https://blueprints.launchpad.net/fuel/+spec/uefi-support>`_.
 
-
-
 Fuel may not allocate enough IP addresses for expansion
 -------------------------------------------------------
 
@@ -736,8 +734,24 @@ line to */etc/cinder/cinder.conf*::
     glance_api_version=2
 
 Then restart the *cinder-volume* service on all controller nodes.
-
 See `LP1373096 <https://bugs.launchpad.net/bugs/1373096>`_.
+
+OpenStack services report multiple AMQP reconnects in the logs
+--------------------------------------------------------------
+
+nova-api and other services may call fork() soon after the process
+starts. This may lead to a situation when the AMQP heartbeat sending
+thread is initialized and run in the context of the parent process,
+while the reply waiters are added to the list in the child process. When
+this happens, the thread won't send any heartbeats and RabbitMQ will
+close AMQP connections after timeout.
+
+This problem is addressed in **oslo.messaging** packages from
+MOS 5.1.1 package repositories
+(`CentOS <http://mirror.fuel-infra.org/fwm/5.1.1/centos/os/x86_64/Packages/python-oslo-messaging-1.3.0-fuel5.1.mira4.noarch.rpm>`_,
+`Ubuntu <http://mirror.fuel-infra.org/fwm/5.1.1/ubuntu/pool/main/python-oslo.messaging_1.3.0-fuel5.1~mira5_all.deb>`_).
+After installing these packages, restart the affected services.
+See `LP1371723 <https://bugs.launchpad.net/bugs/1371723>`_.
 
 Known Issues in Mirantis OpenStack 5.1 and 5.0.2
 ================================================
