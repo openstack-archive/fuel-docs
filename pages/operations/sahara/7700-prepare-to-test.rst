@@ -15,6 +15,10 @@ during OpenStack installation,
 so that is where you need to perform these actions.
 By default, the `admin` tenant is used for the tests.
 
+You must have at least 4096 MB of available RAM
+in the tenant you are using for the Sahara Platform Tests
+or some tests may fail.
+
 #. Configure security groups in the 'admin' tenant for post-deployment checks.
    See :ref:`sahara-ports` for the details.
 
