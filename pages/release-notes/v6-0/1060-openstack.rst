@@ -4,13 +4,19 @@
 OpenStack Deployment Issues
 ===========================
 
-
 New Features and Resolved Issues in Mirantis OpenStack 6.0
 ----------------------------------------------------------
 
-* Instances with file injection can now be safely launched
-  after the OpenStack environment is launched.
+* File injection no longer fails when an instance launches
   See `LP1335697 <https://bugs.launchpad.net/bugs/1335697>`_.
+
+* Nova floating range now waits for both Keystone backends.
+  See `LP1381982 <https://bugs.launchpad.net/bugs/1381982>`_.
+
+* Previously, default Neutron networks were created
+  with admin tenant name, even if a custom name was applied
+  in the cluster settings. This problem is now fixed.
+  See `LP1376515 <https://bugs.launchpad.net/bugs/1376515>`_.
 
 * Rsyslogd restart no longer causes services to hang.
   See `LP1363102 <https://bugs.launchpad.net/bugs/1363102>`_.
@@ -18,6 +24,10 @@ New Features and Resolved Issues in Mirantis OpenStack 6.0
 * Applying iptables rules during large scale deployments
   is now faster.
   See `LP1399168 <https://bugs.launchpad.net/bugs/1399168>`_.
+
+* Enabling Murano on CentOS will no longer break redeployment of a
+  controller node.
+  See `LP1401503 <https://bugs.launchpad.net/bugs/1401503>`_.
 
 Known Issues in 6.0
 -------------------
@@ -30,28 +40,5 @@ to an existing environment,
 nova-api is unavailable for a few minutes,
 which causes services to be unavailable.
 See `LP1370067 <https://bugs.launchpad.net/fuel/+bug/1370067>`_.
-
-Enabling Murano may prevent the controller from redeploying
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-When Murano is deployed on CentOS, redeployment of the controller might fail.
-
-To work around this issue around, follow these steps:
-
-#. Deploy the Fuel Master node.
-#. Log into the Fuel Master node as `root`.
-#. Install the patch package:
-
-   ::
-
-      yum install patch -y
-
-#. Download the patch from
-   `LP1401503 <https://bugs.launchpad.net/bugs/1401503>`_.
-   and apply it:
-
-   ::
-
-      patch --verbose -p0 < apps-upload-check.patch
 
 
