@@ -124,5 +124,5 @@ but it has some known limitations:
   You should not delete controller; otherwise, your environment will crash.
   See `LP1371638 <https://bugs.launchpad.net/fuel/+bug/11371638>`_.
 
-For more information see:
-.. include:: pages/release-notes/v6-0/vmware/9020-nsx.rst
+
+.. include:: /pages/release-notes/v6-0/vmware/9020-nsx.rst
