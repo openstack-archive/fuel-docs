@@ -27,6 +27,7 @@ Terminology Reference
 .. include:: /pages/terminology/h/ha.rst
 .. include:: /pages/terminology/h/hadoop.rst
 .. include:: /pages/terminology/h/haproxy.rst
+.. include:: /pages/terminology/h/hardened-packages.rst
 .. include:: /pages/terminology/h/havana.rst
 .. include:: /pages/terminology/h/heat.rst
 .. include:: /pages/terminology/h/horizon.rst
