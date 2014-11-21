@@ -4,6 +4,7 @@
 .. include:: /pages/user-guide/3000-create-environment.rst
 .. include:: /pages/user-guide/4000-configure-environment.rst
 .. include:: /pages/user-guide/5000-deploy-environment.rst
+.. include:: /pages/user-guide/6000-next-steps.rst
 .. include:: /pages/user-guide/post-install-healthchecks.rst
 .. include:: /pages/user-guide/7000-sahara-install.rst
 .. include:: /pages/user-guide/8000-upgrade.rst
