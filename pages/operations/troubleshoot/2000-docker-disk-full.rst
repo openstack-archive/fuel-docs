@@ -47,8 +47,9 @@ The following symptoms will be present:
 
 **Solution**
 
-The postgres container should still be running, so you simply need the
-correcting SQL command that corrects the fault. Before attempting to fix the
+The postgres container should still be running,
+so you simply need to run an SQL command to correct the fault.
+Before attempting to fix the
 database, make a quick backup of it:
 
 .. code-block:: bash
@@ -198,12 +199,12 @@ Finally, clean up the recovery mount point:
    dmsetup clear $device_id
 
 
-Read only containers
+Read-only containers
 ++++++++++++++++++++
 
 **Symptoms**
 
-* Fuel UI does not work
+* Fuel Web UI does not work
 * Fuel CLI fails to report any commands
 * Some containers may be failing and stopped
 * Trying to run **dockerctl shell CONTAINER touch /root/test** results in
