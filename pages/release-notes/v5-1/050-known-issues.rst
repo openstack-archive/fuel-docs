@@ -233,6 +233,32 @@ Networking issues
   the OCF init scripts for Neutron as implemented in the `Patch 139938
   <https://review.openstack.org/139938>`_.
 
+* Custom :ref:`Security Group<security-groups-term>` rules
+  may not work in a CentOS environment
+  that is deployed using one of the Neutron
+  :ref:`network topologies<net-topology-plan>`.
+  This is because the */etc/sysctl.conf* file is set up
+  to disable the netfilter on bridges.
+  The kernel bridge module loads with netfiltering on bridges enabled,
+  but running **sysctl -p** on a CentOS Compute node
+  breaks the Neutron security rules.
+  If this happens,the output of the **iptables** command
+  shows zero counters for bridge devices on the Compute nodes.
+
+  To resolve this issue,
+  edit the */etc/sysctl.conf* file on each Compute node
+  and assign a value of "1" (enabled)
+  to each of the following settings:
+
+  ::
+
+    net.bridge.bridge-nf-call-arptables = 1
+    net.bridge.bridge-nf-call-iptables = 1
+    net.bridge.bridge-nf-call-ip6tables = 1
+
+
+  See `LP1400787 <https://bugs.launchpad.net/bugs/1400787>`_.
+
 Horizon issues
 --------------
 
