@@ -71,25 +71,17 @@ FlatDHCP manager.
 Choose Backend for Cinder and Glance with vCenter
 +++++++++++++++++++++++++++++++++++++++++++++++++
 
-Ceph cannot be used as a Cinder or Glance backend;
-the only choice here is to leave the default options,
-which are:
-- :ref:`VMDK<vmdk-term>` driver for Cinder.
-- Swift for Glance.
-- VMWare vCenter/:ref:`ESXi<esxi-term>` for Glance.
-
-.. image:: /_images/user_screen_shots/vcenter-cinder.png
-   :width: 50%
-
-VMware vCenter managed datastore is now supported as a backend for Glance;
-select VMWare vCenter/ESXi option to enable it.
+Ceph cannot be used as a Cinder or Glance backend.
+Since Mirantis OpenStack 6.0 supports VMware
+vCenter managed datastore as a backend for Glance,
+select *VMWare vCenter/ESXi* option to enable it.
+Swift option is also available for Glance.
 
 .. image:: /_images/user_screen_shots/vcenter-glance-backend.png
    :width: 50%
 
 After you create the environment, you must enable the VMDK
 driver for Cinder on the Settings tab.
-
 
 .. image:: /_images/user_screen_shots/vcenter-glance-backend.png
    :width: 50%
