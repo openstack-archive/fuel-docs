@@ -92,8 +92,8 @@ but it has some known limitations:
   See `LP1381613 <https://bugs.launchpad.net/fuel/+bug/1381613>`_.
 
 * When using vCenter as a hypervisor, vCenter can be used as a storage backend for Cinder.
-  However, 'Storage - Cinder LVM' role is available when adding nodes.
-  To work around this problem, you should add one node with ' Storage - Cinder LVM' role.
+  However, 'Storage - Cinder' role is available when adding nodes.
+  To work around this problem, you should add one node with ' Storage - Cinder' role.
   See `LP1383224 <https://bugs.launchpad.net/fuel/+bug/1383224>`_.
 
 * According to
