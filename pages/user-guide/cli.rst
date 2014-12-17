@@ -73,6 +73,38 @@ for specific release
 
   fuel rel --rel 1
 
+Networks configuration
+++++++++++++++++++++++
+
+Download network configuration. This command reads networks from API
+and saves them in .yaml format on the file system:
+
+::
+
+  fuel rel --rel 1 --network --download
+
+To see interaction with Nailgun API, run the following command with **--debug** option:
+
+::
+
+  fuel rel --rel 1 --network --download --debug
+  GET http://10.108.80.2:8000/api/v1/releases/1/networks
+
+Modify network configuration.
+You may want to modify the networks and upload the configuration back:
+
+::
+
+  fuel rel --rel 1 --network --upload
+
+
+To see interaction with Nailgun API, run the following command with **--debug** option:
+
+::
+
+  fuel rel --rel 1 --network --upload --debug
+  PUT http://10.108.80.2:8000/api/v1/releases/1/networks data={...}
+
 
 Environment
 +++++++++++
