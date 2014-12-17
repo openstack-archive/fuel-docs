@@ -172,6 +172,19 @@ virtual machine tenants into separate broadcast domains.
 .. image:: /_images/user_screen_shots/settings-vcenter.png
    :width: 50%
 
+.. note: The Fuel web UI now has a new option for vCenter:
+         you can fill in **Datastore regexp** field to indicate data stores to use with Compute. To learn more about
+         this setting, see `VMware vSphere <http://docs.openstack.org/juno/config-reference/content/vmware.html>`_ guide.
+
+For example, if you add *nas.*, all data stores that have a name starting
+with "nas" will be chosen.
+
+If you plan to use all available datastores, leave the field blank.
+In this case, Compute node will pick the first data store returned by the vSphere API.
+
+.. image:: /_images/vcenter-regexp.png
+   :width: 50%
+
 - Enable the 'Use VLAN tagging for fixed networks' checkbox
   and enter the VLAN tag you selected
   for the VLAN ID in the ESXi host network configuration
