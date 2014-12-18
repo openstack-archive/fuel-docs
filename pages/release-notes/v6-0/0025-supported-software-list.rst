@@ -70,17 +70,15 @@ Major Component Versions
 * **Corosync** `1.4.6
   <https://github.com/corosync/corosync/wiki/Corosync-1.4.6-release-notes>`_
 
-* **Keepalived** `1.2.4 <http://www.keepalived.org/changelog.html>`_
-
 * **MongoDB** `2.4.6
   <http://docs.mongodb.org/manual/release-notes/2.4/>`_
 
-* **Ceph** `0.80.4  <http://ceph.com/docs/master/release-notes/#v0-80-4-firefly>`_ "Firefly"
+* **Ceph** `0.80.7  <http://ceph.com/docs/master/release-notes/#v0-80-7-firefly>`_ "Firefly"
 
 * **MySQL**
   `5.5.28 <http://dev.mysql.com/doc/relnotes/mysql/5.5/en/>`_
   (CentOS),
-  `5.5.37 <http://dev.mysql.com/doc/relnotes/mysql/5.5/en/>`_
+  `5.5.40 <http://dev.mysql.com/doc/relnotes/mysql/5.5/en/>`_
   (Ubuntu)
 
 * **Zabbix** `2.2.2 <http://www.zabbix.com/rn2.2.0.php>`_
