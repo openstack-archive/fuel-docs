@@ -30,20 +30,13 @@ To assign roles to the nodes:
   roles that cannot be assigned are indicated.
 - Click on the appropriate node(s) in the "Unallocated Nodes" list.
 - Click on the "Apply Changes" button.
-- Proceed to do this until all roles have been assigned to all nodes.
-
-In this example,
-the "Controller" node is assigned to this node.
+- Proceed to do this until roles have been assigned to all nodes.
 
 As you make your selections,
 Fuel displays an icon
 (a gold triangle with an exclamation point)
 next to roles that are not allowed.
-It also tells you about other configurations that are required.
-
-For example, in the sample screen above,
-you can see that you cannot add a Compute or Zabbix Server role
-with the Controller role you have selected.
+It also tells you about other environment settings that are required.
 
 .. note:: The Zabbix role appears on this screen
           only when you have enabled
@@ -75,6 +68,8 @@ Fuel displays the configuration you have chosen:
 
 To rename the nodes, click on the "Untitled" string
 for each node and then type in the name you want to use.
+The suffix is the last digits of the MAC address for this node;
+you can keep these digits or delete them.
 
 For more information, see:
 
@@ -84,6 +79,7 @@ For more information, see:
   ramifications of the different Storage roles.
 - :ref:`nodes-roles-plan` includes guidelines about setting up nodes.
 - :ref:`mongodb-term` for information about MongoDB.
+- :ref:`zabbix-plan` for information about Zabbix.
 
 
 
