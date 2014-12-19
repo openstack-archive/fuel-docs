@@ -26,7 +26,5 @@ below for information about updating OpenStack environments.
 See :ref:`upgrade-ug` for instructions.
 
 .. note::
-  No upgrade functionality is provided in the 6.0 Technical Preview release.
-  You cannot upgrade from an earlier Fuel version and you will not be able to
-  upgrade to the 6.0 GA release from the 6.0 Technical Preview release.
+  Upgrade from 6.0 Technical Preview to 6.0 GA is not supported.
 
