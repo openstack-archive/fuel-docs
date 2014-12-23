@@ -62,3 +62,4 @@ See :ref:`kernel-parameters-ops`.
 .. include:: /pages/planning-guide/0020-system-requirements/0022-master-hdwr.rst
 .. include:: /pages/planning-guide/0020-system-requirements/0023-node-server-hardware-recommendations.rst
 .. include:: /pages/planning-guide/0020-system-requirements/0030-sample-target-config.rst
+.. include:: /pages/planning-guide/0020-system-requirements/0040-hardware-summary.rst
