@@ -523,6 +523,14 @@ The following testing scenarios (from 5 to 11) may be mixed with Nova or Neutron
   * Run OSTF.
 
 7. Shut down management interface on the primary controller.
+
+   .. note::    When you use **ifdown**, **ifup**, or commands that call them,
+                it can cause the Corosync service to update the cluster state
+                and in most cases leads to so-called split-brain: the test will fail.
+                Instead, use **ip link set down <ethX>**
+                or physically disconnect the interface.
+
+
    Steps to perform:
 
   * Deploy a cluster with 3 controllers and 2 compute nodes.
@@ -547,7 +555,6 @@ The following testing scenarios (from 5 to 11) may be mixed with Nova or Neutron
   * Repeat steps described above (from disconnecting eth2) for another controller.
 
   * Run OSTF.
-
 
 8. Delete all management and public vIPs on all controller nodes:
    Steps to perform:
