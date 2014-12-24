@@ -105,6 +105,11 @@ Known Issues in Mirantis OpenStack 6.0
   That means, host located in the Internet are unreachable.
   See `LP1404809 <https://bugs.launchpad.net/bugs/1404809>`_.
 
+* In an environment with more than 60 tenant networks, rescheduling a Neutron
+  agent to a different controller may time out and leave behind orphaned
+  networks and dnsmasq processes.
+  See `LP1405477 <https://bugs.launchpad.net/bugs/1405477>`_.
+
 
 .. include:: /pages/release-notes/v6-0/9100-mellanox.rst
 
