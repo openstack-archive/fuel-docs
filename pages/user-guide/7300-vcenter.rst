@@ -54,6 +54,8 @@ create the environment.
 .. image:: /_images/user_screen_shots/vcenter-hv.png
    :width: 50%
 
+.. _vcenter-netv-service:
+
 Select Network Service for vCenter
 ++++++++++++++++++++++++++++++++++
 
@@ -70,6 +72,8 @@ For instructions on NSX, see :ref:`nsx-plan` and :ref:`nsx-deploy`.
 .. raw: pdf
 
    PageBreak
+
+.. _vcenter-backend:
 
 Choose Backend for Cinder and Glance with vCenter
 +++++++++++++++++++++++++++++++++++++++++++++++++
