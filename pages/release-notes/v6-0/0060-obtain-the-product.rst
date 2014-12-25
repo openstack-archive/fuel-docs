@@ -14,4 +14,4 @@ see the `0 to OpenStack in 60 Minutes or less
 Mirantis OpenStack is also available on-demand,
 preconfigured, and ready to use
 with our Hosted Private Cloud product,
-`Mirantis OpenStack Express <https://express.mirantis.com/home>`_.
+`Mirantis OpenStack Express <https://express.mirantis.com/>`_.
