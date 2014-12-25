@@ -64,9 +64,8 @@ for demonstration and evaluation purposes.
 A deep dive into the structure of the Mirantis OpenStack environment,
 network considerations, and deployment options.
 
-
-:ref:`plugin-dev` `(pdf) <pdf/Mirantis-OpenStack-6.0-Fuel-Plug-in-Guide.pdf>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+:ref:`plugin-dev` `(pdf) <pdf/Mirantis-OpenStack-6.0-Fuel-Plugin-Guide.pdf>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Instructions on creating, installing and certifying plug-ins for Fuel.
 
@@ -76,8 +75,8 @@ Instructions on creating, installing and certifying plug-ins for Fuel.
 Short articles about OpenStack terminology and technology
 with references to other documentation and other useful information.
 
-:ref:`file-ref` `(pdf) <pdf/Mirantis-OpenStack-6.0-Fuel File-Format-Reference.pdf>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+:ref:`file-ref` `(pdf) <pdf/Mirantis-OpenStack-6.0-File-Format-Reference.pdf>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Reference pages for select configuration files that Fuel uses.
 
