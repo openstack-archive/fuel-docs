@@ -110,6 +110,12 @@ Known Issues in Mirantis OpenStack 6.0
   networks and dnsmasq processes.
   See `LP1405477 <https://bugs.launchpad.net/bugs/1405477>`_.
 
+* In rare cases Neutron DHCP agent takes up to 10 minutes to failover to a
+  standby controller. Fuel sets the DHCP lease time to 120 seconds which can
+  lead to loosing IP addresses and connectivity of instances.
+  For more information on investigation and workaround,
+  see `LP1371104 <https://bugs.launchpad.net/bugs/1371104>`_.
+
 
 .. include:: /pages/release-notes/v6-0/9100-mellanox.rst
 
