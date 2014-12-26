@@ -20,7 +20,7 @@ For more information:
 - For an architectural overview,
   see `AMQP and Nova <http://docs.openstack.org/developer/nova/devref/rpc.html>`_.
 
-- `ISO/IEC 19494
+- `ISO/IEC 19464
   <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=64955>`_
   is the official standard.
 
