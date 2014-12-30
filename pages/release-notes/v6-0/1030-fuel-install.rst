@@ -59,6 +59,52 @@ on the Fuel Master node;
 follow instructions in :ref:`kernel-parameters-ops`.
 See `LP1324483 <https://bugs.launchpad.net/bugs/1324483>`_.
 
+Performance of OpenStack services is degraded when a controller is down
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+If one of the Controller nodes in an HA environment is deleted or goes offline,
+requests to Horizon, Keystone, and other OpenStack services reliant on Keystone
+will intermittently get delayed for several seconds while trying to connect to
+memcached server on the offline controller node. See
+`LP1405549 <https://bugs.launchpad.net/mos/+bug/1405549>`_ and
+`LP1367767 <https://bugs.launchpad.net/bugs/1367767>`_.
+
+To fix this problem, remove the offline memcached server from OpenStack
+configuration files:
+
+#.  View the */etc/hosts* file on one of the Controller nodes
+    that is alive and determine the IP address
+    that is assigned to the Management interface
+    of the unavailable Controller.
+
+#.  Edit the *keystone.conf* file on each Controller node
+    to remove this IP address from the list of memcached servers:
+
+    .. code-block:: sh
+
+       DOWN_IP="192.168.0.5"; sed -r 's/'$DOWN_IP':11211,?//g' \
+          -i.bak /etc/keystone/keystone.conf
+
+#.  Restart the Keystone daemon on each Controller:
+
+    .. code-block:: sh
+
+       service openstack-keystone restart || restart keystone
+
+#.  Edit the */etc/openstack-dashboard/local_settings* file. In the CACHES
+    structure, temporarily remove the <IP>:<PORT> string for the offline server
+    from the LOCATION line:
+
+    .. code-block:: json
+
+       CACHES = {
+         'default': {
+           'BACKEND' : 'django.core.cache.backends.memcached.MemcachedCache',
+           'LOCATION' : "192.168.0.3:11211;192.168.0.5:11211;192.168.0.6:11211"
+       },
+
+    Then restart the Apache web server.
+
 Anaconda fails with LVME error on CentOS
 ++++++++++++++++++++++++++++++++++++++++
 
