@@ -117,5 +117,5 @@ Mirantis OpenStack 6.0, but with the following limitations:
   Glance configuration on target nodes manually.
   See `LP1370723 <https://bugs.launchpad.net/fuel/+bug/1370723>`_.
 
-.. include:: pages/release-notes/v6-0/vmware/9020-nsx.rst
+.. include:: /pages/release-notes/v6-0/vmware/9020-nsx.rst
 
