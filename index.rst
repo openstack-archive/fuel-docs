@@ -80,6 +80,11 @@ with references to other documentation and other useful information.
 
 Reference pages for select configuration files that Fuel uses.
 
+:ref:`style-guide`
+~~~~~~~~~~~~~~~~~~
+
+Contains style guidelines for the Mirantis OpenStack documentation.
+
 :ref:`release-notes` `(pdf) <pdf/Mirantis-OpenStack-6.0-RelNotes.pdf>`__
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
