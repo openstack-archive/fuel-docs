@@ -43,6 +43,10 @@ you should do the following:
 - Run a :ref:`backup<Backup_and_restore_Fuel_Master>`
   and store the backup in an appropriate location.
 
+- To rename, reset, or delete an environment,
+  click on the `Actions` tab on the Fuel dashboard
+  and follow the instructions on the screen.
+
 - Manage your environment using the Horizon dashboard
   (click on the link on your Fuel Dashboard)
   and command-line tools:
@@ -52,7 +56,7 @@ you should do the following:
     <http://docs.openstack.org/user-guide/content/log_in_dashboard.html>`_.
 
   - Create projects/tenants and users;
-    `Managing Projects and Users
+    see `Managing Projects and Users
     <http://docs.openstack.org/openstack-ops/content/projects_users.html>`_.
 
   - If you deployed an OpenStack environment
