@@ -4,8 +4,8 @@
 Networking issues
 =================
 
-New Features and Resolved Issues in Mirantis OpenStack 6.0
-----------------------------------------------------------
+Resolved networking issues in 6.0
+---------------------------------
 
 * Multiple L3 agents are now enabled and operate in parallel.
   This effectively distributes the load between the controllers.
@@ -61,8 +61,14 @@ New Features and Resolved Issues in Mirantis OpenStack 6.0
   This issue is now fixed, so service timeout is observed.
   See `LP1399168 <https://bugs.launchpad.net/bugs/1399168>`_.
 
-Known Issues in Mirantis OpenStack 6.0
---------------------------------------
+* Rescheduling a Neutron agent to a different controller may disrupt network
+  connectivity to instances due to mismatching file permissions assumptions
+  between Neutron and Pacemaker.
+  OCF scripts for Neutron agents were updated to explicitly set umask to 0022.
+  See `LP1392330 <https://bugs.launchpad.net/bugs/1392330>`_.
+
+Known networking issues
+-----------------------
 
 * Current OVS bonding is now an Experimental Feature
   due to several issues discovered. To enable Experimental mode,
@@ -115,7 +121,6 @@ Known Issues in Mirantis OpenStack 6.0
   lead to loosing IP addresses and connectivity of instances.
   For more information on investigation and workaround,
   see `LP1371104 <https://bugs.launchpad.net/bugs/1371104>`_.
-
 
 .. include:: /pages/release-notes/v6-0/9100-mellanox.rst
 

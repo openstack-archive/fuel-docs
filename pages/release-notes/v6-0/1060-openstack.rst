@@ -21,10 +21,6 @@ New Features and Resolved Issues in Mirantis OpenStack 6.0
 * Rsyslogd restart no longer causes services to hang.
   See `LP1363102 <https://bugs.launchpad.net/bugs/1363102>`_.
 
-* Applying iptables rules during large scale deployments
-  is now faster.
-  See `LP1399168 <https://bugs.launchpad.net/bugs/1399168>`_.
-
 * Enabling Murano on CentOS will no longer break redeployment of a
   controller node.
   See `LP1401503 <https://bugs.launchpad.net/bugs/1401503>`_.
