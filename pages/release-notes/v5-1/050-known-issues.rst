@@ -265,6 +265,14 @@ Networking issues
 
   See `LP1400787 <https://bugs.launchpad.net/bugs/1400787>`_.
 
+* In large scale environments, instances may fail to launch due to slow
+  processing of iptables rules. Environments with many compute nodes running
+  many VMs can lead to long iptables rules lists. Slow processing of long
+  iptables rules lists can lead to service timeouts when launching new
+  instances. The problem is fixed in python-neutron package from MOS 5.1.2.
+  See `update instructions in LP1399168
+  <https://bugs.launchpad.net/mos/+bug/1399168/comments/16>`_.
+
 Horizon issues
 --------------
 
