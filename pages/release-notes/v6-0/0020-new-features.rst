@@ -32,7 +32,7 @@ Fuel 6.0 deploys this version of OpenStack on either CentOS or Ubuntu.
 .. include:: /pages/release-notes/v6-0/new-features/ceilometer-vcenter.rst
 
 .. include:: /pages/release-notes/v6-0/new-features/image-provision.rst
-.. include:: /pages/release-notes/v6-0/new-features/mongodb-external.rst
+.. include /pages/release-notes/v6-0/new-features/mongodb-external.rst
 .. include:: /pages/release-notes/v6-0/new-features/openstack-update.rst
 
 
