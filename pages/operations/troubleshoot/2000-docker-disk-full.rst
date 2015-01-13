@@ -266,8 +266,8 @@ For stateless containers:
 .. code-block:: bash
 
    container="rsync" # Change container name
-   dockerctl destroy rsync
-   dockerctl start rsync
+   dockerctl destroy $container
+   dockerctl start $container
 
 For stateful containers:
 
