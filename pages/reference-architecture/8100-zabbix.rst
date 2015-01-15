@@ -2,7 +2,7 @@
 .. _zabbix-arch:
 
 Zabbix implementation
----------------------
+=====================
 
 This section describes how Fuel deploys
 :ref:`zabbix-term`.
