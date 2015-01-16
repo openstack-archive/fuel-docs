@@ -80,7 +80,7 @@ Some other considerations when choosing a network topology:
 - VMWare :ref:`vcenter-term` and :ref:`vsphere-term`
   can only be implemented on :ref:`Nova-network<nova-network-term>`
   with the FlatDHCP topology.
-- Neutron with VMware NSX can only be implemented with the KVM/QEMU hypervisor.
+- Neutron with VMware NSX can be implemented with the KVM/QEMU and vCenter hypervisors.
 - :ref:`bonding-term` is not supported for SR-IOV over
   the :ref:`mellanox-adapters` family.
 - Mellanox :ref:`sr-iov-term` and :ref:`iser-term` are supported only when
