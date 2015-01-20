@@ -38,7 +38,7 @@ complete to plan the Mirantis OpenStack deployment.
 +----------------------------+-------------------------------------------+
 | If you want to run         | See :ref:`vcenter-plan`                   |
 | :ref:`vcenter-term`        |                                           |
-| or :ref`vsphere-term`      |                                           |
+| or :ref:`vsphere-term`     |                                           |
 +----------------------------+-------------------------------------------+
 | If you want to use         | See :ref:`nsx-plan`                       |
 | :ref:`nsx-term`            |                                           |
