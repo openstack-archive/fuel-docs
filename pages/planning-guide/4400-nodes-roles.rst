@@ -85,18 +85,3 @@ Of course, you are free to choose how to deploy OpenStack based on the
 amount of available hardware and on your goals (such as whether you
 want a compute-oriented or storage-oriented environment).
 
-For a typical OpenStack compute deployment, you can use this table as
-high-level guidance to determine the number of controllers, compute,
-and storage nodes you should have:
-
-+----------+-----------+--------+-----------------------+
-|# of Nodes|Controllers|Computes|Storages               |
-+==========+===========+========+=======================+
-|4-10      |  3        |   1-7  |3 (on controllers)     |
-+----------+-----------+--------+-----------------------+
-|11-40     |  3        |   3-32 |3+ (swift) + 2 (proxy) |
-+----------+-----------+--------+-----------------------+
-|41-100    |  4        |  29-88 |6+ (swift) + 2 (proxy) |
-+----------+-----------+--------+-----------------------+
-|>100      |  5        |   >84  |9+ (swift) + 2 (proxy) |
-+----------+-----------+--------+-----------------------+
