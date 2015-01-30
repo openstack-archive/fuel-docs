@@ -25,7 +25,38 @@ New Features and Resolved Issues in Mirantis OpenStack 6.0
 Known Issues in Mirantis OpenStack 6.0
 --------------------------------------
 
-GRE-enabled Neutron installation runs inter VM traffic through Management network
+Master node installation fails if installed from USB flash drive
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Early versions of the 6.0 IMG file let you install Fuel
+without error but the installation is unusable.
+This happens because an extra copy of the kickstart file
+is included outside the embedded ISO image.
+This additional kickstart cannot find the *openstack_version* file
+so it fails and malformed paths are used for the remaining kickstart commands.
+6.0 IMG files with the checksum 3e0ad93d6c6b874478e1ea7b4f7d871a are affected.
+The MD5 checksum for the correct file is b4b1ec2f2a12beb20eaaf6f14511d512.
+
+The IMG file available for download after January 30, 2015 is correct.
+You can `redownload that file <https://software.mirantis.com/>`_ and reinstall Fuel,
+or you can apply a patch as follows:
+
+`Download and apply a patch script <https://launchpadlibrarian.net/196168950/MirantisOpenStack-6.0.img.patch.sh>`_:
+
+  #. Put the downloaded script in the same directory with the corrupt IMG file.
+  #. Run the script with the three following options one by one:
+
+     ::
+
+         sudo ./MirantisOpenStack-6.0.img.patch.sh mount
+         sudo ./MirantisOpenStack-6.0.img.patch.sh patch
+         sudo ./MirantisOpenStack-6.0.img.patch.sh umount
+
+  #. Reinstall Fuel from the patched 6.0 IMG file.
+
+See `LP1410333 <https://bugs.launchpad.net/fuel/+bug/1410333>`_.
+
+GRE-enabled Neutron installation runs inter VM traffic through management network
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 In Neutron GRE installations configured with the Fuel UI,
