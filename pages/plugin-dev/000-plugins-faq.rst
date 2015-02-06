@@ -3,6 +3,38 @@
 FAQ
 ===
 
+How can I add a custom role?
+----------------------------
+
+Current Plugin Architecture does not provide a way to define role.
+Starting with Fuel 6.1 you can use the Operating System role as a workaround.
+
+In the **tasks.yaml** file use the `base-os` string to specify which task should be
+used for the role deployment.
+
+.. code-block:: yaml
+
+    - role: ['base-os']
+      stage: post_deployment
+      type: shell
+      parameters:
+        cmd: ./deploy.sh
+        timeout: 42
+
+In plugin documentation ask the user to assign the Operating System role
+on the required node and specify the name to give this node, such as
+zabbix-01.
+
+In the deployment script you can query the `user_node_name` variable
+and decide if the script should deploy Zabbix related packages on the node.
+
+.. code-block:: yaml
+
+    ...
+    user_node_name: zabbix-01
+    ...
+
+
 Where can I find Fuel Plug-in Builder source code?
 --------------------------------------------------
 
@@ -19,8 +51,8 @@ How can I reuse Puppet modules from Fuel?
 -----------------------------------------
 
 According to the design, every plug-in should have all necessary components to be then deployed.
-This means, every plug-in should have its own copy of Fuel Puppet modules.
-If you do not want to keep copy of Fuel library manifests in your repository,
+This means that every plug-in should have its own copy of Fuel Puppet modules.
+If you do not want to keep a copy of Fuel library manifests in your repository,
 you can use **pre_build_hook** to download the required modules during the
 plug-in build. To do that, add the following code into your hook:
 
@@ -45,8 +77,8 @@ The code then copies *inifile* and *stdlib* modules from **fuel-library** reposi
 
 .. warning::
 
-    To reuse existing Puppet manifests you can also specify several Puppet
-    modules in your task with colon separator: for example,
+    To reuse the existing Puppet manifests you can also specify several Puppet
+    modules in your task with a colon separator: for example,
     *puppet_modules: "puppet/modules:/etc/puppet/modules"*.
     Note that we do not
     recommend using this approach, because Fuel puppet modules can be changed
@@ -73,10 +105,10 @@ in the required directories:
 It downloads two packages in your plug-in's directories before Fuel Plugin Builder starts
 building repositories.
 
-Why is there no /etc/astute.yaml file, when I run pre_deployment task?
+Why is there no /etc/astute.yaml file when I run pre_deployment task?
 ----------------------------------------------------------------------
 
-If you have task with "stage: pre_deployment"  parameter set, you will not find
+If you have a task with "stage: pre_deployment" parameter set, you will not find
 **/etc/astute.yaml** file on the target node during the task execution.
 The file **/etc/astute.yaml** is a symlink that is created before Fuel
 deploys a role.
@@ -84,7 +116,7 @@ deploys a role.
 Target node can have several roles and each role contains its own file with
 deployment data.
 
-Here is the example of a node with
+Here is an example of a node with
 ID 2 and two roles, Controller and Cinder:
 
 ::
@@ -95,4 +127,4 @@ ID 2 and two roles, Controller and Cinder:
 
 Let's assume that we need deployment data file for Controller role.
 
-We can use '/etc/controller.yaml' file directly in deployment script.
+We can use the '/etc/controller.yaml' file directly in the deployment script.
