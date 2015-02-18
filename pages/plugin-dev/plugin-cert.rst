@@ -112,14 +112,9 @@ publish plug-ins into separate repositories of the
 `Stackforge <https://github.com/stackforge>`_
 project.
 
-Currently, plug-ins created by Mirantis developers are kept
-in the following repos:
-
-* `Stackforge plug-ins <https://github.com/stackforge/fuel-plugins>`_ - used for plug-ins developed by Fuel Core team.
-
-* `Mirantis plug-ins <https://github.com/mirantis/fuel-plugins>`_ - used for plug-ins developed by Partner Integrations and MOS teams.
-
-Note that the plug-ins will also be moved to separate repos in Stackforge.
+Fuel plug-ins are kept
+in the separate repos under Stackforge project
+(for example, `https://github.com/stackforge/fuel-plugin-neutron-vpnaas`).
 
 A contributor should only build the plug-in as described in :ref:`instructions on building a plug-in<create-build-plugin>` and
 send it to *fuel-plugin@mirantis.com*.
