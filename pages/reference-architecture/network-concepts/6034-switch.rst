@@ -12,10 +12,10 @@ this section provides some vendor-agnostic information
 about how traffic should flow.
 We also provide sample switch configurations:
 
-* :ref:`cisco-2960g-nova`
-* :ref:`juniper-ex4200-nova`
 * :ref:`cisco-2960g-neutron`
 * :ref:`juniper-ex4200-neutron`
+* :ref:`cisco-2960g-nova`
+* :ref:`juniper-ex4200-nova`
 
 To configure your switches:
 
@@ -48,7 +48,7 @@ To configure your switches:
   (or a "spanning-tree port fast trunk", according to Cisco terminology).
   If you do not do that, DHCP timeout issues may occur.
 
-As long as the Fuel network is configured, Fuel can operate.
+As soon as the Fuel network is configured, Fuel can operate.
 Other networks are required for OpenStack environments,
 and currently all of these networks live in VLANs
 over the one or multiple physical interfaces on a node.
