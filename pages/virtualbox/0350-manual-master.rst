@@ -4,13 +4,18 @@ Deploying the Master Node Manually
 First, create the Master node VM.
 
 1. Configure the host-only interface vboxnet0 in VirtualBox by going to
-   `File -> Preferences -> Network` and clicking the screwdriver icon.
+   *File -> Preferences -> Network*, then on the *Host-only Networks*
+   tab click the screwdriver icon.
+
+   .. image:: /_images/host-only-networks-preferences.png
+
+   .. image:: /_images/host-only-networks-details.png
 
 * IP address: 10.20.0.1
 * Network mask: 255.255.255.0
 * DHCP Server: disabled
 
-2. Create a VM for the Master node with the following parameters:
+2. Create a VM for the Fuel Master node with the following parameters:
 
 * OS Type: Linux
 * Version: Ubuntu (64bit)
@@ -19,7 +24,7 @@ First, create the Master node VM.
 
 3. Modify your VM settings:
 
-* Network: Attach `Adapter 1` to `Host-only adapter` ``vboxnet0``
+* Network: Attach *Adapter 1* to *Host-only adapter* *vboxnet0*
 
 4. Power on the VM in order to start the installation. Choose your Fuel ISO
    when prompted to select start-up disk.
