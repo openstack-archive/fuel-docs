@@ -36,7 +36,7 @@ To do this:
 
 #. Log into the Fuel Master node
    and dump provisioning information using this
-   :ref:`fuel CLI<fuel-cli-config>` command::
+   :ref:`fuel CLI<fuel-cli-config>` command:
    ::
 
        fuel --env 1 provisioning default
