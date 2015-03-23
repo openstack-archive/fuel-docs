@@ -4,7 +4,7 @@ Deployment configuration to access OpenStack API and VMs from host machine
 ==========================================================================
 
 Follow the instructions
-in :ref:`create-env-ug` and :ref`configure-env-ug`
+in :ref:`create-env-ug` and :ref:`configure-env-ug`
 to create and configure your OpenStack environment.
 Most of the steps are the same for a VirtualBox deployment
 and the bare-metal deployment.
