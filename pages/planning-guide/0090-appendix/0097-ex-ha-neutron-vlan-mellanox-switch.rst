@@ -6,10 +6,10 @@ Neutron Switch configuration (Mellanox SX1036)
 
 Use the following configuration to deploy Mirantis OpenStack using a Mellanox SX1036 40/56GE 36 port switch
 
-The switch configuration is required prior to the Fuel instllation.
+The switch configuration is required prior to the Fuel installation.
 Prior the installation, the network connectivity between all hosts should be ready.
 
-Here is an example of Mellanox switch VLAN configuation and flow control:
+Here is an example of Mellanox switch VLAN configuration and flow control:
 
 ::
 
