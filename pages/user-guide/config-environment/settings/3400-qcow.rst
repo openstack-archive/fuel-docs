@@ -7,7 +7,7 @@ Choose image format
 Choose whether to use the qcow2 image format for saved images.
 
 .. image:: /_images/user_screen_shots/qcow.png
-   :width: 110%
+   :width: 90%
 
 This selects the image format used for :ref:`Glance<glance-term>`
 and :ref:`ephemeral volumes<ephemeral-storage-term>`.
