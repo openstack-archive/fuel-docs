@@ -64,7 +64,7 @@ for the Cinder storage backend include:
   whereas LVM only supports live migration of volume backed VMs.
 
 If you use Cinder LVM,
-you have the following configuation options:
+you have the following configuration options:
 
 - Let Fuel create a JBOD partition
   that spans all the storage drives in a node.
