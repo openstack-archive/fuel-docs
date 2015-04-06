@@ -35,18 +35,18 @@ Below is a list of commands that are useful when managing LXC containers on the 
 
 Basic usage
 +++++++++++
-Get a list of available commands
+Get a list of available commands:
 ::
 
   docker help
 
 
-Get a list of all running containers
+Get a list of all running containers:
 ::
 
   docker ps
 
-Get a list of all containers available
+Get a list of all containers available:
 ::
 
   docker ps -a
@@ -55,7 +55,7 @@ Get a list of all containers available
    are usually in Exited state. Exited state means that the
    container  exists, but no processes inside are running.
 
-Start a new Docker container with specified commands.
+Start a new Docker container with the specified commands:
 ::
 
   docker run [options] imagename [command]
@@ -67,7 +67,7 @@ This is useful for testing without impacting production containers.
 
   docker run --rm -i -t fuel/postgres /bin/bash
 
-Import a Docker image
+Import a Docker image:
 ::
 
   docker load -i (archivefile)
@@ -75,7 +75,7 @@ Import a Docker image
 Loads in a Docker image in the following formats: .tar, .tar.gz, .tar.xz.
 lrz is not supported.
 
-Save a Docker image to a file.
+Save a Docker image to a file:
 ::
 
   docker save image > image.tar
@@ -83,48 +83,53 @@ Save a Docker image to a file.
 Dockerctl
 +++++++++
 
-Build and run storage containers, then run application containers.
+Build and run storage containers, then run application containers:
 ::
 
   dockerctl build all
 
-.. note:: This can take a few minutes, depending on your hardware
+.. note:: This can take a few minutes, depending on your hardware.
 
 Launch a container from its image with the necessary options.
 If the container already exists,
-will ensure that this container is in a running state.
+will ensure that this container is in a running state:
 ::
 
-  dockerctl start **appname** [--attach]
+  dockerctl start <appname> [--attach]
 
-Optionally, --attach can be used to monitor the process and view its stdout and
+Optionally, *--attach* option can be used to monitor the process and view its stdout and
 stderr.
 
 
-Display the entire container log for /app/. Useful for troubleshooting.
+Display the entire container log for /app/. Useful for troubleshooting:
 ::
 
-  dockerctl logs **appname**
+  dockerctl logs <appname>
 
-Stop or restart a container
+Stop or restart a container:
 ::
 
-  dockerctl stop|restart **appname**
+  dockerctl stop|restart <appname>
 
-Create a shell or run a command.
+Create a shell or run a command:
 ::
 
-  dockerctl shell **appname** [command]
+  dockerctl shell <appname> [command]
 
 .. note:: The container must be running first in order to use this feature.
    Additionally, quotes must be escaped if your command requires them.
 
-Stop and destroy a container
+Stop and destroy a container:
 ::
 
-  dockerctl destroy **appname**
+  dockerctl destroy <appname>
 
 .. note:: This is not reversible, so use with caution.
+
+Find containets names by running:
+::
+
+  dockerctl list
 
 .. _fuel-docker-changes:
 

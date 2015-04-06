@@ -216,7 +216,7 @@ The implementation is:
 
 To view the **atop** data,
 run the `atop(1) <http://manpages.ubuntu.com/manpages/utopic/man1/atop.1.html>`_
-command on the shell of the node you are analyzing.
+command on the shell of the node you are analyzing:
 
 ::
 
