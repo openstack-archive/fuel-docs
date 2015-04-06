@@ -187,7 +187,7 @@ You may want to make a PostgreSQL backup at this point:
 To recover a corrupted PostgreSQL database,
 you can import the dump to another PostgreSQL installation,
 where you can get a clean dump
-that you then import to your PostgreSQL container.
+that you then import to your PostgreSQL container:
 
 .. code-block:: bash
 
