@@ -37,6 +37,7 @@ below for information about updating OpenStack environments.
 .. include:: /pages/release-notes/v6-1/new-features/ha-improve.rst
 .. include:: /pages/release-notes/v6-1/new-features/200-nodes.rst
 .. include:: /pages/release-notes/v6-1/new-features/heat.rst
+.. include:: /pages/release-notes/v6-1/new-features/nova.rst
 .. include:: /pages/release-notes/v6-1/new-features/granular-deploy.rst
 .. include:: /pages/release-notes/v6-1/new-features/remove-node-inventory.rst
 .. include:: /pages/release-notes/v6-1/new-features/verify-net.rst
@@ -60,6 +61,7 @@ below for information about updating OpenStack environments.
 .. include:: /pages/release-notes/v6-1/new-features/role-operations.rst
 .. include:: /pages/release-notes/v6-1/new-features/0000-exp-features.rst
 .. include:: /pages/release-notes/v6-1/new-features/cinder.rst
+
 
 Additional Information
 ----------------------
