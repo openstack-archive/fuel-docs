@@ -63,7 +63,7 @@ Select Network Service for vCenter
 
 Currently, the only support network option for vCenter is nova-network.
 
-.. image:: /_images/user_screen_shots/vcenter-networking.png
+.. image:: /_images/user_screen_shots/vcenter-networking-no-nsx.png
    :width: 50%
 
 .. raw: pdf
