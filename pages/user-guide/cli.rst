@@ -20,6 +20,12 @@ Fuel CLI tool is a powerful tool that allows you to:
 
 Fuel CLI may break your environment if not used carefully.
 
+It is necessary to understand that any modifications done using Fuel CLI
+take precedence over the settings made from the browser.
+Fuel shows a special message to inform you:
+
+.. image:: /_images/fuel-cli-warning.png
+
 .. contents :local:
 
 Basic usage
