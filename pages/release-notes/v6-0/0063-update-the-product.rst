@@ -97,7 +97,7 @@ This script updates all nodes one by one and should be run on the Fuel Master no
 
 To update all environments, use `--all-envs` option::
 
-       python mos_apply_mu.py --env-id=X --update --all-envs
+       python mos_apply_mu.py --update --all-envs
 
 The script will update all online nodes in all environments with respect to the version of an operating system in a particular environment.
 You can find your environment id in the list by running the following command on the Fuel Master node::
