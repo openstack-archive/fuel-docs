@@ -4,6 +4,10 @@ How to Update the Product
 You can easily update your Mirantis OpenStack using the introduced update mechanism
 without a need to redeploy it completely.
 
+.. warning:: Updating Mirantis OpenStack deployment could override customizations,
+   manually applied patches and cause restart of OpenStack services.
+   Please, consult Mirantis Support, if you have any questions or concerns.
+
 Please, follow the instruction below to install updates.
 
 Software updating procedure for Linux CentOS- and Ubuntu-based nodes with an access to the Internet
