@@ -87,7 +87,7 @@ The following symptoms will be present:
 * One or more Docker containers is missing from docker ps -a
 * /var/log/docker contains the following message::
 
-    Cannot start container fuel-core-5.1-postgres: Error getting container
+    Cannot start container fuel-core-6.1-postgres: Error getting container
     273c9b19ea61414d8838772aa3aeb0f6f1b982a74555fb6631adb6232459fe80 from driver
     devicemapper: Error writing metadata to
     /var/lib/docker/devicemapper/devicemapper/.json325916422: write
@@ -106,10 +106,20 @@ missing such a message, it can be found this way:
 
 .. code-block:: bash
 
-   fuel_release=5.1
+   fuel_release=6.1
    container=postgres
    #Raise -m1 if you deleted and recreated before disk space incident
    grep -m1 -A5 "create?name=fuel-core-${fuel_release}-${container}" /var/log/docker
+
+.. note:: You may not see the container ID here if the logs were rotated.
+   Alternatively, you can find the container ID here:
+
+.. code-block:: bash
+
+   fuel_release=6.1
+   container=postgres
+   sqlite3 /var/lib/docker/linkgraph.db "select entity_id from edge where\
+   name='fuel-core-${fuel_release}-${container}'"
 
 Once you have the container ID, you need to get the devicemapper block device
 ID for the container:
@@ -146,7 +156,7 @@ or if you are simply destroying and recreating it:
 .. code-block:: bash
 
    #replace with container name and Fuel version
-   container_name="fuel-core-6.0-postgres"
+   container_name="fuel-core-6.1-postgres"
    container_id=$(sqlite3 /var/lib/docker/linkgraph.db "select entity_id from edge\
       where name='${container_name}';")
    echo "Deleting container ID ${container_id}..."
@@ -171,7 +181,7 @@ For PostgreSQL:
 
 .. code-block:: bash
 
-   cp -R /mnt/postgres_recovery/var/lib/pgsql /root/postgres_recovery
+   cp -R /mnt/postgres_recovery/rootfs/var/lib/pgsql /root/postgres_recovery
    dockerctl destroy postgres
    dockerctl start postgres
    dockerctl copy "/root/postgres_recovery/*" postgres:/var/lib/pgsql/
@@ -181,7 +191,7 @@ You may want to make a PostgreSQL backup at this point:
 
 .. code-block:: bash
 
-   dockerctl shell postgres su postgres -c "pg_dumpall --clean' \
+   dockerctl shell postgres su postgres -c "pg_dumpall --clean" \
       > /root/postgres_backup_$(date).sql"
 
 To recover a corrupted PostgreSQL database,
@@ -194,14 +204,15 @@ that you then import to your PostgreSQL container:
    yum install postgresql-server
    cp -rf data/ /var/lib/pgsql/
    service postgresql start
-   su - postgres -c 'pg_dumpall --clean' > dump.sql
+   su - postgres -c "pg_dumpall --clean" > dump.sql
    service postgresql stop
 
 Now import the *dump.sql* file to the postgres container's database:
 
 .. code-block:: bash
 
-   dockerctl copy dump.sql postgres:/root/
+   dockerctl copy dump.sql postgres:/tmp/
+   dockerctl shell postgres chown postgres /tmp/dump.sql
    dockerctl shell postgres su postgres -c "psql nailgun < /root/dump.sql"
 
 For Astute:
@@ -248,7 +259,7 @@ Corrupt ext4 filesystem on Docker container
 
 Error::
 
-  Cannot start container fuel-core-5.1-rsync: Error getting container
+  Cannot start container fuel-core-6.1-rsync: Error getting container
   df5f1adfe6858a13b0a9fe81217bf7db33d41a3d4ab8088d12d4301023d4cca3 from driver
   devicemapper: Error mounting
   '/dev/mapper/docker-253:2-341202-df5f1adfe6858a...d41a3d4ab8088d12d4301023d4cca3'
