@@ -20,10 +20,6 @@ Plug-ins fall into two categories:
 
 All plug-ins, both certified and non-certified, are digitally signed and hosted by Mirantis.
 
-.. SeeAlso::
-
-      If you are interested in developing your own plug-in for Fuel,
-      see the :ref:`Fuel Plug-in Guide<plugin-dev>`.
 
 How to install Fuel plug-ins
 ----------------------------
