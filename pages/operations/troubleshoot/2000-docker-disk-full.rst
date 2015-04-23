@@ -32,9 +32,9 @@ PostgreSQL database inconsistency
 The following symptoms will be present:
 
 * Fuel Web UI fails to work
-* The **dockerctl list -l** output
+* The ``dockerctl list -l`` output
   reports that the nailgun, ostf, and/or keystone container is down
-* The output of the **fuel task** command reports an error
+* The output of the ``fuel task`` command reports an error
   similar to the following::
 
     HTTP Error 400: Bad Request (This Session's transaction has been rolled back
