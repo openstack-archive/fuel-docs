@@ -30,4 +30,8 @@ message should appear.
 .. image:: /_images/user_screen_shots/net_verify_success.png
    :width: 80%
 
-
+.. note:: Currently, network verification does not check
+   interfaces in bonds taking them for simple interfaces.
+   In case of LACP L2 bonding, verification fails on the hardware.
+   Due to this problem, interfaces in LACP bonds are excluded
+   from the checklist.
