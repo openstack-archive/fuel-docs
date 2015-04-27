@@ -53,7 +53,7 @@ you should do the following:
 
   - For more information about using the Horizon dashboard,
     see the `OpenStack User Guide
-    <http://docs.openstack.org/user-guide/content/log_in_dashboard.html>`_.
+    <http://docs.openstack.org/user-guide/dashboard.html>`_.
 
   - Create projects/tenants and users;
     see `Managing Projects and Users
