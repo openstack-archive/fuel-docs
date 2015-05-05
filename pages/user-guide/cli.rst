@@ -339,8 +339,8 @@ about Fuel authentication.
 
 .. _fuel-plugins-cli:
 
-Fuel Plugins
-++++++++++++
+Fuel Plugins CLI
+++++++++++++++++
 
 For summary information on Fuel plugins, see :ref:`Install Fuel plugins <install-plugin>`
 section.
