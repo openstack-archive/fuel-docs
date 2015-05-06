@@ -41,3 +41,8 @@ Every plugin has its own prerequisites, limitations and use cases.
 To learn about specific instructions and recommendations, enter
 `Fuel Plugins Catalog <https://software.mirantis.com/download-mirantis-openstack-fuel-plug-ins/>`_.
 
+Certification
+-------------
+
+To learn about Mirantis Certification, see
+`Fuel Plugin Certification <https://www.mirantis.com/partners/become-mirantis-technology-partner/fuel-plugin-development/fuel-plugin-certification/>`_ page.
