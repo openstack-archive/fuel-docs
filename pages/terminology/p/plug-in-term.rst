@@ -1,34 +1,42 @@
 .. _plug-in-term:
 
-Plug-in
--------
+Plugin
+------
 
-Plug-in is a software component that adds a specific
-feature to an existing software application.
-That means, a kind of customization is provided.
+Beginning with Mirantis OpenStack 6.0,
+Fuel features the ability to install plugins before you deploy your environment.
+Plugins are downloadable software components that extend the functionality of your
+environments in a flexible, repeatable and reliable manner.
 
-In terms of Fuel, plug-ins provide additional functionality that helps to
-extend the cloud usage.
+For example,
+`Neutron LBaaS <https://software.mirantis.com/download-mirantis-openstack-fuel-plug-ins/#lbaas>`_
+provides Load-Balancing-as-a-Service for Neutron, OpenStack Network Service.
 
-According to the functionality, plug-ins can be divided into the following categories:
+You can download Fuel plugins, read
+the documentation and perform required
+installation steps using
+`Fuel Plugins Catalog <https://www.mirantis.com/products/openstack-drivers-and-plugins/fuel-plugins/>`_.
+For common instructions on installation,
+see :ref:`Install Fuel Plugins <install-plugin>`.
 
-* Network - adds Neutron network types
+If you would like to develop
+you own plugin for Fuel, enter
+`Fuel Plugins SDK <https://wiki.openstack.org/wiki/Fuel/Plugins>`_.
 
-* Storage - adds Cinder and Glance storage backends
+Note, that Mirantis provides
+Fuel Plugins Certification -
+a set of technical and business
+processes that Mirantis uses
+to verify Fuel plugins built by vendors,
+allowing customer choice of plugins to lead to a predictable outcome.
+That means, Mirantis Certification ensures the quality of developed solution.
 
-* Operations - adds monitoring and logging capabilities
+In terms of Certification, Fuel plugins fall into two categories:
 
-* Authentication - adds Keystone back-ends, such as LDAP
+* *Certified* -  thoroughly reviewed, tested and supported by Mirantis.
 
-For example, a Load Balancing as a Service (LBaaS) plug-in for Network allows you to add network load balancing to your cloud so that incoming traffic can be spread across multiple nodes.
+* *Non-Certified* - reviewed, tested in terms of code and installation procedure,
+  but not supported by Mirantis.
 
-Mirantis provides certification procedure to check if a plug-in
-meets a set of requirements.
-That means, Certified are those plug-ins that are thoroughly reviewed, tested and supported by Mirantis.
-Non-Certified are reviewed by Mirantis, but not supported or guaranteed to work in all cases.
-
-All Fuel plug-ins provided by Mirantis are digitally signed for authenticity and kept in a special Catalog.
-
-You can download the required plug-in, install it and configure.
-
-For more information about Fuel plug-ins, visit `<https://software.mirantis.com/fuel-plugins>`_.
+See the certification requirements at
+`Fuel Plugin Certification <https://www.mirantis.com/partners/become-mirantis-technology-partner/fuel-plugin-development/fuel-plugin-certification/>`_ page.
