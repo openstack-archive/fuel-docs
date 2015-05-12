@@ -74,7 +74,7 @@ in the cluster.
    ::
 
     # service ceph stop osd.0
-    # ceph crush remove osd.0
+    # ceph osd crush remove osd.0
     # ceph auth del osd.0
 
 #. This node can now be deleted from the environment with Fuel.
