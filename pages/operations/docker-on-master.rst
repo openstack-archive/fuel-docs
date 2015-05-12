@@ -150,7 +150,9 @@ between containers to operate smoothly:
 * DNS resolution is now performed inside the cobbler container.
   Additional custom entries should be added inside /etc/dnsmasq.d/
   inside the cobbler container or via Cobbler itself.
-* Cobbler operates inside LXC with the help of dhcrelay running on the host.
+* Starting with Fuel 6.1, Docker containers with host networking are used.
+  This means that dhcrelay is not used anymore because cobbler/dnsmasq
+  are bound to the host system.
 * Application logs are inside /var/log/docker-logs,
   including astute, nailgun, cobbler, and others.
 * Supervisord configuration is located inside /etc/supervisord.d/(CurrentRelease)/
