@@ -90,7 +90,7 @@ The following symptoms will be present:
 * One or more Docker containers is missing from docker ps -a
 * /var/log/docker contains the following message::
 
-    Cannot start container fuel-core-6.0-postgres: Error getting container
+    Cannot start container fuel-core-6.1-postgres: Error getting container
     273c9b19ea61414d8838772aa3aeb0f6f1b982a74555fb6631adb6232459fe80 from driver
     devicemapper: Error writing metadata to
     /var/lib/docker/devicemapper/devicemapper/.json325916422: write
@@ -277,7 +277,7 @@ Corrupt ext4 filesystem on Docker container
 
 Error::
 
-  Cannot start container fuel-core-6.0-rsync: Error getting container
+  Cannot start container fuel-core-6.1-rsync: Error getting container
   df5f1adfe6858a13b0a9fe81217bf7db33d41a3d4ab8088d12d4301023d4cca3 from driver
   devicemapper: Error mounting
   '/dev/mapper/docker-253:2-341202-df5f1adfe6858a...d41a3d4ab8088d12d4301023d4cca3'
