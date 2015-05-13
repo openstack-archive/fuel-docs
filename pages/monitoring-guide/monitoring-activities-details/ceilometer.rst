@@ -84,7 +84,7 @@ listing of samples:
 * GET /v2/samples
 
 .. note::
-   When requesting the API, you must use the :option:`limit` option not
+   When requesting the API, you must use the ``limit`` option not
    to overload the service by retrieving too much data.
 
 |
