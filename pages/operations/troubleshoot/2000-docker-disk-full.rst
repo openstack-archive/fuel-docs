@@ -95,7 +95,7 @@ The following symptoms will be present:
 
 **Solution**
 
-First, check and restore metadata:
+Check and restore metadata:
 
 .. code-block:: bash
 
@@ -118,7 +118,7 @@ If no errors were found, try:
     $ service docker start
 
 
-This solution requires data recovery, described in the Summary above.
+The solution requires data recovery, described in the Summary above.
 It is necessary to recover data manually
 using the **dmsetup** and **mount** commands.
 
