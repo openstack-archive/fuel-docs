@@ -74,3 +74,15 @@ Resolved Issues
   is now called with this option. The fix eliminates the possibility of Neutron L3 agent
   being blocked using radvd.
   See `LP1398779 <https://bugs.launchpad.net/neutron/+bug/1398779>`_.
+
+* Neutron ``get_subnet`` method was eagerly loading all the allocation
+  pools and availability range objects associated with a given subnet.
+  It caused performance issues on large subnets. The behavior was
+  changed to load these objects only when they are explicitly referenced.
+  See `LP1438540 <https://bugs.launchpad.net/mos/+bug/1438540>`_.
+
+* Neutron doesn't have a default ``notification_driver`` parameter
+  anymore. It is set by Puppet during deployment in the `neutron.conf`
+  file if Ceilometer is enabled; otherwise, the parameter is set twice
+  and causes duplicated messages in the RabbitMQ queue.
+  See `LP1443772 <https://bugs.launchpad.net/mos/+bug/1443772>`_.
