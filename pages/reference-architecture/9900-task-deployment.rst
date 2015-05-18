@@ -1,4 +1,5 @@
 
+.. _task-based-deploy:
 
 Task-based deployment
 =====================

@@ -17,6 +17,6 @@ you should change the path to the executable file:
            # old puppet manifest
            # puppet_manifest: /etc/puppet/modules/osnailyfacter/netconfig.pp
 
-           puppet manifest: /etc/puppet/modules/osnailyfacter/custom_netwrok_configuration.pp
+           puppet manifest: /etc/puppet/modules/osnailyfacter/custom_network_configuration.pp
            puppet_modules: /etc/puppet/modules
            timeout: 3600
