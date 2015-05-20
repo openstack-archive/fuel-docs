@@ -37,3 +37,8 @@ Other Resolved Issues
   (size is configurable) chunks. So large objects from Swift can
   now be successfully downloaded via Horizon.
   See `LP1423311 <https://bugs.launchpad.net/mos/+bug/1423311>`_
+
+* The SeaBIOS package for Ubuntu Precise Pangolin was updated to
+  version 1.8.1 and is now compiled by the GCC 4.5. This fixes the
+  FreeBSD boot issue and does not introduce any regressions.
+  See `LP1435501 <https://bugs.launchpad.net/fuel/+bug/1435501>`_.
