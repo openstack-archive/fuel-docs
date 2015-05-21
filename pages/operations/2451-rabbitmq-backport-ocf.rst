@@ -78,9 +78,9 @@ script are not applicable for them.
    ::
 
        wget --no-check-certificate -O /etc/puppet/modules/nova/files/ocf/rabbitmq \
-         https://raw.githubusercontent.com/stack \
-         forge/fuel-library/stable/6.0/deployment/puppet/nova/files/ocf/rabbitmq
-         chmod +x /etc/puppet/modules/nova/files/ocf/rabbitmq
+       https://raw.githubusercontent.com/stack \
+       forge/fuel-library/stable/6.0/deployment/puppet/nova/files/ocf/rabbitmq
+       chmod +x /etc/puppet/modules/nova/files/ocf/rabbitmq
 
    .. note:: For the Fuel 5.1 release update the link to use
              a "5.1" version in the download path.
@@ -89,7 +89,7 @@ script are not applicable for them.
    ::
 
        for i in $(fuel nodes --env <env_ID> | awk '/ready.*controller.*True/{print $1}'); \
-       do scp /etc/puppet/modules/nova/files/ocf/rabbitmq \ 
+       do scp /etc/puppet/modules/nova/files/ocf/rabbitmq \
        node-$i:/etc/puppet/modules/nova/files/ocf/rabbitmq; done
        for i in $(fuel nodes --env <env_ID> | awk '/ready.*controller.*True/{print $1}'); \
        do scp /etc/puppet/modules/nova/files/ocf/rabbitmq \
