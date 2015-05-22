@@ -26,14 +26,16 @@ Resolved Issues
   downloaded within that time period. To prevent these timeouts,
   the chunk size is reduced to 4 MB. See `LP1401118 <https://bugs.launchpad.net/mos/+bug/1401118>`_.
 
-* When the :guilabel:`Create Image` function (:menuselection:`Image
-  Source == Image File`) is used in OpenStack dashboard, it uploads
-  the image to ``/tmp`` on the controller node. But earlier
-  after a successful transfer to the Image service, it did not remove
-  the temporary image file from ``/tmp``, thus finally running
-  out of the file-system space. Now the image is cleaned up from the
-  ``/tmp`` after the upload (succeeded or failed) from
-  OpenStack dashboard. See `LP1389380 <https://bugs.launchpad.net/mos/+bug/1389380>`_.
+* When an image is created using the :guilabel:`Create Image` button
+  in the OpenStack dashboard, and the user selects the
+  :guilabel:`Image File` option in the :guilabel:`Image Source`
+  section, the image is uploaded to ``/tmp`` on the controller node.
+  Earlier after a successful transfer to the Image service,
+  it did not remove the temporary image file from ``/tmp``, thus
+  finally running out of the file-system space. Now the image is
+  cleaned up from the ``/tmp`` after the upload (succeeded or
+  failed) from the OpenStack dashboard.
+  See `LP1389380 <https://bugs.launchpad.net/mos/+bug/1389380>`_.
 
 * Previously, uploading an image to the vCenter backend without
   checking the session resulted in the broken pipe socket error.
