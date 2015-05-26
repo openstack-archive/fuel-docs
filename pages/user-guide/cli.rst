@@ -277,6 +277,74 @@ Assign nodes to the specified node group:
   fuel --env <env_id> nodegroup --assign --node <node1_id>,<node2_id>,<node3_id> --group <group_id>
 
 
+.. _roles-operations:
+
+Roles operations
+++++++++++++++++
+
+CLI basically implements standard CRUD for operating on a role.
+
+* List a role:
+
+  ::
+
+       fuel role --rel 2
+
+        name          | id
+        --------------|---
+        controller    | 9
+        compute       | 10
+        cinder        | 11
+        cinder-vmware | 12
+        ceph-osd      | 13
+        mongo         | 14
+        zabbix-server | 15
+        base-os       | 16
+
+
+* Create a new role.
+
+  - In this example,
+    we first create a swift role in ``swift.yaml``:
+
+    ::
+
+         meta:
+           description: Installs swift server.
+           has_primary: true # we need primary-swift and swift during orchestration
+           name: Swift
+           name: swift
+        volumes_roles_mapping:
+        - allocate_size: min
+         id: os
+
+  - Then use ``--create`` flag to proceed. When created,
+    you can start using a new role for your own tasks:
+
+    ::
+
+         fuel role --rel <2> --create --file <swift.yaml>
+
+         fuel role --rel <2>
+
+         name          | id
+        --------
+         swift         | 17
+
+
+* Update role data:
+
+  ::
+
+       fuel role --rel <2> --update --file <swift.yaml>
+
+* Delete the role:
+
+  ::
+
+      fuel role --rel <2> --delete --role <swift>
+
+
 .. _fuel-cli-config:
 
 Configuring
