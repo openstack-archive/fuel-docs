@@ -36,6 +36,7 @@
   Click on "pdf" in the list below
   to get a PDF file of that document.
 
+
 .. container:: planning-guide
 
   Planning Guide
@@ -112,10 +113,81 @@
   fixed issues, and known limitations in Mirantis OpenStack |version|.
 
 
+PDF
+~~~
+
+`Planning Guide PDF <pdf/Mirantis-OpenStack-6.0-PlanningGuide.pdf>`_
+`User Guide PDF <pdf/Mirantis-OpenStack-6.0-UserGuide.pdf>`_
+`Operations Guide PDF <pdf/Mirantis-OpenStack-6.0-OperationsGuide.pdf>`_
+`Monitoring Guide PDF <pdf/Mirantis-OpenStack-6.0-MonitoringGuide.pdf>`_
+`Running Mirantis OpenStack on VirtualBox PDF <pdf/Mirantis-OpenStack-6.0-Running-Mirantis-OpenStack-on-VirtualBox.pdf>`_
+`Reference Architectures PDF <pdf/Mirantis-OpenStack-6.0-ReferenceArchitecture.pdf>`_
+`Fuel Plugin Guide PDF <pdf/Mirantis-OpenStack-6.0-FuelPluginGuide.pdf>`_
+`Terminology Reference PDF <pdf/Mirantis-OpenStack-6.0-Terminology-Reference.pdf>`_
+`File Format Reference PDF <pdf/Mirantis-OpenStack-6.0-File-Format-Reference.pdf>`_
+`Release Notes PDF <pdf/Mirantis-OpenStack-6.0-RelNotes.pdf>`_
+
+Guides
+~~~~~~
+
+`Planning Guide <planning-guide.html#planning-guide>`_
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Explains how to plan Mirantis OpenStack deployment before installing
+Fuel.
+
+`User Guide <user-guide.html#user-guide>`_
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Describes how to deploy and use Mirantis OpenStack environments
+with Fuel.
+
+`Operations Guide <operations.html#operations-guide>`_
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Contains instructions on how to use and manage
+your Mirantis OpenStack environment.
+
+`Monitoring Guide <monitoring-guide.html#monitoring-guide>`_
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Provides general concept on how to monitor OpenStack.
+
+`Running Mirantis OpenStack on VirtualBox <virtualbox.html#virtualbox>`_
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Explains how to run Mirantis OpenStack on VirtualBox
+for demonstration and evaluation purposes.
+
+`Reference Architecture <reference-architecture.html#ref-arch>`_
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Provides the deep dive into the structure of the Mirantis OpenStack environment,
+network considerations, deployment options and architectures.
+
+`Fuel Plugin Guide <plugin-dev.html#plugin-dev>`_
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Explains how to develop and certify your own plugin for Fuel.
+
+`Terminology Reference <terminology.html#terminology-ref>`_
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Explains OpenStack terminology and technology
+with references to other documentation and other useful information.
+
+`File Format Reference <file-ref.html#file-ref>`_
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Provides information on how to use Fuel configuration files.
+
+`Style Guide <style-guide.html#style-guide>`_
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Contains style guidelines and instructions on
+how to write documentation for Mirantis OpenStack.
+
+`Release Notes <release-notes.html#release-notes>`_
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Provide general information about new features,
+fixed issues, and known limitations in Mirantis OpenStack |version|.
+
+
+
 `Download Mirantis OpenStack <http://software.mirantis.com>`__
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can download the Mirantis OpenStack ISO, IMG, and VirtualBox scripts at http://software.mirantis.com
+You can download the Mirantis OpenStack ISO, IMG, and VirtualBox scripts
 
 .. note:: You must sign in to download Mirantis OpenStack. 
           If you do not have an account, sign up for a free account now.
