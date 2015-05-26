@@ -14,7 +14,7 @@ New features and resolved issues in Mirantis OpenStack 6.1
 * Deployment now does not fail if there is no
   public gateway.
   See `LP1396126 <https://bugs.launchpad.net/fuel/+bug/1396126>`_.
-  See also `HA deployment for Networking<Close_look_networking_HA>`.
+  See also :ref:`HA deployment for Networking<Close_look_networking_HA>`.
 
 * If the /var partition fills up, Fuel will warn you
   that you are running out of disk space to deploy a node.
@@ -28,6 +28,11 @@ New features and resolved issues in Mirantis OpenStack 6.1
   image based provisioning is used starting with Fuel 6.1.
   See `LP1321790 <https://bugs.launchpad.net/bugs/1321790>`_ and
   the `related blueprint <https://blueprints.launchpad.net/fuel/+spec/ibp-build-ubuntu-images>`_.
+
+* Previously, VirtualBox scripts deleted all the host-only
+  networks, regardless of what network parameters were used.
+  Now it deletes the ``demo_hostonly`` networks only.
+  See `LP1384976`_.
 
 Known issues in Mirantis OpenStack 6.1
 --------------------------------------
@@ -51,12 +56,12 @@ Known issues in Mirantis OpenStack 6.1
 
       rm -rf /var/lib/pacemaker/cib*.xml
 
-  5. Start Corosync on the faulty node.
+   5. Start Corosync on the faulty node.
 
 * Additional MongoDB roles cannot be added
   to an existing deployment.
-  Fuel installs :ref:`mongodb-term`
-  as a backend for :ref:`ceilometer-term`.
+  Fuel installs :ref:`MongoDB<mongodb-term>`
+  as a backend for :ref:`Ceilometer<ceilometer-term>`.
   Any number of MongoDB roles (or standalone nodes)
   can initially be deployed into an OpenStack environment
   but, after the environment is deployed,
@@ -84,7 +89,7 @@ Known issues in Mirantis OpenStack 6.1
    * The output of the *fuel task* command reports a *400: Bad Request*.
 
   For detailed symptoms, cause, and resolution
-  see `Fuel Master and Docker disk space troubleshooting<docker-disk-full-top-tshoot>`.
+  see :ref:`Fuel Master and Docker disk space troubleshooting<docker-disk-full-top-tshoot>`.
   See also `LP1383741 <https://bugs.launchpad.net/fuel/+bug/1383741>`_.
 
 * Fuel dashboard may incorrectly show online nodes
@@ -140,3 +145,10 @@ Known issues in Mirantis OpenStack 6.1
   please add/remove controllers during a maintenance window.
   See `LP1451515 <https://bugs.launchpad.net/fuel/+bug/1451515>`_
   and `LP1449584 <https://bugs.launchpad.net/mos/+bug/1449584>`_.
+
+Known installation and deployment issues
+----------------------------------------
+
+
+.. Links
+.. _`LP1384976`: https://bugs.launchpad.net/fuel/6.1.x/+bug/1384976
