@@ -2,7 +2,7 @@ var _conv_host = (("https:" == document.location.protocol) ? "https://d9jmv9u00p
 document.write(unescape("%3Cscript src='" + _conv_host + "/js/10012224-10012014.js' type='text/javascript'%3E%3C/script%3E"));
 
 (function () {
-	window.addEventListener("popstate", function (e) {
+	$(window).on("popstate", function (e) {
 		var activeTab = location.hash ? $('[href=' + location.hash + ']') : $('[href=#home]');
 		if (activeTab.length) {
 			activeTab.tab('show');
@@ -11,6 +11,15 @@ document.write(unescape("%3Cscript src='" + _conv_host + "/js/10012224-10012014.
 		}
 	});
 })();
+
+function showHashTab(){
+	if(location.hash){
+		var activeTab = $('[href=' + location.hash + ']');
+		if (activeTab.length) {
+			activeTab.tab('show');
+		}
+	}
+}
 
 function generateLinks(url, title) {
 	var currentLocation = window.location;
@@ -92,6 +101,39 @@ function populateDownload(download) {
 	$('#download_content').append('<a href="' + href + '" class="btn btn-danger btn-lg btn-block" id="download_openstack">' + link + '</a>' + content);
 }
 
+function populateContent(callback){
+	$.get("index_content.html", function (data) {
+		var homeTitle = $(data).find('.home-title').html();
+		var home = $(data).find('.what-is-mirantis-openstack').html();
+		var guides = $(data).find('#guides');
+		populateGuides(guides);
+		var pdfs = $(data).find('#pdf .reference');
+		populatePdfs(pdfs);
+		var download = $(data).find('#download-now');
+		populateDownload(download);
+
+		$('#home').html(home);
+		$('#main').html(homeTitle);
+	});
+
+	$.get("eula.html", function (data) {
+		var fuel_license = $(data).find('#fuel-license').html();
+		$('#fuel-license').html($(fuel_license).find('pre'));
+	});
+
+	$.get("third-party-licenses.html", function (data) {
+		var third_party = $(data).find(".section > .section");
+		$(third_party).each(function (i, v) {
+			var el = $(v).find('.reference');
+			var href = $(el).attr('href');
+			var heading = $(el).text();
+			$('#third-party-licenses').append('<a class="btn btn-default red btn-block" href="' + href + '"><i class="fa fa-file-pdf-o"></i> ' + heading + '</a>');
+		});
+	});
+
+	callback();
+}
+
 $(document).ready(function () {
 	var url = window.location.pathname;
 	var filename = url.substring(url.lastIndexOf('/') + 1);
@@ -99,35 +141,7 @@ $(document).ready(function () {
 	if (filename == 'index.html' || filename == '') {
 		$('ul.nav.navbar-nav li.dropdown').not('.globaltoc-container').hide();
 
-
-		$.get("index_content.html", function (data) {
-			var homeTitle = $(data).find('.home-title').html();
-			var home = $(data).find('.what-is-mirantis-openstack').html();
-			var guides = $(data).find('#guides');
-			populateGuides(guides);
-			var pdfs = $(data).find('#pdf .reference');
-			populatePdfs(pdfs);
-			var download = $(data).find('#download-mirantis-openstack');
-			populateDownload(download);
-
-			$('#home').html(home);
-			$('#main').html(homeTitle);
-		});
-
-		$.get("eula.html", function (data) {
-			var fuel_license = $(data).find('#fuel-license').html();
-			$('#fuel-license').html($(fuel_license).find('pre'));
-		});
-
-		$.get("third-party-licenses.html", function (data) {
-			var third_party = $(data).find(".section > .section");
-			$(third_party).each(function (i, v) {
-				var el = $(v).find('.reference');
-				var href = $(el).attr('href');
-				var heading = $(el).text();
-				$('#third-party-licenses').append('<a class="btn btn-default red btn-block" href="' + href + '"><i class="fa fa-file-pdf-o"></i> ' + heading + '</a>');
-			});
-		});
+		populateContent(showHashTab);
 
 	}
 
@@ -186,7 +200,7 @@ $(document).ready(function () {
 	);
 
 	$('a[data-toggle="tab"]').on('click', function (e) {
-		history.pushState(null, null, $(this).attr('href'));
+		history.pushState({}, '', $(this).attr('href'));
 	});
 
 });

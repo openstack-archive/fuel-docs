@@ -482,8 +482,15 @@ i.fa-file-pdf-o {
     margin-bottom: 15px;
 }
 
-#pdfs h3 {
+#downloads h3 {
     margin-top: 0;
+    font-size: 21px;
+}
+
+
+
+#download_content .note, #download_content p:first-of-type {
+    margin-top: 20px;
 }
 
 .spinner {
@@ -493,6 +500,11 @@ i.fa-file-pdf-o {
     margin: 0 auto;
     -webkit-animation: rotateplane 1.2s infinite ease-in-out;
     animation: rotateplane 1.2s infinite ease-in-out;
+}
+
+#pdfs {
+    border-left: 1px solid #DDD;
+    padding-left: 25px;
 }
 
 @-webkit-keyframes rotateplane {
@@ -546,6 +558,12 @@ i.fa-file-pdf-o {
 
     .navbar {
         border-radius: 0;
+    }
+
+    #pdfs {
+        border-left: none;
+        padding-left: 0;
+        margin-top: 25px;
     }
 }
 

@@ -37,82 +37,6 @@
   to get a PDF file of that document.
 
 
-.. container:: planning-guide
-
-  Planning Guide
-
-  Explains how to plan Mirantis OpenStack deployment before installing
-  Fuel.
-
-
-.. container:: user-guide
-
-  User Guide
-
-  Describes how to deploy and use Mirantis OpenStack environments
-  with Fuel.
-
-.. container:: operations-guide
-
-  Operations Guide
-
-  Contains instructions on how to use and manage
-  your Mirantis OpenStack environment.
-
-.. container:: monitoring-guide
-
-  Monitoring Guide
-
-  Provides general concept on how to monitor OpenStack.
-
-.. container:: virtualbox
-
-  Running Mirantis OpenStack on VirtualBox
-
-  Explains how to run Mirantis OpenStack on VirtualBox
-  for demonstration and evaluation purposes.
-
-.. container:: ref-arch
-
-  Reference Architecture
-
-  Provides the deep dive into the structure of the Mirantis OpenStack environment,
-  network considerations, deployment options and architectures.
-
-.. container:: plugin-dev
-
-  Fuel Plugin Guide
-
-  Explains how to develop and certify your own plugin for Fuel.
-
-.. container:: terminology-ref
-
-  Terminology Reference
-
-  Explains OpenStack terminology and technology
-  with references to other documentation and other useful information.
-
-.. container:: file-ref
-
-  File Format Reference
-
-  Provides information on how to use Fuel configuration files.
-
-.. container:: style-guide
-
-  Style Guide
-
-  Contains style guidelines and instructions on
-  how to write documentation for Mirantis OpenStack.
-
-.. container:: release-notes
-
-  Release Notes
-
-  Provide general information about new features,
-  fixed issues, and known limitations in Mirantis OpenStack |version|.
-
-
 PDF
 ~~~
 
@@ -184,7 +108,7 @@ fixed issues, and known limitations in Mirantis OpenStack |version|.
 
 
 
-`Download Mirantis OpenStack <http://software.mirantis.com>`__
+`Download Now <http://software.mirantis.com>`__
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can download the Mirantis OpenStack ISO, IMG, and VirtualBox scripts
