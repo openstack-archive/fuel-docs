@@ -29,7 +29,7 @@ in the cluster.
 
 #. Remove the OSDs from the Ceph cluster:
 
-   ::
+   .. code-block:: none
 
     # ceph osd out 0
     # ceph osd out 1
@@ -68,14 +68,28 @@ in the cluster.
                  960 active+clean
 
 
-   When the cluster is in state HEALTH_OK the OSD can be removed
-   from the crush map:
+   When the cluster is in state HEALTH_OK the OSD(s) can be removed
+   from the CRUSH map:
 
    ::
 
-    # service ceph stop osd.0
+    On CentOS hosts:
+      # service ceph stop osd.0
+    On Ubuntu hosts:
+      # stop ceph-osd id=0
+
     # ceph osd crush remove osd.0
     # ceph auth del osd.0
+    # ceph osd rm osd.0
+
+
+   After all OSDs have been deleted the host can be removed from
+   the CRUSH map:
+
+   .. code-block:: none
+
+     # ceph osd crush remove node-35
+
 
 #. This node can now be deleted from the environment with Fuel.
 
