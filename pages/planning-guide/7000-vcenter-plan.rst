@@ -142,8 +142,6 @@ Limitations
 -----------
 
 - Only vCenter versions 5.1 and later are supported
-- It is not possible to specify the vCenter cluster
-  where virtual instances will be launched.
 - :ref:`security-groups-term` are not supported.
 - The only supported backend for Cinder is VMDK.
 - Volumes that are created by Cinder appear as SCSI disks. To be able
@@ -169,3 +167,4 @@ is integrated into Mirantis OpenStack, see :ref:`vcenter-arch`.
 
 Follow the instructions in :ref:`vcenter-deploy`
 to deploy your Mirantis OpenStack environment with vCenter support.
+
