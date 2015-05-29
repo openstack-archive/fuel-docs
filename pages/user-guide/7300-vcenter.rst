@@ -168,8 +168,8 @@ Assign a role or roles to each node server
 ++++++++++++++++++++++++++++++++++++++++++
 
 For VMware vCenter integration,
-the Nova plugin runs on the Controller node.
-The Compute and Controller roles are combined on one node.
+the nova-compute service (with VCDriver configured) runs on the Controller node.
+
 Beginning with Fuel 6.1, the *Storage - Cinder Proxy to VMware Datastore* role
 is introduced. It will deploy Cinder with VMDK backend:
 that means, the new role provides block storage for VMs that are running on VMware vCenter.
@@ -338,7 +338,7 @@ Network
 +++++++
 
 If you decided to use VLAN Manager,
-enter the interface on which VLANs will be provisioned.
+enter the interface of ESXi hosts on which VLANs will be provisioned.
 
 .. image:: /_images/user_screen_shots/vmware-tab-vlan.png
 
