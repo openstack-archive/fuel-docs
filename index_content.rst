@@ -89,8 +89,8 @@ Prior releases
 `Fuel 1.0 <https://software.mirantis.com/reference-documentation-on-fuel-essex/package-contents/>`_
 
 
-`Download Now <http://software.mirantis.com>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+`Download Now <http://software.mirantis.com/openstack-download-form>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can download the Mirantis OpenStack ISO, IMG, and VirtualBox scripts
 
