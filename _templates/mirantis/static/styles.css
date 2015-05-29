@@ -487,7 +487,9 @@ i.fa-file-pdf-o {
     font-size: 21px;
 }
 
-
+#guides .panel {
+    text-align: center;
+}
 
 #download_content .note, #download_content p:first-of-type {
     margin-top: 20px;
