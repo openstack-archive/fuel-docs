@@ -70,6 +70,15 @@ Resolved Issues
   functions.
   See `LP1443977`_.
 
+* Previously, ``_poll_connection`` could fall into a loop waiting for
+  a reply message if RabbitMQ was down and up after a reboot. The
+  issue is fixed. See `LP1454174`_.
+
+* API is updated to pass the context explicitly, rather than getting
+  it from the respective surrounding code. Also, the snapshot method
+  is updated to pass context to ``detach_sriov_ports``.
+  See `LP1452294`_.
+
 .. Links
 .. _`LP1420273`: https://bugs.launchpad.net/mos/+bug/1420273
 .. _`LP1427892`: https://bugs.launchpad.net/mos/+bug/1427892
@@ -83,3 +92,5 @@ Resolved Issues
 .. _`LP1438680`: https://bugs.launchpad.net/mos/+bug/1438680
 .. _`LP1443974`: https://bugs.launchpad.net/mos/+bug/1443974
 .. _`LP1443977`: https://bugs.launchpad.net/mos/+bug/1443977
+.. _`LP1454174`: https://bugs.launchpad.net/mos/+bug/1454174
+.. _`LP1452294`: https://bugs.launchpad.net/mos/+bug/1452294
