@@ -1,13 +1,13 @@
 
 .. _heat-test-details:
 
-Details of Heat Platform Tests
+Details of Heat platform tests
 ------------------------------
 
 .. topic:: Typical stack actions: create, update, delete, show details, etc
 
   The test verifies that the Heat service can create, update and delete a stack
-  and show details of the stack and its resources, events and template.
+  and shows details of the stack and its resources, events and template.
 
   Target component: Heat
 
@@ -39,18 +39,18 @@ Details of Heat Platform Tests
   1. Image with cfntools package should be imported.
   2. Create a flavor.
   3. Create a keypair.
-  4. Save generated private key to file on Controller node.
+  4. Save the generated private key to a file on Controller node.
   5. Create a security group.
   6. Create a stack.
   7. Wait for the stack status to change to 'CREATE_COMPLETE'.
-  8. Create a floating ip.
-  9. Assign the floating ip to the instance of the stack.
-  10. Wait for cloud_init procedure to be completed on the instance.
+  8. Create a floating IP.
+  9. Assign the floating IP to the instance of the stack.
+  10. Wait for the cloud_init procedure to be completed on the instance.
   11. Load the instance CPU to initiate the stack scaling up.
-  12. Wait for the 2nd instance to be launched.
+  12. Wait for the second instance to be launched.
   13. Release the instance CPU to initiate the stack scaling down.
-  14. Wait for the 2nd instance to be terminated.
-  15. Delete the file with private key.
+  14. Wait for the second instance to be terminated.
+  15. Delete the file with the private key.
   16. Delete the stack.
   17. Wait for the stack to be deleted.
 
@@ -65,8 +65,25 @@ Details of Heat Platform Tests
 
   1. Start stack creation with rollback enabled.
   2. Verify the stack appears with status 'CREATE_IN_PROGRESS'.
-  3. Wait for the stack to be deleted in result of rollback after
-     expiration of timeout defined in WaitHandle resource
+  3. Wait for the stack to be deleted as a result of the rollback after the
+     expiration of the timeout defined in the WaitHandle resource
      of the stack.
-  4. Verify the instance of the stack has been deleted.
+  4. Verify if the instance of the stack has been deleted.
 
+.. topic:: Check advanced stack actions: suspend, resume
+
+  The test verifies that the Heat service can suspend and resume the stack.
+
+  Target component: Heat
+
+  Scenario:
+
+  1. Create a stack.
+  2. Wait until the stack status changes to 'CREATE_COMPLETE'.
+  3. Call stack suspend action.
+  4. Wait until the stack status changes to 'SUSPEND_COMPLETE'.
+  5. Call stack resume action.
+  6. Wail until the stack status changes to 'RESUME_COMPLETE'.
+  7. Call stack check action.
+  8. Wail until the stack status changes to 'CHECK_COMPLETE'.
+  9. Delete the stack and wait for the stack to be deleted.
