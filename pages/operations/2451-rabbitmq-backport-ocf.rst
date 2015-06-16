@@ -78,7 +78,7 @@ script are not applicable for them.
    ::
 
        wget --no-check-certificate -O /etc/puppet/modules/nova/files/ocf/rabbitmq \
-       https://raw.githubusercontent.com/stack \
+       https://raw.githubusercontent.com/stack\
        forge/fuel-library/stable/6.0/deployment/puppet/nova/files/ocf/rabbitmq
        chmod +x /etc/puppet/modules/nova/files/ocf/rabbitmq
 
