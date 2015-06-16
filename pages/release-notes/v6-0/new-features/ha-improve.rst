@@ -15,7 +15,7 @@ the stability and scalability of the deployed environment:
 * Pacemaker service provider has been refactored to disable creating the
   same service under systemd/upstart/sysvinit.
 
-* Idempotency was fixed in Pacemaker provider. Puppet will not create
+* :ref:`Idempotency <idempotency-term>` was fixed in Pacemaker provider. Puppet will not create
   duplicate objects in Corosync CIB anymore.
 
 * Pacemaker provider doesn't use 'crm' or 'pcs' tools anymore. All operations
