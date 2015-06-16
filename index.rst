@@ -23,10 +23,10 @@ Mirantis OpenStack is made up of three components:
   environments from a single interface
   and then enables you to manage those environments post deployment.
 
-* `Support <https://software.mirantis.com/support-options/>`_.
-  A complementary `30-day basic trial support subscription
-  <https://software.mirantis.com/trial-support-subscription/>`_
-  is available.
+* `Support <https://www.mirantis.com/services/enterprise-support-services/>`_.
+  When you've completed your evaluation of Mirantis OpenStack,
+  `get support <https://www.mirantis.com/services/enterprise-support-services/>`_
+  for Mirantis OpenStack from the industry experts.
 
 This page contains the most recent Mirantis OpenStack documentation.
 Select a title from the list below
