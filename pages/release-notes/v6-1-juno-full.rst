@@ -31,8 +31,11 @@ The following table lists the released revisions of this documentation:
 .. include:: /pages/release-notes/v6-1/1060-openstack.rst
 .. include:: /pages/release-notes/v6-1/1080-update-upgrade.rst
 .. include:: /pages/release-notes/v6-1/1090-test.rst
+.. include:: /pages/release-notes/v6-1/9020-high-availability.rst
+.. include:: /pages/release-notes/v6-1/9030-ibp.rst
 .. include:: /pages/release-notes/v6-1/3000-storage.rst
 .. include:: /pages/release-notes/v6-1/9010-vmware-tech.rst
 .. include:: /pages/release-notes/v6-1/6000-other.rst
 .. include:: /pages/release-notes/v6-1/0060-obtain-the-product.rst
 .. include:: /pages/release-notes/v6-1/0070-support.rst
+
