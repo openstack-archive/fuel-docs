@@ -136,3 +136,7 @@ Known Issues in Mirantis OpenStack 6.1
   (e.g. 3.6 which has been confimed as working).
   See `LP1443328 <https://bugs.launchpad.net/fuel/+bug/1443328>`_.
 
+* In order to avoid failures caused by keystone token loss,
+  please add/remove controllers during a maintenance window.
+  See `LP1451515 <https://bugs.launchpad.net/fuel/+bug/1451515>`_
+  and `LP1449584 <https://bugs.launchpad.net/mos/+bug/1449584>`_.
