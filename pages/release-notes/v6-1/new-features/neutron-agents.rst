@@ -12,6 +12,5 @@ So, when a message queue has issues the Cluster Resource Manager
 still can response in time if something goes
 wrong with an agent.
 
-See the `blueprint
-<https://blueprints.launchpad.net/fuel/+spec/neutron-agents-local-reports>`_
+See the `Neutron agents blueprint <https://blueprints.launchpad.net/fuel/+spec/neutron-agents-local-reports>`_
 for details about the implementation.

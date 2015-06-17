@@ -11,4 +11,4 @@ repositories.
 See :ref:`Downloading Ubuntu system packages<external-ubuntu-ops>`
 for details.
 
-See also `Blueprint: Consume External Ubuntu <https://blueprints.launchpad.net/fuel/+spec/consume-external-ubuntu>`_.
+See also `Consume External Ubuntu <https://blueprints.launchpad.net/fuel/+spec/consume-external-ubuntu>`_.
