@@ -49,3 +49,4 @@ Issues in OpenStack Components
 .. include:: /pages/release-notes/v6-1/other/4020-keystone.rst
 .. include:: /pages/release-notes/v6-1/other/5010-ceilometer-mongodb.rst
 .. include:: /pages/release-notes/v6-1/other/2020-glance.rst
+.. include:: /pages/release-notes/v6-1/other/5050-cinder.rst
