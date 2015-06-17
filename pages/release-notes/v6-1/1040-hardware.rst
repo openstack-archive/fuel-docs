@@ -27,3 +27,6 @@ Known hardware issues
   sector size for operation is 512-bytes.
   See `LP1318614 <https://bugs.launchpad.net/fuel/+bug/1318614>`_.
 
+* Adaptec 6805E RAID controller does not work in bootstrap. The workaround is
+  to update the driver in bootstrap and rebuild bootstrap.
+  See `LP1438676 <https://bugs.launchpad.net/fuel/+bug/1438676>`_.

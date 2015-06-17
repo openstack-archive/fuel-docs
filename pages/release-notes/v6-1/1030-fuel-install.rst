@@ -124,3 +124,15 @@ Known Issues in Mirantis OpenStack 6.1
   updgade failure.
   See `LP1440709 <https://bugs.launchpad.net/bugs/1440709>`_.
 
+* Docker may be slow with loading images on CentOS. This is related to the
+  specifics of CentOS architecture -- CentOS does not support AUFS
+  which is recommended for Docker.
+  See `LP1333458 <https://bugs.launchpad.net/fuel/+bug/1333458>`_.
+
+* fuelclient does not work if installed with the SetupTools version
+  older than v12.
+  The possible workarounds are to either install fuelclient with
+  ``pip install`` or to use an older version of SetupTools
+  (e.g. 3.6 which has been confimed as working).
+  See `LP1443328 <https://bugs.launchpad.net/fuel/+bug/1443328>`_.
+
