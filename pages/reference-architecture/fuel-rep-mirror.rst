@@ -56,4 +56,4 @@ to check the ``fuel-package-updates`` options:
           you will need to run the utility with the
           ``--password`` switch, or it will fail.
 
-See also`MOS RPMs mirror structure <http://docs.fuel-infra.org/fuel-dev/develop/separateMOS.html>`_.
+.. SeeAlso:: Documentation on `MOS RPMs mirror structure <http://docs.fuel-infra.org/fuel-dev/develop/separateMOS.html>`_.
