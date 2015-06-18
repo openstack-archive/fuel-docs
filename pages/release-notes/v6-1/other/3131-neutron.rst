@@ -31,7 +31,7 @@ The Pacemaker can turn DHCP agent resource into unmanaged state
 
 Pacemaker monitors DHCP agents on all the controller nodes and restarts
 them if they seem to be dead. By default, Pacemaker tries to clean all
-the artefacts created by the agent (namespaces, ports, processes).
+the artifacts created by the agent (namespaces, ports, processes).
 In case of a large number of networks, this procedure can take too
 long to finish, and the resource will be marked as unmanaged.
 See `LP1436414`_.
@@ -51,7 +51,7 @@ To prevent such cases:
 
 #. Disable and enable the resource to apply changes.
 
-The resource can be restarted without removing any artefacts (for
+The resource can be restarted without removing any artifacts (for
 example, to apply configuration changes), as it supports the reload
 operation. To apply this option, change one of the resource parameters.
 For example, execute::
