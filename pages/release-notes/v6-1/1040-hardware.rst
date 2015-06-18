@@ -1,7 +1,7 @@
 
 .. _hardware-rn:
 
-Hardware support issues
+Hardware Support Issues
 =======================
 
 Resolved hardware issues

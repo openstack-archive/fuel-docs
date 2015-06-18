@@ -1,9 +1,9 @@
 .. _glance-rn:
 
-OpenStack Image (Glance)
+OpenStack image (Glance)
 ------------------------
 
-Resolved Glance Issues
+Resolved glance issues
 ++++++++++++++++++++++
 
 * In case of slow connection to the external storage, Glance
@@ -15,7 +15,7 @@ Resolved Glance Issues
 * The token caching was disabled for ``glance-api`` to prevent
   authentication errors. See `LP1443913`_.
 
-Known Glance Issues
+Known Glance issues
 +++++++++++++++++++
 
 * A big image cannot be uploaded, as well as an instance snapshot

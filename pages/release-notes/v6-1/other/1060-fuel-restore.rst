@@ -1,12 +1,12 @@
 .. _fuel-restore-rn:
 
-Fuel Master Backup/Restore
+Fuel Master backup/restore
 --------------------------
 
-Resolved Backup/Restore Issues
+Resolved backup/restore issues
 ++++++++++++++++++++++++++++++
 
-Known Backup/Restore Issues
+Known backup/restore issues
 +++++++++++++++++++++++++++
 
 

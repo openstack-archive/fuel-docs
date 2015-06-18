@@ -4,7 +4,7 @@
 Fuel Installation and Deployment Issues
 =======================================
 
-New Features and Resolved Issues in Mirantis OpenStack 6.1
+New features and resolved issues in Mirantis OpenStack 6.1
 ----------------------------------------------------------
 
 * Removing and redeploying a Controller node
@@ -29,7 +29,7 @@ New Features and Resolved Issues in Mirantis OpenStack 6.1
   See `LP1321790 <https://bugs.launchpad.net/bugs/1321790>`_ and
   the `related blueprint <https://blueprints.launchpad.net/fuel/+spec/ibp-build-ubuntu-images>`_.
 
-Known Issues in Mirantis OpenStack 6.1
+Known issues in Mirantis OpenStack 6.1
 --------------------------------------
 
 * An attempt to join a Corosync cluster after a hard

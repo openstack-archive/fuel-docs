@@ -1,7 +1,7 @@
 
 .. _ibp-rn:
 
-Issues with image based provisioning
+Issues with Image Based Provisioning
 ====================================
 
 
@@ -13,4 +13,3 @@ Known issues with image based provisioning
   automatically boot until the user selects an option in the GRUB menu.
   There is no timeout.
   See `LP1465586 <https://bugs.launchpad.net/fuel/+bug/1465586>`_.
-

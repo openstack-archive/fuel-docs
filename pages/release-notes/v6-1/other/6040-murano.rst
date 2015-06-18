@@ -1,10 +1,10 @@
 
 .. _murano-rn:
 
-Application Catalog (Murano)
+Application catalog (Murano)
 ----------------------------
 
-Resolved Murano Issues
+Resolved Murano issues
 ++++++++++++++++++++++
 
 * Murano applications based on Heat Docker resource do not put a
@@ -17,7 +17,7 @@ Resolved Murano Issues
   See `LP1397273`_.
 
 
-Known Murano Issues
+Known Murano issues
 +++++++++++++++++++
 
 * For each Murano application where host name is requested from

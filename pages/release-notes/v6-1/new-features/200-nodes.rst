@@ -1,5 +1,5 @@
 
-Scalability Certification for 200-node environments
+Scalability certification for 200-node environments
 ---------------------------------------------------
 
 Environments deployed with Fuel 6.1

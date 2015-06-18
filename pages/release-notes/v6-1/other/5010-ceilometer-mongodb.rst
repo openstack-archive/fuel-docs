@@ -1,10 +1,10 @@
 
 .. _ceilometer-mongodb-rn:
 
-OpenStack Telemetry (Ceilometer) and MongoDB Database
+OpenStack telemetry (Ceilometer) and MongoDB database
 -----------------------------------------------------
 
-Resolved Ceilometer and MongoDB Issues
+Resolved Ceilometer and MongoDB issues
 ++++++++++++++++++++++++++++++++++++++
 
 * The Ceilometer ``pipeline.yaml`` file was changed to receive all the
@@ -25,7 +25,7 @@ Resolved Ceilometer and MongoDB Issues
   once a week to clean up the outdated metrics from the database.
   See `LP1399164`_.
 
-Known Ceilometer and MongoDB Issues
+Known Ceilometer and MongoDB issues
 +++++++++++++++++++++++++++++++++++
 
 * When ``ceilometerclient`` tries to return more than 500 000 records

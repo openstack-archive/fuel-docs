@@ -60,7 +60,7 @@ below for information about updating OpenStack environments.
 .. include:: /pages/release-notes/v6-1/new-features/0000-exp-features.rst
 
 
-Additional Information
+Additional information
 ----------------------
 
 For information about Issues and Blueprints for Mirantis OpenStack 6.1,

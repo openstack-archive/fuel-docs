@@ -4,10 +4,10 @@
 Update and Upgrade Issues
 =========================
 
-Resolved Update and Upgrade issues
+Resolved update and upgrade issues
 ----------------------------------
 
 
-Known Update and Upgrade issues
+Known update and upgrade issues
 -------------------------------
 

@@ -1,5 +1,5 @@
 
-Support for Operating System (base-os) role
+Support for operating system (base-os) role
 -------------------------------------------
 
 With Fuel 6.1 you are now able to deploy an empty role that you can then

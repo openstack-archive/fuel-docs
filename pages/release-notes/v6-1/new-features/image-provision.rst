@@ -1,5 +1,5 @@
 
-Enhancements to Fuel Agent for Image-based provisioning
+Enhancements to Fuel Agent for image-based provisioning
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 The Fuel Agent,
