@@ -1,9 +1,9 @@
 .. _neutron-rn:
 
-OpenStack Networking (Neutron)
+OpenStack networking (Neutron)
 ------------------------------
 
-Resolved Neutron Issues
+Resolved Neutron issues
 +++++++++++++++++++++++
 
 * In rare circumstances, there was no connectivity to instances in HA
@@ -23,7 +23,7 @@ Resolved Neutron Issues
   setting in the DHCP server (``dnsmasq``). The delay also depends on
   the DHCP client. See `LP1455113`_.
 
-Known Neutron Issues
+Known Neutron issues
 ++++++++++++++++++++
 
 The Pacemaker can turn DHCP agent resource into unmanaged state

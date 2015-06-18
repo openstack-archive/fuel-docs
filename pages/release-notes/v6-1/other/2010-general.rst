@@ -1,10 +1,10 @@
 
 .. _general-rn:
 
-General OpenStack Issues
+General OpenStack issues
 ------------------------
 
-Resolved OpenStack Issues
+Resolved OpenStack issues
 +++++++++++++++++++++++++
 
 * If one of the controller nodes in an HA environment is deleted or
@@ -17,7 +17,7 @@ Resolved OpenStack Issues
   been fixed. See `LP1396688`_.
 
 
-Known OpenStack Issues
+Known OpenStack issues
 ++++++++++++++++++++++
 
 * Nova hypervisor stats (CLI - :command:`nova hypervisor-stats`,

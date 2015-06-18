@@ -1,11 +1,11 @@
 
 .. _keystone-rn:
 
-OpenStack Identity (Keystone)
+OpenStack identity (Keystone)
 -----------------------------
 
-Resolved Keyston Issues
-+++++++++++++++++++++++
+Resolved Keystone issues
+++++++++++++++++++++++++
 
-Known Keyston Issues
-++++++++++++++++++++
+Known Keystone issues
++++++++++++++++++++++

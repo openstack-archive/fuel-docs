@@ -1,7 +1,7 @@
 
 .. _fuel-network.rst:
 
-Networking issues
+Networking Issues
 =================
 
 Resolved networking issues

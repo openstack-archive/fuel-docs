@@ -1,7 +1,7 @@
 
 .. _storage-rn:
 
-Storage technologies Issues
+Storage Technologies Issues
 ===========================
 
 

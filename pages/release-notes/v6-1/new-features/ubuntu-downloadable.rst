@@ -1,5 +1,5 @@
 
-Downloadable Ubuntu Release
+Downloadable Ubuntu release
 ---------------------------
 
 With Fuel 6.1, you can now download the

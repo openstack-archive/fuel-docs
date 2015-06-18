@@ -45,7 +45,6 @@ Major Component Versions
 * **Networking backend**
 
   * Open vSwitch 1.10.2
-  * VMware NSX
 
 * **HA Proxy** 1.5.3
 

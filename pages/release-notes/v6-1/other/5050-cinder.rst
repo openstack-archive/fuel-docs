@@ -4,12 +4,12 @@
 OpenStack Block Storage (Cinder)
 --------------------------------
 
-Resolved Cinder Issues
-+++++++++++++++++++++++
+Resolved Cinder issues
+++++++++++++++++++++++
 
 
-Known Cinder Issues
-++++++++++++++++++++
+Known Cinder issues
++++++++++++++++++++
 
 * It is impossible to get to know whether a volume has any
   dependent snapshots. Neither :command:`cinder list` command

@@ -1,14 +1,14 @@
 
 .. _horizon-rn:
 
-OpenStack Dashboard (Horizon)
+OpenStack dashboard (Horizon)
 -----------------------------
 
-Resolved Horizon Issues
+Resolved Horizon issues
 +++++++++++++++++++++++
 
 
-Known Horizon Issues
+Known Horizon issues
 ++++++++++++++++++++
 
 * If one of two Neutron options are chosen in the :guilabel:`Network`
