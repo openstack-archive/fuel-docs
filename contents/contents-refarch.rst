@@ -13,6 +13,7 @@
 .. include:: /pages/reference-architecture/0110-bonding.rst
 .. include:: /pages/reference-architecture/8000-fuel-upgrade.rst
 .. include:: /pages/reference-architecture/8800-base-os.rst
+.. include:: /pages/reference-architecture/9000-fuel-provision.rst
 .. include:: /pages/reference-architecture/9900-task-deployment.rst
 .. include:: /pages/reference-architecture/containers-master-node.rst
 .. include:: /pages/reference-architecture/fuel-rep-mirror.rst
