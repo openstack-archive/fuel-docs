@@ -41,7 +41,7 @@ Mirantis OpenStack 6.1, but with the following limitations:
 
 * Murano is not enabled for vCenter.
   See
-  `the related blueprint <https://blueprints.launchpad.net/fuel/+spec/enable-murano-support-for-vcenter>`_.
+  `the related blueprint <https://blueprints.launchpad.net/fuel/+spec/enable-murano-support-for-vcenter>`__.
 
 * According to the official
   `VMware recommendations <http://docs.openstack.org/kilo/config-reference/content/vmware.html>`_,
