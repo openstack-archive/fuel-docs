@@ -12,22 +12,9 @@ but has not been subjected to the rigorous testing
 that is required for environments
 that need high levels of stability.
 
-The following features are currently defined as experimental:
-
-- Ability to apply minor updates to OpenStack environments
-  within the same OpenStack major release;
-  see :ref:`upgrade-patch-top-ug`.
-  Mirantis OpenStack 6.0 is the first release based on Juno
-  and so no upgrade is possible.
-
-- OVS :ref:`bonding<bonding-term>`.
-
-- Image-based provisioning.
-
-- Ceilometer can use an external MongoDB installation.
+All features marked as experimental are unsupported
+and should be used for non-Production/feedback purposes only.
 
 Instructions for enabling experimental features
 on a running Fuel Master node are provided in
 :ref:`experimental-features-op`.
-
-
