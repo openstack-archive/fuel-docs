@@ -2,12 +2,13 @@
 Fuel plugins and new task type
 ------------------------------
 
-The Fuel web UI now provides a message about installed plugins
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Fuel web UI now provides a message about installed plugins
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 If the environment has been deployed successfully,
-a message will appear on the Fuel web UI, informing you
+a message will appear on the Fuel web UI informing you
 about the deployed plugins, their names and description.
+
 
 
 Fuel Plugins SDK is released

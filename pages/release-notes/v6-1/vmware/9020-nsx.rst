@@ -1,8 +1,8 @@
 
 .. _nsx-rn:
 
-NSX became deprecated
----------------------
+NSX deprecation
+---------------
 
 Beginning with Fuel 6.1,
 NSX is deprecated.

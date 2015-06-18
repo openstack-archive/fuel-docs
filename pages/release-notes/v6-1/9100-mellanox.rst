@@ -6,7 +6,7 @@ Known Limitations for the Mellanox SR-IOV Plugin
 
 In 6.1 release, Mellanox
 is supported in :ref:`Experimental Mode <experimental-features-term>` only.
-Nevertheless, it is no recommended
+Nevertheless, it is not recommended
 to use Mellanox features in this mode
 as the whole upstream feature is deprecated and is not verified.
 Please, use the Mellanox plugin instead;
