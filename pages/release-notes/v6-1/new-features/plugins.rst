@@ -44,7 +44,8 @@ LBaaS is supported in HA
 
 LBaaS Fuel plugin, previously available
 in multi-node mode only, is now supported
-in HA.
+in HA. Please, note that HA works for the Controllers only,
+but not for the plugin itself.
 
 Zabbix is no longer supported as a core Fuel component
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -58,8 +59,9 @@ New Plugins for Fuel are available
 
 Using the
 `Fuel Plugins Catalog <https://software.mirantis.com/download-mirantis-openstack-fuel-plug-ins/>`_,
-you can download and install the following
-plugins for Fuel:
+you can download and install new Fuel Plugins.
+Please, note that they will be available within
+a few weeks of the Mirantis OpenStack 6.1 release:
 
 +======================+============+=========+===========+
 |  Monitoring          | Networking | Storage | HA        |
