@@ -4,12 +4,10 @@ Heat-related features
 Heat Docker Resource enabled by default
 +++++++++++++++++++++++++++++++++++++++
 
-Mirantis OpenStack 6.1 enables Docker Resource for
-Heat by default. Now it can be used by Murano without additional
-deployment workarounds. Installed
-at the deployment step, Docker Resource is available for
-Heat on its first launch. Use the :command:`heat resource-type-list`
-command to view the list of available resources.
+Mirantis OpenStack 6.1 installs the Docker Resource for Heat
+when Murano is selected. This enables Murano to consume the Docker
+Resource for Heat immediately. Use the :command:`heat resource-list` command
+on any controller to view the list of available resources.
 
 For more details, see the `Enable Heat Docker resource by default
 <https://blueprints.launchpad.net/mos/+spec/heat-docker-resource-by-default>`_
