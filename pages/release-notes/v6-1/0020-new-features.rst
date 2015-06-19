@@ -49,6 +49,7 @@ below for information about updating OpenStack environments.
 .. include:: /pages/release-notes/v6-1/new-features/virtual-router.rst
 .. include:: /pages/release-notes/v6-1/new-features/sahara.rst
 .. include:: /pages/release-notes/v6-1/new-features/neutron-agents.rst
+.. include:: /pages/release-notes/v6-1/new-features/ceilometer.rst
 .. include:: /pages/release-notes/v6-1/new-features/isoUSB.rst
 .. include:: /pages/release-notes/v6-1/new-features/1-1-mapping.rst
 .. include:: /pages/release-notes/v6-1/new-features/dual-hyperv-support.rst
@@ -59,11 +60,9 @@ below for information about updating OpenStack environments.
 .. include:: /pages/release-notes/v6-1/new-features/role-operations.rst
 .. include:: /pages/release-notes/v6-1/new-features/0000-exp-features.rst
 
-
-Additional information
+Additional Information
 ----------------------
 
 For information about Issues and Blueprints for Mirantis OpenStack 6.1,
 see the `Fuel for OpenStack 6.1 Milestone
 <https://launchpad.net/fuel/+milestone/6.1>`_ page.
-
