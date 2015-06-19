@@ -26,7 +26,7 @@ closer look at this substructure. The value of the 'network_scheme' key is a has
 the following keys:
 
 * **interfaces** - A hash of NICs and their low-level/physical parameters.
-  You can set an MTU and the 'VLAN splinters' feature here.
+  You can set an MTU feature here.
 * **provider** - Set to 'ovs' for Neutron.
 * **endpoints** - A hash of network ports (OVS ports or NICs) and their IP
   settings.
