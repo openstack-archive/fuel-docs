@@ -18,9 +18,9 @@ Resolved glance issues
 Known Glance issues
 +++++++++++++++++++
 
-* A big image cannot be uploaded, as well as an instance snapshot
-  fails if the upload image time is longer than the Keystone token
-  lifespan. Glance returns an authentication failure indicating that
+* A big image cannot be uploaded and an instance snapshot will fail
+  if the upload image time is longer than the Keystone token lifespan.
+  Glance returns an authentication failure indicating that
   the token is invalid. See `LP1456573`_ and `LP1441156`_.
 
 * After all the Ceph compute nodes destruction followed by their
