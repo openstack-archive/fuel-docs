@@ -98,9 +98,10 @@ To upgrade the Fuel Master Node:
 
 #. **Be sure that no installations are in progress in the environment.**
 
-#. Download the upgrade tarball from
-   `http://software.mirantis.com`
-   to a location on the Fuel Master Node
+#. Download the upgrade tarball by going to
+   `http://software.mirantis.com`. Click `Download Now` and on your right
+   select `Mirantis OpenStack Upgrade`.
+   Put the downloaded file to a location on the Fuel Master Node
    that has at least 2 GB of free space for
    the archive, and additional 6 GB on the
    partition where it will be unpacked.
