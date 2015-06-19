@@ -32,10 +32,6 @@ The "Settings" tab provides configuration access to:
   and which scheduler to use to determine how to dispatch
   compute and volume requests.
 
-* Configure VLAN Splinters for environments
-  running CentOS on the target nodes
-  with the Neutron VLAN network topology.
-
 After you modify values on the "Settings" screen,
 click the "Load Settings" button at the bottom of the screen.
 If you want to go back to the Fuel default values,
@@ -49,7 +45,6 @@ you can click on the "Load Defaults" button at the bottom of the screen.
 .. include:: /pages/user-guide/config-environment/settings/3300-scheduler.rst
 .. include:: /pages/user-guide/config-environment/settings/3400-qcow.rst
 .. include:: /pages/user-guide/config-environment/settings/2590-public-key.rst
-.. include:: /pages/user-guide/config-environment/settings/3500-vlan-splinters.rst
 .. include:: /pages/user-guide/config-environment/settings/3525-kernel-parameters.rst
 .. include:: /pages/user-guide/config-environment/settings/3550-syslog.rst
 .. include:: /pages/user-guide/config-environment/settings/3600-mellanox-neutron.rst

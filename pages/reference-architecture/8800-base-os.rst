@@ -53,8 +53,6 @@ have no effect on the Operating System role:
   that connect this node to the rest of the environment
   need to be defined.
 
-- :ref:`VLAN splinters<vlan-splinters-ug>`
-
 - :ref:`Debug logging<debug-level-ug>`
 
 - :ref:`Syslog<syslog-ug>`

@@ -41,8 +41,6 @@ Here are the the available options:
                                 # OVS port properties to modify them in OVS DB
     "interface_properties": [], # [optional; default: []] a list of additional
                                 # OVS interface properties to modify them in OVS DB
-    "vlan_splinters": false,    # [optional; default: false] enable 'vlan splinters'
-                                # feature for this interface
   },
   {
     "action": "add-bond",       # type of primitive

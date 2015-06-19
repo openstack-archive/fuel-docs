@@ -17,12 +17,6 @@ Neutron with VLAN segmentation,
 and Neutron GRE has VLAN tags
 on the management, storage, and public networks.
 
-The version of CentOS that Fuel deploys
-has poor support for VLAN tagged packets
-so work-aronds are provided to improve the VLAN support
-when using CentOS;
-see :ref:`vlan-splinters-ug`.
-
 For more information:
 
 - :ref:`neutron-vlan-ovs-arch` describes the Neutron VLAN topology.
@@ -32,8 +26,3 @@ For more information:
 - :ref:`nova-vlan-arch` describes the Nova-network VLAN topology.
   :ref:`nova-config-vlan` provides examples
   to help you plan your NIC assignment for this topology.
-
-- :ref:`vlan-splinters-ug` gives instructions for setting up
-  VLAN splinters, which improve the performance of VLANs
-  when using the CentOS operating system
-  for your OpenStack nodes.
