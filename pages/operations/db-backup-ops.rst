@@ -143,13 +143,13 @@ Restoring with Percona XtraBackup
 
    ::
 
-     /usr/lib/ocf/resource.d/mirantis/mysql-wss start
+     /usr/lib/ocf/resource.d/fuel/mysql-wss start
 
 #. Start *mysqld* on all other controllers:
 
    ::
 
-     /usr/lib/ocf/resource.d/mirantis/mysql-wss start
+     /usr/lib/ocf/resource.d/fuel/mysql-wss start
 
 #. Copy the extracted database backup.
 
