@@ -19,7 +19,7 @@ Major Component Versions
 
 * **OpenStack Integrated Projects**
 
-  * Juno release 2014.2
+  * Juno release 2014.2.2
 
     * `Nova <https://wiki.openstack.org/wiki/ReleaseNotes/Juno#OpenStack_Compute_.28Nova.29>`_ (OpenStack Compute)
     * `Swift <https://wiki.openstack.org/wiki/ReleaseNotes/Juno#OpenStack_Object_Storage_.28Swift.29>`_ (OpenStack Object Storage)
@@ -34,7 +34,7 @@ Major Component Versions
 
 * **OpenStack Related Projects**
 
-  * Murano `2014.2 <https://wiki.openstack.org/wiki/Murano/ReleaseNotes/Juno>`_
+  * Murano `2014.2.2 <https://wiki.openstack.org/wiki/Murano/ReleaseNotes/Juno>`_
 
 * **Hypervisor**
 
