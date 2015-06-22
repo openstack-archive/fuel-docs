@@ -7,16 +7,16 @@
 PDF
 ~~~
 
-`Planning Guide PDF <pdf/Mirantis-OpenStack-6.0-PlanningGuide.pdf>`_
-`User Guide PDF <pdf/Mirantis-OpenStack-6.0-UserGuide.pdf>`_
-`Operations Guide PDF <pdf/Mirantis-OpenStack-6.0-OperationsGuide.pdf>`_
-`Monitoring Guide PDF <pdf/Mirantis-OpenStack-6.0-MonitoringGuide.pdf>`_
-`Running Mirantis OpenStack on VirtualBox PDF <pdf/Mirantis-OpenStack-6.0-Running-Mirantis-OpenStack-on-VirtualBox.pdf>`_
-`Reference Architectures PDF <pdf/Mirantis-OpenStack-6.0-ReferenceArchitecture.pdf>`_
-`Fuel Plugin Guide PDF <pdf/Mirantis-OpenStack-6.0-FuelPluginGuide.pdf>`_
-`Terminology Reference PDF <pdf/Mirantis-OpenStack-6.0-Terminology-Reference.pdf>`_
-`File Format Reference PDF <pdf/Mirantis-OpenStack-6.0-File-Format-Reference.pdf>`_
-`Release Notes PDF <pdf/Mirantis-OpenStack-6.0-RelNotes.pdf>`_
+`Planning Guide PDF <pdf/Mirantis-OpenStack-6.1-PlanningGuide.pdf>`_
+`User Guide PDF <pdf/Mirantis-OpenStack-6.1-UserGuide.pdf>`_
+`Operations Guide PDF <pdf/Mirantis-OpenStack-6.1-OperationsGuide.pdf>`_
+`Monitoring Guide PDF <pdf/Mirantis-OpenStack-6.1-MonitoringGuide.pdf>`_
+`Running Mirantis OpenStack on VirtualBox PDF <pdf/Mirantis-OpenStack-6.1-Running-Mirantis-OpenStack-on-VirtualBox.pdf>`_
+`Reference Architectures PDF <pdf/Mirantis-OpenStack-6.1-ReferenceArchitecture.pdf>`_
+`Fuel Plugin Guide PDF <pdf/Mirantis-OpenStack-6.1-FuelPluginGuide.pdf>`_
+`Terminology Reference PDF <pdf/Mirantis-OpenStack-6.1-Terminology-Reference.pdf>`_
+`File Format Reference PDF <pdf/Mirantis-OpenStack-6.1-File-Format-Reference.pdf>`_
+`Release Notes PDF <pdf/Mirantis-OpenStack-6.1-RelNotes.pdf>`_
 
 Guides
 ~~~~~~
