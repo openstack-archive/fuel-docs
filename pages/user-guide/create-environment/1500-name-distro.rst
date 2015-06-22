@@ -15,7 +15,7 @@ and select the Linux distribution from the drop-down list:
 
 ::
 
-    Juno on Ubuntu 12.04.4 (2014.2-6.0)
+    Juno on Ubuntu 14.04.4 (2014.2.2-6.1)
     Juno on CentOS 6.5 (2014.2-6.0)
 
 This is the operating system that will be installed
@@ -28,15 +28,15 @@ is the version number for each environment version;
 it is formed by concatenating the Juno Release number
 and the Mirantis OpenStack Release number.
 In this case, the "2014.2" string corresponds to the Juno release version;
-the "6.0" string is the Mirantis OpenStack release number.
+the "6.1" string is the Mirantis OpenStack release number.
 
 Note that the list displayed under the "Releases" tab
 at the top of the Fuel home page
-lists all the releases that Fuel 6.0 can manage
+lists all the releases that Fuel 6.1 can manage
 in your environment.
 If you upgraded Fuel
 from an earlier Mirantis OpenStack release,
-Fuel 6.0 can manage environments that were previously deployed
+Fuel 6.1 can manage environments that were previously deployed
 using those releases.
 It cannot, however, deploy a new environment using those releases.
 
