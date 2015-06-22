@@ -103,16 +103,18 @@ Consider the following environment:
 Calculate the required number of Public and Floating IP addresses as follows:
 
 :Nova-Network with HA:
-       The Public range must have [(X+Y+Z) + 1] IP addresses
-       (one for each  node in the environment
-       plus one for the environment's Virtual IP address;
-       the Floating range must have M IPs.
+
+       The Public range must have [(X+Y+Z) + 2] IP addresses
+       (one for each node in the environment plus two for the
+       environment's Virtual IP addresses; the Floating range
+       must have M IPs.
 
 :Neutron with HA:
-        The Public range must have [(X+Y) +1] IP addresses
-        (one for each Controller and Zabbix node
-        plus one for the environment's Virtual IP address);
-        the Floating range must have K+M IP addresses.
+
+        The Public range must have [(X+Y) +2] IP addresses
+        (one for each Controller and Zabbix node plus two for
+        the environment's Virtual IP addresses); the Floating
+        range must have K+M IP addresses.
 
 :If you are not using the HA deployment:
          You may decrease the Public range by one IP address 
