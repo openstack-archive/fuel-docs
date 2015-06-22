@@ -27,8 +27,7 @@ Known hardware issues
   sector size for operation is 512-bytes.
   See `LP1318614`_.
 
-* Adaptec 6805E RAID controller does not work in bootstrap. The workaround is
-  to update the driver in bootstrap and rebuild bootstrap.
+* Adaptec 6805E RAID controller does not work in bootstrap.
   See `LP1438676`_.
 
 * HP BL120/320 RAID controller line is not supported.
@@ -50,8 +49,6 @@ Known hardware issues
   For information about kernel modules that are compiled for specific kernel
   versions, see `HP storage`_ and `hpvsa update`_.
 
-* Intel X710 CNA is not supported at the moment. See `LP1445562`_.
-
 * Dell PER RAID H330/730/730P/830 controllers on bootstrap (kernel 3.10.55)
   are not supported. See `LP1420330`_.
 
@@ -62,7 +59,12 @@ Known hardware issues
   and substitude ``linux.img`` and ``initramfs.img`` files on
   the deployed Fuel master node in the ``/var/www/nailgun/bootstrap``
   folder with the files from it.
-  
+
+* Intel X710 CNA is not supported at the moment. See `LP1445562`_.
+
+* Intel X540-AT2 is not supported, and we strongly not recommend using
+  it at the moment.
+ 
 
 
 
