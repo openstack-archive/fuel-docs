@@ -1,8 +1,21 @@
 
 .. _external-ubuntu-ops:
 
+Configuring repositories
+========================
+
+Configuring repositories is not specific to the Mirantis OpenStack
+or Fuel products.
+The process of setting up repositories and repository priorities
+is the same one you normally do on your Linux distribution.
+
+Consult with your distribution's help if you are not sure:
+
+* `Ubuntu <https://help.ubuntu.com/community/Repositories/Ubuntu>`_
+* `CentOS <http://wiki.centos.org/PackageManagement/Yum/Priorities>`_
+
 Downloading Ubuntu system packages
-==================================
+----------------------------------
 
 In Fuel 6.0 and older there is an option
 to select an Ubuntu release in Fuel
