@@ -52,8 +52,7 @@ Known hardware issues
 * Dell PER RAID H330/730/730P/830 controllers on bootstrap (kernel 3.10.55)
   are not supported. See `LP1420330`_.
 
-  The custom ISO for the issue can be downloaded from `here`_.
-  Moreover, there is a `publicly available bootstrap archive`_
+  There is a `publicly available bootstrap archive`_
   that can be used as a workaround with Fuel 6.0.1 and Fuel 6.1. To make
   the driver work, you need to download and unpack the archive
   and substitude ``linux.img`` and ``initramfs.img`` files on
@@ -79,6 +78,5 @@ Known hardware issues
 .. _`hpvsa update`: https://launchpad.net/~hp-iss-team/+archive/ubuntu/hpvsa-update
 .. _`LP1445562`: https://bugs.launchpad.net/fuel/+bug/1445562
 .. _`LP1420330`: https://bugs.launchpad.net/fuel/+bug/1420330
-.. _`here`: http://jenkins-product.srt.mirantis.net:8080/view/custom_iso/job/custom_6.0_iso/75/
 .. _`publicly available bootstrap archive`: http://seed-us1.fuel-infra.org/fuelweb-iso/bootstrap-2.6.32-504.1.3-megaraid_sas-06.902.01.00.tar.gz
 
