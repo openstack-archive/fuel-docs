@@ -8,9 +8,6 @@ Applying streamlined patching
    the Linux system administrator. If you are not confident enough,
    you may want to skip this.
 
-For the detailed description of how streamlined patching is implemented
-see :ref:`Mirantis OpenStack streamlined patching<streamlined-patching-ref>`.
-
 With the streamlined patching feature in Mirantis OpenStack 6.1 you can
 now keep your environment up-to-date in a customized fashion without
 the need to upgrade to the latest version.
