@@ -3,7 +3,8 @@ Streamlined patching
 ++++++++++++++++++++
 
 The streamlined patching feature introduced in Mirantis OpenStack 6.1
-is the process of delivering product updates to users.
+is the process of delivering product updates to users which can be
+applied using standard Linux commands (e.g. ``apt-get`` and ``yum``).
 
 The streamlined patching feature allows you to keep your
 environment up-to-date in a customized fashion without
