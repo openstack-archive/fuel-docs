@@ -15,7 +15,7 @@ HowTo: Manage OpenStack services
    ::
 
        services=$(curl http://git.openstack.org/cgit/open \
-       stack/governance/plain/reference/projects.yaml |
+       stack/governance/plain/reference/projects.yaml | \
          egrep -v 'Security|Documentation|Infrastructure' | \
          perl -n -e'/^(\w+):$/ && print "openstack-",lc $1,".*\$|",lc $1,".*\$|"')
 
