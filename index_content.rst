@@ -7,16 +7,16 @@
 PDF
 ~~~
 
-`Planning Guide PDF <pdf/Mirantis-OpenStack-6.0-PlanningGuide.pdf>`_
-`User Guide PDF <pdf/Mirantis-OpenStack-6.0-UserGuide.pdf>`_
-`Operations Guide PDF <pdf/Mirantis-OpenStack-6.0-OperationsGuide.pdf>`_
-`Monitoring Guide PDF <pdf/Mirantis-OpenStack-6.0-MonitoringGuide.pdf>`_
-`Running Mirantis OpenStack on VirtualBox PDF <pdf/Mirantis-OpenStack-6.0-Running-Mirantis-OpenStack-on-VirtualBox.pdf>`_
-`Reference Architectures PDF <pdf/Mirantis-OpenStack-6.0-ReferenceArchitecture.pdf>`_
-`Fuel Plugin Guide PDF <pdf/Mirantis-OpenStack-6.0-FuelPluginGuide.pdf>`_
-`Terminology Reference PDF <pdf/Mirantis-OpenStack-6.0-Terminology-Reference.pdf>`_
-`File Format Reference PDF <pdf/Mirantis-OpenStack-6.0-File-Format-Reference.pdf>`_
-`Release Notes PDF <pdf/Mirantis-OpenStack-6.0-RelNotes.pdf>`_
+`Planning Guide PDF <pdf/Mirantis-OpenStack-6.1-PlanningGuide.pdf>`_
+`User Guide PDF <pdf/Mirantis-OpenStack-6.1-UserGuide.pdf>`_
+`Operations Guide PDF <pdf/Mirantis-OpenStack-6.1-OperationsGuide.pdf>`_
+`Monitoring Guide PDF <pdf/Mirantis-OpenStack-6.1-MonitoringGuide.pdf>`_
+`Running Mirantis OpenStack on VirtualBox PDF <pdf/Mirantis-OpenStack-6.1-Running-Mirantis-OpenStack-on-VirtualBox.pdf>`_
+`Reference Architectures PDF <pdf/Mirantis-OpenStack-6.1-ReferenceArchitecture.pdf>`_
+`Fuel Plugin Guide PDF <pdf/Mirantis-OpenStack-6.1-FuelPluginGuide.pdf>`_
+`Terminology Reference PDF <pdf/Mirantis-OpenStack-6.1-Terminology-Reference.pdf>`_
+`File Format Reference PDF <pdf/Mirantis-OpenStack-6.1-File-Format-Reference.pdf>`_
+`Release Notes PDF <pdf/Mirantis-OpenStack-6.1-RelNotes.pdf>`_
 
 Guides
 ~~~~~~
@@ -92,7 +92,8 @@ Prior releases
 `Download Now <http://software.mirantis.com/openstack-download-form>`__
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can download the Mirantis OpenStack ISO, IMG, and VirtualBox scripts
+You can download the Mirantis OpenStack ISO and 
+`VirtualBox scripts <https://software.mirantis.com/load/6-1-vbox/>`_
 
 .. note:: You must fill in the form to download Mirantis OpenStack.
 
@@ -122,10 +123,10 @@ Watch the Mirantis OpenStack demos at https://www.youtube.com/watch?v=ET4hkzb_QR
     environments from a single interface
     and then enables you to manage those environments post deployment.
 
-  * `Support <https://software.mirantis.com/support-options/>`_.
-    A complementary `30-day basic trial support subscription
-    <https://software.mirantis.com/trial-support-subscription/>`_
-    is available.
+  * `Support <https://www.mirantis.com/services/enterprise-support-services/>`_.
+    When you've completed your evaluation of Mirantis OpenStack,
+    `get support <https://www.mirantis.com/services/enterprise-support-services/>`_
+    for Mirantis OpenStack from the industry experts.
 
   To read web version of Mirantis OpenStack documentation,
   click `Guides <#guides>`_ tab.

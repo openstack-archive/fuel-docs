@@ -21,16 +21,22 @@
 .. include:: /pages/operations/6500-fuel-auth.rst
 .. include:: /pages/operations/7000-sahara.rst
 .. include:: /pages/operations/7400-murano.rst
+.. include:: /pages/operations/7450-mm-ops.rst
 .. include:: /pages/operations/7800-vcenter.rst
 .. include:: /pages/operations/8000-performance.rst
 .. include:: /pages/operations/8100-backup.rst
 .. include:: /pages/operations/8200-slave-nodes-pxe.rst
 .. include:: /pages/operations/8500-ceilometer.rst
 .. include:: /pages/operations/8600-heat.rst
+.. include:: /pages/operations/8800-horizon.rst
+.. include:: /pages/operations/8850-horizon-https.rst
 .. include:: /pages/operations/8900-testing-details.rst
 .. include:: /pages/operations/corosync2.rst
 .. include:: /pages/operations/9000-troubleshoot.rst
-.. include:: /pages/operations/9500-patching.rst
 .. include:: /pages/operations/ha-testing-scenarios-ops.rst
 .. include:: /pages/operations/db-backup-ops.rst
 .. include:: /pages/operations/isoUSB-ops.rst
+.. include:: /pages/operations/external-ubuntu-ops.rst
+.. include:: /pages/operations/empty-role.rst
+.. include:: /pages/operations/streamlined-patching.rst
+

@@ -18,7 +18,7 @@ as `vboxnet0`, `vboxnet1`, `vboxnet2` correspondingly,
 and assigned IP addresses for adapters::
 
   vboxnet0 - 10.20.0.1/24
-  vboxnet1 - 172.16.0.1/24
+  vboxnet1 - 172.16.0.254/24
   vboxnet2 - 172.16.1.1/24
 
 For the demo environment on VirtualBox,
@@ -67,7 +67,8 @@ they must know the way out of the host.
 For Ubuntu, the following command, executed on the host,
 makes this happen::
 
-  sudo iptables -t nat -A POSTROUTING -s 172.16.1.0/24 \! -d 172.16.1.0/24 -j MASQUERADE
+  sudo iptables -t nat -A POSTROUTING -s 172.16.1.0/24 \! -d 172.16.1.0/24 -j \
+  MASQUERADE
 
 To access VMs managed by OpenStack,
 you must provide IP addresses from the Floating IP range.

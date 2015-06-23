@@ -24,6 +24,7 @@ Terminology Reference
 .. include:: /pages/terminology/f/fencing.rst
 .. include:: /pages/terminology/f/floating-ip.rst
 .. include:: /pages/terminology/f/fuel.rst
+.. include:: /pages/terminology/f/fuel-agent.rst
 .. include:: /pages/terminology/f/fuel-master-node.rst
 .. include:: /pages/terminology/g/galera-cluster.rst
 .. include:: /pages/terminology/g/glance.rst
@@ -37,7 +38,9 @@ Terminology Reference
 .. include:: /pages/terminology/h/host-aggregates.rst
 .. include:: /pages/terminology/h/hypervisor.rst
 .. include:: /pages/terminology/i/icehouse.rst
+.. include:: /pages/terminology/i/idempotency-term.rst
 .. include:: /pages/terminology/i/identity-service.rst
+.. include:: /pages/terminology/i/image-based-provision.rst
 .. include:: /pages/terminology/i/image-service.rst
 .. include:: /pages/terminology/i/ironic.rst
 .. include:: /pages/terminology/i/iser.rst
@@ -54,6 +57,7 @@ Terminology Reference
 .. include:: /pages/terminology/m/mongodb.rst
 .. include:: /pages/terminology/m/murano.rst
 .. include:: /pages/terminology/m/mysql.rst
+.. include:: /pages/terminology/m/maintenance-mode.rst
 .. include:: /pages/terminology/n/nailgun.rst
 .. include:: /pages/terminology/n/native-vlan.rst
 .. include:: /pages/terminology/n/networking.rst

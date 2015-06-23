@@ -1,8 +1,17 @@
 
-OpenStack Distro Patching
--------------------------
+Streamlined patching
+++++++++++++++++++++
 
-See `Patch of OpenStack Distro
-<https://mirantis.jira.com/browse/PROD-91>`_
-and `OpenStack Distro Patching
-<https://docs.google.com/a/mirantis.com/document/d/1IKz4ZyPcqE10wzzWs9RK77fdVVzoozHzBkEXpetA1jg/edit>`_.
+The streamlined patching feature introduced in Mirantis OpenStack 6.1
+is the process of delivering product updates to users which can be
+applied using standard Linux commands (e.g. ``apt-get`` and ``yum``).
+
+The streamlined patching feature allows you to keep your
+environment up-to-date in a customized fashion without
+the need to upgrade to the latest version.
+
+For your user experience and how-to see :ref:`Applying streamlined patching<streamlined-patching-ops>`.
+
+.. note::
+   The streamlined patching feature is introduced in
+   Mirantis OpenStack 6.1 and will not work in older releases.

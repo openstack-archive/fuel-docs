@@ -15,14 +15,14 @@ and running command-line tools on the nodes.
 
 The "Settings" tab provides configuration access to:
 
-* Security:  reset login credentials for Horizon,
+* Security: reset login credentials for Horizon,
   set/reset login credentials for vCenter,
   set the SSH Public Key that will be authorized to access target nodes.
 
 * Logging: set configuration parameters for Syslog,
   turn debug logging on/off
 
-* Modify characteristics defined when you first created
+* Modify the characteristics defined when you first created
   the Fuel environment, including which additional components
   (Sahara, Murano, and Ceilometer) are included,
   the hypervisor type, and the storage backend that are configured.
@@ -32,23 +32,19 @@ The "Settings" tab provides configuration access to:
   and which scheduler to use to determine how to dispatch
   compute and volume requests.
 
-* Configure VLAN Splinters for environments
-  running CentOS on the target nodes
-  with the Neutron VLAN network topology.
-
 After you modify values on the "Settings" screen,
 click the "Load Settings" button at the bottom of the screen.
 If you want to go back to the Fuel default values,
 you can click on the "Load Defaults" button at the bottom of the screen.
 
 .. include:: /pages/user-guide/config-environment/settings/1000-access-horizon.rst
+.. include:: /pages/user-guide/config-environment/settings/1200-provision-method.rst
 .. include:: /pages/user-guide/config-environment/settings/1500-modify-services.rst
 .. include:: /pages/user-guide/config-environment/settings/2500-common-settings.rst
 .. include:: /pages/user-guide/config-environment/settings/3250-debug-set.rst
 .. include:: /pages/user-guide/config-environment/settings/3300-scheduler.rst
 .. include:: /pages/user-guide/config-environment/settings/3400-qcow.rst
 .. include:: /pages/user-guide/config-environment/settings/2590-public-key.rst
-.. include:: /pages/user-guide/config-environment/settings/3500-vlan-splinters.rst
 .. include:: /pages/user-guide/config-environment/settings/3525-kernel-parameters.rst
 .. include:: /pages/user-guide/config-environment/settings/3550-syslog.rst
 .. include:: /pages/user-guide/config-environment/settings/3600-mellanox-neutron.rst

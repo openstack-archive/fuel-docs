@@ -37,8 +37,8 @@ message should appear.
    from the checklist.
 
 Beginning with Fuel 6.1, if you press **Deploy** button
-the Fuel web UI will prevent you from deploying the
-environment in three cases:
+the Fuel web UI will display network verification warnings
+in the following three cases:
 
 * you have not verified networks at all:
 

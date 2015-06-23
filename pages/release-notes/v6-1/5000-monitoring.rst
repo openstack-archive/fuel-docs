@@ -1,7 +1,7 @@
 
 .. _monitoring-rn:
 
-Monitoring technologies issues
+Monitoring Technologies Issues
 ==============================
 
 .. include:: /pages/release-notes/v6-1/other/5010-ceilometer-mongodb.rst

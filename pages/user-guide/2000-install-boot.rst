@@ -15,7 +15,7 @@ this could take a half hour or more.
 
 Create the Installation Media
 -----------------------------
-You can download an ISO file and,
+You can `download an ISO file <https://software.mirantis.com/openstack-downloads/>`_ and,
 for many modern servers,
 use a remote control utility such as
 `ipmitool <http://sourceforge.net/projects/ipmitool/>`_,
@@ -24,8 +24,7 @@ to mount the ISO image directly
 to the server's virtual DVD drive.
 
 For a bare-metal installation,
-you can instead burn the ISO image to a DVD or
-burn the IMG file to a USB drive,
+you can instead burn the ISO image to a DVD or USB drive,
 then use that media to install the software.
 
 .. note:: You can use the same ISO image
@@ -33,8 +32,7 @@ then use that media to install the software.
    in VirtualBox.
    In that case, copy the ISO file to the appropriate directory
    and boot directly from that disk file.
-   See the `Quick Start Guide <http://software.mirantis.com/quick-start/>`_.
-   and :ref:`virtualbox`.
+   See :ref:`virtualbox`.
 
 
 Use any standard software to burn the ISO to a writable DVD.
