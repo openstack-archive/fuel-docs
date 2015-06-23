@@ -19,5 +19,7 @@ the stability and scalability of the deployed environment:
 * the OSTF HA stack is improved: replication and message queue is checked in
   HA AMQP cluster. See `OSTF RabbitMQ replication <https://blueprints.launchpad.net/fuel/+spec/ostf-rabbit-replication-tests>`_ for more details.
 
-
-
+* The caching system is improved in Keystone: a new memcache_pool
+  backend allows reusing open memcache connections and resolves issues
+  related to the usage of ``threading.local`` objects in the eventlet
+  environment.
