@@ -8,8 +8,8 @@ Release Notes for Mirantis OpenStack 6.1
 
 Mirantis, Inc. is releasing Mirantis OpenStack version 6.1.
 
-This generally available version of Mirantis OpenStack
-is based on the latest stable Juno release of OpenStack.
+This generally available version of Mirantis OpenStack is based
+on Juno release 2014.2.2 of OpenStack.
 
 These release notes supplement the product documentation and list
 enhancements, resolved issues, and known issues in this version.
