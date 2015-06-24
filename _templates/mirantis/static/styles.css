@@ -540,6 +540,44 @@ i.fa-file-pdf-o {
     display: none;
 }
 
+#contents ul.simple, #contents ul.simple li {
+    list-style: none;
+    margin:0;
+    padding:0;
+    cursor: pointer;
+}
+#contents ul.simple p {
+    margin:0;
+    display:block;
+}
+#contents ul.simple a:hover {
+    background-color:#F5F5F5;
+}
+#contents ul.simple li {
+    line-height:140%;
+    text-indent:0px;
+    background-position: 1px 3px;
+    padding-left: 20px;
+    background-repeat: no-repeat;
+}
+
+#contents ul.simple .collapsed {
+    background-image: url(collapsed.png);
+}
+
+#contents ul.simple .expanded {
+    background-image: url(expanded.png);
+}
+
+#contents ul.simple .expanded > ul{
+  padding-left: 0px;
+  margin-bottom: 5px;
+}
+
+div.topic {
+  padding: 7px;
+}
+
 @media (max-width: 767px) and (min-width: 0px) {
     .navbar-default .navbar-text {
         margin-left: 15px;
