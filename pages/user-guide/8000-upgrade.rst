@@ -13,10 +13,13 @@ but leave your current environments in place.
 Upgrade Fuel from Earlier Versions
 ----------------------------------
 
-You can upgrade a Fuel Master node
-to 6.1 from an earlier version of Mirantis OpenStack Release 5.x.
-After you do this, your new Fuel 6.1 console
-can manage your existing 6.x OpenStack environment(s)
+* If you are running Fuel 4.x or earlier, you cannot upgrade to 6.1.
+* If you are running Fuel 5.x, you cannot upgrade *directly* to 6.1.
+  You will need to upgrade from 5.x to 6.0 first, and then you can
+  upgrade to 6.1.
+* If you are running Fuel 6.0, you can upgrade to Fuel 6.1
+
+Fuel 6.1 console can manage your existing 6.x OpenStack environment(s)
 and create and manage new 6.1 OpenStack environments.
 
 The following table summarizes the available progressions
