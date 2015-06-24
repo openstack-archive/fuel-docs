@@ -39,13 +39,13 @@ be rebooted).
 For more information, see the
 `Fuel Plugins <https://wiki.openstack.org/wiki/Fuel/Plugins#type:_reboot_parameter>`_ wiki page.
 
-LBaaS is supported in HA
-++++++++++++++++++++++++
+LBaaS plugin compatible with controllers in HA mode
++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-LBaaS Fuel plugin, previously available
-in multi-node mode only, is now supported
-in HA. Please, note that HA works for the Controllers only,
-but not for the plugin itself.
+The 6.1 compatible LBaaS plugin has been modified so that it
+can be deployed on controllers in HA mode. Please note that this
+enables the new LBaaS plugin to work with 6.1, but does not make
+the plugin itself HA.
 
 Zabbix is no longer supported as a core Fuel component
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -70,11 +70,9 @@ a few weeks of the Mirantis OpenStack 6.1 release:
 +----------------------+------------+---------+-----------+
 | Elasticsearch-Kibana | FWaaS      |         |           |
 +----------------------+------------+---------+-----------+
-| Zabbix               | Contrail   |         |           |
+| Zabbix               | Mellanox   |         |           |
 +----------------------+------------+---------+-----------+
-| InfluxDB-Grafana     | Mellanox   |         |           |
-+----------------------+------------+---------+-----------+
-|                      | Cisco ACI  |         |           |
+| InfluxDB-Grafana     | Cisco ACI  |         |           |
 +----------------------+------------+---------+-----------+
 |                      | Calico     |         |           |
 +----------------------+------------+---------+-----------+
