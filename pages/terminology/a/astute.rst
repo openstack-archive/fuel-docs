@@ -17,5 +17,5 @@ This same Astute worker process monitors the deployment process
 and periodically reports the progress to Nailgun
 through its RabbitMQ queue.
 
-See `Fuel Architecture <http://docs.mirantis.com/fuel-dev/develop/architecture.html>`_
+See `Fuel Architecture <https://docs.fuel-infra.org/fuel-dev/develop/architecture.html>`_
 for more information.
