@@ -1,0 +1,22 @@
+.. _updates-fuel-rn:
+
+OpenStack Fuel
+--------------
+
+Resolved Issues
++++++++++++++++
+
+* The OCF scripts update procedure by RPM/DEB packages is introduced.
+  See `LP1465771 <https://bugs.launchpad.net/fuel/+bug/1465771>`_.
+  However, there is no class for this package in Mirantis OpenStack 6.0.
+  But you can install it manually.
+
+  For Ubuntu::
+
+   apt-get install fuel-ha-utils6.0
+
+  For CentOS::
+
+   yum install fuel-ha-utils6.0
+
+  Run the above commands on all the cluster servers.
