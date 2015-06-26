@@ -197,7 +197,12 @@ $(document).ready(function () {
 	});
 
 	$('.headerlink').each(function () {
-		$(this).replaceWith(generateLinks($(this).attr('href'), $(this).parent().children('.toc-backref').text()));
+		var parentTag = $( this ).parent().get( 0 ).tagName;
+		if(parentTag == 'H1' || parentTag == 'H2'){
+			$(this).replaceWith(generateLinks($(this).attr('href'), $(this).parent().children('.toc-backref').text()));
+		} else {
+			$(this).empty();
+		}
 	});
 
 	$('[data-toggle="tooltip"]').tooltip();
