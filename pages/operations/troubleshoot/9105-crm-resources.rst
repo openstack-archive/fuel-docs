@@ -213,4 +213,4 @@ some controller nodes are damaged (cannot run the Corosync service for example).
 Such nodes cannot join back the cluster and must be fenced by the STONITH daemon.
 That is why production cluster should always have a fencing enabled.
 
-.. [1] `Fencing plugin <https://github.com/stackforge/fuel-plugins/tree/master/ha_fencing>`_
+.. [1] `Fencing plugin <https://github.com/stackforge/fuel-plugin-ha-fencing>`_

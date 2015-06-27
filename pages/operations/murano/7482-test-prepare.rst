@@ -25,7 +25,7 @@ add a Linux based image to Murano:
       If you would like to build your own Linux image,
       you can use the Murano agent.
       For instructions, see the `Murano documentation (Linux Image Builder)
-      <http://murano-api.readthedocs.org/en/latest/image_builders/index.html>`_.
+      <http://murano.readthedocs.org/en/latest/image_builders/index.html>`_.
 
       .. note::  The instructions in the official Murano documentation
                 may be outdated;

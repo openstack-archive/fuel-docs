@@ -17,7 +17,7 @@ Murano API
 
 The Murano API provides the ability to manage applications in the OpenStack clouds.
 For further reading, refer to `Murano API Specification
-<http://murano-api.readthedocs.org/en/latest/specification/index.html>`_
+<http://murano.readthedocs.org/en/latest/specification/index.html>`_
 
 Engine
 ++++++

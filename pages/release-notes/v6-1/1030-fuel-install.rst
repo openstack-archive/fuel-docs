@@ -115,7 +115,7 @@ Known installation and deployment issues
   Rebooting those nodes brings them back online.
   To avoid this problem, always run a new backup
   of the Fuel Master node after adding nodes.
-  See `LP1347718 <https://bugs.laudfgfdgnchpad.net/bugs/1347718>`_.
+  See `LP1347718 <https://bugs.launchpad.net/bugs/1347718>`_.
 
 * You must run **deep_clean** before you run **make iso**
   to build an ISO file or old packages on your system may cause **make iso** to fail.

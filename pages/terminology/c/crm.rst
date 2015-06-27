@@ -14,6 +14,6 @@ For more information:
   analyze a Neutron high availability cluster.
 - :ref:`enable-galera-autorebuild` for information about
   using CRM to control the :ref:`galera-cluster-term` autorebuild feature.
-- `CRM interactive help and documentation
-  <http://doc.opensuse.org/products/draft/SLE-HA/SLE-ha-guide_sd_draft/cha.ha.manual_config.html>`_.
+- `CRM help and documentation
+  <https://www.suse.com/documentation/sle_ha/book_sleha/data/cha_ha_manual_config.html>`_.
 
