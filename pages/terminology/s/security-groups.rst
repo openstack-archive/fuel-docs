@@ -33,7 +33,7 @@ For more information about creating and using Security Groups, see:
   gives instructions for associating a Security Group with an Instance
   using the OpenStack dashboard (Horizon).
 
-- `Configure access and security for instances <http://docs.openstack.org/user-guide/content/Launching_Instances_using_Dashboard.html#security_groups_add_rule>`_
+- `Configure access and security for instances <http://docs.openstack.org/user-guide/dashboard_launch_instances.html>`_
   gives detailed instructions for adding rules to a Security Group.
 
 

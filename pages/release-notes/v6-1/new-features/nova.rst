@@ -121,7 +121,7 @@ Libvirt specific
 .. _`Allow Users to specify Guest shutdown behavior for Stop, Rescue, and Delete (partial)`: https://blueprints.launchpad.net/nova/+spec/user-defined-shutdown
 .. _`Allow controlled shutdown of GuestOS for operations which power off the VM`: http://specs.openstack.org/openstack/nova-specs/specs/juno/implemented/user-defined-shutdown.html
 .. _`Virt driver guest vCPU topology configuration`: http://specs.openstack.org/openstack/nova-specs/specs/juno/implemented/virt-driver-vcpu-topology.html
-.. _`Add hook for update_instance_cache_with_nw_info`: http://specs.openstack.org/openstack/nova-specs/specs/juno/implemented/instance-network-info-hook.htmlspecification
+.. _`Add hook for update_instance_cache_with_nw_info`: http://specs.openstack.org/openstack/nova-specs/specs/juno/implemented/instance-network-info-hook.html
 .. _`Support multiple interfaces from one VM attached to the same network`: http://specs.openstack.org/openstack/nova-specs/specs/juno/implemented/nfv-multiple-if-1-net.html
 .. _`API: Evacuate instance to a scheduled host`: http://specs.openstack.org/openstack/nova-specs/specs/juno/implemented/find-host-and-evacuate-instance.html
 .. _`Change compute updates from periodic to on demand`: http://specs.openstack.org/openstack/nova-specs/specs/juno/implemented/on-demand-compute-update.html

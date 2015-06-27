@@ -77,4 +77,4 @@ Additional information
 
 For information about Issues and Blueprints for Mirantis OpenStack 6.1,
 see the `Fuel for OpenStack 6.1 Milestone
-<https://launchpad.net/fuel/+milestone/6.1>`_ page.
+<https://launchpad.net/fuel/6.1.x>`_ page.

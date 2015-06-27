@@ -82,4 +82,4 @@ Get the power status::
 
 .. _`standard`: http://www.intel.com/content/www/us/en/servers/ipmi/ipmi-specifications.html
 .. _`IPMI specifications`: http://www.intel.com/content/www/us/en/servers/ipmi/ipmi-second-gen-interface-spec-v2-rev1-1.html
-.. _`IPMI sensors`: http://docs.openstack.org/developer/ceilometer/measurements.html#ironic-hardware-ipmi-sensor-data
+.. _`IPMI sensors`: http://docs.openstack.org/developer/ceilometer/sourcecode/ceilometer/ceilometer.ipmi.platform.ipmi_sensor.html

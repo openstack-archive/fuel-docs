@@ -14,4 +14,4 @@ with the user-configured settings.
 
 For more information about how Cobbler is used in Fuel, see
 `Fuel Architecture <https://docs.fuel-infra.org/fuel-dev/develop/architecture.html>`_.
-Also see the `Cobbler Web Page <http://www.cobblerd.org/>`_.
+Also see the `Cobbler Web Page <http://cobbler.github.io/>`_.

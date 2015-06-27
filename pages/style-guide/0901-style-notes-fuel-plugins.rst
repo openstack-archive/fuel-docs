@@ -106,7 +106,7 @@ Links
    then please add a reference.
 
 #. Refer to the
-   `official Mirantis OpenStack <http://docs.mirantis.com/openstack/fuel/master/>`_
+   `official Mirantis OpenStack <https://docs.mirantis.com/fuel/fuel-master/>`_
    or `OpenStack community <http://docs.openstack.org>`_
    documentation when describing standard actions since
    not all users are well acquainted with the platform.
