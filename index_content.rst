@@ -97,7 +97,7 @@ You can download the Mirantis OpenStack ISO and
 
 .. note:: You must fill in the form to download Mirantis OpenStack.
 
-`Demos and tutorials <https://www.youtube.com/watch?v=ET4hkzb_QRM>`__
+`Demos and tutorials <https://www.youtube.com/watch?v=J5eG-UHOVfE>`__
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Watch the Mirantis OpenStack demos at https://www.youtube.com/watch?v=ET4hkzb_QRM
