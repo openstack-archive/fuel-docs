@@ -438,9 +438,8 @@ a:hover .panel .panel-body {
     color: #fff;
 }
 
-div#home {
-    min-height: 392px;
-    position: relative;
+div#mirantis-openstack-documentation.section div.tab-content div.tab-pane {
+    min-height: 415px;
 }
 
 ul#menuNav {
