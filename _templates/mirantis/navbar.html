@@ -10,7 +10,8 @@
         {%- block sidebarlogo %}
           <a class="navbar-brand" href="{{ pathto(theme_roottarget) }}" title="{{ project|e }}">
             {%- if logo %}<img src="{{ pathto('_static/' + logo, 1) }}">{%- endif %}
-            {% if theme_navbar_title -%}{{ theme_navbar_title|e }}{%- else -%}{{ project|e }}{%- endif -%}
+          </a>
+            {% if theme_navbar_title -%}<span id="site-title">{{ theme_navbar_title|e }}{%- else -%}{{ project|e }}</span>{%- endif -%}
           </a>
         {%- endblock %}
       </div>
