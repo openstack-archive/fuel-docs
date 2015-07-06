@@ -64,7 +64,7 @@ service between network interfaces (vNICs) managed by other OpenStack services l
      - UDP port 67
      - controller
      -
-     - active/passive, see DHCP agent below
+     - active/passive, see :ref:`DHCP agent<mg-dhcp-agent>` below
 
 |
 
