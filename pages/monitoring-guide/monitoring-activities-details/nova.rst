@@ -294,8 +294,8 @@ HTTP response code is logged in nova-api.log. Example of an instance creation lo
 
   2015-03-02 12:43:59.898 6819 INFO nova.osapi_compute.wsgi.server
   [req-c0391ca2-e0e2-41bf-af64-0df222654620 None] 192.168.0.5
-  "POST /v2/{tenant-id}/servers HTTP/1.1" status: **202**
-  len: 780 time: 2.4308009
+  "POST /v2/{tenant-id}/servers HTTP/1.1" status: 202
+  len: 780 time: **2.4308009**
 
-  # **202** (ACCEPTED) return code indicates the request has been
+  # 202 (ACCEPTED) return code indicates the request has been
   accepted for processing.
