@@ -28,7 +28,7 @@ endpoints and a TCP load balancer for MySQL.
 Performing checks against the HAProxy process through the VIP
 requires one to know which node is the active (master) controller
 node in the Corosync/Pacemaker cluster. This is detailed below in the
-``Corosync/Pacemaker HA cluster`` section.
+:ref:`Corosync/Pacemaker HA cluster<mg-corosync-pacemaker>` section.
 
 The active controller handles all the OpenStack services requests
 through HAProxy which in turn, distributes the load across the
@@ -99,14 +99,14 @@ For example, you can use the command below to detect that the
 *backend* is in ``down`` state. Here, the nova-api stopped
 responding::
 
-   echo "show stat" | socat /var/lib/haproxy/stats stdio | grep BACKEND /
+   echo "show stat" | socat /var/lib/haproxy/stats stdio | grep BACKEND \
    | awk -F , '{print $1, $2, $18}' | grep DOWN
    nova-api node-10 DOWN
 
 As another example, you can use the command below to get a list of
 the API endpoints with their respective status::
 
-   echo "show stat" | socat /var/lib/haproxy/stats stdio | grep BACKEND /
+   echo "show stat" | socat /var/lib/haproxy/stats stdio | grep BACKEND \
    | awk -F , '{print $1, $2, $18}'
    horizon BACKEND UP
    keystone-1 BACKEND UP
@@ -133,7 +133,7 @@ operator in an alert.
 
 .. code::
 
-   echo "show stat" | socat /var/lib/haproxy/stats stdio | awk -F , /
+   echo "show stat" | socat /var/lib/haproxy/stats stdio | awk -F , \
    '{print $1, $2, $18}' | grep glance-api
 
    glance-api FRONTEND OPEN
