@@ -4,7 +4,7 @@ MySQL
 -----
 
 The MySQL database running on the OpenStack controller nodes is a
-central component, because it is used by almost all the OpenStack
+central component because it is used by almost all the OpenStack
 components as their primary data persistence storage. Therefore, it
 is critical to monitor the healthiness of this component on each
 of the controller nodes in the cluster.
@@ -109,7 +109,7 @@ verified using the command::
 
 These poll SQL metrics can be collected using the following SQL command::
 
-  SHOW GLOBAL STATUS WHERE Variable_name=<NAME>
+  SHOW GLOBAL STATUS WHERE Variable_name=<NAME>;
 
 See MySQL `server status variables`_ for details.
 
@@ -127,10 +127,10 @@ See MySQL `server status variables`_ for details.
 | **Metrics related to the MySQL cluster**
 
 The high availability of the MySQL database is supported in
-active/passive mode with one master and several slaves nodes.
+active/passive mode with one master and several slave nodes.
 To ensure that the MySQL cluster remains highly available, you should
-continuously monitor that slaves are ready to take over in case of a
-master node failure.
+continuously monitor that slave nodes are ready to take over in case
+of a master node failure.
 
 .. list-table::
    :header-rows: 1
