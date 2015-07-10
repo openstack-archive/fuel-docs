@@ -19,6 +19,7 @@
 .. include:: /pages/operations/docker-on-master.rst
 .. include:: /pages/operations/2800-experimental.rst
 .. include:: /pages/operations/6500-fuel-auth.rst
+.. include:: /pages/operations/6700-ceph.rst
 .. include:: /pages/operations/7000-sahara.rst
 .. include:: /pages/operations/7400-murano.rst
 .. include:: /pages/operations/7450-mm-ops.rst
