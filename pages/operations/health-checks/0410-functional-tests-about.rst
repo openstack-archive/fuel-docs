@@ -1,15 +1,15 @@
-Functional Tests Description
+Functional tests description
 ----------------------------
 
 Functional tests verify how your system handles basic OpenStack operations
 under normal circumstances.
-The Functional Test series gives you information about the speed of your environment 
-and runs timeout tests.
+The Functional Test series gives you information about the speed of your
+environment and runs timeout tests.
 
-All tests use the basic OpenStack services (Nova, Glance, Keystone, Cinder, etc)
-so, if any of these are inactive, the test using it will fail.
-You should run all sanity checks before running the functional checks
-to verify that all services are alive.
+All tests use the basic OpenStack services (Nova, Glance, Keystone,
+Cinder, etc), so, if any of these are inactive, the test using it will
+fail. You should run all sanity checks before running the functional
+checks to verify that all services are alive.
 This helps ensure that you do not get false negatives.
 The following is a description of each sanity test available:
 
@@ -24,5 +24,6 @@ The following is a description of each sanity test available:
 * Check that VM is accessible via floating IP address
 * Check network connectivity from instance via floating IP
 * Check network connectivity from instance without floating IP
+* Launch instance with file injection
+* Launch instance and perform live migration
 * User creation and authentication in Horizon
-
