@@ -12,21 +12,21 @@ To skip a task, you can use one of the following:
   ::
 
       - id: horizon
-      type: skipped
-      role: [primary-controller]
-      requires: [post_deployment_start]
-      required_for: [post_deployment_end]
+        type: skipped
+        role: [primary-controller]
+        requires: [post_deployment_start]
+        required_for: [post_deployment_end]
 
 * Add a condition that is always false:
 
   ::
 
        - id: horizon
-      type: puppet
-      role: [primary-controller]
-      requires: [post_deployment_start]
-      required_for: [post_deployment_end]
-      condition: 'true != false'
+         type: puppet
+         role: [primary-controller]
+         requires: [post_deployment_start]
+         required_for: [post_deployment_end]
+         condition: 'true != false'
 
 * Do an API request:
 

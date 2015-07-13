@@ -12,14 +12,14 @@ an existing role, follow these steps:
    .. code-block:: yaml
 
       - id: my_task
-      type: puppet
-      groups: [compute]
-      required_for: [deploy_end]
-      requires: [netconfig]
-      parameters:
-         puppet_manifest: /etc/puppet/modules/my_task.pp
-         puppet_modules: /etc/puppet/modules
-         timeout: 3600
+        type: puppet
+        groups: [compute]
+        required_for: [deploy_end]
+        requires: [netconfig]
+        parameters:
+          puppet_manifest: /etc/puppet/modules/my_task.pp
+          puppet_modules: /etc/puppet/modules
+          timeout: 3600
 
 #. Run the following command:
 
