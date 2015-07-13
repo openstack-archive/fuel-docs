@@ -4,7 +4,7 @@
 Enable Experimental Features
 ============================
 
-Beginning with Fuel 5.1,
+Beginning with Fuel 5.1 and in later release versions,
 :ref:`experimental features<experimental-features-term>`
 are disabled by default.
 Experimental features provide useful functionality
