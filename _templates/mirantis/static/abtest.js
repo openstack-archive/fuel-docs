@@ -246,6 +246,8 @@ $(document).ready(function () {
 
 	$('a.toc-backref').contents().unwrap();
 
+	$('ul.nav.navbar-nav > li > a[href="contents.html"]').attr('href', 'index.html');
+
 	prepareList();
 
 });
