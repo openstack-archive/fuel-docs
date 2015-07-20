@@ -177,7 +177,7 @@ that will be matched by role:
     required_for: [pre_deployment_end]
     requires: [upload_core_repos]
     parameters:
-      src: rsync://10.20.0.2:/puppet/
+      src: rsync://<FUEL_MASTER_IP>:/puppet/
       dst: /etc/puppet
       timeout:
 
