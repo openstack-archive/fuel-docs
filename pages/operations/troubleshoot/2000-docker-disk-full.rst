@@ -122,7 +122,7 @@ ID for the container:
 .. code-block:: bash
 
    device_id=$(python -c 'import sys; import json; input = json.load(sys.stdin);\
-   [sys.stdout.write(str(v["device_id"])) for k, v in input["Devices"].items() if
+   [sys.stdout.write(str(v["device_id"])) for k, v in input["Devices"].items() if \
    k == sys.argv[1]]' "$container_id" < /var/lib/docker/devicemapper/devicemapper/json)
    echo $device_id
 
