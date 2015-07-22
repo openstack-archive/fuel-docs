@@ -21,7 +21,7 @@ but sdc will not be used  as part of the RAID-1 array:
 #. Use the Fuel CLI to obtain provisioning data:
    ::
 
-     fuel provisioning --env-id 1 --default -d
+     fuel provisioning --env-id 1 -d
 
 #. Remove the drive which you do not want to be part of RAID:
    ::
