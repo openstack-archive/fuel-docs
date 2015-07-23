@@ -43,6 +43,12 @@ Usage
 
      exit
 
+#. Run the following commands to Nailgun
+   to sync deployment tasks:
+   ::
+
+     fuel rel --sync-deployment-tasks --dir /etc/puppet
+
 File Format
 ~~~~~~~~~~~
 
