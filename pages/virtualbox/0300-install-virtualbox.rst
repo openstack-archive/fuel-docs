@@ -21,7 +21,7 @@ verify whether you meet these requirements:
 #. Run VirtualBox on a stable host system; we recommend 64-bit host OS.
    The scripts have been tested on Mac OS 10.7.5, Mac OS 10.8.3,
    Ubuntu 12.04, Ubuntu 12.10, Ubuntu 14.04, Fedora 19, OpenSUSE 12.2/12.3,
-   and Windows 7 x64 + Cygwin_x64.
+   Windows 7 x64 + Cygwin_x64, and Windows 8 x64 + Cygwin_x64.
 
 #. Download and install
    `VirtualBox <https://www.virtualbox.org/wiki/Downloads>`__ 4.2.16 or later.
