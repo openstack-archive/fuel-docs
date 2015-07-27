@@ -5,15 +5,12 @@
 HowTo: Backport Galera Pacemaker OCF script
 ===========================================
 
-Fuel 5.1 has a completely redesigned OCF script
-which makes the :ref:`Galera cluster<galera-cluster-term>`
-more reliable and predictable.
-This can be backported to the Fuel 5.0 release
-following the instructions below;
-similar steps could be used
-to backport to older versions
-by adjusting the MySQL commands to match
-those used by the specific version of MySQL.
+Starting from Fuel 5.1, OCF script was completely redesigned which
+makes the :ref:`Galera cluster<galera-cluster-term>` cluster more
+reliable and predictable. The script can be backported to the Fuel
+pre-5.1 releases following the instructions below; similar steps could
+be used to backport to the older versions by adjusting the MySQL
+commands to match those used by the specific version of MySQL.
 
 .. warning:: Before performing any operations with Galera,
    you should schedule the maintenance window,
