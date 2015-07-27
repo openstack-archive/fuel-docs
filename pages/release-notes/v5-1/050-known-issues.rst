@@ -39,11 +39,9 @@ but it has some known limitations:
   download `deb <http://mirror.fuel-infra.org/fwm/6.0/ubuntu/pool/main/cirros-testvmware_0.3.3-ubuntu5_amd64.deb>`_
   and `rpm <http://mirror.fuel-infra.org/fwm/6.0/centos/os/x86_64/Packages/cirros-testvm-0.3.2-3.mira1.x86_64.rpm>`_ packages
   and replace the old packages with downloaded ones on the Fuel master node.
-  After deployment, run the following command on the controller:
+  After deployment, run the following command on the controller::
 
-  ::
-
-         glance image-update --property vmware_adaptertype="lsiLogic" UUID-of-TestVM
+    glance image-update --property vmware_adaptertype="lsiLogic" UUID-of-TestVM
 
 See `LP1365468 <https://bugs.launchpad.net/fuel/+bug/1365468>`_.
 
@@ -76,9 +74,7 @@ with the following known limitations:
   and the Neutron L3 and DHCP agents do not start.
   To work around this problem,
   remove Corosync resource bindings (collocations and orders)
-  tied up with *clone_p_neutron-openvswitch-agent*:
-
-  ::
+  tied up with *clone_p_neutron-openvswitch-agent*::
 
      crm configure delete dhcp-after-ovs
      crm configure delete dhcp-with-ovs
@@ -139,9 +135,7 @@ but it has some known limitations:
   of available virtual functions to decline.
   To work around this issue,
   restart the eswitchd
-  service on the compute node with the following command:
-
-  ::
+  service on the compute node with the following command::
 
     service eswitchd restart
 
@@ -220,14 +214,10 @@ Networking issues
   This error causes agents to migrate to another host;
   instances lose their IP addresses
   because they can no longer access the DHCP server.
-  To resolve this problem, issue the following commands:
+  To resolve this problem, issue the following commands::
 
-  ::
-
-       ethtool -K eth1 gso off
-       ethtool -K eth1 gro off
-
-
+     ethtool -K eth1 gso off
+     ethtool -K eth1 gro off
 
   See `LP1275650 <https://bugs.launchpad.net/bugs/1275650>`_.
 
@@ -276,9 +266,7 @@ Networking issues
   To resolve this issue,
   edit the */etc/sysctl.conf* file on each Compute node
   and assign a value of "1" (enabled)
-  to each of the following settings:
-
-  ::
+  to each of the following settings::
 
     net.bridge.bridge-nf-call-arptables = 1
     net.bridge.bridge-nf-call-iptables = 1
@@ -321,12 +309,10 @@ To resolve the problem:
 
 #. On each Controller node where Horizon runs,
    issue the following command to correct the permissions set
-   in the *openstack.roles.admin* file:
+   in the *openstack.roles.admin* file::
 
-   ::
-
-       grep -Irl "openstack.roles.admin" /usr/share/openstack-dashboard/openstack_dashboard/|xargs
-       sed -i 's/openstack.roles.admin/openstack.roles.customadmin/g' && service apache2 restart
+     grep -Irl "openstack.roles.admin" /usr/share/openstack-dashboard/openstack_dashboard/|xargs
+     sed -i 's/openstack.roles.admin/openstack.roles.customadmin/g' && service apache2 restart
 
 #. Edit the
    */usr/share/openstack/openstack-dashboard/openstack_dashboard/api/keystone.py*
@@ -409,17 +395,14 @@ To work this problem around, follow these steps:
 
 #. Log into the Fuel Master node as root.
 
-#. Install patch package:
+#. Install patch package::
 
-   ::
-
-      yum install patch -y
+     yum install patch -y
 
 #. Download the patch from `LP1401503 <https://bugs.launchpad.net/bugs/1401503>`_.
-   and apply it:
+   and apply it::
 
-   ::
-      patch --verbose -p0 < apps-upload-check.patch
+     patch --verbose -p0 < apps-upload-check.patch
 
 
 Other limitations
