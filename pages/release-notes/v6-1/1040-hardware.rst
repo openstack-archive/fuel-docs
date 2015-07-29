@@ -61,9 +61,6 @@ Known hardware issues
 
 * Intel X710 CNA is not supported at the moment. See `LP1445562`_.
 
-* Intel X540-AT2 is not supported, and we strongly not recommend using
-  it at the moment.
- 
 
 
 
