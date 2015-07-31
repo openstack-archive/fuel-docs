@@ -162,7 +162,7 @@ script behavior:
 
 ::
 
-  /etc/fuel-creamirror/common.cfg
+  /etc/fuel-createmirror/common.cfg
 
 In this file you can redefine the upstream mirrors, set local
 paths for repositories, configure the upstream packages mirroring
