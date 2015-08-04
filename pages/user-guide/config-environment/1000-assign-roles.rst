@@ -54,11 +54,6 @@ If you want to modify the roles assigned to a node:
 
   .. image:: /_images/user_screen_shots/assign-roles4.png
 
-To rename the nodes, click on the "Untitled" string
-for each node and then type in the name you want to use.
-The suffix is the last digits of the MAC address for this node;
-you can keep these digits or delete them.
-
 You can remove an offline node from the inventory by selecting it
 and clicking "Remove". This will remove the node from the pool
 of available nodes completely.
@@ -72,6 +67,46 @@ Fuel CLI, see :ref:`Remove a node from Fuel DB <remove-inv>`.
 
 .. image:: /_images/user_screen_shots/remove-node-inventory.png
 
+To rename the nodes, click on the "Untitled" string
+for each node and then type in the name you want to use.
+The suffix is the last digits of the MAC address for this node;
+you can keep these digits or delete them.
+
+.. note:: You can change the node names at any time: before
+          the deployment or after it.
+
+Beginning with Fuel 7.0, you can define the hostnames of the slave
+nodes through Fuel Web UI or CLI prior to deploying an environment.
+
+.. note:: Whereas you can change the **node names** at any time (before
+          the deployment or after it), you can only change the
+          **hostnames** before the deployment. Hostnames are
+          locked after the deployment and there is no way to change
+          them.
+
+To change the hostnames (which will be locked after the deployment),
+in Fuel Web UI select the "Nodes" tab and then click the
+settings icon next to the node for which you want to define the
+hostname:
+
+.. image:: /_images/user_screen_shots/define-hostname01.png
+
+In the pop-up window, type in the hostname that you would like to
+assign to the node:
+
+.. image:: /_images/user_screen_shots/define-hostname02.png
+
+You can also set the hostname through Fuel CLI by issuing the
+following command:
+
+::
+
+  fuel node --node <NODE_ID> --hostname <NODE_HOSTNAME>
+
+where <NODE_ID> points to a specific node identified by its ID
+(a number) that you can get by issuing the ``fuel nodes`` command;
+<NODE_HOSTNAME> is the new hostname for the node that want to set.
+
 For more information, see:
 
 - :ref:`nodes-roles-arch` describes the Controller,
@@ -82,5 +117,3 @@ For more information, see:
 - :ref:`mongodb-term` for information about MongoDB.
 - :ref:`operating-system-role-term` defines the Operating System role
   and points to other documents with additional information.
-
-
