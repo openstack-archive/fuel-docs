@@ -8,7 +8,7 @@ Major Component Versions
 * **Operating Systems**
 
   * CentOS 6.5 (x86_64 architecture only)
-  * Ubuntu 14.04.4 (x86_64 architecture only)
+  * Ubuntu 14.04.2 (x86_64 architecture only)
 
 * **Puppet (IT automation tool)** `3.4.2
   <https://docs.puppetlabs.com/puppet/3/reference/release_notes.html>`_
