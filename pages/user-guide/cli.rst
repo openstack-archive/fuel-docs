@@ -417,8 +417,8 @@ Also, you can deploy and provision only some nodes like this
 
 ::
 
-  fuel --env <env_id> node --provision --node <node1_id>,<node2_id>
-  fuel --env <env_id> node --deploy --node <node1_id>,<node2_id>
+  fuel node --provision --node <node1_id>,<node2_id>
+  fuel node --deploy --node <node1_id>,<node2_id>
 
 .. _cli-fuel-password:
 
