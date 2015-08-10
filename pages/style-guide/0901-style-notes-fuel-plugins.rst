@@ -4,13 +4,13 @@ Creating documentation for Fuel Plugins
 =======================================
 
 Beginning with Fuel 6.0 release, you can create your own plugin
-and certify it.
-For certification procedure, you need to provide Mirantis
+and validate it.
+For the validation procedure, you need to provide Mirantis
 with the required package of documentation and the plugin itself.
 
 As to the documentation, it is divided into two blocks:
 
-* Provided for certification procedure and created in pdf:
+* Provided for the validation procedure and created in pdf:
 
   #. Plugin Guide
 
@@ -200,37 +200,37 @@ Checklist
 +++++++++
 
 Please, before sending out the document
-for certification,
+for validation,
 use this checklist to verify that it
 meets all necessary requirements:
 
- +-----------------------------------------------------+-------------------+
- |Issue                                                | Tick if done      |
- +=====================================================+===================+
- | Plugin version is the same as the one               |                   |
- | defined in plugin's *metadata.yaml* file.           |                   |
- +-----------------------------------------------------+-------------------+
- | Plugin's name stays the same and does not           |                   |
- | change within the document.                         |                   |
- +-----------------------------------------------------+-------------------+
- | All external links are clickable and                |                   |
- | lead to the existing pages with actual content.     |                   |
- +-----------------------------------------------------+-------------------+
- | All screenshots are properly cropped, have high     |                   |
- | quality and provide the required information. The   |                   |
- | plugin-related UI elements are explained.           |                   |
- +-----------------------------------------------------+-------------------+
- | All terms and complex concepts are put into         |                   |
- | *Key terms, acronyms and abbreviations* table,      |                   |
- | even if it goes about IP or UI.                     |                   |
- +-----------------------------------------------------+-------------------+
- | All commands have correct syntax and can be copied  |                   |
- | right into the console from the document.           |                   |
- +-----------------------------------------------------+-------------------+
- | All steps have right order and the numbered lists   |                   |
- | are not mixed up. All lists have the same style     |                   |
- | that does not change within the document.           |                   |
- +-----------------------------------------------------+-------------------+
++-----------------------------------------------------+-------------------+
+|Issue                                                | Tick if done      |
++=====================================================+===================+
+| Plugin version is the same as the one               |                   |
+| defined in plugin's *metadata.yaml* file.           |                   |
++-----------------------------------------------------+-------------------+
+| Plugin's name stays the same and does not           |                   |
+| change within the document.                         |                   |
++-----------------------------------------------------+-------------------+
+| All external links are clickable and                |                   |
+| lead to the existing pages with actual content.     |                   |
++-----------------------------------------------------+-------------------+
+| All screenshots are properly cropped, have high     |                   |
+| quality and provide the required information. The   |                   |
+| plugin-related UI elements are explained.           |                   |
++-----------------------------------------------------+-------------------+
+| All terms and complex concepts are put into         |                   |
+| *Key terms, acronyms and abbreviations* table,      |                   |
+| even if it goes about IP or UI.                     |                   |
++-----------------------------------------------------+-------------------+
+| All commands have correct syntax and can be copied  |                   |
+| right into the console from the document.           |                   |
++-----------------------------------------------------+-------------------+
+| All steps have right order and the numbered lists   |                   |
+| are not mixed up. All lists have the same style     |                   |
+| that does not change within the document.           |                   |
++-----------------------------------------------------+-------------------+
 
 
 
