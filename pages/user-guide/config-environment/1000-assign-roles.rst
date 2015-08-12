@@ -105,15 +105,21 @@ following command:
 
 where <NODE_ID> points to a specific node identified by its ID
 (a number) that you can get by issuing the ``fuel nodes`` command;
-<NODE_HOSTNAME> is the new hostname for the node that want to set.
+<NODE_HOSTNAME> is the new hostname for the node that you want to set.
+
+Beginning with Fuel 7.0, after adding and enabling custom plugins for
+a cluster, you can define a new role described in these plugins
+via Fuel Web UI as well as via :ref:`Fuel CLI<cli_usage>`.
+You can find more information in `Fuel Plugins SDK
+<https://wiki.openstack.org/wiki/Fuel/Plugins#Configuration_of_Fuel_Plugins_with_new_roles>`_.
 
 For more information, see:
 
-- :ref:`nodes-roles-arch` describes the Controller,
+- :ref:`nodes-roles-arch` that describes the Controller,
   Compute, and Storage nodes.
-- :ref:`storage-plan` for more details about the
+- :ref:`storage-plan` that describes the
   ramifications of the different Storage roles.
-- :ref:`nodes-roles-plan` includes guidelines about setting up nodes.
-- :ref:`mongodb-term` for information about MongoDB.
-- :ref:`operating-system-role-term` defines the Operating System role
+- :ref:`nodes-roles-plan` that includes guidelines about setting up nodes.
+- :ref:`mongodb-term` that outlines MongoDB database.
+- :ref:`operating-system-role-term` that defines the Operating System role
   and points to other documents with additional information.
