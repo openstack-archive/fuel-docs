@@ -28,7 +28,7 @@ Run the following command on the Fuel Master node to obtain a local mirror of th
 
 After rsync’ing the updates repository from the Mirantis mirror to the Fuel Master node internal repository, a special script can be used for the automated update of the nodes in all or particular environments:
 
-       `mos_apply_mu.py <https://review.fuel-infra.org/gitweb?p=tools/sustaining.git;a=blob_plain;f=scripts/mos_apply_mu.py;hb=refs/heads/master>`_
+       `mos_apply_mu.py <https://github.com/Mirantis/tools-sustaining/raw/master/scripts/mos_apply_mu.py>`_
 
 This script updates all nodes one by one and should be run on the Fuel Master node in the following manner in order to update nodes in the environment `X` given that IP address of the Fuel Master node is 10.20.0.2, Fuel user name is `user_name`, password is `user_password` and tenant_name is `tenant_name`::
 
