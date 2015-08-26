@@ -1,11 +1,13 @@
-.. index:: Style Guide
+:orphan:
 
-.. _style-guide:
+#.. index:: Style Guide
 
-===========
-Style Guide
-===========
+#.. _style-guide:
 
-.. contents:: :local:
+#===========
+#Style Guide
+#===========
 
-.. include:: /contents/contents-style-guide.rst
+#.. contents:: :local:
+
+#.. include:: /contents/contents-style-guide.rst
