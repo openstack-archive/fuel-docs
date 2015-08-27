@@ -42,5 +42,5 @@ Run the following commands on OpenStack controller nodes::
     apt-get update
     apt-get install --only-upgrade -y python-keystone*
     apt-get install --only-upgrade -y keystone*
-    initctl restart openstack-keystone
+    initctl restart keystone
 
