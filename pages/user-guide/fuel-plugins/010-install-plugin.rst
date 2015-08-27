@@ -72,3 +72,11 @@ Installation procedure is common for all plugins, but their requirements differ.
 For Fuel plugins CLI reference, see :ref:`the corresponding section <fuel-plugins-cli>`.
 
 
+View installed plugins
+----------------------
+
+Click the *Plugins* button in Fuel Web UI to view installed plugins,
+their versions, Mirantis OpenStack compatibility information,
+and providers' names.
+
+.. image:: /_images/user_screen_shots/plugins-tab.png
