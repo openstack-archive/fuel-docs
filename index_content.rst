@@ -51,7 +51,7 @@ network considerations, deployment options and architectures.
 
 `Fuel Plugin Guide <plugin-dev.html#plugin-dev>`_
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Explains how to develop and certify your own plugin for Fuel.
+Explains how to develop and validate your own plugin for Fuel.
 
 `Terminology Reference <terminology.html#terminology-ref>`_
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
