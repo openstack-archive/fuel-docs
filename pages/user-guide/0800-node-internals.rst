@@ -2,8 +2,8 @@
 .. _nodes-cli:
 
 
-What stands for acronyms in CLI commands
-++++++++++++++++++++++++++++++++++++++++
+Interpretation of acronyms in CLI commands
+++++++++++++++++++++++++++++++++++++++++++
 
 CLI commands contain a number
 of acronyms.
