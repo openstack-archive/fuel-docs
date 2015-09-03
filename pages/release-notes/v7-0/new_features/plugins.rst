@@ -19,6 +19,11 @@ Fuel Plugins
   `Configuration of Fuel Plugins with new roles <https://wiki.openstack.org/wiki/Fuel/Plugins#Configuration_of_Fuel_Plugins_with_new_roles>`_
   section of the Fuel Plugins SDK.
 
+* Fuel 7.0 enables you to separate the main services from the Controller role
+  and deploy them on a custom role with a plugin.
+  See `How to separate services from Controller with a plugin <https://wiki.openstack.org/wiki/Fuel/Plugins#How_to_separate_services_from_Controller_with_a_plugin>`_
+  for details.
+
 * Sometimes, new functionality, minor updates, or security fixes
   should be delivered. Hence, a plugin developer creates a new version
   of a plugin. For more information on how
