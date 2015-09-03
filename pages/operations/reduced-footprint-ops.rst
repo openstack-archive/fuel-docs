@@ -76,12 +76,12 @@ Reduced footprint flow detailed
 #. Upload the virtual machine configuration to Fuel. On the
    Fuel Master node, issue the following command::
 
-     fuel2 node create-vms-conf <NODE_ID> --conf‚{"id":<VM_ID>, \
+     fuel2 node create-vms-conf <NODE_ID> --conf {"id":<VM_ID>, \
      "mem":<MEMORY_SIZE>,"cpu":<CPU_CORE_COUNT>}
 
    For example::
 
-     fuel2 node create-vms-conf 2 —conf‚{"id":1,"mem”:2,"cpu":4}
+     fuel2 node create-vms-conf 2 --conf {"id":1,"mem”:2,"cpu":4}
 
    where <NODE_ID> is "virt" node ID, <VM_ID> is VM ID that should
    be unique on that "virt" node, <MEMORY_SIZE> is the memory amount
