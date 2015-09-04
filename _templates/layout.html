@@ -170,4 +170,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','{{ theme_googletag }}');</script>
 <!-- End Google Tag Manager -->
+
+<!-- RTP tag --> 
+<script type='text/javascript'>
+(function(c,h,a,f,i){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+ c[a].a=i;var g=h.createElement("script");g.async=true;g.type="text/javascript";
+ g.src=f+'?aid='+i;var b=h.getElementsByTagName("script")[0];b.parentNode.insertBefore(g,b);
+ })(window,document,"rtp","//sjrtp7-cdn.marketo.com/rtp-api/v1/rtp.js","mirantis");
+ 
+rtp('send','view');
+rtp('get', 'campaign',true);
+</script>
+<!-- End of RTP tag -->
 {% endblock %}
