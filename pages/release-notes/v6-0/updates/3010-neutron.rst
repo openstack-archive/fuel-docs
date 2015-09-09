@@ -109,6 +109,13 @@ Resolved Issues
   The fix skips the None id when getting ``security_group_ids`` in
   the `securitygroup.py` file. See `LP1429065`_.
 
+* When a DHCP agent creates a port for a network, a failure can occur
+  due to a lack of available IP addresses in the allocation pool. The
+  fix stops a resync attempt on the agent's side if a failure is
+  caused by an IP address generation problem. New updates to the
+  subnet cause another attempt. So if the tenant fixes the issue,
+  the DHCP service becomes available. See `LP1450142`_.
+
 Known Issues
 ++++++++++++
 
@@ -170,4 +177,5 @@ Known Issues
 .. _`LP1442251`: https://bugs.launchpad.net/fuel/+bug/1442251
 .. _`LP1396594`: https://bugs.launchpad.net/fuel/+bug/1396594
 .. _`LP1429065`: https://bugs.launchpad.net/mos/+bug/1429065
+.. _`LP1450142`: https://bugs.launchpad.net/mos/+bug/1450142
 .. _`LP1436414`: https://bugs.launchpad.net/fuel/+bug/1436414
