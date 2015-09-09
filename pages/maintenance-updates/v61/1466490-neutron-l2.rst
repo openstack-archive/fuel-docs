@@ -1,9 +1,7 @@
 .. _mos61mu-1466490:
 
-Neutron L2 agent performs a DoS because of incorrectly allowed
-==============================================================
-address pairs
-=============
+Neutron L2 agent performs a DoS because of incorrectly allowed address pairs
+============================================================================
 
 By adding an address pair which is rejected as invalid by the ipset
 tool, an authenticated user may break the Neutron L2 agent resulting
