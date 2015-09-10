@@ -23,6 +23,12 @@ If you deploy an environment that uses bare-metal nodes with Ubuntu
 14.04 bootstrap, check each node and manually reassign the networks
 to the correct interfaces.
 
+.. note::
+   To build an Ubuntu based bootstrap image, the Fuel Master node must
+   have an access to the Internet or at least access to the Ubuntu and
+   Mirantis OpenStack mirrors. See `LP1486551`_.
+
 .. Links
 
 .. _`LP1487044`: https://bugs.launchpad.net/mos/+bug/1487044
+.. _`LP1486551`: https://bugs.launchpad.net/fuel/+bug/1486551
