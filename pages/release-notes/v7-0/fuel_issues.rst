@@ -2,10 +2,10 @@
 .. _support:
 
 Fuel Resolved and Known Issues
-------------------------------
+==============================
 
 Resolved Issues
-+++++++++++++++
+---------------
 
 .. include:: /pages/release-notes/v7-0/fuel_issues/database_growth_resolved.rst
 .. include:: /pages/release-notes/v7-0/fuel_issues/ip_range_resolved.rst
@@ -20,7 +20,7 @@ Resolved Issues
 .. include:: /pages/release-notes/v7-0/fuel_issues/rabbitmq_murano_same_port_resolved.rst
 
 Known Issues
-++++++++++++
+------------
 
 .. include:: /pages/release-notes/v7-0/fuel_issues/ip_range_issue.rst
 .. include:: /pages/release-notes/v7-0/fuel_issues/virt_vlan_issue.rst
