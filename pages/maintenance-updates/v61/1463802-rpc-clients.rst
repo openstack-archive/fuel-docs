@@ -1,9 +1,7 @@
 .. _mos61mu-1463802:
 
-RPC clients cannot find a reply queue after the last RabbitMQ server
-====================================================================
-restarts in the cluster
-=======================
+RPC clients cannot find a reply queue after the last RabbitMQ server restarts in the cluster
+============================================================================================
 
 When RabbitMQ restarts and the queues dissapear, ``oslo.messaging``
 may get stuck during the reconnection process. As a result, some of
