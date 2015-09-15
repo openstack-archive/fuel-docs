@@ -89,7 +89,17 @@ New Features Included in Mirantis OpenStack 7.0
 .. include:: /pages/release-notes/v7-0/new_features/neutron.rst
 .. include:: /pages/release-notes/v7-0/new_features/keystone.rst
 .. include:: /pages/release-notes/v7-0/new_features/gpg_signature.rst
-
+.. include:: /pages/release-notes/v7-0/new_features/admin_bonding_rn.rst
+.. include:: /pages/release-notes/v7-0/new_features/auth_snapshot_download.rst
+.. include:: /pages/release-notes/v7-0/new_features/configurable_hostnames_rn.rst
+.. include:: /pages/release-notes/v7-0/new_features/dashboard_rn.rst
+.. include:: /pages/release-notes/v7-0/new_features/jumbo_frames_rn.rst
+.. include:: /pages/release-notes/v7-0/new_features/node_labels_rn.rst
+.. include:: /pages/release-notes/v7-0/new_features/reduced_footprint_rn.rst
+.. include:: /pages/release-notes/v7-0/new_features/rollback_rn.rst
+.. include:: /pages/release-notes/v7-0/new_features/selectable_offloading_rn.rst
+.. include:: /pages/release-notes/v7-0/new_features/ssl_rn.rst
+.. include:: /pages/release-notes/v7-0/new_features/templates_networking_rn.rst
 
 .. seealso::
 
