@@ -88,6 +88,7 @@ New Features Included in Mirantis OpenStack 7.0
 .. include:: /pages/release-notes/v7-0/new_features/compute_vmware_role.rst
 .. include:: /pages/release-notes/v7-0/new_features/neutron.rst
 .. include:: /pages/release-notes/v7-0/new_features/keystone.rst
+.. include:: /pages/release-notes/v7-0/new_features/gpg_signature.rst
 
 
 .. seealso::
