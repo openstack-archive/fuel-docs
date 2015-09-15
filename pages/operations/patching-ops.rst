@@ -241,7 +241,7 @@ To run a complete Puppet cycle on a slave node, run:
 If you want to just update Puppet manifests and apply a single task, then run:
 
 * Update fuel-libraryX.X on Fuel Master ``yum update``
-* Run ``fuel node --node node-XX --deploy --task rsync_core_puppet hiera globals TASK``
+* Run ``fuel node --node node-XX --task rsync_core_puppet hiera globals TASK``
 
 .. note::
    The tasks rsync_core_puppet, hiera, and globals are required for
