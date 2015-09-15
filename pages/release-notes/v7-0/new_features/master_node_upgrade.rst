@@ -3,12 +3,12 @@
 
 .. TODO: this should be updated
 
-Fuel Master Node can be upgraded from 5.1.x or 6.0 to 6.1 GA
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Fuel Master Node can be upgraded from 6.x to 7.0 GA
++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-If you are running a Mirantis OpenStack 5.1, 5.1.1, or 6.0 environment,
-you can upgrade your Fuel Master Node to Fuel 6.1.
-Fuel can manage environments that were deployed with 6.0 releases,
+If you are running a Mirantis OpenStack 6.x environment,
+you can upgrade your Fuel Master Node to Fuel 7.0.
+Fuel can manage environments that were deployed with 6.x releases,
 assuming that you created the environment with the earlier release
 and upgraded the Fuel Master node rather than doing a fresh install.
 For a list of OpenStack releases and versions that your Fuel Master

@@ -12,4 +12,4 @@
 
     ln -s ../init.d/pacemaker K00pacemaker
 
- See `LP1492210 <https://bugs.launchpad.net/fuel/+bug/1492210>`_.
+  See `LP1492210 <https://bugs.launchpad.net/fuel/+bug/1492210>`_.

@@ -33,3 +33,4 @@ Known Issues
 .. include:: /pages/release-notes/v7-0/fuel_issues/disk_partitioning_issue.rst
 .. include:: /pages/release-notes/v7-0/fuel_issues/deployment_failure_issue.rst
 .. include:: /pages/release-notes/v7-0/fuel_issues/progress_bar_plugin_issue.rst
+.. include:: /pages/release-notes/v7-0/fuel_issues/upgrade_revert_issue.rst
