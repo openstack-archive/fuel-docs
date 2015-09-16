@@ -13,12 +13,6 @@ containing fixes for the following issues:
   See `LP1468744 <https://bugs.launchpad.net/bugs/1468744>`_,
   `CVE2015-3988 <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-3988>`_.
 
-* When using the :option:`--nic port-id` option for ``nova boot`` to
-  bind a server to an existing port, Nova deletes the preexisting port
-  while deleting a VM. This behavior is not correct since the
-  user has a preallocated port object and expects it to be only
-  unbound after the VM is removed. See `LP1486727 <https://bugs.launchpad.net/bugs/1486727>`_.
-
 * Now it is possible to change the default permissions for the files
   created by Swift in order to restrict access to these files.
   See `LP1459703 <https://bugs.launchpad.net/bugs/1459703>`_.
@@ -53,7 +47,6 @@ containing fixes for the following issues:
 Affected packages
 -----------------
 * **Centos\@6.1:** openstack-cinder=2014.2.2-fuel6.1.mira9
-* **Centos\@6.1:** openstack-dashboard=2014.2.2-fuel6.1.mira25
 * **Centos\@6.1:** openstack-glance=2014.2.2-fuel6.1.mira8
 * **Centos\@6.1:** openstack-heat-api=2014.2.2-fuel6.1.mira8
 * **Centos\@6.1:** openstack-heat-api-cfn=2014.2.2-fuel6.1.mira8
@@ -122,14 +115,11 @@ Affected packages
 * **Ubuntu\@6.1:** nova-volume=2014.2.2-1~u14.04+mos30
 * **Ubuntu\@6.1:** nova-xvpvncproxy=2014.2.2-1~u14.04+mos30
 * **Ubuntu\@6.1:** python-nova=2014.2.2-1~u14.04+mos30
-* **Ubuntu\@6.1:** openstack-dashboard=2014.2.2-1~u14.04+mos25
-* **Ubuntu\@6.1:** python-django-horizon=2014.2.2-1~u14.04+mos25
 * **Ubuntu\@6.1:** sahara=2014.2.2-1~u14.04+mos16
 
 Fixed packages
 --------------
 * **Centos\@6.1:** openstack-cinder=2014.2.2-fuel6.1.mira10
-* **Centos\@6.1:** openstack-dashboard=2014.2.2-fuel6.1.mira27
 * **Centos\@6.1:** openstack-glance=2014.2.2-fuel6.1.mira9
 * **Centos\@6.1:** openstack-heat-api=2014.2.2-fuel6.1.mira10
 * **Centos\@6.1:** openstack-heat-api-cfn=2014.2.2-fuel6.1.mira10
@@ -198,8 +188,6 @@ Fixed packages
 * **Ubuntu\@6.1:** nova-volume=2014.2.2-1~u14.04+mos31
 * **Ubuntu\@6.1:** nova-xvpvncproxy=2014.2.2-1~u14.04+mos31
 * **Ubuntu\@6.1:** python-nova=2014.2.2-1~u14.04+mos31
-* **Ubuntu\@6.1:** openstack-dashboard=2014.2.2-1~u14.04+mos27
-* **Ubuntu\@6.1:** python-django-horizon=2014.2.2-1~u14.04+mos27
 * **Ubuntu\@6.1:** sahara=2014.2.2-1~u14.04+mos17
 
 Patching scenario - CentOS
