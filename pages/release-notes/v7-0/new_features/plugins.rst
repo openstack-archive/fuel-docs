@@ -12,8 +12,8 @@ Fuel Plugins
   `Virtual IP reservation via Fuel Plugin's metadata <https://wiki.openstack.org/wiki/Fuel/Plugins#Virtual_IP_reservation_via_Fuel_Plugin.27s_metadata>`_
   section of the Fuel Plugins SDK.
 
-* Beginning with Fuel 7.0, after adding and enabling custom plugins for
-  a cluster, a user can define a new role described in these plugins
+* After adding and enabling custom plugins for
+  a cluster, you can now define a new role described in these plugins
   via Fuel Web UI as well as via :ref:`Fuel CLI<cli_usage>`.
   You can find more information in
   `Configuration of Fuel Plugins with new roles <https://wiki.openstack.org/wiki/Fuel/Plugins#Configuration_of_Fuel_Plugins_with_new_roles>`_

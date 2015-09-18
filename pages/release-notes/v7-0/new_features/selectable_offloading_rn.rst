@@ -1,8 +1,8 @@
 Selectable offloading modes
 +++++++++++++++++++++++++++
 
-You can select offloading modes for physical interfaces starting with
-Fuel 7.0. The number and the set of possible offloading types
+You can now select offloading modes for physical interfaces.
+The number and the set of possible offloading types
 depends on the interfaces' hardware and the current kernel version.
 
 Fuel automatically detects the offloading modes for any given physical

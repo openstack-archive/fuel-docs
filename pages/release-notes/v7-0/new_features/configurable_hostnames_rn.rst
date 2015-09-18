@@ -1,7 +1,7 @@
 Configurable hostnames
 ++++++++++++++++++++++
 
-Starting with Fuel 7.0, you can define the hostnames of the slave
+You can define the hostnames of the slave
 nodes through Fuel Web UI or CLI prior to deploying an environment.
 
 .. note:: Whereas you can change the **node names** at any time (before

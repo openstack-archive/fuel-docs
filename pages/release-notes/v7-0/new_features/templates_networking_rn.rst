@@ -1,7 +1,7 @@
 Networking templates support
 ++++++++++++++++++++++++++++
 
-Starting with Fuel 7.0 you can use networking templates.
+You can now use networking templates.
 Templates allow for more flexible network configurations and provide
 you with the following abilities:
 
