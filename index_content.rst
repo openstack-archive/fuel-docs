@@ -12,7 +12,6 @@ PDF
 `User Guide PDF <pdf/Mirantis-OpenStack-6.1-UserGuide.pdf>`_
 `Operations Guide PDF <pdf/Mirantis-OpenStack-6.1-OperationsGuide.pdf>`_
 `Monitoring Guide PDF <pdf/Mirantis-OpenStack-6.1-MonitoringGuide.pdf>`_
-`Running Mirantis OpenStack on VirtualBox PDF <pdf/Mirantis-OpenStack-6.1-Running-Mirantis-OpenStack-on-VirtualBox.pdf>`_
 `Reference Architectures PDF <pdf/Mirantis-OpenStack-6.1-ReferenceArchitecture.pdf>`_
 `Fuel Plugin Guide PDF <pdf/Mirantis-OpenStack-6.1-FuelPluginGuide.pdf>`_
 `Terminology Reference PDF <pdf/Mirantis-OpenStack-6.1-Terminology-Reference.pdf>`_
@@ -44,10 +43,6 @@ your Mirantis OpenStack environment.
 `Monitoring Guide <monitoring-guide.html#monitoring-guide>`_
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Provides general concept on how to monitor OpenStack.
-
-`Running Mirantis OpenStack on VirtualBox <virtualbox.html#virtualbox>`_
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Explains how to run Mirantis OpenStack on VirtualBox.
 
 `Reference Architecture <reference-architecture.html#ref-arch>`_
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
