@@ -72,9 +72,6 @@ for each node and then type in the name you want to use.
 The suffix is the last digits of the MAC address for this node;
 you can keep these digits or delete them.
 
-.. note:: You can change the node names at any time: before
-          the deployment or after it.
-
 Beginning with Fuel 7.0, you can define the hostnames of the slave
 nodes through Fuel Web UI or CLI prior to deploying an environment.
 
