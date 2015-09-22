@@ -1,7 +1,8 @@
 Custom labels for nodes
 +++++++++++++++++++++++
 
-You can now add custom labels to nodes in Fuel Web UI so that
-it is easier to tell them apart.
+You can now add custom defined key pair labels (ex. Rack : 1)
+to nodes to help identify nodes or groups of nodes by custom
+characteristics.
 
 See :ref:`add-nodes-ug`.
