@@ -5,3 +5,4 @@
   and then verifying normal operation via ``dockerctl check all``.
   Note that this impacts only users who attempt at 6.1 to 7.0 upgrade
   and the upgrade fails for some reason.
+  See `LP1495933 <https://bugs.launchpad.net/fuel/+bug/1495933>`_.
