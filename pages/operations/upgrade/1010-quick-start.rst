@@ -34,7 +34,7 @@ install the Upgrade Script in the system:
 ::
 
     yum install -y git
-    git clone -b stable/6.1 https://github.com/Mirantis/octane.git
+    git clone -b stable/6.1 https://github.com/stackforge/fuel-octane.git
     cd octane/octane/bin && ./octane prepare
 
 Pick environment to upgrade

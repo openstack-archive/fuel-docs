@@ -108,7 +108,7 @@ and libs into the current directory:
 
 ::
 
-    git clone -b stable/6.1 https://github.com/Mirantis/octane.git
+    git clone -b stable/6.1 https://github.com/stackforge/fuel-octane.git
 
 Now change to the directory that contains executable files including
 the ``octane`` script itself:
