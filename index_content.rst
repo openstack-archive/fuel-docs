@@ -7,16 +7,16 @@
 PDF
 ~~~
 
-`QuickStart Guide PDF <pdf/Mirantis-OpenStack-6.1-QuickStartGuide.pdf>`_
-`Planning Guide PDF <pdf/Mirantis-OpenStack-6.1-PlanningGuide.pdf>`_
-`User Guide PDF <pdf/Mirantis-OpenStack-6.1-UserGuide.pdf>`_
-`Operations Guide PDF <pdf/Mirantis-OpenStack-6.1-OperationsGuide.pdf>`_
-`Monitoring Guide PDF <pdf/Mirantis-OpenStack-6.1-MonitoringGuide.pdf>`_
-`Reference Architectures PDF <pdf/Mirantis-OpenStack-6.1-ReferenceArchitecture.pdf>`_
-`Fuel Plugin Guide PDF <pdf/Mirantis-OpenStack-6.1-FuelPluginGuide.pdf>`_
-`Terminology Reference PDF <pdf/Mirantis-OpenStack-6.1-Terminology-Reference.pdf>`_
-`File Format Reference PDF <pdf/Mirantis-OpenStack-6.1-File-Format-Reference.pdf>`_
-`Release Notes PDF <pdf/Mirantis-OpenStack-6.1-RelNotes.pdf>`_
+`QuickStart Guide PDF <pdf/Mirantis-OpenStack-7.0-QuickStartGuide.pdf>`_
+`Planning Guide PDF <pdf/Mirantis-OpenStack-7.0-PlanningGuide.pdf>`_
+`User Guide PDF <pdf/Mirantis-OpenStack-7.0-UserGuide.pdf>`_
+`Operations Guide PDF <pdf/Mirantis-OpenStack-7.0-OperationsGuide.pdf>`_
+`Monitoring Guide PDF <pdf/Mirantis-OpenStack-7.0-MonitoringGuide.pdf>`_
+`Reference Architectures PDF <pdf/Mirantis-OpenStack-7.0-ReferenceArchitecture.pdf>`_
+`Fuel Plugin Guide PDF <pdf/Mirantis-OpenStack-7.0-FuelPluginGuide.pdf>`_
+`Terminology Reference PDF <pdf/Mirantis-OpenStack-7.0-Terminology-Reference.pdf>`_
+`File Format Reference PDF <pdf/Mirantis-OpenStack-7.0-File-Format-Reference.pdf>`_
+`Release Notes PDF <pdf/Mirantis-OpenStack-7.0-RelNotes.pdf>`_
 
 Guides
 ~~~~~~
@@ -70,6 +70,7 @@ fixed issues, and known limitations in Mirantis OpenStack |version|.
 Prior releases
 ~~~~~~~~~~~~~~
 
+`Mirantis OpenStack 6.1 <https://docs.mirantis.com/fuel/fuel-6.1/>`_
 `Mirantis OpenStack 6.0 <https://docs.mirantis.com/fuel/fuel-6.0/>`_
 `Mirantis OpenStack 5.1.1 <https://docs.mirantis.com/fuel/fuel-5.1/>`_
 `Mirantis OpenStack 5.1 <https://docs.mirantis.com/fuel/fuel-5.1/>`_
@@ -99,7 +100,7 @@ Watch the Mirantis OpenStack demos at https://www.youtube.com/watch?v=ET4hkzb_QR
 
 .. container:: home-title
 
-  Mirantis OpenStack v6.1 Documentation
+  Mirantis OpenStack v7.0 Documentation
 
 .. container:: what-is-mirantis-openstack
 
