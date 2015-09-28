@@ -49,7 +49,7 @@ Networking Templates Samples
 ++++++++++++++++++++++++++++
 
 You can download samples from the `network_templates repository
-folder <https://github.com/stackforge/fuel-qa/tree/master/fuelweb_test/network_templates>`_.
+folder <https://github.com/stackforge/fuel-docs/tree/master/examples/network_templates>`_.
 
 .. note:: There is no default or generated template in your Fuel
           installation provided by default.
