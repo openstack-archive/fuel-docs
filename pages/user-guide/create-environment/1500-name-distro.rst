@@ -14,7 +14,7 @@ and select the Linux distribution from the drop-down list:
 
 ::
 
-    Kilo on Ubuntu 14.04.1 (2015.1.0-7.0) (default)
+    Kilo on Ubuntu 14.04 (2015.1.0-7.0) (default)
 
 This is the operating system that will be installed
 on the target nodes in the environment.
