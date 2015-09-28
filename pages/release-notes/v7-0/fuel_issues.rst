@@ -46,3 +46,4 @@ Known Issues
 .. include:: /pages/release-notes/v7-0/fuel_issues/ssl_old_env_support_issue.rst
 .. include:: /pages/release-notes/v7-0/fuel_issues/swift_copy_issue.rst
 .. include:: /pages/release-notes/v7-0/fuel_issues/non_dynamic_images_known.rst
+.. include:: /pages/release-notes/v7-0/fuel_issues/vbox_ssh_issue.rst
