@@ -53,27 +53,26 @@ Some popular options:
   Use `ImgBurn <http://www.imgburn.com/>`_ or the
   open source `InfraRecorder <http://infrarecorder.org/>`_.
 
-|
+Create a USB drive to store the Fuel ISO image on a UNIX system
+---------------------------------------------------------------
 
-To write an ISO image to a USB drive use the following command::
+You can use a USB flash drive to install Fuel on your machine.
+Write the ISO image to the USB flash drive, but not to the partitions of the
+USB flash drive. For example, if you have a USB flash drive ``/dev/sdc`` with
+the ``/dev/sdc1`` and ``/dev/sdc2`` partititions, write the USO to
+``/dev/sdc``.
 
-  dd if=/way/to/your/ISO of=/way/to/your/USB/stick
+To create a USB flash drive with the Mirantis OpenStack ISO image::
 
-For example, assume that you have ISO laying at `/home/user/fuel-isos/fuel-6.1-248-2015-03-30_03-08-59.iso`
-and your USB stick is accessible at `/dev/sdc`.
+ dd if=/path-to-iso of=/path-to-usb
 
-Then you should write the ISO to the USB drive using the next command::
+**Example:**::
 
-  dd if=/home/user/fuel-isos/fuel-6.1-248-2015-03-30_03-08-59.iso of=/dev/sdc
+ dd if=/home/user/fuel-isos/fuel-6.1-248-2015-03-30_03-08-59.iso of=/dev/sdc
 
 .. warning::
-       All data, that you had on your flash drive before moving ISO to it, will be lost.
+       All data on the USB flash drive will be lost.
 
-.. note::
-       You must write an ISO to a flash drive itself, not to any partitions of it.
-       For example, if you have a flash drive `/dev/sdc` that was partitioned to `/dev/sdc1` and `/dev/sdc2`,
-       you must write ISO to `/dev/sdc` itself (not to `sdc1` or `sdc2`).
-       After moving your partitions will be lost.
 
 .. _initialize-fuel-ug:
 
