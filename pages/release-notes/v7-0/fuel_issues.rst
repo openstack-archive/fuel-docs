@@ -22,6 +22,7 @@ Resolved Issues
 .. include:: /pages/release-notes/v7-0/fuel_issues/ip_ranges_resolved.rst
 .. include:: /pages/release-notes/v7-0/fuel_issues/fuel_install_resolved.rst
 .. include:: /pages/release-notes/v7-0/fuel_issues/hardware_support_resolved.rst
+.. include:: /pages/release-notes/v7-0/fuel_issues/ostf_resolved.rst
 
 Known Issues
 ------------
@@ -42,3 +43,6 @@ Known Issues
 .. include:: /pages/release-notes/v7-0/fuel_issues/deprecation_warning_known.rst
 .. include:: /pages/release-notes/v7-0/fuel_issues/fuelcreatemirror_upgrade_issue.rst
 .. include:: /pages/release-notes/v7-0/fuel_issues/fuel_install_issue.rst
+.. include:: /pages/release-notes/v7-0/fuel_issues/ssl_old_env_support_issue.rst
+.. include:: /pages/release-notes/v7-0/fuel_issues/swift_copy_issue.rst
+.. include:: /pages/release-notes/v7-0/fuel_issues/non_dynamic_images_known.rst
