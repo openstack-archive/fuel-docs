@@ -10,12 +10,12 @@
   #. You immediately delete the original Controller nodes.
   #. As a result, you have:
 
-    * The initially deployed Controller nodes are deleted.
-    * The new Controller nodes are incomplete, because Swift
-      did not finish copying the data from the original Controller
-      nodes.
+     * The initially deployed Controller nodes are deleted.
+     * The new Controller nodes are incomplete, because Swift
+       did not finish copying the data from the original Controller
+       nodes.
 
-    Some of the images are lost.
+     Some of the images are lost.
 
   Do not delete the original Controller nodes before Swift finishes
   copying the data successfully.
