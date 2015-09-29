@@ -89,7 +89,7 @@ Prior releases
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can download the Mirantis OpenStack ISO and 
-`VirtualBox scripts <https://software.mirantis.com/load/6-1-vbox/>`_
+`VirtualBox scripts <https://software.mirantis.com/load/7-0-vbox/>`_
 
 .. note:: You must fill in the form to download Mirantis OpenStack.
 
