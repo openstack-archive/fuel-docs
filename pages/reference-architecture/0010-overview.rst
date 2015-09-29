@@ -12,7 +12,7 @@ OpenStack Environment Architecture
 .. contents :local:
 
 Fuel deploys an OpenStack Environment with nodes that provide a
-specific set of functionality. In Fuel 6.1, you can deploy
+specific set of functionality. In Fuel, you can deploy
 an environment with a single controller node and then add extra
 ones.
 

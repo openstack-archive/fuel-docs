@@ -1,7 +1,7 @@
 .. _isoUSB-ops:
 
-Writing a bootable Fuel 6.1 ISO to a USB drive
-==============================================
+Writing a bootable Fuel ISO to a USB drive
+==========================================
 
 Having downloaded a Fuel ISO, and having
 plugged in your USB drive, issue the following command:
@@ -18,7 +18,7 @@ folder and your USB drive is at */dev/sdc*, issue the following:
 
  ::
 
-  # dd if=/home/user/fuel-isos/fuel-6.1.iso of=/dev/sdc
+  # dd if=/home/user/fuel-isos/fuel-7.0.iso of=/dev/sdc
 
 .. note:: This operation will wipe all the data you have on
           on the USB drive and will place a bootable Fuel ISO
