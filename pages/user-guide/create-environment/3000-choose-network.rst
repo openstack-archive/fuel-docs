@@ -22,6 +22,11 @@ node's private network interface.
    on the private network interfaces of nodes in one cluster
    as this may result in an unstable network.
 
+.. note:: Make sure that the appropriate MTU value is configured
+          on the hardware switch that the private interface is
+          connected to. Otherwise only standard frames (1528 bytes)
+          will pass through.
+
 Enabling the jumbo frames allows for the following benefits:
 
 * Transmission of large packets with reduced CPU utilization
