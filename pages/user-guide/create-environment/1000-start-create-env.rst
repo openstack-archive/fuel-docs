@@ -5,7 +5,7 @@ Launch Wizard to Create New Environment
 ---------------------------------------
 
 If you have not already done so,
-point a browser window to http://10.20.0.2:8000/
+point a browser window to http://10.20.0.2:8443/
 to log into the Fuel UI.
 See :ref:`boot-fuel-master-ug` for more information.
 

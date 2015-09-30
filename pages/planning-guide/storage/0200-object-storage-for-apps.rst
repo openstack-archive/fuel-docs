@@ -9,7 +9,7 @@ can also be used by applications
 that need to store data in an object store.
 Swift provides a native REST API
 as well as the `S3 API compatibility layer
-<http://docs.openstack.org/grizzly/openstack-object-storage/admin/content/configuring-openstack-object-storage-with-s3_api.html>`_
+<http://docs.openstack.org/kilo/config-reference/content/configuring-openstack-object-storage-with-s3_api.html>`_
 that emulates the Amazon S3 API on top of Swift Object Storage.
 
 Ceph includes the optional Ceph Object Gateway component (radosgw_)

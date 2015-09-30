@@ -54,7 +54,7 @@ Installation procedure is common for all plugins, but their requirements differ.
    prerequisites and limitations.
 
 #. Copy the plugin on already installed Fuel Master node.
-   If you do not have the Fuel Master node yet, see `Mirantis Quick Start Guide <https://software.mirantis.com/quick-start/>`_.
+   If you do not have the Fuel Master node yet, see :ref:`quickstart-guide`.
 
    ::
 

@@ -55,7 +55,7 @@ other than the bare-metal installation:
   to deploy a Mirantis OpenStack environment on Oracle VirtualBox.
   VirtualBox deployment is useful for demonstrations
   and is a good way to begin your exploration of the tools and technologies.
-  See :ref:`0 to OpenStack in 60 Minutes or less<quickstart-guide>`
+  See :ref:`quickstart-guide`.
   
 .. note::
 

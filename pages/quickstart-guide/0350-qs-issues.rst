@@ -54,4 +54,4 @@ This may result in issues with an HA environment deployment.
 
 .. seealso::
 
-   - `LP1421723 <https://bugs.launchpad.net/fuel/+bug/1421723>`_
+   - `LP1396126 <https://bugs.launchpad.net/fuel/+bug/1396126>`_
