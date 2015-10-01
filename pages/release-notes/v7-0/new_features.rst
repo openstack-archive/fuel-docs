@@ -42,7 +42,7 @@ OpenStack on Ubuntu.
 
 .. note:: Deployment of Mirantis OpenStack 7.0 onto CentOS for host
           operating system is not supported due to incompatibility
-          between CentOS 6.5 and OpenStack Kilo.
+          between CentOS 6.6 and OpenStack Kilo.
           Mirantis is actively working on updating support for
           CentOS-based deployments.
 
