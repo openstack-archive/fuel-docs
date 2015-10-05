@@ -34,5 +34,5 @@ the following keys:
   internally-used roles in Puppet manifests ('management', 'storage', and so on).
 * **transformations** - An ordered list of OVS network primitives.
 
-See the example of a ``network_scheme`` section in a node's configuration, showing how
-to change MTU parameters: `MTU parameters <examples/mtu_network_scheme.yaml>`_.
+See the example of a ``network_scheme`` section in a node's configuration,
+showing how to change MTU parameters: the `MTU parameters configuration example <https://raw.githubusercontent.com/stackforge/fuel-docs/master/examples/mtu_network_scheme.yaml>`_.
