@@ -17,7 +17,7 @@ repair or other service operations.
 The maintenance mode is enforced by using the ``umm``
 parameter in one of the following ways:
 
-* by selecting the respective option in the boot menu in Ubuntu or CentOS;
+* by selecting the respective option in the boot menu;
 
 * by forcing the reboot into maintenance mode from shell with
   the :command:`umm on` command;
