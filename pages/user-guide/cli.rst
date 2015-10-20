@@ -9,19 +9,16 @@
 Using Fuel CLI
 ==============
 
-Introduction
-------------
-
-Fuel CLI tool is a powerful tool that allows you to:
+Fuel CLI is a powerful tool that allows you to:
 
 * Operate with environments using the text console only.
-* Modify directly the internal data that you can't modify via the web UI.
-* Avoid data verifications done by the web UI logic.
+* Modify directly the internal data that you can't modify via the Fuel Web UI.
+* Avoid data verifications done by the Fuel Web UI logic.
 
 Fuel CLI may break your environment if not used carefully.
 
 It is necessary to understand that any modifications done using Fuel CLI
-take precedence over the settings made from the browser.
+take precedence over the settings made from the Fuel Web UI.
 Fuel shows a special message to inform you:
 
 .. image:: /_images/fuel-cli-warning.png
@@ -29,7 +26,7 @@ Fuel shows a special message to inform you:
 .. contents :local:
 
 Basic usage
------------------------------------------
+-----------
 
 Fuel CLI has the following usage pattern:
 
@@ -39,18 +36,18 @@ Fuel CLI has the following usage pattern:
 
 *Example*::
 
-  fuel --env-id=1 node set --node-id=1,4,5 --role=controller,compute
+  fuel --env-id=1 node set --node-id=1,4,5 --role=controller
 
 where ``--env-id=1`` is a global optional argument pointing to the specific
 environment, ``node`` - is a namespace for all node control functions, ``set``
 is an action that assigns specific nodes to some environments in certain roles.
 
-for getting list of all global optional args and namespaces you can run:
+To get the list of all global optional arguments and namespaces, run:
 ::
 
   fuel --help
 
-and for getting actions and optional args for some namespace run:
+To get the list of actions and optional arguments for a namespace, run:
 ::
 
   fuel <namespace> --help
@@ -363,9 +360,12 @@ Configuring
 +++++++++++
 
 Configuration of the environment or some node
-is universal and done in three stages
+is universal and done in three stages:
 
-1. Download current or default configuration. works for (``network``, ``settings``, ``node --disk``, ``node --network``). Operations with ``deployment`` and ``provisioning`` can be node specific. (e.g. ``fuel --env 1 deployment --node-id=1,2``)
+1. Download current or default configuration. Works for 
+(``network``, ``settings``, ``node --disk``, ``node --network``). 
+Operations with ``deployment`` and ``provisioning`` can be node 
+specific. (e.g. ``fuel --env 1 deployment --node-id=1,2``)
    
 *Example*::
 
@@ -474,65 +474,72 @@ Fuel Plugins CLI
 For summary information on Fuel plugins, see :ref:`Install Fuel plugins <install-plugin>`
 section.
 
-* Once a plugin is downloaded and copied
-  to the Fuel Master node,
-  you can install it with:
+* To install a Fuel plugin:
 
-  ::
+1. Select from the following options:
 
-    fuel plugins --install <fuel-plugin-file>
+* If you install a Fuel plugin from an `.fp` package, type:
 
-  It is recommended that you install rpm plugins
-  using the command above.
+  .. code-block:: bash
 
-  Nevertheless, if you would
-  like to do that manually, follow these steps:
+     fuel plugins --install <fuel-plugin-file>
 
-  * Run the following command:
+* If you install a Fuel plugin from an `.rpm` package, select from the
+  following options:
 
-    ::
+  * Using ``yum install``:
 
-        yum install <fuel-plugin-file>
+    1. Install the Fuel plugin:
 
-  * Register the plugin in :ref:`Nailgun<nailgun-term>` with
-    *fuel plugins --register <fuel-plugin-name>==<fuel-plugin-version>*
-    command.
-    You can run *fuel plugins --sync* instead, but
-    in this case Fuel Client will update all
-    plugins on the file system in Nailgun.
+    .. code-block:: bash
 
-* You can see the list of all installed plugins using:
+     yum install <fuel-plugin-file>
 
-  ::
+    2. Register the plugin in :ref:`Nailgun<nailgun-term>`:
 
-     fuel plugins --list
+    .. code-block:: bash
 
+     fuel plugins --register <fuel-plugin-name>==<fuel-plugin-version>
 
-  You should get the following output:
+  * Using the same command you used to install a Fuel plugin from the
+    `.fp` package:
 
-  ::
+    .. code-block:: bash
 
-            fuel plugins --list
+     fuel plugins --install <fuel-plugin-file>
 
-         id |    name                  | version  | package_version
-        ----|--------------------------|----------|--------
-        1   | <fuel-plugin-name>       | 1.0.0    | 2.0.0
+2. View the list of installed plugins:
 
+   .. code-block:: bash
 
-* To remove a plugin, run:
+    fuel plugins --list
 
-  ::
-
-     fuel plugins --remove <fuel-plugin-name>==<fuel-plugin-version>
+    id |    name                   | version  | package_version
+    ---|---------------------------|----------|----------------
+    1  | <fuel-plugin-name>        | 1.0.0    | 2.0.0
 
 
-* To update an rpm plugin, run:
+* To remove a plugin, type:
 
-  ::
+  .. code-block:: bash
+
+    fuel plugins --remove <fuel-plugin-name>==<fuel-plugin-version>
+
+
+* To upgrade a Fuel RPM plugin, type:
+
+  .. code-block:: bash
 
     fuel plugins --update <fuel-plugin-file>
 
 
-  .. note::  Updates are *not* supported for fp plugins.
+  .. note::  Upgradess are *not* supported for:
+
+             * fp plugins
+
+             * major versions of RPM plugins
+
+               For example, you can only upgrade from version 1.0.0 to 1.0.1.
+
 
 To see the list of all available options, use ``fuel plugins --help`` command.
