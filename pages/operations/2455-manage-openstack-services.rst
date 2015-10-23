@@ -14,7 +14,7 @@ HowTo: Manage OpenStack services
    On Ubuntu:
    ::
 
-       services=$(curl http://git.openstack.org/cgit/open \
+       services=$(curl http://git.openstack.org/cgit/open\
        stack/governance/plain/reference/projects.yaml | \
          egrep -v 'Security|Documentation|Infrastructure' | \
          perl -n -e'/^(\w+):$/ && print "openstack-",lc $1,".*\$|",lc $1,".*\$|"')
