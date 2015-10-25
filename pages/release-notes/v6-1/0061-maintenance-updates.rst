@@ -60,7 +60,7 @@ Maintenance Update 2:
 Proposed updates
 ----------------
 
-* :ref:`#1504916 <mos61mu-1504916>` Cumulative OpenStack update (14 fixes)
+* :ref:`#1504916 <mos61mu-1504916>` Cumulative OpenStack update (15 fixes)
 
 * :ref:`#1452389 <mos61mu-1452389>` logrotate is rotating already rotated atop's logs
 
