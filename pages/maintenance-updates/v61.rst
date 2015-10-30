@@ -69,18 +69,6 @@ the Mirantis OpenStack 6.1 deployments.
 
 -----
 
-Proposed updates
-****************
-
-.. warning:: The proposed updates for Mirantis OpenStack 6.1 did NOT
-   pass a full cycle of testing and are shared for early access and evaluation
-   purposes only. We do not recommend applying the proposed updates to production
-   deployments. Use them at your own risk.
-
-The following updates for Mirantis OpenStack 6.1 are shared for an early access.
-
------
-
 .. include:: /pages/maintenance-updates/v61/1504916-mu3-openstack.rst
 
 -----
@@ -114,3 +102,10 @@ The following updates for Mirantis OpenStack 6.1 are shared for an early access.
 -----
 
 .. include:: /pages/maintenance-updates/v61/1495949-vlan-vcenter.rst
+
+-----
+
+Proposed updates
+****************
+
+There are no proposed updates available at the moment.
