@@ -52,9 +52,6 @@ in the current cluster:
 - Each :ref:`logical network<logical-networks-arch>`
   is associated with a Node Group rather than with a cluster.
 
-- Each fuelweb_admin network must have a DHCP network
-  configured in the :ref:`dnsmasq.template<dnsmasq-template-ref>` file.
-
 - DHCP requests can be forwarded to the Fuel Master node
   using either of the following methods:
 
