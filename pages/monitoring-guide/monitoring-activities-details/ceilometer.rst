@@ -103,9 +103,9 @@ listing of samples:
      - Purpose
 
    * - API errors
-     - Logs:
+     - Logs or HAProxy:
 
-       all entries with HTTP 500 error
+       All HTTP 500 error code.
      - Alert:
 
        When a sudden spike of errors is detected.
