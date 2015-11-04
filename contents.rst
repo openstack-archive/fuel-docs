@@ -20,3 +20,4 @@ Documentation
   release-notes
   eula
   third-party-licenses
+  fuel-install-guide
