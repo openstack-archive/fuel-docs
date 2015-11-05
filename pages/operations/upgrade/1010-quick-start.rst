@@ -121,7 +121,7 @@ Run the following command to switch the OpenStack environment to the
 
 ::
 
-    octane upgrade-controlplane $ORIG_ID $SEED_ID
+    octane upgrade-control $ORIG_ID $SEED_ID
 
 *8. Upgrade all Controllers*
 
