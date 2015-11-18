@@ -27,7 +27,7 @@ you can log in:
 
 - Use the URL displayed on this screen
   to launch the Fuel UI;
-  the default URL is http://10.20.0.2:8443/.
+  the default URL is https://10.20.0.2:8443/.
   This is your URL
   unless you modified the IP address on the Fuel Setup screens.
 
