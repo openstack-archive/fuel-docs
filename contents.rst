@@ -18,6 +18,4 @@ Documentation
   plugin-dev
   file-ref
   release-notes
-  eula
-  third-party-licenses
   fuel-install-guide
