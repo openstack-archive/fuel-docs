@@ -93,7 +93,7 @@ file `/etc/sysconfig/docker`, and export them:
 
    http_proxy=http://username:password@host:port/
    RSYNC_PROXY=username:password@host:port
-   export http_proxy RYSNC_PROXY
+   export http_proxy RSYNC_PROXY
 
 Then, restart the docker daemon:
 
