@@ -84,7 +84,7 @@ a few weeks of the Mirantis OpenStack 6.1 release:
  review capabilities of the project in the community again in
  advance of the Fuel 8.0 release.
  Unsupported plugins are published to
- `DriverLog <http://stackalytics.com/driverlog/?project_id=openstack%2Ffuel&vendor=&release_id=>`_.
+ `DriverLog <http://stackalytics.com/report/driverlog?project_id=openstack%2Ffuel>`_.
  
 
 
