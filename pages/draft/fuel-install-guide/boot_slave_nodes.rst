@@ -6,7 +6,7 @@ Boot the Fuel Slave nodes
 Before you boot the Fuel Slave nodes, verify that you have completed
 the following tasks:
 
-#. `Install and boot the Fuel Master node <install_install_fuel_master_node>`.
+#. :ref:`Install the Fuel Master node <install_install_fuel_master_node>`.
 
 #. If you plan using RAID arrays, configure you RAID-attached devices first.
 
@@ -60,5 +60,5 @@ When all nodes boot, you can create an OpenStack environment.
 
 .. seealso::
 
-   - `create-env-ug`
+   - :ref:`create-env-ug`
 
