@@ -210,7 +210,24 @@
 
         nav();
 
-        $(window).hashchange(function(){ nav(); });
+        showHashTab();
+
+        $(window).hashchange(function(){ nav(); showHashTab();});
+
+        function showHashTab(){
+            console.log('showHashTab');
+            if(location.hash){
+                var activeTab = $('#nav-spy').find('[href=' + location.hash + ']');
+                if (activeTab.length) {
+                    activeTab.tab('show');
+                } else {
+                    //$('.nav-tabs a:first').tab('show');
+                    console.log('no length');
+                    var parentTab = $(location.hash).closest('.section.tab-pane');
+                    $('#nav-spy').find('[href=#' + $(parentTab).attr('id') + ']').tab('show');
+                }
+            }
+        }
 
         // list-group-accordion functionality
         var listAccordion = $('.list-group-accordion');

@@ -8,20 +8,6 @@ jQuery.ajax({
     dataType: "script"
 });
 
-$(window).hashchange(function(){ showHashTab(); });
-
-function showHashTab(){
-    console.log('showHashTab');
-    if(location.hash){
-        var activeTab = $('[href=' + location.hash + ']');
-        if (activeTab.length) {
-            activeTab.tab('show');
-        } else {
-            $('.nav-tabs a:first').tab('show');
-        }
-    }
-}
-
 function getParameterByName(name) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
     var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
