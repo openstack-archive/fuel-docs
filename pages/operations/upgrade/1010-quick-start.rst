@@ -88,6 +88,11 @@ that ID:
 
     fuel node list --env ${ORIG_ID} | awk -F\| '$7~/controller/{print($0)}'
 
+.. note::
+
+    Select a controller node with the lowest ID to ensures that you upgrade
+    the `primary` controller first.
+
 Use the ID of the Controller to upgrade it with the following command:
 
 ::

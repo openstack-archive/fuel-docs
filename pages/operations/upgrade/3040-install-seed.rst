@@ -29,6 +29,12 @@ Deployment settings can be downloaded from Fuel API as a set of files.
 The upgrade script updates the settings by changing those files and
 uploading the modified information back via Fuel API.
 
+.. note::
+    Always upgrade the controller with the lowest ID number first.
+    The controller node with the lowest ID number is a so-called `primary`
+    controller and you must upgrade before other controllers in the
+    OpenStack environment.
+
 The upgrade script keeps the deployment infromation for the environment
 in a cache directory (by default, ``/tmp/octane/deployment``). The
 deployment settings for the nodes are stored to subdirectory
@@ -43,8 +49,9 @@ Install Controller commands
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The upgrade automation script allows upgrading a controller that
-exists in the original 6.1 environment. Select which controller
-you would like to upgrade and run the following command. Replace
+exists in the original 6.1 environment. Select the controller with
+minimal ID out of all controllers deployed in the environment and
+run the following command. Make sure to replace
 ``<NODE-ID>`` with the actual ID of 6.1 Controller you'd like to
 upgrade:
 
