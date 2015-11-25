@@ -11,7 +11,7 @@ environment meets :ref:`qs_prereq`.
 #. Go to `Mirantis web-site <http://mirantis.com>`_.
 #. Download the latest version of Mirantis OpenStack.
 #. If you want to install Mirantis OpenStack using scripts, download
-   the `Mirantis VirtualBox scripts <https://docs.mirantis.com/openstack/fuel/fuel-master/#downloads>`_.
+   the `Mirantis VirtualBox scripts <https://docs.mirantis.com/openstack/fuel/fuel-7.0/#downloads>`__.
 #. Depending on how you want to install Mirantis OpenStack, proceed to:
 
    * :ref:`Installing Mirantis OpenStack Using the Mirantis VirtualBox Scripts<qs_install_vbox_scripts>`
