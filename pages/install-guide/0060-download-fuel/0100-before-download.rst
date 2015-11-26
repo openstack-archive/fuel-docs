@@ -9,7 +9,7 @@ Before You Download and Install Fuel
 
 Before downloading and installing Fuel:
 
-- Be sure that you your hardware configuration is adequate;
+- Be sure that your hardware configuration is adequate;
   check the `Prerequisites information <http://docs.mirantis.com/fuel/fuel-5.0/install-guide.html#prerequisites>`_.
 
 - Understand the network architecture and define your network configuration;
