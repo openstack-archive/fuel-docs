@@ -78,7 +78,7 @@ Use the ID of the Controller to upgrade it with the following command:
 
 After the first Controller in the 7.0 environment is deployed and
 ready, run the following command to upgrade the state databases
-the of OpenStack services:
+of the OpenStack services:
 
 ::
 
