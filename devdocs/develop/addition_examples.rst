@@ -6,7 +6,7 @@ process. It builds on the information in the `How to
 contribute
 <https://wiki.openstack.org/wiki/Fuel/How_to_contribute>`_
 document, and the :doc:`Fuel Development Quick-Start Guide
-</develop/quick_start>` which illustrate the development
+</devdocs/develop/quick_start>` which illustrate the development
 process for a single Fuel component. These examples show how
 to manage development and integration of a more complicated
 example.
@@ -24,8 +24,8 @@ Fuel architecture, and the provisioning and deployment
 process:
 
 * `Fuel architecture on the OpenStack wiki <https://wiki.openstack.org/wiki/Fuel#Fuel_architecture>`_
-* :doc:`Architecture section of Fuel documentation </develop/architecture>`
-* :doc:`Visual of provisioning tasks </develop/sequence>`
+* :doc:`Architecture section of Fuel documentation </devdocs/develop/architecture>`
+* :doc:`Visual of provisioning tasks </devdocs/develop/sequence>`
 
 Adding Zabbix Role
 ------------------
@@ -52,7 +52,7 @@ Additions to Fuel-Web for Zabbix role
 
 In fuel-web, the `Support for Zabbix
 <https://review.openstack.org/#/c/84408/>`_ commit added the
-additional role to :doc:`Nailgun </develop/nailgun>`. The
+additional role to :doc:`Nailgun </devdocs/develop/nailgun>`. The
 reader is urged to review this commit closely as a good
 example of where specific additions fit.  In order to
 include this as an option in the Fuel deployment process,

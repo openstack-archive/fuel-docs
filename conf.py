@@ -39,7 +39,7 @@ extensions = [
 #plantuml = ['java', '-jar', 'plantuml.jar']
 
 # Add any paths that contain templates here, relative to this directory.
-templates_path = ['_templates']
+templates_path = ['devdocs/_templates']
 
 # The suffix of source filenames.
 source_suffix = '.rst'
@@ -106,12 +106,11 @@ pygments_style = 'sphinx'
 html_theme = 'sphinxdoc'
 
 # Theme options are theme-specific and customize the look and feel of a theme
-# further.  For a list of options available for each theme, see the
 # documentation.
 #html_theme_options = {}
 
 # Add any paths that contain custom themes here, relative to this directory.
-html_theme_path = ["_templates"]
+html_theme_path = ["devdocs/_templates"]
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".

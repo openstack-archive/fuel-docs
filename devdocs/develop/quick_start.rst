@@ -26,12 +26,12 @@ implement this feature, these steps were followed:
 
 #. Create a Fuel development environment by following the
    instructions found here:
-   :doc:`Fuel Development Environment </develop/env>`.
+   :doc:`Fuel Development Environment </devdocs/develop/env>`.
 
 #. In your development environment, prepare your environment
    for Nailgun unit tests and Web UI tests by following
    the instructions found here:
-   :doc:`Nailgun Dev Environment </develop/nailgun/development/env>`.
+   :doc:`Nailgun Dev Environment </devdocs/develop/nailgun/development/env>`.
    Be sure to run the tests noted in each section to ensure
    your environment confirms to a known good baseline.
 
@@ -43,7 +43,7 @@ implement this feature, these steps were followed:
     git fetch --all;git checkout -b vcenter-wizard-fix origin/master
 
 #. Modify the necessary files (refer to :doc:`Fuel Architecture
-   </develop/architecture>` to understand how the components
+   </devdocs/develop/architecture>` to understand how the components
    of Fuel work together).
 
 #. Test your Nailgun changes::
@@ -74,7 +74,7 @@ implement this feature, these steps were followed:
 
 #. Now that your code has been committed, you should change
    your Fuel ISO makefile to point to your specific commit.
-   As noted in the :doc:`Fuel Development documentation </develop/env>`,
+   As noted in the :doc:`Fuel Development documentation </devdocs/develop/env>`,
    when you build a Fuel ISO it pulls down the additional
    repositories rather than using your local repos.  Even
    though you have a local clone of fuel-web holding the branch
@@ -94,7 +94,7 @@ implement this feature, these steps were followed:
 #. Once your ISO build is complete, you can test it.  If
    you have access to hardware that can run the KVM
    hypervisor, you can follow the instructions found in the
-   :doc:`Devops Guide </devops>` to create a robust testing
+   :doc:`Devops Guide </devdocs/devops>` to create a robust testing
    environment.  Otherwise you can test the ISO with
    Virtualbox (the download link can be found at
    `https://software.mirantis.com/ <https://software.mirantis.com/>`_)

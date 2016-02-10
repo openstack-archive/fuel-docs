@@ -306,7 +306,7 @@ Running the Fuel System Tests
 -----------------------------
 
 For fuel-devops configuration info please refer to
-:doc:`Devops Guide </devops>` article.
+:doc:`Devops Guide </devdocs/devops>` article.
 
 #. Run the integration test::
 
