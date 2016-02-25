@@ -224,24 +224,11 @@ those services.
     source ~/.rvm/scripts/rvm
     rvm install 2.1
     rvm use 2.1
-    git clone https://github.com/nulayer/raemon.git
-    cd raemon
-    git checkout b78eaae57c8e836b8018386dd96527b8d9971acc
-    gem build raemon.gemspec
-    gem install raemon-0.3.0.gem
-    cd ..
-    rm -Rf raemon
 
 #. Install or update dependencies and run unit tests::
 
     cd fuel-astute
     ./run_tests.sh
-
-#. (optional) Run Astute MCollective integration test (you'll need to
-   have MCollective server running for this to work)::
-
-    cd fuel-astute
-    bundle exec rspec spec/integration/mcollective_spec.rb
 
 Running Fuel Puppet Modules Unit Tests
 --------------------------------------
