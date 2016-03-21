@@ -36,9 +36,7 @@ extensions = [
     'sphinx.ext.autodoc',
     'oslosphinx',
     'rst2pdf.pdfbuilder'
-#    'sphinxcontrib.plantuml'
 ]
-#plantuml = ['java', '-jar', 'plantuml.jar']
 
 # The suffix of source filenames.
 source_suffix = '.rst'
