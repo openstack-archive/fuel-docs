@@ -3,4 +3,4 @@ rst2pdf
 funcparserlib
 webcolors
 beautifulsoup4==4.4.0
-oslosphinx
+openstackdocstheme
