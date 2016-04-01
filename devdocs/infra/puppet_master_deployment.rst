@@ -21,6 +21,9 @@ proceed with the following steps:
 
      apt-get install -y git
      git clone https://github.com/fuel-infra/puppet-manifests.git /etc/puppet
+     cd /etc/puppet
+     git submodule init
+     git submodule update
 
 #. Execute the Puppet Master's install script:
 
