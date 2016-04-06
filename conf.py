@@ -14,7 +14,7 @@
 import os
 import sys
 import subprocess
-import openstackdocstheme
+# import openstackdocstheme
 
 sys.path.insert(0, os.path.join(os.path.abspath('.')))
 
@@ -39,7 +39,7 @@ extensions = [
 ]
 
 # Add any paths that contain templates here, relative to this directory.
-# templates_path = ['_templates']
+templates_path = ['_templates']
 
 # The suffix of source filenames.
 source_suffix = '.rst'
@@ -110,7 +110,7 @@ html_theme = 'openstackdocs'
 # html_theme_options = 
 
 # Add any paths that contain custom themes here, relative to this directory.
-html_theme_path = [openstackdocstheme.get_html_theme_path()]
+html_theme_path = ['_templates']
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
