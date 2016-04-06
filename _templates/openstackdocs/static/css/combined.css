@@ -4661,6 +4661,10 @@ li.toctree-l2:not(.current) > ul {
     display: none;
 }
 
+.docs-sidebar-section li.current > a {
+    font-weight: bold;
+}
+
 .docs-body .section h1 {
   display: none;
 }
