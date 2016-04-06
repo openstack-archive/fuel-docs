@@ -92,6 +92,7 @@ of Fuel will remain operational.
    .. code-block:: console
 
     $ octane fuel-restore --from /tmp/fuel-backup.7.0.tar.gz
+        --admin-password ADMIN_PASSWORD
 
 #. Restore repositories and binary artifacts from the old version:
 
