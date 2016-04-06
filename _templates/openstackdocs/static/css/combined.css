@@ -4653,6 +4653,10 @@ table.highlighttable {
     display: none;
 }
 
+.docs-sidebar-section > ul li:not(.current) > ul {
+    display: none;
+}
+
 li.toctree-l2:not(.current) > ul {
     display: none;
 }
