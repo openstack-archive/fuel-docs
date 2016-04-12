@@ -26,6 +26,3 @@ This section includes the following topics:
    sysreq/sysreq_ironic_prereq
    sysreq/sysreq_ironic_limitations
    sysreq/sysreq_sample_configuration
-   sysreq/sysreq_sample_configuration_controllers
-   sysreq/sysreq_sample_configuration_compute
-   sysreq/sysreq_sample_configuration_storage

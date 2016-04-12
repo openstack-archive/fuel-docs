@@ -7,7 +7,7 @@ To enable inter-node communication, you must configure networks on
 VMware vCenter.
 
 Configure a network for Fuel Admin (PXE) traffic
-------------------------------------------------
+++++++++++++++++++++++++++++++++++++++++++++++++
 
 You must configure a network for the Fuel Admin (PXE) traffic
 and enable Promiscuous mode.
@@ -21,7 +21,7 @@ and enable Promiscuous mode.
 #. Click the **Add Host Networking** icon.
 
 Create a vCenter Port Group network
------------------------------------
++++++++++++++++++++++++++++++++++++
 
 You must create a Port Group with Promiscuous mode.
 
