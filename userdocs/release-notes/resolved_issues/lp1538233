@@ -1,0 +1,4 @@
+* Enabled deployment of the OpenStack environments without controller nodes.
+  Thereby, the user can replace controller roles with custom roles using
+  Fuel plugins.
+  See `LP1538233 <https://bugs.launchpad.net/fuel/+bug/1538233>`__.
