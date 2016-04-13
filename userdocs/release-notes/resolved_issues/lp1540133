@@ -1,0 +1,3 @@
+* Fixed the issue for Swift/v1 endpoint containing an IP address instead of a
+  FQDN in cases when Ceph was deployed with RadosGW.
+  See `LP1540133 <https://bugs.launchpad.net/fuel/+bug/1540133>`_.
