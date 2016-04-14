@@ -1,0 +1,3 @@
+* Added an ability for plugin deployment tasks to depend on the settings
+  of another plugin even if the latter is not installed.
+  See `LP1564131 <https://bugs.launchpad.net/fuel/+bug/1564131>`__.
