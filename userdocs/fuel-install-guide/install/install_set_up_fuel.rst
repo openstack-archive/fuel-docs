@@ -92,7 +92,7 @@ settings and proceed to :ref:`install_install_fuel_master_node`.
    |                                      | shipped with the Fuel ISO.       |
    |                                      |                                  |
    |                                      | For more information, see:       |
-   |                                      | :ref :`Set up local repository`. |
+   |                                      | :ref:`upgrade_local_repo`.       |
    +--------------------------------------+----------------------------------+
    | 6. Configure the network time        | To avoid issues with the time    |
    |    protocol.                         | settings inconsistency on the    |
