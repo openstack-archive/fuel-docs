@@ -1,4 +1,0 @@
-* Added the capability to override the ``primary-controller``,
-  ``controller``, and ``compute`` node roles through Hiera
-  for the ``openstack-network`` manifests. See
-  `LP1554796 <https://bugs.launchpad.net/fuel/+bug/1554796>`_.

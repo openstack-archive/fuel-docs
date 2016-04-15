@@ -1,5 +1,0 @@
-* Previously, during the upload of a new network YAML file, an error might
-  appear pointing to the type of networks with the wrong configuration.
-  Having many networks, it was difficult to determine which network had
-  issues. Now, the error message contains network IDs.
-  See `LP1554106 <https://bugs.launchpad.net/fuel/+bug/1554106>`_.

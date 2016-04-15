@@ -1,3 +1,0 @@
-* Now, ``network_scheme`` contains information about the network gateway if it
-  is defined in ``network-groups``.
-  See `LP1549034 <https://bugs.launchpad.net/fuel/+bug/1549034>`_.
