@@ -37,9 +37,8 @@ available in the Fuel CLI.
    * - Delete an OpenStack environment.
      - ``fuel --env <env_id> env delete``
      -
-   * - Update the Mirantis OpenStack environment to a newer version. To roll
-       back a failed update, use the same command with the previous release
-       number.
+   * - Update the OpenStack environment to a newer version. To roll back a
+       failed update, use the same command with the previous release number.
      - ``fuel env --update --env <env_id> --rel <release_number>``
      -
      
