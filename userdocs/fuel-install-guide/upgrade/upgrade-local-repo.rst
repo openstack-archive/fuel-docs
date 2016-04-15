@@ -44,7 +44,7 @@ or through Fuel CLI using the ``fuel-createmirror`` script.
    Alternatively (recommended), reboot the Fuel Master node.
 
 About the fuel-createmirror script
-----------------------------------
+++++++++++++++++++++++++++++++++++
 
 The ``fuel-createmirror`` is a built-in Fuel script that enables
 you to modify the Fuel repository sources from the CLI.

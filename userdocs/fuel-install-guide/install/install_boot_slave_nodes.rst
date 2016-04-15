@@ -40,7 +40,7 @@ the following tasks:
    OpenStack environment.
 
 Boot workflow of a Fuel Slave node
-----------------------------------
+++++++++++++++++++++++++++++++++++
 
 The boot workflow of a Fuel Slave node does not require any user interaction.
 For general understanding of the processes that take place in the system when

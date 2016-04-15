@@ -47,7 +47,7 @@ the upgrade packages from these repositories.
    test staging environment before applying the updates to production.
 
 Patch the Fuel Master node
---------------------------
+++++++++++++++++++++++++++
 
 #. Back up your data with dockerctl backup. This will save the data
    to ``/var/backup/fuel/``.
@@ -57,7 +57,7 @@ Patch the Fuel Master node
 #. Wait for the new containers deployment to finish.
 
 Patch an Ubuntu slave node
---------------------------
+++++++++++++++++++++++++++
 
 #. Run ``apt-get update``.
 #. Run ``apt-get upgrade``.
@@ -66,7 +66,7 @@ Patch an Ubuntu slave node
 #. Reboot the node.
 
 Apply Puppet changes on a slave node
-------------------------------------
+++++++++++++++++++++++++++++++++++++
 
 You may want to apply all changes on a slave node or run a single
 granular task so that Fuel Puppet changes take effect.
@@ -88,7 +88,7 @@ granular task so that Fuel Puppet changes take effect.
 **Verify a patch:**
 
 Verify a patch on the Fuel Master node
---------------------------------------
+++++++++++++++++++++++++++++++++++++++
 
 To verify the packages on the Fuel Master node:
 
@@ -101,7 +101,7 @@ To verify the packages on the Fuel Master node:
    yum -y update
 
 Verify a patch on a Fuel slave node
------------------------------------
++++++++++++++++++++++++++++++++++++
 
 To verify the packages are up-to-date on the Fuel Slave nodes:
 
@@ -132,7 +132,7 @@ To verify the packages are up-to-date on the Fuel Slave nodes:
    The rollback instructions listed here are for advanced administrators.
 
 Roll back the Fuel Master node
-------------------------------
+++++++++++++++++++++++++++++++
 
 #. Roll back the packages on the Fuel Master node.
    `Refer to this article <https://access.redhat.com/solutions/64069>`__ as an example.
@@ -143,7 +143,7 @@ Roll back the Fuel Master node
 #. Wait for bootstrap to complete.
 
 Roll back an Ubuntu slave node
-------------------------------
+++++++++++++++++++++++++++++++
 
 You must identify the packages to roll back and where to get
 their specific versions, install the packages and roll back the
