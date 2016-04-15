@@ -37,6 +37,5 @@ interact with each other.
    devdocs/develop
    devdocs/devops
    devdocs/buildsystem
-   devdocs/infra/zabbix_server_deployment
    devdocs/infra
    devdocs/packaging
