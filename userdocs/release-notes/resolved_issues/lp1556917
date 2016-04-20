@@ -1,5 +1,0 @@
-* Changed the Fuel serialization process to fix the Nailgun behavior
-  in VLAN network environments with multiple node groups
-  and network templates. Previously, it was impossible to deploy such
-  a configuration due to a broken serialization module.
-  See `LP1556917 <https://bugs.launchpad.net/fuel/+bug/1556917>`_.

@@ -1,2 +1,0 @@
-* Fixed the formula for the placement groups count in Ceph. See
-  `LP1464656 <https://bugs.launchpad.net/fuel/+bug/1464656>`_.
