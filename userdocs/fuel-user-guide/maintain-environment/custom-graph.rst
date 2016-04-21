@@ -1,5 +1,5 @@
 
-.. custom-graph:
+.. _custom-graph:
 
 Run a custom graph
 ==================
