@@ -77,7 +77,7 @@ the Puppet process in the background using the **daemonize** tool.
 The command looks like this:
 ::
 
-  daemonize puppet apply /etc/puppet/manifests/site.pp"
+  daemonize puppet apply /etc/puppet/manifests/site.pp
 
 Astute periodically polls the agent to check if the deployment has
 finished and reports the progress to Nailgun through its RabbitMQ queue.
