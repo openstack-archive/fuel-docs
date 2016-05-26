@@ -57,7 +57,7 @@ Preparing Development Environment
     sudo apt-get install --yes git
     git clone https://github.com/openstack/fuel-web.git
     cd fuel-web
-    pip install --allow-all-external -r nailgun/test-requirements.txt
+    pip install -r nailgun/test-requirements.txt
 
 #. Install Nailgun in the developers mode by running the command below in the
    `nailgun` folder. Thanks to that, Nailgun extensions will be discovered::
