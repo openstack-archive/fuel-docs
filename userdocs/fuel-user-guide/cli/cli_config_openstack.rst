@@ -27,8 +27,6 @@ defined.
 
    **Example:**
 
-   ::
-
     .. code-block:: yaml
 
          configuration:
