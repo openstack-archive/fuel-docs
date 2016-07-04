@@ -103,7 +103,7 @@ Changes in ``environment_config.yaml`` affect only the environments which you
 create after the changes, even if you use :command:`fuel plugins --sync`.
 The Nailgun database stores each piece of the environment settings at the time
 of the environment creation. During this time the synchronisation process does
-not update the settings. 
+not update the settings.
 
 To debug the Fuel web UI settings, use one of the following approaches:
 
@@ -140,7 +140,7 @@ browser's cache.
           cache before trying to debug issues with the Fuel web UI.
 
 Before the deployment starts, Astute uploads all settings to the the
-``/etc/astute.yam``l file on each of the target nodes. This file contains
+``/etc/astute.yaml`` file on each of the target nodes. This file contains
 the section for the plugin:
 
 .. code-block:: ini
@@ -167,7 +167,7 @@ elements sets a corresponding parameter in ``astute.yaml``.
 One of the core tasks named ``hiera`` configures hiera so that ``astute.yaml``
 becomes one of the sources of information for it. Using ``hiera`` to get the
 values for the settings as opposed to manual parsing of ``astute.yaml`` is
-strongly recommended. 
+strongly recommended.
 
 Examples of ``hiera`` lookups:
 
@@ -175,30 +175,30 @@ Bash:
 
 .. code-block:: ini
 
-   STR=$(hiera “str”) 
-   HASH=$(hiera -h “hash_name”) 
+   STR=$(hiera “str”)
+   HASH=$(hiera -h “hash_name”)
    ARRAY=$(hiera -a “array_name”)
 
 Puppet:
 
 .. code-block:: ini
 
-   $str = hiera(‘str’, ‘’) 
-   $arr = hiera_array(‘arr_name’, []) 
+   $str = hiera(‘str’, ‘’)
+   $arr = hiera_array(‘arr_name’, [])
    $hash = hiera_hash(‘hash_name’, {})
 
 Ruby:
 
 .. code-block:: ini
 
-   #!/usr/bin/env ruby 
-   require 'hiera' 
-   ENV['LANG'] = 'C' 
-   hiera = Hiera.new(:config => '/etc/hiera.yaml') 
-   glanced = hiera.lookup 'glance', {} , {}, nil, :hash 
+   #!/usr/bin/env ruby
+   require 'hiera'
+   ENV['LANG'] = 'C'
+   hiera = Hiera.new(:config => '/etc/hiera.yaml')
+   glanced = hiera.lookup 'glance', {} , {}, nil, :hash
    nodes_array = hiera.lookup 'nodes', [], {}, nil, :array
 
-Use :command:`hiera <plugin name>' to verify all of the plugin settings
+Use :command:`hiera <plugin name>` to verify all of the plugin settings
 from the shell prompt on a target node:
 
 .. code-block:: console
@@ -231,7 +231,7 @@ to install on the target node, one per line.
 ``environment_config.yaml``:
 
 .. code-block:: ini
-   
+
    attributes:
 
     fuel_plugin_example_packages:
