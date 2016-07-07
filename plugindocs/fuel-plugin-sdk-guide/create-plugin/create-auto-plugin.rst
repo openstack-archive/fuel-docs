@@ -60,8 +60,8 @@ The automatically generated plugin does the following:
   |``tasks.yaml``                                |Deprecated, use ``deployment_tasks.yaml`` instead |
   +----------------------------------------------+--------------------------------------------------+
   |``volumes.yaml``                              |Mapping between node roles and volume allocation. |
-  |                                              |You can also define new volumesand map them to the|
-  |                                              |new or existing nodes.                            |
+  |                                              |You can also define new volumes and map them to   |
+  |                                              |the new or existing nodes.                        |
   +----------------------------------------------+--------------------------------------------------+
 
 #. Build the automatically generated plugin:
