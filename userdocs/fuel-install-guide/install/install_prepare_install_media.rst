@@ -75,7 +75,7 @@ install Fuel on your machine.
 
    .. code-block:: console
 
-      # dd if=/home/user/fuel-isos/fuel-7.0.iso of=/dev/sdc
+      # dd if=/home/user/fuel-isos/fuel-9.0.iso of=/dev/sdc
 
    .. warning:: This operation wipes all the data you have
                 on the USB drive and places a bootable Fuel ISO
