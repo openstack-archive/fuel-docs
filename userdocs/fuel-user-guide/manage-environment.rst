@@ -13,3 +13,5 @@ This section includes the following sections:
 
    manage-environment/cgroups.rst
    manage-environment/role-operations.rst
+   manage-environment/nfv-run.rst
+   manage-environment/enable-experimental-features.rst
