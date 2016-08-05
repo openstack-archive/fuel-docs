@@ -17,7 +17,7 @@ Configure and verify the following:
    the tasks described in the corresponding sub-section in
    :ref:`configure-additional-components`.
 
-#. Set up shell access to Fuel Master and Fuel Salve nodes to use OpenStack
+#. Set up shell access to Fuel Master and Fuel Slave nodes to use OpenStack
    CLI.
 
 #. Verify that the deployed environment is operational by running the following
@@ -41,7 +41,7 @@ Configure and verify the following:
 
      - If you have deployed Ceph as a storage back end,
        follow the `Verifying the deployment
-       <https://github.com/openstack/fuel-library/tree/master/deployment/puppet/ceph>`_
+       <https://github.com/openstack/fuel-library/tree/stable/mitaka/deployment/puppet/ceph>`_
        instructions to verify the Ceph configuration.
 
 #. Create a backup of your environment and store it in a safe location.
