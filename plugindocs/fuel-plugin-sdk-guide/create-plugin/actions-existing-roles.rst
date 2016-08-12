@@ -100,7 +100,7 @@ Add a task to execute shell commands:
      /tmp/post_deployment || echo `date` ' failed to install iotop'
      >> /tmp/post_deployment
 
-Then sync the plugin tasks, execute the newly defined one, and verify the resultsЖ
+Then sync the plugin tasks, execute the newly defined one, and verify the results:
 
 .. code-block:: console
 
