@@ -2,22 +2,10 @@ Health Check (OSTF) Contributor's Guide
 =======================================
 
 Health Check or OSTF?
-Main goal of OSTF
-Main rules of code contributions
-How to setup my environment?
-How should my modules look like?
-How to execute my tests?
-Now I'm done, what's next?
-General OSTF architecture
-OSTF packages architecture
-OSTF Adapter architecture
-Appendix 1
-
-Health Check or OSTF?
 ^^^^^^^^^^^^^^^^^^^^^
-Fuel UI has tab which is called Health Check. In development team though,
+Fuel UI has a tab which is called Health Check. In development team though,
 there is an established acronym OSTF, which stands for OpenStack Testing Framework.
-This is all about the same. For simplicity, this document will use widely
+This is all about the same. For simplicity, this document will use the widely
 accepted term OSTF.
 
 Main goal of OSTF
