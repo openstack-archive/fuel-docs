@@ -1,7 +1,7 @@
 
 .. _actions-existing-roles:
 
-Actions for existing roles 
+Actions for existing roles
 --------------------------
 
 The ``deployment_tasks.yaml`` file contains tasks that define actions.
@@ -11,12 +11,14 @@ Basic syntax for a task definition:
 
 .. code-block:: ini
 
-   type: <type of task>
+  - id: <task id>
+    type: <type of task>
     groups: [<one or more of existing roles>]
     required_for: [<the list of tasks, which requires this one>]
     requires: [<the list of tasks, which a required for this one>]
     parameters:
      <parameter name>: <parameter value>
+     ...
 
 .. note:: You can represent the lists in the full form or the abbreviated
           form:
@@ -25,7 +27,7 @@ Basic syntax for a task definition:
 
             .. code-block:: ini
 
-               keyword: 
+               keyword:
                 - value1
                 - value2
                 - value3
