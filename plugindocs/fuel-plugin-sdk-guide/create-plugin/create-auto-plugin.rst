@@ -35,7 +35,7 @@ The automatically generated plugin does the following:
    +----------------------------------------------+--------------------------------------------------+
    |:ref:`deployment_tasks.yaml`                  |Definition of plugin tasks                        |
    +----------------------------------------------+--------------------------------------------------+
-   |``environment_config.yaml``                   |Fuel web UI plugin parameters                     |
+   |:ref:`environment_config.yaml`                |Fuel web UI plugin parameters                     |
    +----------------------------------------------+--------------------------------------------------+
    |``fuel-plugin-example-1.0-1.0.0-1.noarch.rpm``|A plugin package created after you build a plugin |
    +----------------------------------------------+--------------------------------------------------+
@@ -118,11 +118,11 @@ You can also verify the plugin installation using Fuel CLI:
 
 .. tip:: By default, all plugin settings are under the group 'Other'. To place
          your plugin settings to a different group, specify it
-         ``in environment_config.yaml``.
+         in :ref:`environment_config.yaml`.
 
 .. tip:: Tip: Although after you install the plugin, you see the plugin
          settings in the deployed environment, you cannot enable the plugin.
          Enabling a plugin after deployment makes sense only in one case:
          when this adds a new node role and a node with this role can be
-         added after the environment is deployed. In this case use the keyword
+         added after the environment is deployed. In this case, use the keyword
          ``is_hotppluggable`` in ``metadata.yaml``
