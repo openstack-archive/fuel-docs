@@ -11,7 +11,7 @@ available.
 **To configure a single network:**
 
 #. Save `network template for one network
-   </./../network_templates/one_network.yaml>`_
+   </developer/fuel-docs/network_templates/one_network.yaml>`_
    as ``network_template_<env id>.yaml``.
 
 #. Upload the network template by typing:
