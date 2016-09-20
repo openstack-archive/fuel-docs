@@ -33,7 +33,7 @@ all other traffic.
    ``render_addr_mask`` for this network.
 
 3. Save `network template for two networks
-   </./../network_templates/two_networks.yaml>`_
+   </developer/fuel-docs/network_templates/two_networks.yaml>`_
    as ``network_template_<env id>.yaml``.
 
    .. note::

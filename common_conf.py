@@ -20,6 +20,12 @@ language = 'en'
 # Default is '%b %d, %Y' (or a locale-dependent equivalent).
 html_last_updated_fmt = '%Y/%m/%d'
 
+# A list of paths that contains extra files not directly related to the
+# documentation, such as robots.txt or .htaccess. Relative paths are taken
+# as relative to the configuration directory. They are copied to the output
+# directory. They will overwrite any existing file of the same name.
+html_extra_path = ['examples']
+
 # Enable Antialiasing
 blockdiag_antialias = True
 acttdiag_antialias = True

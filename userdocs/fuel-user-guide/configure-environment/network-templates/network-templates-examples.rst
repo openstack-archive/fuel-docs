@@ -6,7 +6,7 @@ Network template examples
 This section provides examples of network configurations
 using network templates. You can use the default template
 and modify it for your requirements or use any of the templates provided
-in the `network templates folder </examples/network_templates.html>`_.
+in the `network templates folder </developer/fuel-docs/network_templates.html>`_.
 
 The following table describes network template examples:
 
