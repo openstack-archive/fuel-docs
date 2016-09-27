@@ -41,3 +41,4 @@ This section includes the following topics:
    configure-environment/configure-multipath.rst
    configure-environment/nfv.rst
    configure-environment/workflows.rst
+   configure-environment/enable-usb-discovery.rst
