@@ -23,12 +23,12 @@ This section includes the following topics:
    :maxdepth: 1
 
    workflows/workflows-overview.rst
+   workflows/workflows-precedence.rst
    workflows/workflows-create.rst
    workflows/workflows-data-driven.rst
-   workflows/workflows-run.rst
 
 .. seealso::
 
+   - :ref:`workflows_manage`
    - :ref:`cli-graphs`
-   - :ref:`manage_workflows`
    - :ref:`data-driven`
