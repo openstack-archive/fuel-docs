@@ -22,6 +22,6 @@ This section includes the following topics:
    maintain-environment/reinstall-node.rst
    maintain-environment/reinstall-virtual-role.rst
    maintain-environment/create-snapshot.rst
-   maintain-environment/manage-workflows.rst
+   maintain-environment/workflows-manage.rst
    maintain-environment/shutdown-env.rst
    maintain-environment/start-env.rst

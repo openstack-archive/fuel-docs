@@ -1,8 +1,8 @@
-.. _manage_workflows:
+.. _workflows_manage:
 
-===============
-Manage workfows
-===============
+================
+Manage workflows
+================
 
 Fuel enables you to manage the deployment workflows through both the Fuel web
 UI and CLI. You can view, upload, download, and execute default workflows
@@ -16,10 +16,15 @@ This section includes the following topics:
 .. toctree::
    :maxdepth: 2
 
-   manage-workflows/workflows-precedence.rst
-   manage-workflows/view-workflows.rst
-   manage-workflows/upload-workflows.rst
-   manage-workflows/download-workflows.rst
-   manage-workflows/run-workflows.rst
-   manage-workflows/view-history.rst
-   manage-workflows/download-deployment-info.rst
+   workflows-manage/view-workflows.rst
+   workflows-manage/upload-workflows.rst
+   workflows-manage/download-workflows.rst
+   workflows-manage/run-workflows.rst
+   workflows-manage/view-history.rst
+   workflows-manage/download-deployment-info.rst
+
+.. seealso::
+
+   * :ref:`workflow-intro`
+   * :ref:`cli-graphs`
+   * :ref:`data-driven`

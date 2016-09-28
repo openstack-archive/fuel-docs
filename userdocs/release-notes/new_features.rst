@@ -42,7 +42,7 @@ This section lists these improvements:
   it with the existing deployment workflows of the upstream master release.
   This allows you to implement complex orchestrated workflows -- bugfixes
   application, reference architecture altering, or even upgrades.
-  See :ref:`manage_workflows`.
+  See :ref:`workflows_manage`.
 
 * Fuel now supports lifecycle management tasks based on the history of
   cluster states. This data-driven feature allows the deployment engineers
