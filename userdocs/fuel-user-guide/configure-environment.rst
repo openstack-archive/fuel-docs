@@ -42,3 +42,4 @@ This section includes the following topics:
    configure-environment/nfv.rst
    configure-environment/workflows.rst
    configure-environment/enable-usb-discovery.rst
+   configure-environment/configure-vmware-vcenter-settings.rst
