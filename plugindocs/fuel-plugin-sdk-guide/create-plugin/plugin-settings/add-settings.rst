@@ -174,7 +174,7 @@ browser's cache.
 .. note:: This is always a good idea to ensure that your browser bypasses
           cache before trying to debug issues with the Fuel web UI.
 
-Before the deployment starts, Astute uploads all settings to the the
+Before the deployment starts, Astute uploads all settings to the
 ``/etc/astute.yaml`` file on each of the target nodes. This file contains
 the section for the plugin:
 

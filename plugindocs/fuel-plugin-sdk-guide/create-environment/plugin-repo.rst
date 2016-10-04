@@ -13,7 +13,7 @@ the following:
 * An account in Launchpad.
 * A list of members to whom you want to grant the core reviewer
   status in your plugin project.
-* A list of members to whom you want to grant the the release developer
+* A list of members to whom you want to grant the release developer
   status.
 
 **To request an OpenStack repository:**

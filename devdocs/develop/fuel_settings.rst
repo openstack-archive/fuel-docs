@@ -5,7 +5,7 @@ Fuel uses a special method to pass settings from Nailgun to Puppet manifests:
 
 - Before the deployment process begins,
   Astute uploads all settings
-  to the the */etc/astute.yaml* files that are located on each node.
+  to the */etc/astute.yaml* files that are located on each node.
 - When Puppet is run,
   Facter reads the contents of all these  */etc/astute.yaml* files
   and creates a single file called *$astute_settings_yaml*.

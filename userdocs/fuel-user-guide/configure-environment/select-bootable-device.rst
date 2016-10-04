@@ -16,7 +16,7 @@ By default, Fuel boots the first disk it detects.
 
 * Using the Fuel CLI:
 
-  #. Log in to the the Fuel Master node CLI.
+  #. Log in to the Fuel Master node CLI.
   #. Download the configuration file of the node:
 
      .. code-block:: console
