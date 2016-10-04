@@ -1,4 +1,4 @@
-.. edit-ui-wizard:
+.. _edit-ui-wizard:
 
 =============================
 Modify the Fuel web UI wizard
