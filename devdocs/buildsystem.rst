@@ -216,7 +216,7 @@ They are defined in **config.mk** file:
   By default, it is 255.255.255.0.
 
 - **MASTER_GW** - Fuel Master node default gateway.
-  By default, it is is 10.20.0.1.
+  By default, it is 10.20.0.1.
 
 - **MASTER_DNS** -  the upstream DNS location for the Fuel master node.
   FUel Master node DNS will redirect there all DNS requests that it is not able to resolve itself.
