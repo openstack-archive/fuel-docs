@@ -68,7 +68,7 @@ for plugins.
         --fail-on-warnings \
         --with-context \
         --with-filename \
-        --no-80chars-check \
+        --no-140chars-check \
         --no-variable_scope-check \
         --no-nested_classes_or_defines-check \
         --no-autoloader_layout-check \
