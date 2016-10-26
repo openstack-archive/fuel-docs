@@ -55,7 +55,7 @@ affect the other environment. Such a refactoring will require additional
 handlers in Nailgun, as well as some additions, such as pagination and etc.
 From Nailgun side, it is bad idea to fail the whole CollectionHandler if one
 of the objects fail to calculate some attribute. My(mihgen) idea is to simply set
-attrubute to Null if failed to calculate, and program UI to handle it properly.
+attribute to Null if failed to calculate, and program UI to handle it properly.
 Unit tests must help in testing of this.
 
 Another idea is to limit the /api/nodes,
