@@ -5,10 +5,10 @@ nic_mapping
 
 **Description**
 
-Specifies aliases to network interface names mapping,
+Specifies aliases to the network interface names mapping,
 for example, ``adm: eth0``. If a node is not listed in this section,
 default mapping applies. You can configure custom mapping for
-any node by the node name. The number of NICs depends on the
+any node using the node name. The number of NICs depends on the
 network topology and may vary. Aliases are optional and if
 all nodes have the same number of NICs connected in a similar
 manner, you can use NIC names instead.

@@ -11,14 +11,15 @@ you can create your own. We strongly recommend that you use the
 build your own network template.
 
 .. note::
-   When you configure a network using network templates, you cannot apply
+   When you configure a network using a network template, you cannot apply
    changes to the nodes network configuration using the Fuel web UI. For
    example, if you configure an OpenStack environment using network
    templates, deploy the OpenStack environment, and later decide to add
-   new nodes, you must update network configuration of these nodes using
-   network templates and do not use the Fuel web-UI. However, templates do
-   not describe the level 2 and level 3 network settings. Therefore, you
-   must set them using Fuel web UI, CLI, or API.
+   new nodes to that environment, you must update network configuration
+   of these nodes using a network template and do not use the Fuel web UI.
+
+   However, templates do not describe the level 2 and level 3 network
+   settings. Therefore, you must set them using Fuel web UI, CLI, or API.
 
 After uploading a network template, you must create and/or
 delete networks and node groups using the Fuel CLI to reflect the uploaded

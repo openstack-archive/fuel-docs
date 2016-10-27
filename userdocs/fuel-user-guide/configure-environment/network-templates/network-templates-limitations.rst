@@ -11,7 +11,7 @@ When using network templates, consider the following limitations:
   cannot be removed.
 * When you use network templates, do not download and modify Fuel
   deployment configurations using the ``fuel download`` and
-  ``fuel upload`` commands as it may result in system malfunction.
+  ``fuel upload`` commands as it may result in a system malfunction.
 * Mapping of network roles to networks, as well as network topology cannot
   be configured for individual nodes. They can only be set for a node role
   or/and node group.

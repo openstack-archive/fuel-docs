@@ -8,7 +8,7 @@ You can delete a network template that you have previously uploaded.
 .. warning::
 
    Do not delete network templates that are used in your OpenStack
-   environment as it may result in failure of the whole network
+   environment as it may result in a failure of the whole network
    configuration.
 
 **To delete a network template:**
