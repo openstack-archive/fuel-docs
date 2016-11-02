@@ -287,7 +287,7 @@ system installed or any other OS to test configuration properly::
     bound to 10.20.0.2 -- renewal in 1659 seconds.
 
 After running dhclient you should see how it asks one or few times DHCP server
-with DHCPDISCOVER and then get 10.20.0.2.  If you have more then one NIC you
+with DHCPDISCOVER and then get 10.20.0.2.  If you have more than one NIC you
 should run dhclient on every one to determine where our network in connected
 to.
 
