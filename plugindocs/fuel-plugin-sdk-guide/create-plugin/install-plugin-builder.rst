@@ -14,7 +14,7 @@ You must use the Fuel Master node as the build environment.
 
    .. code-block:: console
 
-      yum install -y git python-mako createrepo dpkg-devel dpkg-dev rpm\
+      yum install -y git python-mako createrepo dpkg-devel dpkg-dev rpm \
       rpm-build
 
 #. Clone the Fuel Plugin Builder repository:
@@ -38,7 +38,7 @@ You must use the Fuel Master node as the build environment.
 
    The ``tasks.yaml`` file is required for the plugin to build, even if
    the file is empty.
-   
+
    .. note:: If the plugin metadata does not specify the same version of
              OpenStack as the one supported by the Fuel Master node,
              on which the plugin is installed, you will not see any
