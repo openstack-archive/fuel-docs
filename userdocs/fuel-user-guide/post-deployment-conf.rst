@@ -11,6 +11,7 @@ network settings reconfiguration, and so on.
 This section includes the following topics:
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 1
 
-   configure-environment/post-deployment-settings.rst
+   post-deployment-conf/modify-os-env-settings.rst
+   post-deployment-conf/lcm-git-repo.rst

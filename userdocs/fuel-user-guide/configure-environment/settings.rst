@@ -157,4 +157,4 @@ by editing the corresponding configuration files.
 
 .. seealso::
 
-   * :ref:`post-deployment-settings`
+   * :ref:`modify-os-env-settings`

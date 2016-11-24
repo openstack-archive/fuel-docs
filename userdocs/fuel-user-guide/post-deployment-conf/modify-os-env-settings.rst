@@ -1,6 +1,5 @@
-.. _post-deployment-settings:
+.. _modify-os-env-settings:
 
-=========================================
 Modify the OpenStack environment settings
 =========================================
 

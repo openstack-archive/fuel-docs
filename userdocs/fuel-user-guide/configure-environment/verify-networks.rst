@@ -28,5 +28,5 @@ You must resolve all errors before you deploy an OpenStack environment.
 
 .. seealso::
 
-   * :ref:`post-deployment-settings`
+   * :ref:`settings-ug`
    * :ref:`ug-network`

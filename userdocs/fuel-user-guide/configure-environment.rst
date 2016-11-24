@@ -5,7 +5,7 @@
 
 .. _configure-env-ug:
 
-Configure your Environment
+Configure your environment
 ==========================
 
 After you create an OpenStack environment as described in
