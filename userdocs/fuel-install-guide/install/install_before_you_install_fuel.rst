@@ -30,3 +30,9 @@ Before you install Fuel, verify that you have completed the following tasks:
 .. image:: /_images/deliverables/d_install_wo_internet.png
    :width: 70%
    :align: center
+
+* If you install Fuel from on of RPM mirrors, follow this workflow:
+
+.. image:: /_images/deliverables/d_install_rpm.png
+   :width: 70%
+   :align: center

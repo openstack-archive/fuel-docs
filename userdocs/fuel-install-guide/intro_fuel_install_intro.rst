@@ -8,9 +8,11 @@ Introduction to Fuel Installation
 =================================
 
 This section provides an overview of the Fuel installation
-process. You can install Fuel on a server with an Internet connection or
-on a server that is isolated from the Internet for security reasons. Depending
-on your choice, the workflow differs.
+process. You can install Fuel either using pre-built ISO image or
+using rpm packages available on one of Fuel mirrors. Using ISO
+you can install Fuel on a server with an Internet connection or
+on a server that is isolated from the Internet for security reasons.
+Depending on your choice, the workflow differs.
 
 This section includes the following topics:
 
