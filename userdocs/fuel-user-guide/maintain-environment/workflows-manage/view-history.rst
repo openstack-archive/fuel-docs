@@ -42,7 +42,7 @@ the Fuel web UI (timeline or table view mode) as well as the Fuel CLI.
       fuel deployment-tasks --task-id <TASK_ID> --task-name <TASK_NAME> --include-summary --statuses ready, pending --nodes 1,2
       fuel2 task history show <TASK_ID> --include-summary --nodes 3 --statuses error skipped
 
-   where <TASK-ID> is the ID of the deployment task.
+   where ``<TASK_ID>`` is the ID of the deployment task.
 
 .. warning:: The ``fuel task`` and ``fuel2 task list`` commands show
              the Nailgun tasks, such as provisioning, deployment,
