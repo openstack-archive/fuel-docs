@@ -37,9 +37,8 @@ by editing the corresponding configuration files.
            kernel parameters for the Fuel Master node or for nodes that have
            already been deployed.
 
-          The :guilabel:`Kernel parameters` for OpenStack and Fuel include:
-
-          ``ttys0=<speed>``
+      * - **General settings: Kernel parameters**
+        - ``ttys0=<speed>``
            Enables serial console for videoless servers.
           ``console=ttyS0,9600``
            Enables serial console.
@@ -65,10 +64,9 @@ by editing the corresponding configuration files.
            setting this kernel parameter may enable the system to boot.
            However, if no backward compatibility is provided, the system
            may panic or fail in other ways even with this parameter set.
-      * - **Security settings**
-        - The :guilabel:`Public TLS` configuration includes:
 
-          TLS for OpenStack public endpoints
+      * - **Security settings: Public TLS**
+        - TLS for OpenStack public endpoints
            Enables TLS termination on HAProxy for OpenStack services.
           HTTPS for Horizon
            Secures access to Horizon enabling HTTPS instead of HTTP.
@@ -90,9 +88,8 @@ by editing the corresponding configuration files.
            to this name. Self-signed certificates also use this hostname.
            The default value is ``public.fuel.local``.
 
-          The :guilabel:`SSH security` configuration includes:
-
-          Restrict SSH service on network
+      * - **Security settings: SSH security**
+        - Restrict SSH service on network
            When enabled, provide at least one working IP address
            (the Fuel Master node IP is already added).
            Add new addresses instead of replacing the provided
@@ -104,6 +101,16 @@ by editing the corresponding configuration files.
           Brute force protection
            Grants access from all networks (except the provided ones),
            but Fuel checks the networks against the brute force attack.
+
+      * - **Security settings: Security groups**
+        - Open vSwitch Firewall Driver
+           Select the Open vSwitch Firewall Driver if you use OVS Bridges
+           for networking.
+          IPtables-based Firewall Driver
+           Select the IPtables-based Firewall Driver if you use Linux
+           Bridges for networking. Do not select this option if you have
+           DPDK enabled as this results in not having a firewall at all.
+
       * - **Compute settings**
         - Hypervisor
            Enables you to modify the previously selected option.
@@ -112,6 +119,7 @@ by editing the corresponding configuration files.
           Resume guests state on host boot
            Controls whether to preserve the state of virtual instances
            across reboots.
+
       * - **Storage settings**
         - Use qcow format for images
            If you select this option, ephemeral volumes will be created as a
@@ -131,6 +139,7 @@ by editing the corresponding configuration files.
            Determines the minimum number of Ceph OSD nodes that Fuel must
            deploy. For a production environment, deploy at least three Ceph
            OSD nodes.
+
       * - **Logging settings**
         - Configure the Puppet and OpenStack debug logging and syslog
           settings.
@@ -147,6 +156,7 @@ by editing the corresponding configuration files.
            environment. If you want to use an external server for
            ``rsyslog``, specify an IP address and port number of the server
            in the :guilabel:`Syslog` field.
+
       * - **OpenStack services**
         - Select additional OpenStack services to deploy. Some OpenStack
           services may have additional network and storage requirements.
