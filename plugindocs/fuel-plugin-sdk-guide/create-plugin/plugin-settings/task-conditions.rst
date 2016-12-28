@@ -37,7 +37,7 @@ itself can be defined as:
     label: "Enable upload test"
     description: "Upload cirros base image when the deployment is done"
 
-You can perform life cycle management tasks based on the history of
+You can perform lifecycle management tasks based on the history of
 the OpenStack environment states. You can introduce expressions that can be
 computed within the context of the OpenStack environment configuration,
 so that you can control task assignment and execution depending on the
