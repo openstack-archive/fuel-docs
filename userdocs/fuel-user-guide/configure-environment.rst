@@ -26,6 +26,7 @@ This section includes the following topics:
    configure-environment/add-nodes.rst
    configure-environment/add-label.rst
    configure-environment/change-roles.rst
+   configure-environment/decompose-services.rst
    configure-environment/change-hostname-slave-nodes.rst
    configure-environment/select-bootable-device.rst
    configure-environment/network-settings.rst
