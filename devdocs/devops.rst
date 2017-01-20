@@ -54,66 +54,67 @@ Before using it, please install the following required dependencies:
 Devops installation in `virtualenv <http://virtualenv.readthedocs.org/en/latest/virtualenv.html>`_
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Install packages needed for building python eggs
+#. Install packages needed for building the Python ``eggs``:
 
-.. code-block:: bash
+   .. code-block:: bash
 
     sudo apt-get install --yes python-virtualenv libpq-dev libgmp-dev pkg-config
 
-2. In case you are using *Ubuntu 12.04* let's update pip and virtualenv,
-   otherwise you can skip this step
+#. If you use Ubuntu 12.04, update ``pip`` and ``virtualenv``;
+   otherwise, you can skip this step:
 
-.. code-block:: bash
+   .. code-block:: bash
 
     sudo pip install pip virtualenv --upgrade
     hash -r
 
-3. In oder to store the path where your Python virtualenv will be located
-   create your working directory and use the following environment variable. If
-   it is not specified, it will use the current working directory:
+#. To store the path where your Python virtualenv will be located,
+   create your working directory and use the following environment variable.
+   If not specified, it will use the current working directory:
 
-.. code-block:: bash
+   .. code-block:: bash
 
-     export WORKING_DIR=$HOME/working_dir
-     mkdir $HOME/working_dir
+    export WORKING_DIR=$HOME/working_dir
+    mkdir $HOME/working_dir
 
-4. Create virtualenv for the *devops* project (e.g. ``fuel-devops-venv``).
-   Note: the related directory will be used for the ``VENV_PATH`` variable:
+#. Create virtualenv for the *devops* project (for example,
+   ``fuel-devops-venv``). The related directory will be used for the
+   ``VENV_PATH`` variable:
 
-.. code-block:: bash
+   .. code-block:: bash
 
-     cd $WORKING_DIR
-     sudo apt-get install --yes python-virtualenv
-     virtualenv --no-site-packages fuel-devops-venv
+    cd $WORKING_DIR
+    sudo apt-get install --yes python-virtualenv
+    virtualenv --no-site-packages fuel-devops-venv
 
-.. note:: If you want to use different devops versions in the same time, you
- can create several different folders for each version, and then activate the
- required virtual environment for each case.
+   .. note:: If you want to use different devops versions at the same time,
+             create several different folders for each version and activate
+             the required virtual environment for each version.
 
-    For example::
+             For example::
 
-        virtualenv --no-site-packages fuel-devops-venv        # For fuel-devops 2.5.x
-        virtualenv --no-site-packages fuel-devops-venv-2.9    # For fuel-devops 2.9.x
+              virtualenv --no-site-packages fuel-devops-venv        # For fuel-devops 2.5.x
+              virtualenv --no-site-packages fuel-devops-venv-2.9    # For fuel-devops 2.9.x
 
-5. Activate virtualenv and install *devops* package using PyPI.
-In order to indentify the latest available versions you would like to install,
-visit `fuel-devops <https://github.com/openstack/fuel-devops/tags>`_ repo. For
-Fuel 6.0 and earlier, take the latest fuel-devops 2.5.x (e.g.
-fuel-devops.git@2.5.6). For Fuel 6.1 and later, use 2.9.x or newer (e.g.
-fuel-devops.git@2.9.11):
+#. Activate virtualenv and install ``devops`` package using PyPI.
+   To identify the latest available versions to install, visit the
+   `fuel-devops <https://github.com/openstack/fuel-devops/tags>`_ repository.
+   For Fuel 6.0 and earlier, take the latest ``fuel-devops`` 2.5.x (for
+   example, ``fuel-devops.git@2.5.6``). For Fuel 6.1 and later, use version
+   3.0.x or newer (for example, ``fuel-devops.git@3.0.3``):
 
-.. code-block:: bash
+   .. code-block:: bash
 
     . fuel-devops-venv/bin/activate
-    pip install git+https://github.com/openstack/fuel-devops.git@2.9.11 --upgrade
+    pip install git+https://github.com/openstack/fuel-devops.git@<LATEST_RELEASE> --upgrade
 
-setup.py in fuel-devops repository does everything required.
+   The ``setup.py`` in the ``fuel-devops`` repository installs and configures
+   the ``devops`` package.
 
-.. hint:: You can also use
-    `virtualenvwrapper <http://virtualenvwrapper.readthedocs.org/>`_
-    which can help you manage virtual environments
+   .. hint:: You can also use `virtualenvwrapper <http://virtualenvwrapper.readthedocs.org/>`_
+             that manages virtual environments.
 
-6. Next, follow :ref:`DevOpsConf` section
+#. Follow the instructions in the :ref:`DevOpsConf` section.
 
 .. _DevOpsConf:
 
@@ -123,10 +124,10 @@ Configuration
 Basically *devops* requires that the following system-wide settings are
 configured:
 
- * Default libvirt storage pool is active (called 'default')
- * Current user must have permission to run KVM VMs with libvirt
- * PostgreSQL server running with appropriate grants and schema for *devops*
- * [Optional] Nested Paging is enabled
+* Default libvirt storage pool is active (called 'default')
+* Current user has a permission to run KVM VMs with libvirt
+* PostgreSQL server running with appropriate grants and schema for *devops*
+* (Optional) Nested Paging is enabled
 
 Configuring libvirt pool
 ~~~~~~~~~~~~~~~~~~~~~~~~~
