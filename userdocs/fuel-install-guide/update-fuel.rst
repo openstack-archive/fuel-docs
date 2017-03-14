@@ -4,26 +4,29 @@
 Update Fuel to latest Mitaka
 ============================
 
-A number of the Fuel Newton features are back-ported to Mitaka after
-the Fuel Mitaka release. You can update the Fuel Master node to consume
-these features.
+A number of the Fuel Newton and Ocata features are back-ported to Mitaka
+after the Fuel Mitaka release. An important part of the update procedure
+is the Linux kernel upgrade to version 4.4. You can update
+the Fuel Master node to consume these features.
+
+.. warning:: During the Fuel Master node update, its services are restarted
+             as well as ``astute`` and ``nailgun``. Therefore, updating
+             of the Fuel Master node can result in a downtime
+             of the entire environment if any.
+
+             Before applying the updates to production, you must plan a
+             maintenance window and back up your deployment if any
+             as well as test the updates on your staging environment.
 
 **To update the Fuel Master node from the initially released Mitaka to the latest Mitaka version:**
 
 #. Log in to the Fuel Master node CLI as root.
-#. Verify that the update repository, for example, ``mos-update``, is available
-   in the list of your repositories:
+#. Add the update repository to the list of your repositories.
+   For example, ``mos92-updates``:
 
    .. code-block:: console
 
-      cat /etc/yum.repos.d/mos-updates.repo
-
-   If the update repository is unavailable, run:
-
-   .. code-block:: console
-
-      yum-config-manager --add-repo=http://mirror.fuel-infra.org/mos-repos/centos/mos9.0-centos7/updates/x86_64/
-      rpm --import http://mirror.fuel-infra.org/mos-repos/centos/mos9.0-centos7/updates/RPM-GPG-KEY-mos9.0
+     yum install -y http://mirror.fuel-infra.org/mos-repos/centos/mos9.0-centos7/9.2-updates/x86_64/Packages/mos-release-9.2-1.el7.x86_64.rpm
 
 #. Clean the YUM cache:
 
@@ -31,43 +34,42 @@ these features.
 
       yum clean all
 
-#. Install a code-based integrity check tool Cudet. This tool also includes
-   the necessary update commands for ``fuel2``:
+#. Install the ``mos-playbooks`` package:
 
    .. code-block:: console
 
-      yum install python-cudet
+    yum install -y mos-playbooks
 
-#. Prepare the Fuel Master node for the Noop run:
+#. Change the directory to ``mos_playbooks/mos_mu/``.
 
-   .. code-block:: console
-
-      update-prepare prepare master
-
-   This command installs new ``fuel-nailgun`` and ``fuel-astute``
-   packages on the Fuel Master node. Also, it executes Nailgun ``dbsync``
-   and restarts the ``astute`` and ``nailgun`` services.
-
-   If any ``fuel-nailgun`` extension is already installed on the Fuel Master node, the
-   ``update-prepare`` script does not restart the Nailgun services.
-   You should restart the Nailgun services manually using the following
-   command:
+#. Perform a preparation playbook for the Fuel Master node. The playbook
+   installs and prepares necessary tools for the update. Also, it restarts
+   the ``astute`` and ``nailgun`` services.
 
    .. code-block:: console
 
-      systemctl restart assassind nailgun oswl_flavor_collectord \
-      oswl_image_collectord oswl_keystone_user_collectord \
-      oswl_tenant_collectord oswl_vm_collectord oswl_volume_collectord \
-      receiverd statsenderd
+    ansible-playbook playbooks/mos9_prepare_fuel.yml
 
 #. Update the Fuel Master node packages, services, and configuration:
 
    .. code-block:: console
 
-      update-prepare update master
+    ansible-playbook playbooks/update_fuel.yml -e '{"rebuild_bootstrap":false}'
 
-   .. warning:: During the update procedure, the Fuel Master node services
-                will be restarted automatically.
+   .. warning:: During the update procedure, the Fuel Master node
+                services will be restarted automatically.
 
-   The script calls ``yum update`` and then runs Puppet tasks to update
-   the Fuel Master node.
+#. Upgrade the Ubuntu kernel to version 4.4 for the Fuel bootstrap:
+
+   .. code-block:: console
+
+    ansible-playbook playbooks/mos9_fuel_upgrade_kernel_4.4.yml
+
+#. Verify that the Fuel Master node is successfully updated using
+   the :command:`fuel2 fuel-version` command. The output should be as follows:
+
+   .. code-block:: console
+
+    fuel2 fuel-version
+    openstack_version: mitaka-9.0
+    release: '9.2'
