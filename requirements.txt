@@ -1,6 +1,0 @@
-sphinx==1.3b3
-rst2pdf
-funcparserlib
-webcolors
-beautifulsoup4==4.4.0
-openstackdocstheme
